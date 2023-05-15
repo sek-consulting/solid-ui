@@ -2,6 +2,7 @@
 import { Icons } from "~/components/icons"
 import { buttonVariants } from "~/components/ui/button"
 import { cn } from "~/lib/utils"
+import { docsConfig } from "~/config/docs"
 ---
 
 <header
@@ -14,23 +15,27 @@ import { cn } from "~/lib/utils"
         <span class="hidden font-bold sm:inline-block">solid/ui</span>
       </a>
       <nav class="flex items-center space-x-6 text-sm font-medium">
-        <a
-          href="/docs/introduction"
-          class="transition-colors hover:text-foreground/80 no-underline"
-        >
-          Documentation
-        </a>
-        <a
-          href=""
-          class="hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block no-underline"
-        >
-          GitHub
-        </a>
+        {
+          docsConfig.mainNav.map((item) => (
+            <a
+              href={item.href}
+              target={item.external ? "_blank" : ""}
+              rel={item.external ? "noreferrer" : ""}
+              class="hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block no-underline"
+            >
+              {item.title}
+            </a>
+          ))
+        }
       </nav>
     </div>
     <div class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
       <nav class="flex items-center space-x-1">
-        <a href="" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/sek-consulting/solid-ui-components"
+          target="_blank"
+          rel="noreferrer"
+        >
           <div
             class={cn(
               buttonVariants({

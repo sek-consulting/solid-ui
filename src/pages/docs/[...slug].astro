@@ -17,15 +17,20 @@ type Props = CollectionEntry<"docs">
 
 const post = Astro.props
 const { Content, headings } = await post.render()
+
+console.log(post)
 ---
 
 <MainLayout headings={headings} {...post.data}>
-  <div
-    class="container flex-1 pt-4 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
-  >
-    <aside>Menü</aside>
-    <div>
-      <Content />
-    </div>
+  <div class="space-y-2">
+    <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">{post.data.title}</h1>
+    <p class="text-lg text-muted-foreground">{post.data.description}</p>
   </div>
+  <div
+    data-orientation="horizontal"
+    role="none"
+    class="shrink-0 bg-border h-[1px] w-full my-4 md:my-6"
+  >
+  </div>
+  <Content />
 </MainLayout>

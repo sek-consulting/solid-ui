@@ -1,14 +1,19 @@
-import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
-import react from '@astrojs/react';
+import { defineConfig } from "astro/config"
+
+import mdx from "@astrojs/mdx"
+import sitemap from "@astrojs/sitemap"
+import solidJs from "@astrojs/solid-js"
+import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		// Enable Preact to support Preact JSX components.
-		preact(),
-		// Enable React for the Algolia search component.
-		react(),
-	],
-	site: `https://astro.build`,
-});
+  integrations: [
+    mdx({
+      shikiConfig: { theme: "one-dark-pro", wrap: true }
+    }),
+    sitemap(),
+    solidJs(),
+    tailwind()
+  ],
+  site: "https://www.sek-consulting.com"
+})

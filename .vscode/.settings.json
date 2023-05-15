@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
+  "tailwindCSS.classAttributes": ["class", "class:list"]
+}

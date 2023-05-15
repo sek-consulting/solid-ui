@@ -2,6 +2,8 @@
 import { CollectionEntry, getCollection } from "astro:content"
 import MainLayout from "~/layouts/layout.astro"
 
+import "~/styles/mdx.css"
+
 export async function getStaticPaths() {
   const docs = await getCollection("docs")
   return docs.map((entry) => ({
@@ -18,5 +20,12 @@ const { Content, headings } = await post.render()
 ---
 
 <MainLayout headings={headings} {...post.data}>
-  <Content />
+  <div
+    class="container flex-1 pt-4 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
+  >
+    <aside>Menü</aside>
+    <div>
+      <Content />
+    </div>
+  </div>
 </MainLayout>

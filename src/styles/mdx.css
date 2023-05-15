@@ -1,0 +1,75 @@
+h1 {
+  @apply mt-2 scroll-m-20 text-4xl font-bold;
+}
+
+h2 {
+  @apply mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0;
+}
+
+h3 {
+  @apply mt-8 scroll-m-20 text-xl font-semibold tracking-tight;
+}
+
+h4 {
+  @apply mt-8 scroll-m-20 text-lg font-semibold tracking-tight;
+}
+
+h5 {
+  @apply mt-8 scroll-m-20 text-lg font-semibold tracking-tight;
+}
+
+h6 {
+  @apply mt-8 scroll-m-20 text-base font-semibold tracking-tight;
+}
+
+a {
+  @apply font-medium underline underline-offset-4;
+}
+
+p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}
+
+ul {
+  @apply my-6 ml-6 list-disc;
+}
+
+li {
+  @apply mt-2;
+}
+
+blockquote {
+  @apply mt-6 border-l-2 pl-6 italic;
+}
+
+img {
+  @apply rounded-md;
+}
+
+hr {
+  @apply my-4 md:my-8;
+}
+
+table {
+  @apply w-full;
+}
+
+tr {
+  @apply m-0 border-t p-0 even:bg-muted;
+}
+
+th {
+  @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+}
+
+td {
+  @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+}
+
+pre {
+  @apply mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border p-4;
+}
+
+:not(pre) > code {
+  @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm;
+}

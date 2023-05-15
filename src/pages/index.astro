@@ -1,10 +1,3 @@
----
-import Layout from "~/layouts/layout.astro"
-import { Button } from "~/components/ui/button"
----
-
-<Layout title="Welcome to Astro.">
-  <div class="flex items-center justify-center h-screen">
-    <Button>hit me!</Button>
-  </div>
-</Layout>
+<script is:inline>
+  window.location.pathname = `/docs/introduction`
+</script>

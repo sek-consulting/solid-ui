@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [
     mdx({
       shikiConfig: {
-        theme: "one-dark-pro",
+        theme: "min-light",
         wrap: true
       }
     }),

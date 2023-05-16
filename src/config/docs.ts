@@ -37,6 +37,10 @@ export const docsConfig = {
           href: "/docs/components/card"
         },
         {
+          title: "Checkbox",
+          href: "/docs/components/checkbox"
+        },
+        {
           title: "Input",
           href: "/docs/components/input"
         },

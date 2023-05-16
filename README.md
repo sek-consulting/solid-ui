@@ -10,8 +10,8 @@ This is a port of the epic components built by @shadcn which you can find [here]
 
 - Button
 - Card
+- Checkbox
 - Input
-- Label
 - Select
 - Tabs
 
@@ -19,6 +19,11 @@ This is a port of the epic components built by @shadcn which you can find [here]
 
 - Dropdown
 - Data Table
+
+## Unsure if portable
+
+- Command / cmdk
+- Calendar
 
 ## Credits
 

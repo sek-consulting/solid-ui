@@ -1,0 +1,38 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+---
+
+import { SelectDemo } from "~/components/examples/select-demo"
+
+## Usage
+
+```
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "~/components/ui/select"
+```
+
+```
+const [value, setValue] = createSignal("")
+<Select
+    value={value()}
+    onChange={setValue}
+    options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
+    placeholder="Select a fruit…"
+    itemComponent={(props) => <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>}
+>
+    <SelectTrigger aria-label="Fruit" class="w-[180px]">
+        <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+    </SelectTrigger>
+    <SelectContent />
+</Select>
+```
+
+## Example
+
+<SelectDemo client:load />

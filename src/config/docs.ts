@@ -33,6 +33,18 @@ export const docsConfig = {
           href: "/docs/components/button"
         },
         {
+          title: "Card",
+          href: "/docs/components/card"
+        },
+        {
+          title: "Input",
+          href: "/docs/components/input"
+        },
+        {
+          title: "Select",
+          href: "/docs/components/select"
+        },
+        {
           title: "Tabs",
           href: "/docs/components/tabs"
         }

@@ -8,12 +8,25 @@ import { Button } from "~/components/ui/button"
 
 ## Usage
 
-```
+```tsx
 import { Button } from "~/components/ui/button"
 ```
 
-```
+```tsx
 <Button variant="outline">Button</Button>
+```
+
+### Link
+
+You can use the `buttonVariants` helper to create a link that looks like a button.
+
+```tsx
+import { A } from "solid-start"
+import { buttonVariants } from "~/components/ui/button"
+```
+
+```tsx
+<A class={buttonVariants({ variant: "outline" })}>Click here</A>
 ```
 
 ## Examples

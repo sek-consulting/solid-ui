@@ -41,6 +41,10 @@ export const docsConfig = {
           href: "/docs/components/checkbox"
         },
         {
+          title: "Dialog",
+          href: "/docs/components/dialog"
+        },
+        {
           title: "Input",
           href: "/docs/components/input"
         },

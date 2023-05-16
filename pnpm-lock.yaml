@@ -35,8 +35,8 @@ dependencies:
     specifier: ^0.8.1
     version: 0.8.1
   prettier-plugin-tailwindcss:
-    specifier: ^0.2.8
-    version: 0.2.8(prettier-plugin-astro@0.8.1)(prettier@2.8.8)
+    specifier: ^0.3.0
+    version: 0.3.0(prettier-plugin-astro@0.8.1)(prettier@2.8.8)
   solid-js:
     specifier: ^1.7.5
     version: 1.7.5
@@ -3290,8 +3290,8 @@ packages:
       synckit: 0.8.5
     dev: false
 
-  /prettier-plugin-tailwindcss@0.2.8(prettier-plugin-astro@0.8.1)(prettier@2.8.8):
-    resolution: {integrity: sha512-KgPcEnJeIijlMjsA6WwYgRs5rh3/q76oInqtMXBA/EMcamrcYJpyhtRhyX1ayT9hnHlHTuO8sIifHF10WuSDKg==}
+  /prettier-plugin-tailwindcss@0.3.0(prettier-plugin-astro@0.8.1)(prettier@2.8.8):
+    resolution: {integrity: sha512-009/Xqdy7UmkcTBpwlq7jsViDqXAYSOMLDrHAdTMlVZOrKfM2o9Ci7EMWTMZ7SkKBFTG04UM9F9iM2+4i6boDA==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -3304,6 +3304,7 @@ packages:
       prettier-plugin-css-order: '*'
       prettier-plugin-import-sort: '*'
       prettier-plugin-jsdoc: '*'
+      prettier-plugin-marko: '*'
       prettier-plugin-organize-attributes: '*'
       prettier-plugin-organize-imports: '*'
       prettier-plugin-style-order: '*'
@@ -3327,6 +3328,8 @@ packages:
       prettier-plugin-import-sort:
         optional: true
       prettier-plugin-jsdoc:
+        optional: true
+      prettier-plugin-marko:
         optional: true
       prettier-plugin-organize-attributes:
         optional: true

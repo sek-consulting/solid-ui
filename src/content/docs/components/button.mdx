@@ -3,14 +3,53 @@ title: Button
 description: Displays a button or a component that looks like a button.
 ---
 
+import { ComponentExample } from "~/components/component-example"
 import { Button } from "~/components/ui/button"
 
-<Button>press me</Button>
+## Usage
 
-```typescript
-import { Button } from "~/components/ui/button"
-
-export function ButtonDemo() {
-  return <Button>press me</Button>
-}
 ```
+import { Button } from "~/components/ui/button"
+```
+
+```
+<Button variant="outline">Button</Button>
+```
+
+## Examples
+
+### Primary
+
+<ComponentExample>
+  <Button>Primary</Button>
+</ComponentExample>
+
+### Secondary
+
+<ComponentExample>
+  <Button variant="secondary">Secondary</Button>
+</ComponentExample>
+
+### Destructive
+
+<ComponentExample>
+  <Button variant="destructive">Destructive</Button>
+</ComponentExample>
+
+### Outline
+
+<ComponentExample>
+  <Button variant="outline">Outline</Button>
+</ComponentExample>
+
+### Ghost
+
+<ComponentExample>
+  <Button variant="ghost">Ghost</Button>
+</ComponentExample>
+
+### Link
+
+<ComponentExample>
+  <Button variant="link">Link</Button>
+</ComponentExample>

@@ -17,8 +17,6 @@ type Props = CollectionEntry<"docs">
 
 const post = Astro.props
 const { Content, headings } = await post.render()
-
-console.log(post)
 ---
 
 <MainLayout headings={headings} {...post.data}>

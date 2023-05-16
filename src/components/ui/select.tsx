@@ -38,7 +38,7 @@ const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => 
         )}
         {...rest}
       >
-        <SelectPrimitive.Listbox class="m-0 p-1" />
+        <SelectPrimitive.Listbox class="p-1" />
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
   )

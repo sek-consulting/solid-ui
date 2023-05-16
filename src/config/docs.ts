@@ -49,8 +49,16 @@ export const docsConfig = {
           href: "/docs/components/input"
         },
         {
+          title: "Label",
+          href: "/docs/components/label"
+        },
+        {
           title: "Select",
           href: "/docs/components/select"
+        },
+        {
+          title: "Table",
+          href: "/docs/components/table"
         },
         {
           title: "Tabs",

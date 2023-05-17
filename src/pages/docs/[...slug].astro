@@ -1,6 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content"
 import MainLayout from "~/layouts/layout.astro"
+import { H2, H3 } from "~/components/typography"
 
 import "~/styles/mdx.css"
 
@@ -16,19 +17,23 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"docs">
 
 const post = Astro.props
-const { Content, headings } = await post.render()
+const { Content, headings, components } = await post.render()
+
+// list of components that can be replaced https://mdxjs.com/table-of-components/
 ---
 
 <MainLayout headings={headings} {...post.data}>
   <div class="space-y-2">
     <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">{post.data.title}</h1>
-    <p class="text-lg text-muted-foreground">{post.data.description}</p>
+    <p class="text-lg text-muted-foreground">
+      {post.data.description}
+    </p>
   </div>
   <div
     data-orientation="horizontal"
     role="none"
     class="shrink-0 bg-border h-[1px] w-full my-4 md:my-6"
   >
-  </div>
-  <Content />
+  </div>  
+  <Content components={{...components, h2: H2, h3: H3}} />
 </MainLayout>

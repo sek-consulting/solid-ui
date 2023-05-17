@@ -21,10 +21,7 @@ const CardHeader: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
 const CardTitle: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <h3
-      class={cn("mt-0 text-lg font-semibold leading-none tracking-tight", props.class)}
-      {...rest}
-    />
+    <h3 class={cn("text-lg font-semibold leading-none tracking-tight", props.class)} {...rest} />
   )
 }
 

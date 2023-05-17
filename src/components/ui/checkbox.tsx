@@ -1,4 +1,4 @@
-import type { Component } from "solid-js"
+import { Component, Show } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Checkbox as CheckboxPrimitive } from "@kobalte/core"
@@ -23,21 +23,21 @@ const Checkbox: Component<CheckboxProps> = (props) => {
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Control>
       <div class="grid gap-1.5 leading-none">
-        {props.label && (
+        <Show when={props.label}>
           <CheckboxPrimitive.Label class="text-sm font-medium leading-none group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-70">
             {props.label}
           </CheckboxPrimitive.Label>
-        )}
-        {props.description && (
+        </Show>
+        <Show when={props.description}>
           <CheckboxPrimitive.Description class="text-muted-foreground text-sm">
             {props.description}
           </CheckboxPrimitive.Description>
-        )}
-        {props.errorMessage && (
+        </Show>
+        <Show when={props.errorMessage}>
           <CheckboxPrimitive.ErrorMessage class="text-destructive text-sm">
             {props.errorMessage}
           </CheckboxPrimitive.ErrorMessage>
-        )}
+        </Show>
       </div>
     </CheckboxPrimitive.Root>
   )

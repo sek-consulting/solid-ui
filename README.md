@@ -11,14 +11,20 @@ This is a port of the epic components built by @shadcn which you can find [here]
 - Button
 - Card
 - Checkbox
+- Dialog
 - Input
+- Label
 - Select
+- Switch
+- Table
 - Tabs
+- Textarea
 
 ## Currently working on
 
-- Dropdown
 - Data Table
+- Dropdown
+- Toast
 
 ## Unsure if portable
 

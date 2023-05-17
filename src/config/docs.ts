@@ -57,12 +57,20 @@ export const docsConfig = {
           href: "/docs/components/select"
         },
         {
+          title: "Switch",
+          href: "/docs/components/switch"
+        },
+        {
           title: "Table",
           href: "/docs/components/table"
         },
         {
           title: "Tabs",
           href: "/docs/components/tabs"
+        },
+        {
+          title: "Textarea",
+          href: "/docs/components/textarea"
         }
       ]
     }

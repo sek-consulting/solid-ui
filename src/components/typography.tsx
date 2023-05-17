@@ -1,28 +1,72 @@
-import { Component, JSX, splitProps } from "solid-js"
-import { cn } from "~/lib/utils"
+import type { Component, JSX } from "solid-js"
 
-const H2: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children"])
-  return (
-    <h2
-      class={cn(
-        "mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0",
-        props.class
-      )}
-      {...rest}
-    >
-      {props.children}
-    </h2>
-  )
+const H1: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => (
+  <h2 class="mt-2 scroll-m-20 text-4xl font-bold" {...props} />
+)
+
+const H2: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => (
+  <h2
+    class="mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
+    {...props}
+  />
+)
+
+const H3: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => (
+  <h3 class="mt-8 scroll-m-20 text-xl font-semibold tracking-tight" {...props} />
+)
+
+const H4: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => (
+  <h3 class="mt-8 scroll-m-20 text-lg font-semibold tracking-tight" {...props} />
+)
+
+const H5: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => (
+  <h3 class="mt-8 scroll-m-20 text-lg font-semibold tracking-tight" {...props} />
+)
+
+const H6: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => (
+  <h3 class="mt-8 scroll-m-20 text-base font-semibold tracking-tight" {...props} />
+)
+
+const A: Component<JSX.AnchorHTMLAttributes<HTMLAnchorElement>> = (props) => (
+  <a class="font-medium underline underline-offset-4" {...props} />
+)
+
+const P: Component<JSX.HTMLAttributes<HTMLParagraphElement>> = (props) => (
+  <p class="leading-7 [&:not(:first-child)]:mt-6" {...props} />
+)
+
+const Ul: Component<JSX.HTMLAttributes<HTMLUListElement>> = (props) => (
+  <ul class="my-6 ml-6 list-disc" {...props} />
+)
+
+const Li: Component<JSX.HTMLAttributes<HTMLLIElement>> = (props) => <li class="mt-2" {...props} />
+
+const BlockQuote: Component<JSX.BlockquoteHTMLAttributes<HTMLElement>> = (props) => (
+  <blockquote class="mt-6 border-l-2 pl-6 italic" {...props} />
+)
+
+const Img: Component<JSX.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+  <img class="rounded-md" {...props} />
+)
+
+const Hr: Component<JSX.HTMLAttributes<HTMLHRElement>> = (props) => (
+  <hr class="my-4 md:my-8" {...props} />
+)
+
+const Typography = {
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  h5: H5,
+  h6: H6,
+  a: A,
+  p: P,
+  ul: Ul,
+  li: Li,
+  blockquote: BlockQuote,
+  img: Img,
+  hr: Hr
 }
 
-const H3: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children"])
-  return (
-    <h3 class={cn("mt-8 scroll-m-20 text-xl font-semibold tracking-tight", props.class)} {...rest}>
-      {props.children}
-    </h3>
-  )
-}
-
-export { H2, H3 }
+export { H1, H2, H3, H4, H5, H6, A, P, Ul, Li, BlockQuote, Img, Hr, Typography }

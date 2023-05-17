@@ -1,8 +1,9 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content"
 import MainLayout from "~/layouts/layout.astro"
-import { H2, H3 } from "~/components/typography"
 
+// TODO: replace .css for code snippets with custom components
+import { Typography } from "~/components/typography"
 import "~/styles/mdx.css"
 
 export async function getStaticPaths() {
@@ -17,9 +18,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"docs">
 
 const post = Astro.props
-const { Content, headings, components } = await post.render()
-
-// list of components that can be replaced https://mdxjs.com/table-of-components/
+const { Content, headings } = await post.render()
 ---
 
 <MainLayout headings={headings} {...post.data}>
@@ -34,6 +33,6 @@ const { Content, headings, components } = await post.render()
     role="none"
     class="shrink-0 bg-border h-[1px] w-full my-4 md:my-6"
   >
-  </div>  
-  <Content components={{...components, h2: H2, h3: H3}} />
+  </div>
+  <Content components={Typography} />
 </MainLayout>

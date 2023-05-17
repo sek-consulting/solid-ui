@@ -29,6 +29,10 @@ export const docsConfig = {
       title: "Components",
       items: [
         {
+          title: "Badge",
+          href: "/docs/components/badge"
+        },
+        {
           title: "Button",
           href: "/docs/components/button"
         },

@@ -4,7 +4,6 @@ import Sidebar from "~/components/sidebar.astro"
 
 import "@fontsource/inter/latin.css"
 import "~/styles/global.css"
-import SiteHeader from "~/components/site-header.astro"
 
 export interface Props {
   title: string
@@ -16,15 +15,12 @@ const { title, description } = Astro.props
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-
-    <title>{title}</title>
     <meta name="description" content={description} />
-
+    <title>{title}</title>
   </head>
   <body>
     <Navbar />

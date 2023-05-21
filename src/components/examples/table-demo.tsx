@@ -1,3 +1,4 @@
+import { ComponentExample } from "~/components/component-example"
 import {
   Table,
   TableBody,
@@ -7,7 +8,6 @@ import {
   TableHeader,
   TableRow
 } from "~/components/ui/table"
-import { ComponentExample } from "~/components/component-example"
 
 const invoices = [
   {

@@ -25,7 +25,7 @@ const TableBody: Component<JSX.HTMLAttributes<HTMLTableSectionElement>> = (props
 const TableFooter: Component<JSX.HTMLAttributes<HTMLTableSectionElement>> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <tfoot class={cn("bg-primary text-primary-foreground font-medium", props.class)} {...rest} />
+    <tfoot class={cn("bg-primary font-medium text-primary-foreground", props.class)} {...rest} />
   )
 }
 
@@ -34,7 +34,7 @@ const TableRow: Component<JSX.HTMLAttributes<HTMLTableRowElement>> = (props) => 
   return (
     <tr
       class={cn(
-        "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+        "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
         props.class
       )}
       {...rest}
@@ -47,7 +47,7 @@ const TableHead: Component<JSX.ThHTMLAttributes<HTMLTableCellElement>> = (props)
   return (
     <th
       class={cn(
-        "text-muted-foreground h-12 px-4 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0",
+        "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
         props.class
       )}
       {...rest}
@@ -63,7 +63,7 @@ const TableCell: Component<JSX.TdHTMLAttributes<HTMLTableCellElement>> = (props)
 // TODO: HTMLTableCaptionElement is not working due to an event typing on <caption />
 const TableCaption: Component<JSX.HTMLAttributes<HTMLElement>> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <caption class={cn("text-muted-foreground mt-4 text-sm", props.class)} {...rest} />
+  return <caption class={cn("mt-4 text-sm text-muted-foreground", props.class)} {...rest} />
 }
 
 export { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption }

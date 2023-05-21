@@ -1,3 +1,4 @@
+import { ComponentExample } from "~/components/component-example"
 import { Icons } from "~/components/icons"
 import { Button } from "~/components/ui/button"
 import {
@@ -8,7 +9,6 @@ import {
   CardHeader,
   CardTitle
 } from "~/components/ui/card"
-import { ComponentExample } from "~/components/component-example"
 import { Switch } from "~/components/ui/switch"
 
 const notifications = [

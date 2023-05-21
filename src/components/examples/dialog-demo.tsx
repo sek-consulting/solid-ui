@@ -1,6 +1,5 @@
-import { As } from "@kobalte/core"
-import { ComponentExample } from "../component-example"
-import { Button } from "../ui/button"
+import { ComponentExample } from "~/components/component-example"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -9,9 +8,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from "../ui/dialog"
-import { Input } from "../ui/input"
-import { Label } from "../ui/label"
+} from "~/components/ui/dialog"
+import { Input } from "~/components/ui/input"
+import { Label } from "~/components/ui/label"
 
 export function DialogDemo() {
   return (

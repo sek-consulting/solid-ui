@@ -1,10 +1,10 @@
+import { ComponentExample } from "~/components/component-example"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger
 } from "~/components/ui/accordion"
-import { ComponentExample } from "../component-example"
 
 export function AccordionDemo() {
   return (

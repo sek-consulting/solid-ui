@@ -1,7 +1,10 @@
+import type { Component } from "solid-js"
+import { splitProps } from "solid-js"
+
 import { Accordion as AccordionPrimitive } from "@kobalte/core"
-import { Component, splitProps } from "solid-js"
-import { cn } from "~/lib/utils"
+
 import { Icons } from "~/components/icons"
+import { cn } from "~/lib/utils"
 
 const Accordion = AccordionPrimitive.Root
 
@@ -17,7 +20,7 @@ const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (p
     <AccordionPrimitive.Header class="flex">
       <AccordionPrimitive.Trigger
         class={cn(
-          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-[expanded]]>svg]:rotate-180",
+          "[&[data-[expanded]]>svg]:rotate-180 flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline",
           props.class
         )}
         {...rest}
@@ -34,7 +37,7 @@ const AccordionContent: Component<AccordionPrimitive.AccordionContentProps> = (p
   return (
     <AccordionPrimitive.Content
       class={cn(
-        "overflow-hidden text-sm transition-all animate-accordion-up data-[expanded]:animate-accordion-down",
+        "animate-accordion-up overflow-hidden text-sm transition-all data-[expanded]:animate-accordion-down",
         props.class
       )}
       {...rest}

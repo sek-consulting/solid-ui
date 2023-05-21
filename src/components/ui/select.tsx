@@ -1,4 +1,5 @@
-import { Component, splitProps } from "solid-js"
+import type { Component } from "solid-js"
+import { splitProps } from "solid-js"
 
 import { Select as SelectPrimitive } from "@kobalte/core"
 
@@ -14,7 +15,7 @@ const SelectTrigger: Component<SelectPrimitive.SelectTriggerProps> = (props) => 
   return (
     <SelectPrimitive.Trigger
       class={cn(
-        "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-10 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         props.class
       )}
       {...rest}
@@ -33,7 +34,7 @@ const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => 
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         class={cn(
-          "bg-popover text-popover-foreground animate-in fade-in-80 relative z-50 min-w-[8rem] overflow-hidden rounded-md border shadow-md",
+          "relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
           props.class
         )}
         {...rest}
@@ -49,7 +50,7 @@ const SelectItem: Component<SelectPrimitive.SelectItemProps> = (props) => {
   return (
     <SelectPrimitive.Item
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex w-full cursor-default select-none items-center rounded-sm mt-0 py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative mt-0 flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}

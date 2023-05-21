@@ -1,5 +1,7 @@
-import { ComponentExample } from "~/components/component-example"
+import { createSignal } from "solid-js"
 
+import { ComponentExample } from "~/components/component-example"
+import { Button } from "~/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -17,8 +19,6 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger
 } from "~/components/ui/dropdown-menu"
-import { Button } from "~/components/ui/button"
-import { createSignal } from "solid-js"
 
 export function DropdownMenuDemo() {
   const [showGitLog, setShowGitLog] = createSignal(false)

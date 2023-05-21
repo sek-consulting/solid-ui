@@ -1,7 +1,10 @@
+import type { Component, JSX } from "solid-js"
+import { splitProps } from "solid-js"
+
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
-import { Component, JSX, splitProps } from "solid-js"
-import { cn } from "~/lib/utils"
+
 import { Icons } from "~/components/icons"
+import { cn } from "~/lib/utils"
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 
@@ -15,7 +18,7 @@ const DropdownMenuContent: Component<DropdownMenuPrimitive.DropdownMenuContentPr
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
         class={cn(
-          "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in origin-[var(--kb-menu-content-transform-origin)]",
+          "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
           props.class
         )}
         {...rest}
@@ -84,7 +87,7 @@ const DropdownMenuSubContent: Component<DropdownMenuPrimitive.DropdownMenuSubCon
   return (
     <DropdownMenuPrimitive.SubContent
       class={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in origin-[var(--kb-menu-content-transform-origin)]",
+        "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
         props.class
       )}
       {...rest}

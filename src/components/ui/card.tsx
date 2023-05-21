@@ -7,7 +7,7 @@ const Card: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <div
-      class={cn("bg-card text-card-foreground rounded-lg border shadow-sm", props.class)}
+      class={cn("rounded-lg border bg-card text-card-foreground shadow-sm", props.class)}
       {...rest}
     />
   )
@@ -27,7 +27,7 @@ const CardTitle: Component<JSX.HTMLAttributes<HTMLHeadingElement>> = (props) => 
 
 const CardDescription: Component<JSX.HTMLAttributes<HTMLParagraphElement>> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <p class={cn("text-muted-foreground text-sm", props.class)} {...rest} />
+  return <p class={cn("text-sm text-muted-foreground", props.class)} {...rest} />
 }
 
 const CardContent: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {

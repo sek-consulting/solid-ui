@@ -53,6 +53,10 @@ export const docsConfig = {
           href: "/docs/components/dialog"
         },
         {
+          title: "Dropdown Menu",
+          href: "/docs/components/dropdown-menu"
+        },
+        {
           title: "Input",
           href: "/docs/components/input"
         },

@@ -12,6 +12,7 @@ This is a port of the epic components built by @shadcn which you can find [here]
 - Card
 - Checkbox
 - Dialog
+- Dropdown Menu
 - Input
 - Label
 - Select
@@ -23,7 +24,6 @@ This is a port of the epic components built by @shadcn which you can find [here]
 ## Currently working on
 
 - Data Table
-- Dropdown
 - Toast
 
 ## Unsure if portable

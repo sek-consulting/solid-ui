@@ -18,10 +18,15 @@ import {
   DropdownMenuTrigger
 } from "~/components/ui/dropdown-menu"
 import { Button } from "~/components/ui/button"
+import { createSignal } from "solid-js"
 
 export function DropdownMenuDemo() {
+  const [showGitLog, setShowGitLog] = createSignal(false)
+  const [showHistory, setShowHistory] = createSignal(false)
+  const [branch, setBranch] = createSignal("develop")
+
   return (
-    <ComponentExample>
+    <ComponentExample class="flex-col">
       <DropdownMenu>
         <DropdownMenuTrigger as={Button}>Git Settings</DropdownMenuTrigger>
         <DropdownMenuContent class="w-48">
@@ -50,18 +55,25 @@ export function DropdownMenuDemo() {
             </DropdownMenuPortal>
           </DropdownMenuSub>
           <DropdownMenuSeparator />
-          <DropdownMenuCheckboxItem checked>Show Git Log</DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem>Show History</DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem checked={showGitLog()} onChange={setShowGitLog}>
+            Show Git Log
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem checked={showHistory()} onChange={setShowHistory}>
+            Show History
+          </DropdownMenuCheckboxItem>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuGroupLabel>Branches</DropdownMenuGroupLabel>
-            <DropdownMenuRadioGroup value="develop">
+            <DropdownMenuRadioGroup value={branch()} onChange={setBranch}>
               <DropdownMenuRadioItem value="main">main</DropdownMenuRadioItem>
               <DropdownMenuRadioItem value="develop">develop</DropdownMenuRadioItem>
             </DropdownMenuRadioGroup>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
+      <p class="pt-2 text-sm text-gray-500">Show Git Log: {showGitLog() ? "yes" : "no"}</p>
+      <p class="pt-2 text-sm text-gray-500">Show History: {showHistory() ? "yes" : "no"}</p>
+      <p class="pt-2 text-sm text-gray-500">Selected Branch: {branch()}</p>
     </ComponentExample>
   )
 }

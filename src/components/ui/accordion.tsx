@@ -20,7 +20,7 @@ const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (p
     <AccordionPrimitive.Header class="flex">
       <AccordionPrimitive.Trigger
         class={cn(
-          "[&[data-[expanded]]>svg]:rotate-180 flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline",
+          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-expanded]>svg]:rotate-180",
           props.class
         )}
         {...rest}

@@ -17,5 +17,5 @@ export default defineConfig({
     solidJs(),
     tailwind()
   ],
-  site: "https://www.sek-consulting.com"
+  site: "https://solid-ui-components.vercel.app"
 })

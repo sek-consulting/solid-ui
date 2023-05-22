@@ -4,10 +4,12 @@
 
 This is a port of the epic components built by @shadcn which you can find [here](https://ui.shadcn.com).
 
-![screenshot](screenshot.jpg)
+![screenshot](public/screenshot.png)
 
 ## Finished components
 
+- Accordion
+- Badge
 - Button
 - Card
 - Checkbox
@@ -15,6 +17,7 @@ This is a port of the epic components built by @shadcn which you can find [here]
 - Dropdown Menu
 - Input
 - Label
+- Mode Toggle
 - Select
 - Switch
 - Table

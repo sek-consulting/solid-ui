@@ -6,31 +6,31 @@ This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components usin
 
 ## Project Status
 
-| Component      | finished | in progress | pending |
-| -------------- | -------- | ----------- | ------- |
-| Accordion      | ✔️       |             |         |
-| Avatar         | ✔️       |             |         |
-| Badge          | ✔️       |             |         |
-| Button         | ✔️       |             |         |
-| Calendar       |          |             | ❓      |
-| Card           | ✔️       |             |         |
-| Checkbox       | ✔️       |             |         |
-| Command / cmdk |          |             | ❓      |
-| Data Table     |          | 💻          |         |
-| Dialog         | ✔️       |             |         |
-| Dropdown Menu  | ✔️       |             |         |
-| Input          | ✔️       |             |         |
-| Label          | ✔️       |             |         |
-| Mode Toggle    | ✔️       |             |         |
-| Progress       |          | 💻          |         |
-| Radio Group    |          | 💻          |         |
-| Select         | ✔️       |             |         |
-| Separator      | ✔️       |             |         |
-| Switch         | ✔️       |             |         |
-| Table          | ✔️       |             |         |
-| Tabs           | ✔️       |             |         |
-| Textarea       | ✔️       |             |         |
-| Toast          |          | 💻          |         |
+| Component     | finished | in progress | pending |
+| ------------- | -------- | ----------- | ------- |
+| Accordion     | ✔️       |             |         |
+| Avatar        | ✔️       |             |         |
+| Badge         | ✔️       |             |         |
+| Button        | ✔️       |             |         |
+| Calendar      |          |             | ❓      |
+| Card          | ✔️       |             |         |
+| Checkbox      | ✔️       |             |         |
+| Command       |          |             | ❓      |
+| Data Table    |          | 💻          |         |
+| Dialog        | ✔️       |             |         |
+| Dropdown Menu | ✔️       |             |         |
+| Input         | ✔️       |             |         |
+| Label         | ✔️       |             |         |
+| Mode Toggle   | ✔️       |             |         |
+| Progress      | ✔️       |             |         |
+| Radio Group   |          | 💻          |         |
+| Select        | ✔️       |             |         |
+| Separator     | ✔️       |             |         |
+| Switch        | ✔️       |             |         |
+| Table         | ✔️       |             |         |
+| Tabs          | ✔️       |             |         |
+| Textarea      | ✔️       |             |         |
+| Toast         |          | 💻          |         |
 
 ## Credits
 

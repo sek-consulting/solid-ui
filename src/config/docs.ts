@@ -73,6 +73,10 @@ export const docsConfig = {
           href: "/docs/components/mode-toggle"
         },
         {
+          title: "Progress",
+          href: "/docs/components/progress"
+        },
+        {
           title: "Select",
           href: "/docs/components/select"
         },

@@ -1,3 +1,22 @@
+---
+title: Mode Toggle
+description: A Dropdown Menu to toggle between light and dark mode.
+---
+
+import { ComponentExample } from "~/components/component-example"
+import { ModeToggle } from "~/components/mode-toggle"
+
+## Example
+
+<ComponentExample>
+  <ModeToggle client:load />
+</ComponentExample>
+
+## Usage
+
+Create the component `~/components/mode-toggle.tsx` and paste the following code into it.
+
+```tsx
 import { As } from "@kobalte/core"
 
 import { Icons } from "~/components/icons"
@@ -42,3 +61,16 @@ export function ModeToggle() {
     </DropdownMenu>
   )
 }
+```
+
+You also need this little script somewhere in the `<head />` to load the last selected mode on refresh.
+
+```typescript
+const root = document.documentElement
+const theme = localStorage.getItem("theme")
+if (theme === "dark") {
+  root.classList.add("dark")
+} else {
+  root.classList.remove("dark")
+}
+```

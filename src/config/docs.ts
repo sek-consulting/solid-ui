@@ -65,6 +65,10 @@ export const docsConfig = {
           href: "/docs/components/label"
         },
         {
+          title: "Mode Toggle",
+          href: "/docs/components/mode-toggle"
+        },
+        {
           title: "Select",
           href: "/docs/components/select"
         },

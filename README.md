@@ -1,38 +1,35 @@
 # solid-shadcn/ui
 
-**What is this?**
-
-This is a port of the epic components built by @shadcn which you can find [here](https://ui.shadcn.com).
+This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components using Kobalte.
 
 ![screenshot](public/screenshot.png)
 
-## Finished components
+## Project Status
 
-- Accordion
-- Badge
-- Button
-- Card
-- Checkbox
-- Dialog
-- Dropdown Menu
-- Input
-- Label
-- Mode Toggle
-- Select
-- Switch
-- Table
-- Tabs
-- Textarea
-
-## Currently working on
-
-- Data Table
-- Toast
-
-## Unsure if portable
-
-- Command / cmdk
-- Calendar
+| Component      | finished | in progress | pending |
+| -------------- | -------- | ----------- | ------- |
+| Accordion      | ✔️       |             |         |
+| Avatar         |          | 💻          |         |
+| Badge          | ✔️       |             |         |
+| Button         | ✔️       |             |         |
+| Calendar       |          |             | ❓      |
+| Card           | ✔️       |             |         |
+| Checkbox       | ✔️       |             |         |
+| Command / cmdk |          |             | ❓      |
+| Data Table     |          | 💻          |         |
+| Dialog         | ✔️       |             |         |
+| Dropdown Menu  | ✔️       |             |         |
+| Input          | ✔️       |             |         |
+| Label          | ✔️       |             |         |
+| Mode Toggle    | ✔️       |             |         |
+| Progress       |          | 💻          |         |
+| Radio Group    |          | 💻          |         |
+| Select         | ✔️       |             |         |
+| Switch         | ✔️       |             |         |
+| Table          | ✔️       |             |         |
+| Tabs           | ✔️       |             |         |
+| Textarea       | ✔️       |             |         |
+| Toast          |          | 💻          |         |
 
 ## Credits
 

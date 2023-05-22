@@ -6,10 +6,13 @@ import "@fontsource/inter/latin.css"
 import "~/styles/global.css"
 
 export interface Props {
-  title: string
-  description: string
+  title?: string
+  description?: string
 }
-const { title, description } = Astro.props
+const {
+  title = "solid/ui",
+  description = "A SolidJS port of the shadcn/ui components using Kobalte."
+} = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const socialImageURL = new URL("/screenshot.png", Astro.site)
@@ -47,13 +50,6 @@ const socialImageURL = new URL("/screenshot.png", Astro.site)
   </head>
   <body>
     <Navbar />
-    <div
-      class="container flex-1 py-6 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
-    >
-      <Sidebar />
-      <div>
-        <slot />
-      </div>
-    </div>
+    <slot />
   </body>
 </html>

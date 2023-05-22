@@ -1,6 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content"
-import MainLayout from "~/layouts/layout.astro"
+import DocsLayout from "~/layouts/docs-layout.astro"
 
 // TODO: replace .css for code snippets with custom components
 import { Typography } from "~/components/typography"
@@ -21,7 +21,7 @@ const post = Astro.props
 const { Content, headings } = await post.render()
 ---
 
-<MainLayout headings={headings} {...post.data}>
+<DocsLayout headings={headings} {...post.data}>
   <div class="space-y-2">
     <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">{post.data.title}</h1>
     <p class="text-lg text-muted-foreground">
@@ -35,4 +35,4 @@ const { Content, headings } = await post.render()
   >
   </div>
   <Content components={Typography} />
-</MainLayout>
+</DocsLayout>

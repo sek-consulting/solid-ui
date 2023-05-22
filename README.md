@@ -33,8 +33,8 @@ This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components usin
 
 ## Credits
 
-- [shadcn/ui](https://github.com/shadcn/ui) - Without shadcn this project wouldn't exist! ♥
-- [kobalte](https://github.com/kobaltedev/kobalte) - For the primitives.
+- [shadcn/ui](https://github.com/shadcn/ui) - Without @shadcn this project wouldn't be possible! ♥
+- [Kobalte.](https://github.com/kobaltedev/kobalte) - For the primitives.
 
 ## Want to contribute?
 

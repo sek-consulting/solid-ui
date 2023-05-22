@@ -1,0 +1,21 @@
+---
+import MainLayout from "~/layouts/layout.astro"
+import Sidebar from "~/components/sidebar.astro"
+
+export interface Props {
+  title: string
+  description: string
+}
+const { title, description } = Astro.props
+---
+
+<MainLayout title={`${title} - solid/ui`} {description}>
+  <div
+    class="container flex-1 py-6 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
+  >
+    <Sidebar />
+    <div>
+      <slot />
+    </div>
+  </div>
+</MainLayout>

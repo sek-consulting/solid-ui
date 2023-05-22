@@ -33,6 +33,10 @@ export const docsConfig = {
           href: "/docs/components/accordion"
         },
         {
+          title: "Avatar",
+          href: "/docs/components/avatar"
+        },
+        {
           title: "Badge",
           href: "/docs/components/badge"
         },
@@ -71,6 +75,10 @@ export const docsConfig = {
         {
           title: "Select",
           href: "/docs/components/select"
+        },
+        {
+          title: "Separator",
+          href: "/docs/components/separator"
         },
         {
           title: "Switch",

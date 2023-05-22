@@ -9,7 +9,7 @@ This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components usin
 | Component      | finished | in progress | pending |
 | -------------- | -------- | ----------- | ------- |
 | Accordion      | ✔️       |             |         |
-| Avatar         |          | 💻          |         |
+| Avatar         | ✔️       |             |         |
 | Badge          | ✔️       |             |         |
 | Button         | ✔️       |             |         |
 | Calendar       |          |             | ❓      |
@@ -25,6 +25,7 @@ This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components usin
 | Progress       |          | 💻          |         |
 | Radio Group    |          | 💻          |         |
 | Select         | ✔️       |             |         |
+| Separator      | ✔️       |             |         |
 | Switch         | ✔️       |             |         |
 | Table          | ✔️       |             |         |
 | Tabs           | ✔️       |             |         |

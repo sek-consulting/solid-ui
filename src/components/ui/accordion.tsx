@@ -13,7 +13,6 @@ const AccordionItem: Component<AccordionPrimitive.AccordionItemProps> = (props) 
   return <AccordionPrimitive.Item class={cn("border-b", props.class)} {...rest} />
 }
 
-//TODO: fix svg rotation
 const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (

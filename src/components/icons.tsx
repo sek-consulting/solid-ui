@@ -85,9 +85,19 @@ export const Icons = {
       <path d="M9 18c-4.51 2-5-2-7-2" />
     </Icon>
   ),
+  laptop: (props: IconProps) => (
+    <Icon {...props}>
+      <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
+    </Icon>
+  ),
   logo: (props: IconProps) => (
     <Icon {...props}>
       <circle cx="12" cy="12" r="10" />
+    </Icon>
+  ),
+  moon: (props: IconProps) => (
+    <Icon {...props}>
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
     </Icon>
   ),
   slidersHorizontal: (props: IconProps) => (
@@ -119,6 +129,19 @@ export const Icons = {
       <path d="M11 12h4" />
       <path d="M11 16h7" />
       <path d="M11 20h10" />
+    </Icon>
+  ),
+  sun: (props: IconProps) => (
+    <Icon {...props}>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="m4.93 4.93 1.41 1.41" />
+      <path d="m17.66 17.66 1.41 1.41" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+      <path d="m6.34 17.66-1.41 1.41" />
+      <path d="m19.07 4.93-1.41 1.41" />
     </Icon>
   )
 }

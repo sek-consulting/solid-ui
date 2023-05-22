@@ -21,6 +21,16 @@ const { title, description } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <script is:inline>
+      const root = document.documentElement
+      const theme = localStorage.getItem("theme")
+      if (theme === "dark") {
+        root.classList.add("dark")
+      } else {
+        root.classList.remove("dark")
+      }
+    </script>
   </head>
   <body>
     <Navbar />

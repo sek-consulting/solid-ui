@@ -77,6 +77,10 @@ export const docsConfig = {
           href: "/docs/components/progress"
         },
         {
+          title: "Radio Group",
+          href: "/docs/components/radio-group"
+        },
+        {
           title: "Select",
           href: "/docs/components/select"
         },

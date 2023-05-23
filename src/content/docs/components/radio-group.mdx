@@ -1,0 +1,28 @@
+---
+title: Radio Group
+description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+---
+
+import { RadioGroupDemo } from "~/components/examples/radio-group-demo"
+
+## Example
+
+<RadioGroupDemo client:load />
+
+## Usage
+
+```tsx
+import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
+```
+
+```tsx
+<RadioGroup>
+  <For each={["Apple", "Orange", "Watermelon"]}>
+    {(fruit) => (
+      <RadioGroupItem value={fruit}>
+        <Label>{fruit}</Label>
+      </RadioGroupItem>
+    )}
+  </For>
+</RadioGroup>
+```

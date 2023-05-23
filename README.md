@@ -23,7 +23,7 @@ This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components usin
 | Label         | ✔️       |             |         |
 | Mode Toggle   | ✔️       |             |         |
 | Progress      | ✔️       |             |         |
-| Radio Group   |          | 💻          |         |
+| Radio Group   | ✔️       |             |         |
 | Select        | ✔️       |             |         |
 | Separator     | ✔️       |             |         |
 | Switch        | ✔️       |             |         |

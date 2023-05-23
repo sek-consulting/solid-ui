@@ -3,7 +3,7 @@ import { splitProps } from "solid-js"
 
 import { Progress as ProgressPrimitive } from "@kobalte/core"
 
-import { cn } from "~/lib/utils"
+import { Label } from "~/components/ui/label"
 
 const Progress: Component<ProgressPrimitive.ProgressRootProps> = (props) => {
   const [, rest] = splitProps(props, ["children"])
@@ -18,23 +18,11 @@ const Progress: Component<ProgressPrimitive.ProgressRootProps> = (props) => {
 }
 
 const ProgressLabel: Component<ProgressPrimitive.ProgressLabelProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return (
-    <ProgressPrimitive.Label
-      class={cn("text-sm font-medium leading-none", props.class)}
-      {...rest}
-    />
-  )
+  return <ProgressPrimitive.Label as={Label} {...props} />
 }
 
 const ProgressValueLabel: Component<ProgressPrimitive.ProgressValueLabelProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return (
-    <ProgressPrimitive.ValueLabel
-      class={cn("text-sm font-medium leading-none", props.class)}
-      {...rest}
-    />
-  )
+  return <ProgressPrimitive.ValueLabel as={Label} {...props} />
 }
 
 export { Progress, ProgressLabel, ProgressValueLabel }

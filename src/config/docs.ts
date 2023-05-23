@@ -73,6 +73,10 @@ export const docsConfig = {
           href: "/docs/components/mode-toggle"
         },
         {
+          title: "Popover",
+          href: "/docs/components/popover"
+        },
+        {
           title: "Progress",
           href: "/docs/components/progress"
         },

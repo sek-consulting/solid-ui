@@ -6,14 +6,16 @@ import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
 import { Icons } from "~/components/icons"
 import { cn } from "~/lib/utils"
 
-const DropdownMenu = DropdownMenuPrimitive.Root
+const DropdownMenu: Component<DropdownMenuPrimitive.DropdownMenuRootProps> = (props) => {
+  return <DropdownMenuPrimitive.Root gutter={4} {...props} />
+}
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
 
 const DropdownMenuPortal = DropdownMenuPrimitive.Portal
 
 const DropdownMenuContent: Component<DropdownMenuPrimitive.DropdownMenuContentProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children"])
+  const [, rest] = splitProps(props, ["class"])
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
@@ -22,10 +24,7 @@ const DropdownMenuContent: Component<DropdownMenuPrimitive.DropdownMenuContentPr
           props.class
         )}
         {...rest}
-      >
-        {props.children}
-        <DropdownMenuPrimitive.Arrow size={10} />
-      </DropdownMenuPrimitive.Content>
+      />
     </DropdownMenuPrimitive.Portal>
   )
 }
@@ -154,9 +153,6 @@ const DropdownMenuRadioItem: Component<DropdownMenuPrimitive.DropdownMenuRadioIt
     </DropdownMenuPrimitive.RadioItem>
   )
 }
-
-// TODO:
-// RadioItems
 
 export {
   DropdownMenu,

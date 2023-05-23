@@ -1,6 +1,6 @@
 # solid-shadcn/ui
 
-This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components using Kobalte.
+This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components using [Kobalte.](https://kobalte.dev)
 
 ![screenshot](public/screenshot.png)
 
@@ -22,6 +22,7 @@ This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components usin
 | Input         | ✔️       |             |         |
 | Label         | ✔️       |             |         |
 | Mode Toggle   | ✔️       |             |         |
+| Popover       | ✔️       |             |         |
 | Progress      | ✔️       |             |         |
 | Radio Group   | ✔️       |             |         |
 | Select        | ✔️       |             |         |

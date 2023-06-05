@@ -11,13 +11,17 @@ import {
 
 export function ModeToggle() {
   const setTheme = (theme: string) => {
-    localStorage.setItem("theme", theme)
     const root = document.documentElement
-    if (theme === "light") {
-      root.classList.remove("dark")
-    } else {
+    if (
+      theme === "dark" ||
+      (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      theme = "dark"
       root.classList.add("dark")
+    } else {
+      root.classList.remove("dark")
     }
+    localStorage.setItem("theme", theme)
   }
 
   return (
@@ -37,6 +41,10 @@ export function ModeToggle() {
         <DropdownMenuItem onSelect={() => setTheme("dark")}>
           <Icons.moon class="mr-2 h-4 w-4" />
           <span>Dark</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setTheme("system")}>
+          <Icons.laptop class="mr-2 h-4 w-4" />
+          <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

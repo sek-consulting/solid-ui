@@ -117,6 +117,13 @@ export const Icons = {
       <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
     </Icon>
   ),
+  sidebarOpen: (props: IconProps) => (
+    <Icon {...props}>
+      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+      <path d="M9 3v18" />
+      <path d="m14 9 3 3-3 3" />
+    </Icon>
+  ),
   slidersHorizontal: (props: IconProps) => (
     <Icon {...props}>
       <line x1="21" x2="14" y1="4" y2="4" />

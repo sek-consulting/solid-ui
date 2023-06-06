@@ -1,6 +1,5 @@
 ---
 import Navbar from "~/components/navbar.astro"
-import Sidebar from "~/components/sidebar.astro"
 
 import "@fontsource/inter/latin.css"
 import "~/styles/global.css"
@@ -38,6 +37,7 @@ const socialImageURL = new URL("/screenshot.png", Astro.site)
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- making this script inline prevents theme flickering on load -->
     <script is:inline>
       const root = document.documentElement
       const theme = localStorage.getItem("theme")

@@ -1,5 +1,8 @@
+import type { Component} from "solid-js";
+import { splitProps } from "solid-js"
+
 import { Popover as PopoverPrimitive } from "@kobalte/core"
-import { Component, splitProps } from "solid-js"
+
 import { cn } from "~/lib/utils"
 
 const Popover: Component<PopoverPrimitive.PopoverRootProps> = (props) => {
@@ -14,7 +17,7 @@ const PopoverContent: Component<PopoverPrimitive.PopoverContentProps> = (props) 
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
         class={cn(
-          "z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none animate-in origin-[var(--kb-popover-content-transform-origin)]",
+          "z-50 w-72 origin-[var(--kb-popover-content-transform-origin)] rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none animate-in",
           props.class
         )}
         {...rest}

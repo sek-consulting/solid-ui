@@ -5,7 +5,7 @@ import { cn } from "~/lib/utils"
 const pathname = new URL(Astro.request.url).pathname
 ---
 
-<aside class="w-full">
+<aside class="w-full hidden md:block">
   {
     docsConfig.sidebarNav.map((category) => (
       <div class="pb-4">

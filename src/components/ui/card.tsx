@@ -37,7 +37,7 @@ const CardContent: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
 
 const CardFooter: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <div class={cn(" flex items-center p-6 pt-0", props.class)} {...rest} />
+  return <div class={cn("flex items-center p-6 pt-0", props.class)} {...rest} />
 }
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }

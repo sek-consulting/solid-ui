@@ -26,6 +26,15 @@ export const docsConfig = {
       ]
     },
     {
+      title: "Layout",
+      items: [
+        {
+          title: "Grid",
+          href: "/docs/layout/grid"
+        }
+      ]
+    },
+    {
       title: "Components",
       items: [
         {

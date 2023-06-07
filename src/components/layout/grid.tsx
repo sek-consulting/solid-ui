@@ -8,12 +8,11 @@ export interface GridProps extends JSX.HTMLAttributes<HTMLDivElement> {
   colsSm?: number
   colsMd?: number
   colsLg?: number
-  children: JSX.Element
 }
 
 const Grid: Component<GridProps> = (rawProps) => {
   const props = mergeProps({ cols: 1 }, rawProps)
-  const [, rest] = splitProps(props, ["cols", "colsSm", "colsMd", "colsLg", "children", "class"])
+  const [, rest] = splitProps(props, ["cols", "colsSm", "colsMd", "colsLg", "class"])
 
   return (
     <div
@@ -26,9 +25,7 @@ const Grid: Component<GridProps> = (rawProps) => {
         props.class
       )}
       {...rest}
-    >
-      {props.children}
-    </div>
+    />
   )
 }
 
@@ -41,7 +38,7 @@ export interface ColProps extends JSX.HTMLAttributes<HTMLDivElement> {
 
 const Col: Component<ColProps> = (rawProps) => {
   const props = mergeProps({ span: 1 }, rawProps)
-  const [, rest] = splitProps(props, ["span", "spanSm", "spanMd", "spanLg", "children", "class"])
+  const [, rest] = splitProps(props, ["span", "spanSm", "spanMd", "spanLg", "class"])
 
   return (
     <div
@@ -53,20 +50,14 @@ const Col: Component<ColProps> = (rawProps) => {
         props.class
       )}
       {...rest}
-    >
-      {props.children}
-    </div>
+    />
   )
 }
 
 export { Grid, Col }
 
-/* ****************************************************************
-these mappings are needed to trick tailwind into adding the classes
-**************************************************************** */
-
 function getClassName(map: classMapping, idx: number | undefined) {
-  if (!idx) {
+  if (!idx || !(idx in map)) {
     return ""
   }
   return map[idx]

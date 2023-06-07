@@ -29,6 +29,10 @@ export const docsConfig = {
       title: "Layout",
       items: [
         {
+          title: "Flex",
+          href: "/docs/layout/flex"
+        },
+        {
           title: "Grid",
           href: "/docs/layout/grid"
         }

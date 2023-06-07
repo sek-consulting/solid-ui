@@ -1,10 +1,16 @@
-# solid-shadcn/ui
+# Solid/UI
 
-This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components using [Kobalte.](https://kobalte.dev)
+This project aims to port the following components to SolidJS:
+
+- [shadcn/ui](https://ui.shadcn.com)
+- [cmdk](https://github.com/pacocoursey/cmdk)
+- [tremor](https://www.tremor.so/)
 
 ![screenshot](public/screenshot.png)
 
 ## Project Status
+
+### shadcn/ui
 
 | Component     | finished | in progress | pending |
 | ------------- | -------- | ----------- | ------- |
@@ -27,15 +33,29 @@ This is a SolidJS port of the [shadcn/ui](https://ui.shadcn.com) components usin
 | Radio Group   | ✔️       |             |         |
 | Select        | ✔️       |             |         |
 | Separator     | ✔️       |             |         |
+| Sheet         | ✔️       |             |         |
 | Switch        | ✔️       |             |         |
 | Table         | ✔️       |             |         |
 | Tabs          | ✔️       |             |         |
 | Textarea      | ✔️       |             |         |
 | Toast         |          | 💻          |         |
 
+### tremor
+
+| Component | finished | in progress | pending |
+| --------- | -------- | ----------- | ------- |
+| Grid      | ✔️       |             |         |
+| Flex      | ✔️       |             |         |
+
+### misc
+
+| Component | finished | in progress | pending |
+| --------- | -------- | ----------- | ------- |
+| cmdk      |          | 💻          |         |
+
 ## Credits
 
-- [shadcn/ui](https://github.com/shadcn/ui) - Without @shadcn this project wouldn't be possible! ♥
+- [shadcn/ui](https://github.com/shadcn/ui) - Without @shadcn I wouldn't have started this project at all!
 - [Kobalte.](https://github.com/kobaltedev/kobalte) - For the primitives.
 
 ## Want to contribute?

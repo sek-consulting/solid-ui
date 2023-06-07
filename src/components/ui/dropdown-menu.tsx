@@ -1,4 +1,4 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
@@ -42,7 +42,7 @@ const DropdownMenuItem: Component<DropdownMenuPrimitive.DropdownMenuItemProps> =
   )
 }
 
-const DropdownMenuShortcut: Component<JSX.HTMLAttributes<HTMLSpanElement>> = (props) => {
+const DropdownMenuShortcut: Component<ComponentProps<"span">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return <span class={cn("ml-auto text-xs tracking-widest opacity-60", props.class)} {...rest} />
 }

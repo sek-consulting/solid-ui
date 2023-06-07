@@ -1,9 +1,9 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
-const Label: Component<JSX.LabelHTMLAttributes<HTMLLabelElement>> = (props) => {
+const Label: Component<ComponentProps<"label">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <label

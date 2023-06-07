@@ -1,4 +1,4 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import type { VariantProps } from "class-variance-authority"
@@ -25,9 +25,7 @@ const badgeVariants = cva(
   }
 )
 
-export interface BadgeProps
-  extends JSX.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
+export interface BadgeProps extends ComponentProps<"div">, VariantProps<typeof badgeVariants> {}
 
 const Badge: Component<BadgeProps> = (props) => {
   const [, rest] = splitProps(props, ["variant", "class"])

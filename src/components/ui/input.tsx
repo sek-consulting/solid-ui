@@ -1,9 +1,9 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
-const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = (props) => {
+const Input: Component<ComponentProps<"input">> = (props) => {
   const [, rest] = splitProps(props, ["type", "class"])
   return (
     <input

@@ -1,11 +1,9 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
-export type TextareaProps = JSX.TextareaHTMLAttributes<HTMLTextAreaElement>
-
-const Textarea: Component<TextareaProps> = (props) => {
+const Textarea: Component<ComponentProps<"textarea">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <textarea

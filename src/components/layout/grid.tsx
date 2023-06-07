@@ -3,25 +3,28 @@ import { mergeProps, splitProps } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
+type Cols = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+type Span = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+
 export interface GridProps extends JSX.HTMLAttributes<HTMLDivElement> {
-  cols?: number
-  colsSm?: number
-  colsMd?: number
-  colsLg?: number
+  cols?: Cols
+  colsSm?: Cols
+  colsMd?: Cols
+  colsLg?: Cols
 }
 
 const Grid: Component<GridProps> = (rawProps) => {
-  const props = mergeProps({ cols: 1 }, rawProps)
+  const props = mergeProps({ cols: 1 as Cols }, rawProps)
   const [, rest] = splitProps(props, ["cols", "colsSm", "colsMd", "colsLg", "class"])
 
   return (
     <div
       class={cn(
         "grid",
-        getClassName(gridCols, props.cols),
-        getClassName(gridColsSm, props.colsSm),
-        getClassName(gridColsMd, props.colsMd),
-        getClassName(gridColsLg, props.colsLg),
+        gridCols[props.cols],
+        props.colsSm && gridColsSm[props.colsSm],
+        props.colsMd && gridColsMd[props.colsMd],
+        props.colsLg && gridColsLg[props.colsLg],
         props.class
       )}
       {...rest}
@@ -30,23 +33,23 @@ const Grid: Component<GridProps> = (rawProps) => {
 }
 
 export interface ColProps extends JSX.HTMLAttributes<HTMLDivElement> {
-  span?: number
-  spanSm?: number
-  spanMd?: number
-  spanLg?: number
+  span?: Span
+  spanSm?: Span
+  spanMd?: Span
+  spanLg?: Span
 }
 
 const Col: Component<ColProps> = (rawProps) => {
-  const props = mergeProps({ span: 1 }, rawProps)
+  const props = mergeProps({ span: 1 as Span }, rawProps)
   const [, rest] = splitProps(props, ["span", "spanSm", "spanMd", "spanLg", "class"])
 
   return (
     <div
       class={cn(
-        getClassName(colSpan, props.span),
-        getClassName(colSpanSm, props.spanSm),
-        getClassName(colSpanMd, props.spanMd),
-        getClassName(colSpanLg, props.spanLg),
+        colSpan[props.span],
+        props.spanSm && colSpanSm[props.spanSm],
+        props.spanMd && colSpanMd[props.spanMd],
+        props.spanLg && colSpanLg[props.spanLg],
         props.class
       )}
       {...rest}
@@ -56,18 +59,7 @@ const Col: Component<ColProps> = (rawProps) => {
 
 export { Grid, Col }
 
-function getClassName(map: classMapping, idx: number | undefined) {
-  if (!idx || !(idx in map)) {
-    return ""
-  }
-  return map[idx]
-}
-
-type classMapping = {
-  [key: number]: string
-}
-
-const gridCols: classMapping = {
+const gridCols: { [key in Cols]: string } = {
   0: "grid-cols-none",
   1: "grid-cols-1",
   2: "grid-cols-2",
@@ -83,7 +75,7 @@ const gridCols: classMapping = {
   12: "grid-cols-12"
 }
 
-const gridColsSm: classMapping = {
+const gridColsSm: { [key in Cols]: string } = {
   0: "sm:grid-cols-none",
   1: "sm:grid-cols-1",
   2: "sm:grid-cols-2",
@@ -99,7 +91,7 @@ const gridColsSm: classMapping = {
   12: "sm:grid-cols-12"
 }
 
-const gridColsMd: classMapping = {
+const gridColsMd: { [key in Cols]: string } = {
   0: "md:grid-cols-none",
   1: "md:grid-cols-1",
   2: "md:grid-cols-2",
@@ -115,7 +107,7 @@ const gridColsMd: classMapping = {
   12: "md:grid-cols-12"
 }
 
-const gridColsLg: classMapping = {
+const gridColsLg: { [key in Cols]: string } = {
   0: "lg:grid-cols-none",
   1: "lg:grid-cols-1",
   2: "lg:grid-cols-2",
@@ -131,7 +123,7 @@ const gridColsLg: classMapping = {
   12: "lg:grid-cols-12"
 }
 
-const colSpan: classMapping = {
+const colSpan: { [key in Span]: string } = {
   1: "col-span-1",
   2: "col-span-2",
   3: "col-span-3",
@@ -147,7 +139,7 @@ const colSpan: classMapping = {
   13: "col-span-13"
 }
 
-const colSpanSm: classMapping = {
+const colSpanSm: { [key in Span]: string } = {
   1: "sm:col-span-1",
   2: "sm:col-span-2",
   3: "sm:col-span-3",
@@ -163,7 +155,7 @@ const colSpanSm: classMapping = {
   13: "sm:col-span-13"
 }
 
-const colSpanMd: classMapping = {
+const colSpanMd: { [key in Span]: string } = {
   1: "md:col-span-1",
   2: "md:col-span-2",
   3: "md:col-span-3",
@@ -179,7 +171,7 @@ const colSpanMd: classMapping = {
   13: "md:col-span-13"
 }
 
-const colSpanLg: classMapping = {
+const colSpanLg: { [key in Span]: string } = {
   1: "lg:col-span-1",
   2: "lg:col-span-2",
   3: "lg:col-span-3",

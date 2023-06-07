@@ -1,6 +1,6 @@
 # Solid/UI
 
-This project aims to port the following components to SolidJS:
+This project aims to port the following projects to SolidJS:
 
 - [shadcn/ui](https://ui.shadcn.com)
 - [cmdk](https://github.com/pacocoursey/cmdk)
@@ -55,7 +55,7 @@ This project aims to port the following components to SolidJS:
 
 ## Credits
 
-- [shadcn/ui](https://github.com/shadcn/ui) - Without @shadcn I wouldn't have started this project at all!
+- [@shadcn](https://twitter.com/shadcn) - Without @shadcn I wouldn't have started this project at all!
 - [Kobalte.](https://github.com/kobaltedev/kobalte) - For the primitives.
 
 ## Want to contribute?

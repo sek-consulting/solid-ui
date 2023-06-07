@@ -93,6 +93,10 @@ export const docsConfig = {
           href: "/docs/components/separator"
         },
         {
+          title: "Sheet",
+          href: "/docs/components/sheet"
+        },
+        {
           title: "Switch",
           href: "/docs/components/switch"
         },

@@ -58,6 +58,10 @@ export const docsConfig = {
           href: "/docs/components/button"
         },
         {
+          title: "Callout",
+          href: "/docs/components/callout"
+        },
+        {
           title: "Card",
           href: "/docs/components/card"
         },

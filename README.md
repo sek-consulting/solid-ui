@@ -44,8 +44,9 @@ This project aims to port the following projects to SolidJS:
 
 | Component | finished | in progress | pending |
 | --------- | -------- | ----------- | ------- |
-| Grid      | ✔️       |             |         |
+| Callout   | ✔️       |             |         |
 | Flex      | ✔️       |             |         |
+| Grid      | ✔️       |             |         |
 
 ### misc
 

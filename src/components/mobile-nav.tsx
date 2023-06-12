@@ -1,4 +1,4 @@
-import type { JSX } from "solid-js"
+import type { ComponentProps } from "solid-js"
 import { createSignal } from "solid-js"
 
 import { As } from "@kobalte/core"
@@ -54,7 +54,7 @@ export function MobileNav() {
   )
 }
 
-interface MobileLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface MobileLinkProps extends ComponentProps<"a"> {
   onOpenChange?: (open: boolean) => void
 }
 

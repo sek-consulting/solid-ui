@@ -1,4 +1,4 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Dialog as DialogPrimitive } from "@kobalte/core"
@@ -59,14 +59,14 @@ const DialogContent: Component<DialogPrimitive.DialogContentProps> = (props) => 
   )
 }
 
-const DialogHeader: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
+const DialogHeader: Component<ComponentProps<"div">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <div class={cn("flex flex-col space-y-1.5 text-center sm:text-left", props.class)} {...rest} />
   )
 }
 
-const DialogFooter: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
+const DialogFooter: Component<ComponentProps<"div">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <div

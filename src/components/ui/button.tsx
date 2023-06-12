@@ -1,4 +1,4 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import type { VariantProps } from "class-variance-authority"
@@ -32,7 +32,7 @@ const buttonVariants = cva(
 )
 
 export interface ButtonProps
-  extends JSX.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ComponentProps<"button">,
     VariantProps<typeof buttonVariants> {}
 
 const Button: Component<ButtonProps> = (props) => {

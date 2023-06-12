@@ -1,9 +1,9 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
-const Table: Component<JSX.HTMLAttributes<HTMLTableElement>> = (props) => {
+const Table: Component<ComponentProps<"table">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <div class="w-full overflow-auto">
@@ -12,24 +12,24 @@ const Table: Component<JSX.HTMLAttributes<HTMLTableElement>> = (props) => {
   )
 }
 
-const TableHeader: Component<JSX.HTMLAttributes<HTMLTableSectionElement>> = (props) => {
+const TableHeader: Component<ComponentProps<"thead">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return <thead class={cn("[&_tr]:border-b", props.class)} {...rest} />
 }
 
-const TableBody: Component<JSX.HTMLAttributes<HTMLTableSectionElement>> = (props) => {
+const TableBody: Component<ComponentProps<"tbody">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return <tbody class={cn("[&_tr:last-child]:border-0", props.class)} {...rest} />
 }
 
-const TableFooter: Component<JSX.HTMLAttributes<HTMLTableSectionElement>> = (props) => {
+const TableFooter: Component<ComponentProps<"tfoot">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <tfoot class={cn("bg-primary font-medium text-primary-foreground", props.class)} {...rest} />
   )
 }
 
-const TableRow: Component<JSX.HTMLAttributes<HTMLTableRowElement>> = (props) => {
+const TableRow: Component<ComponentProps<"tr">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <tr
@@ -42,7 +42,7 @@ const TableRow: Component<JSX.HTMLAttributes<HTMLTableRowElement>> = (props) => 
   )
 }
 
-const TableHead: Component<JSX.ThHTMLAttributes<HTMLTableCellElement>> = (props) => {
+const TableHead: Component<ComponentProps<"th">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <th
@@ -55,13 +55,12 @@ const TableHead: Component<JSX.ThHTMLAttributes<HTMLTableCellElement>> = (props)
   )
 }
 
-const TableCell: Component<JSX.TdHTMLAttributes<HTMLTableCellElement>> = (props) => {
+const TableCell: Component<ComponentProps<"td">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return <td class={cn("p-4 align-middle [&:has([role=checkbox])]:pr-0", props.class)} {...rest} />
 }
 
-// TODO: HTMLTableCaptionElement is not working due to an event typing on <caption />
-const TableCaption: Component<JSX.HTMLAttributes<HTMLElement>> = (props) => {
+const TableCaption: Component<ComponentProps<"caption">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return <caption class={cn("mt-4 text-sm text-muted-foreground", props.class)} {...rest} />
 }

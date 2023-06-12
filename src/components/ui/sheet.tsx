@@ -1,6 +1,6 @@
 "use client"
 
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Dialog as SheetPrimitive } from "@kobalte/core"
@@ -164,14 +164,14 @@ const SheetContent: Component<DialogContentProps> = (props) => {
   )
 }
 
-const SheetHeader: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
+const SheetHeader: Component<ComponentProps<"div">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <div class={cn("flex flex-col space-y-2 text-center sm:text-left", props.class)} {...rest} />
   )
 }
 
-const SheetFooter: Component<JSX.HTMLAttributes<HTMLDivElement>> = (props) => {
+const SheetFooter: Component<ComponentProps<"div">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <div

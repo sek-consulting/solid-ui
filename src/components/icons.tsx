@@ -34,6 +34,36 @@ const Icon = (props: IconProps) => (
 )
 
 export const Icons = {
+  arrowDown: (props: IconProps) => (
+    <Icon {...props}>
+      <line x1="12" x2="12" y1="5" y2="19" />
+      <polyline points="19 12 12 19 5 12" />
+    </Icon>
+  ),
+  arrowDownRight: (props: IconProps) => (
+    <Icon {...props}>
+      <line x1="7" x2="17" y1="7" y2="17" />
+      <polyline points="17 7 17 17 7 17" />
+    </Icon>
+  ),
+  arrowRight: (props: IconProps) => (
+    <Icon {...props}>
+      <line x1="5" x2="19" y1="12" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </Icon>
+  ),
+  arrowUp: (props: IconProps) => (
+    <Icon {...props}>
+      <line x1="12" x2="12" y1="19" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </Icon>
+  ),
+  arrowUpRight: (props: IconProps) => (
+    <Icon {...props}>
+      <line x1="7" x2="17" y1="17" y2="7" />
+      <polyline points="7 7 17 7 17 17" />
+    </Icon>
+  ),
   bell: (props: IconProps) => (
     <Icon {...props}>
       <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />

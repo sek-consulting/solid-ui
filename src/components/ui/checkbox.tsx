@@ -1,5 +1,4 @@
 import type { Component } from "solid-js"
-import { Show } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Checkbox as CheckboxPrimitive } from "@kobalte/core"
@@ -7,9 +6,7 @@ import { Checkbox as CheckboxPrimitive } from "@kobalte/core"
 import { Icons } from "~/components/icons"
 import { cn } from "~/lib/utils"
 
-interface CheckboxProps extends CheckboxPrimitive.CheckboxRootProps {}
-
-const Checkbox: Component<CheckboxProps> = (props) => {
+const Checkbox: Component<CheckboxPrimitive.CheckboxRootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <CheckboxPrimitive.Root class={cn("items-top group flex space-x-2", props.class)} {...rest}>

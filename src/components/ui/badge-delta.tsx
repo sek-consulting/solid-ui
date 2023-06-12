@@ -1,7 +1,13 @@
-import { VariantProps, cva } from "class-variance-authority"
-import { Component, splitProps } from "solid-js"
-import { Icon, Icons } from "~/components/icons"
-import { Badge, BadgeProps } from "./badge"
+import type { Component } from "solid-js"
+import { splitProps } from "solid-js"
+
+import type { VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority"
+
+import type { BadgeProps } from "./badge"
+import { Badge } from "./badge"
+import type { Icon } from "~/components/icons"
+import { Icons } from "~/components/icons"
 import { cn } from "~/lib/utils"
 
 type DeltaType = "increase" | "moderateIncrease" | "unchanged" | "moderateDecrease" | "decrease"

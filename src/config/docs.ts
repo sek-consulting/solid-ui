@@ -128,6 +128,10 @@ export const docsConfig = {
         {
           title: "Textarea",
           href: "/docs/components/textarea"
+        },
+        {
+          title: "Toast",
+          href: "/docs/components/toast"
         }
       ]
     }

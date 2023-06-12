@@ -4,7 +4,7 @@ import { Button } from "~/components/ui/button"
 export function ButtonDemo() {
   return (
     <ComponentExample>
-      <div class="grid grid-cols-3 max-w-md gap-4">
+      <div class="grid max-w-md grid-cols-3 gap-4">
         <Button>Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="destructive">Destructive</Button>

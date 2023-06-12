@@ -3,14 +3,11 @@ title: Button
 description: Displays a button or a component that looks like a button.
 ---
 
-import { ComponentExample } from "~/components/component-example"
-import { Button } from "~/components/ui/button"
+import { ButtonDemo } from "~/components/examples/button-demo"
 
 ## Example
 
-<ComponentExample>
-  <Button>Primary</Button>
-</ComponentExample>
+<ButtonDemo />
 
 ## Usage
 
@@ -34,41 +31,3 @@ import { buttonVariants } from "~/components/ui/button"
 ```tsx
 <A class={buttonVariants({ variant: "outline" })}>Click here</A>
 ```
-
-## More Examples
-
-### Primary
-
-<ComponentExample>
-  <Button>Primary</Button>
-</ComponentExample>
-
-### Secondary
-
-<ComponentExample>
-  <Button variant="secondary">Secondary</Button>
-</ComponentExample>
-
-### Destructive
-
-<ComponentExample>
-  <Button variant="destructive">Destructive</Button>
-</ComponentExample>
-
-### Outline
-
-<ComponentExample>
-  <Button variant="outline">Outline</Button>
-</ComponentExample>
-
-### Ghost
-
-<ComponentExample>
-  <Button variant="ghost">Ghost</Button>
-</ComponentExample>
-
-### Link
-
-<ComponentExample>
-  <Button variant="link">Link</Button>
-</ComponentExample>

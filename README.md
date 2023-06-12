@@ -41,11 +41,12 @@ This project aims to port the following projects to SolidJS:
 
 ### tremor
 
-| Component | finished | in progress | pending |
-| --------- | -------- | ----------- | ------- |
-| Callout   | ✔️       |             |         |
-| Flex      | ✔️       |             |         |
-| Grid      | ✔️       |             |         |
+| Component  | finished | in progress | pending |
+| ---------- | -------- | ----------- | ------- |
+| BadgeDelta | ✔️       |             |         |
+| Callout    | ✔️       |             |         |
+| Flex       | ✔️       |             |         |
+| Grid       | ✔️       |             |         |
 
 ## Credits
 

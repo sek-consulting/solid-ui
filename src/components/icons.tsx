@@ -32,8 +32,9 @@ const Icon = (props: IconProps) => (
     {...props}
   />
 )
+type IconType = typeof Icon
 
-export const Icons = {
+const Icons = {
   arrowDown: (props: IconProps) => (
     <Icon {...props}>
       <line x1="12" x2="12" y1="5" y2="19" />
@@ -199,3 +200,6 @@ export const Icons = {
     </Icon>
   )
 }
+
+export { Icons }
+export type { IconType as Icon }

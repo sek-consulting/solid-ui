@@ -5,11 +5,15 @@ description: Displays a badge or a component that looks like a badge.
 
 import { ComponentExample } from "~/components/component-example"
 import { Badge } from "~/components/ui/badge"
+import { BadgeDeltaDemo } from "~/components/examples/badge-delta-demo"
 
 ## Example
 
-<ComponentExample>
+<ComponentExample class="gap-2">
   <Badge>Badge</Badge>
+  <Badge variant="secondary">Secondary</Badge>
+  <Badge variant="outline">Outline</Badge>
+  <Badge variant="destructive">Destructive</Badge>
 </ComponentExample>
 
 ## Usage
@@ -22,28 +26,16 @@ import { Badge } from "~/components/ui/badge"
 <Badge variant="outline">Badge</Badge>
 ```
 
-## More Examples
+## Badge Delta
 
-### Default
+<BadgeDeltaDemo />
 
-<ComponentExample>
-  <Badge>Default</Badge>
-</ComponentExample>
+## Usage
 
-### Secondary
+```tsx
+import { BadgeDelta } from "~/components/ui/badge-delta"
+```
 
-<ComponentExample>
-  <Badge variant="secondary">Secondary</Badge>
-</ComponentExample>
-
-### Outline
-
-<ComponentExample>
-  <Badge variant="outline">Outline</Badge>
-</ComponentExample>
-
-### Destructive
-
-<ComponentExample>
-  <Badge variant="destructive">Destructive</Badge>
-</ComponentExample>
+```tsx
+<BadgeDelta deltaType="increase">+ 420.69%</BadgeDelta>
+```

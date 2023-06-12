@@ -108,6 +108,12 @@ const Icons = {
       <polyline points="6 17 11 12 6 7" />
     </Icon>
   ),
+  chevronsUpDown: (props: IconProps) => (
+    <Icon {...props}>
+      <path d="m7 15 5 5 5-5" />
+      <path d="m7 9 5-5 5 5" />
+    </Icon>
+  ),
   circle: (props: IconProps) => (
     <Icon {...props}>
       <circle cx="12" cy="12" r="10" />

@@ -7,14 +7,10 @@ import { Checkbox as CheckboxPrimitive } from "@kobalte/core"
 import { Icons } from "~/components/icons"
 import { cn } from "~/lib/utils"
 
-interface CheckboxProps extends CheckboxPrimitive.CheckboxRootProps {
-  label: string
-  description?: string
-  errorMessage?: string
-}
+interface CheckboxProps extends CheckboxPrimitive.CheckboxRootProps {}
 
 const Checkbox: Component<CheckboxProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "label", "description", "errorMessage"])
+  const [, rest] = splitProps(props, ["class"])
   return (
     <CheckboxPrimitive.Root class={cn("items-top group flex space-x-2", props.class)} {...rest}>
       <CheckboxPrimitive.Input />
@@ -23,23 +19,6 @@ const Checkbox: Component<CheckboxProps> = (props) => {
           <Icons.check class="h-4 w-4" />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Control>
-      <div class="grid gap-1.5 leading-none">
-        <Show when={props.label}>
-          <CheckboxPrimitive.Label class="text-sm font-medium leading-none group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-70">
-            {props.label}
-          </CheckboxPrimitive.Label>
-        </Show>
-        <Show when={props.description}>
-          <CheckboxPrimitive.Description class="text-sm text-muted-foreground">
-            {props.description}
-          </CheckboxPrimitive.Description>
-        </Show>
-        <Show when={props.errorMessage}>
-          <CheckboxPrimitive.ErrorMessage class="text-sm text-destructive">
-            {props.errorMessage}
-          </CheckboxPrimitive.ErrorMessage>
-        </Show>
-      </div>
     </CheckboxPrimitive.Root>
   )
 }

@@ -3,7 +3,6 @@
 This project aims to port the following projects to SolidJS:
 
 - [shadcn/ui](https://ui.shadcn.com)
-- [cmdk](https://github.com/pacocoursey/cmdk)
 - [tremor](https://www.tremor.so/)
 
 ![screenshot](public/screenshot.png)
@@ -47,12 +46,6 @@ This project aims to port the following projects to SolidJS:
 | Callout   | ✔️       |             |         |
 | Flex      | ✔️       |             |         |
 | Grid      | ✔️       |             |         |
-
-### misc
-
-| Component | finished | in progress | pending |
-| --------- | -------- | ----------- | ------- |
-| cmdk      |          | 💻          |         |
 
 ## Credits
 

@@ -3,18 +3,11 @@ title: Checkbox
 description: A control that allows the user to toggle between checked and not checked.
 ---
 
-import { ComponentExample } from "~/components/component-example"
-import { Checkbox } from "~/components/ui/checkbox"
+import { CheckboxDemo } from "~/components/examples/checkbox-demo"
 
 ## Example
 
-<ComponentExample>
-  <Checkbox
-    label="Accept terms and conditions"
-    description="You agree to our Terms of Service."
-    client:load
-  />
-</ComponentExample>
+<CheckboxDemo client:load />
 
 ## Usage
 
@@ -23,5 +16,5 @@ import { Checkbox } from "~/components/ui/checkbox"
 ```
 
 ```tsx
-<Checkbox label="Accept terms and conditions" description="You agree to our Terms of Service." />
+<Checkbox />
 ```

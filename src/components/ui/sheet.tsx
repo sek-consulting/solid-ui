@@ -1,5 +1,3 @@
-"use client"
-
 import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 

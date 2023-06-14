@@ -6,7 +6,6 @@ import { cva } from "class-variance-authority"
 
 import { cn } from "~/lib/utils"
 
-//TODO: Switch colors to variables to fit the rest
 const calloutVariants = cva("rounded-md border-l-4 p-2 pl-4", {
   variants: {
     variant: {

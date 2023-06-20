@@ -27,7 +27,7 @@ const Toaster: Component<ToastPrimitive.ToastListProps> = (props) => {
 }
 
 const toastVariants = cva(
-  "data-[swipe=move]:transition-none relative pointer-events-auto flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=move]:translate-x-[var(--kb-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--kb-toast-swipe-end-x)] data-[opened]:animate-in data-[closed]:animate-out data-[swipe=end]:animate-out data-[closed]:fade-out-80 data-[opened]:slide-in-from-top-full data-[opened]:sm:slide-in-from-bottom-full data-[closed]:slide-out-to-right-full",
+  "data-[swipe=move]:transition-none group relative pointer-events-auto flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=move]:translate-x-[var(--kb-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--kb-toast-swipe-end-x)] data-[opened]:animate-in data-[closed]:animate-out data-[swipe=end]:animate-out data-[closed]:fade-out-80 data-[opened]:slide-in-from-top-full data-[opened]:sm:slide-in-from-bottom-full data-[closed]:slide-out-to-right-full",
   {
     variants: {
       variant: {

@@ -62,15 +62,7 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
   const props = mergeProps(
     {
       options: {
-        responsive: true,
-        scales: {
-          y: {
-            border: { dash: [4, 4] }
-          },
-          x: {
-            grid: { display: false }
-          }
-        }
+        responsive: true
       } as ChartOptions,
       plugins: [] as Plugin[]
     },
@@ -101,9 +93,7 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
     )
   )
 
-  onCleanup(() => {
-    chart?.destroy()
-  })
+  onCleanup(() => chart?.destroy())
 
   return (
     <div class={cn("max-w-full", props.class)} {...rest}>

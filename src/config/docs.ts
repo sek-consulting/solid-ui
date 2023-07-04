@@ -26,8 +26,20 @@ export const docsConfig = {
       ]
     },
     {
-      title: "Layout",
+      title: "tremor",
       items: [
+        {
+          title: "Badge Delta",
+          href: "/docs/components/badge#badge-delta"
+        },
+        {
+          title: "Callout",
+          href: "/docs/components/callout"
+        },
+        {
+          title: "Charts",
+          href: "/docs/components/charts"
+        },
         {
           title: "Flex",
           href: "/docs/layout/flex"
@@ -39,7 +51,7 @@ export const docsConfig = {
       ]
     },
     {
-      title: "Components",
+      title: "shadcn/ui",
       items: [
         {
           title: "Accordion",
@@ -58,16 +70,8 @@ export const docsConfig = {
           href: "/docs/components/button"
         },
         {
-          title: "Callout",
-          href: "/docs/components/callout"
-        },
-        {
           title: "Card",
           href: "/docs/components/card"
-        },
-        {
-          title: "Charts",
-          href: "/docs/components/charts"
         },
         {
           title: "Checkbox",

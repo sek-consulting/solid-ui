@@ -45,6 +45,7 @@ This project aims to port the following projects to SolidJS:
 | ---------- | -------- | ----------- | ------- |
 | BadgeDelta | ✔️       |             |         |
 | Callout    | ✔️       |             |         |
+| Charts     | ✔️       |             |         |
 | Flex       | ✔️       |             |         |
 | Grid       | ✔️       |             |         |
 

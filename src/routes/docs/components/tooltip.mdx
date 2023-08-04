@@ -1,0 +1,23 @@
+---
+title: Tooltip
+description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+---
+
+import { TooltipDemo } from "~/components/examples/tooltip-demo"
+
+## Example
+
+<TooltipDemo client:only />
+
+## Usage
+
+```tsx
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip"
+```
+
+```tsx
+<Tooltip>
+  <TooltipTrigger>Hover Me</TooltipTrigger>
+  <TooltipContent>Place content for the Tooltip here.</TooltipContent>
+</Tooltip>
+```

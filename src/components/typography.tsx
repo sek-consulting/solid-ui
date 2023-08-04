@@ -48,19 +48,19 @@ const Img: Component<ComponentProps<"img">> = (props) => <img class="rounded-md"
 const Hr: Component<ComponentProps<"hr">> = (props) => <hr class="my-4 md:my-8" {...props} />
 
 const Typography = {
-  h1: H1,
-  h2: H2,
-  h3: H3,
-  h4: H4,
-  h5: H5,
-  h6: H6,
-  a: A,
-  p: P,
-  ul: Ul,
-  li: Li,
-  blockquote: BlockQuote,
-  img: Img,
-  hr: Hr
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  A,
+  P,
+  Ul,
+  Li,
+  BlockQuote,
+  Img,
+  Hr
 }
 
 export { H1, H2, H3, H4, H5, H6, A, P, Ul, Li, BlockQuote, Img, Hr, Typography }

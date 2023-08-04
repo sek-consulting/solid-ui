@@ -1,4 +1,4 @@
-import type { Component, JSX } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
 import { mergeProps, splitProps } from "solid-js"
 
 import { cn } from "~/lib/utils"
@@ -6,7 +6,7 @@ import { cn } from "~/lib/utils"
 type Cols = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 type Span = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
 
-export interface GridProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface GridProps extends ComponentProps<"div"> {
   cols?: Cols
   colsSm?: Cols
   colsMd?: Cols
@@ -32,7 +32,7 @@ const Grid: Component<GridProps> = (rawProps) => {
   )
 }
 
-export interface ColProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface ColProps extends ComponentProps<"div"> {
   span?: Span
   spanSm?: Span
   spanMd?: Span

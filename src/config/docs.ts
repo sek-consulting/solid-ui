@@ -140,6 +140,10 @@ export const docsConfig = {
         {
           title: "Toast",
           href: "/docs/components/toast"
+        },
+        {
+          title: "Tooltip",
+          href: "/docs/components/tooltip"
         }
       ]
     }

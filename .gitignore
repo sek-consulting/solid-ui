@@ -1,22 +1,27 @@
-# build output
-dist/
+dist
+.solid
+.output
+.vercel
+.netlify
+netlify
 
-# generated types
-.astro/
-.vscode/
+# Environment
+.env
+.env*.local
 
 # dependencies
-node_modules/
+/node_modules
 
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
 
-# environment variables
-.env
-.env.production
+# Temp
+gitignore
 
-# macOS-specific files
+# System Files
 .DS_Store
+Thumbs.db

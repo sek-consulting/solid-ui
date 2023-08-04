@@ -51,5 +51,5 @@
       "parser": "@typescript-eslint/parser"
     }
   ],
-  "ignorePatterns": ["*.config.*", "*.json", "env.d.ts"]
+  "ignorePatterns": ["*.config.*", "*.json"]
 }

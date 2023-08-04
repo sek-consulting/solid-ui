@@ -1,6 +1,5 @@
-import type { Component, JSX } from "solid-js"
-import { splitProps } from "solid-js"
-import { mergeProps } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
+import { mergeProps, splitProps } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
@@ -8,7 +7,7 @@ type JustifyContent = "start" | "end" | "center" | "between" | "around" | "evenl
 type AlignItems = "start" | "end" | "center" | "baseline" | "stretch"
 type FlexDirection = "row" | "col" | "row-reverse" | "col-reverse"
 
-export interface FlexProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface FlexProps extends ComponentProps<"div"> {
   flexDirection?: FlexDirection
   justifyContent?: JustifyContent
   alignItems?: AlignItems

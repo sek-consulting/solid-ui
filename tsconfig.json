@@ -1,13 +1,17 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "jsx": "preserve",
-    "skipLibCheck": true,
-    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "jsxImportSource": "solid-js",
-    "baseUrl": ".",
+    "jsx": "preserve",
+    "strict": true,
+    "types": ["solid-start/env", "solid-jsx/types"],
+    "baseUrl": "./",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     }
   }
 }

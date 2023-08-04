@@ -14,6 +14,7 @@ import {
 } from "solid-start"
 
 import "./root.css"
+import Navbar from "./components/navbar"
 
 export default function Root() {
   const title = "solid/ui"
@@ -36,6 +37,7 @@ export default function Root() {
         <ErrorBoundary>
           <Suspense>
             <main>
+              <Navbar />
               <Routes>
                 <FileRoutes />
               </Routes>

@@ -1,7 +1,7 @@
-import type { ComponentProps } from "solid-js"
 import { MDXProvider } from "solid-jsx"
 import { Outlet } from "solid-start"
 
+import Sidebar from "~/components/sidebar"
 import { Typography } from "~/components/typography"
 
 export default function DocsLayout() {
@@ -20,14 +20,15 @@ export default function DocsLayout() {
         li: Typography.Li,
         blockquote: Typography.BlockQuote,
         img: Typography.Img,
-        hr: Typography.Hr,
-        pre: (props: ComponentProps<"div">) => {
-          console.log(props)
-          return <div {...props} />
-        }
+        hr: Typography.Hr
       }}
     >
-      <Outlet />
+      <div class="container flex-1 items-start py-6 md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+        <Sidebar />
+        <div>
+          <Outlet />
+        </div>
+      </div>
     </MDXProvider>
   )
 }

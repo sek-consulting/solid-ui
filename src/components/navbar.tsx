@@ -9,7 +9,7 @@ import { cn } from "~/lib/utils"
 
 export default function Navbar() {
   return (
-    <header class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 shadow-sm backdrop-blur">
+    <header class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
       <div class="container flex h-14 items-center">
         <MobileNav />
         <div class="mr-4 hidden md:flex">

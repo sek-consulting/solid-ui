@@ -1,19 +1,22 @@
-import { Tooltip } from "@kobalte/core"
+import { As } from "@kobalte/core"
 
 import { ComponentExample } from "../component-example"
+import { Button } from "../ui/button"
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
 
 export function TooltipDemo() {
   return (
     <ComponentExample>
-      <Tooltip.Root>
-        <Tooltip.Trigger class="tooltip__trigger">Trigger</Tooltip.Trigger>
-        <Tooltip.Portal>
-          <Tooltip.Content class="tooltip__content">
-            <Tooltip.Arrow />
-            <p>Tooltip content</p>
-          </Tooltip.Content>
-        </Tooltip.Portal>
-      </Tooltip.Root>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <As component={Button} variant="outline">
+            Trigger
+          </As>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Tooltip content</p>
+        </TooltipContent>
+      </Tooltip>
     </ComponentExample>
   )
 }

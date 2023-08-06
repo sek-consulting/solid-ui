@@ -1,0 +1,27 @@
+{
+  "name": "solid-ui-components",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup-preset-solid": "^2.0.1"
+  },
+  "dependencies": {
+    "@kobalte/core": "^0.9.8",
+    "class-variance-authority": "^0.7.0",
+    "solid-js": "^1.7.9"
+  }
+}

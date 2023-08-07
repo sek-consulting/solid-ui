@@ -63,11 +63,6 @@ export const docsConfig: Config = {
           description: "Displays a badge or a component that looks like a badge."
         },
         {
-          title: "Badge Delta",
-          href: "/docs/components/badge#badge-delta",
-          description: "A badge to indicate change or movement."
-        },
-        {
           title: "Button",
           href: "/docs/components/button",
           description: "Displays a button or a component that looks like a button."

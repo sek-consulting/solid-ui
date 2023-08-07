@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "tsup"
   },
   "keywords": [],
   "author": "",
@@ -21,12 +21,32 @@
     "@rollup/plugin-alias": "^5.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "babel-preset-solid": "^1.7.7",
-    "rollup-preset-solid": "^2.0.1"
+    "rollup-preset-solid": "^2.0.1",
+    "tsup": "^7.2.0",
+    "tsup-preset-solid": "^2.0.2"
   },
   "dependencies": {
     "@babel/preset-env": "^7.22.9",
     "@kobalte/core": "^0.9.8",
     "class-variance-authority": "^0.7.0",
     "solid-js": "^1.7.9"
-  }
+  },
+  "browser": {},
+  "exports": {
+    "solid": {
+      "development": "./dist/dev.jsx",
+      "import": "./dist/index.jsx"
+    },
+    "development": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/dev.js"
+      }
+    },
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "typesVersions": {}
 }

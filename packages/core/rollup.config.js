@@ -11,7 +11,6 @@ const __dirname = path.dirname(__filepath)
 export default withSolid({
   input: "./index.tsx",
   targets: ["esm", "cjs"],
-  solidOptions: { hydratable: true, generate: "ssr" },
   plugins: [
     alias({
       entries: [

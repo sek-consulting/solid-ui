@@ -1,4 +1,5 @@
 {
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -9,6 +10,7 @@
     "jsx": "preserve",
     "strict": true,
     "baseUrl": "./",
+    "types": ["vite/client"],
     "paths": {
       "~/*": ["./*"]
     }

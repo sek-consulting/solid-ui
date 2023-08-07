@@ -1,6 +1,7 @@
 import { ComponentExample } from "~/components/component-example"
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
-import { PieChart, LineChart, BarChart } from "~/components/ui/charts"
+// import { PieChart, LineChart, BarChart } from "~/components/ui/charts"
+import {PieChart, LineChart, BarChart} from 'solid-ui-components'
 
 export function LineChartDemo() {
   const chartData = {

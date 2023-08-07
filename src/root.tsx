@@ -13,8 +13,10 @@ import {
   Title
 } from "solid-start"
 
+import Navbar from "~/components/navbar"
+
+import "@fontsource/inter/latin.css"
 import "./root.css"
-import Navbar from "./components/navbar"
 
 export default function Root() {
   const title = "solid/ui"

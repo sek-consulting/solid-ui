@@ -1,13 +1,15 @@
+import {Button} from 'solid-ui-components'
+
 import { As } from "@kobalte/core"
 
 import { Icons } from "~/components/icons"
-import { Button } from "~/components/ui/button"
+// import { Button } from "~/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from "~/components/ui/dropdown-menu"
+} from "solid-ui-components"
 
 export function ModeToggle() {
   const setTheme = (theme: string) => {
@@ -26,12 +28,11 @@ export function ModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <As component={Button} variant="ghost" size="sm" class="w-9 px-0">
+      <DropdownMenuTrigger as={Button} variant="ghost">
+        {/* <As component={Button} variant="ghost" size="sm" class="w-9 px-0"> */}
           <Icons.sun class="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Icons.moon class="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span class="sr-only">Toggle theme</span>
-        </As>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem onSelect={() => setTheme("light")}>

@@ -13,7 +13,6 @@ netlify
 /node_modules
 */node_modules
 */**/node_modules
-pnpm-lock.yaml
 
 # IDEs and editors
 /.idea

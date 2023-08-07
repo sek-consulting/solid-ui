@@ -1,7 +1,7 @@
 {
-  "name": "git-solid-ui-components",
+  "name": "solid-ui-components",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
@@ -9,9 +9,9 @@
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.7",
+    "@fontsource/inter": "^5.0.8",
     "@kobalte/core": "^0.9.8",
-    "@solid-primitives/keyboard": "^1.2.3",
+    "@solid-primitives/keyboard": "^1.2.4",
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.2",
     "@tanstack/solid-table": "^8.9.3",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@mdx-js/rollup": "^2.3.0",
-    "@types/node": "^18.14.0",
+    "@types/node": "^18.17.3",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "autoprefixer": "^10.4.14",
@@ -37,6 +37,8 @@
     "postcss": "^8.4.27",
     "prettier": "^3.0.1",
     "rehype-pretty-code": "^0.10.0",
+    "remark-frontmatter": "^4.0.1",
+    "remark-parse-frontmatter": "^1.0.3",
     "shiki": "^0.14.3",
     "solid-start-node": "^0.2.30",
     "solid-start-vercel": "^0.2.30",

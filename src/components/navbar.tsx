@@ -9,7 +9,7 @@ import { cn } from "~/lib/utils"
 
 export default function Navbar() {
   return (
-    <header class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
+    <header class="supports-backdrop-blur:bg-background/60 bg-background/95 sticky top-0 z-40 w-full border-b backdrop-blur">
       <div class="container flex h-14 items-center">
         <MobileNav />
         <div class="mr-4 hidden md:flex">
@@ -24,7 +24,7 @@ export default function Navbar() {
                   href={item.href}
                   target={item.external ? "_blank" : ""}
                   rel={item.external ? "noreferrer" : ""}
-                  class="hidden text-foreground/60 no-underline transition-colors hover:text-foreground/80 lg:block"
+                  class="text-foreground/60 hover:text-foreground/80 hidden no-underline transition-colors lg:block"
                 >
                   {item.title}
                 </a>

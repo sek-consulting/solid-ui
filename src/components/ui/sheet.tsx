@@ -43,7 +43,7 @@ const SheetOverlay: Component<SheetPrimitive.DialogOverlayProps> = (props) => {
   return (
     <SheetPrimitive.Overlay
       class={cn(
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in",
+        "bg-background/80 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in fixed inset-0 z-50 backdrop-blur-sm transition-all duration-100",
         props.class
       )}
       {...rest}
@@ -153,7 +153,7 @@ const SheetContent: Component<DialogContentProps> = (props) => {
         {...rest}
       >
         {props.children}
-        <SheetPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+        <SheetPrimitive.CloseButton class="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
           <Icons.close class="h-4 w-4" />
           <span class="sr-only">Close</span>
         </SheetPrimitive.CloseButton>
@@ -183,7 +183,7 @@ const SheetTitle: Component<SheetPrimitive.DialogTitleProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <SheetPrimitive.Title
-      class={cn("text-lg font-semibold text-foreground", props.class)}
+      class={cn("text-foreground text-lg font-semibold", props.class)}
       {...rest}
     />
   )
@@ -193,7 +193,7 @@ const SheetDescription: Component<SheetPrimitive.DialogDescriptionProps> = (prop
   const [, rest] = splitProps(props, ["class"])
   return (
     <SheetPrimitive.Description
-      class={cn("text-sm text-muted-foreground", props.class)}
+      class={cn("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )

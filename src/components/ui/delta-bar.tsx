@@ -17,7 +17,7 @@ const DeltaBar: Component<DeltaBarProps> = (rawProps) => {
   const [, rest] = splitProps(props, ["value", "isIncreasePositive", "class"])
   return (
     <div
-      class={cn("relative h-4 w-full overflow-hidden rounded-full bg-secondary", props.class)}
+      class={cn("bg-secondary relative h-4 w-full overflow-hidden rounded-full", props.class)}
       {...rest}
     ></div>
   )

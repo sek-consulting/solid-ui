@@ -36,7 +36,7 @@ const AccordionContent: Component<AccordionPrimitive.AccordionContentProps> = (p
   return (
     <AccordionPrimitive.Content
       class={cn(
-        "animate-accordion-up overflow-hidden text-sm transition-all data-[expanded]:animate-accordion-down",
+        "animate-accordion-up data-[expanded]:animate-accordion-down overflow-hidden text-sm transition-all",
         props.class
       )}
       {...rest}

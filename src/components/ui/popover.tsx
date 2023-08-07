@@ -17,7 +17,7 @@ const PopoverContent: Component<PopoverPrimitive.PopoverContentProps> = (props) 
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
         class={cn(
-          "z-50 w-72 origin-[var(--kb-popover-content-transform-origin)] rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none animate-in",
+          "bg-popover text-popover-foreground animate-in z-50 w-72 origin-[var(--kb-popover-content-transform-origin)] rounded-md border p-4 shadow-md outline-none",
           props.class
         )}
         {...rest}

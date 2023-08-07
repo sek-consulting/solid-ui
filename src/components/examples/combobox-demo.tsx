@@ -2,7 +2,7 @@ import { createSignal } from "solid-js"
 
 import { Combobox, createFilter } from "@kobalte/core"
 
-import { ComponentExample } from "../component-example"
+import { ComponentExample } from "~/components/component-example"
 import { Icons } from "~/components/icons"
 
 const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]

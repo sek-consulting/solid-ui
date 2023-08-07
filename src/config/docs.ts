@@ -148,6 +148,11 @@ export const docsConfig: Config = {
             "Extends the Dialog component to display content that complements the main content of the screen."
         },
         {
+          title: "Skeleton",
+          href: "/docs/components/skeleton",
+          description: "Use to show a placeholder while content is loading."
+        },
+        {
           title: "Switch",
           href: "/docs/components/switch",
           description: "A control that allows the user to toggle between checked and not checked."

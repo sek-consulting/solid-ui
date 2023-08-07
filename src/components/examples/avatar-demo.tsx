@@ -1,5 +1,5 @@
-import { ComponentExample } from "../component-example"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import { ComponentExample } from "~/components/component-example"
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 
 export function AvatarDemo() {
   return (

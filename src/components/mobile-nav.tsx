@@ -1,12 +1,8 @@
 import type { ComponentProps } from "solid-js"
 import { createSignal } from "solid-js"
-// import {Button, Sheet, SheetContent, SheetTrigger} from 'solid-ui-components'
-
-import { As } from "@kobalte/core"
+import { Sheet, SheetContent, SheetTrigger, Button, As } from "solid-ui-components"
 
 import { Icons } from "~/components/icons"
-import { Button } from "~/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet"
 import { docsConfig } from "~/config/docs"
 
 export function MobileNav() {

@@ -1,8 +1,8 @@
 import { For } from "solid-js"
+import { RadioGroup, RadioGroupItem, Label } from "solid-ui-components"
+
 
 import { ComponentExample } from "~/components/component-example"
-import { Label } from "~/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
 
 export function RadioGroupDemo() {
   return (

@@ -1,5 +1,6 @@
+import { Button } from "solid-ui-components"
+
 import { ComponentExample } from "~/components/component-example"
-import { Button } from "~/components/ui/button"
 
 export function ButtonDemo() {
   return (

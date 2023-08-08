@@ -1,5 +1,6 @@
+import { Avatar, AvatarFallback, AvatarImage } from "solid-ui-components"
+
 import { ComponentExample } from "../component-example"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
 export function AvatarDemo() {
   return (

@@ -1,7 +1,6 @@
+import {PieChart, LineChart, BarChart, Card, CardContent, CardHeader, CardTitle} from 'solid-ui-components'
+
 import { ComponentExample } from "~/components/component-example"
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
-// import { PieChart, LineChart, BarChart } from "~/components/ui/charts"
-import {PieChart, LineChart, BarChart} from 'solid-ui-components'
 
 export function LineChartDemo() {
   const chartData = {
@@ -24,7 +23,7 @@ export function LineChartDemo() {
           <CardTitle>Newsletter revenue over time (USD)</CardTitle>
         </CardHeader>
         <CardContent>
-          <LineChart class="md:w-[500px] w-full" data={chartData} />
+          <LineChart class="w-full md:w-[500px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -54,7 +53,7 @@ export function AreaChartDemo() {
           <CardTitle>Newsletter revenue over time (USD)</CardTitle>
         </CardHeader>
         <CardContent>
-          <LineChart class="md:w-[500px] w-full" data={chartData} />
+          <LineChart class="w-full md:w-[500px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -77,7 +76,7 @@ export function PieChartDemo() {
           <CardTitle>Sales</CardTitle>
         </CardHeader>
         <CardContent>
-          <PieChart class="md:w-[200px] w-full" data={chartData} />
+          <PieChart class="w-full md:w-[200px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -101,7 +100,7 @@ export function BarChartDemo() {
           <CardTitle>Sales</CardTitle>
         </CardHeader>
         <CardContent>
-          <BarChart class="md:w-[500px] w-full" data={chartData} />
+          <BarChart class="w-full md:w-[500px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>

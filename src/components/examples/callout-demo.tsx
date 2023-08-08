@@ -1,5 +1,6 @@
+import { Callout, CalloutContent, CalloutTitle } from "solid-ui-components"
+
 import { ComponentExample } from "~/components/component-example"
-import { Callout, CalloutContent, CalloutTitle } from "~/components/ui/callout"
 
 export function CalloutDemo() {
   return (

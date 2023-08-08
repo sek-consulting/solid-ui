@@ -1,5 +1,6 @@
+import { BadgeDelta } from "solid-ui-components"
+
 import { ComponentExample } from "~/components/component-example"
-import { BadgeDelta } from "~/components/ui/badge-delta"
 
 export function BadgeDeltaDemo() {
   return (

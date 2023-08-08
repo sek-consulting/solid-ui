@@ -1,6 +1,6 @@
+import { Card, CardContent, CardHeader, CardTitle,Col, Grid } from "solid-ui-components"
+
 import { ComponentExample } from "~/components/component-example"
-import { Col, Grid } from "~/components/layout/grid"
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
 
 export function GridDemo() {
   return (

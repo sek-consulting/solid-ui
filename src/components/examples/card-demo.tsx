@@ -1,15 +1,16 @@
-import { ComponentExample } from "~/components/component-example"
-import { Icons } from "~/components/icons"
-import { Button } from "~/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
-} from "~/components/ui/card"
-import { Switch } from "~/components/ui/switch"
+  CardTitle,
+  Button,
+  Switch
+} from "solid-ui-components"
+
+import { ComponentExample } from "~/components/component-example"
+import { Icons } from "~/components/icons"
 
 const notifications = [
   {
@@ -39,7 +40,7 @@ export function CardDemo() {
             <Icons.bell />
             <div class="flex-1 space-y-1">
               <p class="text-sm font-medium leading-none">Push Notifications</p>
-              <p class="text-sm text-muted-foreground">Send notifications to device.</p>
+              <p class="text-muted-foreground text-sm">Send notifications to device.</p>
             </div>
             <Switch />
           </div>
@@ -49,7 +50,7 @@ export function CardDemo() {
                 <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
                 <div class="space-y-1">
                   <p class="text-sm font-medium leading-none">{notification.title}</p>
-                  <p class="text-sm text-muted-foreground">{notification.description}</p>
+                  <p class="text-muted-foreground text-sm">{notification.description}</p>
                 </div>
               </div>
             ))}

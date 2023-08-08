@@ -1,5 +1,6 @@
+import { Separator } from "solid-ui-components"
+
 import { ComponentExample } from "~/components/component-example"
-import { Separator } from "~/components/ui/separator"
 
 export function SeparatorDemo() {
   return (
@@ -7,7 +8,7 @@ export function SeparatorDemo() {
       <div>
         <div class="space-y-1">
           <h4 class="text-sm font-medium leading-none">Radix Primitives</h4>
-          <p class="text-sm text-muted-foreground">An open-source UI component library.</p>
+          <p class="text-muted-foreground text-sm">An open-source UI component library.</p>
         </div>
         <Separator class="my-4" />
         <div class="flex h-5 items-center space-x-4 text-sm">

@@ -1,5 +1,6 @@
+import { Checkbox } from "solid-ui-components"
+
 import { ComponentExample } from "~/components/component-example"
-import { Checkbox } from "~/components/ui/checkbox"
 
 export function CheckboxDemo() {
   return (
@@ -13,7 +14,7 @@ export function CheckboxDemo() {
           >
             Accept terms and conditions
           </label>
-          <p class="text-sm text-muted-foreground">
+          <p class="text-muted-foreground text-sm">
             You agree to our Terms of Service and Privacy Policy.
           </p>
         </div>

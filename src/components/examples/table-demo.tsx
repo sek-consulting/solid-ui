@@ -1,4 +1,3 @@
-import { ComponentExample } from "~/components/component-example"
 import {
   Table,
   TableBody,
@@ -7,7 +6,9 @@ import {
   TableHead,
   TableHeader,
   TableRow
-} from "~/components/ui/table"
+} from "solid-ui-components"
+
+import { ComponentExample } from "~/components/component-example"
 
 const invoices = [
   {

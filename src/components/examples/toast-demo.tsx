@@ -1,6 +1,6 @@
+import { Toaster, showToast, Button } from "solid-ui-components"
+
 import { ComponentExample } from "../component-example"
-import { Button } from "../ui/button"
-import { Toaster, showToast } from "../ui/toast"
 
 export function ToastDemo() {
   return (

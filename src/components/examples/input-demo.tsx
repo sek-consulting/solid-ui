@@ -1,6 +1,6 @@
+import { Input, Label } from "solid-ui-components"
+
 import { ComponentExample } from "~/components/component-example"
-import { Input } from "~/components/ui/input"
-import { Label } from "~/components/ui/label"
 
 export function InputDemo() {
   return (

@@ -1,3 +1,5 @@
+import './global.css'
+
 export * from "~/components/ui/accordion"
 export * from '~/components/ui/as'
 export * from "~/components/ui/avatar"

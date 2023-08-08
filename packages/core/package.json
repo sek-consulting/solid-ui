@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.jsx",
+  "module": "./dist/index.jsx",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
@@ -39,13 +39,11 @@
   "browser": {},
   "exports": {
     "solid": {
-      "development": "./dist/dev.jsx",
       "import": "./dist/index.jsx"
     },
     "development": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/dev.js"
+        "types": "./dist/index.d.ts"
       }
     },
     "import": {

@@ -2,8 +2,10 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: "jit",
+  purge: ["./index.tsx", "./components/**/*.{jsx,tsx,ts,js}"],
   darkMode: ["class"],
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     container: {
       center: true,
@@ -90,4 +92,3 @@ export default {
   },
   plugins: [require("tailwindcss-animate")]
 }
-

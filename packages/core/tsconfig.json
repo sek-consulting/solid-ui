@@ -8,6 +8,10 @@
     "moduleResolution": "node",
     "jsxImportSource": "solid-js",
     "jsx": "preserve",
+    "outDir": "dist",
+    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
     "strict": true,
     "baseUrl": "./",
     "paths": {

@@ -23,8 +23,6 @@ const DeltaBar: Component<DeltaBarProps> = (rawProps) => {
 
   const barWidth = `${Math.abs(props.value)}%`
 
-  console.log()
-
   return (
     <div
       class={cn("bg-secondary relative flex h-4 w-full items-center rounded-full", props.class)}

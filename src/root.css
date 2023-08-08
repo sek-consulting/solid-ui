@@ -31,17 +31,17 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --info: 214 95% 93%;
-    --info-foreground: 224 76% 48%;
+    --info: 204 94% 94%;
+    --info-foreground: 199 89% 48%;
 
     --success: 149 80% 90%;
-    --success-foreground: 163 94% 24%;
+    --success-foreground: 160 84% 39%;
 
     --warning: 48 96% 89%;
-    --warning-foreground: 26 91% 37%;
+    --warning-foreground: 25 95% 53%;
 
     --error: 0 93% 94%;
-    --error-foreground: 0 74% 42%;
+    --error-foreground: 0 84% 60%;
 
     --ring: 240 5.9% 10%;
 
@@ -76,17 +76,17 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --info: 214 95% 93%;
-    --info-foreground: 224 76% 48%;
+    --info: 204 94% 94%;
+    --info-foreground: 199 89% 48%;
 
     --success: 149 80% 90%;
-    --success-foreground: 163 94% 24%;
+    --success-foreground: 160 84% 39%;
 
     --warning: 48 96% 89%;
-    --warning-foreground: 26 91% 37%;
+    --warning-foreground: 25 95% 53%;
 
     --error: 0 93% 94%;
-    --error-foreground: 0 74% 42%;
+    --error-foreground: 0 84% 60%;
 
     --ring: 240 4.9% 83.9%;
 

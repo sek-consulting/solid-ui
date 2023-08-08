@@ -88,6 +88,11 @@ export const docsConfig: Config = {
           description: "A control that allows the user to toggle between checked and not checked."
         },
         {
+          title: "Delta Bar",
+          href: "/docs/components/delta-bar",
+          description: "Bar to show negative or positive deviation from a particular threshold"
+        },
+        {
           title: "Dialog",
           href: "/docs/components/dialog",
           description:

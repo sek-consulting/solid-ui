@@ -1,0 +1,26 @@
+---
+title: Toggle
+description: A two-state button that can be either on or off.
+---
+
+import { ToggleDemo } from "~/components/examples/toggle-demo"
+
+## Example
+
+<ToggleDemo />
+
+## Usage
+
+```tsx
+import { Toggle } from "~/components/ui/toggle"
+```
+
+```tsx
+<Toggle>
+  {(state) => (
+    <Show when={state.pressed()} fallback={<Icon2 />}>
+      <Icon1 />
+    </Show>
+  )}
+</Toggle>
+```

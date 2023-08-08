@@ -179,6 +179,11 @@ export const docsConfig: Config = {
           description: "A succinct message that is displayed temporarily."
         },
         {
+          title: "Toggle",
+          href: "/docs/components/toggle",
+          description: "A two-state button that can be either on or off."
+        },
+        {
           title: "Tooltip",
           href: "/docs/components/tooltip",
           description:

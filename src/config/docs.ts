@@ -94,6 +94,12 @@ export const docsConfig: Config = {
             "Combines a text input with a listbox, allowing users to filter a list of options to items matching a query."
         },
         {
+          title: "Context Menu",
+          href: "/docs/components/context-menu",
+          description:
+            "Displays a menu to the user — such as a set of actions or functions — triggered by a button."
+        },
+        {
           title: "Delta Bar",
           href: "/docs/components/delta-bar",
           description: "Bar to show negative or positive deviation from a particular threshold"

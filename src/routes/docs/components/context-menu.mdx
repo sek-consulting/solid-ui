@@ -1,0 +1,38 @@
+---
+title: Context Menu
+description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+---
+
+import { ContextMenuDemo } from "~/components/examples/context-menu-demo"
+import { DropdownMenuDemo } from "~/components/examples/dropdown-menu-demo"
+
+## Example
+
+<ContextMenuDemo />
+
+## Usage
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from "~/components/ui/dropdown-menu"
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```

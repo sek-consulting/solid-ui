@@ -7,7 +7,7 @@ import type { VariantProps } from "class-variance-authority"
 
 import { cn } from "~/lib/utils"
 
-export const toggleVariants = cva(
+const toggleVariants = cva(
   "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
@@ -32,7 +32,7 @@ export interface ToggleProps
   extends ToggleButtonPrimitive.ToggleButtonRootProps,
     VariantProps<typeof toggleVariants> {}
 
-export const Toggle: Component<ToggleProps> = (props) => {
+const Toggle: Component<ToggleProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "variant", "size"])
   return (
     <ToggleButtonPrimitive.Root
@@ -41,3 +41,5 @@ export const Toggle: Component<ToggleProps> = (props) => {
     />
   )
 }
+
+export { toggleVariants, Toggle }

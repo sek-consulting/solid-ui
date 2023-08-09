@@ -88,6 +88,12 @@ export const docsConfig: Config = {
           description: "A control that allows the user to toggle between checked and not checked."
         },
         {
+          title: "Combobox",
+          href: "/docs/components/combobox",
+          description:
+            "Combines a text input with a listbox, allowing users to filter a list of options to items matching a query."
+        },
+        {
           title: "Delta Bar",
           href: "/docs/components/delta-bar",
           description: "Bar to show negative or positive deviation from a particular threshold"

@@ -2,6 +2,7 @@ import { writeFile } from "fs"
 
 import { text, confirm, log, spinner, select } from "@clack/prompts"
 
+import { PROJECT_DEPS } from "~/lib/constants"
 import { readJsonFile, runCommand } from "~/lib/utils"
 
 export default async function init() {
@@ -11,19 +12,19 @@ export default async function init() {
   })
   const globalCssDir = await text({
     message: "Where is your global CSS file?",
-    defaultValue: "src/root.css"
+    initialValue: "src/root.css"
   })
   const tailwindConfigDir = await text({
     message: "Where is your tailwind.config.js located?",
-    defaultValue: "tailwind.config.js"
+    initialValue: "tailwind.config.js"
   })
   const componentAlias = await text({
     message: "Configure the import alias for components:",
-    defaultValue: "@/components"
+    initialValue: "@/components"
   })
   const utilsAlias = await text({
     message: "Configure the import alias for utils:",
-    defaultValue: "@/utils"
+    initialValue: "@/utils"
   })
 
   saveConfig(
@@ -38,7 +39,10 @@ export default async function init() {
   await writeTailwindConfig(tailwindConfigDir as string)
 
   log.success("Project configuration completed.")
+
   await installDeps()
+
+  log.success("Success! Try npx suc add button to add a button component to your project")
 }
 
 async function installDeps() {
@@ -75,22 +79,26 @@ function saveConfig(
   const indicator = spinner()
   indicator.start("Writing suc.config.json...")
 
-  const config = JSON.stringify({
-    tsx: isTypescript,
-    tailwind: {
-      config: tailwindConfigDir,
-      css: globalCssDir
+  const config = JSON.stringify(
+    {
+      tsx: isTypescript,
+      tailwind: {
+        config: tailwindConfigDir,
+        css: globalCssDir
+      },
+      aliases: {
+        components: componentAlias,
+        utils: utilsAlias
+      }
     },
-    aliases: {
-      components: componentAlias,
-      utils: utilsAlias
-    }
-  })
+    null,
+    2
+  )
 
   writeFile("suc.config.json", config, (error) => {
     if (error) log.error("There was an error while saving your preferences")
   })
-  indicator.stop("Done")
+  indicator.stop("suc.config.json successfully created!")
 }
 
 async function writeSUCPreset() {
@@ -108,15 +116,14 @@ async function writeSUCPreset() {
   } catch (error) {
     log.error(`Sorry, something went wrong while getting the tailwind presets: ${error}`)
   }
-  indicator.stop("Done")
+  indicator.stop("suc.preset.js successfully created!")
 }
 
 async function writeTailwindConfig(tailwindConfigDir: string) {
   const indicator = spinner()
   indicator.start("Configuring tailwind.config.js to support Solid UI Components...")
 
-  const config = `
-  /** @type {import('tailwindcss').Config} */
+  const config = `/** @type {import('tailwindcss').Config} */
   export default {
     darkMode: ["class"],
     content: [
@@ -129,7 +136,7 @@ async function writeTailwindConfig(tailwindConfigDir: string) {
     if (error) log.error(`Something went wrong while writing your tailwind.config.js: ${error}`)
   })
 
-  indicator.stop("Done")
+  indicator.stop("Done done configuring your tailwind.config.js")
 }
 
 function writeTsconfig(componentAlias: string, utilsAlias: string) {
@@ -140,13 +147,13 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
     if (error) log.error("Something went wrong while configuring your tsconfig.json")
 
     const tsconfigData = data as Record<string, any>
-    tsconfigData.paths[componentAlias] = ["./src/components"]
-    tsconfigData.paths[utilsAlias] = ["./src/utils"]
+    tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components"]
+    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/utils"]
 
-    writeFile("tsconfig.json", JSON.stringify(tsconfigData), (error) => {
+    writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
       if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)
     })
   })
 
-  indicator.stop("Done")
+  indicator.stop("Done configuring your tsconfig.json")
 }

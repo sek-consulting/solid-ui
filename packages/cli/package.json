@@ -2,6 +2,8 @@
   "name": "@suc/cli",
   "version": "0.0.1",
   "description": "Add Solid UI Components to you application using the SUC CLI tool",
+  "main": "dist/index.js",
+  "bin": "./dist/index.js",
   "devDependencies": {
     "tsup": "^7.2.0",
     "typescript": "^5.1.6"

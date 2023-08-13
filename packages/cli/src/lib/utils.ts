@@ -23,14 +23,13 @@ export function readJsonFile(
 
 export async function runCommand(command: string, message?: string, endMessage?: string) {
   const indicator = spinner()
+  indicator.start(message)
 
   exec(command, (error, stdout) => {
-    indicator.start(message)
-
     if (!message) log.info(stdout)
 
     if (error) log.error(`Something went wrong while running the command: ${error}`)
-
-    if (endMessage) indicator.stop(endMessage)
   })
+
+  if (endMessage) indicator.stop(endMessage)
 }

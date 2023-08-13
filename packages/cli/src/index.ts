@@ -1,3 +1,5 @@
+#! /usr/bin/env node 
+
 import { Command } from "commander"
 
 import add from "./commands/add"
@@ -10,7 +12,7 @@ program.name("suc").description("A CLI used for the Solid UI components library"
 program
   .command("init")
   .description("Initialize and install the necessary things to make use of Solid UI Components")
-  .action(() => init())
+  .action(async () => await init())
 
 program
   .command("add")

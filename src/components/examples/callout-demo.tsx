@@ -1,4 +1,4 @@
-import { Callout, CalloutContent, CalloutTitle } from "solid-ui-components"
+import { Callout, CalloutContent, CalloutTitle } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

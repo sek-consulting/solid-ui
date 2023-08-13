@@ -1,4 +1,4 @@
-import { Popover, PopoverContent, PopoverTrigger, Button, As } from "solid-ui-components"
+import { Popover, PopoverContent, PopoverTrigger, Button, As } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

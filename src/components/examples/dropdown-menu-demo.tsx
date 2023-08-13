@@ -16,7 +16,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
   Button
-} from "solid-ui-components"
+} from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

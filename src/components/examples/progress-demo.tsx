@@ -1,4 +1,4 @@
-import { Progress, ProgressLabel, ProgressValueLabel } from "solid-ui-components"
+import { Progress, ProgressLabel, ProgressValueLabel } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

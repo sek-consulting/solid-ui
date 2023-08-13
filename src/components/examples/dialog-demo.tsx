@@ -9,7 +9,7 @@ import {
   Button,
   Input,
   Label
-} from "solid-ui-components"
+} from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

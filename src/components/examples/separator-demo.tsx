@@ -1,4 +1,4 @@
-import { Separator } from "solid-ui-components"
+import { Separator } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

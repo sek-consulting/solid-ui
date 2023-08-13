@@ -1,4 +1,4 @@
-import { Button } from "solid-ui-components"
+import { Button } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

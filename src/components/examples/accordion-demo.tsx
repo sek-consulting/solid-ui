@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from "solid-ui-components"
+} from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

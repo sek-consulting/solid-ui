@@ -1,4 +1,4 @@
-import { BadgeDelta } from "solid-ui-components"
+import { BadgeDelta } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

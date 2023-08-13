@@ -1,4 +1,4 @@
-import { Tooltip, TooltipContent, TooltipTrigger, Button, As } from "solid-ui-components"
+import { Tooltip, TooltipContent, TooltipTrigger, Button, As } from "~/../packages/core"
 
 import { ComponentExample } from "../component-example"
 

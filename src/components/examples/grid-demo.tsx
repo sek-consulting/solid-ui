@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle,Col, Grid } from "solid-ui-components"
+import { Card, CardContent, CardHeader, CardTitle,Col, Grid } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

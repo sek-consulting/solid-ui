@@ -7,7 +7,7 @@ import {
   CardTitle,
   Button,
   Switch
-} from "solid-ui-components"
+} from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 import { Icons } from "~/components/icons"

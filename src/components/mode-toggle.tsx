@@ -5,8 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   As
-} from "solid-ui-components"
-
+} from "~/../packages/core"
 import { Icons } from "~/components/icons"
 
 export function ModeToggle() {

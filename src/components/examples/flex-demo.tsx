@@ -1,4 +1,4 @@
-import { Flex, Card } from "solid-ui-components"
+import { Flex, Card } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

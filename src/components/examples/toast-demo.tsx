@@ -1,4 +1,4 @@
-import { Toaster, showToast, Button } from "solid-ui-components"
+import { Toaster, showToast, Button } from "~/../packages/core"
 
 import { ComponentExample } from "../component-example"
 

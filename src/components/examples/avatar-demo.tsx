@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "solid-ui-components"
+import { Avatar, AvatarFallback, AvatarImage } from "~/../packages/core"
 
 import { ComponentExample } from "../component-example"
 

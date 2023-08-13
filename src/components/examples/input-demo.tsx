@@ -1,4 +1,4 @@
-import { Input, Label } from "solid-ui-components"
+import { Input, Label } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

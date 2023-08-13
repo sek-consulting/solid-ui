@@ -1,4 +1,4 @@
-import { Checkbox } from "solid-ui-components"
+import { Checkbox } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
 

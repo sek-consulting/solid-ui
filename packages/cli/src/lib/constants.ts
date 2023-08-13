@@ -5,3 +5,5 @@ const PROJECT_DEPS = [
 	"tailwind-merge",
 	"@kobalte/core"
 ]
+
+const CURRENTDIR = process.cwd()

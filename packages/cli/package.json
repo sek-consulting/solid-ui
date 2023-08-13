@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup" 
+    "build": "tsup"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/sek-consulting/solid-ui-components#readme",
   "dependencies": {
     "@clack/core": "^0.3.2",
-    "@clack/prompts": "^0.6.3"
+    "@clack/prompts": "^0.6.3",
+    "commander": "^11.0.0"
   }
 }

@@ -41,9 +41,6 @@ dependencies:
   solid-start:
     specifier: ^0.2.30
     version: 0.2.30(@solidjs/meta@0.28.6)(@solidjs/router@0.8.2)(solid-js@1.7.9)(solid-start-node@0.2.30)(solid-start-vercel@0.2.30)(vite@4.4.8)
-  solid-ui-components:
-    specifier: link:packages/core
-    version: link:packages/core
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0

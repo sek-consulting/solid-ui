@@ -8,7 +8,7 @@ export function CheckboxDemo() {
         <Checkbox id="terms1" />
         <div class="grid gap-1.5 leading-none">
           <label
-            for="terms1"
+            for="terms1-input"
             class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             Accept terms and conditions

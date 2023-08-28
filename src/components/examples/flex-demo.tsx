@@ -1,6 +1,6 @@
-import { Flex, Card } from "~/../packages/core"
-
 import { ComponentExample } from "~/components/component-example"
+import { Flex } from "~/components/layout/flex"
+import { Card } from "~/components/ui/card"
 
 export function FlexDemo() {
   return (

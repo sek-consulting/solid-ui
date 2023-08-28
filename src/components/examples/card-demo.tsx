@@ -1,16 +1,15 @@
+import { ComponentExample } from "~/components/component-example"
+import { Icons } from "~/components/icons"
+import { Button } from "~/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-  Button,
-  Switch
-} from "~/../packages/core"
-
-import { ComponentExample } from "~/components/component-example"
-import { Icons } from "~/components/icons"
+  CardTitle
+} from "~/components/ui/card"
+import { Switch } from "~/components/ui/switch"
 
 const notifications = [
   {

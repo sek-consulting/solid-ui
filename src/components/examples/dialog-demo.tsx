@@ -1,3 +1,5 @@
+import { ComponentExample } from "~/components/component-example"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -5,13 +7,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-  Button,
-  Input,
-  Label
-} from "~/../packages/core"
-
-import { ComponentExample } from "~/components/component-example"
+  DialogTrigger
+} from "~/components/ui/dialog"
+import { Input } from "~/components/ui/input"
+import { Label } from "~/components/ui/label"
 
 export function DialogDemo() {
   return (

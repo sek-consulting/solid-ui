@@ -1,6 +1,5 @@
-import { BadgeDelta } from "~/../packages/core"
-
 import { ComponentExample } from "~/components/component-example"
+import { BadgeDelta } from "~/components/ui/badge-delta"
 
 export function BadgeDeltaDemo() {
   return (

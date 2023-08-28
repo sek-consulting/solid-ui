@@ -1,6 +1,5 @@
-import { Separator } from "~/../packages/core"
-
 import { ComponentExample } from "~/components/component-example"
+import { Separator } from "~/components/ui/separator"
 
 export function SeparatorDemo() {
   return (

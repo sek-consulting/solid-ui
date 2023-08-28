@@ -1,13 +1,13 @@
 import { createSignal } from "solid-js"
+
+import { ComponentExample } from "~/components/component-example"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue
-} from "~/../packages/core"
-
-import { ComponentExample } from "~/components/component-example"
+} from "~/components/ui/select"
 
 export function SelectDemo() {
   const [value, setValue] = createSignal("")

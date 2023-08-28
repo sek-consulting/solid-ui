@@ -23,7 +23,7 @@ export const docsConfig: Config = {
     },
     {
       title: "GitHub",
-      href: "https://github.com/sek-consulting/~/../packages/core",
+      href: "https://github.com/sek-consulting/solid-ui-components",
       external: true
     },
     {

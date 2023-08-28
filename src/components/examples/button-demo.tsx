@@ -1,6 +1,5 @@
-import { Button } from "~/../packages/core"
-
 import { ComponentExample } from "~/components/component-example"
+import { Button } from "~/components/ui/button"
 
 export function ButtonDemo() {
   return (

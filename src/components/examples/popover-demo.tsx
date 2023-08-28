@@ -1,8 +1,6 @@
-import { As } from "@kobalte/core"
+import { Popover, PopoverContent, PopoverTrigger, Button, As } from "~/../packages/core"
 
 import { ComponentExample } from "~/components/component-example"
-import { Button } from "~/components/ui/button"
-import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover"
 
 export function PopoverDemo() {
   return (

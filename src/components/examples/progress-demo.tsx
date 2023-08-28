@@ -1,5 +1,6 @@
+import { Progress, ProgressLabel, ProgressValueLabel } from "~/../packages/core"
+
 import { ComponentExample } from "~/components/component-example"
-import { Progress, ProgressLabel, ProgressValueLabel } from "~/components/ui/progress"
 
 export function ProgressDemo() {
   return (

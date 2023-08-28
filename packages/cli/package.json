@@ -1,0 +1,30 @@
+{
+  "name": "@suc/cli",
+  "version": "0.0.1",
+  "description": "Add Solid UI Components to you application using the SUC CLI tool",
+  "main": "dist/index.js",
+  "bin": "./dist/index.js",
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sek-consulting/solid-ui-components.git"
+  },
+  "author": "Stefan E-K & Michael Essiet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sek-consulting/solid-ui-components/issues"
+  },
+  "homepage": "https://github.com/sek-consulting/solid-ui-components#readme",
+  "dependencies": {
+    "@clack/core": "^0.3.2",
+    "@clack/prompts": "^0.6.3",
+    "commander": "^11.0.0"
+  }
+}

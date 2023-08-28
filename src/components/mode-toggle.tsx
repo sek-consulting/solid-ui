@@ -1,13 +1,12 @@
-import { As } from "@kobalte/core"
-
-import { Icons } from "~/components/icons"
-import { Button } from "~/components/ui/button"
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
-} from "~/components/ui/dropdown-menu"
+  DropdownMenuTrigger,
+  As
+} from "~/../packages/core"
+import { Icons } from "~/components/icons"
 
 export function ModeToggle() {
   const setTheme = (theme: string) => {

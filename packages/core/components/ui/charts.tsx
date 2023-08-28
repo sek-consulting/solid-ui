@@ -71,7 +71,7 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
   const [, rest] = splitProps(props, ["class", "type", "data", "options", "plugins"])
 
   const init = () => {
-    const ctx = ref!.getContext("2d") as ChartItem
+    const ctx = ref?.getContext("2d") as ChartItem
     chart = new Chart(ctx, {
       type: props.type,
       data: props.data,

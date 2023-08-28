@@ -1,8 +1,6 @@
-import { As } from "@kobalte/core"
+import { Tooltip, TooltipContent, TooltipTrigger, Button, As } from "~/../packages/core"
 
-import { ComponentExample } from "~/components/component-example"
-import { Button } from "~/components/ui/button"
-import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip"
+import { ComponentExample } from "../component-example"
 
 export function TooltipDemo() {
   return (

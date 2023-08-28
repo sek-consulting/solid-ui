@@ -1,12 +1,4 @@
 import { For, createSignal } from "solid-js"
-
-import { As } from "@kobalte/core"
-
-import { ComponentExample } from "~/components/component-example"
-import { Button } from "~/components/ui/button"
-import { Input } from "~/components/ui/input"
-import { Label } from "~/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
 import {
   Sheet,
   SheetContent,
@@ -14,8 +6,16 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger
-} from "~/components/ui/sheet"
+  SheetTrigger,
+  RadioGroup,
+  RadioGroupItem,
+  Label,
+  Input,
+  Button,
+  As
+} from "~/../packages/core"
+
+import { ComponentExample } from "~/components/component-example"
 
 const SHEET_POSITIONS = ["top", "right", "bottom", "left"] as const
 type SheetPosition = (typeof SHEET_POSITIONS)[number]

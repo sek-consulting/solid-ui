@@ -1,6 +1,6 @@
-import { ComponentExample } from "~/components/component-example"
-import { Button } from "~/components/ui/button"
-import { Toaster, showToast } from "~/components/ui/toast"
+import { Toaster, showToast, Button } from "~/../packages/core"
+
+import { ComponentExample } from "../component-example"
 
 export function ToastDemo() {
   return (

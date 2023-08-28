@@ -1,6 +1,5 @@
-import { Checkbox } from "~/../packages/core"
-
 import { ComponentExample } from "~/components/component-example"
+import { Checkbox } from "~/components/ui/checkbox"
 
 export function CheckboxDemo() {
   return (

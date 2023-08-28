@@ -1,6 +1,6 @@
-import {PieChart, LineChart, BarChart, Card, CardContent, CardHeader, CardTitle} from '~/../packages/core'
-
 import { ComponentExample } from "~/components/component-example"
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
+import { PieChart, LineChart, BarChart } from "~/components/ui/charts"
 
 export function LineChartDemo() {
   const chartData = {

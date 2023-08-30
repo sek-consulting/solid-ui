@@ -18,7 +18,7 @@
     "chart.js": "^4.3.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "solid-js": "1.7.9",
+    "solid-js": "1.7.10",
     "solid-jsx": "^1.1.4",
     "solid-start": "^0.2.30",
     "tailwind-merge": "^1.14.0",

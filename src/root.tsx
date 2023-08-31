@@ -1,5 +1,5 @@
 // @refresh reload
-import { Suspense } from "solid-js"
+import { Suspense, useContext } from "solid-js"
 import {
   Body,
   ErrorBoundary,
@@ -10,40 +10,50 @@ import {
   Meta,
   Routes,
   Scripts,
+  ServerContext,
   Title
 } from "solid-start"
 
-import Navbar from "~/components/navbar"
+import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
+import { isServer } from "solid-js/web"
 
+import Navbar from "~/components/navbar"
 import "@fontsource/inter/latin.css"
 import "./root.css"
 
 export default function Root() {
-  const title = "solid/ui"
-  const description = "A SolidJS port of the shadcn/ui components using Kobalte."
+  const event = useContext(ServerContext)
+
+  const storageManager = cookieStorageManagerSSR(
+    isServer ? event?.request.headers.get("cookie") ?? "" : document.cookie
+  )
 
   return (
     <Html lang="en">
       <Head>
-        <Title>{title}</Title>
+        <Title>solid/ui</Title>
 
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <Meta name="title" content={title} />
-        <Meta name="description" content={description} />
+        <Meta name="title" content="solid/ui" />
+        <Meta
+          name="description"
+          content="A community driven port of the most beautiful ui components using Kobalte including shadcn/ui and tremor."
+        />
 
         <Link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </Head>
       <Body>
         <ErrorBoundary>
+          <ColorModeScript storageType={storageManager.type} />
           <Suspense>
-            <main>
+            <ColorModeProvider storageManager={storageManager}>
               <Navbar />
               <Routes>
                 <FileRoutes />
               </Routes>
-            </main>
+            </ColorModeProvider>
           </Suspense>
         </ErrorBoundary>
         <Scripts />

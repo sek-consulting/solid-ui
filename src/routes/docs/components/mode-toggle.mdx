@@ -14,10 +14,10 @@ import { ModeToggle } from "~/components/mode-toggle"
 
 ## Usage
 
-Create the component `~/components/mode-toggle.tsx` and paste the following code into it.
+### 1. Create the component `~/components/mode-toggle.tsx` and paste the following code into it.
 
 ```tsx
-import { As } from "@kobalte/core"
+import { As, useColorMode } from "@kobalte/core"
 
 import { Icons } from "~/components/icons"
 import { Button } from "~/components/ui/button"
@@ -29,15 +29,7 @@ import {
 } from "~/components/ui/dropdown-menu"
 
 export function ModeToggle() {
-  const setTheme = (theme: string) => {
-    localStorage.setItem("theme", theme)
-    const root = document.documentElement
-    if (theme === "light") {
-      root.classList.remove("dark")
-    } else {
-      root.classList.add("dark")
-    }
-  }
+  const { setColorMode } = useColorMode()
 
   return (
     <DropdownMenu>
@@ -49,13 +41,17 @@ export function ModeToggle() {
         </As>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem onSelect={() => setTheme("light")}>
+        <DropdownMenuItem onSelect={() => setColorMode("light")}>
           <Icons.sun class="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onSelect={() => setTheme("dark")}>
+        <DropdownMenuItem onSelect={() => setColorMode("dark")}>
           <Icons.moon class="mr-2 h-4 w-4" />
           <span>Dark</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setColorMode("system")}>
+          <Icons.laptop class="mr-2 h-4 w-4" />
+          <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -63,14 +59,59 @@ export function ModeToggle() {
 }
 ```
 
-You also need this little script somewhere in the `<head />` to load the last selected mode on refresh.
+### 2. Then add the needed provider & manager to the `root.tsx` file like this:
 
-```typescript
-const root = document.documentElement
-const theme = localStorage.getItem("theme")
-if (theme === "dark") {
-  root.classList.add("dark")
-} else {
-  root.classList.remove("dark")
+```tsx
+import { useContext } from "solid-js"
+import { isServer } from "solid-js/web"
+import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
+```
+
+```tsx
+export default function Root() {
+  const event = useContext(ServerContext)
+
+  const storageManager = cookieStorageManagerSSR(
+    isServer ? event?.request.headers.get("cookie") ?? "" : document.cookie
+  )
+
+  return (
+    <Html lang="en">
+      <Head>...</Head>
+      <Body>
+        <ErrorBoundary>
+          <ColorModeScript storageType={storageManager.type} />
+          <Suspense>
+            <ColorModeProvider storageManager={storageManager}>
+              <Navbar />
+              <Routes>
+                <FileRoutes />
+              </Routes>
+            </ColorModeProvider>
+          </Suspense>
+        </ErrorBoundary>
+        <Scripts />
+      </Body>
+    </Html>
+  )
+}
+```
+
+### 3. Change the tailwind config & root.css to use `data-kb-theme`:
+
+```css
+[data-kb-theme="dark"] {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    ...
+}
+```
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: ["class", '[data-kb-theme="dark"]'],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  ...
 }
 ```

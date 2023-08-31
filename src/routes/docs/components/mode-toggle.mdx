@@ -14,7 +14,7 @@ import { ModeToggle } from "~/components/mode-toggle"
 
 ## Usage
 
-### 1. Create the component `~/components/mode-toggle.tsx` and paste the following code into it.
+1. Create the component `~/components/mode-toggle.tsx` and paste the following code into it.
 
 ```tsx
 import { As, useColorMode } from "@kobalte/core"
@@ -59,7 +59,7 @@ export function ModeToggle() {
 }
 ```
 
-### 2. Then add the needed provider & manager to the `root.tsx` file like this:
+2. Then add the needed provider & manager to the `root.tsx` file like this:
 
 ```tsx
 import { useContext } from "solid-js"
@@ -97,7 +97,7 @@ export default function Root() {
 }
 ```
 
-### 3. Change the tailwind config & root.css to use `data-kb-theme`:
+3. Change the tailwind config & root.css to use `data-kb-theme`:
 
 ```css
 [data-kb-theme="dark"] {

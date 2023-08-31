@@ -94,6 +94,12 @@ export const docsConfig: Config = {
             "Combines a text input with a listbox, allowing users to filter a list of options to items matching a query."
         },
         {
+          title: "Copy Button",
+          href: "/docs/components/copy-button",
+          description:
+            "Displays a tooltipped button that puts string contents into the user's clipboard."
+        },
+        {
           title: "Delta Bar",
           href: "/docs/components/delta-bar",
           description: "Bar to show negative or positive deviation from a particular threshold"

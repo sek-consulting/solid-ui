@@ -86,9 +86,10 @@ function showToast(props: {
   title?: JSX.Element
   description?: JSX.Element
   variant?: ToastVariant
+  duration?: number
 }) {
   toaster.show((data) => (
-    <Toast toastId={data.toastId} variant={props.variant}>
+    <Toast toastId={data.toastId} variant={props.variant} duration={props.duration}>
       <div class="grid gap-1">
         {props.title && <ToastTitle>{props.title}</ToastTitle>}
         {props.description && <ToastDescription>{props.description}</ToastDescription>}

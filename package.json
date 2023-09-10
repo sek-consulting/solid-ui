@@ -2,5 +2,5 @@
   "name": "solid-ui-components",
   "type": "module",
   "version": "0.0.1",
-	"packageManager": "bun"
+	"packageManager": "pnpm@8.7.4"
 }

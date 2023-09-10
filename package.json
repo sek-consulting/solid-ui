@@ -2,5 +2,13 @@
   "name": "solid-ui-components",
   "type": "module",
   "version": "0.0.1",
-	"packageManager": "pnpm@8.7.4"
+  "packageManager": "pnpm@8.6.12",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "turbo": "^1.10.13"
+  }
 }

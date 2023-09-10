@@ -6,6 +6,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "jsxImportSource": "solid-js",
+    "noEmit": true,
     "jsx": "preserve",
     "strict": true,
     "types": ["solid-start/env", "solid-jsx/types"],

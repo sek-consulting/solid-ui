@@ -1,4 +1,4 @@
-import { Flex, Card } from "~/../packages/core"
+import { Flex, Card } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

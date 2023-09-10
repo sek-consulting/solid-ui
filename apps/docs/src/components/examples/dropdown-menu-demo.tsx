@@ -16,7 +16,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
   Button
-} from "~/../packages/core"
+} from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

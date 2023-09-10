@@ -1,4 +1,4 @@
-import { Toaster, showToast, Button } from "~/../packages/core"
+import { Toaster, showToast, Button } from "../../../core"
 
 import { ComponentExample } from "../component-example"
 

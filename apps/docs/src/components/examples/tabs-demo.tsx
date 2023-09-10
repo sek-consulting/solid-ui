@@ -12,7 +12,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger
-} from "~/../packages/core"
+} from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

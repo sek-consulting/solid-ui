@@ -1,4 +1,4 @@
-import { Tooltip, TooltipContent, TooltipTrigger, Button, As } from "~/../packages/core"
+import { Tooltip, TooltipContent, TooltipTrigger, Button, As } from "../../../core"
 
 import { ComponentExample } from "../component-example"
 

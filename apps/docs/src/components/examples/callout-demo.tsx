@@ -1,4 +1,4 @@
-import { Callout, CalloutContent, CalloutTitle } from "~/../packages/core"
+import { Callout, CalloutContent, CalloutTitle } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

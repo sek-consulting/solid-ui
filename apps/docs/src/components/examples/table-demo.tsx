@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow
-} from "~/../packages/core"
+} from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

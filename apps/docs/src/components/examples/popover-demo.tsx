@@ -1,4 +1,4 @@
-import { Popover, PopoverContent, PopoverTrigger, Button, As } from "~/../packages/core"
+import { Popover, PopoverContent, PopoverTrigger, Button, As } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

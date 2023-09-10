@@ -1,4 +1,4 @@
-import { Input, Label } from "~/../packages/core"
+import { Input, Label } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

@@ -1,5 +1,5 @@
 import { For } from "solid-js"
-import { buttonVariants } from "~/../packages/core"
+import { buttonVariants } from "../../core"
 
 import { Icons } from "~/components/icons"
 import { MobileNav } from "~/components/mobile-nav"
@@ -35,7 +35,7 @@ export default function Navbar() {
         <div class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
           <nav class="flex items-center space-x-1">
             <a
-              href="https://github.com/sek-consulting/~/../packages/core"
+              href="https://github.com/sek-consulting/~/../../packages/core"
               target="_blank"
               rel="noreferrer"
             >

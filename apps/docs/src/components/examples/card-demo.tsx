@@ -7,7 +7,7 @@ import {
   CardTitle,
   Button,
   Switch
-} from "~/../packages/core"
+} from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 import { Icons } from "~/components/icons"

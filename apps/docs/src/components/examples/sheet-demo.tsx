@@ -13,7 +13,7 @@ import {
   Input,
   Button,
   As
-} from "~/../packages/core"
+} from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

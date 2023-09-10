@@ -1,4 +1,4 @@
-import { BadgeDelta } from "~/../packages/core"
+import { BadgeDelta } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

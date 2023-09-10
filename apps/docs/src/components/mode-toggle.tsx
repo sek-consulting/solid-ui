@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   As
-} from "~/../packages/core"
+} from "../../core"
 import { Icons } from "~/components/icons"
 
 export function ModeToggle() {

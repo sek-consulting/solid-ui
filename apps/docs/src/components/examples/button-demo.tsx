@@ -1,4 +1,4 @@
-import { Button } from "~/../packages/core"
+import { Button } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

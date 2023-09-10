@@ -1,4 +1,4 @@
-import { Progress, ProgressLabel, ProgressValueLabel } from "~/../packages/core"
+import { Progress, ProgressLabel, ProgressValueLabel } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

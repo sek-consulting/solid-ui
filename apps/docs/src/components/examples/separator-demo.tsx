@@ -1,4 +1,4 @@
-import { Separator } from "~/../packages/core"
+import { Separator } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

@@ -1,4 +1,4 @@
-import { Checkbox } from "~/../packages/core"
+import { Checkbox } from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

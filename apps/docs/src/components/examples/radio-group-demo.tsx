@@ -1,5 +1,5 @@
 import { For } from "solid-js"
-import { RadioGroup, RadioGroupItem, Label } from "~/../packages/core"
+import { RadioGroup, RadioGroupItem, Label } from "../../../core"
 
 
 import { ComponentExample } from "~/components/component-example"

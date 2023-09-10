@@ -1,4 +1,4 @@
-import {PieChart, LineChart, BarChart, Card, CardContent, CardHeader, CardTitle} from '~/../packages/core'
+import {PieChart, LineChart, BarChart, Card, CardContent, CardHeader, CardTitle} from '../../../core'
 
 import { ComponentExample } from "~/components/component-example"
 

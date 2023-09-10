@@ -9,7 +9,7 @@ import {
   Button,
   Input,
   Label
-} from "~/../packages/core"
+} from "../../../core"
 
 import { ComponentExample } from "~/components/component-example"
 

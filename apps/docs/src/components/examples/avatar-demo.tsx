@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "~/../packages/core"
+import { Avatar, AvatarFallback, AvatarImage } from "../../../core"
 
 import { ComponentExample } from "../component-example"
 

@@ -4,6 +4,7 @@
     "build": {
       "outputs": ["dist/**"]
     },
-    "lint": {}
+    "lint": {},
+		"test": {}
   }
 }

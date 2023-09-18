@@ -1,8 +1,7 @@
 import type { Component } from "solid-js"
-import { Show, createEffect, createSignal, splitProps } from "solid-js"
+import { Show, createEffect, createSignal, on, splitProps } from "solid-js"
 
 import { As } from "@kobalte/core"
-import type { ToggleButtonRootState } from "@kobalte/core/dist/types/toggle-button"
 import { TbCheck, TbCopy } from "solid-icons/tb"
 
 import type { ToggleProps } from "~/components/ui/toggle"
@@ -19,33 +18,41 @@ const CopyButton: Component<CopyButtonProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "content"])
   const [isCopied, setCopied] = createSignal(false)
 
-  createEffect(() => {
-    copyToClipboard(props.content)
-    setTimeout(() => {
-      setCopied(false)
-    }, 2000)
-  })
+  createEffect(
+    on(
+      isCopied,
+      () => {
+        if (isCopied()) {
+          copyToClipboard(props.content)
+          setTimeout(() => {
+            setCopied(false)
+          }, 2000)
+        }
+      },
+      { defer: true }
+    )
+  )
 
   return (
-    <Tooltip placement="top">
-      <TooltipTrigger asChild>
-        <As
-          component={Toggle}
-          onChange={setCopied}
-          pressed={isCopied()}
-          disabled={isCopied()}
-          class={cn("p-2", props.class)}
-          {...rest}
-        >
-          {(state: ToggleButtonRootState) => (
-            <Show when={state.pressed()} fallback={<TbCopy class="h-6 w-6" />}>
+    <>
+      <Tooltip placement="top">
+        <TooltipTrigger asChild>
+          <As
+            component={Toggle}
+            onChange={setCopied}
+            pressed={isCopied()}
+            disabled={isCopied()}
+            class={cn("p-2", props.class)}
+            {...rest}
+          >
+            <Show when={isCopied()} fallback={<TbCopy class="h-6 w-6" />}>
               <TbCheck class="h-6 w-6" />
             </Show>
-          )}
-        </As>
-      </TooltipTrigger>
-      <TooltipContent>{isCopied() ? `Copied!` : `Copy to Clipboard`}</TooltipContent>
-    </Tooltip>
+          </As>
+        </TooltipTrigger>
+        <TooltipContent>{isCopied() ? `Copied!` : `Copy to Clipboard`}</TooltipContent>
+      </Tooltip>
+    </>
   )
 }
 

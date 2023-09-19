@@ -5,7 +5,7 @@ import mdx from "@mdx-js/rollup"
 import vercel from "solid-start-vercel"
 
 import remarkFrontmatter from "remark-frontmatter"
-import remarkSolidFrontmatter from "~/lib/mdx/frontmatter"
+import remarkSolidFrontmatter from "./src/lib/mdx/frontmatter"
 
 import rehypePrettyCode from "rehype-pretty-code"
 import { getHighlighter } from "shiki"

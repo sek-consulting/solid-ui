@@ -7,8 +7,8 @@ export type Frontmatter = {
   description: string
 }
 
-export function solidFrontmatter() {
-  return (tree: Parent) => {
+export default function remarkSolidFrontmatter() {
+  return function (tree: Parent) {
     const node = tree.children.find((node) => node.type === "yaml") as Literal
     if (!node) {
       return

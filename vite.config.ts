@@ -5,7 +5,7 @@ import mdx from "@mdx-js/rollup"
 import vercel from "solid-start-vercel"
 
 import remarkFrontmatter from "remark-frontmatter"
-import { solidFrontmatter } from "./src/lib/mdx/frontmatter"
+import remarkSolidFrontmatter from "~/lib/mdx/frontmatter"
 
 import rehypePrettyCode from "rehype-pretty-code"
 import { getHighlighter } from "shiki"
@@ -16,7 +16,7 @@ export default defineConfig({
       ...mdx({
         jsxImportSource: "solid-jsx",
         providerImportSource: "solid-jsx",
-        remarkPlugins: [remarkFrontmatter, solidFrontmatter],
+        remarkPlugins: [remarkFrontmatter, remarkSolidFrontmatter],
         rehypePlugins: [
           [
             rehypePrettyCode,

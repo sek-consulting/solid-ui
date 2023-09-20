@@ -153,6 +153,10 @@ export const docsConfig: Config = {
           href: "/docs/components/textarea"
         },
         {
+          title: "Timeline",
+          href: "/docs/components/timeline"
+        },
+        {
           title: "Toast",
           href: "/docs/components/toast"
         },

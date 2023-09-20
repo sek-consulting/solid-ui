@@ -2,8 +2,8 @@ import type { Component } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Checkbox as CheckboxPrimitive } from "@kobalte/core"
+import { TbCheck } from "solid-icons/tb"
 
-import { Icons } from "~/components/icons"
 import { cn } from "~/lib/utils"
 
 const Checkbox: Component<CheckboxPrimitive.CheckboxRootProps> = (props) => {
@@ -13,7 +13,7 @@ const Checkbox: Component<CheckboxPrimitive.CheckboxRootProps> = (props) => {
       <CheckboxPrimitive.Input />
       <CheckboxPrimitive.Control class="border-primary ring-offset-background focus-visible:ring-ring data-[checked]:bg-primary data-[checked]:text-primary-foreground peer h-4 w-4 shrink-0 rounded-sm border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
         <CheckboxPrimitive.Indicator>
-          <Icons.check class="h-4 w-4" />
+          <TbCheck class="h-4 w-4" />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Control>
     </CheckboxPrimitive.Root>

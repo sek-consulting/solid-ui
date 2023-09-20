@@ -3,8 +3,8 @@ import { splitProps } from "solid-js"
 
 import { Dialog as SheetPrimitive } from "@kobalte/core"
 import { cva, type VariantProps } from "class-variance-authority"
+import { TbX } from "solid-icons/tb"
 
-import { Icons } from "~/components/icons"
 import { cn } from "~/lib/utils"
 
 const Sheet = SheetPrimitive.Root
@@ -154,7 +154,7 @@ const SheetContent: Component<DialogContentProps> = (props) => {
       >
         {props.children}
         <SheetPrimitive.CloseButton class="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
-          <Icons.close class="h-4 w-4" />
+          <TbX class="h-4 w-4" />
           <span class="sr-only">Close</span>
         </SheetPrimitive.CloseButton>
       </SheetPrimitive.Content>

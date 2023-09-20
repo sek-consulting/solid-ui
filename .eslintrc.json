@@ -24,11 +24,11 @@
         "pathGroups": [
           {
             "pattern": "solid-*",
-            "group": "external",
-            "position": "before"
-          }
+            "group": "builtin"
+          },
+          { "pattern": "solid-js/*", "group": "builtin" }
         ],
-        "pathGroupsExcludedImportTypes": ["solid-*"],
+        "pathGroupsExcludedImportTypes": ["solid-*", "solid-js/*"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",

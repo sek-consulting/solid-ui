@@ -1,10 +1,10 @@
 import type { Component, JSX } from "solid-js"
 import { splitProps } from "solid-js"
+import { Portal } from "solid-js/web"
 
 import { Toast as ToastPrimitive, toaster } from "@kobalte/core"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
-import { Portal } from "solid-js/web"
 
 import { Icons } from "../icons"
 import { cn } from "~/lib/utils"

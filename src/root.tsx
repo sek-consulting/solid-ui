@@ -1,5 +1,7 @@
 // @refresh reload
+
 import { Suspense, useContext } from "solid-js"
+import { isServer } from "solid-js/web"
 import {
   Body,
   ErrorBoundary,
@@ -15,7 +17,6 @@ import {
 } from "solid-start"
 
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
-import { isServer } from "solid-js/web"
 
 import Navbar from "~/components/navbar"
 import "@fontsource/inter/latin.css"

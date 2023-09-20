@@ -142,4 +142,4 @@ const TimelineItemDescription: Component<ComponentProps<"p">> = (props) => {
   )
 }
 
-export { Timeline, TimelineItem, TimelineItemDescription }
+export { Timeline }

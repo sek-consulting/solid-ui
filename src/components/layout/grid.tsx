@@ -14,7 +14,7 @@ export interface GridProps extends ComponentProps<"div"> {
 }
 
 const Grid: Component<GridProps> = (rawProps) => {
-  const props = mergeProps({ cols: 1 as Cols }, rawProps)
+  const props = mergeProps({ cols: 1 } satisfies GridProps, rawProps)
   const [, rest] = splitProps(props, ["cols", "colsSm", "colsMd", "colsLg", "class"])
 
   return (

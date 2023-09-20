@@ -14,13 +14,12 @@ export interface FlexProps extends ComponentProps<"div"> {
 }
 
 const Flex: Component<FlexProps> = (rawProps) => {
-  // TODO: still looking for a cleaner way to do this in solidjs
   const props = mergeProps(
     {
-      flexDirection: "row" as FlexDirection,
-      justifyContent: "between" as JustifyContent,
-      alignItems: "center" as AlignItems
-    },
+      flexDirection: "row",
+      justifyContent: "between",
+      alignItems: "center"
+    } satisfies FlexProps,
     rawProps
   )
   const [, rest] = splitProps(props, ["flexDirection", "justifyContent", "alignItems", "class"])

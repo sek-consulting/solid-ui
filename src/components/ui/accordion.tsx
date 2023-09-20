@@ -2,8 +2,8 @@ import type { Component } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Accordion as AccordionPrimitive } from "@kobalte/core"
+import { TbChevronDown } from "solid-icons/tb"
 
-import { Icons } from "~/components/icons"
 import { cn } from "~/lib/utils"
 
 const Accordion = AccordionPrimitive.Root
@@ -25,7 +25,7 @@ const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (p
         {...rest}
       >
         {props.children}
-        <Icons.chevronDown class="h-4 w-4 transition-transform duration-200" />
+        <TbChevronDown class="h-4 w-4 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

@@ -27,7 +27,8 @@ import {
   PolarAreaController,
   RadarController,
   RadialLinearScale,
-  ScatterController
+  ScatterController,
+  Tooltip
 } from "chart.js"
 
 import { cn } from "~/lib/utils"
@@ -43,18 +44,18 @@ export interface ChartProps extends TypedChartProps {
 }
 
 const registerMap: { [key in ChartType]: ChartComponent[] } = {
-  bar: [BarController, CategoryScale, BarElement],
+  bar: [BarController, BarElement, CategoryScale, LinearScale],
   bubble: [BubbleController, PointElement, LinearScale],
   doughnut: [DoughnutController, ArcElement],
-  line: [LineController, CategoryScale, LinearScale, PointElement, LineElement],
-  pie: [PieController, ArcElement, PointElement, CategoryScale, LinearScale],
+  line: [LineController, LineElement, PointElement, CategoryScale, LinearScale],
+  pie: [PieController, ArcElement],
   polarArea: [PolarAreaController, ArcElement, RadialLinearScale],
   radar: [RadarController, LineElement, PointElement, RadialLinearScale],
   scatter: [ScatterController, PointElement, LinearScale]
 }
 
 const BaseChart: Component<ChartProps> = (rawProps) => {
-  Chart.register(Colors, Filler, ...registerMap[rawProps.type])
+  Chart.register(Colors, Filler, Tooltip, ...registerMap[rawProps.type])
 
   let ref: HTMLCanvasElement
   let chart: Chart

@@ -15,7 +15,7 @@
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.3",
     "@tanstack/solid-table": "^8.9.3",
-    "chart.js": "^4.3.3",
+    "chart.js": "^4.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "solid-icons": "^1.0.12",

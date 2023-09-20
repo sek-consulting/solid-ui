@@ -22,10 +22,8 @@
       {
         "groups": ["builtin", "external", "internal"],
         "pathGroups": [
-          {
-            "pattern": "solid-*",
-            "group": "builtin"
-          },
+          { "pattern": "solid-js", "group": "builtin" },
+          { "pattern": "solid-start", "group": "builtin" },
           { "pattern": "solid-js/*", "group": "builtin" }
         ],
         "pathGroupsExcludedImportTypes": ["solid-*", "solid-js/*"],

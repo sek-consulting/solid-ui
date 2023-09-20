@@ -25,7 +25,7 @@ const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (p
         {...rest}
       >
         {props.children}
-        <TbChevronDown class="h-4 w-4 transition-transform duration-200" />
+        <TbChevronDown class="h-4 w-4 shrink-0 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

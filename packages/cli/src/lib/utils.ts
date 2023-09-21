@@ -1,6 +1,7 @@
-import { log, spinner } from "@clack/prompts"
 import { exec } from "child_process"
 import { readFile } from "fs"
+
+import { log, spinner } from "@clack/prompts"
 
 export function readJsonFile(
   filePath: string,

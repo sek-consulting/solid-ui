@@ -2,7 +2,7 @@
 
 import { Command } from "commander"
 
-import add from "./commands/add"
+import {add} from "./commands/add"
 import init from "./commands/init"
 
 const program = new Command()
@@ -16,8 +16,8 @@ program
 
 program
   .command("add")
-  .argument("<string>", "Component to be added to your project")
+  .argument("[components...]", "Components to be added to your project")
   .description("Add a component to your project")
-  .action((component: string) => add(component))
+  .action((component: string[]) => add(component))
 
 program.parse()

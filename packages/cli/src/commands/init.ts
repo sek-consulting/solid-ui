@@ -82,6 +82,7 @@ function saveConfig(
   const config = JSON.stringify(
     {
       tsx: isTypescript,
+      componentDir: './components',
       tailwind: {
         config: tailwindConfigDir,
         css: globalCssDir
@@ -146,7 +147,7 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
   readJsonFile(process.cwd() + "/tsconfig.json", (error, data) => {
     if (error) log.error("Something went wrong while configuring your tsconfig.json")
 
-    const tsconfigData = data as Record<string, any>
+    const tsconfigData = data as Record<string, { paths: Record<string, unknown> }>
     tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components"]
     tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/utils"]
 

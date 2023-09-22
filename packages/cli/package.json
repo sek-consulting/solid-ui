@@ -24,8 +24,14 @@
   },
   "homepage": "https://github.com/sek-consulting/solid-ui-components#readme",
   "dependencies": {
+    "@babel/core": "^7.22.20",
+    "@babel/parser": "^7.22.16",
+    "@babel/plugin-transform-typescript": "^7.22.15",
     "@clack/core": "^0.3.2",
     "@clack/prompts": "^0.6.3",
-    "commander": "^11.0.0"
+    "@types/babel__core": "^7.20.2",
+    "commander": "^11.0.0",
+    "recast": "^0.23.4",
+    "ts-morph": "^20.0.0"
   }
 }

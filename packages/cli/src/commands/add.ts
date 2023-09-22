@@ -1,4 +1,4 @@
-import { readFileSync, writeFile } from "fs"
+import { existsSync, mkdirSync, readFileSync, writeFile } from "fs"
 import { cwd } from "process"
 
 import { log } from "@clack/prompts"
@@ -16,6 +16,9 @@ export async function add(componentNames: string[]) {
   const readSUCConfig = readFileSync(cwd + "/suc.config.json")
   const sucConfig = JSON.parse(readSUCConfig.toString())
   const componentFolderDir = cwd() + "/" + sucConfig.componentDir
+  const dirExists = existsSync(componentFolderDir)
+
+  if (!dirExists) mkdirSync(componentFolderDir)
 
   const componentUris = componentNames.map((name) => getComponent(name))
 
@@ -24,12 +27,16 @@ export async function add(componentNames: string[]) {
       componentUris.forEach(async (uri, i) => {
         const componentFileContent = await (await fetch(uri)).json()
 
-        writeFile(componentFolderDir + `${componentNames[i]}.tsx`, componentFileContent, (err) => {
-          if (err)
-            log.error(
-              `There was an error while creating the ${componentNames[i]} component. ${err}`
-            )
-        })
+        writeFile(
+          componentFolderDir + "/" + `${componentNames[i]}.tsx`,
+          componentFileContent,
+          (err) => {
+            if (err)
+              log.error(
+                `There was an error while creating the ${componentNames[i]} component. ${err}`
+              )
+          }
+        )
       })
     ])
   } catch (error) {

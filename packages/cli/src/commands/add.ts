@@ -13,7 +13,7 @@ function getComponent(componentName: string) {
 }
 
 export async function add(componentNames: string[]) {
-  const readSUCConfig = readFileSync(cwd + "/suc.config.json")
+  const readSUCConfig = readFileSync(cwd() + "/suc.config.json")
   const sucConfig = JSON.parse(readSUCConfig.toString())
   const componentFolderDir = cwd() + "/" + sucConfig.componentDir
   const dirExists = existsSync(componentFolderDir)

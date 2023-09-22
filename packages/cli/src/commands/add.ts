@@ -1,7 +1,8 @@
-import { existsSync, mkdirSync, readFileSync, writeFile, writeFileSync } from "fs"
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
 import { cwd } from "process"
 
 import { log, spinner } from "@clack/prompts"
+
 import { transpileTS } from "~/lib/transpileTS"
 
 function getComponent(componentName: string) {

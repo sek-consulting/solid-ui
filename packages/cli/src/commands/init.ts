@@ -117,6 +117,7 @@ async function writeSUCPreset() {
   } catch (error) {
     log.error(`Sorry, something went wrong while getting the tailwind presets: ${error}`)
   }
+
   indicator.stop("suc.preset.js successfully created!")
 }
 

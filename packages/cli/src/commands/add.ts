@@ -21,8 +21,7 @@ export async function add(componentNames: string[]) {
   if (!dirExists) mkdirSync(componentFolderDir)
 
   const componentUris = componentNames.map((name) => getComponent(name))
-
-  try {
+try {
     Promise.allSettled([
       componentUris.forEach(async (uri, i) => {
         const componentFileContent = await (await fetch(uri)).text()

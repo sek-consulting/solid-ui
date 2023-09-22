@@ -16,10 +16,10 @@ function getComponent(componentName: string) {
 }
 
 export async function add(componentNames: string[]) {
-  try {
-    const activityIndicator = spinner()
-    activityIndicator.start("Creating components...")
+  const activityIndicator = spinner()
+  activityIndicator.start("Creating components...")
 
+  try {
     const readSUCConfig = readFileSync(cwd() + "/suc.config.json")
     const sucConfig = JSON.parse(readSUCConfig.toString())
     const isTypescriptEnabled = sucConfig.tsx
@@ -31,8 +31,8 @@ export async function add(componentNames: string[]) {
     const componentUris = componentNames.map((name) => getComponent(name))
 
     try {
-      await Promise.allSettled([
-        componentUris.forEach(async (uri, i) => {
+      await Promise.all(
+        componentUris.map(async (uri, i) => {
           log.message(`Creating ${componentNames[i]}...`)
           const componentFileContent = await (await fetch(uri)).text()
 
@@ -48,7 +48,7 @@ export async function add(componentNames: string[]) {
             )
           }
         })
-      ])
+      )
     } catch (error) {
       activityIndicator.stop()
       log.error(`Sorry, something went wrong while getting the components. ${error}`)
@@ -56,6 +56,7 @@ export async function add(componentNames: string[]) {
 
     activityIndicator.stop("Successfully created components! 🎉")
   } catch (error) {
+    activityIndicator.stop()
     log.error(
       `Something went wrong while creating your components. Have you ran ${chalk.green(
         "suc init"

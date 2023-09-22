@@ -18,6 +18,6 @@ program
   .command("add")
   .argument("[components...]", "Components to be added to your project")
   .description("Add a component to your project")
-  .action((component: string[]) => add(component))
+  .action(async (component: string[]) => await add(component))
 
 program.parse()

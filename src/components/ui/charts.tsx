@@ -23,6 +23,7 @@ import {
   Colors,
   DoughnutController,
   Filler,
+  Legend,
   LineController,
   LineElement,
   LinearScale,
@@ -112,7 +113,7 @@ function showTooltip(context: {
 }
 
 const BaseChart: Component<ChartProps> = (rawProps) => {
-  Chart.register(Colors, Filler, Tooltip, ...registerMap[rawProps.type])
+  Chart.register(Colors, Filler, Legend, Tooltip, ...registerMap[rawProps.type])
 
   let ref: HTMLCanvasElement
   let chart: Chart
@@ -122,6 +123,19 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
       options: {
         responsive: true,
         plugins: {
+          legend: {
+            display: true,
+            align: "end",
+            labels: {
+              usePointStyle: true,
+              boxWidth: 6,
+              boxHeight: 6,
+              color: "hsl(240, 3.8%, 46.1%)", // muted-foreground
+              font: {
+                size: 14 // text-sm
+              }
+            }
+          },
           tooltip: {
             enabled: false,
             external: (context) => showTooltip(context)

@@ -108,7 +108,7 @@ async function writeSUCPreset() {
 
   try {
     const tailwindPresetUrl =
-      "https://raw.githubusercontent.com/sek-consulting/solid-ui-components/main/sui.preset.js"
+      "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/sui.preset.js"
     const data = await (await fetch(tailwindPresetUrl)).json()
 
     writeFile("suc.preset.js", data, (error) => {

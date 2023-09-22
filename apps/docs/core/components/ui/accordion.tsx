@@ -32,7 +32,7 @@ const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (p
 }
 
 const AccordionContent: Component<AccordionPrimitive.AccordionContentProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children"])
+  const [_, rest] = splitProps(props, ["class", "children"])
   return (
     <AccordionPrimitive.Content
       class={cn(

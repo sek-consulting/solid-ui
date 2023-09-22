@@ -25,7 +25,7 @@ export async function add(componentNames: string[]) {
   try {
     Promise.allSettled([
       componentUris.forEach(async (uri, i) => {
-        const componentFileContent = await (await fetch(uri)).json()
+        const componentFileContent = await (await fetch(uri)).text()
 
         writeFile(
           componentFolderDir + "/" + `${componentNames[i]}.tsx`,

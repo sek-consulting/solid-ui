@@ -1,6 +1,7 @@
 import { Show, createMemo } from "solid-js"
-import { MDXProvider } from "solid-jsx"
 import { Head, Outlet, Title, useLocation } from "solid-start"
+
+import { MDXProvider } from "solid-jsx"
 
 import { MDXComponents } from "~/components/mdx-components"
 import Sidebar from "~/components/sidebar"

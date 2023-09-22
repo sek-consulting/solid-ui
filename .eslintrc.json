@@ -26,7 +26,7 @@
           { "pattern": "solid-start", "group": "builtin" },
           { "pattern": "solid-js/*", "group": "builtin" }
         ],
-        "pathGroupsExcludedImportTypes": ["solid-*", "solid-js/*"],
+        "pathGroupsExcludedImportTypes": ["solid-js", "solid-start", "solid-js/*"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",

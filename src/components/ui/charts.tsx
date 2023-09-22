@@ -7,7 +7,11 @@ import type {
   ChartOptions,
   Plugin,
   ChartItem,
-  ChartType
+  ChartType,
+  ChartTypeRegistry,
+  Point,
+  BubbleDataPoint,
+  TooltipModel
 } from "chart.js"
 import {
   ArcElement,
@@ -54,6 +58,59 @@ const registerMap: { [key in ChartType]: ChartComponent[] } = {
   scatter: [ScatterController, PointElement, LinearScale]
 }
 
+function showTooltip(context: {
+  chart: Chart<
+    keyof ChartTypeRegistry,
+    (number | [number, number] | Point | BubbleDataPoint | null)[],
+    unknown
+  >
+  tooltip: TooltipModel<keyof ChartTypeRegistry>
+}) {
+  let el = document.getElementById("chartjs-tooltip")
+  if (!el) {
+    el = document.createElement("div")
+    el.id = "chartjs-tooltip"
+    document.body.appendChild(el)
+  }
+
+  const model = context.tooltip
+  if (model.opacity === 0 || !model.body) {
+    el.style.opacity = "0"
+    return
+  }
+
+  el.className = `p-2 bg-card text-card-foreground rounded-lg border shadow-sm text-sm ${
+    model.yAlign ?? `no-transform`
+  }`
+
+  let content = ""
+
+  model.title.forEach((title) => {
+    content += `<h3 class="font-semibold leading-none tracking-tight">${title}</h3>`
+  })
+
+  content += `<div class="mt-1 text-muted-foreground">`
+  const body = model.body.flatMap((body) => body.lines)
+  body.forEach((line, i) => {
+    const colors = model.labelColors[i]
+    content += `
+        <div class="flex items-center">
+          <span class="inline-block h-2 w-2 mr-1 rounded-full border" style="background: ${colors.backgroundColor}; border-color: ${colors.borderColor}"></span>
+          ${line}
+        </div>`
+  })
+  content += `</div>`
+
+  el.innerHTML = content
+
+  const pos = context.chart.canvas.getBoundingClientRect()
+  el.style.opacity = "1"
+  el.style.position = "absolute"
+  el.style.left = `${pos.left + window.scrollX + model.caretX}px`
+  el.style.top = `${pos.top + window.scrollY + model.caretY}px`
+  el.style.pointerEvents = "none"
+}
+
 const BaseChart: Component<ChartProps> = (rawProps) => {
   Chart.register(Colors, Filler, Tooltip, ...registerMap[rawProps.type])
 
@@ -63,7 +120,13 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
   const props = mergeProps(
     {
       options: {
-        responsive: true
+        responsive: true,
+        plugins: {
+          tooltip: {
+            enabled: false,
+            external: (context) => showTooltip(context)
+          }
+        }
       } as ChartOptions,
       plugins: [] as Plugin[]
     },

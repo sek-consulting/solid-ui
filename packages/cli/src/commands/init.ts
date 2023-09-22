@@ -82,7 +82,7 @@ function saveConfig(
   const config = JSON.stringify(
     {
       tsx: isTypescript,
-      componentDir: './components',
+      componentDir: 'components',
       tailwind: {
         config: tailwindConfigDir,
         css: globalCssDir

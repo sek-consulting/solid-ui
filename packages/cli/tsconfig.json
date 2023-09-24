@@ -5,10 +5,11 @@
     "esModuleInterop": true,
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "noEmit": true,
+    "moduleResolution": "Node",
+    "noEmit": false,
     "strict": true,
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {
       "~/*": ["./src/*"]
     }

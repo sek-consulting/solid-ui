@@ -3,5 +3,6 @@ export const PROJECT_DEPS = [
 	"class-variance-authority",
 	"clsx",
 	"tailwind-merge",
-	"@kobalte/core"
+	"@kobalte/core",
+	"tailwindcss"
 ]

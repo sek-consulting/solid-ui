@@ -1,4 +1,4 @@
-import { writeFile } from "fs"
+import { writeFile, writeFileSync } from "fs"
 
 import { text, confirm, log, spinner, select } from "@clack/prompts"
 
@@ -37,12 +37,26 @@ export default async function init() {
   writeTsconfig(componentAlias as string, utilsAlias as string)
   await writeSUCPreset()
   await writeTailwindConfig(tailwindConfigDir as string)
+  await writeCSS(globalCssDir as string)
 
   log.success("Project configuration completed.")
 
   await installDeps()
 
   log.success("Success! Try npx suc add button to add a button component to your project")
+}
+
+async function writeCSS(cssPath: string) {
+  const indicator = spinner()
+
+  indicator.start("Writing CSS styles...")
+
+  const registryRootCSS = "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/apps/docs/src/root.css"
+  const cssContent = await (await fetch(registryRootCSS)).text()
+
+  writeFileSync(cssPath, cssContent)
+
+  indicator.stop("Done Writing CSS styles!")
 }
 
 async function installDeps() {
@@ -57,11 +71,13 @@ async function installDeps() {
       options: [
         { label: "npm", value: "npm" },
         { label: "yarn", value: "yarn" },
-        { label: "pnpm", value: "pnpm" }
+        { label: "pnpm", value: "pnpm" },
+        { label: "bun", value: "bun" }
       ],
       initialValue: "npm"
     })
-    runCommand(
+
+    await runCommand(
       `${packageManager as string} install ${PROJECT_DEPS.join(" ")}`,
       "Installing Solid UI Component dependencies",
       "Dependencies installed"
@@ -82,7 +98,7 @@ function saveConfig(
   const config = JSON.stringify(
     {
       tsx: isTypescript,
-      componentDir: 'components',
+      componentDir: "./src/components",
       tailwind: {
         config: tailwindConfigDir,
         css: globalCssDir
@@ -108,7 +124,7 @@ async function writeSUCPreset() {
 
   try {
     const tailwindPresetUrl =
-      "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/sui.preset.js"
+      "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/suc.preset.js"
     const data = await (await fetch(tailwindPresetUrl)).text()
 
     writeFile("suc.preset.js", data, (error) => {
@@ -149,6 +165,11 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
     if (error) log.error("Something went wrong while configuring your tsconfig.json")
 
     const tsconfigData = data as Record<string, { paths: Record<string, unknown> }>
+
+    if (!tsconfigData.compilerOptions.paths) {
+      tsconfigData.compilerOptions.paths = {}
+    }
+
     tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components"]
     tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/utils"]
 

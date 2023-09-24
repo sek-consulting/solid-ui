@@ -1,4 +1,5 @@
-import { writeFile, writeFileSync } from "fs"
+import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
+import { cwd } from "process"
 
 import { text, confirm, log, spinner, select } from "@clack/prompts"
 
@@ -35,6 +36,7 @@ export default async function init() {
     utilsAlias as string
   )
   writeTsconfig(componentAlias as string, utilsAlias as string)
+  writeUtils()
   await writeSUCPreset()
   await writeTailwindConfig(tailwindConfigDir as string)
   await writeCSS(globalCssDir as string)
@@ -46,15 +48,40 @@ export default async function init() {
   log.success("Success! Try npx suc add button to add a button component to your project")
 }
 
+function writeUtils() {
+  const doesLibPathExist = existsSync(cwd() + "/src/lib")
+
+  const indicator = spinner()
+  indicator.start("Creating utils.ts file...")
+
+  const utilsContent = `import type { ClassValue } from "clsx"
+  import { clsx } from "clsx"
+  import { twMerge } from "tailwind-merge"
+  
+  export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
+  }`
+
+  if (!doesLibPathExist) mkdirSync(cwd() + "/src/lib")
+
+  writeFileSync(cwd() + "/src/lib/utils.ts", utilsContent)
+  indicator.stop("Done creating utils.ts file!")
+}
+
 async function writeCSS(cssPath: string) {
   const indicator = spinner()
 
   indicator.start("Writing CSS styles...")
 
-  const registryRootCSS = "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/apps/docs/src/root.css"
+  const registryRootCSS =
+    "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/apps/docs/src/root.css"
   const cssContent = await (await fetch(registryRootCSS)).text()
 
-  writeFileSync(cssPath, cssContent)
+  writeFile(
+    cssPath,
+    cssContent,
+    (error) => error && log.error(error.message || "Something went wrong")
+  )
 
   indicator.stop("Done Writing CSS styles!")
 }
@@ -171,7 +198,7 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
     }
 
     tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components"]
-    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/utils"]
+    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/lib/utils"]
 
     writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
       if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)

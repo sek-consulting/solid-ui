@@ -4,8 +4,6 @@ import { mergeProps, onMount, createEffect, on, onCleanup, splitProps } from "so
 import type {
   ChartComponent,
   ChartData,
-  ChartOptions,
-  Plugin,
   ChartItem,
   ChartType,
   ChartTypeRegistry,
@@ -40,8 +38,7 @@ import { cn } from "~/lib/utils"
 
 export interface TypedChartProps extends ComponentProps<"div"> {
   data: ChartData
-  options?: ChartOptions
-  plugins?: Plugin[]
+  showLegend?: boolean
 }
 
 export interface ChartProps extends TypedChartProps {
@@ -115,46 +112,39 @@ function showTooltip(context: {
 const BaseChart: Component<ChartProps> = (rawProps) => {
   Chart.register(Colors, Filler, Legend, Tooltip, ...registerMap[rawProps.type])
 
+  const props = mergeProps({ showTooltip: true, showLegend: true }, rawProps)
+  const [, rest] = splitProps(props, ["class", "type", "data", "showLegend"])
+
   let ref: HTMLCanvasElement
   let chart: Chart
-
-  const props = mergeProps(
-    {
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: true,
-            align: "end",
-            labels: {
-              usePointStyle: true,
-              boxWidth: 6,
-              boxHeight: 6,
-              color: "hsl(240, 3.8%, 46.1%)", // muted-foreground
-              font: {
-                size: 14 // text-sm
-              }
-            }
-          },
-          tooltip: {
-            enabled: false,
-            external: (context) => showTooltip(context)
-          }
-        }
-      } as ChartOptions,
-      plugins: [] as Plugin[]
-    },
-    rawProps
-  )
-  const [, rest] = splitProps(props, ["class", "type", "data", "options", "plugins"])
 
   const init = () => {
     const ctx = ref!.getContext("2d") as ChartItem
     chart = new Chart(ctx, {
       type: props.type,
       data: props.data,
-      options: props.options,
-      plugins: props.plugins
+      options: {
+        responsive: true,
+        plugins: {
+          legend: !props.showLegend
+            ? { display: false }
+            : {
+                display: true,
+                align: "end",
+                labels: {
+                  usePointStyle: true,
+                  boxWidth: 6,
+                  boxHeight: 6,
+                  color: "hsl(240, 3.8%, 46.1%)",
+                  font: { size: 14 }
+                }
+              },
+          tooltip: {
+            enabled: false,
+            external: (context) => showTooltip(context)
+          }
+        }
+      }
     })
   }
 

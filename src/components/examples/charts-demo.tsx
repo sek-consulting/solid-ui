@@ -76,7 +76,7 @@ export function PieChartDemo() {
           <CardTitle>Sales</CardTitle>
         </CardHeader>
         <CardContent>
-          <PieChart class="w-full md:w-[200px]" data={chartData} />
+          <PieChart class="w-full md:w-[200px]" data={chartData} showLegend={false} />
         </CardContent>
       </Card>
     </ComponentExample>

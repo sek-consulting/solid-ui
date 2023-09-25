@@ -7,8 +7,6 @@ import type {
   ChartItem,
   ChartType,
   ChartTypeRegistry,
-  Point,
-  BubbleDataPoint,
   TooltipModel
 } from "chart.js"
 import {
@@ -56,14 +54,7 @@ const registerMap: { [key in ChartType]: ChartComponent[] } = {
   scatter: [ScatterController, PointElement, LinearScale]
 }
 
-function showTooltip(context: {
-  chart: Chart<
-    keyof ChartTypeRegistry,
-    (number | [number, number] | Point | BubbleDataPoint | null)[],
-    unknown
-  >
-  tooltip: TooltipModel<keyof ChartTypeRegistry>
-}) {
+function showTooltip(context: { chart: Chart; tooltip: TooltipModel<keyof ChartTypeRegistry> }) {
   let el = document.getElementById("chartjs-tooltip")
   if (!el) {
     el = document.createElement("div")
@@ -112,7 +103,7 @@ function showTooltip(context: {
 const BaseChart: Component<ChartProps> = (rawProps) => {
   Chart.register(Colors, Filler, Legend, Tooltip, ...registerMap[rawProps.type])
 
-  const props = mergeProps({ showTooltip: true, showLegend: true }, rawProps)
+  const props = mergeProps({ showLegend: true }, rawProps)
   const [, rest] = splitProps(props, ["class", "type", "data", "showLegend"])
 
   let ref: HTMLCanvasElement

@@ -109,6 +109,11 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
   let ref: HTMLCanvasElement
   let chart: Chart
 
+  const showScales = (type: ChartType) => {
+    const chartsWithScales: ChartType[] = ["bar", "line", "scatter"]
+    return chartsWithScales.includes(type)
+  }
+
   const init = () => {
     const ctx = ref!.getContext("2d") as ChartItem
     chart = new Chart(ctx, {
@@ -116,6 +121,24 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
       data: props.data,
       options: {
         responsive: true,
+        scales: !showScales(props.type)
+          ? {}
+          : {
+              x: {
+                border: { display: false },
+                grid: { display: false }
+              },
+              y: {
+                border: {
+                  dash: [3],
+                  dashOffset: 3,
+                  display: false
+                },
+                grid: {
+                  color: "hsla(240, 3.8%, 46.1%, 0.4)"
+                }
+              }
+            },
         plugins: {
           legend: !props.showLegend
             ? { display: false }

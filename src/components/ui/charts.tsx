@@ -5,8 +5,10 @@ import type {
   ChartComponent,
   ChartData,
   ChartItem,
+  ChartOptions,
   ChartType,
   ChartTypeRegistry,
+  Plugin,
   TooltipModel
 } from "chart.js"
 import {
@@ -36,11 +38,17 @@ import { cn } from "~/lib/utils"
 
 export interface TypedChartProps extends ComponentProps<"div"> {
   data: ChartData
-  showLegend?: boolean
+  options?: ChartOptions
+  plugins?: Plugin[]
 }
 
 export interface ChartProps extends TypedChartProps {
   type: ChartType
+}
+
+export interface ChartContext {
+  chart: Chart
+  tooltip: TooltipModel<keyof ChartTypeRegistry>
 }
 
 const registerMap: { [key in ChartType]: ChartComponent[] } = {
@@ -54,7 +62,54 @@ const registerMap: { [key in ChartType]: ChartComponent[] } = {
   scatter: [ScatterController, PointElement, LinearScale]
 }
 
-function showTooltip(context: { chart: Chart; tooltip: TooltipModel<keyof ChartTypeRegistry> }) {
+const BaseChart: Component<ChartProps> = (rawProps) => {
+  Chart.register(Colors, Filler, Legend, Tooltip, ...registerMap[rawProps.type])
+
+  const props = mergeProps(
+    {
+      options: { responsive: true } as ChartOptions,
+      plugins: [] as Plugin[]
+    },
+    rawProps
+  )
+  const [, rest] = splitProps(props, ["class", "type", "data", "options", "plugins"])
+
+  let ref: HTMLCanvasElement
+  let chart: Chart
+
+  const init = () => {
+    const ctx = ref!.getContext("2d") as ChartItem
+    chart = new Chart(ctx, {
+      type: props.type,
+      data: props.data,
+      options: props.options,
+      plugins: props.plugins
+    })
+  }
+
+  onMount(() => init())
+
+  createEffect(
+    on(
+      () => props.data,
+      () => {
+        chart.data = props.data
+        chart.update()
+      },
+      { defer: true }
+    )
+  )
+
+  onCleanup(() => chart?.destroy())
+
+  return (
+    <div class={cn("max-w-full", props.class)} {...rest}>
+      <canvas ref={ref!} />
+    </div>
+  )
+}
+
+function showTooltip(context: ChartContext) {
   let el = document.getElementById("chartjs-tooltip")
   if (!el) {
     el = document.createElement("div")
@@ -100,92 +155,52 @@ function showTooltip(context: { chart: Chart; tooltip: TooltipModel<keyof ChartT
   el.style.pointerEvents = "none"
 }
 
-const BaseChart: Component<ChartProps> = (rawProps) => {
-  Chart.register(Colors, Filler, Legend, Tooltip, ...registerMap[rawProps.type])
+function createTypedChart(type: ChartType): Component<TypedChartProps> {
+  const chartsWithScales: ChartType[] = ["bar", "line", "scatter"]
+  const chartsWithLegends: ChartType[] = ["bar", "line"]
 
-  const props = mergeProps({ showLegend: true }, rawProps)
-  const [, rest] = splitProps(props, ["class", "type", "data", "showLegend"])
-
-  let ref: HTMLCanvasElement
-  let chart: Chart
-
-  const showScales = (type: ChartType) => {
-    const chartsWithScales: ChartType[] = ["bar", "line", "scatter"]
-    return chartsWithScales.includes(type)
-  }
-
-  const init = () => {
-    const ctx = ref!.getContext("2d") as ChartItem
-    chart = new Chart(ctx, {
-      type: props.type,
-      data: props.data,
-      options: {
-        responsive: true,
-        scales: !showScales(props.type)
-          ? {}
-          : {
-              x: {
-                border: { display: false },
-                grid: { display: false }
-              },
-              y: {
-                border: {
-                  dash: [3],
-                  dashOffset: 3,
-                  display: false
-                },
-                grid: {
-                  color: "hsla(240, 3.8%, 46.1%, 0.4)"
-                }
-              }
+  const options: ChartOptions = {
+    responsive: true,
+    scales: chartsWithScales.includes(type)
+      ? {
+          x: {
+            border: { display: false },
+            grid: { display: false }
+          },
+          y: {
+            border: {
+              dash: [3],
+              dashOffset: 3,
+              display: false
             },
-        plugins: {
-          legend: !props.showLegend
-            ? { display: false }
-            : {
-                display: true,
-                align: "end",
-                labels: {
-                  usePointStyle: true,
-                  boxWidth: 6,
-                  boxHeight: 6,
-                  color: "hsl(240, 3.8%, 46.1%)",
-                  font: { size: 14 }
-                }
-              },
-          tooltip: {
-            enabled: false,
-            external: (context) => showTooltip(context)
+            grid: {
+              color: "hsla(240, 3.8%, 46.1%, 0.4)"
+            }
           }
         }
+      : {},
+    plugins: {
+      legend: chartsWithLegends.includes(type)
+        ? {
+            display: true,
+            align: "end",
+            labels: {
+              usePointStyle: true,
+              boxWidth: 6,
+              boxHeight: 6,
+              color: "hsl(240, 3.8%, 46.1%)",
+              font: { size: 14 }
+            }
+          }
+        : { display: false },
+      tooltip: {
+        enabled: false,
+        external: (context) => showTooltip(context)
       }
-    })
+    }
   }
 
-  onMount(() => init())
-
-  createEffect(
-    on(
-      () => props.data,
-      () => {
-        chart.data = props.data
-        chart.update()
-      },
-      { defer: true }
-    )
-  )
-
-  onCleanup(() => chart?.destroy())
-
-  return (
-    <div class={cn("max-w-full", props.class)} {...rest}>
-      <canvas ref={ref!} />
-    </div>
-  )
-}
-
-function createTypedChart(type: ChartType): Component<TypedChartProps> {
-  return (props) => <BaseChart type={type} {...props} />
+  return (props) => <BaseChart type={type} options={options} {...props} />
 }
 
 const BarChart = createTypedChart("bar")

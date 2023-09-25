@@ -1,6 +1,6 @@
 import { ComponentExample } from "~/components/component-example"
-import { Flex } from "~/components/layout/flex"
 import { Card } from "~/components/ui/card"
+import { Flex } from "~/components/ui/flex"
 
 export function FlexDemo() {
   return (

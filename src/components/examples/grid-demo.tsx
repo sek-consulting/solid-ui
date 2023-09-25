@@ -1,6 +1,6 @@
 import { ComponentExample } from "~/components/component-example"
-import { Col, Grid } from "~/components/layout/grid"
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
+import { Col, Grid } from "~/components/ui/grid"
 
 export function GridDemo() {
   return (

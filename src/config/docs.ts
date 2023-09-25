@@ -97,6 +97,14 @@ export const docsConfig: Config = {
           href: "/docs/components/dropdown-menu"
         },
         {
+          title: "Flex",
+          href: "/docs/components/flex"
+        },
+        {
+          title: "Grid",
+          href: "/docs/components/grid"
+        },
+        {
           title: "Input",
           href: "/docs/components/input"
         },
@@ -167,19 +175,6 @@ export const docsConfig: Config = {
         {
           title: "Tooltip",
           href: "/docs/components/tooltip"
-        }
-      ]
-    },
-    {
-      title: "Layout",
-      items: [
-        {
-          title: "Flex",
-          href: "/docs/layout/flex"
-        },
-        {
-          title: "Grid",
-          href: "/docs/layout/grid"
         }
       ]
     }

@@ -43,7 +43,10 @@ export default function Root() {
           content="A community driven port of the most beautiful ui components using Kobalte including shadcn/ui and tremor."
         />
 
-        <Link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <Link rel="shortcut icon" href="/favicon-16x16.png" />
+        <Link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <Link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
       </Head>
       <Body>
         <ErrorBoundary>

@@ -4,11 +4,10 @@ import { Show, createEffect, createSignal, on, splitProps } from "solid-js"
 import { As } from "@kobalte/core"
 import { TbCheck, TbCopy } from "solid-icons/tb"
 
-import type { ToggleProps } from "~/components/ui/toggle"
-import { Toggle } from "~/components/ui/toggle"
-import { TooltipContent, TooltipTrigger } from "~/components/ui/tooltip"
-import { Tooltip } from "~/components/ui/tooltip"
 import { cn } from "~/lib/utils"
+import type { ToggleProps } from "~/registry/ui/toggle"
+import { Toggle } from "~/registry/ui/toggle"
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/registry/ui/tooltip"
 
 export interface CopyButtonProps extends ToggleProps {
   content: string

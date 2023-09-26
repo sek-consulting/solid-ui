@@ -4,9 +4,9 @@ import { createSignal } from "solid-js"
 import { As } from "@kobalte/core"
 
 import { Icons } from "~/components/icons"
-import { Button } from "~/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet"
 import { docsConfig } from "~/config/docs"
+import { Button } from "~/registry/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "~/registry/ui/sheet"
 
 export function MobileNav() {
   const [open, setOpen] = createSignal(false)

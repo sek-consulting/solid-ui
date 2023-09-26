@@ -3,9 +3,9 @@ import { For } from "solid-js"
 import { Icons } from "~/components/icons"
 import { MobileNav } from "~/components/mobile-nav"
 import { ModeToggle } from "~/components/mode-toggle"
-import { buttonVariants } from "~/components/ui/button"
 import { docsConfig } from "~/config/docs"
 import { cn } from "~/lib/utils"
+import { buttonVariants } from "~/registry/ui/button"
 
 export default function Navbar() {
   return (

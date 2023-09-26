@@ -1,13 +1,13 @@
 import { As, useColorMode } from "@kobalte/core"
 
 import { Icons } from "~/components/icons"
-import { Button } from "~/components/ui/button"
+import { Button } from "~/registry/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from "~/components/ui/dropdown-menu"
+} from "~/registry/ui/dropdown-menu"
 
 export function ModeToggle() {
   const { setColorMode } = useColorMode()

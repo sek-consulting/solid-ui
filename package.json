@@ -24,7 +24,8 @@
     "solid-start": "^0.3.5",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
-    "undici": "^5.24.0"
+    "undici": "^5.24.0",
+    "valibot": "^0.17.1"
   },
   "devDependencies": {
     "@mdx-js/rollup": "^2.3.0",

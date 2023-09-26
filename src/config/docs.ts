@@ -77,10 +77,6 @@ export const docsConfig: Config = {
           href: "/docs/components/checkbox"
         },
         {
-          title: "Combobox",
-          href: "/docs/components/combobox"
-        },
-        {
           title: "Copy Button",
           href: "/docs/components/copy-button"
         },

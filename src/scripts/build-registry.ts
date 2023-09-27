@@ -48,3 +48,14 @@ for (const item of result.output) {
     "utf8"
   )
 }
+
+// #######################################
+//    BUILD registry/index.json
+// #######################################
+
+const uiPayload = result.output.filter((item) => item.type === "ui")
+fs.writeFileSync(
+  path.join(REGISTRY_PATH, "index.json"),
+  JSON.stringify(uiPayload, null, 2),
+  "utf-8"
+)

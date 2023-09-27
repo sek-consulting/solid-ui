@@ -1,0 +1,10 @@
+{
+  "name": "delta-bar",
+  "files": [
+    {
+      "name": "delta-bar.tsx",
+      "content": "import { splitProps, type Component, type ComponentProps, mergeProps, Show } from \"solid-js\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\nexport interface DeltaBarProps extends ComponentProps<\"div\"> {\r\n  value: number\r\n  isIncreasePositive?: boolean\r\n}\r\n\r\nconst DeltaBar: Component<DeltaBarProps> = (rawProps) => {\r\n  const props = mergeProps(\r\n    {\r\n      isIncreasePositive: true\r\n    },\r\n    rawProps\r\n  )\r\n  const [, rest] = splitProps(props, [\"value\", \"isIncreasePositive\", \"class\"])\r\n\r\n  const barColor =\r\n    (props.value > 0 && props.isIncreasePositive) || (props.value < 0 && !props.isIncreasePositive)\r\n      ? \"bg-success-foreground\"\r\n      : \"bg-error-foreground\"\r\n\r\n  const barWidth = `${Math.abs(props.value)}%`\r\n\r\n  return (\r\n    <div\r\n      class={cn(\"bg-secondary relative flex h-2 w-full items-center rounded-full\", props.class)}\r\n      {...rest}\r\n    >\r\n      <div class=\"flex h-full w-1/2 justify-end\">\r\n        <Show when={props.value < 0}>\r\n          <div class={cn(\"rounded-l-full\", barColor)} style={{ width: barWidth }} />\r\n        </Show>\r\n      </div>\r\n      <div class={cn(\"bg-primary ring-background z-10 h-4 w-1 rounded-full ring-2\")} />\r\n      <div class=\"flex h-full w-1/2 justify-start\">\r\n        <Show when={props.value > 0}>\r\n          <div class={cn(\"rounded-r-full\", barColor)} style={{ width: barWidth }} />\r\n        </Show>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport { DeltaBar }\r\n"
+    }
+  ],
+  "type": "ui"
+}

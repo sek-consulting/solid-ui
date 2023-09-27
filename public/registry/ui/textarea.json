@@ -1,0 +1,10 @@
+{
+  "name": "textarea",
+  "files": [
+    {
+      "name": "textarea.tsx",
+      "content": "import type { Component, ComponentProps } from \"solid-js\"\r\nimport { splitProps } from \"solid-js\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\nconst Textarea: Component<ComponentProps<\"textarea\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return (\r\n    <textarea\r\n      class={cn(\r\n        \"border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[80px] w-full rounded-md border bg-transparent px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\",\r\n        props.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Textarea }\r\n"
+    }
+  ],
+  "type": "ui"
+}

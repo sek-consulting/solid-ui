@@ -1,0 +1,13 @@
+{
+  "name": "popover",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "popover.tsx",
+      "content": "import type { Component} from \"solid-js\";\r\nimport { splitProps } from \"solid-js\"\r\n\r\nimport { Popover as PopoverPrimitive } from \"@kobalte/core\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\nconst Popover: Component<PopoverPrimitive.PopoverRootProps> = (props) => {\r\n  return <PopoverPrimitive.Root gutter={4} {...props} />\r\n}\r\n\r\nconst PopoverTrigger = PopoverPrimitive.Trigger\r\n\r\nconst PopoverContent: Component<PopoverPrimitive.PopoverContentProps> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return (\r\n    <PopoverPrimitive.Portal>\r\n      <PopoverPrimitive.Content\r\n        class={cn(\r\n          \"bg-popover text-popover-foreground animate-in z-50 w-72 origin-[var(--kb-popover-content-transform-origin)] rounded-md border p-4 shadow-md outline-none\",\r\n          props.class\r\n        )}\r\n        {...rest}\r\n      />\r\n    </PopoverPrimitive.Portal>\r\n  )\r\n}\r\n\r\nexport { Popover, PopoverTrigger, PopoverContent }\r\n"
+    }
+  ],
+  "type": "ui"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "skeleton",
+  "files": [
+    {
+      "name": "skeleton.tsx",
+      "content": "import type { Component, ComponentProps } from \"solid-js\"\r\nimport { splitProps } from \"solid-js\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\nconst Skeleton: Component<ComponentProps<\"div\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return <div class={cn(\"bg-primary/10 animate-pulse rounded-md\", props.class)} {...rest} />\r\n}\r\n\r\nexport { Skeleton }\r\n"
+    }
+  ],
+  "type": "ui"
+}

@@ -11,7 +11,7 @@ const ui: Registry = [
     name: "avatar",
     type: "ui",
     dependencies: ["@kobalte/core"],
-    files: ["ui/avatar"]
+    files: ["ui/avatar.tsx"]
   },
   {
     name: "badge-delta",
@@ -57,7 +57,7 @@ const ui: Registry = [
     name: "collapsible",
     type: "ui",
     dependencies: ["@kobalte/core"],
-    files: ["ui/collapsible"]
+    files: ["ui/collapsible.tsx"]
   },
   {
     name: "delta-bar",

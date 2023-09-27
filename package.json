@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
+    "build:registry": "tsx ./src/scripts/build-registry.ts",
     "start": "solid-start start",
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
   },
@@ -46,6 +47,7 @@
     "solid-start-node": "^0.3.5",
     "solid-start-vercel": "^0.3.5",
     "tailwindcss": "^3.3.3",
+    "tsx": "^3.13.0",
     "vite": "^4.4.9",
     "yaml": "^2.3.2"
   }

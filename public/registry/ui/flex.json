@@ -1,0 +1,10 @@
+{
+  "name": "flex",
+  "files": [
+    {
+      "name": "flex.tsx",
+      "content": "import type { Component, ComponentProps } from \"solid-js\"\r\nimport { mergeProps, splitProps } from \"solid-js\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\ntype JustifyContent = \"start\" | \"end\" | \"center\" | \"between\" | \"around\" | \"evenly\"\r\ntype AlignItems = \"start\" | \"end\" | \"center\" | \"baseline\" | \"stretch\"\r\ntype FlexDirection = \"row\" | \"col\" | \"row-reverse\" | \"col-reverse\"\r\n\r\nexport interface FlexProps extends ComponentProps<\"div\"> {\r\n  flexDirection?: FlexDirection\r\n  justifyContent?: JustifyContent\r\n  alignItems?: AlignItems\r\n}\r\n\r\nconst Flex: Component<FlexProps> = (rawProps) => {\r\n  const props = mergeProps(\r\n    {\r\n      flexDirection: \"row\",\r\n      justifyContent: \"between\",\r\n      alignItems: \"center\"\r\n    } satisfies FlexProps,\r\n    rawProps\r\n  )\r\n  const [, rest] = splitProps(props, [\"flexDirection\", \"justifyContent\", \"alignItems\", \"class\"])\r\n\r\n  return (\r\n    <div\r\n      class={cn(\r\n        \"flex w-full\",\r\n        flexDirectionClassNames[props.flexDirection],\r\n        justifyContentClassNames[props.justifyContent],\r\n        alignItemsClassNames[props.alignItems],\r\n        props.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Flex }\r\n\r\nconst justifyContentClassNames: { [key in JustifyContent]: string } = {\r\n  start: \"justify-start\",\r\n  end: \"justify-end\",\r\n  center: \"justify-center\",\r\n  between: \"justify-between\",\r\n  around: \"justify-around\",\r\n  evenly: \"justify-evenly\"\r\n}\r\n\r\nconst alignItemsClassNames: { [key in AlignItems]: string } = {\r\n  start: \"items-start\",\r\n  end: \"items-end\",\r\n  center: \"items-center\",\r\n  baseline: \"items-baseline\",\r\n  stretch: \"items-stretch\"\r\n}\r\n\r\nconst flexDirectionClassNames: { [key in FlexDirection]: string } = {\r\n  row: \"flex-row\",\r\n  col: \"flex-col\",\r\n  \"row-reverse\": \"flex-row-reverse\",\r\n  \"col-reverse\": \"flex-col-reverse\"\r\n}\r\n"
+    }
+  ],
+  "type": "ui"
+}

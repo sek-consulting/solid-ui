@@ -31,5 +31,8 @@ export default defineConfig({
       enforce: "pre"
     },
     solid({ ssr: true, adapter: vercel({}), extensions: [".mdx", ".md"] })
-  ]
+  ],
+  ssr: {
+    noExternal: ["@kobalte/core", "@internationalized/message"]
+  }
 })

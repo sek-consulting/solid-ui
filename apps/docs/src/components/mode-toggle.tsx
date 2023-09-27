@@ -1,27 +1,16 @@
+import { As, useColorMode } from "@kobalte/core"
+
+import { Icons } from "~/components/icons"
+import { Button } from "~/registry/ui/button"
 import {
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-  As
-} from "../../core"
-import { Icons } from "~/components/icons"
+  DropdownMenuTrigger
+} from "~/registry/ui/dropdown-menu"
 
 export function ModeToggle() {
-  const setTheme = (theme: string) => {
-    const root = document.documentElement
-    if (
-      theme === "dark" ||
-      (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      theme = "dark"
-      root.classList.add("dark")
-    } else {
-      root.classList.remove("dark")
-    }
-    localStorage.setItem("theme", theme)
-  }
+  const { setColorMode } = useColorMode()
 
   return (
     <DropdownMenu>
@@ -33,15 +22,15 @@ export function ModeToggle() {
         </As>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem onSelect={() => setTheme("light")}>
+        <DropdownMenuItem onSelect={() => setColorMode("light")}>
           <Icons.sun class="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onSelect={() => setTheme("dark")}>
+        <DropdownMenuItem onSelect={() => setColorMode("dark")}>
           <Icons.moon class="mr-2 h-4 w-4" />
           <span>Dark</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onSelect={() => setTheme("system")}>
+        <DropdownMenuItem onSelect={() => setColorMode("system")}>
           <Icons.laptop class="mr-2 h-4 w-4" />
           <span>System</span>
         </DropdownMenuItem>

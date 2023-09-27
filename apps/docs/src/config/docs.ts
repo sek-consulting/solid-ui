@@ -1,4 +1,20 @@
-export const docsConfig = {
+type NavElement = {
+  title: string
+  href: string
+  external?: boolean
+}
+
+type NavCategory = {
+  title: string
+  items: NavElement[]
+}
+
+type Config = {
+  mainNav: NavElement[]
+  sidebarNav: NavCategory[]
+}
+
+export const docsConfig: Config = {
   mainNav: [
     {
       title: "Documentation",
@@ -6,7 +22,7 @@ export const docsConfig = {
     },
     {
       title: "GitHub",
-      href: "https://github.com/sek-consulting/~/../packages/core",
+      href: "https://github.com/sek-consulting/solid-ui-components",
       external: true
     },
     {
@@ -26,32 +42,7 @@ export const docsConfig = {
       ]
     },
     {
-      title: "tremor",
-      items: [
-        {
-          title: "Badge Delta",
-          href: "/docs/components/badge#badge-delta"
-        },
-        {
-          title: "Callout",
-          href: "/docs/components/callout"
-        },
-        {
-          title: "Charts",
-          href: "/docs/components/charts"
-        },
-        {
-          title: "Flex",
-          href: "/docs/layout/flex"
-        },
-        {
-          title: "Grid",
-          href: "/docs/layout/grid"
-        }
-      ]
-    },
-    {
-      title: "shadcn/ui",
+      title: "Components",
       items: [
         {
           title: "Accordion",
@@ -70,12 +61,28 @@ export const docsConfig = {
           href: "/docs/components/button"
         },
         {
+          title: "Callout",
+          href: "/docs/components/callout"
+        },
+        {
           title: "Card",
           href: "/docs/components/card"
         },
         {
+          title: "Charts",
+          href: "/docs/components/charts"
+        },
+        {
           title: "Checkbox",
           href: "/docs/components/checkbox"
+        },
+        {
+          title: "Copy Button",
+          href: "/docs/components/copy-button"
+        },
+        {
+          title: "Delta Bar",
+          href: "/docs/components/delta-bar"
         },
         {
           title: "Dialog",
@@ -84,6 +91,14 @@ export const docsConfig = {
         {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu"
+        },
+        {
+          title: "Flex",
+          href: "/docs/components/flex"
+        },
+        {
+          title: "Grid",
+          href: "/docs/components/grid"
         },
         {
           title: "Input",
@@ -122,6 +137,10 @@ export const docsConfig = {
           href: "/docs/components/sheet"
         },
         {
+          title: "Skeleton",
+          href: "/docs/components/skeleton"
+        },
+        {
           title: "Switch",
           href: "/docs/components/switch"
         },
@@ -138,8 +157,16 @@ export const docsConfig = {
           href: "/docs/components/textarea"
         },
         {
+          title: "Timeline",
+          href: "/docs/components/timeline"
+        },
+        {
           title: "Toast",
           href: "/docs/components/toast"
+        },
+        {
+          title: "Toggle",
+          href: "/docs/components/toggle"
         },
         {
           title: "Tooltip",

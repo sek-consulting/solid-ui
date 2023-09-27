@@ -1,0 +1,10 @@
+{
+  "name": "card",
+  "files": [
+    {
+      "name": "card.tsx",
+      "content": "import type { Component, ComponentProps } from \"solid-js\"\r\nimport { splitProps } from \"solid-js\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\nconst Card: Component<ComponentProps<\"div\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return (\r\n    <div\r\n      class={cn(\"bg-card text-card-foreground rounded-lg border shadow-sm\", props.class)}\r\n      {...rest}\r\n    />\r\n  )\r\n}\r\n\r\nconst CardHeader: Component<ComponentProps<\"div\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return <div class={cn(\"flex flex-col space-y-1.5 p-6\", props.class)} {...rest} />\r\n}\r\n\r\nconst CardTitle: Component<ComponentProps<\"h3\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return (\r\n    <h3 class={cn(\"text-lg font-semibold leading-none tracking-tight\", props.class)} {...rest} />\r\n  )\r\n}\r\n\r\nconst CardDescription: Component<ComponentProps<\"p\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return <p class={cn(\"text-muted-foreground text-sm\", props.class)} {...rest} />\r\n}\r\n\r\nconst CardContent: Component<ComponentProps<\"div\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return <div class={cn(\"p-6 pt-0\", props.class)} {...rest} />\r\n}\r\n\r\nconst CardFooter: Component<ComponentProps<\"div\">> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return <div class={cn(\"flex items-center p-6 pt-0\", props.class)} {...rest} />\r\n}\r\n\r\nexport { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }\r\n"
+    }
+  ],
+  "type": "ui"
+}

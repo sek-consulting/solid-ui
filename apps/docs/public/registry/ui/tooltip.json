@@ -1,0 +1,13 @@
+{
+  "name": "tooltip",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "tooltip.tsx",
+      "content": "import { splitProps, type Component } from \"solid-js\"\r\n\r\nimport { Tooltip as TooltipPrimitive } from \"@kobalte/core\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\nconst Tooltip: Component<TooltipPrimitive.TooltipRootProps> = (props) => {\r\n  return <TooltipPrimitive.Root gutter={4} {...props} />\r\n}\r\n\r\nconst TooltipTrigger = TooltipPrimitive.Trigger\r\n\r\nconst TooltipContent: Component<TooltipPrimitive.TooltipContentProps> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return (\r\n    <TooltipPrimitive.Portal>\r\n      <TooltipPrimitive.Content\r\n        class={cn(\r\n          \"bg-popover text-popover-foreground animate-in fade-in-0 zoom-in-95 z-50 origin-[var(--kb-popover-content-transform-origin)] overflow-hidden rounded-md border px-3 py-1.5 text-sm shadow-md\",\r\n          props.class\r\n        )}\r\n        {...rest}\r\n      />\r\n    </TooltipPrimitive.Portal>\r\n  )\r\n}\r\n\r\nexport { Tooltip, TooltipTrigger, TooltipContent }\r\n"
+    }
+  ],
+  "type": "ui"
+}

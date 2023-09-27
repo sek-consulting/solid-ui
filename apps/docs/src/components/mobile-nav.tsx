@@ -1,10 +1,12 @@
 import type { ComponentProps } from "solid-js"
 import { createSignal } from "solid-js"
 
-import { Sheet, SheetContent, SheetTrigger, Button, As } from "~/../core"
+import { As } from "@kobalte/core"
+
 import { Icons } from "~/components/icons"
 import { docsConfig } from "~/config/docs"
-
+import { Button } from "~/registry/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "~/registry/ui/sheet"
 
 export function MobileNav() {
   const [open, setOpen] = createSignal(false)

@@ -1,0 +1,14 @@
+{
+  "name": "accordion",
+  "dependencies": [
+    "@kobalte/core",
+    "solid-icons"
+  ],
+  "files": [
+    {
+      "name": "accordion.tsx",
+      "content": "import type { Component } from \"solid-js\"\r\nimport { splitProps } from \"solid-js\"\r\n\r\nimport { Accordion as AccordionPrimitive } from \"@kobalte/core\"\r\nimport { TbChevronDown } from \"solid-icons/tb\"\r\n\r\nimport { cn } from \"~/lib/utils\"\r\n\r\nconst Accordion = AccordionPrimitive.Root\r\n\r\nconst AccordionItem: Component<AccordionPrimitive.AccordionItemProps> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\"])\r\n  return <AccordionPrimitive.Item class={cn(\"border-b\", props.class)} {...rest} />\r\n}\r\n\r\nconst AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\", \"children\"])\r\n  return (\r\n    <AccordionPrimitive.Header class=\"flex\">\r\n      <AccordionPrimitive.Trigger\r\n        class={cn(\r\n          \"flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-expanded]>svg]:rotate-180\",\r\n          props.class\r\n        )}\r\n        {...rest}\r\n      >\r\n        {props.children}\r\n        <TbChevronDown class=\"h-4 w-4 shrink-0 transition-transform duration-200\" />\r\n      </AccordionPrimitive.Trigger>\r\n    </AccordionPrimitive.Header>\r\n  )\r\n}\r\n\r\nconst AccordionContent: Component<AccordionPrimitive.AccordionContentProps> = (props) => {\r\n  const [, rest] = splitProps(props, [\"class\", \"children\"])\r\n  return (\r\n    <AccordionPrimitive.Content\r\n      class={cn(\r\n        \"animate-accordion-up data-[expanded]:animate-accordion-down overflow-hidden text-sm transition-all\",\r\n        props.class\r\n      )}\r\n      {...rest}\r\n    >\r\n      <div class=\"pb-4 pt-0\">{props.children}</div>\r\n    </AccordionPrimitive.Content>\r\n  )\r\n}\r\n\r\nexport { Accordion, AccordionItem, AccordionTrigger, AccordionContent }\r\n"
+    }
+  ],
+  "type": "ui"
+}

@@ -1,0 +1,36 @@
+---
+title: Timeline
+description: Used to display steps and progress
+---
+
+import { TimelineDemo } from "~/registry/examples/timeline-demo"
+
+## Example
+
+<TimelineDemo />
+
+## Usage
+
+```tsx
+import { Timeline } from "~/components/ui/timeline"
+```
+
+```tsx
+<Timeline
+  items={[
+    {
+      title: "Event #1",
+      description: "This is the first event of the timeline."
+    },
+    {
+      title: "Event #2",
+      description: "This is the second event of the timeline."
+    },
+    {
+      title: "Event #3",
+      description: "This is the third event of the timeline."
+    }
+  ]}
+  activeItem={1}
+/>
+```

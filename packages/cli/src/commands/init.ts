@@ -4,6 +4,7 @@ import { cwd } from "process"
 import { text, confirm, log, spinner, select } from "@clack/prompts"
 
 import { PROJECT_DEPS } from "~/lib/constants"
+import type { Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
 
 export default async function init() {
@@ -123,7 +124,7 @@ function saveConfig(
   indicator.start("Writing suc.config.json...")
 
   const config = JSON.stringify(
-    {
+    <Config>{
       tsx: isTypescript,
       componentDir: "./src/components",
       tailwind: {

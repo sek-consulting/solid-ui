@@ -34,3 +34,9 @@ export async function runCommand(command: string, message?: string, endMessage?:
 
   if (endMessage) indicator.stop(endMessage)
 }
+
+export function removeExtension(value: string) {
+  const splitWords = value.split(".")
+
+  return splitWords[0]
+}

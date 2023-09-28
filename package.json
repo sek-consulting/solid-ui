@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "turbo lint",
     "build": "turbo build",
+    "build:registry": "pnpm --filter=docs build:registry",
     "dev": "turbo dev"
   },
   "workspaces": [

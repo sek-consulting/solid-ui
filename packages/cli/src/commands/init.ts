@@ -21,11 +21,11 @@ export default async function init() {
     initialValue: "tailwind.config.js"
   })
   const componentAlias = await text({
-    message: "Configure the import alias for components:",
-    initialValue: "@/components"
+    message: "Configure the import alias for the components directory:",
+    initialValue: "@/components/*"
   })
   const utilsAlias = await text({
-    message: "Configure the import alias for utils:",
+    message: "Configure the import alias for utils.ts:",
     initialValue: "@/utils"
   })
 
@@ -47,6 +47,7 @@ export default async function init() {
   await installDeps()
 
   log.success("Success! Try npx suc add button to add a button component to your project")
+  process.exit(0)
 }
 
 function writeUtils() {
@@ -192,14 +193,15 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
   readJsonFile(process.cwd() + "/tsconfig.json", (error, data) => {
     if (error) log.error("Something went wrong while configuring your tsconfig.json")
 
-    const tsconfigData = data as Record<string, { paths: Record<string, unknown> }>
+    const tsconfigData = data as Record<string, { paths: Record<string, unknown>, baseUrl: string }>
 
     if (!tsconfigData.compilerOptions.paths) {
       tsconfigData.compilerOptions.paths = {}
     }
 
-    tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components"]
-    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/lib/utils"]
+    tsconfigData.compilerOptions.baseUrl = "./src"
+    tsconfigData.compilerOptions.paths[componentAlias] = ["./components/*"]
+    tsconfigData.compilerOptions.paths[utilsAlias] = ["./lib/utils"]
 
     writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
       if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)

@@ -3,6 +3,7 @@ dist
 .output
 .vercel
 .netlify
+.turbo
 netlify
 
 # Environment

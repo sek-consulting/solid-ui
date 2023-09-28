@@ -1,0 +1,18 @@
+{
+	"exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "allowArbitraryExtensions": true,
+    "strict": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  }
+}

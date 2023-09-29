@@ -4,15 +4,28 @@ import { PieChart, LineChart, BarChart } from "~/registry/ui/charts"
 
 export function LineChartDemo() {
   const chartData = {
-    labels: ["Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22"],
+    labels: [
+      "Jan 22",
+      "Feb 22",
+      "Mar 22",
+      "Apr 22",
+      "May 22",
+      "Jun 22",
+      "Jul 22",
+      "Aug 22",
+      "Sep 22",
+      "Oct 22",
+      "Nov 22",
+      "Dec 22"
+    ],
     datasets: [
       {
         label: "SemiAnalysis",
-        data: [2890, 2756, 2643, 2837, 2954, 3239]
+        data: [2890, 2756, 3322, 3470, 3475, 3129, 3490, 2903, 2643, 2837, 2954, 3239]
       },
       {
         label: "The Pragmatic Engineer",
-        data: [2338, 2103, 2194, 2473, 3848, 3736]
+        data: [2338, 2103, 2194, 2108, 1812, 1726, 1982, 2012, 2342, 2473, 3848, 3736]
       }
     ]
   }
@@ -23,7 +36,7 @@ export function LineChartDemo() {
           <CardTitle>Newsletter revenue over time (USD)</CardTitle>
         </CardHeader>
         <CardContent>
-          <LineChart class="w-full md:w-[500px]" data={chartData} />
+          <LineChart class="h-72 w-[700px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -32,16 +45,29 @@ export function LineChartDemo() {
 
 export function AreaChartDemo() {
   const chartData = {
-    labels: ["Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22"],
+    labels: [
+      "Jan 22",
+      "Feb 22",
+      "Mar 22",
+      "Apr 22",
+      "May 22",
+      "Jun 22",
+      "Jul 22",
+      "Aug 22",
+      "Sep 22",
+      "Oct 22",
+      "Nov 22",
+      "Dec 22"
+    ],
     datasets: [
       {
         label: "SemiAnalysis",
-        data: [2890, 2756, 2643, 2837, 2954, 3239],
+        data: [2890, 2756, 3322, 3470, 3475, 3129, 3490, 2903, 2643, 2837, 2954, 3239],
         fill: true
       },
       {
         label: "The Pragmatic Engineer",
-        data: [2338, 2103, 2194, 2473, 3848, 3736],
+        data: [2338, 2103, 2194, 2108, 1812, 1726, 1982, 2012, 2342, 2473, 3848, 3736],
         fill: true
       }
     ]
@@ -53,7 +79,7 @@ export function AreaChartDemo() {
           <CardTitle>Newsletter revenue over time (USD)</CardTitle>
         </CardHeader>
         <CardContent>
-          <LineChart class="w-full md:w-[500px]" data={chartData} />
+          <LineChart class="h-72 w-[700px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -62,10 +88,10 @@ export function AreaChartDemo() {
 
 export function PieChartDemo() {
   const chartData = {
-    labels: ["New York", "London", "Hong Kong", "Singapore"],
+    labels: ["New York", "London", "Hong Kong", "San Francisco", "Singapore", "Zurich"],
     datasets: [
       {
-        data: [9800, 4567, 3908, 1908]
+        data: [9800, 4567, 3908, 2400, 1908, 1398]
       }
     ]
   }
@@ -76,7 +102,7 @@ export function PieChartDemo() {
           <CardTitle>Sales</CardTitle>
         </CardHeader>
         <CardContent>
-          <PieChart class="w-full md:w-[200px]" data={chartData} />
+          <PieChart class="h-[200px] w-[200px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -85,11 +111,11 @@ export function PieChartDemo() {
 
 export function BarChartDemo() {
   const chartData = {
-    labels: ["Amphibians", "Birds", "Crustaceans", "Ferns"],
+    labels: ["Amphibians", "Birds", "Crustaceans", "Ferns", "Arachnids", "Corals", "Algae"],
     datasets: [
       {
         label: "Number of threatened species",
-        data: [2488, 1445, 734, 281]
+        data: [2488, 1445, 734, 281, 251, 232, 98]
       }
     ]
   }
@@ -100,7 +126,7 @@ export function BarChartDemo() {
           <CardTitle>Sales</CardTitle>
         </CardHeader>
         <CardContent>
-          <BarChart class="w-full md:w-[500px]" data={chartData} />
+          <BarChart class="h-72 w-[700px]" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>

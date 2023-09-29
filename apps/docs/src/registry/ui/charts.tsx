@@ -67,7 +67,7 @@ const BaseChart: Component<ChartProps> = (rawProps) => {
 
   const props = mergeProps(
     {
-      options: { responsive: true } as ChartOptions,
+      options: { responsive: true, maintainAspectRatio: false } as ChartOptions,
       plugins: [] as Plugin[]
     },
     rawProps
@@ -161,6 +161,7 @@ function createTypedChart(type: ChartType): Component<TypedChartProps> {
 
   const options: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: chartsWithScales.includes(type)
       ? {
           x: {

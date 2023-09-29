@@ -1,60 +1,15 @@
-# Solid/UI
+# solid-ui
 
+This is an unofficial community-led [Solid](https://www.solidjs.com/) port of [shadcn/ui](https://ui.shadcn.com/).
 
-This project aims to port the following projects to SolidJS:
+Accessible and customizable components that you can copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
-- [shadcn/ui](https://ui.shadcn.com)
-- [tremor](https://www.tremor.so/)
+![hero](apps/docs/public/og.png)
 
-![screenshot](public/screenshot.png)
+## Documentation
 
-## Project Status
+Visit https://solid-ui-components.vercel.app/ to view the documentation.
 
-### shadcn/ui
+## License
 
-| Component     | finished | in progress | pending |
-| ------------- | -------- | ----------- | ------- |
-| Accordion     | ✔️       |             |         |
-| Avatar        | ✔️       |             |         |
-| Badge         | ✔️       |             |         |
-| Button        | ✔️       |             |         |
-| Calendar      |          |             | ❓      |
-| Card          | ✔️       |             |         |
-| Checkbox      | ✔️       |             |         |
-| Command       |          |             | ❓      |
-| Data Table    |          | 💻          |         |
-| Dialog        | ✔️       |             |         |
-| Dropdown Menu | ✔️       |             |         |
-| Input         | ✔️       |             |         |
-| Label         | ✔️       |             |         |
-| Mode Toggle   | ✔️       |             |         |
-| Popover       | ✔️       |             |         |
-| Progress      | ✔️       |             |         |
-| Radio Group   | ✔️       |             |         |
-| Select        | ✔️       |             |         |
-| Separator     | ✔️       |             |         |
-| Sheet         | ✔️       |             |         |
-| Switch        | ✔️       |             |         |
-| Table         | ✔️       |             |         |
-| Tabs          | ✔️       |             |         |
-| Textarea      | ✔️       |             |         |
-| Toast         |          | 💻          |         |
-
-### tremor
-
-| Component   | finished | in progress | pending |
-| ----------- | -------- | ----------- | ------- |
-| Badge Delta | ✔️       |             |         |
-| Callout     | ✔️       |             |         |
-| Charts      | ✔️       |             |         |
-| Flex        | ✔️       |             |         |
-| Grid        | ✔️       |             |         |
-
-## Credits
-
-- [@shadcn](https://twitter.com/shadcn) - Without @shadcn I wouldn't have started this project at all!
-- [Kobalte.](https://github.com/kobaltedev/kobalte) - For the primitives.
-
-## Want to contribute?
-
-Feel free to create issues and pull requests or start a discussion.
+Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).

@@ -1,4 +1,6 @@
-import type { ComponentProps } from "solid-js"
+import { type ComponentProps } from "solid-js"
+
+import { CopyButton } from "./copy-button"
 
 export const MDXComponents = {
   h1: (props: ComponentProps<"h1">) => {
@@ -68,13 +70,18 @@ export const MDXComponents = {
     }
   ) => {
     let preRef: HTMLPreElement | undefined
-
     return (
-      <pre
-        ref={preRef}
-        class="code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-900 p-4"
-        {...props}
-      />
+      <div class="group relative">
+        <pre
+          ref={preRef}
+          class="code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-900 p-4"
+          {...props}
+        />
+        <CopyButton
+          class="absolute right-2 top-2 hidden text-[#D8DEE9] group-hover:block"
+          content={preRef?.querySelector("code")?.innerText ?? ""}
+        />
+      </div>
     )
   }
 }

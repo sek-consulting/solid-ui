@@ -22,6 +22,10 @@ import Navbar from "~/components/navbar"
 import "@fontsource/inter/latin.css"
 import "./root.css"
 
+const TITLE = "solid-ui"
+const DESCRIPTION = "Beautifully designed components built with Kobalte and Tailwind CSS."
+const BASE_URL = "https://solid-ui-components.vercel.app"
+
 export default function Root() {
   const event = useContext(ServerContext)
 
@@ -37,11 +41,29 @@ export default function Root() {
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <Meta name="title" content="solid/ui" />
+        <Meta name="title" content={TITLE} />
+        <Meta name="description" content={DESCRIPTION} />
         <Meta
-          name="description"
-          content="A community driven port of the most beautiful ui components using Kobalte including shadcn/ui and tremor."
+          name="keywords"
+          content="shadcn,Solid,SolidStart,Solid Components,TailwindCSS,Kobalte"
         />
+        <Meta name="author" content="Stefan E-K" />
+
+        <Meta name="twitter:card" content="summary_large_image" />
+        <Meta name="twitter:site" content={BASE_URL} />
+        <Meta name="twitter:title" content={TITLE} />
+        <Meta name="twitter:description" content={DESCRIPTION} />
+        <Meta name="twitter:image" content={`${BASE_URL}/og.png`} />
+        <Meta name="twitter:image:alt" content={TITLE} />
+        <Meta name="twitter:creator" content="stefan_e_k" />
+
+        <Meta name="og:title" content={TITLE} />
+        <Meta name="og:type" content="article" />
+        <Meta name="og:url" content={BASE_URL} />
+        <Meta name="og:image" content={`${BASE_URL}/og.png`} />
+        <Meta name="og:image:alt" content={TITLE} />
+        <Meta name="og:image:width" content="1200" />
+        <Meta name="og:image:height" content="630" />
 
         <Link rel="manifest" href="https://solid-ui-components.vercel.app/site.webmanifest" />
         <Link rel="icon" type="image/svg+xml" href="/favicon.ico" />

@@ -1,14 +1,13 @@
 import { defineConfig } from "vite"
 
 import solid from "solid-start/vite"
+
 import mdx from "@mdx-js/rollup"
+import rehypePrettyCode from "rehype-pretty-code"
+import remarkFrontmatter from "remark-frontmatter"
 import vercel from "solid-start-vercel"
 
-import remarkFrontmatter from "remark-frontmatter"
 import remarkSolidFrontmatter from "./src/lib/mdx/frontmatter"
-
-import rehypePrettyCode from "rehype-pretty-code"
-import { getHighlighter } from "shiki"
 
 export default defineConfig({
   plugins: [
@@ -19,10 +18,11 @@ export default defineConfig({
         remarkPlugins: [remarkFrontmatter, remarkSolidFrontmatter],
         rehypePlugins: [
           [
+            //@ts-expect-error
             rehypePrettyCode,
             {
-              getHighlighter: async () => {
-                return await getHighlighter({ theme: "nord" })
+              theme: {
+                dark: "Nord"
               }
             }
           ]
@@ -30,7 +30,7 @@ export default defineConfig({
       }),
       enforce: "pre"
     },
-    solid({ ssr: true, adapter: vercel({}), extensions: [".mdx", ".md"] })
+    solid({ ssr: true, adapter: vercel({}), extensions: [".mdx"] })
   ],
   ssr: {
     noExternal: ["@kobalte/core", "@internationalized/message"]

@@ -1,6 +1,7 @@
-import { type ComponentProps } from "solid-js"
+import { splitProps, type ComponentProps, JSX, Component } from "solid-js"
 
 import { CopyButton } from "./copy-button"
+import { cn } from "~/lib/utils"
 
 export const MDXComponents = {
   h1: (props: ComponentProps<"h1">) => {
@@ -74,7 +75,7 @@ export const MDXComponents = {
       <div class="group relative">
         <pre
           ref={preRef}
-          class="code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-900 p-4"
+          class="code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-900 py-4"
           {...props}
         />
         <CopyButton
@@ -83,5 +84,8 @@ export const MDXComponents = {
         />
       </div>
     )
-  }
+  },
+  Steps: (props: ComponentProps<"div">) => (
+    <div class="[&>h3]:step steps mb-12 ml-4 border-l pl-8 [counter-reset:step]" {...props} />
+  )
 }

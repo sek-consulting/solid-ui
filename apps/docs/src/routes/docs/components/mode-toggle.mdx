@@ -14,7 +14,7 @@ import { ModeToggle } from "~/components/mode-toggle"
 
 ## Usage
 
-1. Create the component `~/components/mode-toggle.tsx` and paste the following code into it.
+Create the component `~/components/mode-toggle.tsx` and paste the following code into it.
 
 ```tsx
 import { As, useColorMode } from "@kobalte/core"
@@ -56,62 +56,5 @@ export function ModeToggle() {
       </DropdownMenuContent>
     </DropdownMenu>
   )
-}
-```
-
-2. Then add the needed provider & manager to the `root.tsx` file like this:
-
-```tsx
-import { useContext } from "solid-js"
-import { isServer } from "solid-js/web"
-import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
-```
-
-```tsx
-export default function Root() {
-  const event = useContext(ServerContext)
-
-  const storageManager = cookieStorageManagerSSR(
-    isServer ? event?.request.headers.get("cookie") ?? "" : document.cookie
-  )
-
-  return (
-    <Html lang="en">
-      <Head>...</Head>
-      <Body>
-        <ErrorBoundary>
-          <ColorModeScript storageType={storageManager.type} />
-          <Suspense>
-            <ColorModeProvider storageManager={storageManager}>
-              <Navbar />
-              <Routes>
-                <FileRoutes />
-              </Routes>
-            </ColorModeProvider>
-          </Suspense>
-        </ErrorBoundary>
-        <Scripts />
-      </Body>
-    </Html>
-  )
-}
-```
-
-3. Change the tailwind config & root.css to use `data-kb-theme`:
-
-```css
-[data-kb-theme="dark"] {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    ...
-}
-```
-
-```js
-/** @type {import('tailwindcss').Config} */
-export default {
-  darkMode: ["class", '[data-kb-theme="dark"]'],
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  ...
 }
 ```

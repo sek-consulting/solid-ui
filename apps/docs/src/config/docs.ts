@@ -40,8 +40,16 @@ export const docsConfig: Config = {
           href: "/docs/introduction"
         },
         {
+          title: "Dark Mode",
+          href: "/docs/dark-mode"
+        },
+        {
           title: "CLI",
           href: "/docs/cli"
+        },
+        {
+          title: "About",
+          href: "/docs/about"
         }
       ]
     },

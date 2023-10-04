@@ -40,14 +40,11 @@ export default function DocsLayout() {
                 <p class="text-muted-foreground text-lg">{data().frontmatter.description}</p>
               </Show>
             </div>
-            <div
-              data-orientation="horizontal"
-              role="none"
-              class="bg-border my-4 h-[1px] w-full shrink-0 md:my-6"
-            />
-            <MDXProvider components={MDXComponents}>
-              <Outlet />
-            </MDXProvider>
+            <div class="pb-12 pt-8">
+              <MDXProvider components={MDXComponents}>
+                <Outlet />
+              </MDXProvider>
+            </div>
           </div>
           <div class="hidden text-sm xl:block">
             <TableOfContents toc={data().headings} />

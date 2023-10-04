@@ -4,11 +4,13 @@ import solid from "solid-start/vite"
 
 import mdx from "@mdx-js/rollup"
 import rehypePrettyCode from "rehype-pretty-code"
+import rehypeSlug from "rehype-slug"
 import remarkFrontmatter from "remark-frontmatter"
 import { getHighlighter } from "shiki"
 import vercel from "solid-start-vercel"
 
 import remarkSolidFrontmatter from "./src/lib/mdx/frontmatter"
+import rehypeHeadings from "./src/lib/mdx/headings"
 
 export default defineConfig({
   plugins: [
@@ -18,6 +20,8 @@ export default defineConfig({
         providerImportSource: "solid-jsx",
         remarkPlugins: [remarkFrontmatter, remarkSolidFrontmatter],
         rehypePlugins: [
+          rehypeSlug,
+          rehypeHeadings,
           [
             //@ts-expect-error
             rehypePrettyCode,

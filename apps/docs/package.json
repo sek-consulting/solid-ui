@@ -41,12 +41,14 @@
     "postcss": "^8.4.30",
     "prettier": "^3.0.3",
     "rehype-pretty-code": "^0.10.1",
+    "rehype-slug": "^6.0.0",
     "remark-frontmatter": "^5.0.0",
     "shiki": "^0.14.4",
     "solid-start-node": "^0.3.6",
     "solid-start-vercel": "^0.3.6",
     "tailwindcss": "^3.3.3",
     "tsx": "^3.13.0",
+    "unist-util-visit": "^5.0.0",
     "vite": "^4.4.9",
     "yaml": "^2.3.2"
   }

@@ -36,7 +36,7 @@ export function LineChartDemo() {
           <CardTitle>Newsletter revenue over time (USD)</CardTitle>
         </CardHeader>
         <CardContent>
-          <LineChart class="h-72 w-[700px]" data={chartData} />
+          <LineChart class="h-64 w-[500px] max-w-full" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -79,7 +79,7 @@ export function AreaChartDemo() {
           <CardTitle>Newsletter revenue over time (USD)</CardTitle>
         </CardHeader>
         <CardContent>
-          <LineChart class="h-72 w-[700px]" data={chartData} />
+          <LineChart class="h-64 w-[500px] max-w-full" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>
@@ -126,7 +126,7 @@ export function BarChartDemo() {
           <CardTitle>Sales</CardTitle>
         </CardHeader>
         <CardContent>
-          <BarChart class="h-72 w-[700px]" data={chartData} />
+          <BarChart class="h-64 w-[500px] max-w-full" data={chartData} />
         </CardContent>
       </Card>
     </ComponentExample>

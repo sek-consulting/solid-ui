@@ -1,5 +1,5 @@
 import { Show, createMemo } from "solid-js"
-import { Head, Outlet, Title, useLocation } from "solid-start"
+import { A, Head, Outlet, Title, useLocation } from "solid-start"
 
 import { MDXProvider } from "solid-jsx"
 
@@ -8,6 +8,8 @@ import Sidebar from "~/components/sidebar"
 import { TableOfContents } from "~/components/toc"
 import type { Frontmatter } from "~/lib/mdx/frontmatter"
 import type { Heading } from "~/lib/mdx/headings"
+import { cn } from "~/lib/utils"
+import { badgeVariants } from "~/registry/ui/badge"
 
 const contents = import.meta.glob<{
   frontmatter: Frontmatter
@@ -36,8 +38,16 @@ export default function DocsLayout() {
               <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">
                 {data().frontmatter.title}
               </h1>
-              <Show when={data().frontmatter.description}>
-                <p class="text-muted-foreground text-lg">{data().frontmatter.description}</p>
+              <p class="text-muted-foreground text-lg">{data().frontmatter.description}</p>
+              <Show when={data().frontmatter.kobalte}>
+                <A
+                  href={data().frontmatter.kobalte ?? ""}
+                  target="_blank"
+                  rel="noreferrer"
+                  class={cn(badgeVariants({ variant: "secondary" }), "rounded-md")}
+                >
+                  Kobalte
+                </A>
               </Show>
             </div>
             <div class="pb-12 pt-8">

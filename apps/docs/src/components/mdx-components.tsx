@@ -1,7 +1,6 @@
-import { splitProps, type ComponentProps, JSX, Component } from "solid-js"
+import { type ComponentProps } from "solid-js"
 
-import { CopyButton } from "./copy-button"
-import { cn } from "~/lib/utils"
+import { CopyButton } from "~/components/copy-button"
 
 export const MDXComponents = {
   h1: (props: ComponentProps<"h1">) => {

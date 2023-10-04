@@ -5,6 +5,7 @@ import { parse } from "yaml"
 export type Frontmatter = {
   title: string
   description: string
+  kobalte?: string
 }
 
 export default function remarkSolidFrontmatter() {

@@ -6,6 +6,20 @@ import { text, confirm, log, spinner, select } from "@clack/prompts"
 import { PROJECT_DEPS } from "~/lib/constants"
 import type { Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
+import { boolean, object, parse, string } from "valibot"
+
+const configSchema = object({
+  tsx: boolean(),
+  componentDir: string(),
+  tailwind: object({
+    config: string(),
+    css: string()
+  }),
+  aliases: object({
+    components: string(),
+    utils: string()
+  })
+})
 
 export default async function init() {
   const isTypescript = await confirm({
@@ -22,12 +36,27 @@ export default async function init() {
   })
   const componentAlias = await text({
     message: "Configure the import alias for the components directory:",
-    initialValue: "@/components/*"
+    initialValue: "~/components/*"
   })
   const utilsAlias = await text({
     message: "Configure the import alias for utils.ts:",
-    initialValue: "@/utils"
+    initialValue: "~/utils"
   })
+
+  const config = parse(configSchema, {
+    tsx: isTypescript,
+    componentDir: "./src/components",
+    tailwind: {
+      config: tailwindConfigDir,
+      css: globalCssDir
+    },
+    aliases: {
+      components: componentAlias,
+      utils: utilsAlias
+    }
+  })
+
+  // await fs.writeFile(targetPath, JSON.stringify(config, null, 2), "utf8")
 
   saveConfig(
     isTypescript as boolean,

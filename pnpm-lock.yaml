@@ -5,8 +5,8 @@ importers:
   .:
     dependencies:
       valibot:
-        specifier: ^0.17.1
-        version: 0.17.1
+        specifier: ^0.18.0
+        version: 0.18.0
     devDependencies:
       eslint:
         specifier: ^8.49.0
@@ -6791,8 +6791,8 @@ packages:
       sade: 1.8.1
     dev: true
 
-  /valibot@0.17.1:
-    resolution: {integrity: sha512-yfft6fqeB059vNZEdar4tcfU3ZOn4raEec790PTQe1SVfJz5CkZOlMNabkW5MA9Z10SCjUWmxBRz1SMYTGU5yg==}
+  /valibot@0.18.0:
+    resolution: {integrity: sha512-JpJ1ITTIAA4kuLDX5ygnjuMdeHryNI4cqx3vWQFisytTzH3/RBcTYJO336RSd/gRRRrYhIWf2RuST76p4TbdBw==}
     dev: false
 
   /validate-html-nesting@1.2.2:

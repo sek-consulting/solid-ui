@@ -4,22 +4,9 @@ import { cwd } from "process"
 import { text, confirm, log, spinner, select } from "@clack/prompts"
 
 import { PROJECT_DEPS } from "~/lib/constants"
-import type { Config } from "~/lib/types"
+import { configSchema, type Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
-import { boolean, object, parse, string } from "valibot"
-
-const configSchema = object({
-  tsx: boolean(),
-  componentDir: string(),
-  tailwind: object({
-    config: string(),
-    css: string()
-  }),
-  aliases: object({
-    components: string(),
-    utils: string()
-  })
-})
+import { parse } from "valibot"
 
 export default async function init() {
   const isTypescript = await confirm({
@@ -56,15 +43,7 @@ export default async function init() {
     }
   })
 
-  // await fs.writeFile(targetPath, JSON.stringify(config, null, 2), "utf8")
-
-  saveConfig(
-    isTypescript as boolean,
-    tailwindConfigDir as string,
-    globalCssDir as string,
-    componentAlias as string,
-    utilsAlias as string
-  )
+  saveConfig(config)
   writeTsconfig(componentAlias as string, utilsAlias as string)
   writeUtils()
   await writeSUCPreset()
@@ -143,34 +122,11 @@ async function installDeps() {
   }
 }
 
-function saveConfig(
-  isTypescript: boolean,
-  tailwindConfigDir: string,
-  globalCssDir: string,
-  componentAlias: string,
-  utilsAlias: string
-) {
+function saveConfig(config: Config) {
   const indicator = spinner()
   indicator.start("Writing suc.config.json...")
 
-  const config = JSON.stringify(
-    <Config>{
-      tsx: isTypescript,
-      componentDir: "./src/components",
-      tailwind: {
-        config: tailwindConfigDir,
-        css: globalCssDir
-      },
-      aliases: {
-        components: componentAlias,
-        utils: utilsAlias
-      }
-    },
-    null,
-    2
-  )
-
-  writeFile("suc.config.json", config, (error) => {
+  writeFile("suc.config.json", JSON.stringify(config, null, 2), (error) => {
     if (error) log.error("There was an error while saving your preferences")
   })
   indicator.stop("suc.config.json successfully created!")

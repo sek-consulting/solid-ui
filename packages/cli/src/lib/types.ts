@@ -1,3 +1,5 @@
+import { Output, boolean, object, string } from "valibot"
+
 export enum CommandTypes {
   "init",
   "add"
@@ -23,15 +25,16 @@ export type RegistryComponentsList = {
   type: string
 }[]
 
-export interface Config {
-  tsx: boolean
-  componentDir: string
-  tailwind: {
-    config: string
-    css: string
-  }
-  aliases: {
-    components: string
-    utils: string
-  }
-}
+export const configSchema = object({
+  tsx: boolean(),
+  componentDir: string(),
+  tailwind: object({
+    config: string(),
+    css: string()
+  }),
+  aliases: object({
+    components: string(),
+    utils: string()
+  })
+})
+export type Config = Output<typeof configSchema>

@@ -5,6 +5,7 @@ import solid from "solid-start/vite"
 import mdx from "@mdx-js/rollup"
 import rehypePrettyCode from "rehype-pretty-code"
 import remarkFrontmatter from "remark-frontmatter"
+import { getHighlighter } from "shiki"
 import vercel from "solid-start-vercel"
 
 import remarkSolidFrontmatter from "./src/lib/mdx/frontmatter"
@@ -21,8 +22,8 @@ export default defineConfig({
             //@ts-expect-error
             rehypePrettyCode,
             {
-              theme: {
-                dark: "Nord"
+              getHighlighter: async () => {
+                return await getHighlighter({ theme: "nord" })
               }
             }
           ]

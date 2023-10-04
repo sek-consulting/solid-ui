@@ -38,6 +38,10 @@ export const docsConfig: Config = {
         {
           title: "Introduction",
           href: "/docs/introduction"
+        },
+        {
+          title: "CLI",
+          href: "/docs/cli"
         }
       ]
     },

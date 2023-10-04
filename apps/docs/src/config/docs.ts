@@ -48,6 +48,10 @@ export const docsConfig: Config = {
           href: "/docs/cli"
         },
         {
+          title: "Figma",
+          href: "/docs/figma"
+        },
+        {
           title: "About",
           href: "/docs/about"
         }

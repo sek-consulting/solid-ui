@@ -20,7 +20,7 @@ import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@ko
 
 import Navbar from "~/components/navbar"
 import "@fontsource/inter/latin.css"
-import "./root.css"
+import "~/styles/root.css"
 
 const TITLE = "solid-ui"
 const DESCRIPTION = "Beautifully designed components built with Kobalte and Tailwind CSS."

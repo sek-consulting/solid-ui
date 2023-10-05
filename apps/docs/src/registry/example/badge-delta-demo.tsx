@@ -1,9 +1,8 @@
-import { ComponentExample } from "~/components/component-example"
 import { BadgeDelta } from "~/registry/ui/badge-delta"
 
-export function BadgeDeltaDemo() {
+export default function BadgeDeltaDemo() {
   return (
-    <ComponentExample class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4">
       <p>BadgeDelta with pre-defined status icons</p>
       <div class="flex gap-2">
         <BadgeDelta deltaType="increase">text</BadgeDelta>
@@ -20,6 +19,6 @@ export function BadgeDeltaDemo() {
         <BadgeDelta deltaType="moderateDecrease" />
         <BadgeDelta deltaType="decrease" />
       </div>
-    </ComponentExample>
+    </div>
   )
 }

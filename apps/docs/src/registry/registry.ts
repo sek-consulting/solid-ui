@@ -185,4 +185,43 @@ const ui: Registry = [
   }
 ]
 
-export const registry: Registry = [...ui]
+const examples: Registry = [
+  {
+    name: "accordion-demo",
+    type: "example",
+    registryDependencies: ["accordion"],
+    files: ["example/accordion-demo.tsx"]
+  },
+  {
+    name: "avatar-demo",
+    type: "example",
+    registryDependencies: ["avatar"],
+    files: ["example/avatar-demo.tsx"]
+  },
+  {
+    name: "button-demo",
+    type: "example",
+    registryDependencies: ["button"],
+    files: ["example/button-demo.tsx"]
+  },
+  {
+    name: "badge-demo",
+    type: "example",
+    registryDependencies: ["badge"],
+    files: ["example/badge-demo.tsx"]
+  },
+  {
+    name: "badge-delta-demo",
+    type: "example",
+    registryDependencies: ["badge-delta"],
+    files: ["example/badge-delta-demo.tsx"]
+  },
+  {
+    name: "callout-demo",
+    type: "example",
+    registryDependencies: ["callout"],
+    files: ["example/callout-demo.tsx"]
+  }
+]
+
+export const registry: Registry = [...ui, ...examples]

@@ -1,6 +1,9 @@
 import { type ComponentProps } from "solid-js"
 
+import { ComponentPreview } from "~/components/component-preview"
+import { ComponentSource } from "~/components/component-source"
 import { CopyButton } from "~/components/copy-button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
 
 export const MDXComponents = {
   h1: (props: ComponentProps<"h1">) => {
@@ -84,7 +87,28 @@ export const MDXComponents = {
       </div>
     )
   },
+  Step: (props: ComponentProps<"h3">) => (
+    <h3 class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight" {...props} />
+  ),
   Steps: (props: ComponentProps<"div">) => (
     <div class="[&>h3]:step steps mb-12 ml-4 border-l pl-8 [counter-reset:step]" {...props} />
-  )
+  ),
+  Tabs: (props: ComponentProps<typeof Tabs>) => <Tabs class="relative mt-6 w-full" {...props} />,
+  TabsList: (props: ComponentProps<typeof TabsList>) => (
+    <TabsList class="w-full justify-start rounded-none border-b bg-transparent p-0" {...props} />
+  ),
+  TabsTrigger: (props: ComponentProps<typeof TabsTrigger>) => (
+    <TabsTrigger
+      class="text-muted-foreground data-[selected]:border-b-primary data-[selected]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold shadow-none transition-none data-[selected]:shadow-none"
+      {...props}
+    />
+  ),
+  TabsContent: (props: ComponentProps<typeof TabsContent>) => (
+    <TabsContent
+      class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+      {...props}
+    />
+  ),
+  ComponentPreview,
+  ComponentSource
 }

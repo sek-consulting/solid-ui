@@ -1,7 +1,7 @@
 import { Show, createMemo } from "solid-js"
 import { A, Head, Outlet, Title, useLocation } from "solid-start"
 
-import { MDXProvider } from "solid-jsx"
+import { MDXProvider } from "solid-mdx"
 
 import { MDXComponents } from "~/components/mdx-components"
 import Sidebar from "~/components/sidebar"
@@ -10,6 +10,8 @@ import type { Frontmatter } from "~/lib/mdx/frontmatter"
 import type { Heading } from "~/lib/mdx/headings"
 import { cn } from "~/lib/utils"
 import { badgeVariants } from "~/registry/ui/badge"
+
+import "~/styles/mdx.css"
 
 const contents = import.meta.glob<{
   frontmatter: Frontmatter

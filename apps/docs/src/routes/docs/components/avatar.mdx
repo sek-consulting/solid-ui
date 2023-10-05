@@ -3,11 +3,42 @@ title: Avatar
 description: An image element with a fallback for representing the user.
 ---
 
-import { AvatarDemo } from "~/registry/examples/avatar-demo"
+<ComponentPreview name="avatar-demo" />
 
-## Example
+## Installation
 
-<AvatarDemo />
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add avatar
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="avatar" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

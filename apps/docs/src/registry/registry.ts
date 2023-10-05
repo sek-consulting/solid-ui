@@ -221,6 +221,12 @@ const examples: Registry = [
     type: "example",
     registryDependencies: ["callout"],
     files: ["example/callout-demo.tsx"]
+  },
+  {
+    name: "card-demo",
+    type: "example",
+    registryDependencies: ["card"],
+    files: ["example/card-demo.tsx"]
   }
 ]
 

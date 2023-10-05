@@ -272,4 +272,11 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/callout-demo")),
     files: ["registry/example/callout-demo.tsx"],
   },
+  "card-demo": {
+    name: "card-demo",
+    type: "example",
+    registryDependencies: ["card"],
+    component: lazy(() => import("~/registry/example/card-demo")),
+    files: ["registry/example/card-demo.tsx"],
+  },
 }

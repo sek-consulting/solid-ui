@@ -38,6 +38,7 @@ export default function rehypeComponent() {
         let source = fs.readFileSync(filePath, "utf-8")
 
         source = source.replaceAll("~/registry/", "~/components/")
+        source = source.replaceAll("export default", "export")
 
         node.children?.push(
           u("element", {

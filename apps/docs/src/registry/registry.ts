@@ -227,6 +227,11 @@ const examples: Registry = [
     type: "example",
     registryDependencies: ["card"],
     files: ["example/card-demo.tsx"]
+  },
+  {
+    name: "mode-toggle",
+    type: "example",
+    files: ["example/mode-toggle.tsx"]
   }
 ]
 

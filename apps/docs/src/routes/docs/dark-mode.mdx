@@ -17,13 +17,11 @@ npm install @kobalte/core
 
 Add the `Theme Provider` and `ColorModeScript` to your root.
 
-```tsx
+```tsx {6,8-10,17,19,24}
 import { useContext } from "solid-js"
 import { isServer } from "solid-js/web"
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
-```
 
-```tsx {2,4-6,13,15,20}
 export default function Root() {
   const event = useContext(ServerContext)
 
@@ -75,5 +73,7 @@ export default {
 ### Add a mode toggle
 
 Place a [mode toggle](/docs/components/mode-toggle) on your site to toggle between light and dark mode.
+
+<ComponentPreview name="mode-toggle" />
 
 </Steps>

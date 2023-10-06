@@ -2,11 +2,11 @@ import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
 import { cwd } from "process"
 
 import { text, confirm, log, spinner, select } from "@clack/prompts"
+import { parse } from "valibot"
 
 import { PROJECT_DEPS } from "~/lib/constants"
 import { configSchema, type Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
-import { parse } from "valibot"
 
 export default async function init() {
   const isTypescript = await confirm({
@@ -19,7 +19,7 @@ export default async function init() {
   })
   const tailwindConfigDir = await text({
     message: "Where is your tailwind.config.js located?",
-    initialValue: "tailwind.config.js"
+    initialValue: "tailwind.config.cjs"
   })
   const componentAlias = await text({
     message: "Configure the import alias for the components directory:",

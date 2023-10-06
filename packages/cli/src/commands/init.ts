@@ -44,11 +44,11 @@ export default async function init() {
   })
 
   saveConfig(config)
-  writeTsconfig(componentAlias as string, utilsAlias as string)
+  writeTsconfig(config.aliases.components, config.aliases.utils)
   writeUtils()
   await writeSUCPreset()
-  await writeTailwindConfig(tailwindConfigDir as string)
-  await writeCSS(globalCssDir as string)
+  await writeTailwindConfig(config.tailwind.config)
+  await writeCSS(config.tailwind.css)
 
   log.success("Project configuration completed.")
 

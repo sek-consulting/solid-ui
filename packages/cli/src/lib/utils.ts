@@ -1,4 +1,4 @@
-import { exec } from "child_process"
+import { execSync } from "child_process"
 import { readFile } from "fs"
 
 import { log, spinner } from "@clack/prompts"
@@ -24,16 +24,16 @@ export function readJsonFile(
 }
 
 export function runCommand(command: string, message?: string, endMessage?: string) {
-  const indicator = spinner()
-  indicator.start(message)
+  try {
+    const indicator = spinner()
+    indicator.start(message)
 
-  exec(command, (error, stdout) => {
-    if (!message) log.info(stdout)
+    execSync(command)
 
-    if (error) log.error(`Something went wrong while running the command: ${error}`)
-  })
-
-  indicator.stop(endMessage ?? "Done")
+    indicator.stop(endMessage ?? "Done")
+  } catch (error) {
+    log.error(`${error}`)
+  }
 }
 
 export function removeExtension(value: string) {

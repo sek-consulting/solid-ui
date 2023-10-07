@@ -114,7 +114,7 @@ async function installDeps() {
       initialValue: "npm"
     })
 
-    await runCommand(
+    runCommand(
       `${packageManager as string} install ${PROJECT_DEPS.join(" ")}`,
       "Installing Solid UI Component dependencies",
       "Dependencies installed"

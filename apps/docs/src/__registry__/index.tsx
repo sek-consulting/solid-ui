@@ -279,4 +279,11 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/card-demo")),
     files: ["registry/example/card-demo.tsx"],
   },
+  "mode-toggle": {
+    name: "mode-toggle",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/mode-toggle")),
+    files: ["registry/example/mode-toggle.tsx"],
+  },
 }

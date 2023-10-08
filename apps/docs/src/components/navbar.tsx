@@ -3,6 +3,7 @@ import { For } from "solid-js"
 import { Icons } from "~/components/icons"
 import { MobileNav } from "~/components/mobile-nav"
 import { ModeToggle } from "~/components/mode-toggle"
+import SearchBar from "~/components/search-bar"
 import { docsConfig } from "~/config/docs"
 import { cn } from "~/lib/utils"
 import { buttonVariants } from "~/registry/ui/button"
@@ -34,6 +35,7 @@ export default function Navbar() {
         </div>
         <div class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
           <nav class="flex items-center space-x-1">
+            <SearchBar />
             <a
               href="https://github.com/sek-consulting/solid-ui-components"
               target="_blank"

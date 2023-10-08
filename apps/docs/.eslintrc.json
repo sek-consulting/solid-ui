@@ -49,5 +49,5 @@
       "parser": "@typescript-eslint/parser"
     }
   ],
-  "ignorePatterns": ["*.config.*", "*.json"]
+  "ignorePatterns": ["*.config.*", "*.json", "**/__registry__/**.*"]
 }

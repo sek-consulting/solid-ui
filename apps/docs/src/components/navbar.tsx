@@ -34,7 +34,7 @@ export default function Navbar() {
           </nav>
         </div>
         <div class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
-          <nav class="flex items-center space-x-1">
+          <nav class="flex w-full items-center justify-between space-x-2 md:justify-end">
             <SearchBar />
             <a
               href="https://github.com/sek-consulting/solid-ui-components"

@@ -1,58 +1,55 @@
 import { createSignal } from "solid-js"
 import { useNavigate } from "solid-start"
 
-import { As, Combobox } from "@kobalte/core"
-import { TbCheck } from "solid-icons/tb"
+import { As } from "@kobalte/core"
+import { createShortcut } from "@solid-primitives/keyboard"
+import { TbSearch } from "solid-icons/tb"
 
+import { docsConfig } from "~/config/docs"
 import { Button } from "~/registry/ui/button"
 import {
+  ComboboxContent,
   ComboboxControl,
   ComboboxInput,
+  ComboboxItem,
+  ComboboxItemLabel,
+  ComboboxRoot,
   ComboboxSection,
   ComboboxTrigger
 } from "~/registry/ui/combobox"
 import { Dialog, DialogContent, DialogTrigger } from "~/registry/ui/dialog"
 
 interface Item {
-  value: string
-  label: string
-  disabled: boolean
+  title: string
+  href: string
 }
 interface Category {
   label: string
   options: Item[]
 }
-const ALL_OPTIONS: Category[] = [
-  {
-    label: "Fruits",
-    options: [
-      { value: "apple", label: "Apple", disabled: false },
-      { value: "banana", label: "Banana", disabled: false },
-      { value: "blueberry", label: "Blueberry", disabled: false },
-      { value: "grapes", label: "Grapes", disabled: true },
-      { value: "pineapple", label: "Pineapple", disabled: false }
-    ]
-  },
-  {
-    label: "Meat",
-    options: [
-      { value: "beef", label: "Beef", disabled: false },
-      { value: "chicken", label: "Chicken", disabled: false },
-      { value: "lamb", label: "Lamb", disabled: false },
-      { value: "pork", label: "Pork", disabled: false }
-    ]
-  }
-]
 
 export default function SearchBar() {
   const [open, setOpen] = createSignal(false)
 
+  const OPTIONS: Category[] = docsConfig.sidebarNav.map((value) => {
+    return { label: value.title, options: value.items }
+  })
+
   const navigate = useNavigate()
   const onChange = (value: Item) => {
-    console.log(value)
-    setOpen(false)
-    navigate("/docs/introduction")
+    if (value) {
+      setOpen(false)
+      navigate(value.href)
+    }
   }
+
+  createShortcut(
+    ["Control", "K"],
+    () => {
+      setOpen(true)
+    },
+    { preventDefault: true }
+  )
 
   return (
     <Dialog open={open()} onOpenChange={setOpen}>
@@ -69,38 +66,35 @@ export default function SearchBar() {
           </kbd>
         </As>
       </DialogTrigger>
-      <DialogContent>
-        <Combobox.Root<Item, Category>
+      <DialogContent class="border-0 p-0">
+        <ComboboxRoot<Item, Category>
+          placement="bottom"
+          gutter={0}
           open
-          options={ALL_OPTIONS}
-          optionValue="value"
-          optionTextValue="label"
-          optionLabel="label"
+          options={OPTIONS}
+          optionValue="title"
+          optionTextValue="title"
+          optionLabel="title"
           optionGroupChildren="options"
           onChange={onChange}
           placeholder="Search documentation…"
           itemComponent={(props) => (
-            <Combobox.Item item={props.item}>
-              <Combobox.ItemLabel>{props.item.rawValue.label}</Combobox.ItemLabel>
-              <Combobox.ItemIndicator>
-                <TbCheck />
-              </Combobox.ItemIndicator>
-            </Combobox.Item>
+            <ComboboxItem item={props.item}>
+              <ComboboxItemLabel>{props.item.rawValue.title}</ComboboxItemLabel>
+            </ComboboxItem>
           )}
           sectionComponent={(props) => (
             <ComboboxSection>{props.section.rawValue.label}</ComboboxSection>
           )}
         >
-          <ComboboxControl>
-            <ComboboxInput aria-label="Fruit" />
-            <ComboboxTrigger />
+          <ComboboxControl class="rounded-b-none">
+            <ComboboxTrigger class="mr-2">
+              <TbSearch />
+            </ComboboxTrigger>
+            <ComboboxInput />
           </ComboboxControl>
-          <Combobox.Portal>
-            <Combobox.Content class="z-50">
-              <Combobox.Listbox />
-            </Combobox.Content>
-          </Combobox.Portal>
-        </Combobox.Root>
+          <ComboboxContent class="max-h-[300px] overflow-y-auto overflow-x-hidden rounded-t-none border-t-0" />
+        </ComboboxRoot>
       </DialogContent>
     </Dialog>
   )

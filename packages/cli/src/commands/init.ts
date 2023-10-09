@@ -178,15 +178,19 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
   readJsonFile(process.cwd() + "/tsconfig.json", (error, data) => {
     if (error) log.error("Something went wrong while configuring your tsconfig.json")
 
-    const tsconfigData = data as Record<string, { paths: Record<string, unknown>; baseUrl: string }>
+    const tsconfigData = data as Record<string, { paths: Record<string, unknown> }>
 
     if (!tsconfigData.compilerOptions.paths) {
       tsconfigData.compilerOptions.paths = {}
     }
 
-    tsconfigData.compilerOptions.baseUrl = "./src"
-    tsconfigData.compilerOptions.paths[componentAlias] = ["./components/*"]
-    tsconfigData.compilerOptions.paths[utilsAlias] = ["./lib/utils"]
+    const oldPaths = tsconfigData.compilerOptions.paths
+    tsconfigData.compilerOptions.paths = {}
+    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/lib/utils"]
+    tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components/*"]
+    for (const key in oldPaths) {
+      tsconfigData.compilerOptions.paths[key] = oldPaths[key]
+    }
 
     writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
       if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)

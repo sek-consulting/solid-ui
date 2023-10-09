@@ -2,6 +2,7 @@ import { createSignal } from "solid-js"
 import { useNavigate } from "solid-start"
 
 import { As } from "@kobalte/core"
+import { createShortcut } from "@solid-primitives/keyboard"
 import { TbSearch } from "solid-icons/tb"
 
 import { docsConfig } from "~/config/docs"
@@ -41,6 +42,14 @@ export default function SearchBar() {
       navigate(value.href)
     }
   }
+
+  createShortcut(
+    ["Control", "K"],
+    () => {
+      setOpen(true)
+    },
+    { preventDefault: true }
+  )
 
   return (
     <Dialog open={open()} onOpenChange={setOpen}>

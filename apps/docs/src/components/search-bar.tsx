@@ -1,7 +1,17 @@
+import { createSignal } from "solid-js"
 import { useNavigate } from "solid-start"
 
-import { Combobox } from "@kobalte/core"
-import { TbCheck, TbSearch } from "solid-icons/tb"
+import { As, Combobox } from "@kobalte/core"
+import { TbCheck } from "solid-icons/tb"
+
+import { Button } from "~/registry/ui/button"
+import {
+  ComboboxControl,
+  ComboboxInput,
+  ComboboxSection,
+  ComboboxTrigger
+} from "~/registry/ui/combobox"
+import { Dialog, DialogContent, DialogTrigger } from "~/registry/ui/dialog"
 
 interface Item {
   value: string
@@ -35,46 +45,63 @@ const ALL_OPTIONS: Category[] = [
 ]
 
 export default function SearchBar() {
+  const [open, setOpen] = createSignal(false)
+
   const navigate = useNavigate()
   const onChange = (value: Item) => {
     console.log(value)
+    setOpen(false)
     navigate("/docs/introduction")
   }
 
   return (
-    <Combobox.Root<Item, Category>
-      options={ALL_OPTIONS}
-      optionValue="value"
-      optionTextValue="label"
-      optionLabel="label"
-      optionGroupChildren="options"
-      onChange={onChange}
-      placeholder="Search documentation…"
-      itemComponent={(props) => (
-        <Combobox.Item item={props.item}>
-          <Combobox.ItemLabel>{props.item.rawValue.label}</Combobox.ItemLabel>
-          <Combobox.ItemIndicator>
-            <TbCheck />
-          </Combobox.ItemIndicator>
-        </Combobox.Item>
-      )}
-      sectionComponent={(props) => (
-        <Combobox.Section>{props.section.rawValue.label}</Combobox.Section>
-      )}
-    >
-      <Combobox.Control aria-label="Fruit">
-        <Combobox.Input />
-        <Combobox.Trigger>
-          <Combobox.Icon>
-            <TbSearch />
-          </Combobox.Icon>
-        </Combobox.Trigger>
-      </Combobox.Control>
-      <Combobox.Portal>
-        <Combobox.Content>
-          <Combobox.Listbox />
-        </Combobox.Content>
-      </Combobox.Portal>
-    </Combobox.Root>
+    <Dialog open={open()} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <As
+          component={Button}
+          variant={"outline"}
+          size={"sm"}
+          class="text-muted-foreground w-full justify-between text-sm md:w-40"
+        >
+          <span>Search...</span>
+          <kbd class="bg-muted pointer-events-none ml-4 hidden h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+            <span class="text-xs">⌘</span>K
+          </kbd>
+        </As>
+      </DialogTrigger>
+      <DialogContent>
+        <Combobox.Root<Item, Category>
+          open
+          options={ALL_OPTIONS}
+          optionValue="value"
+          optionTextValue="label"
+          optionLabel="label"
+          optionGroupChildren="options"
+          onChange={onChange}
+          placeholder="Search documentation…"
+          itemComponent={(props) => (
+            <Combobox.Item item={props.item}>
+              <Combobox.ItemLabel>{props.item.rawValue.label}</Combobox.ItemLabel>
+              <Combobox.ItemIndicator>
+                <TbCheck />
+              </Combobox.ItemIndicator>
+            </Combobox.Item>
+          )}
+          sectionComponent={(props) => (
+            <ComboboxSection>{props.section.rawValue.label}</ComboboxSection>
+          )}
+        >
+          <ComboboxControl>
+            <ComboboxInput aria-label="Fruit" />
+            <ComboboxTrigger />
+          </ComboboxControl>
+          <Combobox.Portal>
+            <Combobox.Content class="z-50">
+              <Combobox.Listbox />
+            </Combobox.Content>
+          </Combobox.Portal>
+        </Combobox.Root>
+      </DialogContent>
+    </Dialog>
   )
 }

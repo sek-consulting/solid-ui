@@ -24,11 +24,6 @@ export const docsConfig: Config = {
       title: "GitHub",
       href: "https://github.com/sek-consulting/solid-ui-components",
       external: true
-    },
-    {
-      title: "Twitter",
-      href: "https://twitter.com/stefan_e_k",
-      external: true
     }
   ],
   sidebarNav: [

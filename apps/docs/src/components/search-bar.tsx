@@ -1,14 +1,18 @@
 import { createSignal } from "solid-js"
 import { useNavigate } from "solid-start"
 
-import { As, Combobox } from "@kobalte/core"
-import { TbCheck } from "solid-icons/tb"
+import { As } from "@kobalte/core"
+import { TbSearch } from "solid-icons/tb"
 
 import { docsConfig } from "~/config/docs"
 import { Button } from "~/registry/ui/button"
 import {
+  ComboboxContent,
   ComboboxControl,
   ComboboxInput,
+  ComboboxItem,
+  ComboboxItemLabel,
+  ComboboxRoot,
   ComboboxSection,
   ComboboxTrigger
 } from "~/registry/ui/combobox"
@@ -54,7 +58,9 @@ export default function SearchBar() {
         </As>
       </DialogTrigger>
       <DialogContent>
-        <Combobox.Root<Item, Category>
+        <ComboboxRoot<Item, Category>
+          placement="bottom"
+          gutter={0}
           open
           options={OPTIONS}
           optionValue="title"
@@ -64,27 +70,22 @@ export default function SearchBar() {
           onChange={onChange}
           placeholder="Search documentation…"
           itemComponent={(props) => (
-            <Combobox.Item item={props.item}>
-              <Combobox.ItemLabel>{props.item.rawValue.title}</Combobox.ItemLabel>
-              <Combobox.ItemIndicator>
-                <TbCheck />
-              </Combobox.ItemIndicator>
-            </Combobox.Item>
+            <ComboboxItem item={props.item}>
+              <ComboboxItemLabel>{props.item.rawValue.title}</ComboboxItemLabel>
+            </ComboboxItem>
           )}
           sectionComponent={(props) => (
             <ComboboxSection>{props.section.rawValue.label}</ComboboxSection>
           )}
         >
-          <ComboboxControl>
-            <ComboboxInput aria-label="Fruit" />
-            <ComboboxTrigger />
+          <ComboboxControl class="rounded-b-none">
+            <ComboboxTrigger class="mr-2">
+              <TbSearch />
+            </ComboboxTrigger>
+            <ComboboxInput />
           </ComboboxControl>
-          <Combobox.Portal>
-            <Combobox.Content class="z-50">
-              <Combobox.Listbox />
-            </Combobox.Content>
-          </Combobox.Portal>
-        </Combobox.Root>
+          <ComboboxContent class="max-h-[300px] overflow-y-auto overflow-x-hidden rounded-t-none border-t-0" />
+        </ComboboxRoot>
       </DialogContent>
     </Dialog>
   )

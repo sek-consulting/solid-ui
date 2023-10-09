@@ -4,6 +4,7 @@ import { useNavigate } from "solid-start"
 import { As, Combobox } from "@kobalte/core"
 import { TbCheck } from "solid-icons/tb"
 
+import { docsConfig } from "~/config/docs"
 import { Button } from "~/registry/ui/button"
 import {
   ComboboxControl,
@@ -14,44 +15,27 @@ import {
 import { Dialog, DialogContent, DialogTrigger } from "~/registry/ui/dialog"
 
 interface Item {
-  value: string
-  label: string
-  disabled: boolean
+  title: string
+  href: string
 }
 interface Category {
   label: string
   options: Item[]
 }
-const ALL_OPTIONS: Category[] = [
-  {
-    label: "Fruits",
-    options: [
-      { value: "apple", label: "Apple", disabled: false },
-      { value: "banana", label: "Banana", disabled: false },
-      { value: "blueberry", label: "Blueberry", disabled: false },
-      { value: "grapes", label: "Grapes", disabled: true },
-      { value: "pineapple", label: "Pineapple", disabled: false }
-    ]
-  },
-  {
-    label: "Meat",
-    options: [
-      { value: "beef", label: "Beef", disabled: false },
-      { value: "chicken", label: "Chicken", disabled: false },
-      { value: "lamb", label: "Lamb", disabled: false },
-      { value: "pork", label: "Pork", disabled: false }
-    ]
-  }
-]
 
 export default function SearchBar() {
   const [open, setOpen] = createSignal(false)
 
+  const OPTIONS: Category[] = docsConfig.sidebarNav.map((value) => {
+    return { label: value.title, options: value.items }
+  })
+
   const navigate = useNavigate()
   const onChange = (value: Item) => {
-    console.log(value)
-    setOpen(false)
-    navigate("/docs/introduction")
+    if (value) {
+      setOpen(false)
+      navigate(value.href)
+    }
   }
 
   return (
@@ -72,16 +56,16 @@ export default function SearchBar() {
       <DialogContent>
         <Combobox.Root<Item, Category>
           open
-          options={ALL_OPTIONS}
-          optionValue="value"
-          optionTextValue="label"
-          optionLabel="label"
+          options={OPTIONS}
+          optionValue="title"
+          optionTextValue="title"
+          optionLabel="title"
           optionGroupChildren="options"
           onChange={onChange}
           placeholder="Search documentation…"
           itemComponent={(props) => (
             <Combobox.Item item={props.item}>
-              <Combobox.ItemLabel>{props.item.rawValue.label}</Combobox.ItemLabel>
+              <Combobox.ItemLabel>{props.item.rawValue.title}</Combobox.ItemLabel>
               <Combobox.ItemIndicator>
                 <TbCheck />
               </Combobox.ItemIndicator>

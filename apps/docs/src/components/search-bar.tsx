@@ -66,7 +66,7 @@ export default function SearchBar() {
           </kbd>
         </As>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent class="border-0 p-0">
         <ComboboxRoot<Item, Category>
           placement="bottom"
           gutter={0}

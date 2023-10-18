@@ -229,6 +229,11 @@ const examples: Registry = [
     files: ["example/card-demo.tsx"]
   },
   {
+    name: "checkbox-demo",
+    type: "example",
+    files: ["example/checkbox-demo.tsx"]
+  },
+  {
     name: "mode-toggle",
     type: "example",
     files: ["example/mode-toggle.tsx"]

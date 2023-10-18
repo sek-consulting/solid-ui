@@ -1,12 +1,11 @@
 import { createSignal } from "solid-js"
 
-import { ComponentExample } from "~/components/component-example"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/registry/ui/select"
 
-export function SelectDemo() {
+export default function SelectDemo() {
   const [value, setValue] = createSignal("")
   return (
-    <ComponentExample class="flex-col">
+    <div class="flex-col">
       <Select
         value={value()}
         onChange={setValue}
@@ -20,6 +19,6 @@ export function SelectDemo() {
         <SelectContent />
       </Select>
       <p class="pt-2 text-sm text-gray-500">Your favorite fruit is: {value()}</p>
-    </ComponentExample>
+    </div>
   )
 }

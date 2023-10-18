@@ -4,11 +4,42 @@ description: A two-state button that can be either on or off.
 kobalte: https://kobalte.dev/docs/core/components/toggle-button
 ---
 
-import { ToggleDemo } from "~/registry/examples/toggle-demo"
+<ComponentPreview name="toggle-demo" />
 
-## Example
+## Installation
 
-<ToggleDemo />
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add toggle
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core solid-icons
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="toggle" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

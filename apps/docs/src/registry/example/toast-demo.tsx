@@ -1,10 +1,9 @@
-import { ComponentExample } from "~/components/component-example"
 import { Button } from "~/registry/ui/button"
 import { Toaster, showToast } from "~/registry/ui/toast"
 
-export function ToastDemo() {
+export default function ToastDemo() {
   return (
-    <ComponentExample class="gap-2">
+    <div class="gap-2">
       <Button
         onClick={() =>
           showToast({
@@ -28,6 +27,6 @@ export function ToastDemo() {
         Delete Event
       </Button>
       <Toaster />
-    </ComponentExample>
+    </div>
   )
 }

@@ -249,11 +249,6 @@ const examples: Registry = [
     files: ["example/checkbox-demo.tsx"]
   },
   {
-    name: "copy-button",
-    type: "example",
-    files: ["example/copy-button.tsx"]
-  },
-  {
     name: "delta-bar-demo",
     type: "example",
     files: ["example/delta-bar-demo.tsx"]
@@ -272,6 +267,91 @@ const examples: Registry = [
     name: "flex-demo",
     type: "example",
     files: ["example/flex-demo.tsx"]
+  },
+  {
+    name: "grid-demo",
+    type: "example",
+    files: ["example/grid-demo.tsx"]
+  },
+  {
+    name: "input-demo",
+    type: "example",
+    files: ["example/input-demo.tsx"]
+  },
+  {
+    name: "popover-demo",
+    type: "example",
+    files: ["example/popover-demo.tsx"]
+  },
+  {
+    name: "progress-demo",
+    type: "example",
+    files: ["example/progress-demo.tsx"]
+  },
+  {
+    name: "radio-group-demo",
+    type: "example",
+    files: ["example/radio-group-demo.tsx"]
+  },
+  {
+    name: "select-demo",
+    type: "example",
+    files: ["example/select-demo.tsx"]
+  },
+  {
+    name: "separator-demo",
+    type: "example",
+    files: ["example/separator-demo.tsx"]
+  },
+  {
+    name: "sheet-demo",
+    type: "example",
+    files: ["example/sheet-demo.tsx"]
+  },
+  {
+    name: "skeleton-demo",
+    type: "example",
+    files: ["example/skeleton-demo.tsx"]
+  },
+  {
+    name: "switch-demo",
+    type: "example",
+    files: ["example/switch-demo.tsx"]
+  },
+  {
+    name: "table-demo",
+    type: "example",
+    files: ["example/table-demo.tsx"]
+  },
+  {
+    name: "tabs-demo",
+    type: "example",
+    files: ["example/tabs-demo.tsx"]
+  },
+  {
+    name: "textarea-demo",
+    type: "example",
+    files: ["example/textarea-demo.tsx"]
+  },
+  {
+    name: "timeline-demo",
+    type: "example",
+    files: ["example/timeline-demo.tsx"]
+  },
+  {
+    name: "toast-demo",
+    type: "example",
+    files: ["example/toast-demo.tsx"]
+  },
+  {
+    name: "toggle-demo",
+    type: "example",
+    files: ["example/toggle-demo.tsx"]
+  },
+  {
+    name: "tooltip-demo",
+    type: "example",
+    files: ["example/tooltip-demo.tsx"]
   },
   {
     name: "mode-toggle",

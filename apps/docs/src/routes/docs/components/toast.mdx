@@ -4,11 +4,42 @@ description: A succinct message that is displayed temporarily.
 kobalte: https://kobalte.dev/docs/core/components/toast
 ---
 
-import { ToastDemo } from "~/registry/examples/toast-demo"
+<ComponentPreview name="toast-demo" />
 
-## Example
+## Installation
 
-<ToastDemo />
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add toast
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core solid-icons
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="toast" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

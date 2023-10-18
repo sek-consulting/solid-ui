@@ -32,7 +32,7 @@ export default async function init() {
 
   const config = parse(configSchema, {
     tsx: isTypescript,
-    componentDir: "./src/components",
+    componentDir: "./src/components/ui",
     tailwind: {
       config: tailwindConfigDir,
       css: globalCssDir

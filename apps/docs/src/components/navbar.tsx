@@ -15,8 +15,8 @@ export default function Navbar() {
         <MobileNav />
         <div class="mr-4 hidden md:flex">
           <a href="/" class="mr-6 flex items-center space-x-2 no-underline">
-            <Icons.logo class="h-6 w-6" fill="currentColor" />
-            <span class="hidden font-bold sm:inline-block">solid/ui</span>
+            <Icons.logo class="h-6 w-6" />
+            <span class="hidden font-bold sm:inline-block">solid-ui</span>
           </a>
           <nav class="flex items-center space-x-6 text-sm font-medium">
             <For each={docsConfig.mainNav}>

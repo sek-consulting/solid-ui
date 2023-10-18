@@ -92,10 +92,6 @@ export const docsConfig: Config = {
           href: "/docs/components/checkbox"
         },
         {
-          title: "Copy Button",
-          href: "/docs/components/copy-button"
-        },
-        {
           title: "Delta Bar",
           href: "/docs/components/delta-bar"
         },
@@ -122,10 +118,6 @@ export const docsConfig: Config = {
         {
           title: "Label",
           href: "/docs/components/label"
-        },
-        {
-          title: "Mode Toggle",
-          href: "/docs/components/mode-toggle"
         },
         {
           title: "Popover",

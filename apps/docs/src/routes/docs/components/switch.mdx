@@ -4,14 +4,42 @@ description: A control that allows the user to toggle between checked and not ch
 kobalte: https://kobalte.dev/docs/core/components/switch
 ---
 
-import { ComponentExample } from "~/components/component-example"
-import { Switch } from "~/registry/ui/switch"
+<ComponentPreview name="switch-demo" />
 
-## Example
+## Installation
 
-<ComponentExample>
-  <Switch label="Airplane mode" />
-</ComponentExample>
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add switch
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="switch" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

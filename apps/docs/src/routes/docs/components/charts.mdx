@@ -3,16 +3,42 @@ title: Charts
 description: A collection of different chart components using chart.js
 ---
 
-import {
-  LineChartDemo,
-  AreaChartDemo,
-  PieChartDemo,
-  BarChartDemo
-} from "~/registry/examples/charts-demo"
+<ComponentPreview name="area-chart-demo" />
 
-## Line Chart
+## Installation
 
-<LineChartDemo />
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add charts
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install chart.js
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="charts" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
@@ -26,27 +52,8 @@ const chartData = {
   datasets: [
     {
       label: "Sales",
-      data: [50, 60, 70, 80, 90]
-    }
-  ]
-}
-<LineChart data={chartData} />
-```
-
-## Area Chart
-
-If you add `fill: true` to each dataset you get an Area Chart.
-
-<AreaChartDemo />
-
-```tsx
-const chartData = {
-  labels: ["January", "February", "March", "April", "May"],
-  datasets: [
-    {
-      label: "Sales",
       data: [50, 60, 70, 80, 90],
-      fill: true
+      fill: true // remove if you want a Line Chart
     }
   ]
 }
@@ -55,11 +62,11 @@ const chartData = {
 
 ## Pie Chart
 
-<PieChartDemo />
+<ComponentPreview name="pie-chart-demo" />
 
 ## Bar Chart
 
-<BarChartDemo />
+<ComponentPreview name="bar-chart-demo" />
 
 ## Other charts
 

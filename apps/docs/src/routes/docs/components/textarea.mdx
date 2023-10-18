@@ -3,14 +3,34 @@ title: Textarea
 description: Displays a form textarea or a component that looks like a textarea.
 ---
 
-import { ComponentExample } from "~/components/component-example"
-import { Textarea } from "~/registry/ui/textarea"
+<ComponentPreview name="textarea-demo" />
 
-## Example
+## Installation
 
-<ComponentExample>
-  <Textarea placeholder="Type your message here." />
-</ComponentExample>
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add textarea
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="textarea" />
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

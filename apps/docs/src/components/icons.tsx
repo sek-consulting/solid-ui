@@ -145,8 +145,29 @@ const Icons = {
     </Icon>
   ),
   logo: (props: IconProps) => (
-    <Icon {...props}>
-      <circle cx="12" cy="12" r="10" />
+    <Icon viewBox="0 0 256 256" {...props}>
+      <line
+        x1="208"
+        y1="128"
+        x2="128"
+        y2="208"
+        fill="none"
+        stroke="#4d83c4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"
+      />
+      <line
+        x1="192"
+        y1="40"
+        x2="40"
+        y2="192"
+        fill="none"
+        stroke="#93c4e9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"
+      />
     </Icon>
   ),
   moon: (props: IconProps) => (

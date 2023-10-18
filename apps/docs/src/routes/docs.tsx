@@ -42,14 +42,16 @@ export default function DocsLayout() {
               </h1>
               <p class="text-muted-foreground text-lg">{data().frontmatter.description}</p>
               <Show when={data().frontmatter.kobalte}>
-                <A
-                  href={data().frontmatter.kobalte ?? ""}
-                  target="_blank"
-                  rel="noreferrer"
-                  class={cn(badgeVariants({ variant: "secondary" }), "rounded-md")}
-                >
-                  Kobalte
-                </A>
+                {(kobalte) => (
+                  <A
+                    href={kobalte()}
+                    target="_blank"
+                    rel="noreferrer"
+                    class={cn(badgeVariants({ variant: "secondary" }), "rounded-md")}
+                  >
+                    Kobalte
+                  </A>
+                )}
               </Show>
             </div>
             <div class="pb-12 pt-8">

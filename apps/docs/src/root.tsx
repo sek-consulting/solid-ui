@@ -18,6 +18,7 @@ import {
 
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
 
+import Footer from "~/components/footer"
 import Navbar from "~/components/navbar"
 import "@fontsource/inter/latin.css"
 import "~/styles/root.css"
@@ -79,6 +80,7 @@ export default function Root() {
               <Routes>
                 <FileRoutes />
               </Routes>
+              <Footer />
             </ColorModeProvider>
           </Suspense>
         </ErrorBoundary>

@@ -1,6 +1,5 @@
 import { createSignal } from "solid-js"
 
-import { ComponentExample } from "~/components/component-example"
 import { Button } from "~/registry/ui/button"
 import {
   DropdownMenu,
@@ -20,13 +19,13 @@ import {
   DropdownMenuTrigger
 } from "~/registry/ui/dropdown-menu"
 
-export function DropdownMenuDemo() {
+export default function DropdownMenuDemo() {
   const [showGitLog, setShowGitLog] = createSignal(false)
   const [showHistory, setShowHistory] = createSignal(false)
   const [branch, setBranch] = createSignal("develop")
 
   return (
-    <ComponentExample class="flex-col">
+    <div class="flex-col">
       <DropdownMenu>
         <DropdownMenuTrigger as={Button}>Git Settings</DropdownMenuTrigger>
         <DropdownMenuContent class="w-48">
@@ -74,6 +73,6 @@ export function DropdownMenuDemo() {
       <p class="pt-2 text-sm text-gray-500">Show Git Log: {showGitLog() ? "yes" : "no"}</p>
       <p class="pt-2 text-sm text-gray-500">Show History: {showHistory() ? "yes" : "no"}</p>
       <p class="pt-2 text-sm text-gray-500">Selected Branch: {branch()}</p>
-    </ComponentExample>
+    </div>
   )
 }

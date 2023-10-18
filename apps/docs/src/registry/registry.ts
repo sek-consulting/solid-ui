@@ -264,6 +264,16 @@ const examples: Registry = [
     files: ["example/dialog-demo.tsx"]
   },
   {
+    name: "dropdown-menu-demo",
+    type: "example",
+    files: ["example/dropdown-menu-demo.tsx"]
+  },
+  {
+    name: "flex-demo",
+    type: "example",
+    files: ["example/flex-demo.tsx"]
+  },
+  {
     name: "mode-toggle",
     type: "example",
     files: ["example/mode-toggle.tsx"]

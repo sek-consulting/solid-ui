@@ -328,6 +328,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/dialog-demo")),
     files: ["registry/example/dialog-demo.tsx"],
   },
+  "dropdown-menu-demo": {
+    name: "dropdown-menu-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/dropdown-menu-demo")),
+    files: ["registry/example/dropdown-menu-demo.tsx"],
+  },
+  "flex-demo": {
+    name: "flex-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/flex-demo")),
+    files: ["registry/example/flex-demo.tsx"],
+  },
   "mode-toggle": {
     name: "mode-toggle",
     type: "example",

@@ -1,4 +1,3 @@
-import type { Component } from "solid-js"
 import { Show, createEffect, createSignal, on, splitProps } from "solid-js"
 
 import { As } from "@kobalte/core"
@@ -13,7 +12,7 @@ export interface CopyButtonProps extends ToggleProps {
   content: string
 }
 
-const CopyButton: Component<CopyButtonProps> = (props) => {
+export default function CopyButton(props: CopyButtonProps) {
   const [, rest] = splitProps(props, ["class", "content"])
   const [isCopied, setCopied] = createSignal(false)
 
@@ -68,5 +67,3 @@ function copyToClipboard(text: string) {
     return
   }
 }
-
-export { CopyButton }

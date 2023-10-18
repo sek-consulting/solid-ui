@@ -249,6 +249,21 @@ const examples: Registry = [
     files: ["example/checkbox-demo.tsx"]
   },
   {
+    name: "copy-button",
+    type: "example",
+    files: ["example/copy-button.tsx"]
+  },
+  {
+    name: "delta-bar-demo",
+    type: "example",
+    files: ["example/delta-bar-demo.tsx"]
+  },
+  {
+    name: "dialog-demo",
+    type: "example",
+    files: ["example/dialog-demo.tsx"]
+  },
+  {
     name: "mode-toggle",
     type: "example",
     files: ["example/mode-toggle.tsx"]

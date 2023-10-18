@@ -229,6 +229,21 @@ const examples: Registry = [
     files: ["example/card-demo.tsx"]
   },
   {
+    name: "area-chart-demo",
+    type: "example",
+    files: ["example/area-chart-demo.tsx"]
+  },
+  {
+    name: "pie-chart-demo",
+    type: "example",
+    files: ["example/pie-chart-demo.tsx"]
+  },
+  {
+    name: "bar-chart-demo",
+    type: "example",
+    files: ["example/bar-chart-demo.tsx"]
+  },
+  {
     name: "checkbox-demo",
     type: "example",
     files: ["example/checkbox-demo.tsx"]

@@ -279,6 +279,27 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/card-demo")),
     files: ["registry/example/card-demo.tsx"],
   },
+  "area-chart-demo": {
+    name: "area-chart-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/area-chart-demo")),
+    files: ["registry/example/area-chart-demo.tsx"],
+  },
+  "pie-chart-demo": {
+    name: "pie-chart-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/pie-chart-demo")),
+    files: ["registry/example/pie-chart-demo.tsx"],
+  },
+  "bar-chart-demo": {
+    name: "bar-chart-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/bar-chart-demo")),
+    files: ["registry/example/bar-chart-demo.tsx"],
+  },
   "checkbox-demo": {
     name: "checkbox-demo",
     type: "example",

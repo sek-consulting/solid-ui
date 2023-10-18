@@ -27,27 +27,31 @@ function fuzzy(haystack: string, needle: string, ratio: number): boolean {
 
   if (str1.indexOf(str2) > -1) return true // partial match
 
-  const track = Array(len1 + 1)
+  const matrix = Array(len1 + 1)
   for (let i = 0; i <= len1; i++) {
-    track[i] = Array(len2 + 1)
+    matrix[i] = Array(len2 + 1)
   }
-  for (let i = 0; i <= len1; i += 1) {
-    track[0][i] = i
+  for (let i = 0; i <= len1; i++) {
+    matrix[i][0] = i
   }
-  for (let j = 0; j <= len2; j += 1) {
-    track[j][0] = j
+  for (let j = 0; j <= len2; j++) {
+    matrix[0][j] = j
   }
-  for (let j = 1; j <= len2; j += 1) {
-    for (let i = 1; i <= len1; i += 1) {
-      const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1
-      track[j][i] = Math.min(
-        track[j][i - 1] + 1, // deletion
-        track[j - 1][i] + 1, // insertion
-        track[j - 1][i - 1] + indicator // substitution
-      )
+
+  for (let i = 1; i <= len1; i++) {
+    for (let j = 1; j <= len2; j++) {
+      if (str1[i - 1] === str2[j - 1]) {
+        matrix[i][j] = matrix[i - 1][j - 1]
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j - 1] + 1
+        )
+      }
     }
   }
-  const distance = track[len2][len1]
+  const distance = matrix[len1][len2]
   return (len1 - distance) / len2 >= ratio || needle == ""
 }
 

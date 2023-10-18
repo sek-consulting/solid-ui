@@ -307,13 +307,6 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/checkbox-demo")),
     files: ["registry/example/checkbox-demo.tsx"],
   },
-  "copy-button": {
-    name: "copy-button",
-    type: "example",
-    registryDependencies: undefined,
-    component: lazy(() => import("~/registry/example/copy-button")),
-    files: ["registry/example/copy-button.tsx"],
-  },
   "delta-bar-demo": {
     name: "delta-bar-demo",
     type: "example",

@@ -1,4 +1,4 @@
-import { For, Show, createEffect, createResource, createSignal, onMount } from "solid-js"
+import { For, Show, createResource, createSignal, onMount } from "solid-js"
 import { isServer } from "solid-js/web"
 import { A } from "solid-start"
 
@@ -31,7 +31,7 @@ async function fetchSearch(value: string) {
 export default function SearchBar() {
   const [searchValue, setSearchValue] = createSignal("")
   const [isOpen, setIsOpen] = createSignal(false)
-  const [data, { refetch }] = createResource(searchValue, fetchSearch)
+  const [data] = createResource(searchValue, fetchSearch)
   data()
 
   onMount(() => {

@@ -48,6 +48,9 @@ importers:
       clsx:
         specifier: ^2.0.0
         version: 2.0.0
+      shosho:
+        specifier: ^1.4.3
+        version: 1.4.3
       solid-icons:
         specifier: ^1.0.12
         version: 1.0.12(solid-js@1.7.12)
@@ -6126,6 +6129,10 @@ packages:
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
     dev: true
+
+  /shosho@1.4.3:
+    resolution: {integrity: sha512-VzHiuOtpNcrWLZh+JeX5uSMFcxPGvLyW4LP4EzNZqS5YLDA27FR/QDTP24H1BgpGswr9Rlj0ZHeRAntEh5/XaQ==}
+    dev: false
 
   /side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}

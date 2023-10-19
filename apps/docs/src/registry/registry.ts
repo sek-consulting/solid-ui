@@ -185,4 +185,179 @@ const ui: Registry = [
   }
 ]
 
-export const registry: Registry = [...ui]
+const examples: Registry = [
+  {
+    name: "accordion-demo",
+    type: "example",
+    registryDependencies: ["accordion"],
+    files: ["example/accordion-demo.tsx"]
+  },
+  {
+    name: "avatar-demo",
+    type: "example",
+    registryDependencies: ["avatar"],
+    files: ["example/avatar-demo.tsx"]
+  },
+  {
+    name: "button-demo",
+    type: "example",
+    registryDependencies: ["button"],
+    files: ["example/button-demo.tsx"]
+  },
+  {
+    name: "badge-demo",
+    type: "example",
+    registryDependencies: ["badge"],
+    files: ["example/badge-demo.tsx"]
+  },
+  {
+    name: "badge-delta-demo",
+    type: "example",
+    registryDependencies: ["badge-delta"],
+    files: ["example/badge-delta-demo.tsx"]
+  },
+  {
+    name: "callout-demo",
+    type: "example",
+    registryDependencies: ["callout"],
+    files: ["example/callout-demo.tsx"]
+  },
+  {
+    name: "card-demo",
+    type: "example",
+    registryDependencies: ["card"],
+    files: ["example/card-demo.tsx"]
+  },
+  {
+    name: "area-chart-demo",
+    type: "example",
+    files: ["example/area-chart-demo.tsx"]
+  },
+  {
+    name: "pie-chart-demo",
+    type: "example",
+    files: ["example/pie-chart-demo.tsx"]
+  },
+  {
+    name: "bar-chart-demo",
+    type: "example",
+    files: ["example/bar-chart-demo.tsx"]
+  },
+  {
+    name: "checkbox-demo",
+    type: "example",
+    files: ["example/checkbox-demo.tsx"]
+  },
+  {
+    name: "delta-bar-demo",
+    type: "example",
+    files: ["example/delta-bar-demo.tsx"]
+  },
+  {
+    name: "dialog-demo",
+    type: "example",
+    files: ["example/dialog-demo.tsx"]
+  },
+  {
+    name: "dropdown-menu-demo",
+    type: "example",
+    files: ["example/dropdown-menu-demo.tsx"]
+  },
+  {
+    name: "flex-demo",
+    type: "example",
+    files: ["example/flex-demo.tsx"]
+  },
+  {
+    name: "grid-demo",
+    type: "example",
+    files: ["example/grid-demo.tsx"]
+  },
+  {
+    name: "input-demo",
+    type: "example",
+    files: ["example/input-demo.tsx"]
+  },
+  {
+    name: "popover-demo",
+    type: "example",
+    files: ["example/popover-demo.tsx"]
+  },
+  {
+    name: "progress-demo",
+    type: "example",
+    files: ["example/progress-demo.tsx"]
+  },
+  {
+    name: "radio-group-demo",
+    type: "example",
+    files: ["example/radio-group-demo.tsx"]
+  },
+  {
+    name: "select-demo",
+    type: "example",
+    files: ["example/select-demo.tsx"]
+  },
+  {
+    name: "separator-demo",
+    type: "example",
+    files: ["example/separator-demo.tsx"]
+  },
+  {
+    name: "sheet-demo",
+    type: "example",
+    files: ["example/sheet-demo.tsx"]
+  },
+  {
+    name: "skeleton-demo",
+    type: "example",
+    files: ["example/skeleton-demo.tsx"]
+  },
+  {
+    name: "switch-demo",
+    type: "example",
+    files: ["example/switch-demo.tsx"]
+  },
+  {
+    name: "table-demo",
+    type: "example",
+    files: ["example/table-demo.tsx"]
+  },
+  {
+    name: "tabs-demo",
+    type: "example",
+    files: ["example/tabs-demo.tsx"]
+  },
+  {
+    name: "textarea-demo",
+    type: "example",
+    files: ["example/textarea-demo.tsx"]
+  },
+  {
+    name: "timeline-demo",
+    type: "example",
+    files: ["example/timeline-demo.tsx"]
+  },
+  {
+    name: "toast-demo",
+    type: "example",
+    files: ["example/toast-demo.tsx"]
+  },
+  {
+    name: "toggle-demo",
+    type: "example",
+    files: ["example/toggle-demo.tsx"]
+  },
+  {
+    name: "tooltip-demo",
+    type: "example",
+    files: ["example/tooltip-demo.tsx"]
+  },
+  {
+    name: "mode-toggle",
+    type: "example",
+    files: ["example/mode-toggle.tsx"]
+  }
+]
+
+export const registry: Registry = [...ui, ...examples]

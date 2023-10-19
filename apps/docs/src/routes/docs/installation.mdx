@@ -1,0 +1,105 @@
+---
+title: Installation
+description: How to install dependencies and structure your app.
+---
+
+<Steps>
+
+### Create project
+
+Start by creating a new SolidJS project using `solid-start`:
+
+```bash
+npx create solid@latest
+```
+
+When asked make sure to use the template `with-tailwindcss`:
+
+```txt showLineNumbers
+√ Where do you want to create the app? ... my-app
+√ Which template do you want to use? » with-tailwindcss
+√ Server Side Rendering? ... yes
+√ Use TypeScript? ... yes
+```
+
+### Run the CLI
+
+Run the `@solid-ui/cli` init command to setup your project:
+
+```bash
+npx @solid-ui/cli@latest init
+```
+
+### Configure suc.config.json
+
+You will be asked a few questions to configure `suc.config.json`:
+
+```txt showLineNumbers
+Would you like to use TypeScript? (recommended) yes
+Where is your global CSS file? src/root.css
+Where is your tailwind.config.js located? tailwind.config.cjs
+Configure the import alias for the components directory: ~/components/*
+Configure the import alias for utils.ts: ~/utils
+```
+
+### App structure
+
+Here's how I structure my SolidJS apps. You can use this as a reference:
+
+```txt {7-11,15-16}
+.
+├── public
+│   ├── favicon.ico
+│   └── ...
+├── src
+│   ├── components
+│   │   ├── ui
+│   │   │   ├── button.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── select.tsx
+│   │   │   └── ...
+│   │   ├── main-nav.tsx
+│   │   ├── page-header.tsx
+│   │   └── ...
+│   ├── lib
+│   │   └── utils.ts
+│   ├── routes
+│   │   ├── [...404].tsx
+│   │   ├── index.tsx
+│   │   └── ...
+│   ├── root.css
+│   ├── root.tsx
+│   └── ...
+├── package.json
+├── tailwind.config.cjs
+├── tsconfig.json
+└── vite.config.ts
+```
+
+- I place the UI components in the `components/ui` folder.
+- The rest of the components such as `<PageHeader />` and `<MainNav />` are placed in the `components` folder.
+- The `lib` folder contains all the utility functions. I have a `utils.ts` where I define the `cn` helper.
+
+### That's it
+
+You can now start adding components to your project.
+
+```bash
+npx @solid-ui/cli@latest add button
+```
+
+The command above will add the `Button` component to your project. You can then import it like this:
+
+```tsx {1,6} showLineNumbers
+import { Button } from "~/components/ui/button"
+
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  )
+}
+```
+
+</Steps>

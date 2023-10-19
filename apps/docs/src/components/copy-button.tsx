@@ -67,26 +67,6 @@ function copyToClipboard(text: string) {
     )
     return
   }
-
-  //FALLBACK
-  const ta = document.createElement("textarea")
-  ta.value = text
-
-  ta.style.position = "fixed"
-  ta.style.top = "0"
-  ta.style.left = "0"
-
-  document.body.appendChild(ta)
-  ta.focus()
-  ta.select()
-
-  try {
-    const suc = document.execCommand("copy")
-    const msg = suc ? "successful" : "unsuccessful"
-    console.log("Fallback: Copying text command was " + msg)
-  } catch (err) {
-    console.error("Fallback: Oops, unable to copy", err)
-  }
 }
 
-export { CopyButton, copyToClipboard }
+export { CopyButton }

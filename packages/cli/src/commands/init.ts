@@ -2,9 +2,10 @@ import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
 import { cwd } from "process"
 
 import { text, confirm, log, spinner, select } from "@clack/prompts"
+import { parse } from "valibot"
 
 import { PROJECT_DEPS } from "~/lib/constants"
-import type { Config } from "~/lib/types"
+import { configSchema, type Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
 
 export default async function init() {
@@ -18,29 +19,36 @@ export default async function init() {
   })
   const tailwindConfigDir = await text({
     message: "Where is your tailwind.config.js located?",
-    initialValue: "tailwind.config.js"
+    initialValue: "tailwind.config.cjs"
   })
   const componentAlias = await text({
     message: "Configure the import alias for the components directory:",
-    initialValue: "@/components/*"
+    initialValue: "~/components/*"
   })
   const utilsAlias = await text({
     message: "Configure the import alias for utils.ts:",
-    initialValue: "@/utils"
+    initialValue: "~/utils"
   })
 
-  saveConfig(
-    isTypescript as boolean,
-    tailwindConfigDir as string,
-    globalCssDir as string,
-    componentAlias as string,
-    utilsAlias as string
-  )
-  writeTsconfig(componentAlias as string, utilsAlias as string)
+  const config = parse(configSchema, {
+    tsx: isTypescript,
+    componentDir: "./src/components",
+    tailwind: {
+      config: tailwindConfigDir,
+      css: globalCssDir
+    },
+    aliases: {
+      components: componentAlias,
+      utils: utilsAlias
+    }
+  })
+
+  saveConfig(config)
+  writeTsconfig(config.aliases.components, config.aliases.utils)
   writeUtils()
   await writeSUCPreset()
-  await writeTailwindConfig(tailwindConfigDir as string)
-  await writeCSS(globalCssDir as string)
+  await writeTailwindConfig(config.tailwind.config)
+  await writeCSS(config.tailwind.css)
 
   log.success("Project configuration completed.")
 
@@ -106,7 +114,7 @@ async function installDeps() {
       initialValue: "npm"
     })
 
-    await runCommand(
+    runCommand(
       `${packageManager as string} install ${PROJECT_DEPS.join(" ")}`,
       "Installing Solid UI Component dependencies",
       "Dependencies installed"
@@ -114,34 +122,11 @@ async function installDeps() {
   }
 }
 
-function saveConfig(
-  isTypescript: boolean,
-  tailwindConfigDir: string,
-  globalCssDir: string,
-  componentAlias: string,
-  utilsAlias: string
-) {
+function saveConfig(config: Config) {
   const indicator = spinner()
   indicator.start("Writing suc.config.json...")
 
-  const config = JSON.stringify(
-    <Config>{
-      tsx: isTypescript,
-      componentDir: "./src/components",
-      tailwind: {
-        config: tailwindConfigDir,
-        css: globalCssDir
-      },
-      aliases: {
-        components: componentAlias,
-        utils: utilsAlias
-      }
-    },
-    null,
-    2
-  )
-
-  writeFile("suc.config.json", config, (error) => {
+  writeFile("suc.config.json", JSON.stringify(config, null, 2), (error) => {
     if (error) log.error("There was an error while saving your preferences")
   })
   indicator.stop("suc.config.json successfully created!")
@@ -193,15 +178,19 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
   readJsonFile(process.cwd() + "/tsconfig.json", (error, data) => {
     if (error) log.error("Something went wrong while configuring your tsconfig.json")
 
-    const tsconfigData = data as Record<string, { paths: Record<string, unknown>; baseUrl: string }>
+    const tsconfigData = data as Record<string, { paths: Record<string, unknown> }>
 
     if (!tsconfigData.compilerOptions.paths) {
       tsconfigData.compilerOptions.paths = {}
     }
 
-    tsconfigData.compilerOptions.baseUrl = "./src"
-    tsconfigData.compilerOptions.paths[componentAlias] = ["./components/*"]
-    tsconfigData.compilerOptions.paths[utilsAlias] = ["./lib/utils"]
+    const oldPaths = tsconfigData.compilerOptions.paths
+    tsconfigData.compilerOptions.paths = {}
+    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/lib/utils"]
+    tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components/*"]
+    for (const key in oldPaths) {
+      tsconfigData.compilerOptions.paths[key] = oldPaths[key]
+    }
 
     writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
       if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)

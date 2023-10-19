@@ -18,9 +18,10 @@ import {
 
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
 
+import Footer from "~/components/footer"
 import Navbar from "~/components/navbar"
 import "@fontsource/inter/latin.css"
-import "./root.css"
+import "~/styles/root.css"
 
 const TITLE = "solid-ui"
 const DESCRIPTION = "Beautifully designed components built with Kobalte and Tailwind CSS."
@@ -79,6 +80,7 @@ export default function Root() {
               <Routes>
                 <FileRoutes />
               </Routes>
+              <Footer />
             </ColorModeProvider>
           </Suspense>
         </ErrorBoundary>

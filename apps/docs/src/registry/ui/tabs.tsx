@@ -46,4 +46,17 @@ const TabsContent: Component<TabsPrimitive.TabsContentProps> = (props) => {
   )
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+const TabsIndicator: Component<TabsPrimitive.TabsIndicatorProps> = (props) => {
+  const [, rest] = splitProps(props, ["class"])
+  return (
+    <TabsPrimitive.Indicator
+      class={cn(
+        "duration-250ms absolute transition-all data-[orientation=horizontal]:bottom-[-1px] data-[orientation=vertical]:right-[-1px] data-[orientation=horizontal]:h-[2px] data-[orientation=vertical]:w-[2px]",
+        props.class
+      )}
+      {...rest}
+    />
+  )
+}
+
+export { Tabs, TabsList, TabsTrigger, TabsContent, TabsIndicator }

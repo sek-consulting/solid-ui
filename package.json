@@ -1,20 +1,23 @@
 {
-  "name": "solid-ui-components",
-  "type": "module",
+  "name": "solid-ui",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.6.12",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "lint": "turbo lint",
     "build": "turbo build",
     "build:registry": "pnpm --filter=docs build:registry",
     "dev": "turbo dev"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "packageManager": "pnpm@8.6.12",
   "devDependencies": {
     "eslint": "^8.49.0",
     "turbo": "^1.10.13"
+  },
+  "dependencies": {
+    "valibot": "^0.18.0"
   }
 }

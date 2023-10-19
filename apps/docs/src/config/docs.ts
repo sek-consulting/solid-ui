@@ -24,11 +24,6 @@ export const docsConfig: Config = {
       title: "GitHub",
       href: "https://github.com/sek-consulting/solid-ui-components",
       external: true
-    },
-    {
-      title: "Twitter",
-      href: "https://twitter.com/stefan_e_k",
-      external: true
     }
   ],
   sidebarNav: [
@@ -38,6 +33,26 @@ export const docsConfig: Config = {
         {
           title: "Introduction",
           href: "/docs/introduction"
+        },
+        {
+          title: "Installation",
+          href: "/docs/installation"
+        },
+        {
+          title: "Dark Mode",
+          href: "/docs/dark-mode"
+        },
+        {
+          title: "CLI",
+          href: "/docs/cli"
+        },
+        {
+          title: "Figma",
+          href: "/docs/figma"
+        },
+        {
+          title: "About",
+          href: "/docs/about"
         }
       ]
     },
@@ -77,10 +92,6 @@ export const docsConfig: Config = {
           href: "/docs/components/checkbox"
         },
         {
-          title: "Copy Button",
-          href: "/docs/components/copy-button"
-        },
-        {
           title: "Delta Bar",
           href: "/docs/components/delta-bar"
         },
@@ -107,10 +118,6 @@ export const docsConfig: Config = {
         {
           title: "Label",
           href: "/docs/components/label"
-        },
-        {
-          title: "Mode Toggle",
-          href: "/docs/components/mode-toggle"
         },
         {
           title: "Popover",

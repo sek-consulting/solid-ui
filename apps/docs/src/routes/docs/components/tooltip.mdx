@@ -1,13 +1,45 @@
 ---
 title: Tooltip
 description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+kobalte: https://kobalte.dev/docs/core/components/tooltip
 ---
 
-import { TooltipDemo } from "~/registry/examples/tooltip-demo"
+<ComponentPreview name="tooltip-demo" />
 
-## Example
+## Installation
 
-<TooltipDemo />
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add tooltip
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core solid-icons
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="tooltip" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

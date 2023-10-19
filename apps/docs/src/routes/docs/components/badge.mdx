@@ -3,18 +3,34 @@ title: Badge
 description: Displays a badge or a component that looks like a badge.
 ---
 
-import { ComponentExample } from "~/components/component-example"
-import { Badge } from "~/registry/ui/badge"
-import { BadgeDeltaDemo } from "~/registry/examples/badge-delta-demo"
+<ComponentPreview name="badge-demo" />
 
-## Example
+## Installation
 
-<ComponentExample class="gap-2">
-  <Badge>Badge</Badge>
-  <Badge variant="secondary">Secondary</Badge>
-  <Badge variant="outline">Outline</Badge>
-  <Badge variant="destructive">Destructive</Badge>
-</ComponentExample>
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add badge
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="badge" />
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
@@ -28,7 +44,42 @@ import { Badge } from "~/components/ui/badge"
 
 ## Badge Delta
 
-<BadgeDeltaDemo />
+<ComponentPreview name="badge-delta-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add badge-delta
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install solid-icons
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="badge-delta" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

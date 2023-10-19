@@ -1,13 +1,45 @@
 ---
 title: Checkbox
 description: A control that allows the user to toggle between checked and not checked.
+kobalte: https://kobalte.dev/docs/core/components/checkbox
 ---
 
-import { CheckboxDemo } from "~/registry/examples/checkbox-demo"
+<ComponentPreview name="checkbox-demo" />
 
-## Example
+## Installation
 
-<CheckboxDemo />
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add checkbox
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core solid-icons
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="checkbox" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

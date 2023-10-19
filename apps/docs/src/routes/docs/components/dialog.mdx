@@ -1,13 +1,45 @@
 ---
 title: Dialog
 description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+kobalte: https://kobalte.dev/docs/core/components/dialog
 ---
 
-import { DialogDemo } from "~/registry/examples/dialog-demo"
+<ComponentPreview name="dialog-demo" />
 
-## Example
+## Installation
 
-<DialogDemo />
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui@latest add dialog
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core solid-icons
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="dialog" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 

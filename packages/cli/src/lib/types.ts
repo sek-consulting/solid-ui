@@ -1,4 +1,5 @@
-import { Output, boolean, object, string } from "valibot"
+import type { Output } from "valibot"
+import { boolean, object, string } from "valibot"
 
 export enum CommandTypes {
   "init",

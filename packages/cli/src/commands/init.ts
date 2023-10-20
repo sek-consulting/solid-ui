@@ -4,7 +4,7 @@ import { cwd } from "process"
 import { text, confirm, log, spinner, select } from "@clack/prompts"
 import { parse } from "valibot"
 
-import { PROJECT_DEPS } from "~/lib/constants"
+import { PROJECT_DEPS, ROOT_CSS, TAILWIND_CONFIG, TAILWIND_PRESET, UTILS } from "~/lib/constants"
 import { configSchema, type Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
 
@@ -64,17 +64,9 @@ function writeUtils() {
   const indicator = spinner()
   indicator.start("Creating utils.ts file...")
 
-  const utilsContent = `import type { ClassValue } from "clsx"
-  import { clsx } from "clsx"
-  import { twMerge } from "tailwind-merge"
-  
-  export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs))
-  }`
-
   if (!doesLibPathExist) mkdirSync(cwd() + "/src/lib")
 
-  writeFileSync(cwd() + "/src/lib/utils.ts", utilsContent)
+  writeFileSync(cwd() + "/src/lib/utils.ts", UTILS)
   indicator.stop("Done creating utils.ts file!")
 }
 
@@ -83,13 +75,9 @@ async function writeCSS(cssPath: string) {
 
   indicator.start("Writing CSS styles...")
 
-  const registryRootCSS =
-    "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/apps/docs/src/root.css"
-  const cssContent = await (await fetch(registryRootCSS)).text()
-
   writeFile(
     cssPath,
-    cssContent,
+    ROOT_CSS,
     (error) => error && log.error(error.message || "Something went wrong")
   )
 
@@ -137,11 +125,7 @@ async function writeSUCPreset() {
   indicator.start("Writing Solid UI Components tailwind preset...")
 
   try {
-    const tailwindPresetUrl =
-      "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/suc.preset.js"
-    const data = await (await fetch(tailwindPresetUrl)).text()
-
-    writeFile("suc.preset.js", data, (error) => {
+    writeFile("suc.preset.js", TAILWIND_PRESET, (error) => {
       if (error) log.error(`There was an error while writing the sui.preset.js: ${error}`)
     })
   } catch (error) {
@@ -155,16 +139,7 @@ async function writeTailwindConfig(tailwindConfigDir: string) {
   const indicator = spinner()
   indicator.start("Configuring tailwind.config.js to support Solid UI Components...")
 
-  const config = `/** @type {import('tailwindcss').Config} */
-  export default {
-    darkMode: ["class"],
-    content: [
-      "./src/**/*.{html,js,jsx,md,mdx,ts,tsx}"
-    ],
-    presets: [require("./suc.preset.js")]
-  }
-  `
-  writeFile(tailwindConfigDir, config, (error) => {
+  writeFile(tailwindConfigDir, TAILWIND_CONFIG, (error) => {
     if (error) log.error(`Something went wrong while writing your tailwind.config.js: ${error}`)
   })
 

@@ -98,7 +98,6 @@ export async function add(componentNames: string[]) {
     activityIndicator.stop("Successfully created components! 🎉")
     return
   } catch (error) {
-    console.log(error)
     activityIndicator.stop()
     log.error(
       `Something went wrong while creating your components. Have you ran ${chalk.green(

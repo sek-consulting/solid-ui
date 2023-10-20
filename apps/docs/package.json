@@ -7,6 +7,7 @@
     "build": "solid-start build",
     "build:registry": "tsx ./src/scripts/build-registry.ts",
     "start": "solid-start start",
+    "release": "changeset version",
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {

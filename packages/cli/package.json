@@ -14,7 +14,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup"
+    "build": "tsup",
+    "release": "changeset version",
+    "pub:beta": "pnpm build && pnpm publish --no-git-checks --access public --tag beta",
+    "pub:release": "pnpm build && pnpm publish --access public"
   },
   "repository": {
     "type": "git",

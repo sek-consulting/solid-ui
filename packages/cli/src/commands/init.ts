@@ -27,7 +27,7 @@ export default async function init() {
   })
   const utilsAlias = await text({
     message: "Configure the import alias for utils.ts:",
-    initialValue: "~/utils"
+    initialValue: "~/libs/utils"
   })
 
   const config = parse(configSchema, {

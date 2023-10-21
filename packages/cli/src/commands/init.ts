@@ -21,13 +21,9 @@ export default async function init() {
     message: "Where is your tailwind.config.js located?",
     initialValue: "tailwind.config.cjs"
   })
-  const componentAlias = await text({
-    message: "Configure the import alias for the components directory:",
-    initialValue: "~/components/*"
-  })
-  const utilsAlias = await text({
-    message: "Configure the import alias for utils.ts:",
-    initialValue: "~/libs/utils"
+  const pathAlias = await text({
+    message: "Configure the import alias for the src directory:",
+    initialValue: "~/*"
   })
 
   const config = parse(configSchema, {
@@ -38,13 +34,12 @@ export default async function init() {
       css: globalCssDir
     },
     aliases: {
-      components: componentAlias,
-      utils: utilsAlias
+      path: pathAlias
     }
   })
 
   saveConfig(config)
-  writeTsconfig(config.aliases.components, config.aliases.utils)
+  writeTsconfig(config.aliases.path)
   writeUtils()
   await writeSUCPreset()
   await writeTailwindConfig(config.tailwind.config)
@@ -54,7 +49,9 @@ export default async function init() {
 
   await installDeps()
 
-  log.success("Success! Try npx suc add button to add a button component to your project")
+  log.success(
+    "Success! Try 'npx @solid-ui/cli add button' to add a button component to your project"
+  )
   process.exit(0)
 }
 
@@ -137,16 +134,16 @@ async function writeSUCPreset() {
 
 async function writeTailwindConfig(tailwindConfigDir: string) {
   const indicator = spinner()
-  indicator.start("Configuring tailwind.config.js to support Solid UI Components...")
+  indicator.start("Configuring tailwind.config.cjs to support Solid UI Components...")
 
   writeFile(tailwindConfigDir, TAILWIND_CONFIG, (error) => {
-    if (error) log.error(`Something went wrong while writing your tailwind.config.js: ${error}`)
+    if (error) log.error(`Something went wrong while writing your tailwind.config.cjs: ${error}`)
   })
 
-  indicator.stop("Done done configuring your tailwind.config.js")
+  indicator.stop("Done done configuring your tailwind.config.cjs")
 }
 
-function writeTsconfig(componentAlias: string, utilsAlias: string) {
+function writeTsconfig(alias: string) {
   const indicator = spinner()
   indicator.start("Configuring your tsconfig.json")
 
@@ -158,14 +155,7 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
     if (!tsconfigData.compilerOptions.paths) {
       tsconfigData.compilerOptions.paths = {}
     }
-
-    const oldPaths = tsconfigData.compilerOptions.paths
-    tsconfigData.compilerOptions.paths = {}
-    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/lib/utils"]
-    tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components/*"]
-    for (const key in oldPaths) {
-      tsconfigData.compilerOptions.paths[key] = oldPaths[key]
-    }
+    tsconfigData.compilerOptions.paths[alias] = ["./src/*"]
 
     writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
       if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)

@@ -34,8 +34,7 @@ export const configSchema = object({
     css: string()
   }),
   aliases: object({
-    components: string(),
-    utils: string()
+    path: string()
   })
 })
 export type Config = Output<typeof configSchema>

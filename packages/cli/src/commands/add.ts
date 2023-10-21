@@ -101,7 +101,7 @@ export async function add(componentNames: string[]) {
     activityIndicator.stop()
     log.error(
       `Something went wrong while creating your components. Have you ran ${chalk.green(
-        "suc init"
+        "@solid-ui/cli init"
       )}?`
     )
     process.exit(1)

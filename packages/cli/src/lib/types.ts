@@ -1,4 +1,5 @@
-import { Output, boolean, object, string } from "valibot"
+import type { Output } from "valibot"
+import { boolean, object, string } from "valibot"
 
 export enum CommandTypes {
   "init",
@@ -33,8 +34,7 @@ export const configSchema = object({
     css: string()
   }),
   aliases: object({
-    components: string(),
-    utils: string()
+    path: string()
   })
 })
 export type Config = Output<typeof configSchema>

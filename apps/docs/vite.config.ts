@@ -3,7 +3,7 @@ import { defineConfig } from "vite"
 import solid from "solid-start/vite"
 
 import mdx from "@mdx-js/rollup"
-import rehypePrettyCode, { LineElement } from "rehype-pretty-code"
+import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGfm from "remark-gfm"

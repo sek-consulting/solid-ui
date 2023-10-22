@@ -24,8 +24,6 @@ async function fetchSearch(value: string) {
   const url = `https://docs-crawler-7dcb62867c05.herokuapp.com/search?collectionName=solid-ui-docs&q=${value}&queryBy=title,contents`
   const res = await fetch(url)
   const data: SearchRes = await res.json()
-
-  return data
 }
 
 export default function SearchBar() {

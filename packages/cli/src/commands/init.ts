@@ -4,7 +4,7 @@ import { cwd } from "process"
 import { text, confirm, log, spinner, select } from "@clack/prompts"
 import { parse } from "valibot"
 
-import { PROJECT_DEPS } from "~/lib/constants"
+import { PROJECT_DEPS, ROOT_CSS, TAILWIND_CONFIG, TAILWIND_PRESET, UTILS } from "~/lib/constants"
 import { configSchema, type Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
 
@@ -21,30 +21,25 @@ export default async function init() {
     message: "Where is your tailwind.config.js located?",
     initialValue: "tailwind.config.cjs"
   })
-  const componentAlias = await text({
-    message: "Configure the import alias for the components directory:",
-    initialValue: "~/components/*"
-  })
-  const utilsAlias = await text({
-    message: "Configure the import alias for utils.ts:",
-    initialValue: "~/utils"
+  const pathAlias = await text({
+    message: "Configure the import alias for the src directory:",
+    initialValue: "~/*"
   })
 
   const config = parse(configSchema, {
     tsx: isTypescript,
-    componentDir: "./src/components",
+    componentDir: "./src/components/ui",
     tailwind: {
       config: tailwindConfigDir,
       css: globalCssDir
     },
     aliases: {
-      components: componentAlias,
-      utils: utilsAlias
+      path: pathAlias
     }
   })
 
   saveConfig(config)
-  writeTsconfig(config.aliases.components, config.aliases.utils)
+  writeTsconfig(config.aliases.path)
   writeUtils()
   await writeSUCPreset()
   await writeTailwindConfig(config.tailwind.config)
@@ -54,7 +49,9 @@ export default async function init() {
 
   await installDeps()
 
-  log.success("Success! Try npx suc add button to add a button component to your project")
+  log.success(
+    "Success! Try 'npx @solid-ui/cli add button' to add a button component to your project"
+  )
   process.exit(0)
 }
 
@@ -64,17 +61,9 @@ function writeUtils() {
   const indicator = spinner()
   indicator.start("Creating utils.ts file...")
 
-  const utilsContent = `import type { ClassValue } from "clsx"
-  import { clsx } from "clsx"
-  import { twMerge } from "tailwind-merge"
-  
-  export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs))
-  }`
-
   if (!doesLibPathExist) mkdirSync(cwd() + "/src/lib")
 
-  writeFileSync(cwd() + "/src/lib/utils.ts", utilsContent)
+  writeFileSync(cwd() + "/src/lib/utils.ts", UTILS)
   indicator.stop("Done creating utils.ts file!")
 }
 
@@ -83,13 +72,9 @@ async function writeCSS(cssPath: string) {
 
   indicator.start("Writing CSS styles...")
 
-  const registryRootCSS =
-    "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/apps/docs/src/root.css"
-  const cssContent = await (await fetch(registryRootCSS)).text()
-
   writeFile(
     cssPath,
-    cssContent,
+    ROOT_CSS,
     (error) => error && log.error(error.message || "Something went wrong")
   )
 
@@ -137,11 +122,7 @@ async function writeSUCPreset() {
   indicator.start("Writing Solid UI Components tailwind preset...")
 
   try {
-    const tailwindPresetUrl =
-      "https://raw.githubusercontent.com/michaelessiet/solid-ui-components/structure-change/suc.preset.js"
-    const data = await (await fetch(tailwindPresetUrl)).text()
-
-    writeFile("suc.preset.js", data, (error) => {
+    writeFile("suc.preset.js", TAILWIND_PRESET, (error) => {
       if (error) log.error(`There was an error while writing the sui.preset.js: ${error}`)
     })
   } catch (error) {
@@ -153,25 +134,16 @@ async function writeSUCPreset() {
 
 async function writeTailwindConfig(tailwindConfigDir: string) {
   const indicator = spinner()
-  indicator.start("Configuring tailwind.config.js to support Solid UI Components...")
+  indicator.start("Configuring tailwind.config.cjs to support Solid UI Components...")
 
-  const config = `/** @type {import('tailwindcss').Config} */
-  export default {
-    darkMode: ["class"],
-    content: [
-      "./src/**/*.{html,js,jsx,md,mdx,ts,tsx}"
-    ],
-    presets: [require("./suc.preset.js")]
-  }
-  `
-  writeFile(tailwindConfigDir, config, (error) => {
-    if (error) log.error(`Something went wrong while writing your tailwind.config.js: ${error}`)
+  writeFile(tailwindConfigDir, TAILWIND_CONFIG, (error) => {
+    if (error) log.error(`Something went wrong while writing your tailwind.config.cjs: ${error}`)
   })
 
-  indicator.stop("Done done configuring your tailwind.config.js")
+  indicator.stop("Done done configuring your tailwind.config.cjs")
 }
 
-function writeTsconfig(componentAlias: string, utilsAlias: string) {
+function writeTsconfig(alias: string) {
   const indicator = spinner()
   indicator.start("Configuring your tsconfig.json")
 
@@ -183,14 +155,7 @@ function writeTsconfig(componentAlias: string, utilsAlias: string) {
     if (!tsconfigData.compilerOptions.paths) {
       tsconfigData.compilerOptions.paths = {}
     }
-
-    const oldPaths = tsconfigData.compilerOptions.paths
-    tsconfigData.compilerOptions.paths = {}
-    tsconfigData.compilerOptions.paths[utilsAlias] = ["./src/lib/utils"]
-    tsconfigData.compilerOptions.paths[componentAlias] = ["./src/components/*"]
-    for (const key in oldPaths) {
-      tsconfigData.compilerOptions.paths[key] = oldPaths[key]
-    }
+    tsconfigData.compilerOptions.paths[alias] = ["./src/*"]
 
     writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
       if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)

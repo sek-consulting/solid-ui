@@ -4,11 +4,16 @@ import { cwd } from "process"
 import { log, spinner } from "@clack/prompts"
 import chalk from "chalk"
 import prompts from "prompts"
+import { parse } from "valibot"
 
 import { registryIndexUrl, registryUIUrl } from "~/lib/constants"
 import { transformImports } from "~/lib/transformImports"
 import { transpileTS } from "~/lib/transpileTS"
-import type { Config, RegistryComponentResponse, RegistryComponentsList } from "~/lib/types"
+import {
+  configSchema,
+  type RegistryComponentResponse,
+  type RegistryComponentsList
+} from "~/lib/types"
 import { installPackages, removeExtension } from "~/lib/utils"
 
 async function getComponent(componentName: string): Promise<RegistryComponentResponse> {
@@ -45,7 +50,7 @@ export async function add(componentNames: string[]) {
 
   try {
     const readSUCConfig = readFileSync(cwd() + "/suc.config.json")
-    const sucConfig: Config = JSON.parse(readSUCConfig.toString())
+    const sucConfig = parse(configSchema, JSON.parse(readSUCConfig.toString()))
     const isTypescriptEnabled = sucConfig.tsx
     const componentFolderDir = cwd() + "/" + sucConfig.componentDir
     const dirExists = existsSync(componentFolderDir)
@@ -96,7 +101,7 @@ export async function add(componentNames: string[]) {
     activityIndicator.stop()
     log.error(
       `Something went wrong while creating your components. Have you ran ${chalk.green(
-        "suc init"
+        "@solid-ui/cli init"
       )}?`
     )
     process.exit(1)

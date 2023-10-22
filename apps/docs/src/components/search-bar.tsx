@@ -24,6 +24,7 @@ async function fetchSearch(value: string) {
   const url = `https://docs-crawler-7dcb62867c05.herokuapp.com/search?collectionName=solid-ui-docs&q=${value}&queryBy=title,contents`
   const res = await fetch(url)
   const data: SearchRes = await res.json()
+  return data
 }
 
 export default function SearchBar() {
@@ -82,11 +83,18 @@ export default function SearchBar() {
                 }, 1)
 
                 return (
-                  <A href={item.document.uri} onclick={() => setIsOpen(false)} class="animate-in fade-in-0 duration-400">
+                  <A
+                    href={item.document.uri}
+                    onclick={() => setIsOpen(false)}
+                    class="animate-in fade-in-0 duration-400"
+                  >
                     <div class="grid grid-cols-[25px_1fr] items-start rounded p-4 hover:bg-black/30 dark:hover:bg-white/30">
                       <TbHash size={20} />
                       <div class="space-y-1">
-                        <p class="text-base font-medium leading-none text-black dark:text-white" id={titleId}>
+                        <p
+                          class="text-base font-medium leading-none text-black dark:text-white"
+                          id={titleId}
+                        >
                           {item.document.title}
                         </p>
                         <p class="text-muted-foreground text-sm" id={id}></p>

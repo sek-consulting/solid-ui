@@ -137,8 +137,8 @@ export const TAILWIND_PRESET = `const {fontFamily} = require("tailwindcss/defaul
 
 /**@type {import("tailwindcss").Config} */
 module.exports = {
-  darkMode: ["class"],
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: ["class", '[data-kb-theme="dark"]'],
+  content: ["./src/**/*.{js,jsx,md,mdx,ts,tsx}"],
   theme: {
     container: {
       center: true,

@@ -1,4 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
+import path from "path"
 import { cwd } from "process"
 
 import { log, spinner } from "@clack/prompts"
@@ -49,13 +50,13 @@ export async function add(componentNames: string[]) {
   activityIndicator.start("Creating components...")
 
   try {
-    const readSUCConfig = readFileSync(cwd() + "/suc.config.json")
+    const readSUCConfig = readFileSync(path.resolve(cwd(), "suc.config.json"))
     const sucConfig = parse(configSchema, JSON.parse(readSUCConfig.toString()))
     const isTypescriptEnabled = sucConfig.tsx
-    const componentFolderDir = cwd() + "/" + sucConfig.componentDir
+    const componentFolderDir = path.resolve(cwd(), sucConfig.componentDir)
     const dirExists = existsSync(componentFolderDir)
 
-    if (!dirExists) mkdirSync(componentFolderDir)
+    if (!dirExists) mkdirSync(componentFolderDir, { recursive: true })
 
     const components = await Promise.all(
       componentNames.map(async (name) => await getComponent(name))

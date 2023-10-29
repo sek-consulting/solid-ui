@@ -41,7 +41,7 @@ export default function DropdownMenuDemo() {
             <span>Update Project</span>
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuSub>
+          <DropdownMenuSub overlap>
             <DropdownMenuSubTrigger>GitHub</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>

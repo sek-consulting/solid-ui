@@ -13,7 +13,7 @@ const ComboboxItem: Component<ComboboxPrimitive.ComboboxItemProps> = (props) => 
   return (
     <ComboboxPrimitive.Item
       class={cn(
-        "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default select-none items-center justify-between rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
@@ -69,6 +69,8 @@ const ComboboxInput: Component<ComboboxPrimitive.ComboboxInputProps> = (props) =
   )
 }
 
+const ComboboxHiddenSelect = ComboboxPrimitive.HiddenSelect
+
 const ComboboxTrigger: Component<ComboboxPrimitive.ComboboxTriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
@@ -104,5 +106,6 @@ export {
   ComboboxControl,
   ComboboxTrigger,
   ComboboxInput,
+  ComboboxHiddenSelect,
   ComboboxContent
 }

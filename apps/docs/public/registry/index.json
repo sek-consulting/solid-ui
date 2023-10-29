@@ -87,6 +87,17 @@
     "type": "ui"
   },
   {
+    "name": "combobox",
+    "dependencies": [
+      "@kobalte/core",
+      "solid-icons"
+    ],
+    "files": [
+      "ui/combobox.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "collapsible",
     "dependencies": [
       "@kobalte/core"

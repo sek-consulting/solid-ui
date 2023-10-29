@@ -92,6 +92,10 @@ export const docsConfig: Config = {
           href: "/docs/components/checkbox"
         },
         {
+          title: "Combobox",
+          href: "/docs/components/combobox"
+        },
+        {
           title: "Delta Bar",
           href: "/docs/components/delta-bar"
         },

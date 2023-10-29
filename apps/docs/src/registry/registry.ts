@@ -54,6 +54,12 @@ const ui: Registry = [
     files: ["ui/checkbox.tsx"]
   },
   {
+    name: "combobox",
+    type: "ui",
+    dependencies: ["@kobalte/core", "solid-icons"],
+    files: ["ui/combobox.tsx"]
+  },
+  {
     name: "collapsible",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -247,6 +253,11 @@ const examples: Registry = [
     name: "checkbox-demo",
     type: "example",
     files: ["example/checkbox-demo.tsx"]
+  },
+  {
+    name: "combobox-demo",
+    type: "example",
+    files: ["example/combobox-demo.tsx"]
   },
   {
     name: "delta-bar-demo",

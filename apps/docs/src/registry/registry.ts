@@ -14,6 +14,12 @@ const ui: Registry = [
     files: ["ui/alert.tsx"]
   },
   {
+    name: "alert-dialog",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/alert-dialog.tsx"]
+  },
+  {
     name: "avatar",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -209,6 +215,12 @@ const examples: Registry = [
     type: "example",
     registryDependencies: ["alert"],
     files: ["example/alert-demo.tsx"]
+  },
+  {
+    name: "alert-dialog-demo",
+    type: "example",
+    registryDependencies: ["alert-dialog"],
+    files: ["example/alert-dialog-demo.tsx"]
   },
   {
     name: "avatar-demo",

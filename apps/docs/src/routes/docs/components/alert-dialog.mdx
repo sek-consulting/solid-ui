@@ -1,0 +1,68 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user's workflow to communicate an important message and acquire a response.
+kobalte: https://kobalte.dev/docs/core/components/alert-dialog
+---
+
+<ComponentPreview name="alert-dialog-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @solid-ui/cli@latest add alert-dialog
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+pnpm install @kobalte/core solid-icons
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="alert-dialog" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from "~/registry/ui/alert-dialog"
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger>Open</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogTitle>Alert Dialog</AlertDialogTitle>
+    <AlertDialogDescription>
+      An Alert Dialog enables assistive technologies and browsers to distinguish alert dialogs from
+      other dialogs so they have the option of giving alert dialogs special treatment, such as
+      playing a system alert sound.
+    </AlertDialogDescription>
+  </AlertDialogContent>
+</AlertDialog>
+```

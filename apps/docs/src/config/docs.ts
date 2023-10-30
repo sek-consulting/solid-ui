@@ -64,6 +64,10 @@ export const docsConfig: Config = {
           href: "/docs/components/accordion"
         },
         {
+          title: "Alert",
+          href: "/docs/components/alert"
+        },
+        {
           title: "Avatar",
           href: "/docs/components/avatar"
         },

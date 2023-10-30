@@ -8,6 +8,12 @@ const ui: Registry = [
     files: ["ui/accordion.tsx"]
   },
   {
+    name: "alert",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/alert.tsx"]
+  },
+  {
     name: "avatar",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -197,6 +203,12 @@ const examples: Registry = [
     type: "example",
     registryDependencies: ["accordion"],
     files: ["example/accordion-demo.tsx"]
+  },
+  {
+    name: "alert-demo",
+    type: "example",
+    registryDependencies: ["alert"],
+    files: ["example/alert-demo.tsx"]
   },
   {
     name: "avatar-demo",

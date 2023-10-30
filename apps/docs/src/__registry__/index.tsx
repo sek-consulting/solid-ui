@@ -13,6 +13,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/accordion")),
     files: ["registry/ui/accordion.tsx"],
   },
+  "alert": {
+    name: "alert",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/alert")),
+    files: ["registry/ui/alert.tsx"],
+  },
   "avatar": {
     name: "avatar",
     type: "ui",
@@ -243,6 +250,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["accordion"],
     component: lazy(() => import("~/registry/example/accordion-demo")),
     files: ["registry/example/accordion-demo.tsx"],
+  },
+  "alert-demo": {
+    name: "alert-demo",
+    type: "example",
+    registryDependencies: ["alert"],
+    component: lazy(() => import("~/registry/example/alert-demo")),
+    files: ["registry/example/alert-demo.tsx"],
   },
   "avatar-demo": {
     name: "avatar-demo",

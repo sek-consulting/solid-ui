@@ -11,6 +11,16 @@
     "type": "ui"
   },
   {
+    "name": "alert",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/alert.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "avatar",
     "dependencies": [
       "@kobalte/core"

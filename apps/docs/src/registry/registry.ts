@@ -72,6 +72,12 @@ const ui: Registry = [
     files: ["ui/combobox.tsx"]
   },
   {
+    name: "context-menu",
+    type: "ui",
+    dependencies: ["@kobalte/core", "solid-icons"],
+    files: ["ui/context-menu.tsx"]
+  },
+  {
     name: "collapsible",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -293,6 +299,11 @@ const examples: Registry = [
     name: "combobox-demo",
     type: "example",
     files: ["example/combobox-demo.tsx"]
+  },
+  {
+    name: "context-menu-demo",
+    type: "example",
+    files: ["example/context-menu-demo.tsx"]
   },
   {
     name: "delta-bar-demo",

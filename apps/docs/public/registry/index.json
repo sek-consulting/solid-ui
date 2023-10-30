@@ -118,6 +118,17 @@
     "type": "ui"
   },
   {
+    "name": "context-menu",
+    "dependencies": [
+      "@kobalte/core",
+      "solid-icons"
+    ],
+    "files": [
+      "ui/context-menu.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "collapsible",
     "dependencies": [
       "@kobalte/core"

@@ -90,6 +90,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/combobox")),
     files: ["registry/ui/combobox.tsx"],
   },
+  "context-menu": {
+    name: "context-menu",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/context-menu")),
+    files: ["registry/ui/context-menu.tsx"],
+  },
   "collapsible": {
     name: "collapsible",
     type: "ui",
@@ -362,6 +369,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/combobox-demo")),
     files: ["registry/example/combobox-demo.tsx"],
+  },
+  "context-menu-demo": {
+    name: "context-menu-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/context-menu-demo")),
+    files: ["registry/example/context-menu-demo.tsx"],
   },
   "delta-bar-demo": {
     name: "delta-bar-demo",

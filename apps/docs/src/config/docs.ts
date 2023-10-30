@@ -108,6 +108,10 @@ export const docsConfig: Config = {
           href: "/docs/components/combobox"
         },
         {
+          title: "Context Menu",
+          href: "/docs/components/context-menu"
+        },
+        {
           title: "Delta Bar",
           href: "/docs/components/delta-bar"
         },

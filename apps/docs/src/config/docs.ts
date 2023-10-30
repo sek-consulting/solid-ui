@@ -132,6 +132,10 @@ export const docsConfig: Config = {
           href: "/docs/components/grid"
         },
         {
+          title: "Hover Card",
+          href: "/docs/components/hover-card"
+        },
+        {
           title: "Input",
           href: "/docs/components/input"
         },

@@ -111,6 +111,12 @@ const ui: Registry = [
     files: ["ui/grid.tsx"]
   },
   {
+    name: "hover-card",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/hover-card.tsx"]
+  },
+  {
     name: "input",
     type: "ui",
     files: ["ui/input.tsx"]
@@ -329,6 +335,11 @@ const examples: Registry = [
     name: "grid-demo",
     type: "example",
     files: ["example/grid-demo.tsx"]
+  },
+  {
+    name: "hover-card-demo",
+    type: "example",
+    files: ["example/hover-card-demo.tsx"]
   },
   {
     name: "input-demo",

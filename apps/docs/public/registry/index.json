@@ -182,6 +182,16 @@
     "type": "ui"
   },
   {
+    "name": "hover-card",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/hover-card.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "input",
     "files": [
       "ui/input.tsx"

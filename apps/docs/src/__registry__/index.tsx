@@ -139,6 +139,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/grid")),
     files: ["registry/ui/grid.tsx"],
   },
+  "hover-card": {
+    name: "hover-card",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/hover-card")),
+    files: ["registry/ui/hover-card.tsx"],
+  },
   "input": {
     name: "input",
     type: "ui",
@@ -411,6 +418,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/grid-demo")),
     files: ["registry/example/grid-demo.tsx"],
+  },
+  "hover-card-demo": {
+    name: "hover-card-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/hover-card-demo")),
+    files: ["registry/example/hover-card-demo.tsx"],
   },
   "input-demo": {
     name: "input-demo",

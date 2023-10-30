@@ -157,6 +157,12 @@ const ui: Registry = [
     files: ["ui/skeleton.tsx"]
   },
   {
+    name: "slider",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/slider.tsx"]
+  },
+  {
     name: "switch",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -352,6 +358,11 @@ const examples: Registry = [
     name: "skeleton-demo",
     type: "example",
     files: ["example/skeleton-demo.tsx"]
+  },
+  {
+    name: "slider-demo",
+    type: "example",
+    files: ["example/slider-demo.tsx"]
   },
   {
     name: "switch-demo",

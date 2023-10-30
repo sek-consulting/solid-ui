@@ -258,6 +258,16 @@
     "type": "ui"
   },
   {
+    "name": "slider",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/slider.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "switch",
     "dependencies": [
       "@kobalte/core"

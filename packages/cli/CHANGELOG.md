@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.1.1
+
+### Patch Changes
+
+- [`27f2321`](https://github.com/sek-consulting/solid-ui/commit/27f23214bf912ab4ea828a04298503643094f6c6) Thanks [@sek-consulting](https://github.com/sek-consulting)! - changed changeset PR title
+
 ## 0.1.0
 
 ### Minor Changes

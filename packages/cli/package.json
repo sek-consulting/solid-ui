@@ -1,6 +1,6 @@
 {
   "name": "@solid-ui/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add Solid UI Components to you application using the SUC CLI tool",
   "main": "dist/index.mjs",
   "bin": {

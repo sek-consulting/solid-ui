@@ -92,6 +92,10 @@ export const docsConfig: Config = {
           href: "/docs/components/checkbox"
         },
         {
+          title: "Collapsible",
+          href: "/docs/components/collapsible"
+        },
+        {
           title: "Combobox",
           href: "/docs/components/combobox"
         },

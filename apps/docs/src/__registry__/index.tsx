@@ -314,6 +314,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/checkbox-demo")),
     files: ["registry/example/checkbox-demo.tsx"],
   },
+  "collapsible-demo": {
+    name: "collapsible-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/collapsible-demo")),
+    files: ["registry/example/collapsible-demo.tsx"],
+  },
   "combobox-demo": {
     name: "combobox-demo",
     type: "example",

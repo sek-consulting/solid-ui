@@ -255,6 +255,11 @@ const examples: Registry = [
     files: ["example/checkbox-demo.tsx"]
   },
   {
+    name: "collapsible-demo",
+    type: "example",
+    files: ["example/collapsible-demo.tsx"]
+  },
+  {
     name: "combobox-demo",
     type: "example",
     files: ["example/combobox-demo.tsx"]

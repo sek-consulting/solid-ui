@@ -1,6 +1,6 @@
 ---
 "docs": patch
-"cli": patch
+"solidui-cli": patch
 ---
 
 - add examples to docs frontpage

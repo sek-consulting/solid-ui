@@ -5,7 +5,7 @@ import {
   ComboboxItem,
   ComboboxItemIndicator,
   ComboboxItemLabel,
-  ComboboxRoot,
+  Combobox,
   ComboboxSection,
   ComboboxTrigger
 } from "~/registry/ui/combobox"
@@ -43,7 +43,7 @@ const ALL_OPTIONS: Category[] = [
 
 export default function ComboboxDemo() {
   return (
-    <ComboboxRoot<Food, Category>
+    <Combobox<Food, Category>
       options={ALL_OPTIONS}
       optionValue="value"
       optionTextValue="label"
@@ -66,6 +66,6 @@ export default function ComboboxDemo() {
         <ComboboxTrigger />
       </ComboboxControl>
       <ComboboxContent />
-    </ComboboxRoot>
+    </Combobox>
   )
 }

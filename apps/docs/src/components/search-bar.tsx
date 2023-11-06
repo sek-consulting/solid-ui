@@ -2,6 +2,7 @@ import { For, Show, createResource, createSignal, onMount } from "solid-js"
 import { isServer } from "solid-js/web"
 import { A } from "solid-start"
 
+import { As } from "@kobalte/core"
 import ShoSho from "shosho"
 import { TbCommand, TbHash, TbSearch } from "solid-icons/tb"
 
@@ -45,16 +46,23 @@ export default function SearchBar() {
 
   return (
     <Dialog onOpenChange={setIsOpen} open={isOpen()}>
-      <DialogTrigger as={Button} id="search-trigger" variant={"outline"} class="space-x-2">
-        <div class="flex items-center space-x-2">
-          <TbSearch />
-          <span>Search</span>
-        </div>
+      <DialogTrigger asChild>
+        <As
+          component={Button}
+          id="search-trigger"
+          variant="outline"
+          class="text-muted-foreground relative w-full justify-between space-x-4"
+        >
+          <div class="flex items-center space-x-2">
+            <TbSearch />
+            <span>Search...</span>
+          </div>
 
-        <Badge variant={"secondary"} class="flex items-center ">
-          <TbCommand size={16} />
-          <span>K</span>
-        </Badge>
+          <Badge variant="secondary" class="flex items-center ">
+            <TbCommand size={16} />
+            <span>K</span>
+          </Badge>
+        </As>
       </DialogTrigger>
 
       <DialogContent class="flex h-[80%] flex-col">

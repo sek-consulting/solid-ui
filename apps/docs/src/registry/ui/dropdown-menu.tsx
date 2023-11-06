@@ -47,6 +47,16 @@ const DropdownMenuShortcut: Component<ComponentProps<"span">> = (props) => {
   return <span class={cn("ml-auto text-xs tracking-widest opacity-60", props.class)} {...rest} />
 }
 
+const DropdownMenuLabel: Component<ComponentProps<"div"> & { inset?: boolean }> = (props) => {
+  const [, rest] = splitProps(props, ["class", "inset"])
+  return (
+    <div
+      class={cn("px-2 py-1.5 text-sm font-semibold", props.inset && "pl-8", props.class)}
+      {...rest}
+    />
+  )
+}
+
 const DropdownMenuSeparator: Component<DropdownMenuPrimitive.DropdownMenuSeparatorProps> = (
   props
 ) => {
@@ -161,6 +171,7 @@ export {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuShortcut,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuSub,
   DropdownMenuSubTrigger,

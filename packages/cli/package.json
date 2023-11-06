@@ -1,7 +1,7 @@
 {
-  "name": "@solid-ui/cli",
+  "name": "solidui-cli",
   "version": "0.1.1",
-  "description": "Add Solid UI Components to you application using the SUC CLI tool",
+  "description": "Add Solid UI Components to your application using the Solid-UI CLI tool",
   "main": "dist/index.mjs",
   "bin": {
     "suc": "./dist/index.mjs"
@@ -21,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sek-consulting/solid-ui-components.git"
+    "url": "git+https://github.com/sek-consulting/solid-ui.git"
   },
   "author": "Stefan E-K & Michael Essiet",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sek-consulting/solid-ui-components/issues"
+    "url": "https://github.com/sek-consulting/solid-ui/issues"
   },
-  "homepage": "https://github.com/sek-consulting/solid-ui-components#readme",
+  "homepage": "https://github.com/sek-consulting/solid-ui#readme",
   "dependencies": {
     "@babel/core": "^7.22.20",
     "@babel/parser": "^7.22.16",

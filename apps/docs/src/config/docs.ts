@@ -65,6 +65,19 @@ export const docsConfig: Config = {
       ]
     },
     {
+      title: "Layout",
+      items: [
+        {
+          title: "Flex",
+          href: "/docs/components/flex"
+        },
+        {
+          title: "Grid",
+          href: "/docs/components/grid"
+        }
+      ]
+    },
+    {
       title: "Components",
       items: [
         {
@@ -130,14 +143,6 @@ export const docsConfig: Config = {
         {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu"
-        },
-        {
-          title: "Flex",
-          href: "/docs/components/flex"
-        },
-        {
-          title: "Grid",
-          href: "/docs/components/grid"
         },
         {
           title: "Hover Card",

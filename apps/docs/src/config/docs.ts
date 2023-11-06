@@ -21,6 +21,14 @@ export const docsConfig: Config = {
       href: "/docs/introduction"
     },
     {
+      title: "Components",
+      href: "/docs/components/accordion"
+    },
+    {
+      title: "Examples",
+      href: "/examples/dashboard"
+    },
+    {
       title: "GitHub",
       href: "https://github.com/sek-consulting/solid-ui-components",
       external: true

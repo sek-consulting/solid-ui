@@ -7,9 +7,9 @@ export const PROJECT_DEPS = [
   "tailwindcss"
 ]
 
-export const registryUrl = "https://solid-ui-components.vercel.app/registry"
-export const registryUIUrl = "https://solid-ui-components.vercel.app/registry/ui"
-export const registryIndexUrl = "https://solid-ui-components.vercel.app/registry/index.json"
+export const registryUrl = "https://www.solid-ui.com/registry"
+export const registryUIUrl = "https://www.solid-ui.com/registry/ui"
+export const registryIndexUrl = "https://www.solid-ui.com/registry/index.json"
 
 export const UTILS = `import type { ClassValue } from "clsx"
 import { clsx } from "clsx"

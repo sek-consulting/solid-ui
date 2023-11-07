@@ -1,6 +1,6 @@
 {
   "name": "solidui-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Add Solid UI Components to your application using the Solid-UI CLI tool",
   "main": "dist/index.mjs",
   "bin": {

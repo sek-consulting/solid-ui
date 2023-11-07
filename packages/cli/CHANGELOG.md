@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.1.3
+
+### Patch Changes
+
+- [`cdb3cb1`](https://github.com/sek-consulting/solid-ui/commit/cdb3cb12116790a170b64186432340d91821157e) Thanks [@sek-consulting](https://github.com/sek-consulting)! - fix: fixing release workflow
+
 ## 0.1.2
 
 ### Patch Changes

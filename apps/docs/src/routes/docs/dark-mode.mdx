@@ -17,10 +17,11 @@ npm install @kobalte/core
 
 Add the `Theme Provider` and `ColorModeScript` to your root.
 
-```tsx {6,8-10,17,19,24}
+```tsx {7,9-11,18,20,25}
 import { useContext } from "solid-js"
 import { isServer } from "solid-js/web"
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
+import { ..., ServerContext } from "solid-start"
 
 export default function Root() {
   const event = useContext(ServerContext)

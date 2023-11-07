@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.1.4
+
+### Patch Changes
+
+- [`6345488`](https://github.com/sek-consulting/solid-ui/commit/6345488ffd33a6a39a33e9827d9afc9528eaa556) Thanks [@sek-consulting](https://github.com/sek-consulting)! - add readme & workflow/package.json changes
+
 ## 0.1.3
 
 ### Patch Changes

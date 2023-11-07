@@ -2,33 +2,43 @@
   "name": "solidui-cli",
   "version": "0.1.3",
   "description": "Add Solid UI Components to your application using the Solid-UI CLI tool",
-  "main": "dist/index.mjs",
-  "bin": {
-    "suc": "./dist/index.mjs"
+  "publishConfig": {
+    "access": "public"
   },
-  "devDependencies": {
-    "@types/node": "^18.14.0",
-    "@types/prompts": "^2.4.5",
-    "tsup": "^7.2.0",
-    "typescript": "^5.1.6"
+  "license": "MIT",
+  "author": {
+    "name": "Stefan E-K & Michael Essiet",
+    "url": "https://twitter.com/stefan_e_k"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sek-consulting/solid-ui.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/sek-consulting/solid-ui/issues"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "keywords": [
+    "components",
+    "ui",
+    "tailwind",
+    "kobalte",
+    "solid",
+    "solidjs",
+    "shadcn"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup",
     "release": "changeset version",
     "pub:beta": "pnpm build && pnpm publish --no-git-checks --access public --tag beta",
     "pub:release": "pnpm build && pnpm publish --access public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sek-consulting/solid-ui.git"
-  },
-  "author": "Stefan E-K & Michael Essiet",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sek-consulting/solid-ui/issues"
-  },
-  "homepage": "https://github.com/sek-consulting/solid-ui#readme",
   "dependencies": {
     "@babel/core": "^7.22.20",
     "@babel/parser": "^7.22.16",
@@ -42,5 +52,11 @@
     "prompts": "^2.4.2",
     "recast": "^0.23.4",
     "ts-morph": "^20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@types/prompts": "^2.4.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
   }
 }

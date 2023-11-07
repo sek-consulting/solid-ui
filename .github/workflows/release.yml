@@ -9,7 +9,8 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    name: Release
+    name: Build & Publish Release
+    if: github.repository == 'sek-consulting/solid-ui'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo

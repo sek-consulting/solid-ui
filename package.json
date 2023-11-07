@@ -9,6 +9,7 @@
   "scripts": {
     "lint": "turbo lint",
     "build": "turbo build",
+    "build:cli": "turbo --filter=solidui-cli build",
     "build:registry": "pnpm --filter=docs build:registry",
     "dev": "turbo dev",
     "release": "changeset version",

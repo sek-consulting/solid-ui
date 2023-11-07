@@ -1,4 +1,3 @@
-import { ComponentExample } from "~/components/component-example"
 import {
   Table,
   TableBody,

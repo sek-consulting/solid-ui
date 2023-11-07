@@ -1,5 +1,13 @@
 # @solid-ui/cli
 
+## 0.1.5
+
+### Patch Changes
+
+- [`df3a959`](https://github.com/sek-consulting/solid-ui/commit/df3a959c56a670a534b6c773e06828b922c0ccc8) Thanks [@sek-consulting](https://github.com/sek-consulting)! - change url for data fetching to solid-ui.com
+
+- [#32](https://github.com/sek-consulting/solid-ui/pull/32) [`6049563`](https://github.com/sek-consulting/solid-ui/commit/6049563beea11c2308765e17f73ad1acc9dd1b50) Thanks [@atilafassina](https://github.com/atilafassina)! - update command suggestion on CLI
+
 ## 0.1.4
 
 ### Patch Changes

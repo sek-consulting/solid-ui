@@ -49,9 +49,7 @@ export default async function init() {
 
   await installDeps()
 
-  log.success(
-    "Success! Try 'npx @solid-ui/cli add button' to add a button component to your project"
-  )
+  log.success("Success! Try 'npx solidui-cli add button' to add a button component to your project")
   process.exit(0)
 }
 

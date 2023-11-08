@@ -146,7 +146,12 @@ function writeTsconfig(alias: string) {
   indicator.start("Configuring your tsconfig.json")
 
   readJsonFile(process.cwd() + "/tsconfig.json", (error, data) => {
-    if (error) log.error("Something went wrong while configuring your tsconfig.json")
+    if (error) {
+      log.error(
+        "Something went wrong while configuring your tsconfig.json. Please make sure it is formatted correctly and doesn't contain any comments."
+      )
+      process.exit(1)
+    }
 
     const tsconfigData = data as Record<string, { paths: Record<string, unknown> }>
 

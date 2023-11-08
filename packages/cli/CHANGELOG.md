@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.1.6
+
+### Patch Changes
+
+- [`fb2d859`](https://github.com/sek-consulting/solid-ui/commit/fb2d8590ca452eeb9319a7adc621f54d941225f7) Thanks [@sek-consulting](https://github.com/sek-consulting)! - fix: trying to read a malformed tsconfig.json now exits and shows a better error message
+
 ## 0.1.5
 
 ### Patch Changes

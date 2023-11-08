@@ -1,12 +1,20 @@
-import CreateAccount from "~/components/examples/cards/createaccount"
-import { Card as BaseCard } from "~/registry/ui/card"
+import CookieSettings from "~/components/examples/cards/cookie-settings"
+import CreateAccount from "~/components/examples/cards/create-account"
+import PaymentMethod from "~/components/examples/cards/payment-method"
+import ReportAnIssue from "~/components/examples/cards/report-an-issue"
+import SolidUI from "~/components/examples/cards/solid-ui"
+import ExamplesContainer from "~/components/examples/examples-container"
 
 const Card = () => {
-  return <BaseCard>
-		<div class="flex h-16 flex-col items-center px-4">
-			<CreateAccount/>
-		</div>
-	</BaseCard>
+  return (
+    <ExamplesContainer>
+      <CreateAccount />
+      <PaymentMethod />
+      <CookieSettings />
+      <ReportAnIssue />
+      <SolidUI/>
+    </ExamplesContainer>
+  )
 }
 
 export default Card

@@ -21,7 +21,7 @@ import type { SearchRes } from "~/types/search"
 const shortcut = new ShoSho()
 
 async function fetchSearch(value: string) {
-  const url = `https://docs-crawler-7dcb62867c05.herokuapp.com/search?collectionName=solid-ui-docs&q=${value}&queryBy=title,contents`
+  const url = `https://docs-search-qyz9b.ondigitalocean.app/search?collectionName=solid-ui-docs&q=${value}&queryBy=title,contents`
   const res = await fetch(url)
   const data: SearchRes = await res.json()
   return data

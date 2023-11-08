@@ -2,8 +2,8 @@ import { Outlet } from "solid-start"
 
 import { TbBrandGithub } from "solid-icons/tb"
 
-import { buttonVariants } from "~/registry/ui/button"
 import ExamplesNavBar from "~/components/examples-nav"
+import { buttonVariants } from "~/registry/ui/button"
 
 export default function Index() {
   return (

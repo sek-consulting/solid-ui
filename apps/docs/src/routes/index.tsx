@@ -3,9 +3,8 @@ import { Outlet } from "solid-start"
 import { Route, Routes } from "@solidjs/router"
 import { TbBrandGithub } from "solid-icons/tb"
 
-import { Dashboard } from "~/components/examples/dashboard"
-import { buttonVariants } from "~/registry/ui/button"
 import ExamplesNavBar from "~/components/examples-nav"
+import { buttonVariants } from "~/registry/ui/button"
 
 export default function Index() {
   return (
@@ -45,7 +44,7 @@ export default function Index() {
       </section>
       <section>
         <ExamplesNavBar/>
-        <Dashboard />
+        {/* <Dashboard /> */}
       </section>
     </div>
   )

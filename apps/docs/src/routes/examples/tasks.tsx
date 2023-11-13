@@ -1,7 +1,5 @@
-import { Dashboard } from "~/components/examples/dashboard";
-
 const Tasks = () => {
-	return <Dashboard/>;
+	return <div>Tasks examples</div>;
 }
- 
+
 export default Tasks;

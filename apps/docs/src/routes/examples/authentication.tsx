@@ -3,13 +3,14 @@ import { A } from "solid-start"
 import { TbCommand } from "solid-icons/tb"
 
 import { UserAuthForm } from "~/components/authentication/user-auth-form"
+import ExampleContainer from "~/components/examples/example-container"
 import { MetaHead } from "~/components/meta-head"
 import { cn } from "~/lib/utils"
 import { buttonVariants } from "~/registry/ui/button"
 
 export default function Authentication() {
   return (
-    <>
+    <ExampleContainer>
       <MetaHead
         title="Authentication"
         description="Authentication forms built using the components."
@@ -79,6 +80,6 @@ export default function Authentication() {
           </div>
         </div>
       </div>
-    </>
+    </ExampleContainer>
   )
 }

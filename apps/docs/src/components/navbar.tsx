@@ -35,26 +35,30 @@ export default function Navbar() {
         </div>
         <div class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
           <nav class="flex w-full items-center justify-between space-x-2 md:justify-end">
-            <SearchBar />
-            <a
-              href="https://github.com/sek-consulting/solid-ui-components"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                class={cn(
-                  buttonVariants({
-                    size: "sm",
-                    variant: "ghost"
-                  }),
-                  "w-9 px-0"
-                )}
+            <div class="w-full flex-1 md:w-auto md:flex-none">
+              <SearchBar />
+            </div>
+            <div class="flex items-center">
+              <a
+                href="https://github.com/sek-consulting/solid-ui-components"
+                target="_blank"
+                rel="noreferrer"
               >
-                <Icons.gitHub class="h-5 w-5" />
-                <span class="sr-only">GitHub</span>
-              </div>
-            </a>
-            <ModeToggle />
+                <div
+                  class={cn(
+                    buttonVariants({
+                      size: "sm",
+                      variant: "ghost"
+                    }),
+                    "w-9 px-0"
+                  )}
+                >
+                  <Icons.gitHub class="h-5 w-5" />
+                  <span class="sr-only">GitHub</span>
+                </div>
+              </a>
+              <ModeToggle />
+            </div>
           </nav>
         </div>
       </div>

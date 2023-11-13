@@ -1,7 +1,8 @@
 {
   "name": "docs",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.4",
+  "private": true,
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
@@ -13,6 +14,7 @@
   "dependencies": {
     "@fontsource/inter": "^5.0.14",
     "@kobalte/core": "^0.11.1",
+    "@modular-forms/solid": "^0.20.0",
     "@solid-primitives/keyboard": "^1.2.5",
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.3",

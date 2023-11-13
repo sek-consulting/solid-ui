@@ -21,6 +21,14 @@ export const docsConfig: Config = {
       href: "/docs/introduction"
     },
     {
+      title: "Components",
+      href: "/docs/components/accordion"
+    },
+    {
+      title: "Examples",
+      href: "/examples/dashboard"
+    },
+    {
       title: "GitHub",
       href: "https://github.com/sek-consulting/solid-ui-components",
       external: true
@@ -53,6 +61,19 @@ export const docsConfig: Config = {
         {
           title: "About",
           href: "/docs/about"
+        }
+      ]
+    },
+    {
+      title: "Layout",
+      items: [
+        {
+          title: "Flex",
+          href: "/docs/components/flex"
+        },
+        {
+          title: "Grid",
+          href: "/docs/components/grid"
         }
       ]
     },
@@ -122,14 +143,6 @@ export const docsConfig: Config = {
         {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu"
-        },
-        {
-          title: "Flex",
-          href: "/docs/components/flex"
-        },
-        {
-          title: "Grid",
-          href: "/docs/components/grid"
         },
         {
           title: "Hover Card",

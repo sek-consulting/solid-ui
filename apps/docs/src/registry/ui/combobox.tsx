@@ -6,7 +6,7 @@ import { TbCheck, TbSelector } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
 
-const ComboboxRoot = ComboboxPrimitive.Root
+const Combobox = ComboboxPrimitive.Root
 
 const ComboboxItem: Component<ComboboxPrimitive.ComboboxItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
@@ -98,7 +98,7 @@ const ComboboxContent: Component<ComboboxPrimitive.ComboboxContentProps> = (prop
 }
 
 export {
-  ComboboxRoot,
+  Combobox,
   ComboboxItem,
   ComboboxItemLabel,
   ComboboxItemIndicator,

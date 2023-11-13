@@ -34,22 +34,11 @@
     "shadcn"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup",
     "release": "changeset version",
     "pub:beta": "pnpm build && pnpm publish --no-git-checks --access public --tag beta",
     "pub:release": "pnpm build && pnpm publish --access public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sek-consulting/solid-ui-components.git"
-  },
-  "author": "Stefan E-K & Michael Essiet",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sek-consulting/solid-ui-components/issues"
-  },
-  "homepage": "https://github.com/sek-consulting/solid-ui-components#readme",
   "dependencies": {
     "@babel/core": "^7.22.20",
     "@babel/parser": "^7.22.16",
@@ -63,5 +52,11 @@
     "prompts": "^2.4.2",
     "recast": "^0.23.4",
     "ts-morph": "^20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@types/prompts": "^2.4.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
   }
 }

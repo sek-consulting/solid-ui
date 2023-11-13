@@ -9,7 +9,8 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    name: Release
+    name: Build & Publish Release
+    if: github.repository == 'sek-consulting/solid-ui'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -23,17 +24,23 @@ jobs:
       - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          version: 8.6.1
           node-version: 18
           cache: "pnpm"
 
       - name: Install NPM Dependencies
         run: pnpm install
 
-      - name: Create Release Pull Request
-        uses: changesets/action@v1
+      - name: Build the package
+        run: pnpm build:cli
+
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1.4.1
         with:
-          commit: "chore(release): version package"
-          title: "chore(release): version package"
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+          publish: npx changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          NODE_ENV: "production"

@@ -1,9 +1,10 @@
 import { Show, createMemo } from "solid-js"
-import { A, Head, Outlet, Title, useLocation } from "solid-start"
+import { A, Outlet, useLocation } from "solid-start"
 
 import { MDXProvider } from "solid-mdx"
 
 import { MDXComponents } from "~/components/mdx-components"
+import { MetaHead } from "~/components/meta-head"
 import Sidebar from "~/components/sidebar"
 import { TableOfContents } from "~/components/toc"
 import type { Frontmatter } from "~/lib/mdx/frontmatter"
@@ -29,9 +30,10 @@ export default function DocsLayout() {
 
   return (
     <>
-      <Head>
-        <Title>{data().frontmatter.title} - solid-ui</Title>
-      </Head>
+      <MetaHead
+        title={`${data().frontmatter.title} - solid-ui`}
+        description={data().frontmatter.description}
+      />
       <div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
         <Sidebar />
         <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_220px]">

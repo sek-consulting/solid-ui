@@ -1,5 +1,5 @@
 import Dashboard from "./examples/dashboard"
-import ExamplesNavBar from "~/components/examples-nav"
+import { ExamplesNav } from "~/components/examples-nav"
 import { HeroSection } from "~/components/hero-section"
 
 export default function Home() {
@@ -7,8 +7,10 @@ export default function Home() {
     <div class="container relative">
       <HeroSection />
       <section>
-        <ExamplesNavBar/>
+        <ExamplesNav />
+        <div class="bg-background overflow-hidden rounded-[0.5rem] border shadow">
           <Dashboard />
+        </div>
       </section>
     </div>
   )

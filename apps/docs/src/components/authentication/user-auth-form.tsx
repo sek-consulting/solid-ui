@@ -22,10 +22,10 @@ export function UserAuthForm() {
           <Field name="email">
             {(_, props) => (
               <Grid class="gap-1">
-                <Label class="sr-only" html-for="email">
+                <Label class="sr-only" for="email">
                   Email
                 </Label>
-                <Input {...props} type="email" placeholder="me@email.com"/>
+                <Input {...props} type="email" placeholder="me@email.com" />
               </Grid>
             )}
           </Field>

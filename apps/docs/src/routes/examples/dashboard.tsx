@@ -5,7 +5,6 @@ import { Overview } from "~/components/dashboard/overview"
 import { RecentSales } from "~/components/dashboard/recent-sales"
 import { Search } from "~/components/dashboard/search"
 import { UserNav } from "~/components/dashboard/user-nav"
-import ExampleContainer from "~/components/examples/example-container"
 import { MetaHead } from "~/components/meta-head"
 import { Button } from "~/registry/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/registry/ui/card"
@@ -14,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
 
 export default function Dashboard() {
   return (
-    <ExampleContainer>
+    <>
       <MetaHead title="Dashboard" description="Example dashboard app built using the components." />
       <div class="md:hidden">
         <img
@@ -178,6 +177,6 @@ export default function Dashboard() {
           </Tabs>
         </div>
       </div>
-    </ExampleContainer>
+    </>
   )
 }

@@ -1,5 +1,13 @@
 # docs
 
+## 0.1.5
+
+### Patch Changes
+
+- [#37](https://github.com/sek-consulting/solid-ui/pull/37) [`807b417`](https://github.com/sek-consulting/solid-ui/commit/807b4171e2c0aaad3e08858082f2fa76eb47a875) Thanks [@michaelessiet](https://github.com/michaelessiet)! - fix: changed search api url
+
+- [#37](https://github.com/sek-consulting/solid-ui/pull/37) [`807b417`](https://github.com/sek-consulting/solid-ui/commit/807b4171e2c0aaad3e08858082f2fa76eb47a875) Thanks [@michaelessiet](https://github.com/michaelessiet)! - feat: add more examples
+
 ## 0.1.4
 
 ### Patch Changes

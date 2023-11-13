@@ -13,6 +13,11 @@ const examples = [
     code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/routes/examples/dashboard"
   },
   {
+    name: "Cards",
+    href: "/examples/cards",
+    code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/routes/examples/cards"
+  },
+  {
     name: "Authentication",
     href: "/examples/authentication",
     code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/routes/examples/authentication"

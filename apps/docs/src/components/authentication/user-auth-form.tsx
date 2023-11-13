@@ -18,14 +18,14 @@ export function UserAuthForm() {
   return (
     <div class="grid gap-6">
       <Form onSubmit={handleSubmit}>
-        <Grid class="gap-2">
+        <Grid class="gap-4">
           <Field name="email">
             {(_, props) => (
               <Grid class="gap-1">
-                <Label class="sr-only" html-for="email">
+                <Label class="sr-only" for="email">
                   Email
                 </Label>
-                <Input {...props} type="email" />
+                <Input {...props} type="email" placeholder="me@email.com" />
               </Grid>
             )}
           </Field>

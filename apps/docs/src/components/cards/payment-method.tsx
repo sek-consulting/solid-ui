@@ -1,7 +1,6 @@
+import { TbBrandApple, TbBrandPaypal, TbCreditCard } from "solid-icons/tb"
+
 import { Button } from "~/registry/ui/button"
-import { Input } from "~/registry/ui/input"
-import { RadioGroup, RadioGroupItem } from "~/registry/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/registry/ui/select"
 import {
   Card,
   CardContent,
@@ -10,8 +9,10 @@ import {
   CardHeader,
   CardTitle
 } from "~/registry/ui/card"
+import { Input } from "~/registry/ui/input"
 import { Label } from "~/registry/ui/label"
-import { TbBrandApple, TbBrandPaypal, TbCreditCard } from "solid-icons/tb"
+import { RadioGroup, RadioGroupItem } from "~/registry/ui/radio-group"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/registry/ui/select"
 
 export function PaymentMethod() {
   return (
@@ -26,7 +27,7 @@ export function PaymentMethod() {
             <RadioGroupItem value="card" id="card" class="peer sr-only" />
             <Label
               html-for="card"
-              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              class="border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md border-2 p-4"
             >
               <TbCreditCard class="mb-3 h-6 w-6" />
               Card
@@ -36,7 +37,7 @@ export function PaymentMethod() {
             <RadioGroupItem value="paypal" id="paypal" class="peer sr-only" />
             <Label
               html-for="paypal"
-              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              class="border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md border-2 p-4"
             >
               <TbBrandPaypal class="mb-3 h-6 w-6" />
               Paypal
@@ -46,7 +47,7 @@ export function PaymentMethod() {
             <RadioGroupItem value="apple" id="apple" class="peer sr-only" />
             <Label
               html-for="apple"
-              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              class="border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md border-2 p-4"
             >
               <TbBrandApple class="mb-3 h-6 w-6" />
               Apple

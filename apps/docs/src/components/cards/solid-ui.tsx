@@ -26,7 +26,7 @@ export function SolidUI() {
             Beautifully designed components built with Kobalte and Tailwind CSS.
           </CardDescription>
         </div>
-        <div class="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
+        <div class="bg-secondary text-secondary-foreground flex items-center space-x-1 rounded-md">
           <Button variant="secondary" class="px-3 shadow-none">
             <TbStar class="mr-2 h-4 w-4" />
             Star
@@ -35,7 +35,7 @@ export function SolidUI() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <As component={Button} variant={"secondary"} class="px-2 shadow-none">
-                <TbChevronDown class="h-4 w-4 text-secondary-foreground" />
+                <TbChevronDown class="text-secondary-foreground h-4 w-4" />
               </As>
             </DropdownMenuTrigger>
 
@@ -58,7 +58,7 @@ export function SolidUI() {
         </div>
       </CardHeader>
       <CardContent>
-        <div class="flex space-x-4 text-sm text-muted-foreground">
+        <div class="text-muted-foreground flex space-x-4 text-sm">
           <div class="flex items-center">
             <TbBrandTypescript class="mr-1 h-3 w-3 text-sky-400" />
             TypeScript

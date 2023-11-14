@@ -1,4 +1,3 @@
-import { splitProps } from "solid-js"
 import { Avatar, AvatarFallback, AvatarImage } from "~/registry/ui/avatar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/registry/ui/card"
 import {
@@ -39,7 +38,7 @@ export function TeamMembers() {
             </Avatar>
             <div>
               <p class="text-sm font-medium leading-none">Sofia Davis</p>
-              <p class="text-sm text-muted-foreground">m@example.com</p>
+              <p class="text-muted-foreground text-sm">m@example.com</p>
             </div>
           </div>
           <Combobox<Role>
@@ -50,10 +49,10 @@ export function TeamMembers() {
             optionLabel="label"
             placeholder="Select new role..."
             itemComponent={(props) => (
-              <ComboboxItem item={props.item} class="space-y-1 flex flex-col items-start px-4 py-2">
+              <ComboboxItem item={props.item} class="flex flex-col items-start space-y-1 px-4 py-2">
                 <ComboboxItemLabel>
                   <p>{props.item.rawValue.label}</p>
-                  <p class="text-sm text-muted-foreground">{props.item.rawValue.description}</p>
+                  <p class="text-muted-foreground text-sm">{props.item.rawValue.description}</p>
                 </ComboboxItemLabel>
               </ComboboxItem>
             )}
@@ -73,7 +72,7 @@ export function TeamMembers() {
             </Avatar>
             <div>
               <p class="text-sm font-medium leading-none">Jackson Lee</p>
-              <p class="text-sm text-muted-foreground">p@example.com</p>
+              <p class="text-muted-foreground text-sm">p@example.com</p>
             </div>
           </div>
           <Combobox<Role>
@@ -84,10 +83,10 @@ export function TeamMembers() {
             optionLabel="label"
             placeholder="Select new role..."
             itemComponent={(props) => (
-              <ComboboxItem item={props.item} class="space-y-1 flex flex-col items-start px-4 py-2">
+              <ComboboxItem item={props.item} class="flex flex-col items-start space-y-1 px-4 py-2">
                 <ComboboxItemLabel>
                   <p>{props.item.rawValue.label}</p>
-                  <p class="text-sm text-muted-foreground">{props.item.rawValue.description}</p>
+                  <p class="text-muted-foreground text-sm">{props.item.rawValue.description}</p>
                 </ComboboxItemLabel>
               </ComboboxItem>
             )}

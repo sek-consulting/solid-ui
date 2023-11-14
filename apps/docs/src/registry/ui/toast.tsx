@@ -27,13 +27,13 @@ const Toaster: Component<ToastPrimitive.ToastListProps> = (props) => {
 }
 
 const toastVariants = cva(
-  "data-[swipe=move]:transition-none group relative pointer-events-auto flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=move]:translate-x-[var(--kb-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--kb-toast-swipe-end-x)] data-[opened]:animate-in data-[closed]:animate-out data-[swipe=end]:animate-out data-[closed]:fade-out-80 data-[opened]:slide-in-from-top-full data-[opened]:sm:slide-in-from-bottom-full data-[closed]:slide-out-to-right-full",
+  "data-[opened]:animate-in data-[closed]:animate-out data-[swipe=end]:animate-out data-[closed]:fade-out-80 data-[closed]:slide-out-to-right-full data-[opened]:slide-in-from-top-full data-[opened]:sm:slide-in-from-bottom-full group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--kb-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--kb-toast-swipe-move-x)] data-[swipe=move]:transition-none",
   {
     variants: {
       variant: {
-        default: "bg-background border text-foreground",
+        default: "bg-background text-foreground border",
         destructive:
-          "group destructive border-destructive bg-destructive text-destructive-foreground"
+          "destructive border-destructive bg-destructive text-destructive-foreground group"
       }
     },
     defaultVariants: {

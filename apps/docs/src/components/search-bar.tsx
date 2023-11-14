@@ -94,7 +94,7 @@ export default function SearchBar() {
                   <A
                     href={item.document.uri}
                     onclick={() => setIsOpen(false)}
-                    class="animate-in fade-in-0 duration-400"
+                    class="duration-400 animate-in fade-in-0"
                   >
                     <div class="grid grid-cols-[25px_1fr] items-start rounded p-4 hover:bg-black/30 dark:hover:bg-white/30">
                       <TbHash size={20} />

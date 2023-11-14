@@ -52,14 +52,14 @@ const SheetOverlay: Component<SheetPrimitive.DialogOverlayProps> = (props) => {
 }
 
 const sheetVariants = cva(
-  "fixed z-50 scale-100 gap-4 border bg-background p-6 opacity-100 shadow-lg",
+  "bg-background fixed z-50 scale-100 gap-4 border p-6 opacity-100 shadow-lg",
   {
     variants: {
       position: {
-        top: "w-full animate-in slide-in-from-top duration-300",
-        bottom: "w-full animate-in slide-in-from-bottom duration-300",
-        left: "h-full animate-in slide-in-from-left duration-300",
-        right: "h-full animate-in slide-in-from-right duration-300"
+        top: "animate-in slide-in-from-top w-full duration-300",
+        bottom: "animate-in slide-in-from-bottom w-full duration-300",
+        left: "animate-in slide-in-from-left h-full duration-300",
+        right: "animate-in slide-in-from-right h-full duration-300"
       },
       size: {
         content: "",

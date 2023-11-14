@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.14",
-    "@kobalte/core": "^0.11.1",
+    "@kobalte/core": "^0.11.2",
     "@modular-forms/solid": "^0.20.0",
     "@solid-primitives/keyboard": "^1.2.5",
     "@solidjs/meta": "^0.28.6",

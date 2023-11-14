@@ -20,7 +20,7 @@ export const TableOfContents: Component<{ toc: TOC[] | undefined }> = (props) =>
           {(heading) => (
             <li class={cn("mt-0 pt-2", heading.depth === 3 && "pl-4")}>
               <A
-                class="hover:text-foreground text-muted-foreground inline-block no-underline transition-colors"
+                class="text-muted-foreground hover:text-foreground inline-block no-underline transition-colors"
                 href={`${location.pathname}#${heading.slug}`}
               >
                 {heading.text}

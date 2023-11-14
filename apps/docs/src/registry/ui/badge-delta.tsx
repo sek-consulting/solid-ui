@@ -21,9 +21,9 @@ type DeltaType = "increase" | "moderateIncrease" | "unchanged" | "moderateDecrea
 const badgeDeltaVariants = cva("", {
   variants: {
     variant: {
-      success: "bg-success hover:bg-success text-success-foreground",
-      warning: "bg-warning hover:bg-warning text-warning-foreground",
-      error: "bg-error hover:bg-error text-error-foreground"
+      success: "bg-success text-success-foreground hover:bg-success",
+      warning: "bg-warning text-warning-foreground hover:bg-warning",
+      error: "bg-error text-error-foreground hover:bg-error"
     }
   }
 })

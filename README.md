@@ -8,7 +8,7 @@ Accessible and customizable components that you can copy and paste into your app
 
 ## Documentation
 
-Visit https://solid-ui-components.vercel.app/ to view the documentation.
+Visit https://www.solid-ui.com to view the documentation.
 
 ## License
 

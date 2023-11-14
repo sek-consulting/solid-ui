@@ -29,7 +29,7 @@ export function HeroSection() {
         </a>
         <a
           class={buttonVariants({ variant: "outline" })}
-          href="https://github.com/sek-consulting/solid-ui-components"
+          href="https://github.com/sek-consulting/solid-ui"
           target="_blank"
           rel="noreferrer"
         >

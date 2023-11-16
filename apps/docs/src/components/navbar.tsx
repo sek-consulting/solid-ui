@@ -1,4 +1,5 @@
 import { For } from "solid-js"
+import { A } from "solid-start"
 
 import { Icons } from "~/components/icons"
 import { MobileNav } from "~/components/mobile-nav"
@@ -14,21 +15,21 @@ export default function Navbar() {
       <div class="container flex h-14 items-center">
         <MobileNav />
         <div class="mr-4 hidden md:flex">
-          <a href="/" class="mr-6 flex items-center space-x-2 no-underline">
+          <A href="/" class="mr-6 flex items-center space-x-2 no-underline">
             <Icons.logo class="h-6 w-6" />
             <span class="hidden font-bold sm:inline-block">solid-ui</span>
-          </a>
+          </A>
           <nav class="flex items-center space-x-6 text-sm font-medium">
             <For each={docsConfig.mainNav}>
               {(item) => (
-                <a
+                <A
                   href={item.href}
                   target={item.external ? "_blank" : ""}
                   rel={item.external ? "noreferrer" : ""}
                   class="text-foreground/60 hover:text-foreground/80 hidden no-underline transition-colors lg:block"
                 >
                   {item.title}
-                </a>
+                </A>
               )}
             </For>
           </nav>
@@ -39,7 +40,7 @@ export default function Navbar() {
               <SearchBar />
             </div>
             <div class="flex items-center">
-              <a
+              <A
                 href="https://github.com/sek-consulting/solid-ui-components"
                 target="_blank"
                 rel="noreferrer"
@@ -56,7 +57,7 @@ export default function Navbar() {
                   <Icons.gitHub class="h-5 w-5" />
                   <span class="sr-only">GitHub</span>
                 </div>
-              </a>
+              </A>
               <ModeToggle />
             </div>
           </nav>

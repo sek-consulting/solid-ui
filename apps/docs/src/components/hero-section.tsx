@@ -1,3 +1,5 @@
+import { A } from "solid-start"
+
 import { TbBrandGithub } from "solid-icons/tb"
 
 import { buttonVariants } from "~/registry/ui/button"
@@ -14,27 +16,27 @@ export function HeroSection() {
       </p>
       <p class="text-[#4d83c4] dark:text-[#93c4e9]">
         This is an unofficial port of{" "}
-        <a href="https://github.com/shadcn/ui" target="_blank" rel="noreferrer" class="underline">
+        <A href="https://github.com/shadcn/ui" target="_blank" rel="noreferrer" class="underline">
           shadcn/ui
-        </a>{" "}
+        </A>{" "}
         to Solid, and is not affiliated with{" "}
-        <a href="https://twitter.com/shadcn" target="_blank" rel="noreferrer" class="underline">
+        <A href="https://twitter.com/shadcn" target="_blank" rel="noreferrer" class="underline">
           @shadcn
-        </a>
+        </A>
         , just inspired by him.
       </p>
       <div class="flex w-full items-center space-x-4 pb-8 pt-4 md:pb-10">
-        <a class={buttonVariants()} href="/docs/introduction">
+        <A class={buttonVariants()} href="/docs/introduction">
           Get Started
-        </a>
-        <a
+        </A>
+        <A
           class={buttonVariants({ variant: "outline" })}
           href="https://github.com/sek-consulting/solid-ui"
           target="_blank"
           rel="noreferrer"
         >
           <TbBrandGithub class="mr-2 h-4 w-4" /> GitHub
-        </a>
+        </A>
       </div>
     </section>
   )

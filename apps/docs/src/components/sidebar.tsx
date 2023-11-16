@@ -1,12 +1,11 @@
 import { For } from "solid-js"
-import { useLocation } from "solid-start"
+import { A, useLocation } from "solid-start"
 
 import { docsConfig } from "~/config/docs"
 import { cn } from "~/lib/utils"
 
 export default function Sidebar() {
   const location = useLocation()
-  const pathname = location.pathname
 
   return (
     <aside class="hidden w-full md:block">
@@ -18,7 +17,7 @@ export default function Sidebar() {
               <div class="grid grid-flow-row auto-rows-max text-sm">
                 <For each={category.items}>
                   {(item) => (
-                    <a
+                    <A
                       href={item.href}
                       class={cn(
                         "group flex w-full items-center rounded-md border border-transparent px-2 py-1 no-underline hover:underline",
@@ -28,7 +27,7 @@ export default function Sidebar() {
                       )}
                     >
                       {item.title}
-                    </a>
+                    </A>
                   )}
                 </For>
               </div>

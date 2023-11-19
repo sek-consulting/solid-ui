@@ -26,4 +26,17 @@ const RadioGroupItem: Component<RadioGroupPrimitive.RadioGroupItemProps> = (prop
   )
 }
 
-export { RadioGroup, RadioGroupItem }
+const RadioGroupItemLabel: Component<RadioGroupPrimitive.RadioGroupItemLabelProps> = (props) => {
+  const [, rest] = splitProps(props, ["class"])
+  return (
+    <RadioGroupPrimitive.ItemLabel
+      class={cn(
+        "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+        props.class
+      )}
+      {...rest}
+    />
+  )
+}
+
+export { RadioGroup, RadioGroupItem, RadioGroupItemLabel }

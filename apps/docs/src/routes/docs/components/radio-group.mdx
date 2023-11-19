@@ -44,7 +44,7 @@ pnpm install @kobalte/core solid-icons
 ## Usage
 
 ```tsx
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
+import { RadioGroup, RadioGroupItem, RadioGroupItemLabel } from "~/components/ui/radio-group"
 ```
 
 ```tsx
@@ -52,7 +52,7 @@ import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
   <For each={["Apple", "Orange", "Watermelon"]}>
     {(fruit) => (
       <RadioGroupItem value={fruit}>
-        <Label>{fruit}</Label>
+        <RadioGroupItemLabel>{fruit}</RadioGroupItemLabel>
       </RadioGroupItem>
     )}
   </For>

@@ -1,7 +1,6 @@
 import { For } from "solid-js"
 
-import { Label } from "~/registry/ui/label"
-import { RadioGroup, RadioGroupItem } from "~/registry/ui/radio-group"
+import { RadioGroup, RadioGroupItem, RadioGroupItemLabel } from "~/registry/ui/radio-group"
 
 export default function RadioGroupDemo() {
   return (
@@ -9,7 +8,7 @@ export default function RadioGroupDemo() {
       <For each={["Apple", "Orange", "Watermelon"]}>
         {(fruit) => (
           <RadioGroupItem value={fruit}>
-            <Label>{fruit}</Label>
+            <RadioGroupItemLabel>{fruit}</RadioGroupItemLabel>
           </RadioGroupItem>
         )}
       </For>

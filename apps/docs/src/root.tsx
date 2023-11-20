@@ -5,6 +5,7 @@ import { isServer } from "solid-js/web"
 import { Body, ErrorBoundary, FileRoutes, Html, Routes, Scripts, ServerContext } from "solid-start"
 
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core"
+import { inject } from "@vercel/analytics"
 
 import Footer from "~/components/footer"
 import { MetaHead } from "~/components/meta-head"
@@ -14,6 +15,8 @@ import "@fontsource/inter/latin.css"
 import "~/styles/root.css"
 
 export default function Root() {
+  inject()
+
   const event = useContext(ServerContext)
 
   const storageManager = cookieStorageManagerSSR(

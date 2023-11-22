@@ -41,7 +41,7 @@ export default async function init() {
   saveConfig(config)
   writeTsconfig(config.aliases.path)
   writeUtils()
-  await writeSUCPreset()
+  await writeUIPreset()
   await writeTailwindConfig(config.tailwind.config)
   await writeCSS(config.tailwind.css)
 
@@ -107,27 +107,27 @@ async function installDeps() {
 
 function saveConfig(config: Config) {
   const indicator = spinner()
-  indicator.start("Writing suc.config.json...")
+  indicator.start("Writing ui.config.json...")
 
-  writeFile("suc.config.json", JSON.stringify(config, null, 2), (error) => {
+  writeFile("ui.config.json", JSON.stringify(config, null, 2), (error) => {
     if (error) log.error("There was an error while saving your preferences")
   })
-  indicator.stop("suc.config.json successfully created!")
+  indicator.stop("ui.config.json successfully created!")
 }
 
-async function writeSUCPreset() {
+async function writeUIPreset() {
   const indicator = spinner()
   indicator.start("Writing Solid UI Components tailwind preset...")
 
   try {
-    writeFile("suc.preset.js", TAILWIND_PRESET, (error) => {
-      if (error) log.error(`There was an error while writing the sui.preset.js: ${error}`)
+    writeFile("ui.preset.js", TAILWIND_PRESET, (error) => {
+      if (error) log.error(`There was an error while writing the ui.preset.js: ${error}`)
     })
   } catch (error) {
     log.error(`Sorry, something went wrong while getting the tailwind presets: ${error}`)
   }
 
-  indicator.stop("suc.preset.js successfully created!")
+  indicator.stop("ui.preset.js successfully created!")
 }
 
 async function writeTailwindConfig(tailwindConfigDir: string) {

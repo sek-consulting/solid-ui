@@ -50,10 +50,10 @@ export async function add(componentNames: string[]) {
   activityIndicator.start("Creating components...")
 
   try {
-    const readSUCConfig = readFileSync(path.resolve(cwd(), "suc.config.json"))
-    const sucConfig = parse(configSchema, JSON.parse(readSUCConfig.toString()))
-    const isTypescriptEnabled = sucConfig.tsx
-    const componentFolderDir = path.resolve(cwd(), sucConfig.componentDir)
+    const readUIConfig = readFileSync(path.resolve(cwd(), "ui.config.json"))
+    const uiConfig = parse(configSchema, JSON.parse(readUIConfig.toString()))
+    const isTypescriptEnabled = uiConfig.tsx
+    const componentFolderDir = path.resolve(cwd(), uiConfig.componentDir)
     const dirExists = existsSync(componentFolderDir)
 
     if (!dirExists) mkdirSync(componentFolderDir, { recursive: true })
@@ -79,7 +79,7 @@ export async function add(componentNames: string[]) {
         for (const file of component.files) {
           log.step(`Creating ${file.name}`)
 
-          const content = transformImports(file.content, sucConfig)
+          const content = transformImports(file.content, uiConfig)
 
           if (isTypescriptEnabled) {
             writeFileSync(componentFolderDir + "/" + `${file.name}`, content)

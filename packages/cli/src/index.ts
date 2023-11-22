@@ -1,17 +1,20 @@
-#! /usr/bin/env node 
+#! /usr/bin/env node
 
 import { Command } from "commander"
 
-import {add} from "./commands/add"
+import { add } from "./commands/add"
 import init from "./commands/init"
 
 const program = new Command()
 
-program.name("suc").description("A CLI used for the Solid UI components library").version("0.1")
+program
+  .name("solidui-cli")
+  .description("A CLI used for the Solid-UI components library")
+  .version("0.1")
 
 program
   .command("init")
-  .description("Initialize and install the necessary things to make use of Solid UI Components")
+  .description("Initialize and install the necessary things to make use of Solid-UI")
   .action(async () => await init())
 
 program

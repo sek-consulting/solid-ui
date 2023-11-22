@@ -1,5 +1,15 @@
 # @solid-ui/cli
 
+## 0.2.0
+
+### Minor Changes
+
+- [`de9ae50`](https://github.com/sek-consulting/solid-ui/commit/de9ae5010cb009d4b4ee82f687f91d1f6be663c8) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: changed preset name & added animations for dropdown
+
+### Patch Changes
+
+- [`d9cafce`](https://github.com/sek-consulting/solid-ui/commit/d9cafcef3966bafc5ff315636efe1fad2d8eb155) Thanks [@sek-consulting](https://github.com/sek-consulting)! - fix: no more event bubbling on dropdown menu on mobile (#4)
+
 ## 0.1.6
 
 ### Patch Changes

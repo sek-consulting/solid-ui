@@ -1,5 +1,13 @@
 # docs
 
+## 0.1.6
+
+### Patch Changes
+
+- [`fb995e4`](https://github.com/sek-consulting/solid-ui/commit/fb995e4ce48774a5551ba17c06a253c5be769977) Thanks [@sek-consulting](https://github.com/sek-consulting)! - fix: added RadioGroupItemLabel
+
+- [`d9cafce`](https://github.com/sek-consulting/solid-ui/commit/d9cafcef3966bafc5ff315636efe1fad2d8eb155) Thanks [@sek-consulting](https://github.com/sek-consulting)! - fix: no more event bubbling on dropdown menu on mobile (#4)
+
 ## 0.1.5
 
 ### Patch Changes

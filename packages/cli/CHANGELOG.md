@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.2.1
+
+### Patch Changes
+
+- [`abdde22`](https://github.com/sek-consulting/solid-ui/commit/abdde223f6b83690c9d18787b26976a57af30a38) Thanks [@sek-consulting](https://github.com/sek-consulting)! - chore: bump valibot from 0.18 to 0.21
+
 ## 0.2.0
 
 ### Minor Changes

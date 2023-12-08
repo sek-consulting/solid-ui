@@ -1,4 +1,4 @@
-import Dashboard from "./examples/dashboard"
+import { Dashboard } from "~/components/dashboard"
 import { ExamplesNav } from "~/components/examples-nav"
 import { HeroSection } from "~/components/hero-section"
 

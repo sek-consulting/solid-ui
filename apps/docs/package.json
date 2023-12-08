@@ -12,7 +12,7 @@
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.14",
+    "@fontsource/inter": "^5.0.16",
     "@kobalte/core": "^0.11.2",
     "@modular-forms/solid": "^0.20.0",
     "@solid-primitives/keyboard": "^1.2.5",
@@ -20,7 +20,7 @@
     "@solidjs/router": "^0.8.3",
     "@tanstack/solid-table": "^8.9.3",
     "@vercel/analytics": "^1.1.1",
-    "chart.js": "^4.4.0",
+    "chart.js": "^4.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "shosho": "^1.4.3",

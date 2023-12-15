@@ -57,7 +57,9 @@ for (const item of result.output) {
   }
 
   const files = item.files?.map((file) => {
-    const content = fs.readFileSync(path.join(process.cwd(), "src", "registry", file), "utf8")
+    const content = fs
+      .readFileSync(path.join(process.cwd(), "src", "registry", file), "utf8")
+      .replaceAll("\r\n", "\n")
 
     return {
       name: basename(file),

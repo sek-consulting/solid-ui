@@ -6,7 +6,7 @@
   "files": [
     {
       "name": "collapsible.tsx",
-      "content": "import { Collapsible as CollapsiblePrimitive } from \"@kobalte/core\"\r\n\r\nconst Collapsible = CollapsiblePrimitive.Root\r\n\r\nconst CollapsibleTrigger = CollapsiblePrimitive.Trigger\r\n\r\nconst CollapsibleContent = CollapsiblePrimitive.Content\r\n\r\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent }\r\n"
+      "content": "import { Collapsible as CollapsiblePrimitive } from \"@kobalte/core\"\n\nconst Collapsible = CollapsiblePrimitive.Root\n\nconst CollapsibleTrigger = CollapsiblePrimitive.Trigger\n\nconst CollapsibleContent = CollapsiblePrimitive.Content\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent }\n"
     }
   ],
   "type": "ui"

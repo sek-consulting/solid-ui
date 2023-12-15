@@ -1,5 +1,11 @@
 # docs
 
+## 0.1.7
+
+### Patch Changes
+
+- [`6c935ed`](https://github.com/sek-consulting/solid-ui/commit/6c935ed5ded57937770a7e025424b8368f997b7a) Thanks [@sek-consulting](https://github.com/sek-consulting)! - switch from windows linebreaks (\r\n) to unix linebreaks (\n)
+
 ## 0.1.6
 
 ### Patch Changes

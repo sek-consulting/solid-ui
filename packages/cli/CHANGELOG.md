@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.4.0
+
+### Minor Changes
+
+- [`124f247`](https://github.com/sek-consulting/solid-ui/commit/124f247bbf506d9142575ad6c7cbe86bb7b85ac4) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add Pagination component
+
 ## 0.3.0
 
 ### Minor Changes

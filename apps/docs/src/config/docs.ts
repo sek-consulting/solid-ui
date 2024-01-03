@@ -157,6 +157,10 @@ export const docsConfig: Config = {
           href: "/docs/components/label"
         },
         {
+          title: "Pagination",
+          href: "/docs/components/pagination"
+        },
+        {
           title: "Popover",
           href: "/docs/components/popover"
         },

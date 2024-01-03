@@ -127,6 +127,12 @@ const ui: Registry = [
     files: ["ui/label.tsx"]
   },
   {
+    name: "pagination",
+    type: "ui",
+    dependencies: ["solid-icons"],
+    files: ["ui/pagination.tsx"]
+  },
+  {
     name: "popover",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -345,6 +351,11 @@ const examples: Registry = [
     name: "input-demo",
     type: "example",
     files: ["example/input-demo.tsx"]
+  },
+  {
+    name: "pagination-demo",
+    type: "example",
+    files: ["example/pagination-demo.tsx"]
   },
   {
     name: "popover-demo",

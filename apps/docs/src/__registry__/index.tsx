@@ -160,6 +160,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/label")),
     files: ["registry/ui/label.tsx"],
   },
+  "pagination": {
+    name: "pagination",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/pagination")),
+    files: ["registry/ui/pagination.tsx"],
+  },
   "popover": {
     name: "popover",
     type: "ui",
@@ -432,6 +439,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/input-demo")),
     files: ["registry/example/input-demo.tsx"],
+  },
+  "pagination-demo": {
+    name: "pagination-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/pagination-demo")),
+    files: ["registry/example/pagination-demo.tsx"],
   },
   "popover-demo": {
     name: "popover-demo",

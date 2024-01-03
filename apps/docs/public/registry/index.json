@@ -206,6 +206,16 @@
     "type": "ui"
   },
   {
+    "name": "pagination",
+    "dependencies": [
+      "solid-icons"
+    ],
+    "files": [
+      "ui/pagination.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "popover",
     "dependencies": [
       "@kobalte/core"

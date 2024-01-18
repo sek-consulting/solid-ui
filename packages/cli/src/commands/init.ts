@@ -98,7 +98,9 @@ async function installDeps() {
     })
 
     runCommand(
-      `${packageManager as string} install ${PROJECT_DEPS.join(" ")}`,
+      `${packageManager as string} ${
+        packageManager === "yarn" ? "add" : "install"
+      } ${PROJECT_DEPS.join(" ")}`,
       "Installing Solid UI Component dependencies",
       "Dependencies installed"
     )

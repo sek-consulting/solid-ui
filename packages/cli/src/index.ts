@@ -2,8 +2,8 @@
 
 import { Command } from "commander"
 
-import { add } from "./commands/add"
-import init from "./commands/init"
+import { add } from "~/commands/add"
+import { init } from "~/commands/init"
 
 const program = new Command()
 

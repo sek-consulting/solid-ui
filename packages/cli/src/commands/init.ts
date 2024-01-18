@@ -8,7 +8,7 @@ import { PROJECT_DEPS, ROOT_CSS, TAILWIND_CONFIG, TAILWIND_PRESET, UTILS } from 
 import { configSchema, type Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
 
-export default async function init() {
+export async function init() {
   const isTypescript = await confirm({
     message: "Would you like to use TypeScript? (recommended)",
     initialValue: true

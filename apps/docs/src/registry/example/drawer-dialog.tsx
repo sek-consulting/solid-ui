@@ -3,7 +3,6 @@ import { createSignal } from "solid-js"
 import { isServer } from "solid-js/web"
 
 import { As } from "@kobalte/core"
-import { As as CorvuAs } from "corvu"
 
 import { cn } from "~/lib/utils"
 import { Button } from "~/registry/ui/button"
@@ -59,10 +58,8 @@ export default function DrawerDialogDemo() {
 
   return (
     <Drawer open={open()} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <CorvuAs component={Button} variant="outline">
-          Edit Profile
-        </CorvuAs>
+      <DrawerTrigger as={Button} variant="outline">
+        Edit Profile
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader class="text-left">
@@ -73,10 +70,8 @@ export default function DrawerDialogDemo() {
         </DrawerHeader>
         <ProfileForm class="px-4" />
         <DrawerFooter class="pt-2">
-          <DrawerClose asChild>
-            <CorvuAs component={Button} variant="outline">
-              Cancel
-            </CorvuAs>
+          <DrawerClose as={Button} variant="outline">
+            Cancel
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

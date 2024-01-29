@@ -118,6 +118,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/dialog")),
     files: ["registry/ui/dialog.tsx"],
   },
+  "drawer": {
+    name: "drawer",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/drawer")),
+    files: ["registry/ui/drawer.tsx"],
+  },
   "dropdown-menu": {
     name: "dropdown-menu",
     type: "ui",
@@ -404,6 +411,20 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/dialog-demo")),
     files: ["registry/example/dialog-demo.tsx"],
+  },
+  "drawer-demo": {
+    name: "drawer-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/drawer-demo")),
+    files: ["registry/example/drawer-demo.tsx"],
+  },
+  "drawer-dialog": {
+    name: "drawer-dialog",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/drawer-dialog")),
+    files: ["registry/example/drawer-dialog.tsx"],
   },
   "dropdown-menu-demo": {
     name: "dropdown-menu-demo",

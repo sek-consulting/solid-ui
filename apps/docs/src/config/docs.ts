@@ -141,6 +141,10 @@ export const docsConfig: Config = {
           href: "/docs/components/dialog"
         },
         {
+          title: "Drawer",
+          href: "/docs/components/drawer"
+        },
+        {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu"
         },

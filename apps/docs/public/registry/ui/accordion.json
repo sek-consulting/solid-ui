@@ -1,6 +1,9 @@
 {
   "name": "accordion",
-  "dependencies": ["@kobalte/core", "solid-icons"],
+  "dependencies": [
+    "@kobalte/core",
+    "solid-icons"
+  ],
   "files": [
     {
       "name": "accordion.tsx",

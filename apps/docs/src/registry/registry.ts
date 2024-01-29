@@ -95,6 +95,12 @@ const ui: Registry = [
     files: ["ui/dialog.tsx"]
   },
   {
+    name: "drawer",
+    type: "ui",
+    dependencies: ["corvu"],
+    files: ["ui/drawer.tsx"]
+  },
+  {
     name: "dropdown-menu",
     type: "ui",
     dependencies: ["@kobalte/core", "solid-icons"],
@@ -326,6 +332,16 @@ const examples: Registry = [
     name: "dialog-demo",
     type: "example",
     files: ["example/dialog-demo.tsx"]
+  },
+  {
+    name: "drawer-demo",
+    type: "example",
+    files: ["example/drawer-demo.tsx"]
+  },
+  {
+    name: "drawer-dialog",
+    type: "example",
+    files: ["example/drawer-dialog.tsx"]
   },
   {
     name: "dropdown-menu-demo",

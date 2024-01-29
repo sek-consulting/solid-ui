@@ -23,6 +23,7 @@
     "chart.js": "^4.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "corvu": "^0.3.0",
     "shosho": "^1.4.3",
     "solid-icons": "^1.0.12",
     "solid-js": "1.7.12",

@@ -1,0 +1,13 @@
+{
+  "name": "drawer",
+  "dependencies": [
+    "corvu"
+  ],
+  "files": [
+    {
+      "name": "drawer.tsx",
+      "content": "import type { Component, ComponentProps } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nimport * as DrawerPrimitive from \"corvu/drawer\"\n\nimport { cn } from \"~/lib/utils\"\n\nconst Drawer = DrawerPrimitive.Root\n\nconst DrawerTrigger = DrawerPrimitive.Trigger\n\nconst DrawerPortal = DrawerPrimitive.Portal\n\nconst DrawerClose = DrawerPrimitive.Close\n\nconst DrawerOverlay: Component<DrawerPrimitive.OverlayProps> = (props) => {\n  const [, rest] = splitProps(props, [\"class\"])\n  return (\n    <DrawerPrimitive.Overlay class={cn(\"fixed inset-0 z-50 bg-black/80\", props.class)} {...rest} />\n  )\n}\n\nconst DrawerContent: Component<DrawerPrimitive.ContentProps> = (props) => {\n  const [, rest] = splitProps(props, [\"class\", \"children\"])\n  return (\n    <DrawerPortal>\n      <DrawerOverlay />\n      <DrawerPrimitive.Content\n        class={cn(\n          \"bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border\",\n          props.class\n        )}\n        {...rest}\n      >\n        <div class=\"bg-muted mx-auto mt-4 h-2 w-[100px] rounded-full\" />\n        {props.children}\n      </DrawerPrimitive.Content>\n    </DrawerPortal>\n  )\n}\n\nconst DrawerHeader: Component<ComponentProps<\"div\">> = (props) => {\n  const [, rest] = splitProps(props, [\"class\"])\n  return <div class={cn(\"grid gap-1.5 p-4 text-center sm:text-left\", props.class)} {...rest} />\n}\n\nconst DrawerFooter: Component<ComponentProps<\"div\">> = (props) => {\n  const [, rest] = splitProps(props, [\"class\"])\n  return <div class={cn(\"t-auto flex flex-col gap-2 p-4\", props.class)} {...rest} />\n}\n\nconst DrawerTitle: Component<DrawerPrimitive.LabelProps> = (props) => {\n  const [, rest] = splitProps(props, [\"class\"])\n  return (\n    <DrawerPrimitive.Label\n      class={cn(\"text-lg font-semibold leading-none tracking-tight\", props.class)}\n      {...rest}\n    />\n  )\n}\n\nconst DrawerDescription: Component<DrawerPrimitive.DescriptionProps> = (props) => {\n  const [, rest] = splitProps(props, [\"class\"])\n  return (\n    <DrawerPrimitive.Description\n      class={cn(\"text-muted-foreground text-sm\", props.class)}\n      {...rest}\n    />\n  )\n}\n\nexport {\n  Drawer,\n  DrawerPortal,\n  DrawerOverlay,\n  DrawerTrigger,\n  DrawerClose,\n  DrawerContent,\n  DrawerHeader,\n  DrawerFooter,\n  DrawerTitle,\n  DrawerDescription\n}\n"
+    }
+  ],
+  "type": "ui"
+}

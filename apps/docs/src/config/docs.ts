@@ -161,6 +161,10 @@ export const docsConfig: Config = {
           href: "/docs/components/label"
         },
         {
+          title: "Menubar",
+          href: "/docs/components/menubar"
+        },
+        {
           title: "Pagination",
           href: "/docs/components/pagination"
         },

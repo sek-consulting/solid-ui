@@ -133,6 +133,11 @@ const ui: Registry = [
     files: ["ui/label.tsx"]
   },
   {
+    name: "menubar",
+    type: "ui",
+    files: ["ui/menubar.tsx"]
+  },
+  {
     name: "pagination",
     type: "ui",
     dependencies: ["solid-icons"],
@@ -367,6 +372,11 @@ const examples: Registry = [
     name: "input-demo",
     type: "example",
     files: ["example/input-demo.tsx"]
+  },
+  {
+    name: "menubar-demo",
+    type: "example",
+    files: ["example/menubar-demo.tsx"]
   },
   {
     name: "pagination-demo",

@@ -216,6 +216,13 @@
     "type": "ui"
   },
   {
+    "name": "menubar",
+    "files": [
+      "ui/menubar.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "pagination",
     "dependencies": [
       "solid-icons"

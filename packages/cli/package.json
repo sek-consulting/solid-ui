@@ -49,6 +49,7 @@
     "chalk": "^5.3.0",
     "commander": "^11.0.0",
     "detect-package-manager": "^3.0.1",
+    "json5": "^2.2.3",
     "prompts": "^2.4.2",
     "recast": "^0.23.4",
     "ts-morph": "^20.0.0"

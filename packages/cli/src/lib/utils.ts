@@ -3,6 +3,7 @@ import { readFile } from "fs"
 
 import { log, spinner } from "@clack/prompts"
 import { detect } from "detect-package-manager"
+import JSON5 from "json5"
 
 export function readJsonFile(
   filePath: string,
@@ -15,7 +16,7 @@ export function readJsonFile(
     }
 
     try {
-      const jsonObject = JSON.parse(data)
+      const jsonObject = JSON5.parse(data)
       callback(null, jsonObject)
     } catch (parseError) {
       callback(parseError as Error, null)

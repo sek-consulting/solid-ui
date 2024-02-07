@@ -1,6 +1,5 @@
 import { createSignal } from "solid-js"
 
-import { As } from "corvu"
 import { TbMinus, TbPlus } from "solid-icons/tb"
 
 import { Button } from "~/registry/ui/button"
@@ -24,10 +23,8 @@ export default function DrawerDemo() {
 
   return (
     <Drawer>
-      <DrawerTrigger asChild>
-        <As component={Button} variant="outline">
-          Open Drawer
-        </As>
+      <DrawerTrigger as={Button} variant="outline">
+        Open Drawer
       </DrawerTrigger>
       <DrawerContent>
         <div class="mx-auto w-full max-w-sm">
@@ -65,10 +62,8 @@ export default function DrawerDemo() {
           </div>
           <DrawerFooter>
             <Button>Submit</Button>
-            <DrawerClose asChild>
-              <As component={Button} variant="outline">
-                Cancel
-              </As>
+            <DrawerClose as={Button} variant="outline">
+              Cancel
             </DrawerClose>
           </DrawerFooter>
         </div>

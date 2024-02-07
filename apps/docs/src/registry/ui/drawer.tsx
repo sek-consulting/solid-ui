@@ -15,8 +15,18 @@ const DrawerClose = DrawerPrimitive.Close
 
 const DrawerOverlay: Component<DrawerPrimitive.OverlayProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
+  const drawerContext = DrawerPrimitive.useContext()
   return (
-    <DrawerPrimitive.Overlay class={cn("fixed inset-0 z-50 bg-black/80", props.class)} {...rest} />
+    <DrawerPrimitive.Overlay
+      class={cn(
+        "fixed inset-0 z-50 data-[transitioning]:transition-colors data-[transitioning]:duration-300",
+        props.class
+      )}
+      style={{
+        'background-color': `rgb(0 0 0 / ${0.8 * drawerContext.openPercentage()})`,
+      }}
+      {...rest}
+    />
   )
 }
 
@@ -27,7 +37,7 @@ const DrawerContent: Component<DrawerPrimitive.ContentProps> = (props) => {
       <DrawerOverlay />
       <DrawerPrimitive.Content
         class={cn(
-          "bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border",
+          "bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border data-[transitioning]:transition-transform data-[transitioning]:duration-300 md:select-none",
           props.class
         )}
         {...rest}

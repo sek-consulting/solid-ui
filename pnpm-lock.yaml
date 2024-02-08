@@ -61,8 +61,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       corvu:
-        specifier: ^0.3.0
-        version: 0.3.0(solid-js@1.7.12)
+        specifier: ^0.4.0
+        version: 0.4.0(solid-js@1.7.12)
       shosho:
         specifier: ^1.4.3
         version: 1.4.3
@@ -3353,14 +3353,13 @@ packages:
     dependencies:
       browserslist: 4.21.10
 
-  /corvu@0.3.0(solid-js@1.7.12):
-    resolution: {integrity: sha512-h+H4AJ5XCh75uhsU7of8vinxG0Dlix4vV9ASlEo9/yJNjhw11OPnZPBgC/sdJtaxfI3+zXg25LbO59VJYS4YaQ==}
+  /corvu@0.4.0(solid-js@1.7.12):
+    resolution: {integrity: sha512-+UIV9xUuxAnH4alqSCqANlX0bwTtgrzR+c0dgWKAPFsUqzJ3yjFcYP2WF78sOPrzRnJ57AFYHHGQm/pFQNbccA==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:
       '@floating-ui/dom': 1.6.1
       '@solid-primitives/memo': 1.3.6(solid-js@1.7.12)
-      '@solid-primitives/props': 3.1.9(solid-js@1.7.12)
       solid-js: 1.7.12
     dev: false
 

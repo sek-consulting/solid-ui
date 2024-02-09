@@ -235,6 +235,12 @@ const ui: Registry = [
     type: "ui",
     dependencies: ["@kobalte/core"],
     files: ["ui/tooltip.tsx"]
+  },
+  {
+    name: "resizer",
+    type: "ui",
+    dependencies: ["@kobalte/core", "@solid-primitives/scheduled"],
+    files: ["ui/resizer-demo.tsx"]
   }
 ]
 
@@ -467,6 +473,11 @@ const examples: Registry = [
     name: "mode-toggle",
     type: "example",
     files: ["example/mode-toggle.tsx"]
+  },
+  {
+    name: "resizer",
+    type: "example",
+    files: ["example/resizer-demo.tsx"]
   }
 ]
 

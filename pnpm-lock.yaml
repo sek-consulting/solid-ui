@@ -39,6 +39,9 @@ importers:
       '@solid-primitives/keyboard':
         specifier: ^1.2.5
         version: 1.2.5(solid-js@1.7.12)
+      '@solid-primitives/scheduled':
+        specifier: ^1.4
+        version: 1.4.2(solid-js@1.7.12)
       '@solidjs/meta':
         specifier: ^0.28.6
         version: 0.28.6(solid-js@1.7.12)

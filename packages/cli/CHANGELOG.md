@@ -1,5 +1,17 @@
 # @solid-ui/cli
 
+## 0.5.0
+
+### Minor Changes
+
+- [#54](https://github.com/sek-consulting/solid-ui/pull/54) [`8e2e401`](https://github.com/sek-consulting/solid-ui/commit/8e2e4019d04cd0f62b50e453c10250e4e2fcd342) Thanks [@sek-consulting](https://github.com/sek-consulting)! - cli update
+
+- [`4d115f1`](https://github.com/sek-consulting/solid-ui/commit/4d115f1498579e447ac2bef35f228a6682f455b1) Thanks [@sek-consulting](https://github.com/sek-consulting)! - all eslint/prettier problems are finally fixed & update to tailwind 3.4 (for size-x)
+
+### Patch Changes
+
+- [#56](https://github.com/sek-consulting/solid-ui/pull/56) [`2662d33`](https://github.com/sek-consulting/solid-ui/commit/2662d3346f39982f251f0b3afb1c18dfd64dbd3e) Thanks [@m3rashid](https://github.com/m3rashid)! - fix(packages/cli): pacakge manager yarn error
+
 ## 0.4.0
 
 ### Minor Changes

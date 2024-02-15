@@ -44,8 +44,8 @@ const CopyButton: Component<CopyButtonProps> = (props) => {
             class={cn("p-2", props.class)}
             {...rest}
           >
-            <Show when={isCopied()} fallback={<TbCopy class="h-6 w-6" />}>
-              <TbCheck class="h-6 w-6" />
+            <Show when={isCopied()} fallback={<TbCopy class="size-6" />}>
+              <TbCheck class="size-6" />
             </Show>
           </As>
         </TooltipTrigger>

@@ -16,7 +16,7 @@ export default function PieChartDemo() {
         <CardTitle>Sales</CardTitle>
       </CardHeader>
       <CardContent>
-        <PieChart class="h-[200px] w-[200px]" data={chartData} />
+        <PieChart class="size-[200px]" data={chartData} />
       </CardContent>
     </Card>
   )

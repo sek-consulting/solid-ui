@@ -37,25 +37,25 @@ export default function DrawerDemo() {
               <Button
                 variant="outline"
                 size="icon"
-                class="h-8 w-8 shrink-0 rounded-full"
+                class="size-8 shrink-0 rounded-full"
                 onClick={() => onClick(-10)}
                 disabled={goal() <= 200}
               >
-                <TbMinus class="h-4 w-4" />
+                <TbMinus class="size-4" />
                 <span class="sr-only">Decrease</span>
               </Button>
               <div class="flex-1 text-center">
                 <div class="text-7xl font-bold tracking-tighter">{goal()}</div>
-                <div class="text-muted-foreground text-[0.70rem] uppercase">Calories/day</div>
+                <div class="text-[0.70rem] uppercase text-muted-foreground">Calories/day</div>
               </div>
               <Button
                 variant="outline"
                 size="icon"
-                class="h-8 w-8 shrink-0 rounded-full"
+                class="size-8 shrink-0 rounded-full"
                 onClick={() => onClick(10)}
                 disabled={goal() >= 400}
               >
-                <TbPlus class="h-4 w-4" />
+                <TbPlus class="size-4" />
                 <span class="sr-only">Increase</span>
               </Button>
             </div>

@@ -13,7 +13,7 @@ const ComboboxItem: Component<ComboboxPrimitive.ComboboxItemProps> = (props) => 
   return (
     <ComboboxPrimitive.Item
       class={cn(
-        "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default select-none items-center justify-between rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center justify-between rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
@@ -37,7 +37,7 @@ const ComboboxSection: Component<ComboboxPrimitive.ComboboxSectionProps> = (prop
   return (
     <ComboboxPrimitive.Section
       class={cn(
-        "text-muted-foreground overflow-hidden p-1 px-2 py-1.5 text-xs font-medium ",
+        "overflow-hidden p-1 px-2 py-1.5 text-xs font-medium text-muted-foreground ",
         props.class
       )}
       {...rest}
@@ -61,7 +61,7 @@ const ComboboxInput: Component<ComboboxPrimitive.ComboboxInputProps> = (props) =
   return (
     <ComboboxPrimitive.Input
       class={cn(
-        "placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
         props.class
       )}
       {...rest}
@@ -74,7 +74,7 @@ const ComboboxHiddenSelect = ComboboxPrimitive.HiddenSelect
 const ComboboxTrigger: Component<ComboboxPrimitive.ComboboxTriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
-    <ComboboxPrimitive.Trigger class={cn("h-4 w-4 opacity-50", props.class)} {...rest}>
+    <ComboboxPrimitive.Trigger class={cn("size-4 opacity-50", props.class)} {...rest}>
       <ComboboxPrimitive.Icon>{props.children ?? <TbSelector />}</ComboboxPrimitive.Icon>
     </ComboboxPrimitive.Trigger>
   )
@@ -86,7 +86,7 @@ const ComboboxContent: Component<ComboboxPrimitive.ComboboxContentProps> = (prop
     <ComboboxPrimitive.Portal>
       <ComboboxPrimitive.Content
         class={cn(
-          "bg-popover text-popover-foreground animate-in fade-in-80 relative z-50 min-w-[8rem] overflow-hidden rounded-md border shadow-md",
+          "relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
           props.class
         )}
         {...rest}

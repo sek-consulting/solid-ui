@@ -20,7 +20,7 @@ const SliderTrack: Component<SliderPrimitive.SliderTrackProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <SliderPrimitive.Track
-      class={cn("bg-secondary relative h-2 w-full grow rounded-full", props.class)}
+      class={cn("relative h-2 w-full grow rounded-full bg-secondary", props.class)}
       {...rest}
     />
   )
@@ -28,7 +28,7 @@ const SliderTrack: Component<SliderPrimitive.SliderTrackProps> = (props) => {
 
 const SliderFill: Component<SliderPrimitive.SliderFillProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <SliderPrimitive.Fill class={cn("bg-primary absolute h-full", props.class)} {...rest} />
+  return <SliderPrimitive.Fill class={cn("absolute h-full bg-primary", props.class)} {...rest} />
 }
 
 const SliderThumb: Component<SliderPrimitive.SliderThumbProps> = (props) => {
@@ -36,7 +36,7 @@ const SliderThumb: Component<SliderPrimitive.SliderThumbProps> = (props) => {
   return (
     <SliderPrimitive.Thumb
       class={cn(
-        "border-primary bg-background ring-offset-background focus-visible:ring-ring top-[-6px] block h-5 w-5 rounded-full border-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        "top-[-6px] block size-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
         props.class
       )}
       {...rest}

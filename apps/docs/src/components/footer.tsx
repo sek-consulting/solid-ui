@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer class="py-6 md:px-8 md:py-0">
       <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-        <p class="text-muted-foreground text-center text-sm leading-loose md:text-left">
+        <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
           Built & designed by{" "}
           <a
             href="https://twitter.com/shadcn"

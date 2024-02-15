@@ -1,45 +1,14 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:tailwindcss/recommended"
-  ],
-  "plugins": ["@typescript-eslint", "import", "tailwindcss"],
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:solid/recommended", "plugin:tailwindcss/recommended"],
+  "plugins": ["solid", "tailwindcss"],
   "rules": {
-    "@typescript-eslint/consistent-type-imports": "warn",
-    "@typescript-eslint/no-empty-interface": "warn",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
-    ],
-    "import/order": [
-      "error",
-      {
-        "groups": ["builtin", "external", "internal"],
-        "pathGroups": [
-          { "pattern": "solid-js", "group": "builtin" },
-          { "pattern": "solid-start", "group": "builtin" },
-          { "pattern": "solid-js/*", "group": "builtin" }
-        ],
-        "pathGroupsExcludedImportTypes": ["solid-js", "solid-start", "solid-js/*"],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ],
     "tailwindcss/no-custom-classname": "off",
     "tailwindcss/classnames-order": "error"
   },
   "settings": {
     "tailwindcss": {
-      "callees": ["cn"],
+      "callees": ["cn", "cva"],
       "config": "tailwind.config.cjs"
     }
   },

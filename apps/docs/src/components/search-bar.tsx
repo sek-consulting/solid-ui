@@ -51,7 +51,7 @@ export default function SearchBar() {
           component={Button}
           id="search-trigger"
           variant="outline"
-          class="text-muted-foreground relative w-full justify-between space-x-4"
+          class="relative w-full justify-between space-x-4 text-muted-foreground"
         >
           <div class="flex items-center space-x-2">
             <TbSearch />
@@ -105,7 +105,7 @@ export default function SearchBar() {
                         >
                           {item.document.title}
                         </p>
-                        <p class="text-muted-foreground text-sm" id={id}></p>
+                        <p class="text-sm text-muted-foreground" id={id} />
                         Th
                       </div>
                     </div>

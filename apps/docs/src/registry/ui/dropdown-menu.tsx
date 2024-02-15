@@ -20,7 +20,7 @@ const DropdownMenuContent: Component<DropdownMenuPrimitive.DropdownMenuContentPr
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
         class={cn(
-          "bg-popover text-popover-foreground animate-content-hide data-[expanded]:animate-content-show z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border p-1 shadow-md",
+          "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] animate-content-hide overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[expanded]:animate-content-show",
           props.class
         )}
         {...rest}
@@ -34,7 +34,7 @@ const DropdownMenuItem: Component<DropdownMenuPrimitive.DropdownMenuItemProps> =
   return (
     <DropdownMenuPrimitive.Item
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
@@ -63,7 +63,7 @@ const DropdownMenuSeparator: Component<DropdownMenuPrimitive.DropdownMenuSeparat
   const [, rest] = splitProps(props, ["class"])
   return (
     <DropdownMenuPrimitive.Separator
-      class={cn("bg-muted -mx-1 my-1 h-px", props.class)}
+      class={cn("-mx-1 my-1 h-px bg-muted", props.class)}
       {...rest}
     />
   )
@@ -78,13 +78,13 @@ const DropdownMenuSubTrigger: Component<DropdownMenuPrimitive.DropdownMenuSubTri
   return (
     <DropdownMenuPrimitive.SubTrigger
       class={cn(
-        "focus:bg-accent data-[state=open]:bg-accent flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none",
+        "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent",
         props.class
       )}
       {...rest}
     >
       {props.children}
-      <TbChevronRight class="ml-auto h-4 w-4" />
+      <TbChevronRight class="ml-auto size-4" />
     </DropdownMenuPrimitive.SubTrigger>
   )
 }
@@ -96,7 +96,7 @@ const DropdownMenuSubContent: Component<DropdownMenuPrimitive.DropdownMenuSubCon
   return (
     <DropdownMenuPrimitive.SubContent
       class={cn(
-        "bg-popover text-popover-foreground animate-in z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border p-1 shadow-md",
+        "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
         props.class
       )}
       {...rest}
@@ -111,14 +111,14 @@ const DropdownMenuCheckboxItem: Component<DropdownMenuPrimitive.DropdownMenuChec
   return (
     <DropdownMenuPrimitive.CheckboxItem
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
     >
-      <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <TbCheck class="h-4 w-4" />
+          <TbCheck class="size-4" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {props.children}
@@ -149,14 +149,14 @@ const DropdownMenuRadioItem: Component<DropdownMenuPrimitive.DropdownMenuRadioIt
   return (
     <DropdownMenuPrimitive.RadioItem
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
     >
-      <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <TbCircle class="h-2 w-2 fill-current" />
+          <TbCircle class="size-2 fill-current" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {props.children}

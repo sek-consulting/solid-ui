@@ -8,7 +8,7 @@ export function HeroSection() {
       <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
         Build your component library.
       </h1>
-      <p class="text-muted-foreground max-w-[750px] text-lg sm:text-xl">
+      <p class="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
         Beautifully designed components that you can copy and paste into your apps. Accessible.
         Customizable. Open Source.
       </p>
@@ -33,7 +33,7 @@ export function HeroSection() {
           target="_blank"
           rel="noreferrer"
         >
-          <TbBrandGithub class="mr-2 h-4 w-4" /> GitHub
+          <TbBrandGithub class="mr-2 size-4" /> GitHub
         </a>
       </div>
     </section>

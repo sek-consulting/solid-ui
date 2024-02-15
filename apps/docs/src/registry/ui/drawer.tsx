@@ -23,7 +23,7 @@ const DrawerOverlay: Component<DrawerPrimitive.OverlayProps> = (props) => {
         props.class
       )}
       style={{
-        'background-color': `rgb(0 0 0 / ${0.8 * drawerContext.openPercentage()})`,
+        "background-color": `rgb(0 0 0 / ${0.8 * drawerContext.openPercentage()})`
       }}
       {...rest}
     />
@@ -37,12 +37,12 @@ const DrawerContent: Component<DrawerPrimitive.ContentProps> = (props) => {
       <DrawerOverlay />
       <DrawerPrimitive.Content
         class={cn(
-          "bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border data-[transitioning]:transition-transform data-[transitioning]:duration-300 md:select-none",
+          "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background data-[transitioning]:transition-transform data-[transitioning]:duration-300 md:select-none",
           props.class
         )}
         {...rest}
       >
-        <div class="bg-muted mx-auto mt-4 h-2 w-[100px] rounded-full" />
+        <div class="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
         {props.children}
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -73,7 +73,7 @@ const DrawerDescription: Component<DrawerPrimitive.DescriptionProps> = (props) =
   const [, rest] = splitProps(props, ["class"])
   return (
     <DrawerPrimitive.Description
-      class={cn("text-muted-foreground text-sm", props.class)}
+      class={cn("text-sm text-muted-foreground", props.class)}
       {...rest}
     />
   )

@@ -10,25 +10,25 @@ export function MainNav(props: ComponentProps<"nav">) {
     <nav class={cn("flex items-center space-x-4 lg:space-x-6", props.class)} {...rest}>
       <A
         href="/examples/dashboard"
-        class="hover:text-primary text-sm font-medium transition-colors"
+        class="text-sm font-medium transition-colors hover:text-primary"
       >
         Overview
       </A>
       <A
         href="/examples/dashboard"
-        class="text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
+        class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Customers
       </A>
       <A
         href="/examples/dashboard"
-        class="text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
+        class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Products
       </A>
       <A
         href="/examples/dashboard"
-        class="text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
+        class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Settings
       </A>

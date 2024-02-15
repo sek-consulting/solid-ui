@@ -25,7 +25,7 @@ const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (p
         {...rest}
       >
         {props.children}
-        <TbChevronDown class="h-4 w-4 shrink-0 transition-transform duration-200" />
+        <TbChevronDown class="size-4 shrink-0 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
@@ -36,7 +36,7 @@ const AccordionContent: Component<AccordionPrimitive.AccordionContentProps> = (p
   return (
     <AccordionPrimitive.Content
       class={cn(
-        "animate-accordion-up data-[expanded]:animate-accordion-down overflow-hidden text-sm transition-all",
+        "animate-accordion-up overflow-hidden text-sm transition-all data-[expanded]:animate-accordion-down",
         props.class
       )}
       {...rest}

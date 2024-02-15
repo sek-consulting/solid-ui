@@ -11,7 +11,7 @@ const Separator: Component<SeparatorPrimitive.SeparatorRootProps> = (props) => {
     <SeparatorPrimitive.Root
       orientation={props.orientation ?? "horizontal"}
       class={cn(
-        "bg-border shrink-0",
+        "shrink-0 bg-border",
         props.orientation === "vertical" ? "h-full w-[1px]" : "h-[1px] w-full",
         props.class
       )}

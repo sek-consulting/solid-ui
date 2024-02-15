@@ -23,15 +23,15 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem onSelect={() => setColorMode("light")}>
-          <Icons.sun class="mr-2 h-4 w-4" />
+          <Icons.sun class="mr-2 size-4" />
           <span>Light</span>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => setColorMode("dark")}>
-          <Icons.moon class="mr-2 h-4 w-4" />
+          <Icons.moon class="mr-2 size-4" />
           <span>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => setColorMode("system")}>
-          <Icons.laptop class="mr-2 h-4 w-4" />
+          <Icons.laptop class="mr-2 size-4" />
           <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

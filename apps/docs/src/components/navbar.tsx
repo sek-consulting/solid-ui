@@ -10,12 +10,12 @@ import { buttonVariants } from "~/registry/ui/button"
 
 export default function Navbar() {
   return (
-    <header class="supports-backdrop-blur:bg-background/60 bg-background/95 sticky top-0 z-40 w-full border-b backdrop-blur">
+    <header class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
       <div class="container flex h-14 items-center">
         <MobileNav />
         <div class="mr-4 hidden md:flex">
           <a href="/" class="mr-6 flex items-center space-x-2 no-underline">
-            <Icons.logo class="h-6 w-6" />
+            <Icons.logo class="size-6" />
             <span class="hidden font-bold sm:inline-block">solid-ui</span>
           </a>
           <nav class="flex items-center space-x-6 text-sm font-medium">
@@ -25,7 +25,7 @@ export default function Navbar() {
                   href={item.href}
                   target={item.external ? "_blank" : ""}
                   rel={item.external ? "noreferrer" : ""}
-                  class="text-foreground/60 hover:text-foreground/80 hidden no-underline transition-colors lg:block"
+                  class="hidden text-foreground/60 no-underline transition-colors hover:text-foreground/80 lg:block"
                 >
                   {item.title}
                 </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
                     "w-9 px-0"
                   )}
                 >
-                  <Icons.gitHub class="h-5 w-5" />
+                  <Icons.gitHub class="size-5" />
                   <span class="sr-only">GitHub</span>
                 </div>
               </a>

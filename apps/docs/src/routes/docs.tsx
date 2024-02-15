@@ -1,15 +1,15 @@
-import { Show, createMemo } from "solid-js"
-import { A, Outlet, useLocation } from "solid-start"
+import { createMemo, Show } from "solid-js"
 
 import { MDXProvider } from "solid-mdx"
+import { A, Outlet, useLocation } from "solid-start"
 
+import type { Frontmatter } from "~/lib/mdx/frontmatter"
+import type { Heading } from "~/lib/mdx/headings"
+import { cn } from "~/lib/utils"
 import { MDXComponents } from "~/components/mdx-components"
 import { MetaHead } from "~/components/meta-head"
 import Sidebar from "~/components/sidebar"
 import { TableOfContents } from "~/components/toc"
-import type { Frontmatter } from "~/lib/mdx/frontmatter"
-import type { Heading } from "~/lib/mdx/headings"
-import { cn } from "~/lib/utils"
 import { badgeVariants } from "~/registry/ui/badge"
 
 import "~/styles/mdx.css"
@@ -42,7 +42,7 @@ export default function DocsLayout() {
               <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">
                 {data().frontmatter.title}
               </h1>
-              <p class="text-muted-foreground text-lg">{data().frontmatter.description}</p>
+              <p class="text-lg text-muted-foreground">{data().frontmatter.description}</p>
               <Show when={data().frontmatter.kobalte}>
                 {(kobalte) => (
                   <A

@@ -1,5 +1,5 @@
 import type { Component, ComponentProps } from "solid-js"
-import { mergeProps, onMount, createEffect, on, onCleanup, splitProps } from "solid-js"
+import { createEffect, mergeProps, on, onCleanup, onMount, splitProps } from "solid-js"
 
 import type {
   ChartComponent,
@@ -22,9 +22,9 @@ import {
   DoughnutController,
   Filler,
   Legend,
+  LinearScale,
   LineController,
   LineElement,
-  LinearScale,
   PieController,
   PointElement,
   PolarAreaController,

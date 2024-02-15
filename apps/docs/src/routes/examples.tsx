@@ -15,7 +15,7 @@ export default function Examples() {
         <HeroSection />
         <section>
           <ExamplesNav />
-          <div class="bg-background overflow-hidden rounded-[0.5rem] border shadow">
+          <div class="overflow-hidden rounded-[0.5rem] border bg-background shadow">
             <Outlet />
           </div>
         </section>

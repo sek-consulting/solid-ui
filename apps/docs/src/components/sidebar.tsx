@@ -23,7 +23,7 @@ export default function Sidebar() {
                       class={cn(
                         "group flex w-full items-center rounded-md border border-transparent px-2 py-1 no-underline hover:underline",
                         pathname === item.href
-                          ? "text-foreground font-medium"
+                          ? "font-medium text-foreground"
                           : "text-muted-foreground"
                       )}
                     >

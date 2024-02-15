@@ -1,5 +1,5 @@
 import type { ComponentProps, ParentComponent } from "solid-js"
-import { splitProps, type Component, type JSXElement, mergeProps, Show } from "solid-js"
+import { mergeProps, Show, splitProps, type Component, type JSXElement } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
@@ -113,7 +113,7 @@ const TimelineItemBullet: Component<TimelineItemBulletProps> = (props) => {
   return (
     <div
       class={cn(
-        `bg-background absolute top-0 flex items-center justify-center rounded-full border`,
+        `absolute top-0 flex items-center justify-center rounded-full border bg-background`,
         props.isActive && "border-primary"
       )}
       style={{
@@ -136,7 +136,7 @@ const TimelineItemTitle: ParentComponent = (props) => {
 const TimelineItemDescription: Component<ComponentProps<"p">> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
-    <p class={cn("text-muted-foreground text-sm", props.class)} {...rest}>
+    <p class={cn("text-sm text-muted-foreground", props.class)} {...rest}>
       {props.children}
     </p>
   )

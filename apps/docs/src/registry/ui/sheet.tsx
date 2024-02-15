@@ -43,7 +43,7 @@ const SheetOverlay: Component<SheetPrimitive.DialogOverlayProps> = (props) => {
   return (
     <SheetPrimitive.Overlay
       class={cn(
-        "bg-background/80 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in fixed inset-0 z-50 backdrop-blur-sm transition-all duration-100",
+        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in",
         props.class
       )}
       {...rest}
@@ -52,14 +52,14 @@ const SheetOverlay: Component<SheetPrimitive.DialogOverlayProps> = (props) => {
 }
 
 const sheetVariants = cva(
-  "bg-background fixed z-50 scale-100 gap-4 border p-6 opacity-100 shadow-lg",
+  "fixed z-50 scale-100 gap-4 border bg-background p-6 opacity-100 shadow-lg",
   {
     variants: {
       position: {
-        top: "animate-in slide-in-from-top w-full duration-300",
-        bottom: "animate-in slide-in-from-bottom w-full duration-300",
-        left: "animate-in slide-in-from-left h-full duration-300",
-        right: "animate-in slide-in-from-right h-full duration-300"
+        top: "w-full duration-300 animate-in slide-in-from-top",
+        bottom: "w-full duration-300 animate-in slide-in-from-bottom",
+        left: "h-full duration-300 animate-in slide-in-from-left",
+        right: "h-full duration-300 animate-in slide-in-from-right"
       },
       size: {
         content: "",
@@ -153,8 +153,8 @@ const SheetContent: Component<DialogContentProps> = (props) => {
         {...rest}
       >
         {props.children}
-        <SheetPrimitive.CloseButton class="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
-          <TbX class="h-4 w-4" />
+        <SheetPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+          <TbX class="size-4" />
           <span class="sr-only">Close</span>
         </SheetPrimitive.CloseButton>
       </SheetPrimitive.Content>
@@ -183,7 +183,7 @@ const SheetTitle: Component<SheetPrimitive.DialogTitleProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <SheetPrimitive.Title
-      class={cn("text-foreground text-lg font-semibold", props.class)}
+      class={cn("text-lg font-semibold text-foreground", props.class)}
       {...rest}
     />
   )
@@ -193,7 +193,7 @@ const SheetDescription: Component<SheetPrimitive.DialogDescriptionProps> = (prop
   const [, rest] = splitProps(props, ["class"])
   return (
     <SheetPrimitive.Description
-      class={cn("text-muted-foreground text-sm", props.class)}
+      class={cn("text-sm text-muted-foreground", props.class)}
       {...rest}
     />
   )

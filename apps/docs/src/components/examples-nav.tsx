@@ -1,5 +1,5 @@
 import type { ComponentProps } from "solid-js"
-import { splitProps } from "solid-js"
+import { splitProps, For } from "solid-js"
 import { A, useLocation } from "solid-start"
 
 import { TbArrowRight } from "solid-icons/tb"
@@ -32,19 +32,19 @@ export function ExamplesNav(props: ComponentProps<"div">) {
   return (
     <div class="relative">
       <div class={cn("mb-4 flex items-center", props.class)} {...rest}>
-        {examples.map((example) => (
+        <For each={examples}>{(example) => (
           <A
             href={example.href}
             class={cn(
               "flex items-center px-4",
               location.pathname?.startsWith(example.href)
-                ? "text-primary font-bold"
-                : "text-muted-foreground font-medium"
+                ? "font-bold text-primary"
+                : "font-medium text-muted-foreground"
             )}
           >
             {example.name}
           </A>
-        ))}
+        )}</For>
       </div>
       <ExampleCodeLink
         pathname={location.pathname === "/" ? "/examples/dashboard" : location.pathname}
@@ -68,7 +68,7 @@ export function ExampleCodeLink(props: { pathname: string | null }) {
       class="absolute right-0 top-0 hidden items-center rounded-[0.5rem] text-sm font-medium md:flex"
     >
       View code
-      <TbArrowRight class="ml-1 h-4 w-4" />
+      <TbArrowRight class="ml-1 size-4" />
     </A>
   )
 }

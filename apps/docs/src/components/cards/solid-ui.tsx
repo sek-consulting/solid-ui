@@ -26,16 +26,16 @@ export function SolidUI() {
             Beautifully designed components built with Kobalte and Tailwind CSS.
           </CardDescription>
         </div>
-        <div class="bg-secondary text-secondary-foreground flex items-center space-x-1 rounded-md">
+        <div class="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
           <Button variant="secondary" class="px-3 shadow-none">
-            <TbStar class="mr-2 h-4 w-4" />
+            <TbStar class="mr-2 size-4" />
             Star
           </Button>
           <Separator orientation="vertical" class="h-[20px]" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <As component={Button} variant={"secondary"} class="px-2 shadow-none">
-                <TbChevronDown class="text-secondary-foreground h-4 w-4" />
+                <TbChevronDown class="size-4 text-secondary-foreground" />
               </As>
             </DropdownMenuTrigger>
 
@@ -51,20 +51,20 @@ export function SolidUI() {
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <TbPlus class="mr-2 h-4 w-4" /> Create list
+                <TbPlus class="mr-2 size-4" /> Create list
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </CardHeader>
       <CardContent>
-        <div class="text-muted-foreground flex space-x-4 text-sm">
+        <div class="flex space-x-4 text-sm text-muted-foreground">
           <div class="flex items-center">
-            <TbBrandTypescript class="mr-1 h-3 w-3 text-sky-400" />
+            <TbBrandTypescript class="mr-1 size-3 text-sky-400" />
             TypeScript
           </div>
           <div class="flex items-center">
-            <TbStar class="mr-1 h-3 w-3" />
+            <TbStar class="mr-1 size-3" />
             160
           </div>
           <div>Updated November 2023</div>

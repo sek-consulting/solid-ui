@@ -62,7 +62,7 @@ const PaginationPrevious: typeof PaginationLink = (props) => {
       class={cn("gap-1 pl-2.5", props.class)}
       {...rest}
     >
-      <TbChevronLeft class="h-4 w-4" />
+      <TbChevronLeft class="size-4" />
       <span>Previous</span>
     </PaginationLink>
   )
@@ -78,7 +78,7 @@ const PaginationNext: typeof PaginationLink = (props) => {
       {...rest}
     >
       <span>Next</span>
-      <TbChevronRight class="h-4 w-4" />
+      <TbChevronRight class="size-4" />
     </PaginationLink>
   )
 }
@@ -86,8 +86,8 @@ const PaginationNext: typeof PaginationLink = (props) => {
 const PaginationEllipsis: Component<ComponentProps<"span">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <span aria-hidden class={cn("flex h-9 w-9 items-center justify-center", props.class)} {...rest}>
-      <TbDots class="h-4 w-4" />
+    <span aria-hidden class={cn("flex size-9 items-center justify-center", props.class)} {...rest}>
+      <TbDots class="size-4" />
       <span class="sr-only">More pages</span>
     </span>
   )

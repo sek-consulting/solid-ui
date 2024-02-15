@@ -5,7 +5,7 @@ import { cn } from "~/lib/utils"
 
 const Skeleton: Component<ComponentProps<"div">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <div class={cn("bg-primary/10 animate-pulse rounded-md", props.class)} {...rest} />
+  return <div class={cn("animate-pulse rounded-md bg-primary/10", props.class)} {...rest} />
 }
 
 export { Skeleton }

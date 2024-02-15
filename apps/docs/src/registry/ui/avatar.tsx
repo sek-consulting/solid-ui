@@ -9,7 +9,7 @@ const Avatar: Component<ImagePrimitive.ImageRootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <ImagePrimitive.Root
-      class={cn("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", props.class)}
+      class={cn("relative flex size-10 shrink-0 overflow-hidden rounded-full", props.class)}
       {...rest}
     />
   )
@@ -17,17 +17,14 @@ const Avatar: Component<ImagePrimitive.ImageRootProps> = (props) => {
 
 const AvatarImage: Component<ImagePrimitive.ImageImgProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <ImagePrimitive.Img class={cn("aspect-square h-full w-full", props.class)} {...rest} />
+  return <ImagePrimitive.Img class={cn("aspect-square size-full", props.class)} {...rest} />
 }
 
 const AvatarFallback: Component<ImagePrimitive.ImageFallbackProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <ImagePrimitive.Fallback
-      class={cn(
-        "bg-muted flex h-full w-full items-center justify-center rounded-full",
-        props.class
-      )}
+      class={cn("flex size-full items-center justify-center rounded-full bg-muted", props.class)}
       {...rest}
     />
   )

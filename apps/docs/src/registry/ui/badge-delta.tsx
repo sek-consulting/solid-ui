@@ -57,7 +57,7 @@ const BadgeDelta: Component<BadgeDeltaProps> = (props) => {
   return (
     <Badge class={cn(badgeDeltaVariants({ variant }), props.class)} {...rest}>
       <span class="flex gap-1">
-        <Icon class="h-4 w-4" />
+        <Icon class="size-4" />
         {props.children}
       </span>
     </Badge>

@@ -31,7 +31,7 @@ export function ShareDocument() {
                 </Avatar>
                 <div>
                   <p class="text-sm font-medium leading-none">Olivia Martin</p>
-                  <p class="text-muted-foreground text-sm">m@example.com</p>
+                  <p class="text-sm text-muted-foreground">m@example.com</p>
                 </div>
               </div>
               <Select
@@ -56,7 +56,7 @@ export function ShareDocument() {
                 </Avatar>
                 <div>
                   <p class="text-sm font-medium leading-none">Isabella Nguyen</p>
-                  <p class="text-muted-foreground text-sm">b@example.com</p>
+                  <p class="text-sm text-muted-foreground">b@example.com</p>
                 </div>
               </div>
               <Select
@@ -81,7 +81,7 @@ export function ShareDocument() {
                 </Avatar>
                 <div>
                   <p class="text-sm font-medium leading-none">Sofia Davis</p>
-                  <p class="text-muted-foreground text-sm">p@example.com</p>
+                  <p class="text-sm text-muted-foreground">p@example.com</p>
                 </div>
               </div>
               <Select

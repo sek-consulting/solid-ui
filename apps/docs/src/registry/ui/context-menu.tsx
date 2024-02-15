@@ -20,7 +20,7 @@ const ContextMenuContent: Component<ContextMenuPrimitive.ContextMenuContentProps
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         class={cn(
-          "bg-popover text-popover-foreground animate-in z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border p-1 shadow-md",
+          "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
           props.class
         )}
         {...rest}
@@ -34,7 +34,7 @@ const ContextMenuItem: Component<ContextMenuPrimitive.ContextMenuItemProps> = (p
   return (
     <ContextMenuPrimitive.Item
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
@@ -50,7 +50,7 @@ const ContextMenuShortcut: Component<ComponentProps<"span">> = (props) => {
 const ContextMenuSeparator: Component<ContextMenuPrimitive.ContextMenuSeparatorProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <ContextMenuPrimitive.Separator class={cn("bg-muted -mx-1 my-1 h-px", props.class)} {...rest} />
+    <ContextMenuPrimitive.Separator class={cn("-mx-1 my-1 h-px bg-muted", props.class)} {...rest} />
   )
 }
 
@@ -63,13 +63,13 @@ const ContextMenuSubTrigger: Component<ContextMenuPrimitive.ContextMenuSubTrigge
   return (
     <ContextMenuPrimitive.SubTrigger
       class={cn(
-        "focus:bg-accent data-[state=open]:bg-accent flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none",
+        "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent",
         props.class
       )}
       {...rest}
     >
       {props.children}
-      <TbChevronRight class="ml-auto h-4 w-4" />
+      <TbChevronRight class="ml-auto size-4" />
     </ContextMenuPrimitive.SubTrigger>
   )
 }
@@ -81,7 +81,7 @@ const ContextMenuSubContent: Component<ContextMenuPrimitive.ContextMenuSubConten
   return (
     <ContextMenuPrimitive.SubContent
       class={cn(
-        "bg-popover text-popover-foreground animate-in z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border p-1 shadow-md",
+        "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
         props.class
       )}
       {...rest}
@@ -96,14 +96,14 @@ const ContextMenuCheckboxItem: Component<ContextMenuPrimitive.ContextMenuCheckbo
   return (
     <ContextMenuPrimitive.CheckboxItem
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
     >
-      <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <ContextMenuPrimitive.ItemIndicator>
-          <TbCheck class="h-4 w-4" />
+          <TbCheck class="size-4" />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {props.children}
@@ -132,14 +132,14 @@ const ContextMenuRadioItem: Component<ContextMenuPrimitive.ContextMenuRadioItemP
   return (
     <ContextMenuPrimitive.RadioItem
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.class
       )}
       {...rest}
     >
-      <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <ContextMenuPrimitive.ItemIndicator>
-          <TbCircle class="h-2 w-2 fill-current" />
+          <TbCircle class="size-2 fill-current" />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {props.children}

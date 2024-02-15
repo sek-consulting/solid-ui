@@ -16,9 +16,9 @@ const ComponentPreview: Component<ComponentPreviewProps> = (props) => {
 
     if (!Component) {
       return (
-        <p class="text-muted-foreground text-sm">
+        <p class="text-sm text-muted-foreground">
           Component{" "}
-          <code class="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
+          <code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
             {props.name}
           </code>{" "}
           not found in registry.
@@ -39,13 +39,13 @@ const ComponentPreview: Component<ComponentPreviewProps> = (props) => {
           <TabsList class="w-full justify-start rounded-none border-b bg-transparent p-0">
             <TabsTrigger
               value="preview"
-              class="text-muted-foreground data-[selected]:border-b-primary data-[selected]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold shadow-none transition-none data-[selected]:shadow-none"
+              class="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
             >
               Preview
             </TabsTrigger>
             <TabsTrigger
               value="code"
-              class="text-muted-foreground data-[selected]:border-b-primary data-[selected]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold shadow-none transition-none data-[selected]:shadow-none"
+              class="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
             >
               Code
             </TabsTrigger>

@@ -16,10 +16,10 @@ const Switch: Component<SwitchProps> = (props) => {
     <SwitchPrimitive.Root {...rest}>
       <SwitchPrimitive.Input />
       <div class="items-top flex space-x-2">
-        <SwitchPrimitive.Control class="bg-input focus-visible:ring-ring focus-visible:ring-offset-background data-[checked]:bg-primary peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+        <SwitchPrimitive.Control class="peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent bg-input transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:bg-primary">
           <SwitchPrimitive.Thumb
             class={cn(
-              "bg-background pointer-events-none block h-5 w-5 translate-x-0 rounded-full shadow-lg ring-0 transition-transform data-[checked]:translate-x-5"
+              "pointer-events-none block size-5 translate-x-0 rounded-full bg-background shadow-lg ring-0 transition-transform data-[checked]:translate-x-5"
             )}
           />
         </SwitchPrimitive.Control>
@@ -30,7 +30,7 @@ const Switch: Component<SwitchProps> = (props) => {
             </SwitchPrimitive.Label>
           </Show>
           <Show when={props.errorMessage}>
-            <SwitchPrimitive.ErrorMessage class="text-destructive text-sm">
+            <SwitchPrimitive.ErrorMessage class="text-sm text-destructive">
               {props.errorMessage}
             </SwitchPrimitive.ErrorMessage>
           </Show>

@@ -67,7 +67,7 @@ export const MDXComponents = {
   code: (props: ComponentProps<"code">) => {
     return (
       <code
-        class="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm group-[&.code]:bg-zinc-900 group-[&.code]:p-0"
+        class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm group-[&.code]:bg-zinc-900 group-[&.code]:p-0"
         {...props}
       />
     )
@@ -105,7 +105,7 @@ export const MDXComponents = {
   ),
   TabsTrigger: (props: ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
-      class="text-muted-foreground data-[selected]:border-b-primary data-[selected]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold shadow-none transition-none data-[selected]:shadow-none"
+      class="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
       {...props}
     />
   ),

@@ -7,7 +7,7 @@ export default function CollapsibleDemo() {
     <Collapsible class="w-[300px]">
       <CollapsibleTrigger class="flex w-full items-center justify-between rounded-md border p-3">
         <span>What is Kobalte ?</span>
-        <TbChevronDown class="h-4 w-4" />
+        <TbChevronDown class="size-4" />
       </CollapsibleTrigger>
       <CollapsibleContent class="mt-2 rounded-md border p-3">
         Kobalte is a UI toolkit for building accessible web apps and design systems with SolidJS. It

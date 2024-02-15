@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "input.tsx",
-      "content": "import type { Component, ComponentProps } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nimport { cn } from \"~/lib/utils\"\n\nconst Input: Component<ComponentProps<\"input\">> = (props) => {\n  const [, rest] = splitProps(props, [\"type\", \"class\"])\n  return (\n    <input\n      type={props.type}\n      class={cn(\n        \"border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\",\n        props.class\n      )}\n      {...rest}\n    />\n  )\n}\n\nexport { Input }\n"
+      "content": "import type { Component, ComponentProps } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nimport { cn } from \"~/lib/utils\"\n\nconst Input: Component<ComponentProps<\"input\">> = (props) => {\n  const [, rest] = splitProps(props, [\"type\", \"class\"])\n  return (\n    <input\n      type={props.type}\n      class={cn(\n        \"flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\",\n        props.class\n      )}\n      {...rest}\n    />\n  )\n}\n\nexport { Input }\n"
     }
   ],
   "type": "ui"

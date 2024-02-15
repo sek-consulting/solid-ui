@@ -23,11 +23,11 @@ export function CreateAccount() {
       <CardContent class="grid gap-4">
         <div class="grid grid-cols-2 gap-6">
           <Button variant="outline">
-            <TbBrandGithub class="mr-2 h-4 w-4" />
+            <TbBrandGithub class="mr-2 size-4" />
             Github
           </Button>
           <Button variant="outline">
-            <TbBrandGoogle class="mr-2 h-4 w-4" />
+            <TbBrandGoogle class="mr-2 size-4" />
             Google
           </Button>
         </div>
@@ -36,7 +36,7 @@ export function CreateAccount() {
             <span class="w-full border-t" />
           </div>
           <div class="relative flex justify-center text-xs uppercase">
-            <span class="bg-background text-muted-foreground px-2">Or continue with</span>
+            <span class="bg-background px-2 text-muted-foreground">Or continue with</span>
           </div>
         </div>
         <div class="grid gap-2">

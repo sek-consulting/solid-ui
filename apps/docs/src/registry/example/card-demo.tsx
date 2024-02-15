@@ -1,3 +1,4 @@
+import { For } from "solid-js";
 import { Icons } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import {
@@ -37,25 +38,25 @@ export default function CardDemo() {
           <Icons.bell />
           <div class="flex-1 space-y-1">
             <p class="text-sm font-medium leading-none">Push Notifications</p>
-            <p class="text-muted-foreground text-sm">Send notifications to device.</p>
+            <p class="text-sm text-muted-foreground">Send notifications to device.</p>
           </div>
           <Switch />
         </div>
         <div>
-          {notifications.map((notification) => (
+          <For each={notifications}>{(notification) => (
             <div class="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
-              <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+              <span class="flex size-2 translate-y-1 rounded-full bg-sky-500" />
               <div class="space-y-1">
                 <p class="text-sm font-medium leading-none">{notification.title}</p>
-                <p class="text-muted-foreground text-sm">{notification.description}</p>
+                <p class="text-sm text-muted-foreground">{notification.description}</p>
               </div>
             </div>
-          ))}
+          )}</For>
         </div>
       </CardContent>
       <CardFooter>
         <Button class="w-full">
-          <Icons.check class="mr-2 h-4 w-4" /> Mark all as read
+          <Icons.check class="mr-2 size-4" /> Mark all as read
         </Button>
       </CardFooter>
     </Card>

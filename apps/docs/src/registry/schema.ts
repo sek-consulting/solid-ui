@@ -1,5 +1,5 @@
 import type { Output } from "valibot"
-import { array, enumType, object, optional, string } from "valibot"
+import { array, object, optional, picklist, string } from "valibot"
 
 export const registrySchema = array(
   object({
@@ -7,7 +7,7 @@ export const registrySchema = array(
     dependencies: optional(array(string())),
     registryDependencies: optional(array(string())),
     files: array(string()),
-    type: enumType(["ui", "example"])
+    type: picklist(["ui", "example"])
   })
 )
 

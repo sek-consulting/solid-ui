@@ -1,5 +1,15 @@
 # docs
 
+## 0.3.0
+
+### Minor Changes
+
+- [`4d115f1`](https://github.com/sek-consulting/solid-ui/commit/4d115f1498579e447ac2bef35f228a6682f455b1) Thanks [@sek-consulting](https://github.com/sek-consulting)! - all eslint/prettier problems are finally fixed & update to tailwind 3.4 (for size-x)
+
+### Patch Changes
+
+- [#60](https://github.com/sek-consulting/solid-ui/pull/60) [`d3d24a9`](https://github.com/sek-consulting/solid-ui/commit/d3d24a9baf94c963af53938b00d993c9a8f7ff52) Thanks [@GiyoMoon](https://github.com/GiyoMoon)! - Add transitions to the drawer component
+
 ## 0.2.0
 
 ### Minor Changes

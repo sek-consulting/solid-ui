@@ -16,6 +16,7 @@
     "@kobalte/core": "^0.12.1",
     "@modular-forms/solid": "^0.20.0",
     "@solid-primitives/keyboard": "^1.2.5",
+    "@solid-primitives/refs": "^1.0.6",
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.3",
     "@tanstack/solid-table": "^8.9.3",

@@ -35,8 +35,8 @@ export default function AreaChartDemo() {
       <CardHeader>
         <CardTitle>Newsletter revenue over time (USD)</CardTitle>
       </CardHeader>
-      <CardContent>
-        <LineChart class="h-64 w-[500px] max-w-full" data={chartData} />
+      <CardContent class="h-64 w-[500px] max-w-full">
+        <LineChart data={chartData} />
       </CardContent>
     </Card>
   )

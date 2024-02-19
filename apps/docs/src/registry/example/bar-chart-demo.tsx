@@ -16,8 +16,8 @@ export default function BarChartDemo() {
       <CardHeader>
         <CardTitle>Sales</CardTitle>
       </CardHeader>
-      <CardContent>
-        <BarChart class="h-64 w-[500px] max-w-full" data={chartData} />
+      <CardContent class="h-64 w-[500px] max-w-full">
+        <BarChart data={chartData} />
       </CardContent>
     </Card>
   )

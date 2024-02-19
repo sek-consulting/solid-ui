@@ -56,7 +56,7 @@ const ui: Registry = [
   {
     name: "charts",
     type: "ui",
-    dependencies: ["chart.js"],
+    dependencies: ["chart.js", "@solid-primitives/refs"],
     files: ["ui/charts.tsx"]
   },
   {

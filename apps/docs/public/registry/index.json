@@ -224,6 +224,16 @@
     "type": "ui"
   },
   {
+    "name": "number-field",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/number-field.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "pagination",
     "dependencies": [
       "solid-icons"

@@ -138,6 +138,12 @@ const ui: Registry = [
     files: ["ui/menubar.tsx"]
   },
   {
+    name: "number-field",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/number-field.tsx"]
+  },
+  {
     name: "pagination",
     type: "ui",
     dependencies: ["solid-icons"],
@@ -379,6 +385,16 @@ const examples: Registry = [
     files: ["example/menubar-demo.tsx"]
   },
   {
+    name: "mode-toggle",
+    type: "example",
+    files: ["example/mode-toggle.tsx"]
+  },
+  {
+    name: "number-field-demo",
+    type: "example",
+    files: ["example/number-field-demo.tsx"]
+  },
+  {
     name: "pagination-demo",
     type: "example",
     files: ["example/pagination-demo.tsx"]
@@ -462,11 +478,6 @@ const examples: Registry = [
     name: "tooltip-demo",
     type: "example",
     files: ["example/tooltip-demo.tsx"]
-  },
-  {
-    name: "mode-toggle",
-    type: "example",
-    files: ["example/mode-toggle.tsx"]
   }
 ]
 

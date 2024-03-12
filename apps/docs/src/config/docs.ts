@@ -165,6 +165,10 @@ export const docsConfig: Config = {
           href: "/docs/components/menubar"
         },
         {
+          title: "NumberField",
+          href: "/docs/components/number-field"
+        },
+        {
           title: "Pagination",
           href: "/docs/components/pagination"
         },

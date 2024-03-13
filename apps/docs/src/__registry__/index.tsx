@@ -614,5 +614,5 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/tooltip-demo")),
     files: ["registry/example/tooltip-demo.tsx"],
-  }
+  },
 }

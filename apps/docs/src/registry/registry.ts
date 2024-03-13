@@ -72,6 +72,13 @@ const ui: Registry = [
     files: ["ui/combobox.tsx"]
   },
   {
+    name: "command",
+    type: "ui",
+    dependencies: ["@kobalte/core", "solid-icons"],
+    registryDependencies: ["dialog"],
+    files: ["ui/combobox.tsx"]
+  },
+  {
     name: "context-menu",
     type: "ui",
     dependencies: ["@kobalte/core", "solid-icons"],
@@ -328,6 +335,18 @@ const examples: Registry = [
     name: "combobox-demo",
     type: "example",
     files: ["example/combobox-demo.tsx"]
+  },
+  {
+    name: "command-demo",
+    type: "example",
+    registryDependencies: ["dialog"],
+    files: ["example/command-demo.tsx"]
+  },
+  {
+    name: "command-dialog-demo",
+    type: "example",
+    registryDependencies: ["dialog"],
+    files: ["example/command-dialog-demo.tsx"]
   },
   {
     name: "context-menu-demo",

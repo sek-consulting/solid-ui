@@ -119,6 +119,20 @@
     "type": "ui"
   },
   {
+    "name": "command",
+    "dependencies": [
+      "@kobalte/core",
+      "solid-icons"
+    ],
+    "registryDependencies": [
+      "dialog"
+    ],
+    "files": [
+      "ui/combobox.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "context-menu",
     "dependencies": [
       "@kobalte/core",

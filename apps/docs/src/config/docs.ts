@@ -129,6 +129,10 @@ export const docsConfig: Config = {
           href: "/docs/components/combobox"
         },
         {
+          title: "Command",
+          href: "/docs/components/command"
+        },
+        {
           title: "Context Menu",
           href: "/docs/components/context-menu"
         },
@@ -165,7 +169,7 @@ export const docsConfig: Config = {
           href: "/docs/components/menubar"
         },
         {
-          title: "NumberField",
+          title: "Number Field",
           href: "/docs/components/number-field"
         },
         {

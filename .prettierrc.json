@@ -6,6 +6,8 @@
   "printWidth": 100,
   "trailingComma": "none",
   "importOrder": [
+    "<BUILTIN_MODULES>",
+    "",
     "^(solid-js/(.*)$)|^(solid-js$)",
     "",
     "<THIRD_PARTY_MODULES>",

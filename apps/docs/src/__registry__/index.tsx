@@ -174,6 +174,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/menubar")),
     files: ["registry/ui/menubar.tsx"],
   },
+  "number-field": {
+    name: "number-field",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/number-field")),
+    files: ["registry/ui/number-field.tsx"],
+  },
   "pagination": {
     name: "pagination",
     type: "ui",
@@ -475,6 +482,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/menubar-demo")),
     files: ["registry/example/menubar-demo.tsx"],
   },
+  "mode-toggle": {
+    name: "mode-toggle",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/mode-toggle")),
+    files: ["registry/example/mode-toggle.tsx"],
+  },
+  "number-field-demo": {
+    name: "number-field-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/number-field-demo")),
+    files: ["registry/example/number-field-demo.tsx"],
+  },
   "pagination-demo": {
     name: "pagination-demo",
     type: "example",
@@ -593,12 +614,5 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/tooltip-demo")),
     files: ["registry/example/tooltip-demo.tsx"],
-  },
-  "mode-toggle": {
-    name: "mode-toggle",
-    type: "example",
-    registryDependencies: undefined,
-    component: lazy(() => import("~/registry/example/mode-toggle")),
-    files: ["registry/example/mode-toggle.tsx"],
   },
 }

@@ -95,7 +95,7 @@ export const Index: Record<string, any> = {
     type: "ui",
     registryDependencies: ["dialog"],
     component: lazy(() => import("~/registry/ui/command")),
-    files: ["registry/ui/combobox.tsx"],
+    files: ["registry/ui/command.tsx"],
   },
   "context-menu": {
     name: "context-menu",

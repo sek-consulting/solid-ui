@@ -8,8 +8,6 @@ import { TbSearch } from "solid-icons/tb"
 import { cn } from "~/lib/utils"
 import { Dialog, DialogContent } from "~/registry/ui/dialog"
 
-export const CommandItemLabel = ComboboxPrimitive.ItemLabel
-
 type CommandProps<Option, OptGroup> = Omit<
   ComboboxPrimitive.ComboboxRootProps<Option, OptGroup>,
   | "open"
@@ -22,7 +20,7 @@ type CommandProps<Option, OptGroup> = Omit<
   | "allowsEmptyCollection"
 >
 
-export const Command = <Option, OptGroup>(props: CommandProps<Option, OptGroup>) => {
+const Command = <Option, OptGroup>(props: CommandProps<Option, OptGroup>) => {
   const [local, rest] = splitProps(props, ["class"])
 
   return (
@@ -41,21 +39,7 @@ export const Command = <Option, OptGroup>(props: CommandProps<Option, OptGroup>)
   )
 }
 
-export const CommandList = <Option, OptGroup>(
-  props: VoidProps<ComboboxPrimitive.ComboboxListboxProps<Option, OptGroup>>
-) => {
-  const [local, rest] = splitProps(props, ["class"])
-
-  return (
-    <ComboboxPrimitive.Listbox
-      cmdk-list=""
-      class={cn("max-h-[300px] overflow-y-auto overflow-x-hidden p-1", local.class)}
-      {...rest}
-    />
-  )
-}
-
-export const CommandInput: VoidComponent<ComboboxPrimitive.ComboboxInputProps> = (props) => {
+const CommandInput: VoidComponent<ComboboxPrimitive.ComboboxInputProps> = (props) => {
   const [local, rest] = splitProps(props, ["class"])
 
   return (
@@ -73,7 +57,21 @@ export const CommandInput: VoidComponent<ComboboxPrimitive.ComboboxInputProps> =
   )
 }
 
-export const CommandItem: ParentComponent<ComboboxPrimitive.ComboboxItemProps> = (props) => {
+const CommandList = <Option, OptGroup>(
+  props: VoidProps<ComboboxPrimitive.ComboboxListboxProps<Option, OptGroup>>
+) => {
+  const [local, rest] = splitProps(props, ["class"])
+
+  return (
+    <ComboboxPrimitive.Listbox
+      cmdk-list=""
+      class={cn("max-h-[300px] overflow-y-auto overflow-x-hidden p-1", local.class)}
+      {...rest}
+    />
+  )
+}
+
+const CommandItem: ParentComponent<ComboboxPrimitive.ComboboxItemProps> = (props) => {
   const [local, rest] = splitProps(props, ["class", "item"])
 
   return (
@@ -89,18 +87,9 @@ export const CommandItem: ParentComponent<ComboboxPrimitive.ComboboxItemProps> =
   )
 }
 
-export const CommandShortcut: ParentComponent<ComponentProps<"span">> = (props) => {
-  const [local, rest] = splitProps(props, ["class"])
+const CommandItemLabel = ComboboxPrimitive.ItemLabel
 
-  return (
-    <span
-      class={cn("ml-auto text-xs tracking-widest text-muted-foreground", local.class)}
-      {...rest}
-    />
-  )
-}
-
-export const CommandHeading: ParentComponent<ComboboxPrimitive.ComboboxSectionProps> = (props) => {
+const CommandHeading: ParentComponent<ComboboxPrimitive.ComboboxSectionProps> = (props) => {
   const [local, rest] = splitProps(props, ["class"])
 
   return (
@@ -115,17 +104,44 @@ export const CommandHeading: ParentComponent<ComboboxPrimitive.ComboboxSectionPr
   )
 }
 
+const CommandItemShortcut: ParentComponent<ComponentProps<"span">> = (props) => {
+  const [local, rest] = splitProps(props, ["class"])
+
+  return (
+    <span
+      class={cn("ml-auto text-xs tracking-widest text-muted-foreground", local.class)}
+      {...rest}
+    />
+  )
+}
+
 type CommandDialogProps<Option, OptGroup> = DialogPrimitive.DialogRootProps &
   CommandProps<Option, OptGroup>
 
-export const CommandDialog = <Option, OptGroup>(props: CommandDialogProps<Option, OptGroup>) => {
+const CommandDialog = <Option, OptGroup>(props: CommandDialogProps<Option, OptGroup>) => {
   const [local, rest] = splitProps(props, ["children"])
 
   return (
     <Dialog {...rest}>
       <DialogContent class="overflow-hidden p-0">
-        <Command {...rest}>{local.children}</Command>
+        <Command
+          class="[&_[cmdk-heading]]:px-2 [&_[cmdk-heading]]:font-medium [&_[cmdk-heading]]:text-muted-foreground [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5 [&_[cmdk-list]:not([hidden])_~[cmdk-list]]:pt-0 [&_[cmdk-list]]:px-2"
+          {...rest}
+        >
+          {local.children}
+        </Command>
       </DialogContent>
     </Dialog>
   )
+}
+
+export {
+  Command,
+  CommandInput,
+  CommandList,
+  CommandItem,
+  CommandItemLabel,
+  CommandItemShortcut,
+  CommandHeading,
+  CommandDialog
 }

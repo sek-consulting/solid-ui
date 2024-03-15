@@ -76,7 +76,7 @@ const ui: Registry = [
     type: "ui",
     dependencies: ["@kobalte/core", "solid-icons"],
     registryDependencies: ["dialog"],
-    files: ["ui/combobox.tsx"]
+    files: ["ui/command.tsx"]
   },
   {
     name: "context-menu",

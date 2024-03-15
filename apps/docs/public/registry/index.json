@@ -128,7 +128,7 @@
       "dialog"
     ],
     "files": [
-      "ui/combobox.tsx"
+      "ui/command.tsx"
     ],
     "type": "ui"
   },

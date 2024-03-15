@@ -8,8 +8,8 @@ import {
   CommandInput,
   CommandItem,
   CommandItemLabel,
-  CommandList,
-  CommandShortcut
+  CommandItemShortcut,
+  CommandList
 } from "~/registry/ui/command"
 
 type ListOption = {
@@ -53,19 +53,19 @@ export default function CommandDemo() {
           icon: <TbUser class="mr-2 size-4" />,
           label: "Profile",
           value: "Profile",
-          shortcut: <CommandShortcut>⌘P</CommandShortcut>
+          shortcut: <CommandItemShortcut>⌘P</CommandItemShortcut>
         },
         {
           icon: <TbMail class="mr-2 size-4" />,
           label: "Mail",
           value: "Mail",
-          shortcut: <CommandShortcut>⌘B</CommandShortcut>
+          shortcut: <CommandItemShortcut>⌘B</CommandItemShortcut>
         },
         {
           icon: <TbSettings class="mr-2 size-4" />,
           label: "Setting",
           value: "Setting",
-          shortcut: <CommandShortcut>⌘S</CommandShortcut>
+          shortcut: <CommandItemShortcut>⌘S</CommandItemShortcut>
         }
       ]
     }

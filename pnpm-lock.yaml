@@ -93,6 +93,12 @@ importers:
       corvu:
         specifier: ^0.4.0
         version: 0.4.0(solid-js@1.7.12)
+      embla-carousel-autoplay:
+        specifier: ^8.0.0
+        version: 8.0.0(embla-carousel@8.0.0)
+      embla-carousel-solid:
+        specifier: ^8.0.0
+        version: 8.0.0(solid-js@1.7.12)
       shosho:
         specifier: ^1.4.3
         version: 1.4.3
@@ -3600,6 +3606,36 @@ packages:
   /electron-to-chromium@1.4.670:
     resolution: {integrity: sha512-hcijYOWjOtjKrKPtNA6tuLlA/bTLO3heFG8pQA6mLpq7dRydSWicXova5lyxDzp1iVJaYhK7J2OQlGE52KYn7A==}
     dev: true
+
+  /embla-carousel-autoplay@8.0.0(embla-carousel@8.0.0):
+    resolution: {integrity: sha512-FWHhZULH5+ydg7fiabwQppCDoTMi8pbMC20lmVytoXn7hH2KAhXHc/8yCUb3yToqMduCN6xPKUONtgzBqz3RZg==}
+    peerDependencies:
+      embla-carousel: 8.0.0
+    dependencies:
+      embla-carousel: 8.0.0
+    dev: false
+
+  /embla-carousel-reactive-utils@8.0.0(embla-carousel@8.0.0):
+    resolution: {integrity: sha512-JCw0CqCXI7tbHDRogBb9PoeMLyjEC1vpN0lDOzUjmlfVgtfF+ffLaOK8bVtXVUEbNs/3guGe3NSzA5J5aYzLzw==}
+    peerDependencies:
+      embla-carousel: 8.0.0
+    dependencies:
+      embla-carousel: 8.0.0
+    dev: false
+
+  /embla-carousel-solid@8.0.0(solid-js@1.7.12):
+    resolution: {integrity: sha512-ettNdwAPvjSGoOn/I051nw7ckN2apvbi3Zugwf4urMFstzVLIpDAv0pWFm4G2jWsWKJsjdL/agZF2pksp7pPiA==}
+    peerDependencies:
+      solid-js: ^1.0.0
+    dependencies:
+      embla-carousel: 8.0.0
+      embla-carousel-reactive-utils: 8.0.0(embla-carousel@8.0.0)
+      solid-js: 1.7.12
+    dev: false
+
+  /embla-carousel@8.0.0:
+    resolution: {integrity: sha512-ecixcyqS6oKD2nh5Nj5MObcgoSILWNI/GtBxkidn5ytFaCCmwVHo2SecksaQZHcARMMpIR2dWOlSIdA1LkZFUA==}
+    dev: false
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}

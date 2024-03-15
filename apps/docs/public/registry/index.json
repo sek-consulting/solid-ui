@@ -86,6 +86,16 @@
     "type": "ui"
   },
   {
+    "name": "carousel",
+    "dependencies": [
+      "embla-carousel-solid"
+    ],
+    "files": [
+      "ui/carousel.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "charts",
     "dependencies": [
       "chart.js",

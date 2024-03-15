@@ -3,6 +3,7 @@ import { type ComponentProps } from "solid-js"
 import { ComponentPreview } from "~/components/component-preview"
 import { ComponentSource } from "~/components/component-source"
 import { CopyButton } from "~/components/copy-button"
+import { Alert, AlertDescription, AlertTitle } from "~/registry/ui/alert"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
 
 export const MDXComponents = {
@@ -116,5 +117,8 @@ export const MDXComponents = {
     />
   ),
   ComponentPreview,
-  ComponentSource
+  ComponentSource,
+  Alert,
+  AlertTitle,
+  AlertDescription
 }

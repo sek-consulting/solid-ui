@@ -54,6 +54,12 @@ const ui: Registry = [
     files: ["ui/card.tsx"]
   },
   {
+    name: "carousel",
+    type: "ui",
+    dependencies: ["embla-carousel-solid"],
+    files: ["ui/carousel.tsx"]
+  },
+  {
     name: "charts",
     type: "ui",
     dependencies: ["chart.js", "@solid-primitives/refs"],
@@ -305,6 +311,36 @@ const examples: Registry = [
     type: "example",
     registryDependencies: ["card"],
     files: ["example/card-demo.tsx"]
+  },
+  {
+    name: "carousel-demo",
+    type: "example",
+    files: ["example/carousel-demo.tsx"]
+  },
+  {
+    name: "carousel-size-demo",
+    type: "example",
+    files: ["example/carousel-size-demo.tsx"]
+  },
+  {
+    name: "carousel-api-demo",
+    type: "example",
+    files: ["example/carousel-api-demo.tsx"]
+  },
+  {
+    name: "carousel-orientation-demo",
+    type: "example",
+    files: ["example/carousel-orientation-demo.tsx"]
+  },
+  {
+    name: "carousel-plugin-demo",
+    type: "example",
+    files: ["example/carousel-plugin-demo.tsx"]
+  },
+  {
+    name: "carousel-spacing-demo",
+    type: "example",
+    files: ["example/carousel-spacing-demo.tsx"]
   },
   {
     name: "area-chart-demo",

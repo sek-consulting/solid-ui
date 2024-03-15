@@ -1,6 +1,12 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:solid/recommended", "plugin:tailwindcss/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:solid/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
   "plugins": ["solid", "tailwindcss"],
   "rules": {
     "tailwindcss/no-custom-classname": "off",

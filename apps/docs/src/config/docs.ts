@@ -113,6 +113,10 @@ export const docsConfig: Config = {
           href: "/docs/components/card"
         },
         {
+          title: "Carousel",
+          href: "/docs/components/carousel"
+        },
+        {
           title: "Charts",
           href: "/docs/components/charts"
         },

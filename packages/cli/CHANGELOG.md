@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.6.0
+
+### Minor Changes
+
+- [`c9c4eda`](https://github.com/sek-consulting/solid-ui/commit/c9c4eda96deda495801cdf35a595157f53a11d61) Thanks [@sek-consulting](https://github.com/sek-consulting)! - tailwind preset moved back into config & dark-mode fix for root.css
+
 ## 0.5.0
 
 ### Minor Changes

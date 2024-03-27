@@ -1,5 +1,6 @@
 import { For } from "solid-js"
-import { useLocation } from "solid-start"
+
+import { useLocation } from "@solidjs/router"
 
 import { docsConfig } from "~/config/docs"
 import { cn } from "~/lib/utils"
@@ -10,7 +11,7 @@ export default function Sidebar() {
 
   return (
     <aside class="hidden w-full md:block">
-      <div class="py-6 pl-8 pr-6 lg:py-8">
+      <div class="relative h-full overflow-hidden py-6 pr-6 lg:py-8">
         <For each={docsConfig.sidebarNav}>
           {(category) => (
             <div class="pb-4">

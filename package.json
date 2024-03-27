@@ -39,6 +39,7 @@
     "turbo": "^1.12.4"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
     "valibot": "^0.28.1"
   }
 }

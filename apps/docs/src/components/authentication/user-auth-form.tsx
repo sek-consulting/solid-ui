@@ -2,11 +2,12 @@ import type { SubmitHandler } from "@modular-forms/solid"
 import { createForm } from "@modular-forms/solid"
 import { TbBrandGithub, TbLoader } from "solid-icons/tb"
 
-import type { AuthForm } from "./validations/auth"
 import { Button } from "~/registry/ui/button"
 import { Grid } from "~/registry/ui/grid"
 import { Input } from "~/registry/ui/input"
 import { Label } from "~/registry/ui/label"
+
+import type { AuthForm } from "./validations/auth"
 
 export function UserAuthForm() {
   const [authForm, { Form, Field }] = createForm<AuthForm>()

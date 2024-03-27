@@ -4,11 +4,11 @@ import { buttonVariants } from "~/registry/ui/button"
 
 export function HeroSection() {
   return (
-    <section class="flex max-w-[980px] flex-col items-start gap-2 px-4 py-8 md:pt-12">
-      <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
+    <section class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+      <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
         Build your component library.
       </h1>
-      <p class="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
+      <p class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
         Beautifully designed components that you can copy and paste into your apps. Accessible.
         Customizable. Open Source.
       </p>
@@ -23,7 +23,7 @@ export function HeroSection() {
         </a>
         , just inspired by him.
       </p>
-      <div class="flex w-full items-center space-x-4 pb-8 pt-4 md:pb-10">
+      <div class="flex w-full items-center justify-center space-x-4 py-4 md:pb-1">
         <a class={buttonVariants()} href="/docs/introduction">
           Get Started
         </a>

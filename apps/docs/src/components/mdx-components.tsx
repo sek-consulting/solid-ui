@@ -1,9 +1,11 @@
 import { type ComponentProps } from "solid-js"
 
+import { cn } from "~/lib/utils"
 import { ComponentPreview } from "~/components/component-preview"
 import { ComponentSource } from "~/components/component-source"
 import { CopyButton } from "~/components/copy-button"
 import { Alert, AlertDescription, AlertTitle } from "~/registry/ui/alert"
+import { Callout } from "~/registry/ui/callout"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
 
 export const MDXComponents = {
@@ -68,27 +70,25 @@ export const MDXComponents = {
   code: (props: ComponentProps<"code">) => {
     return (
       <code
-        class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm group-[&.code]:bg-zinc-900 group-[&.code]:p-0"
+        class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm group-[&.code]:p-0"
         {...props}
       />
     )
   },
-  pre: (
-    props: ComponentProps<"pre"> & {
-      "data-meta"?: boolean
-      "data-package"?: boolean
-    }
-  ) => {
+  pre: (props: ComponentProps<"pre">) => {
     let preRef: HTMLPreElement | undefined
     return (
       <div class="group relative">
         <pre
           ref={preRef}
-          class="code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-900 py-4"
-          {...props}
-        />
+          class={cn(
+            "code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-[#2e3440ff] py-4"
+          )}
+        >
+          {props.children}
+        </pre>
         <CopyButton
-          class="absolute right-2 top-2 hidden text-[#D8DEE9] group-hover:block"
+          class="absolute right-4 top-4 hover:bg-[#24283a]"
           content={preRef?.querySelector("code")?.innerText ?? ""}
         />
       </div>
@@ -116,9 +116,16 @@ export const MDXComponents = {
       {...props}
     />
   ),
+  LinkedCard: (props: ComponentProps<"a">) => (
+    <a
+      class="flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10"
+      {...props}
+    />
+  ),
   ComponentPreview,
   ComponentSource,
   Alert,
   AlertTitle,
-  AlertDescription
+  AlertDescription,
+  Callout
 }

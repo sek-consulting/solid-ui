@@ -69,6 +69,7 @@ export const ROOT_CSS = `@tailwind base;
     --radius: 0.5rem;
   }
 
+  .dark,
   [data-kb-theme="dark"] {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -133,12 +134,12 @@ export const ROOT_CSS = `@tailwind base;
   }
 }`
 
-export const TAILWIND_PRESET = `const {fontFamily} = require("tailwindcss/defaultTheme")
+export const TAILWIND_CONFIG = `const {fontFamily} = require("tailwindcss/defaultTheme")
 
 /**@type {import("tailwindcss").Config} */
 module.exports = {
   darkMode: ["class", '[data-kb-theme="dark"]'],
-  content: ["./src/**/*.{js,jsx,md,mdx,ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -235,13 +236,4 @@ module.exports = {
     }
   },
   plugins: [require("tailwindcss-animate")]
-}`
-
-export const TAILWIND_CONFIG = `/** @type {import('tailwindcss').Config} */
-export default {
-  darkMode: ["class"],
-  content: [
-	"./src/**/*.{html,js,jsx,md,mdx,ts,tsx}"
-  ],
-  presets: [require("./ui.preset.js")]
 }`

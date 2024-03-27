@@ -33,8 +33,8 @@ type PaginationLinkProps = {
 } & Pick<ButtonProps, "size"> &
   ComponentProps<"a">
 
-const PaginationLink: Component<PaginationLinkProps> = (props) => {
-  props = mergeProps({ size: "icon" } as PaginationLinkProps, props)
+const PaginationLink: Component<PaginationLinkProps> = (rawProps) => {
+  const props = mergeProps({ size: "icon" } as PaginationLinkProps, rawProps)
   const [, rest] = splitProps(props, ["class", "isActive", "size"])
   return (
     <PaginationItem>

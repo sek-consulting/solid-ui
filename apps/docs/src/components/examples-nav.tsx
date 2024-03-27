@@ -1,7 +1,7 @@
 import type { ComponentProps } from "solid-js"
-import { splitProps, For } from "solid-js"
-import { A, useLocation } from "solid-start"
+import { For, splitProps } from "solid-js"
 
+import { useLocation } from "@solidjs/router"
 import { TbArrowRight } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
@@ -32,19 +32,21 @@ export function ExamplesNav(props: ComponentProps<"div">) {
   return (
     <div class="relative">
       <div class={cn("mb-4 flex items-center", props.class)} {...rest}>
-        <For each={examples}>{(example) => (
-          <A
-            href={example.href}
-            class={cn(
-              "flex items-center px-4",
-              location.pathname?.startsWith(example.href)
-                ? "font-bold text-primary"
-                : "font-medium text-muted-foreground"
-            )}
-          >
-            {example.name}
-          </A>
-        )}</For>
+        <For each={examples}>
+          {(example) => (
+            <a
+              href={example.href}
+              class={cn(
+                "flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
+                location.pathname?.startsWith(example.href)
+                  ? "bg-muted font-medium text-primary"
+                  : "text-muted-foreground"
+              )}
+            >
+              {example.name}
+            </a>
+          )}
+        </For>
       </div>
       <ExampleCodeLink
         pathname={location.pathname === "/" ? "/examples/dashboard" : location.pathname}
@@ -61,7 +63,7 @@ export function ExampleCodeLink(props: { pathname: string | null }) {
   }
 
   return (
-    <A
+    <a
       href={example?.code}
       target="_blank"
       rel="nofollow"
@@ -69,6 +71,6 @@ export function ExampleCodeLink(props: { pathname: string | null }) {
     >
       View code
       <TbArrowRight class="ml-1 size-4" />
-    </A>
+    </a>
   )
 }

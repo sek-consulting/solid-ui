@@ -3,8 +3,8 @@ import { createSignal, For } from "solid-js"
 
 import { As } from "@kobalte/core"
 
-import { Icons } from "~/components/icons"
 import { docsConfig } from "~/config/docs"
+import { Icons } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "~/registry/ui/sheet"
 
@@ -30,23 +30,31 @@ export function MobileNav() {
         </MobileLink>
         <div class="my-4 h-[calc(100vh-8rem)] overflow-y-auto pb-10 pl-6">
           <div class="flex flex-col space-y-3">
-            <For each={docsConfig.mainNav}>{(item) => (
-              <MobileLink href={item.href} onOpenChange={setOpen}>
-                {item.title}
-              </MobileLink>
-            )}</For>
+            <For each={docsConfig.mainNav}>
+              {(item) => (
+                <MobileLink href={item.href} onOpenChange={setOpen}>
+                  {item.title}
+                </MobileLink>
+              )}
+            </For>
           </div>
           <div class="flex flex-col space-y-2">
-            <For each={docsConfig.sidebarNav}>{(category) => (
-              <div class="flex flex-col space-y-3 pt-6">
-                <h4 class="font-medium">{category.title}</h4>
-                {<For each={category?.items}>{(item) => (
-                  <MobileLink href={item.href} onOpenChange={setOpen}>
-                    {item.title}
-                  </MobileLink>
-                )}</For>}
-              </div>
-            )}</For>
+            <For each={docsConfig.sidebarNav}>
+              {(category) => (
+                <div class="flex flex-col space-y-3 pt-6">
+                  <h4 class="font-medium">{category.title}</h4>
+                  {
+                    <For each={category?.items}>
+                      {(item) => (
+                        <MobileLink href={item.href} onOpenChange={setOpen}>
+                          {item.title}
+                        </MobileLink>
+                      )}
+                    </For>
+                  }
+                </div>
+              )}
+            </For>
           </div>
         </div>
       </SheetContent>

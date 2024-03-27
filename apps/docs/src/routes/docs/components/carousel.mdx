@@ -80,7 +80,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 
 <ComponentPreview name="carousel-size-demo" />
 
-```tsx title="Example" {4-6}
+```tsx {4-6}
 // 33% of the carousel width.
 <Carousel>
   <CarouselContent>
@@ -91,7 +91,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 </Carousel>
 ```
 
-```tsx title="Responsive" {4-6}
+```tsx {4-6}
 // 50% on small screens and 33% on larger screens.
 <Carousel>
   <CarouselContent>
@@ -107,20 +107,20 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.
 
 <Alert class="mt-6">
-<AlertDescription>
-  **Why:** I tried to use the `gap` property or a `grid` layout on the `
-  <CarouselContent />` but it required a lot of math and mental effort to get the
-  spacing right. I found `pl-[VALUE]` and `-ml-[VALUE]` utilities much easier to
-  use.
+  <AlertDescription>
+    **Why:** I tried to use the `gap` property or a `grid` layout on the `
+    <CarouselContent />` but it required a lot of math and mental effort to get the
+    spacing right. I found `pl-[VALUE]` and `-ml-[VALUE]` utilities much easier to
+    use.
 
-You can always adjust this in your own project if you need to.
+    You can always adjust this in your own project if you need to.
 
-</AlertDescription>
+  </AlertDescription>
 </Alert>
 
 <ComponentPreview name="carousel-spacing-demo" />
 
-```tsx title="Example" /-ml-4/ /pl-4/
+```tsx
 <Carousel>
   <CarouselContent class="-ml-4">
     <CarouselItem class="pl-4">...</CarouselItem>
@@ -130,7 +130,7 @@ You can always adjust this in your own project if you need to.
 </Carousel>
 ```
 
-```tsx title="Responsive" /-ml-2/ /pl-2/ /md:-ml-4/ /md:pl-4/
+```tsx
 <Carousel>
   <CarouselContent class="-ml-2 md:-ml-4">
     <CarouselItem class="pl-2 md:pl-4">...</CarouselItem>
@@ -146,7 +146,7 @@ Use the `orientation` prop to set the orientation of the carousel.
 
 <ComponentPreview name="carousel-orientation-demo" />
 
-```tsx/vertical | horizontal/
+```tsx
 <Carousel orientation="vertical | horizontal">
   <CarouselContent>
     <CarouselItem>...</CarouselItem>
@@ -160,11 +160,11 @@ Use the `orientation` prop to set the orientation of the carousel.
 
 You can pass options to the carousel using the `opts` prop. See the [Embla Carousel docs](https://www.embla-carousel.com/api/options/) for more information.
 
-```ts {2-5}
+```tsx {2-5}
 <Carousel
   opts={{
     align: "start",
-    loop: true,
+    loop: true
   }}
 >
   <CarouselContent>
@@ -181,7 +181,7 @@ Use a state and the `setApi` props to get an instance of the carousel API.
 
 <ComponentPreview name="carousel-api-demo" />
 
-```ts {1,4,22}
+```tsx {1,4,22}
 import type { CarouselApi } from "~/components/ui/carousel"
 
 export function Example() {
@@ -218,7 +218,7 @@ export function Example() {
 
 You can listen to events using the api instance from `setApi`.
 
-```tsx{1,4-16}
+```tsx {1,4-16}
 import type { CarouselApi } from "~/components/ui/carousel"
 
 export function Example() {
@@ -254,21 +254,21 @@ See the [Embla Carousel docs](https://www.embla-carousel.com/api/events/) for mo
 
 You can use the `plugins` prop to add plugins to the carousel.
 
-```t {1,6-10}
+```tsx {1,6-10}
 import Autoplay from "embla-carousel-autoplay"
 
 export function Example() {
-	return (
-		<Carousel
-			plugins={[
-				Autoplay({
-					delay: 2000,
-				}),
-			]}
-		>
-			// ...
-		</Carousel>
-	)
+  return (
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 2000
+        })
+      ]}
+    >
+      // ...
+    </Carousel>
+  )
 }
 ```
 

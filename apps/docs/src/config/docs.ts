@@ -30,7 +30,7 @@ export const docsConfig: Config = {
     },
     {
       title: "GitHub",
-      href: "https://github.com/sek-consulting/solid-ui-components",
+      href: "https://github.com/sek-consulting/solid-ui",
       external: true
     }
   ],
@@ -44,11 +44,11 @@ export const docsConfig: Config = {
         },
         {
           title: "Installation",
-          href: "/docs/installation"
+          href: "/docs/installation/overview"
         },
         {
           title: "Dark Mode",
-          href: "/docs/dark-mode"
+          href: "/docs/dark-mode/overview"
         },
         {
           title: "CLI",

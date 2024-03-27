@@ -1,5 +1,6 @@
 import { mergeProps } from "solid-js"
-import { Head, Link, Meta, Title } from "solid-start"
+
+import { Link, Meta, Title } from "@solidjs/meta"
 
 const BASE_URL = "https://www.solid-ui.com"
 
@@ -8,7 +9,7 @@ export interface HeadProps {
   description?: string
 }
 
-export function MetaHead(props: HeadProps) {
+export function MetaTags(props: HeadProps) {
   props = mergeProps(
     {
       title: "solid-ui",
@@ -17,7 +18,7 @@ export function MetaHead(props: HeadProps) {
     props
   )
   return (
-    <Head>
+    <>
       <Title>{props.title}</Title>
 
       <Meta charset="utf-8" />
@@ -51,6 +52,6 @@ export function MetaHead(props: HeadProps) {
       <Link rel="icon" type="image/svg+xml" href="/favicon.ico" />
       <Link rel="shortcut icon" href="/favicon-16x16.png" />
       <Link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    </Head>
+    </>
   )
 }

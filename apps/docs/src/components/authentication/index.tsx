@@ -1,10 +1,9 @@
-import { A } from "solid-start"
-
 import { TbCommand } from "solid-icons/tb"
 
-import { UserAuthForm } from "./user-auth-form"
 import { cn } from "~/lib/utils"
 import { buttonVariants } from "~/registry/ui/button"
+
+import { UserAuthForm } from "./user-auth-form"
 
 export function Authentication() {
   return (
@@ -26,7 +25,7 @@ export function Authentication() {
         />
       </div>
       <div class="container relative hidden h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        <A
+        <a
           href="/examples/authentication"
           class={cn(
             buttonVariants({ variant: "ghost" }),
@@ -34,7 +33,7 @@ export function Authentication() {
           )}
         >
           Login
-        </A>
+        </a>
         <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div class="absolute inset-0 bg-zinc-900" />
           <div class="relative z-20 flex items-center text-lg font-medium">
@@ -62,13 +61,13 @@ export function Authentication() {
             <UserAuthForm />
             <p class="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
-              <A href="/terms" class="underline underline-offset-4 hover:text-primary">
+              <a href="/terms" class="underline underline-offset-4 hover:text-primary">
                 Terms of Service
-              </A>{" "}
+              </a>{" "}
               and{" "}
-              <A href="/privacy" class="underline underline-offset-4 hover:text-primary">
+              <a href="/privacy" class="underline underline-offset-4 hover:text-primary">
                 Privacy Policy
-              </A>
+              </a>
               .
             </p>
           </div>

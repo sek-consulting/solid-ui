@@ -1,10 +1,10 @@
 import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
 import { cwd } from "process"
 
-import { text, confirm, log, spinner, select } from "@clack/prompts"
+import { confirm, log, select, spinner, text } from "@clack/prompts"
 import { parse } from "valibot"
 
-import { PROJECT_DEPS, ROOT_CSS, TAILWIND_CONFIG, TAILWIND_PRESET, UTILS } from "~/lib/constants"
+import { PROJECT_DEPS, ROOT_CSS, TAILWIND_CONFIG, UTILS } from "~/lib/constants"
 import { configSchema, type Config } from "~/lib/types"
 import { readJsonFile, runCommand } from "~/lib/utils"
 
@@ -15,7 +15,7 @@ export default async function init() {
   })
   const globalCssDir = await text({
     message: "Where is your global CSS file?",
-    initialValue: "src/root.css"
+    initialValue: "src/app.css"
   })
   const tailwindConfigDir = await text({
     message: "Where is your tailwind.config.js located?",
@@ -41,7 +41,6 @@ export default async function init() {
   saveConfig(config)
   writeTsconfig(config.aliases.path)
   writeUtils()
-  await writeUIPreset()
   await writeTailwindConfig(config.tailwind.config)
   await writeCSS(config.tailwind.css)
 
@@ -115,21 +114,6 @@ function saveConfig(config: Config) {
     if (error) log.error("There was an error while saving your preferences")
   })
   indicator.stop("ui.config.json successfully created!")
-}
-
-async function writeUIPreset() {
-  const indicator = spinner()
-  indicator.start("Writing Solid UI Components tailwind preset...")
-
-  try {
-    writeFile("ui.preset.js", TAILWIND_PRESET, (error) => {
-      if (error) log.error(`There was an error while writing the ui.preset.js: ${error}`)
-    })
-  } catch (error) {
-    log.error(`Sorry, something went wrong while getting the tailwind presets: ${error}`)
-  }
-
-  indicator.stop("ui.preset.js successfully created!")
 }
 
 async function writeTailwindConfig(tailwindConfigDir: string) {

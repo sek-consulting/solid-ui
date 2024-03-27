@@ -1,5 +1,5 @@
 import type { ComponentProps, ParentComponent } from "solid-js"
-import { mergeProps, Show, splitProps, type Component, type JSXElement } from "solid-js"
+import { For, mergeProps, Show, splitProps, type Component, type JSXElement } from "solid-js"
 
 import { cn } from "~/lib/utils"
 
@@ -32,20 +32,20 @@ const Timeline: Component<TimelineProps> = (rawProps) => {
         "padding-left": `${props.bulletSize / 2}px`
       }}
     >
-      {props.items.map((item, index) => {
-        return (
+      <For each={props.items}>
+        {(item, index) => (
           <TimelineItem
             title={item.title}
             description={item.description}
             bullet={item.bullet}
-            isLast={index === props.items.length - 1}
-            isActive={props.activeItem === -1 ? false : props.activeItem >= index + 1}
-            isActiveBullet={props.activeItem === -1 ? false : props.activeItem >= index}
+            isLast={index() === props.items.length - 1}
+            isActive={props.activeItem === -1 ? false : props.activeItem >= index() + 1}
+            isActiveBullet={props.activeItem === -1 ? false : props.activeItem >= index()}
             bulletSize={props.bulletSize}
             lineSize={props.lineSize}
           />
-        )
-      })}
+        )}
+      </For>
     </ul>
   )
 }

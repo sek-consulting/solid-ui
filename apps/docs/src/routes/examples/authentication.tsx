@@ -1,10 +1,10 @@
 import { Authentication } from "~/components/authentication"
-import { MetaHead } from "~/components/meta-head"
+import { MetaTags } from "~/components/meta-tags"
 
 export default function AuthenticationRoute() {
   return (
     <>
-      <MetaHead
+      <MetaTags
         title="Authentication"
         description="Authentication forms built using the components."
       />

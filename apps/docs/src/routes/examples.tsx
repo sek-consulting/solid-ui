@@ -1,13 +1,13 @@
-import { Outlet } from "solid-start"
+import { ParentProps } from "solid-js"
 
 import { ExamplesNav } from "~/components/examples-nav"
 import { HeroSection } from "~/components/hero-section"
-import { MetaHead } from "~/components/meta-head"
+import { MetaTags } from "~/components/meta-tags"
 
-export default function Examples() {
+export default function Examples(props: ParentProps) {
   return (
     <>
-      <MetaHead
+      <MetaTags
         title="Examples"
         description="Check out some examples app built using the components."
       />
@@ -16,7 +16,7 @@ export default function Examples() {
         <section>
           <ExamplesNav />
           <div class="overflow-hidden rounded-[0.5rem] border bg-background shadow">
-            <Outlet />
+            {props.children}
           </div>
         </section>
       </div>

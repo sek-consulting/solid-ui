@@ -1,6 +1,7 @@
-import { splitProps, type Component, type ComponentProps, mergeProps, createMemo } from "solid-js"
+import { createMemo, mergeProps, splitProps, type Component, type ComponentProps } from "solid-js"
 
 import { Index } from "~/__registry__"
+
 import { cn } from "~/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
 

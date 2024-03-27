@@ -27,7 +27,7 @@ const Command = <Option, OptGroup>(props: CommandProps<Option, OptGroup>) => {
     <ComboboxPrimitive.Root
       // force render list
       open
-      // @ts-ignore -- prevent select
+      // @ts-expect-error -- prevent select
       value=""
       allowsEmptyCollection
       class={cn(

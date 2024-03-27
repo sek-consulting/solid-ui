@@ -24,5 +24,9 @@ export function Overview() {
     ]
   }
 
-  return <BarChart class="h-[350px] w-full" data={chartData} />
+  return (
+    <div class="h-[350px] w-full">
+      <BarChart data={chartData} />
+    </div>
+  )
 }

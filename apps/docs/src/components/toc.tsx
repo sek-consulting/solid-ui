@@ -1,5 +1,6 @@
-import { type Component, For } from "solid-js"
-import { A, useLocation } from "solid-start"
+import { For, type Component } from "solid-js"
+
+import { useLocation } from "@solidjs/router"
 
 import { cn } from "~/lib/utils"
 
@@ -19,12 +20,12 @@ export const TableOfContents: Component<{ toc: TOC[] | undefined }> = (props) =>
         <For each={props.toc}>
           {(heading) => (
             <li class={cn("mt-0 pt-2", heading.depth === 3 && "pl-4")}>
-              <A
+              <a
                 class="inline-block text-muted-foreground no-underline transition-colors hover:text-foreground"
                 href={`${location.pathname}#${heading.slug}`}
               >
                 {heading.text}
-              </A>
+              </a>
             </li>
           )}
         </For>

@@ -1,31 +1,32 @@
 import { For } from "solid-js"
 
+import { docsConfig } from "~/config/docs"
+import { cn } from "~/lib/utils"
 import { Icons } from "~/components/icons"
 import { MobileNav } from "~/components/mobile-nav"
 import { ModeToggle } from "~/components/mode-toggle"
 import SearchBar from "~/components/search-bar"
-import { docsConfig } from "~/config/docs"
-import { cn } from "~/lib/utils"
 import { buttonVariants } from "~/registry/ui/button"
 
 export default function Navbar() {
   return (
-    <header class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
-      <div class="container flex h-14 items-center">
+    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div class="container flex h-14 max-w-screen-2xl items-center">
         <MobileNav />
+
         <div class="mr-4 hidden md:flex">
-          <a href="/" class="mr-6 flex items-center space-x-2 no-underline">
+          <a href="/" class="mr-6 flex items-center space-x-2">
             <Icons.logo class="size-6" />
             <span class="hidden font-bold sm:inline-block">solid-ui</span>
           </a>
-          <nav class="flex items-center space-x-6 text-sm font-medium">
+          <nav class="flex items-center gap-4 text-sm lg:gap-6">
             <For each={docsConfig.mainNav}>
               {(item) => (
                 <a
                   href={item.href}
                   target={item.external ? "_blank" : ""}
                   rel={item.external ? "noreferrer" : ""}
-                  class="hidden text-foreground/60 no-underline transition-colors hover:text-foreground/80 lg:block"
+                  class="text-foreground/60 transition-colors hover:text-foreground/80"
                 >
                   {item.title}
                 </a>
@@ -33,33 +34,28 @@ export default function Navbar() {
             </For>
           </nav>
         </div>
-        <div class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
-          <nav class="flex w-full items-center justify-between space-x-2 md:justify-end">
-            <div class="w-full flex-1 md:w-auto md:flex-none">
-              <SearchBar />
-            </div>
-            <div class="flex items-center">
-              <a
-                href="https://github.com/sek-consulting/solid-ui-components"
-                target="_blank"
-                rel="noreferrer"
+
+        <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+          <div class="w-full flex-1 md:w-auto md:flex-none">
+            <SearchBar />
+          </div>
+          <div class="flex items-center">
+            <a href="https://github.com/sek-consulting/solid-ui" target="_blank" rel="noreferrer">
+              <div
+                class={cn(
+                  buttonVariants({
+                    size: "sm",
+                    variant: "ghost"
+                  }),
+                  "w-9 px-0"
+                )}
               >
-                <div
-                  class={cn(
-                    buttonVariants({
-                      size: "sm",
-                      variant: "ghost"
-                    }),
-                    "w-9 px-0"
-                  )}
-                >
-                  <Icons.gitHub class="size-5" />
-                  <span class="sr-only">GitHub</span>
-                </div>
-              </a>
-              <ModeToggle />
-            </div>
-          </nav>
+                <Icons.gitHub class="size-5" />
+                <span class="sr-only">GitHub</span>
+              </div>
+            </a>
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </header>

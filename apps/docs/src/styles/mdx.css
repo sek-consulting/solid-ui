@@ -3,7 +3,7 @@
 }
 
 [data-rehype-pretty-code-fragment] [data-highlighted-line] {
-  @apply bg-zinc-700/50;
+  @apply bg-white/10;
 }
 
 [data-rehype-pretty-code-fragment] [data-line] {

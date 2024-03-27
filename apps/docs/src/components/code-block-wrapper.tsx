@@ -1,4 +1,4 @@
-import { mergeProps, type Component, type ComponentProps, splitProps, createSignal } from "solid-js"
+import { createSignal, mergeProps, splitProps, type Component, type ComponentProps } from "solid-js"
 
 import { As } from "@kobalte/core"
 

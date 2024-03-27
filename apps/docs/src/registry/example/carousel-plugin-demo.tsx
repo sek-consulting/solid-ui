@@ -12,7 +12,7 @@ import {
 } from "~/registry/ui/carousel"
 
 export default function CarouselPluginDemo() {
-  let plugin = Autoplay({ delay: 2000, stopOnInteraction: true })
+  const plugin = Autoplay({ delay: 2000, stopOnInteraction: true })
 
   return (
     <Carousel

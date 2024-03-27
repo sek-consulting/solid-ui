@@ -1,8 +1,8 @@
-import { For, Show, createResource, createSignal, onMount } from "solid-js"
+import { createResource, createSignal, For, onMount, Show } from "solid-js"
 import { isServer } from "solid-js/web"
-import { A } from "solid-start"
 
 import { As } from "@kobalte/core"
+import type { SearchRes } from "~/types/search"
 import ShoSho from "shosho"
 import { TbCommand, TbHash, TbSearch } from "solid-icons/tb"
 
@@ -17,7 +17,6 @@ import {
   DialogTrigger
 } from "~/registry/ui/dialog"
 import { Input } from "~/registry/ui/input"
-import type { SearchRes } from "~/types/search"
 
 const shortcut = new ShoSho()
 
@@ -91,9 +90,9 @@ export default function SearchBar() {
                 }, 1)
 
                 return (
-                  <A
+                  <a
                     href={item.document.uri}
-                    onclick={() => setIsOpen(false)}
+                    onClick={() => setIsOpen(false)}
                     class="duration-400 animate-in fade-in-0"
                   >
                     <div class="grid grid-cols-[25px_1fr] items-start rounded p-4 hover:bg-black/30 dark:hover:bg-white/30">
@@ -109,7 +108,7 @@ export default function SearchBar() {
                         Th
                       </div>
                     </div>
-                  </A>
+                  </a>
                 )
               }}
             </For>

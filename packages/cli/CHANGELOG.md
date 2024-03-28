@@ -1,5 +1,13 @@
 # @solid-ui/cli
 
+## 0.6.1
+
+### Patch Changes
+
+- [`f49337f`](https://github.com/sek-consulting/solid-ui/commit/f49337f62546618d873c69eed7f6509185bafbe6) Thanks [@sek-consulting](https://github.com/sek-consulting)! - switch from div to kobalte skeleton primitive
+
+- [`f49337f`](https://github.com/sek-consulting/solid-ui/commit/f49337f62546618d873c69eed7f6509185bafbe6) Thanks [@sek-consulting](https://github.com/sek-consulting)! - inlined icons to get rid of huge solid-icon package
+
 ## 0.6.0
 
 ### Minor Changes

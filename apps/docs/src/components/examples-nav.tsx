@@ -2,9 +2,10 @@ import type { ComponentProps } from "solid-js"
 import { For, splitProps } from "solid-js"
 
 import { useLocation } from "@solidjs/router"
-import { TbArrowRight } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
+
+import { IconArrowRight } from "./icons"
 
 const examples = [
   {
@@ -70,7 +71,7 @@ export function ExampleCodeLink(props: { pathname: string | null }) {
       class="absolute right-0 top-0 hidden items-center rounded-[0.5rem] text-sm font-medium md:flex"
     >
       View code
-      <TbArrowRight class="ml-1 size-4" />
+      <IconArrowRight class="ml-1 size-4" />
     </a>
   )
 }

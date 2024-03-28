@@ -4,7 +4,7 @@ const ui: Registry = [
   {
     name: "accordion",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/accordion.tsx"]
   },
   {
@@ -28,7 +28,7 @@ const ui: Registry = [
   {
     name: "badge-delta",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     registryDependencies: ["badge"],
     files: ["ui/badge-delta.tsx"]
   },
@@ -68,26 +68,26 @@ const ui: Registry = [
   {
     name: "checkbox",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/checkbox.tsx"]
   },
   {
     name: "combobox",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/combobox.tsx"]
   },
   {
     name: "command",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     registryDependencies: ["dialog"],
     files: ["ui/command.tsx"]
   },
   {
     name: "context-menu",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/context-menu.tsx"]
   },
   {
@@ -104,7 +104,7 @@ const ui: Registry = [
   {
     name: "dialog",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/dialog.tsx"]
   },
   {
@@ -116,7 +116,7 @@ const ui: Registry = [
   {
     name: "dropdown-menu",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/dropdown-menu.tsx"]
   },
   {
@@ -159,7 +159,6 @@ const ui: Registry = [
   {
     name: "pagination",
     type: "ui",
-    dependencies: ["solid-icons"],
     files: ["ui/pagination.tsx"]
   },
   {
@@ -178,13 +177,13 @@ const ui: Registry = [
   {
     name: "radio-group",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/radio-group.tsx"]
   },
   {
     name: "select",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/select.tsx"]
   },
   {
@@ -196,7 +195,7 @@ const ui: Registry = [
   {
     name: "sheet",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/sheet.tsx"]
   },
   {
@@ -240,7 +239,7 @@ const ui: Registry = [
   {
     name: "toast",
     type: "ui",
-    dependencies: ["@kobalte/core", "solid-icons"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/toast.tsx"]
   },
   {

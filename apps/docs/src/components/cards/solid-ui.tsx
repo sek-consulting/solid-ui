@@ -1,6 +1,6 @@
 import { As } from "@kobalte/core"
-import { TbBrandTypescript, TbChevronDown, TbPlus, TbStar } from "solid-icons/tb"
 
+import { IconBrandTypescript, IconChevronDown, IconPlus, IconStar } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/registry/ui/card"
 import {
@@ -28,14 +28,14 @@ export function SolidUI() {
         </div>
         <div class="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
           <Button variant="secondary" class="px-3 shadow-none">
-            <TbStar class="mr-2 size-4" />
+            <IconStar class="mr-2 size-4" />
             Star
           </Button>
           <Separator orientation="vertical" class="h-[20px]" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <As component={Button} variant={"secondary"} class="px-2 shadow-none">
-                <TbChevronDown class="size-4 text-secondary-foreground" />
+                <IconChevronDown class="size-4 text-secondary-foreground" />
               </As>
             </DropdownMenuTrigger>
 
@@ -51,7 +51,7 @@ export function SolidUI() {
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <TbPlus class="mr-2 size-4" /> Create list
+                <IconPlus class="mr-2 size-4" /> Create list
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -60,11 +60,11 @@ export function SolidUI() {
       <CardContent>
         <div class="flex space-x-4 text-sm text-muted-foreground">
           <div class="flex items-center">
-            <TbBrandTypescript class="mr-1 size-3 text-sky-400" />
+            <IconBrandTypescript class="mr-1 size-3 text-sky-400" />
             TypeScript
           </div>
           <div class="flex items-center">
-            <TbStar class="mr-1 size-3" />
+            <IconStar class="mr-1 size-3" />
             160
           </div>
           <div>Updated November 2023</div>

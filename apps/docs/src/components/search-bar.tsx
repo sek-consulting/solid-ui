@@ -4,7 +4,6 @@ import { isServer } from "solid-js/web"
 import { As } from "@kobalte/core"
 import type { SearchRes } from "~/types/search"
 import ShoSho from "shosho"
-import { TbCommand, TbHash, TbSearch } from "solid-icons/tb"
 
 import { Badge } from "~/registry/ui/badge"
 import { Button } from "~/registry/ui/button"
@@ -17,6 +16,8 @@ import {
   DialogTrigger
 } from "~/registry/ui/dialog"
 import { Input } from "~/registry/ui/input"
+
+import { IconCommand, IconHash, IconSearch } from "./icons"
 
 const shortcut = new ShoSho()
 
@@ -53,12 +54,12 @@ export default function SearchBar() {
           class="relative w-full justify-between space-x-4 text-muted-foreground"
         >
           <div class="flex items-center space-x-2">
-            <TbSearch />
+            <IconSearch />
             <span>Search...</span>
           </div>
 
           <Badge variant="secondary" class="flex items-center ">
-            <TbCommand size={16} />
+            <IconCommand />
             <span>K</span>
           </Badge>
         </As>
@@ -96,7 +97,7 @@ export default function SearchBar() {
                     class="duration-400 animate-in fade-in-0"
                   >
                     <div class="grid grid-cols-[25px_1fr] items-start rounded p-4 hover:bg-black/30 dark:hover:bg-white/30">
-                      <TbHash size={20} />
+                      <IconHash class="size-5" />
                       <div class="space-y-1">
                         <p
                           class="text-base font-medium leading-none text-black dark:text-white"

@@ -1,5 +1,4 @@
-import { TbBrandGithub } from "solid-icons/tb"
-
+import { IconBrandGithub } from "~/components/icons"
 import { buttonVariants } from "~/registry/ui/button"
 
 export function HeroSection() {
@@ -33,7 +32,7 @@ export function HeroSection() {
           target="_blank"
           rel="noreferrer"
         >
-          <TbBrandGithub class="mr-2 size-4" /> GitHub
+          <IconBrandGithub class="mr-2 size-4" /> GitHub
         </a>
       </div>
     </section>

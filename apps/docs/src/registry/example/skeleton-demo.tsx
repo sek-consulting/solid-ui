@@ -3,10 +3,10 @@ import { Skeleton } from "~/registry/ui/skeleton"
 export default function SkeletonDemo() {
   return (
     <div class="flex items-center space-x-4">
-      <Skeleton class="size-12 rounded-full" />
+      <Skeleton height={48} circle animate={false} />
       <div class="space-y-2">
-        <Skeleton class="h-4 w-[250px]" />
-        <Skeleton class="h-4 w-[200px]" />
+        <Skeleton height={16} width={250} radius={10} />
+        <Skeleton height={16} width={200} radius={10} />
       </div>
     </div>
   )

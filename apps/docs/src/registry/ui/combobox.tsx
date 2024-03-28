@@ -2,7 +2,6 @@ import type { Component } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Combobox as ComboboxPrimitive } from "@kobalte/core"
-import { TbCheck, TbSelector } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
 
@@ -27,7 +26,20 @@ const ComboboxItemIndicator: Component<ComboboxPrimitive.ComboboxItemIndicatorPr
   const [, rest] = splitProps(props, ["children"])
   return (
     <ComboboxPrimitive.ItemIndicator {...rest}>
-      {props.children ?? <TbCheck />}
+      {props.children ?? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-4"
+        >
+          <path d="M5 12l5 5l10 -10" />
+        </svg>
+      )}
     </ComboboxPrimitive.ItemIndicator>
   )
 }
@@ -75,7 +87,23 @@ const ComboboxTrigger: Component<ComboboxPrimitive.ComboboxTriggerProps> = (prop
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <ComboboxPrimitive.Trigger class={cn("size-4 opacity-50", props.class)} {...rest}>
-      <ComboboxPrimitive.Icon>{props.children ?? <TbSelector />}</ComboboxPrimitive.Icon>
+      <ComboboxPrimitive.Icon>
+        {props.children ?? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4"
+          >
+            <path d="M8 9l4 -4l4 4" />
+            <path d="M16 15l-4 4l-4 -4" />
+          </svg>
+        )}
+      </ComboboxPrimitive.Icon>
     </ComboboxPrimitive.Trigger>
   )
 }
@@ -86,7 +114,7 @@ const ComboboxContent: Component<ComboboxPrimitive.ComboboxContentProps> = (prop
     <ComboboxPrimitive.Portal>
       <ComboboxPrimitive.Content
         class={cn(
-          "relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
+          "relative z-50 min-w-32 overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
           props.class
         )}
         {...rest}

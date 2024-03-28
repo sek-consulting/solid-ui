@@ -5,7 +5,6 @@ import { Portal } from "solid-js/web"
 import { toaster, Toast as ToastPrimitive } from "@kobalte/core"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
-import { TbX } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
 
@@ -67,7 +66,19 @@ const ToastClose: Component<ToastPrimitive.ToastCloseButtonProps> = (props) => {
       )}
       {...rest}
     >
-      <TbX class="size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M18 6l-12 12" />
+        <path d="M6 6l12 12" />
+      </svg>
     </ToastPrimitive.CloseButton>
   )
 }

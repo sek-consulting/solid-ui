@@ -1,7 +1,13 @@
 import { createEffect, createSignal, onCleanup, type JSXElement } from "solid-js"
 
-import { TbCalendar, TbMail, TbMoodSmile, TbRocket, TbSettings, TbUser } from "solid-icons/tb"
-
+import {
+  IconCalendar,
+  IconMail,
+  IconRocket,
+  IconSettings,
+  IconSmile,
+  IconUser
+} from "~/components/icons"
 import {
   CommandDialog,
   CommandHeading,
@@ -24,23 +30,23 @@ type List = {
   options: ListOption[]
 }
 
-export default function CommandDialogDemo() {
+export default function CommandDemo() {
   const data: List[] = [
     {
       label: "Suggestions",
       options: [
         {
-          icon: <TbCalendar class="mr-2 size-4" />,
+          icon: <IconCalendar class="mr-2 size-4" />,
           label: "Calendar",
           value: "Calendar"
         },
         {
-          icon: <TbMoodSmile class="mr-2 size-4" />,
+          icon: <IconSmile class="mr-2 size-4" />,
           label: "Search emoji",
           value: "Search emoji"
         },
         {
-          icon: <TbRocket class="mr-2 size-4" />,
+          icon: <IconRocket class="mr-2 size-4" />,
           label: "Launch",
           value: "Launch"
         }
@@ -50,19 +56,19 @@ export default function CommandDialogDemo() {
       label: "Settings",
       options: [
         {
-          icon: <TbUser class="mr-2 size-4" />,
+          icon: <IconUser class="mr-2 size-4" />,
           label: "Profile",
           value: "Profile",
           shortcut: <CommandItemShortcut>⌘P</CommandItemShortcut>
         },
         {
-          icon: <TbMail class="mr-2 size-4" />,
+          icon: <IconMail class="mr-2 size-4" />,
           label: "Mail",
           value: "Mail",
           shortcut: <CommandItemShortcut>⌘B</CommandItemShortcut>
         },
         {
-          icon: <TbSettings class="mr-2 size-4" />,
+          icon: <IconSettings class="mr-2 size-4" />,
           label: "Setting",
           value: "Setting",
           shortcut: <CommandItemShortcut>⌘S</CommandItemShortcut>

@@ -1,5 +1,4 @@
-import { TbBrandApple, TbBrandPaypal, TbCreditCard } from "solid-icons/tb"
-
+import { IconBrandApple, IconBrandPaypal, IconCreditCard } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import {
   Card,
@@ -29,7 +28,7 @@ export function PaymentMethod() {
               html-for="card"
               class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
             >
-              <TbCreditCard class="mb-3 size-6" />
+              <IconCreditCard class="mb-3 size-6" />
               Card
             </Label>
           </div>
@@ -39,7 +38,7 @@ export function PaymentMethod() {
               html-for="paypal"
               class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
             >
-              <TbBrandPaypal class="mb-3 size-6" />
+              <IconBrandPaypal class="mb-3 size-6" />
               Paypal
             </Label>
           </div>
@@ -49,7 +48,7 @@ export function PaymentMethod() {
               html-for="apple"
               class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
             >
-              <TbBrandApple class="mb-3 size-6" />
+              <IconBrandApple class="mb-3 size-6" />
               Apple
             </Label>
           </div>

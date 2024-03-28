@@ -2,7 +2,6 @@ import type { Component } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Select as SelectPrimitive } from "@kobalte/core"
-import { TbCheck, TbChevronDown } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
 
@@ -22,7 +21,20 @@ const SelectTrigger: Component<SelectPrimitive.SelectTriggerProps> = (props) => 
     >
       {props.children}
       <SelectPrimitive.Icon>
-        <TbChevronDown class="size-4 opacity-50" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-4 opacity-50"
+        >
+          <path d="M6 9l6 6l6 -6" />
+        </svg>
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -34,7 +46,7 @@ const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => 
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         class={cn(
-          "relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
+          "relative z-50 min-w-32 overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
           props.class
         )}
         {...rest}
@@ -57,7 +69,19 @@ const SelectItem: Component<SelectPrimitive.SelectItemProps> = (props) => {
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <TbCheck class="size-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 12l5 5l10 -10" />
+          </svg>
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemLabel>{props.children}</SelectPrimitive.ItemLabel>

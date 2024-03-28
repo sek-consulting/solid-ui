@@ -1,8 +1,6 @@
 import type { Component, ComponentProps } from "solid-js"
 import { mergeProps, splitProps } from "solid-js"
 
-import { TbChevronLeft, TbChevronRight, TbDots } from "solid-icons/tb"
-
 import { cn } from "~/lib/utils"
 import { buttonVariants, type ButtonProps } from "~/registry/ui/button"
 
@@ -62,7 +60,18 @@ const PaginationPrevious: typeof PaginationLink = (props) => {
       class={cn("gap-1 pl-2.5", props.class)}
       {...rest}
     >
-      <TbChevronLeft class="size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M15 6l-6 6l6 6" />
+      </svg>
       <span>Previous</span>
     </PaginationLink>
   )
@@ -78,7 +87,18 @@ const PaginationNext: typeof PaginationLink = (props) => {
       {...rest}
     >
       <span>Next</span>
-      <TbChevronRight class="size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M9 6l6 6l-6 6" />
+      </svg>
     </PaginationLink>
   )
 }
@@ -87,7 +107,20 @@ const PaginationEllipsis: Component<ComponentProps<"span">> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <span aria-hidden class={cn("flex size-9 items-center justify-center", props.class)} {...rest}>
-      <TbDots class="size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+        <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      </svg>
       <span class="sr-only">More pages</span>
     </span>
   )

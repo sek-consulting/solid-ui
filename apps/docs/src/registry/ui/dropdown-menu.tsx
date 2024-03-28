@@ -2,7 +2,6 @@ import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
-import { TbCheck, TbChevronRight, TbCircle } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
 
@@ -20,7 +19,7 @@ const DropdownMenuContent: Component<DropdownMenuPrimitive.DropdownMenuContentPr
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
         class={cn(
-          "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] animate-content-hide overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[expanded]:animate-content-show",
+          "z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] animate-content-hide overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[expanded]:animate-content-show",
           props.class
         )}
         {...rest}
@@ -84,7 +83,18 @@ const DropdownMenuSubTrigger: Component<DropdownMenuPrimitive.DropdownMenuSubTri
       {...rest}
     >
       {props.children}
-      <TbChevronRight class="ml-auto size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="ml-auto size-4"
+      >
+        <path d="M9 6l6 6l-6 6" />
+      </svg>
     </DropdownMenuPrimitive.SubTrigger>
   )
 }
@@ -96,7 +106,7 @@ const DropdownMenuSubContent: Component<DropdownMenuPrimitive.DropdownMenuSubCon
   return (
     <DropdownMenuPrimitive.SubContent
       class={cn(
-        "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
+        "z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
         props.class
       )}
       {...rest}
@@ -118,7 +128,18 @@ const DropdownMenuCheckboxItem: Component<DropdownMenuPrimitive.DropdownMenuChec
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <TbCheck class="size-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4"
+          >
+            <path d="M5 12l5 5l10 -10" />
+          </svg>
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {props.children}
@@ -156,7 +177,18 @@ const DropdownMenuRadioItem: Component<DropdownMenuPrimitive.DropdownMenuRadioIt
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <TbCircle class="size-2 fill-current" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-2 fill-current"
+          >
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+          </svg>
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {props.children}

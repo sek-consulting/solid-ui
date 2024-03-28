@@ -2,7 +2,7 @@ import { For } from "solid-js"
 
 import { docsConfig } from "~/config/docs"
 import { cn } from "~/lib/utils"
-import { Icons } from "~/components/icons"
+import { IconBrandGithub, IconLogo } from "~/components/icons"
 import { MobileNav } from "~/components/mobile-nav"
 import { ModeToggle } from "~/components/mode-toggle"
 import SearchBar from "~/components/search-bar"
@@ -16,7 +16,7 @@ export default function Navbar() {
 
         <div class="mr-4 hidden md:flex">
           <a href="/" class="mr-6 flex items-center space-x-2">
-            <Icons.logo class="size-6" />
+            <IconLogo class="size-6" />
             <span class="hidden font-bold sm:inline-block">solid-ui</span>
           </a>
           <nav class="flex items-center gap-4 text-sm lg:gap-6">
@@ -50,7 +50,7 @@ export default function Navbar() {
                   "w-9 px-0"
                 )}
               >
-                <Icons.gitHub class="size-5" />
+                <IconBrandGithub class="size-5" />
                 <span class="sr-only">GitHub</span>
               </div>
             </a>

@@ -11,7 +11,6 @@ import {
 
 import type { CreateEmblaCarouselType } from "embla-carousel-solid"
 import createEmblaCarousel from "embla-carousel-solid"
-import { TbArrowLeft, TbArrowRight } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
 import { Button, ButtonProps } from "~/registry/ui/button"
@@ -203,7 +202,20 @@ const CarouselPrevious: Component<CarouselButtonProps> = (rawProps) => {
       onClick={scrollPrev}
       {...rest}
     >
-      <TbArrowLeft class="size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M5 12l14 0" />
+        <path d="M5 12l6 6" />
+        <path d="M5 12l6 -6" />
+      </svg>
       <span class="sr-only">Previous slide</span>
     </Button>
   )
@@ -229,7 +241,20 @@ const CarouselNext: Component<CarouselButtonProps> = (rawProps) => {
       onClick={scrollNext}
       {...rest}
     >
-      <TbArrowRight class="size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M5 12l14 0" />
+        <path d="M13 18l6 -6" />
+        <path d="M13 6l6 6" />
+      </svg>
       <span class="sr-only">Next slide</span>
     </Button>
   )

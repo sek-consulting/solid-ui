@@ -1,6 +1,5 @@
-import { TbCommand } from "solid-icons/tb"
-
 import { cn } from "~/lib/utils"
+import { IconCommand } from "~/components/icons"
 import { buttonVariants } from "~/registry/ui/button"
 
 import { UserAuthForm } from "./user-auth-form"
@@ -37,7 +36,7 @@ export function Authentication() {
         <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div class="absolute inset-0 bg-zinc-900" />
           <div class="relative z-20 flex items-center text-lg font-medium">
-            <TbCommand class="mr-2 size-6" />
+            <IconCommand class="mr-2 size-6" />
             Acme Inc
           </div>
           <div class="relative z-20 mt-auto">

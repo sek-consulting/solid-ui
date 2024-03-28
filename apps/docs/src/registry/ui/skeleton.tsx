@@ -1,11 +1,18 @@
-import type { Component, ComponentProps } from "solid-js"
+import type { Component } from "solid-js"
 import { splitProps } from "solid-js"
+
+import { Skeleton as SkeletonPrimitive } from "@kobalte/core"
 
 import { cn } from "~/lib/utils"
 
-const Skeleton: Component<ComponentProps<"div">> = (props) => {
+const Skeleton: Component<SkeletonPrimitive.SkeletonProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <div class={cn("animate-pulse rounded-md bg-primary/10", props.class)} {...rest} />
+  return (
+    <SkeletonPrimitive.Root
+      class={cn("bg-primary/10 data-[animate='true']:animate-pulse ", props.class)}
+      {...rest}
+    />
+  )
 }
 
 export { Skeleton }

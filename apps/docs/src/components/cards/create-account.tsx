@@ -1,5 +1,3 @@
-import { TbBrandGithub, TbBrandGoogle } from "solid-icons/tb"
-
 import { Button } from "~/registry/ui/button"
 import {
   Card,
@@ -12,6 +10,8 @@ import {
 import { Input } from "~/registry/ui/input"
 import { Label } from "~/registry/ui/label"
 
+import { IconBrandGithub, IconBrandGoogle } from "../icons"
+
 export function CreateAccount() {
   return (
     <Card>
@@ -23,11 +23,11 @@ export function CreateAccount() {
       <CardContent class="grid gap-4">
         <div class="grid grid-cols-2 gap-6">
           <Button variant="outline">
-            <TbBrandGithub class="mr-2 size-4" />
+            <IconBrandGithub class="mr-2 size-4" />
             Github
           </Button>
           <Button variant="outline">
-            <TbBrandGoogle class="mr-2 size-4" />
+            <IconBrandGoogle class="mr-2 size-4" />
             Google
           </Button>
         </div>

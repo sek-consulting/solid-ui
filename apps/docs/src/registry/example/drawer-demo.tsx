@@ -1,7 +1,6 @@
 import { createSignal } from "solid-js"
 
-import { TbMinus, TbPlus } from "solid-icons/tb"
-
+import { IconMinus, IconPlus } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import {
   Drawer,
@@ -41,7 +40,7 @@ export default function DrawerDemo() {
                 onClick={() => onClick(-10)}
                 disabled={goal() <= 200}
               >
-                <TbMinus class="size-4" />
+                <IconMinus class="size-4" />
                 <span class="sr-only">Decrease</span>
               </Button>
               <div class="flex-1 text-center">
@@ -55,7 +54,7 @@ export default function DrawerDemo() {
                 onClick={() => onClick(10)}
                 disabled={goal() >= 400}
               >
-                <TbPlus class="size-4" />
+                <IconPlus class="size-4" />
                 <span class="sr-only">Increase</span>
               </Button>
             </div>

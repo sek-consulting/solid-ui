@@ -1,7 +1,7 @@
 import type { SubmitHandler } from "@modular-forms/solid"
 import { createForm } from "@modular-forms/solid"
-import { TbBrandGithub, TbLoader } from "solid-icons/tb"
 
+import { IconBrandGithub, IconLoader } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import { Grid } from "~/registry/ui/grid"
 import { Input } from "~/registry/ui/input"
@@ -31,7 +31,7 @@ export function UserAuthForm() {
             )}
           </Field>
           <Button type="submit" disabled={authForm.submitting}>
-            {authForm.submitting && <TbLoader class="mr-2 size-4 animate-spin" />}
+            {authForm.submitting && <IconLoader class="mr-2 size-4 animate-spin" />}
             Login
           </Button>
         </Grid>
@@ -46,9 +46,9 @@ export function UserAuthForm() {
       </div>
       <Button variant="outline" type="button" disabled={authForm.submitting}>
         {authForm.submitting ? (
-          <TbLoader class="mr-2 size-4 animate-spin" />
+          <IconLoader class="mr-2 size-4 animate-spin" />
         ) : (
-          <TbBrandGithub class="mr-2 size-4" />
+          <IconBrandGithub class="mr-2 size-4" />
         )}{" "}
         Github
       </Button>

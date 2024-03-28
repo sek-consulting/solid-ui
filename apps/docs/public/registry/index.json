@@ -2,8 +2,7 @@
   {
     "name": "accordion",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/accordion.tsx"
@@ -43,8 +42,7 @@
   {
     "name": "badge-delta",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "registryDependencies": [
       "badge"
@@ -109,8 +107,7 @@
   {
     "name": "checkbox",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/checkbox.tsx"
@@ -120,8 +117,7 @@
   {
     "name": "combobox",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/combobox.tsx"
@@ -131,8 +127,7 @@
   {
     "name": "command",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "registryDependencies": [
       "dialog"
@@ -145,8 +140,7 @@
   {
     "name": "context-menu",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/context-menu.tsx"
@@ -173,8 +167,7 @@
   {
     "name": "dialog",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/dialog.tsx"
@@ -194,8 +187,7 @@
   {
     "name": "dropdown-menu",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/dropdown-menu.tsx"
@@ -259,9 +251,6 @@
   },
   {
     "name": "pagination",
-    "dependencies": [
-      "solid-icons"
-    ],
     "files": [
       "ui/pagination.tsx"
     ],
@@ -293,8 +282,7 @@
   {
     "name": "radio-group",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/radio-group.tsx"
@@ -304,8 +292,7 @@
   {
     "name": "select",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/select.tsx"
@@ -325,8 +312,7 @@
   {
     "name": "sheet",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/sheet.tsx"
@@ -394,8 +380,7 @@
   {
     "name": "toast",
     "dependencies": [
-      "@kobalte/core",
-      "solid-icons"
+      "@kobalte/core"
     ],
     "files": [
       "ui/toast.tsx"

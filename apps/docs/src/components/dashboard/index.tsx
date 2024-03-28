@@ -1,14 +1,14 @@
-import { TbDownload } from "solid-icons/tb"
-
-import { MainNav } from "~/components/dashboard/main-nav"
-import { Overview } from "~/components/dashboard/overview"
-import { RecentSales } from "~/components/dashboard/recent-sales"
-import { Search } from "~/components/dashboard/search"
-import { UserNav } from "~/components/dashboard/user-nav"
+import { IconDownload } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/registry/ui/card"
 import { Grid } from "~/registry/ui/grid"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
+
+import { MainNav } from "./main-nav"
+import { Overview } from "./overview"
+import { RecentSales } from "./recent-sales"
+import { Search } from "./search"
+import { UserNav } from "./user-nav"
 
 export function Dashboard() {
   return (
@@ -44,7 +44,7 @@ export function Dashboard() {
             <h2 class="text-3xl font-bold tracking-tight">Dashboard</h2>
             <div class="flex items-center space-x-2">
               <Button>
-                <TbDownload class="mr-2 size-4" />
+                <IconDownload class="mr-2 size-4" />
                 Download
               </Button>
             </div>

@@ -2,9 +2,9 @@ import type { Component } from "solid-js"
 import { createEffect, createSignal, on, Show, splitProps } from "solid-js"
 
 import { As } from "@kobalte/core"
-import { TbCheck, TbCopy } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
+import { IconCheck, IconCopy } from "~/components/icons"
 import type { ToggleProps } from "~/registry/ui/toggle"
 import { Toggle } from "~/registry/ui/toggle"
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/registry/ui/tooltip"
@@ -47,8 +47,8 @@ const CopyButton: Component<CopyButtonProps> = (props) => {
             )}
             {...rest}
           >
-            <Show when={isCopied()} fallback={<TbCopy class="size-4" />}>
-              <TbCheck class="size-4" />
+            <Show when={isCopied()} fallback={<IconCopy class="size-4" />}>
+              <IconCheck class="size-4" />
             </Show>
           </As>
         </TooltipTrigger>

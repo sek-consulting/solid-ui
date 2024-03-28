@@ -1,11 +1,11 @@
-import { CookieSettings } from "~/components/cards/cookie-settings"
-import { CreateAccount } from "~/components/cards/create-account"
-import { Notifications } from "~/components/cards/notifications"
-import { PaymentMethod } from "~/components/cards/payment-method"
-import { ReportAnIssue } from "~/components/cards/report-an-issue"
-import { ShareDocument } from "~/components/cards/share-document"
-import { SolidUI } from "~/components/cards/solid-ui"
-import { TeamMembers } from "~/components/cards/team-members"
+import { CookieSettings } from "./cookie-settings"
+import { CreateAccount } from "./create-account"
+import { Notifications } from "./notifications"
+import { PaymentMethod } from "./payment-method"
+import { ReportAnIssue } from "./report-an-issue"
+import { ShareDocument } from "./share-document"
+import { SolidUI } from "./solid-ui"
+import { TeamMembers } from "./team-members"
 
 export function Cards() {
   return (

@@ -2,7 +2,6 @@ import type { Component, ComponentProps } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { ContextMenu as ContextMenuPrimitive } from "@kobalte/core"
-import { TbCheck, TbChevronRight, TbCircle } from "solid-icons/tb"
 
 import { cn } from "~/lib/utils"
 
@@ -20,7 +19,7 @@ const ContextMenuContent: Component<ContextMenuPrimitive.ContextMenuContentProps
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         class={cn(
-          "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
+          "z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
           props.class
         )}
         {...rest}
@@ -69,7 +68,18 @@ const ContextMenuSubTrigger: Component<ContextMenuPrimitive.ContextMenuSubTrigge
       {...rest}
     >
       {props.children}
-      <TbChevronRight class="ml-auto size-4" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="ml-auto size-4"
+      >
+        <path d="M9 6l6 6l-6 6" />
+      </svg>
     </ContextMenuPrimitive.SubTrigger>
   )
 }
@@ -81,7 +91,7 @@ const ContextMenuSubContent: Component<ContextMenuPrimitive.ContextMenuSubConten
   return (
     <ContextMenuPrimitive.SubContent
       class={cn(
-        "z-50 min-w-[8rem] origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
+        "z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
         props.class
       )}
       {...rest}
@@ -103,7 +113,18 @@ const ContextMenuCheckboxItem: Component<ContextMenuPrimitive.ContextMenuCheckbo
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <ContextMenuPrimitive.ItemIndicator>
-          <TbCheck class="size-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4"
+          >
+            <path d="M5 12l5 5l10 -10" />
+          </svg>
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {props.children}
@@ -139,7 +160,18 @@ const ContextMenuRadioItem: Component<ContextMenuPrimitive.ContextMenuRadioItemP
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <ContextMenuPrimitive.ItemIndicator>
-          <TbCircle class="size-2 fill-current" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-2 fill-current"
+          >
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+          </svg>
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {props.children}

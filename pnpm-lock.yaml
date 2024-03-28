@@ -82,8 +82,8 @@ importers:
         specifier: ^0.13.1
         version: 0.13.1(solid-js@1.8.16)
       '@solidjs/start':
-        specifier: ^0.7.7
-        version: 0.7.7(solid-js@1.8.16)(vinxi@0.3.11)(vite@5.2.6)
+        specifier: ^1.0.0-rc.0
+        version: 1.0.0-rc.0(solid-js@1.8.16)(vinxi@0.3.11)(vite@5.2.6)
       '@vinxi/plugin-mdx':
         specifier: ^3.7.1
         version: 3.7.1(@mdx-js/mdx@2.3.0)
@@ -2332,20 +2332,6 @@ packages:
       picomatch: 2.3.1
     dev: false
 
-  /@rollup/pluginutils@5.0.2:
-    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@types/estree': 1.0.1
-      estree-walker: 2.0.2
-      picomatch: 2.3.1
-    dev: false
-
   /@rollup/pluginutils@5.1.0(rollup@4.13.0):
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
     engines: {node: '>=14.0.0'}
@@ -2619,8 +2605,8 @@ packages:
       solid-js: 1.8.16
     dev: false
 
-  /@solidjs/start@0.7.7(solid-js@1.8.16)(vinxi@0.3.11)(vite@5.2.6):
-    resolution: {integrity: sha512-903IEGuyZ2X1UBpYzpMyJXXycpU4WMpsqMgz/GT5H97frh3eAd7wgPLfC6FNA/gcNiJg43a23e4brSY7xzTFbw==}
+  /@solidjs/start@1.0.0-rc.0(solid-js@1.8.16)(vinxi@0.3.11)(vite@5.2.6):
+    resolution: {integrity: sha512-wimF6eqYx8L1XC1MMxwruOgS+BGmv6nEnCa1Fd/VPcYaSF8BKBvgIQYNJALl8QUjfJ7lMK4b41uKAXz451vNNA==}
     dependencies:
       '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.11)
       '@vinxi/server-components': 0.3.3(vinxi@0.3.11)
@@ -2633,7 +2619,7 @@ packages:
       seroval: 1.0.5
       seroval-plugins: 1.0.5(seroval@1.0.5)
       shikiji: 0.9.19
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
       terracotta: 1.0.5(solid-js@1.8.16)
       vite-plugin-inspect: 0.7.35(vite@5.2.6)
       vite-plugin-solid: 2.9.1(solid-js@1.8.16)(vite@5.2.6)
@@ -2681,8 +2667,8 @@ packages:
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
     dependencies:
-      '@babel/parser': 7.23.0
-      '@babel/types': 7.23.0
+      '@babel/parser': 7.24.1
+      '@babel/types': 7.24.0
       '@types/babel__generator': 7.6.4
       '@types/babel__template': 7.4.1
       '@types/babel__traverse': 7.20.1
@@ -3064,10 +3050,10 @@ packages:
       vinxi: ^0.3.10
     dependencies:
       '@babel/parser': 7.24.1
-      acorn: 8.10.0
-      acorn-jsx: 5.3.2(acorn@8.10.0)
+      acorn: 8.11.3
+      acorn-jsx: 5.3.2(acorn@8.11.3)
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.10.0)
+      acorn-typescript: 1.4.13(acorn@8.11.3)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.4
@@ -3094,9 +3080,9 @@ packages:
       vinxi: ^0.3.10
     dependencies:
       '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.11)
-      acorn: 8.10.0
+      acorn: 8.11.3
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.10.0)
+      acorn-typescript: 1.4.13(acorn@8.11.3)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.4
@@ -3109,9 +3095,9 @@ packages:
       vinxi: ^0.3.10
     dependencies:
       '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.11)
-      acorn: 8.10.0
+      acorn: 8.11.3
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.10.0)
+      acorn-typescript: 1.4.13(acorn@8.11.3)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.4
@@ -3144,6 +3130,14 @@ packages:
     dependencies:
       acorn: 8.10.0
 
+  /acorn-jsx@5.3.2(acorn@8.11.3):
+    resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
+    peerDependencies:
+      acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
+    dependencies:
+      acorn: 8.11.3
+    dev: false
+
   /acorn-loose@8.4.0:
     resolution: {integrity: sha512-M0EUka6rb+QC4l9Z3T0nJEzNOO7JcoJlYMrBlyBCiFSXRyxjLKayd4TbQs2FDRWQU1h9FR7QVNHt+PEaoNL5rQ==}
     engines: {node: '>=0.4.0'}
@@ -3151,12 +3145,12 @@ packages:
       acorn: 8.11.3
     dev: false
 
-  /acorn-typescript@1.4.13(acorn@8.10.0):
+  /acorn-typescript@1.4.13(acorn@8.11.3):
     resolution: {integrity: sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==}
     peerDependencies:
       acorn: '>=8.9.0'
     dependencies:
-      acorn: 8.10.0
+      acorn: 8.11.3
     dev: false
 
   /acorn@8.10.0:
@@ -4805,15 +4799,6 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /fs-extra@11.1.1:
-    resolution: {integrity: sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==}
-    engines: {node: '>=14.14'}
-    dependencies:
-      graceful-fs: 4.2.11
-      jsonfile: 6.1.0
-      universalify: 2.0.0
-    dev: false
-
   /fs-extra@11.2.0:
     resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
     engines: {node: '>=14.14'}
@@ -5886,7 +5871,7 @@ packages:
     resolution: {integrity: sha512-6saXbRDA1HMkqbsvHOU6HBjCVgZT460qheRkLhJQHWAbhXoWESI3Kn/dGGXyKs15FFKR85jsUqFx2sMK0wy/5g==}
     dependencies:
       '@babel/parser': 7.24.1
-      '@babel/types': 7.23.0
+      '@babel/types': 7.24.0
       recast: 0.23.4
     dev: false
 
@@ -8113,11 +8098,6 @@ packages:
       is-plain-obj: 4.1.0
     dev: true
 
-  /source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
-    engines: {node: '>=0.10.0'}
-    dev: false
-
   /source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
@@ -9264,9 +9244,9 @@ packages:
         optional: true
     dependencies:
       '@antfu/utils': 0.7.5
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
       debug: 4.3.4
-      fs-extra: 11.1.1
+      fs-extra: 11.2.0
       open: 9.1.0
       picocolors: 1.0.0
       sirv: 2.0.3

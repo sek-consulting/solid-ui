@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vinxi dev",
-    "build": "vinxi build",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" vinxi build",
     "build:registry": "tsx ./src/scripts/build-registry.ts",
     "start": "vinxi start",
     "release": "changeset version",
@@ -20,7 +20,7 @@
     "@solid-primitives/refs": "^1.0.8",
     "@solidjs/meta": "^0.29.3",
     "@solidjs/router": "^0.13.1",
-    "@solidjs/start": "^0.7.7",
+    "@solidjs/start": "^1.0.0-rc.0",
     "@vinxi/plugin-mdx": "^3.7.1",
     "chart.js": "^4.4.2",
     "class-variance-authority": "^0.7.0",

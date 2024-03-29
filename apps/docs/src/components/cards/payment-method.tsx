@@ -26,7 +26,7 @@ export function PaymentMethod() {
             <RadioGroupItem value="card" id="card" class="peer sr-only" />
             <Label
               html-for="card"
-              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[checked]:border-primary"
             >
               <IconCreditCard class="mb-3 size-6" />
               Card
@@ -36,7 +36,7 @@ export function PaymentMethod() {
             <RadioGroupItem value="paypal" id="paypal" class="peer sr-only" />
             <Label
               html-for="paypal"
-              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[checked]:border-primary"
             >
               <IconBrandPaypal class="mb-3 size-6" />
               Paypal
@@ -46,7 +46,7 @@ export function PaymentMethod() {
             <RadioGroupItem value="apple" id="apple" class="peer sr-only" />
             <Label
               html-for="apple"
-              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[checked]:border-primary"
             >
               <IconBrandApple class="mb-3 size-6" />
               Apple

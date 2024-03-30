@@ -42,7 +42,7 @@ const SheetOverlay: Component<SheetPrimitive.DialogOverlayProps> = (props) => {
   return (
     <SheetPrimitive.Overlay
       class={cn(
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-100 data-[closed=]:animate-out data-[closed=]:fade-out data-[expanded]:fade-in",
+        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-100 data-[closed=]:animate-out data-[closed=]:fade-out data-[expanded=]:fade-in",
         props.class
       )}
       {...rest}

@@ -42,7 +42,7 @@ const CopyButton: Component<CopyButtonProps> = (props) => {
             pressed={isCopied()}
             disabled={isCopied()}
             class={cn(
-              "z-10 size-6 p-2 text-zinc-50 transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+              "z-10 size-6 p-0 text-zinc-50 transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
               props.class
             )}
             {...rest}

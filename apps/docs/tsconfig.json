@@ -9,7 +9,7 @@
     "jsxImportSource": "solid-js",
     "allowJs": true,
     "strict": true,
-    "types": ["vinxi/client", "vite/client"],
+    "types": ["vinxi/client"],
     "isolatedModules": true,
     "baseUrl": "./",
     "paths": {

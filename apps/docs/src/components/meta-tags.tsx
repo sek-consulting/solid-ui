@@ -9,13 +9,13 @@ export interface HeadProps {
   description?: string
 }
 
-export function MetaTags(props: HeadProps) {
-  props = mergeProps(
+export function MetaTags(rawProps: HeadProps) {
+  const props = mergeProps(
     {
       title: "solid-ui",
       description: "Beautifully designed components built with Kobalte and Tailwind CSS."
     },
-    props
+    rawProps
   )
   return (
     <>

@@ -4,17 +4,19 @@ import { cn } from "~/lib/utils"
 import { ComponentPreview } from "~/components/component-preview"
 import { ComponentSource } from "~/components/component-source"
 import { CopyButton } from "~/components/copy-button"
+import { MDXHeader } from "~/components/mdx-header"
 import { Alert, AlertDescription, AlertTitle } from "~/registry/ui/alert"
 import { Callout } from "~/registry/ui/callout"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
 
 export const MDXComponents = {
   h1: (props: ComponentProps<"h1">) => {
-    return <h1 class="font-heading mt-2 scroll-m-20 text-4xl font-bold" {...props} />
+    return <h1 data-toc="" class="font-heading mt-2 scroll-m-20 text-4xl font-bold" {...props} />
   },
   h2: (props: ComponentProps<"h2">) => {
     return (
       <h2
+        data-toc=""
         class="font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
         {...props}
       />
@@ -22,22 +24,38 @@ export const MDXComponents = {
   },
   h3: (props: ComponentProps<"h3">) => {
     return (
-      <h3 class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight" {...props} />
+      <h3
+        data-toc=""
+        class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+        {...props}
+      />
     )
   },
   h4: (props: ComponentProps<"h4">) => {
     return (
-      <h4 class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight" {...props} />
+      <h4
+        data-toc=""
+        class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+        {...props}
+      />
     )
   },
   h5: (props: ComponentProps<"h5">) => {
     return (
-      <h5 class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight" {...props} />
+      <h5
+        data-toc=""
+        class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+        {...props}
+      />
     )
   },
   h6: (props: ComponentProps<"h6">) => {
     return (
-      <h6 class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight" {...props} />
+      <h6
+        data-toc=""
+        class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+        {...props}
+      />
     )
   },
   a: (props: ComponentProps<"a">) => {
@@ -122,6 +140,7 @@ export const MDXComponents = {
       {...props}
     />
   ),
+  MDXHeader,
   ComponentPreview,
   ComponentSource,
   Alert,

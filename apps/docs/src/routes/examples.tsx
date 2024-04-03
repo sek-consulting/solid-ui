@@ -1,10 +1,10 @@
-import { ParentProps } from "solid-js"
+import { RouteProps } from "@solidjs/router"
 
 import { ExamplesNav } from "~/components/examples-nav"
 import { HeroSection } from "~/components/hero-section"
 import { MetaTags } from "~/components/meta-tags"
 
-export default function Examples(props: ParentProps) {
+export default function Examples(props: RouteProps<string>) {
   return (
     <>
       <MetaTags

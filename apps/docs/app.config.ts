@@ -3,13 +3,10 @@ import { defineConfig } from "@solidjs/start/config"
 import pkg from "@vinxi/plugin-mdx"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
-import remarkFrontmatter from "remark-frontmatter"
 import remarkGfm from "remark-gfm"
 import { getHighlighter } from "shiki"
 
 import rehypeComponent from "./src/lib/mdx/component"
-import remarkSolidFrontmatter from "./src/lib/mdx/frontmatter"
-import rehypeHeadings from "./src/lib/mdx/headings"
 
 const { default: mdx } = pkg
 
@@ -25,12 +22,10 @@ export default defineConfig({
         jsx: true,
         jsxImportSource: "solid-js",
         providerImportSource: "solid-mdx",
-        remarkPlugins: [remarkGfm, remarkFrontmatter, remarkSolidFrontmatter],
+        remarkPlugins: [remarkGfm],
         rehypePlugins: [
           rehypeSlug,
-          rehypeHeadings,
           rehypeComponent,
-          //[rehypePrettyCode, { theme: "nord" }],
           [
             rehypePrettyCode,
             {

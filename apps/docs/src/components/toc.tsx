@@ -1,4 +1,13 @@
-import { createEffect, createSignal, For, on, Setter, Suspense } from "solid-js"
+import {
+  Accessor,
+  createEffect,
+  createSignal,
+  For,
+  on,
+  onCleanup,
+  Setter,
+  Suspense
+} from "solid-js"
 import { isServer } from "solid-js/web"
 
 import { useLocation } from "@solidjs/router"
@@ -32,6 +41,67 @@ function updateHeadings(setter: Setter<TocItem[]>) {
   )
 }
 
+function getHeadingsFromToc(tableOfContents: TocItem[]) {
+  return tableOfContents.map(({ slug }) => {
+    const el = document.getElementById(slug)
+
+    if (!el) {
+      return
+    }
+
+    const style = window.getComputedStyle(el)
+    const scrollMt = parseFloat(style.scrollMarginTop) + 1
+    const puffer = 50
+
+    const top = window.scrollY + el.getBoundingClientRect().top - scrollMt - puffer
+
+    return { slug, top }
+  })
+}
+
+function useCurrentSection(tableOfContents: Accessor<TocItem[] | undefined>) {
+  const [currentSection, setCurrentSection] = createSignal(tableOfContents()?.[0]?.slug)
+
+  createEffect(() => {
+    const toc = tableOfContents()
+
+    if (toc == null || toc.length === 0) {
+      return
+    }
+
+    const headings = getHeadingsFromToc(toc)
+
+    function onScroll() {
+      const top = window.scrollY
+      let current = headings[0]?.slug
+
+      for (const heading of headings) {
+        if (heading == null) {
+          continue
+        }
+
+        if (top >= heading.top) {
+          current = heading.slug
+        } else {
+          break
+        }
+      }
+      setCurrentSection(current)
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true })
+
+    onScroll()
+
+    onCleanup(() => {
+      // @ts-expect-error because reasons
+      window.removeEventListener("scroll", onScroll, { passive: true })
+    })
+  })
+
+  return currentSection
+}
+
 export function TableOfContents() {
   const location = useLocation()
 
@@ -46,8 +116,26 @@ export function TableOfContents() {
     )
   )
 
+  const currentSection = useCurrentSection(toc)
+
+  createEffect(
+    on(
+      () => currentSection(),
+      (currentSection) => {
+        if (isServer) return
+
+        const element = document.querySelector(`a[data-toc-slug="${currentSection}"]`)
+
+        element?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        })
+      }
+    )
+  )
+
   return (
-    <aside class="space-y-2">
+    <aside class="sticky top-24">
       <nav aria-labelledby="on-this-page-title">
         <Suspense>
           <h2 id="on-this-page-title" class="font-medium">
@@ -60,7 +148,10 @@ export function TableOfContents() {
                   <a
                     data-toc-slug={section.slug}
                     class={cn(
-                      "inline-block text-muted-foreground no-underline transition-colors hover:text-foreground"
+                      "inline-block text-muted-foreground no-underline transition-colors hover:text-foreground",
+                      section.slug === currentSection()
+                        ? "font-medium text-foreground"
+                        : "text-muted-foreground"
                     )}
                     href={`${location.pathname}#${section.slug}`}
                   >

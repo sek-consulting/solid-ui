@@ -134,9 +134,7 @@ export const ROOT_CSS = `@tailwind base;
   }
 }`
 
-export const TAILWIND_CONFIG = `const {fontFamily} = require("tailwindcss/defaultTheme")
-
-/**@type {import("tailwindcss").Config} */
+export const TAILWIND_CONFIG = `/**@type {import("tailwindcss").Config} */
 module.exports = {
   darkMode: ["class", '[data-kb-theme="dark"]'],
   content: ["./src/**/*.{ts,tsx}"],
@@ -205,9 +203,6 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)"
-      },
-      fontFamily: {
-        sans: ["Inter", ...fontFamily.sans]
       },
       keyframes: {
         "accordion-down": {

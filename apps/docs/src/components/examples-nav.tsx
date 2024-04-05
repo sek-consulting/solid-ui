@@ -29,7 +29,6 @@ export function ExamplesNav(props: ComponentProps<"div">) {
   const [, rest] = splitProps(props, ["class"])
   const location = useLocation()
 
-  console.log(location.pathname)
   return (
     <div class="relative">
       <div class={cn("mb-4 flex items-center", props.class)} {...rest}>

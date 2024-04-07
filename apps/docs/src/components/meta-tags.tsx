@@ -48,6 +48,7 @@ export function MetaTags(rawProps: HeadProps) {
       <Meta name="og:image:width" content="1200" />
       <Meta name="og:image:height" content="630" />
 
+      <Link rel="canonical" href={BASE_URL} />
       <Link rel="manifest" href={`${BASE_URL}/site.webmanifest`} />
       <Link rel="icon" type="image/svg+xml" href="/favicon.ico" />
       <Link rel="shortcut icon" href="/favicon-16x16.png" />

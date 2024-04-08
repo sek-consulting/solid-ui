@@ -1,5 +1,5 @@
 import type { Component, JSX } from "solid-js"
-import { splitProps } from "solid-js"
+import { Match, splitProps, Switch } from "solid-js"
 import { Portal } from "solid-js/web"
 
 import { toaster, Toast as ToastPrimitive } from "@kobalte/core"
@@ -32,7 +32,10 @@ const toastVariants = cva(
       variant: {
         default: "border bg-background text-foreground",
         destructive:
-          "destructive group border-destructive bg-destructive text-destructive-foreground"
+          "destructive group border-destructive bg-destructive text-destructive-foreground",
+        success: "success border-success-foreground bg-success text-success-foreground",
+        warning: "warning border-warning-foreground bg-warning text-warning-foreground",
+        error: "error border-error-foreground bg-error text-error-foreground"
       }
     },
     defaultVariants: {
@@ -61,7 +64,7 @@ const ToastClose: Component<ToastPrimitive.ToastCloseButtonProps> = (props) => {
   return (
     <ToastPrimitive.CloseButton
       class={cn(
-        "absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600",
+        "absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-destructive-foreground group-[.error]:text-error-foreground group-[.success]:text-success-foreground group-[.warning]:text-warning-foreground",
         props.class
       )}
       {...rest}
@@ -110,4 +113,29 @@ function showToast(props: {
   ))
 }
 
-export { Toaster, Toast, ToastClose, ToastTitle, ToastDescription, showToast }
+function showToastPromise<T, U>(
+  promise: Promise<T> | (() => Promise<T>),
+  options: {
+    loading?: JSX.Element
+    success?: (data: T) => JSX.Element
+    error?: (error: U) => JSX.Element
+    duration?: number
+  }
+) {
+  const variant: { [key in ToastPrimitive.ToastPromiseState]: ToastVariant } = {
+    pending: "default",
+    fulfilled: "success",
+    rejected: "error"
+  }
+  return toaster.promise<T, U>(promise, (props) => (
+    <Toast toastId={props.toastId} variant={variant[props.state]} duration={options.duration}>
+      <Switch>
+        <Match when={props.state === "pending"}>{options.loading}</Match>
+        <Match when={props.state === "fulfilled"}>{options.success?.(props.data!)}</Match>
+        <Match when={props.state === "rejected"}>{options.error?.(props.error!)}</Match>
+      </Switch>
+    </Toast>
+  ))
+}
+
+export { Toaster, Toast, ToastClose, ToastTitle, ToastDescription, showToast, showToastPromise }

@@ -1,9 +1,9 @@
 import { Button } from "~/registry/ui/button"
-import { Toaster, showToast } from "~/registry/ui/toast"
+import { showToast, Toaster } from "~/registry/ui/toast"
 
 export default function ToastDemo() {
   return (
-    <div class="gap-2">
+    <div class="flex gap-2">
       <Button
         onClick={() =>
           showToast({
@@ -25,6 +25,42 @@ export default function ToastDemo() {
         }
       >
         Delete Event
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() =>
+          showToast({
+            title: "SUCCESS!",
+            description: "Monday, January 3rd at 6:00pm",
+            variant: "success"
+          })
+        }
+      >
+        Success
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() =>
+          showToast({
+            title: "WARING!",
+            description: "Monday, January 3rd at 6:00pm",
+            variant: "warning"
+          })
+        }
+      >
+        Warning
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() =>
+          showToast({
+            title: "ERROR!",
+            description: "Monday, January 3rd at 6:00pm",
+            variant: "error"
+          })
+        }
+      >
+        Error
       </Button>
       <Toaster />
     </div>

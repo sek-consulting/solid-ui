@@ -1,5 +1,13 @@
 # @solid-ui/cli
 
+## 0.6.2
+
+### Patch Changes
+
+- [`8263629`](https://github.com/sek-consulting/solid-ui/commit/82636296ef9414f47d6d8ed17a87cb9dc98da2af) Thanks [@sek-consulting](https://github.com/sek-consulting)! - remove font setup from tailwind config
+
+- [`a19848f`](https://github.com/sek-consulting/solid-ui/commit/a19848ffc175653d03fc821d8ad700d79db5a70a) Thanks [@sek-consulting](https://github.com/sek-consulting)! - add succes/warning/error variants to toast & showToastPromise()
+
 ## 0.6.1
 
 ### Patch Changes

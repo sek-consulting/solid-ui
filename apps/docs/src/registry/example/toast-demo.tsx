@@ -3,7 +3,7 @@ import { showToast, Toaster } from "~/registry/ui/toast"
 
 export default function ToastDemo() {
   return (
-    <div class="flex gap-2">
+    <div class="flex flex-wrap gap-2">
       <Button
         onClick={() =>
           showToast({

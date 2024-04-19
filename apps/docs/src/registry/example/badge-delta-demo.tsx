@@ -4,7 +4,7 @@ export default function BadgeDeltaDemo() {
   return (
     <div class="flex flex-col gap-4">
       <p>BadgeDelta with pre-defined status icons</p>
-      <div class="flex gap-2">
+      <div class="flex flex-wrap gap-2">
         <BadgeDelta deltaType="increase">text</BadgeDelta>
         <BadgeDelta deltaType="moderateIncrease">text</BadgeDelta>
         <BadgeDelta deltaType="unchanged">text</BadgeDelta>
@@ -12,7 +12,7 @@ export default function BadgeDeltaDemo() {
         <BadgeDelta deltaType="decrease">text</BadgeDelta>
       </div>
       <p>BadgeDelta without text</p>
-      <div class="flex gap-2">
+      <div class="flex flex-wrap gap-2">
         <BadgeDelta deltaType="increase" />
         <BadgeDelta deltaType="moderateIncrease" />
         <BadgeDelta deltaType="unchanged" />

@@ -40,7 +40,7 @@ const ui: Registry = [
   {
     name: "button",
     type: "ui",
-    dependencies: ["@kobalte/core"],
+    dependencies: ["@kobalte/core", "class-variance-authority"],
     files: ["ui/button.tsx"]
   },
   {

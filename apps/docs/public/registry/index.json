@@ -62,7 +62,8 @@
   {
     "name": "button",
     "dependencies": [
-      "@kobalte/core"
+      "@kobalte/core",
+      "class-variance-authority"
     ],
     "files": [
       "ui/button.tsx"

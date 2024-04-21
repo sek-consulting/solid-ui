@@ -252,6 +252,9 @@
   },
   {
     "name": "pagination",
+    "dependencies": [
+      "@kobalte/core"
+    ],
     "files": [
       "ui/pagination.tsx"
     ],

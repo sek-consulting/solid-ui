@@ -159,6 +159,7 @@ const ui: Registry = [
   {
     name: "pagination",
     type: "ui",
+    dependencies: ["@kobalte/core"],
     files: ["ui/pagination.tsx"]
   },
   {

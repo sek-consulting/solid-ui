@@ -1,6 +1,7 @@
 <MDXHeader
   title="Pagination"
   description="Pagination with page navigation, next and previous links."
+  docs="https://kobalte.dev/docs/core/components/pagination"
 />
 
 <ComponentPreview name="pagination-demo" />
@@ -25,6 +26,12 @@ npx solidui-cli@latest add pagination
 <TabsContent value="manual">
 <Steps>
 
+<Step>Install the following dependencies: </Step>
+
+```bash
+npm install @kobalte/core
+```
+
 <Step>Copy and paste the following code into your project: </Step>
 
 <ComponentSource name="pagination" />
@@ -39,30 +46,21 @@ npx solidui-cli@latest add pagination
 ```tsx
 import {
   Pagination,
-  PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
+  PaginationItems,
   PaginationNext,
   PaginationPrevious
 } from "~/components/ui/pagination"
 ```
 
 ```tsx
-<Pagination>
-  <PaginationContent>
-    <PaginationItem>
-      <PaginationPrevious href="#" />
-    </PaginationItem>
-    <PaginationItem>
-      <PaginationLink href="#">1</PaginationLink>
-    </PaginationItem>
-    <PaginationItem>
-      <PaginationEllipsis />
-    </PaginationItem>
-    <PaginationItem>
-      <PaginationNext href="#" />
-    </PaginationItem>
-  </PaginationContent>
+<Pagination
+  itemComponent={(props) => <PaginationItem page={props.page}>{props.page}</PaginationItem>}
+  ellipsisComponent={() => <PaginationEllipsis />}
+>
+  <PaginationPrevious />
+  <PaginationItems />
+  <PaginationNext />
 </Pagination>
 ```

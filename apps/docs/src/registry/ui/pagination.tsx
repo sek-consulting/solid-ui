@@ -1,63 +1,79 @@
-import type { Component, ComponentProps } from "solid-js"
-import { mergeProps, splitProps } from "solid-js"
+import type { Component } from "solid-js"
+import { splitProps } from "solid-js"
+
+import { Pagination as PaginationPrimitive } from "@kobalte/core"
 
 import { cn } from "~/lib/utils"
-import { buttonVariants, type ButtonProps } from "~/registry/ui/button"
+import { buttonVariants } from "~/registry/ui/button"
 
-const Pagination: Component<ComponentProps<"nav">> = (props) => {
+const Pagination: Component<PaginationPrimitive.PaginationRootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <nav
-      role="navigation"
-      aria-label="pagination"
-      class={cn("mx-auto flex w-full justify-center", props.class)}
+    <PaginationPrimitive.Root
+      class={cn("[&>*]:flex [&>*]:flex-row [&>*]:items-center [&>*]:gap-1", props.class)}
       {...rest}
     />
   )
 }
 
-const PaginationContent: Component<ComponentProps<"ul">> = (props) => {
+const PaginationItems = PaginationPrimitive.Items
+
+const PaginationItem: Component<PaginationPrimitive.PaginationItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <ul class={cn("flex flex-row items-center gap-1", props.class)} {...rest} />
-}
-
-const PaginationItem: Component<ComponentProps<"li">> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return <li class={cn("", props.class)} {...rest} />
-}
-
-type PaginationLinkProps = {
-  isActive?: boolean
-} & Pick<ButtonProps, "size"> &
-  ComponentProps<"a">
-
-const PaginationLink: Component<PaginationLinkProps> = (rawProps) => {
-  const props = mergeProps({ size: "icon" } as PaginationLinkProps, rawProps)
-  const [, rest] = splitProps(props, ["class", "isActive", "size"])
   return (
-    <PaginationItem>
-      <a
-        aria-current={props.isActive ? "page" : undefined}
-        class={cn(
-          buttonVariants({
-            variant: props.isActive ? "outline" : "ghost",
-            size: props.size
-          }),
-          props.class
-        )}
-        {...rest}
-      />
-    </PaginationItem>
+    <PaginationPrimitive.Item
+      class={cn(
+        buttonVariants({
+          variant: "ghost"
+        }),
+        "size-10 data-[current]:border"
+      )}
+      {...rest}
+    />
   )
 }
 
-const PaginationPrevious: typeof PaginationLink = (props) => {
+type EllipsisProps = Exclude<PaginationPrimitive.PaginationEllipsisProps, "children">
+
+const PaginationEllipsis: Component<EllipsisProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <PaginationLink
-      aria-label="Go to previous page"
-      size="default"
-      class={cn("gap-1 pl-2.5", props.class)}
+    <PaginationPrimitive.Ellipsis
+      class={cn("flex size-10 items-center justify-center", props.class)}
+      {...rest}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <circle cx="12" cy="12" r="1" />
+        <circle cx="19" cy="12" r="1" />
+        <circle cx="5" cy="12" r="1" />
+      </svg>
+      <span class="sr-only">More pages</span>
+    </PaginationPrimitive.Ellipsis>
+  )
+}
+
+type PreviousProps = Exclude<PaginationPrimitive.PaginationPreviousProps, "children">
+
+const PaginationPrevious: Component<PreviousProps> = (props) => {
+  const [, rest] = splitProps(props, ["class"])
+  return (
+    <PaginationPrimitive.Previous
+      class={cn(
+        buttonVariants({
+          variant: "ghost"
+        }),
+        "gap-1 pl-2.5",
+        props.class
+      )}
       {...rest}
     >
       <svg
@@ -73,17 +89,23 @@ const PaginationPrevious: typeof PaginationLink = (props) => {
         <path d="M15 6l-6 6l6 6" />
       </svg>
       <span>Previous</span>
-    </PaginationLink>
+    </PaginationPrimitive.Previous>
   )
 }
 
-const PaginationNext: typeof PaginationLink = (props) => {
+type NextProps = Exclude<PaginationPrimitive.PaginationNextProps, "children">
+
+const PaginationNext: Component<NextProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <PaginationLink
-      aria-label="Go to next page"
-      size="default"
-      class={cn("gap-1 pr-2.5", props.class)}
+    <PaginationPrimitive.Next
+      class={cn(
+        buttonVariants({
+          variant: "ghost"
+        }),
+        "gap-1 pl-2.5",
+        props.class
+      )}
       {...rest}
     >
       <span>Next</span>
@@ -99,39 +121,15 @@ const PaginationNext: typeof PaginationLink = (props) => {
       >
         <path d="M9 6l6 6l-6 6" />
       </svg>
-    </PaginationLink>
-  )
-}
-
-const PaginationEllipsis: Component<ComponentProps<"span">> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return (
-    <span aria-hidden class={cn("flex size-9 items-center justify-center", props.class)} {...rest}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="size-4"
-      >
-        <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-        <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-      </svg>
-      <span class="sr-only">More pages</span>
-    </span>
+    </PaginationPrimitive.Next>
   )
 }
 
 export {
   Pagination,
-  PaginationContent,
-  PaginationEllipsis,
+  PaginationItems,
   PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious
+  PaginationEllipsis,
+  PaginationPrevious,
+  PaginationNext
 }

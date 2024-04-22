@@ -2,6 +2,7 @@ type NavElement = {
   title: string
   href: string
   external?: boolean
+  status?: string
 }
 
 type NavCategory = {
@@ -178,7 +179,8 @@ export const docsConfig: Config = {
         },
         {
           title: "Pagination",
-          href: "/docs/components/pagination"
+          href: "/docs/components/pagination",
+          status: "updated"
         },
         {
           title: "Popover",

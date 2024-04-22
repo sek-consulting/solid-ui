@@ -11,7 +11,7 @@ export default function Sidebar() {
 
   return (
     <aside class="fixed top-16 z-30 hidden h-screen w-full shrink-0 md:sticky md:block">
-      <div class="relative h-full overflow-y-auto py-6 pr-6 lg:py-8">
+      <div class="relative h-full overflow-y-auto py-6 pr-6">
         <For each={docsConfig.sidebarNav}>
           {(category) => (
             <div class="pb-4">

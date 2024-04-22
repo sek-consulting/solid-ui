@@ -7,7 +7,6 @@ import { cn } from "~/lib/utils"
 
 export default function Sidebar() {
   const location = useLocation()
-  const pathname = location.pathname
 
   return (
     <aside class="hidden w-full md:block">
@@ -23,7 +22,7 @@ export default function Sidebar() {
                       href={item.href}
                       class={cn(
                         "group flex w-full items-center rounded-md border border-transparent px-2 py-1 no-underline hover:underline",
-                        pathname === item.href
+                        item.href === location.pathname
                           ? "font-medium text-foreground"
                           : "text-muted-foreground"
                       )}

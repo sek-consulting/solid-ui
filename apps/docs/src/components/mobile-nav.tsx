@@ -23,7 +23,7 @@ export function MobileNav() {
           <span class="sr-only">Toggle Menu</span>
         </As>
       </SheetTrigger>
-      <SheetContent size="xl" position="left" class="pr-0">
+      <SheetContent position="left" class="pr-0">
         <MobileLink href="/" onOpenChange={setOpen} class="flex items-center">
           <IconLogo class="mr-2 size-4" fill="currentColor" />
           <span class="font-bold">solid/ui</span>
@@ -67,5 +67,5 @@ interface MobileLinkProps extends ComponentProps<"a"> {
 }
 
 function MobileLink(props: MobileLinkProps) {
-  return <a {...props} />
+  return <a {...props} onClick={() => props.onOpenChange && props.onOpenChange(false)} />
 }

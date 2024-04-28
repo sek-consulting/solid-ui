@@ -96,6 +96,9 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      cmdk-solid:
+        specifier: ^1.0.1
+        version: 1.0.1(solid-js@1.8.16)
       corvu:
         specifier: ^0.4.8
         version: 0.4.8(solid-js@1.8.16)
@@ -2473,6 +2476,15 @@ packages:
     engines: {node: '>=18'}
     dev: false
 
+  /@solid-primitives/deep@0.2.8(solid-js@1.8.16):
+    resolution: {integrity: sha512-r+enqrL2oiDkJt7lYUYMVvKzcqVDAd4G/1OkLnXEibk5nIA635qNIuOxIAaCCP3GDAHKznaW3yc/vMG68lo8bQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/memo': 1.3.8(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
   /@solid-primitives/event-listener@2.3.0(solid-js@1.8.16):
     resolution: {integrity: sha512-0DS7DQZvCExWSpurVZC9/wjI8RmkhuOtWOy6Pp1Woq9ElMT9/bfjNpkwXsOwisLpcTqh9eUs17kp7jtpWcC20w==}
     peerDependencies:
@@ -2537,6 +2549,15 @@ packages:
       solid-js: ^1.6.12
     dependencies:
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.16)
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
+  /@solid-primitives/mutation-observer@1.1.17(solid-js@1.8.16):
+    resolution: {integrity: sha512-01skkiHtNWl2PQ0ugFzZHBMsHk870+bZSNK8Gvjcj3mZwBzAJPaUPzFswfM/V8Io1Cko86vfXl73vl9ddRYb5A==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
       solid-js: 1.8.16
     dev: false
@@ -3760,6 +3781,18 @@ packages:
   /cluster-key-slot@1.1.2:
     resolution: {integrity: sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /cmdk-solid@1.0.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-0BiQaIc4OUTssu5+q/7FwV+fN9EEWPt9Mc0LQYGSB6b+g26br8evCzgIEA0skjVmmlhSWdsEjFAo2/gbCGAc8Q==}
+    peerDependencies:
+      solid-js: ^1.8.0
+    dependencies:
+      '@kobalte/core': 0.12.6(solid-js@1.8.16)
+      '@kobalte/utils': 0.9.0(solid-js@1.8.16)
+      '@solid-primitives/deep': 0.2.8(solid-js@1.8.16)
+      '@solid-primitives/mutation-observer': 1.1.17(solid-js@1.8.16)
+      solid-js: 1.8.16
     dev: false
 
   /code-block-writer@12.0.0:

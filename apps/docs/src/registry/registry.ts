@@ -80,7 +80,7 @@ const ui: Registry = [
   {
     name: "command",
     type: "ui",
-    dependencies: ["@kobalte/core"],
+    dependencies: ["@kobalte/core", "cmdk-solid"],
     registryDependencies: ["dialog"],
     files: ["ui/command.tsx"]
   },

@@ -2,7 +2,7 @@ import { Resizable, ResizableHandle, ResizablePanel } from "../ui/resizable"
 
 export default function ResizableDemo() {
   return (
-    <Resizable orientation="horizontal" class="max-w-md rounded-lg border">
+    <Resizable class="max-w-md rounded-lg border">
       <ResizablePanel initialSize={0.25} class="overflow-hidden">
         <div class="flex h-[200px] items-center justify-center p-6">
           <span class="font-semibold">One</span>

@@ -139,7 +139,8 @@ export const docsConfig: Config = {
         },
         {
           title: "Command",
-          href: "/docs/components/command"
+          href: "/docs/components/command",
+          status: "updated"
         },
         {
           title: "Context Menu",

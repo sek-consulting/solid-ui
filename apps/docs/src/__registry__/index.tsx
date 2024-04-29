@@ -216,12 +216,26 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/progress")),
     files: ["registry/ui/progress.tsx"],
   },
+  "progress-circle": {
+    name: "progress-circle",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/progress-circle")),
+    files: ["registry/ui/progress-circle.tsx"],
+  },
   "radio-group": {
     name: "radio-group",
     type: "ui",
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/ui/radio-group")),
     files: ["registry/ui/radio-group.tsx"],
+  },
+  "resizable": {
+    name: "resizable",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/resizable")),
+    files: ["registry/ui/resizable.tsx"],
   },
   "select": {
     name: "select",
@@ -587,12 +601,26 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/progress-demo")),
     files: ["registry/example/progress-demo.tsx"],
   },
+  "progress-circle-demo": {
+    name: "progress-circle-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/progress-circle-demo")),
+    files: ["registry/example/progress-circle-demo.tsx"],
+  },
   "radio-group-demo": {
     name: "radio-group-demo",
     type: "example",
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/radio-group-demo")),
     files: ["registry/example/radio-group-demo.tsx"],
+  },
+  "resizable-demo": {
+    name: "resizable-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/resizable-demo")),
+    files: ["registry/example/resizable-demo.tsx"],
   },
   "select-demo": {
     name: "select-demo",

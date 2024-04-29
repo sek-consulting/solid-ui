@@ -100,8 +100,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(solid-js@1.8.16)
       corvu:
-        specifier: ^0.4.8
-        version: 0.4.8(solid-js@1.8.16)
+        specifier: ^0.5.0
+        version: 0.5.0(solid-js@1.8.16)
       embla-carousel-autoplay:
         specifier: ^8.0.0
         version: 8.0.0(embla-carousel@8.0.0)
@@ -1794,13 +1794,6 @@ packages:
       '@floating-ui/utils': 0.2.1
     dev: false
 
-  /@floating-ui/dom@1.6.1:
-    resolution: {integrity: sha512-iA8qE43/H5iGozC3W0YSnVSW42Vh522yyM1gj+BqRwVsTNOyr231PsXDaV04yT39PsO0QL2QpbI/M0ZaLUQgRQ==}
-    dependencies:
-      '@floating-ui/core': 1.6.0
-      '@floating-ui/utils': 0.2.1
-    dev: false
-
   /@floating-ui/dom@1.6.3:
     resolution: {integrity: sha512-RnDthu3mzPlQ31Ss/BTwQ1zjzIhr3lk1gZB1OC56h/1vEtaXkESrOqL5fQVMfXpwGtRwX+YsZBdyHtJMQnkArw==}
     dependencies:
@@ -1939,7 +1932,7 @@ packages:
     peerDependencies:
       solid-js: ^1.8.15
     dependencies:
-      '@floating-ui/dom': 1.6.1
+      '@floating-ui/dom': 1.6.3
       '@internationalized/date': 3.4.0
       '@internationalized/number': 3.2.1
       '@kobalte/utils': 0.9.0(solid-js@1.8.16)
@@ -2687,7 +2680,7 @@ packages:
   /@swc/helpers@0.5.1:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
-      tslib: 2.6.1
+      tslib: 2.6.2
     dev: false
 
   /@ts-morph/common@0.21.0:
@@ -3880,8 +3873,8 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: false
 
-  /corvu@0.4.8(solid-js@1.8.16):
-    resolution: {integrity: sha512-6oway9VuOiLUDYYo7jtd4OVdOxiIEhCd6HaswKQLX0q8+dc5Ul2tMhrVr8YRFbf0OE4TBiveJ+px+afSH30MJg==}
+  /corvu@0.5.0(solid-js@1.8.16):
+    resolution: {integrity: sha512-lgnXyDJZ0Ed/3nEulZlXp48DyO13Z9YwZA36JlCpPAFFR6WFoK6NufPaCQeKiz7yll8v14P5IIUFtp6ZeEOPJg==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:

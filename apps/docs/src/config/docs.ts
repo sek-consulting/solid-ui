@@ -2,7 +2,7 @@ type NavElement = {
   title: string
   href: string
   external?: boolean
-  status?: string
+  status?: "new" | "updated"
 }
 
 type NavCategory = {
@@ -102,6 +102,10 @@ export const docsConfig: Config = {
           href: "/docs/components/badge"
         },
         {
+          title: "Badge Delta",
+          href: "/docs/components/badge-delta"
+        },
+        {
           title: "Button",
           href: "/docs/components/button"
         },
@@ -191,8 +195,18 @@ export const docsConfig: Config = {
           href: "/docs/components/progress"
         },
         {
+          title: "Progress Circle",
+          href: "/docs/components/progress-circle",
+          status: "new"
+        },
+        {
           title: "Radio Group",
           href: "/docs/components/radio-group"
+        },
+        {
+          title: "Resizable",
+          href: "/docs/components/resizable",
+          status: "new"
         },
         {
           title: "Select",
@@ -242,6 +256,11 @@ export const docsConfig: Config = {
           title: "Toggle",
           href: "/docs/components/toggle"
         },
+        // {
+        //   title: "Toggle Group",
+        //   href: "/docs/components/toggle-group",
+        //   status: "new"
+        // },
         {
           title: "Tooltip",
           href: "/docs/components/tooltip"

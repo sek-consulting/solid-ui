@@ -285,12 +285,32 @@
     "type": "ui"
   },
   {
+    "name": "progress-circle",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/progress-circle.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "radio-group",
     "dependencies": [
       "@kobalte/core"
     ],
     "files": [
       "ui/radio-group.tsx"
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "resizable",
+    "dependencies": [
+      "corvu"
+    ],
+    "files": [
+      "ui/resizable.tsx"
     ],
     "type": "ui"
   },

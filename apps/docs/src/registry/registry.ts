@@ -176,10 +176,22 @@ const ui: Registry = [
     files: ["ui/progress.tsx"]
   },
   {
+    name: "progress-circle",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/progress-circle.tsx"]
+  },
+  {
     name: "radio-group",
     type: "ui",
     dependencies: ["@kobalte/core"],
     files: ["ui/radio-group.tsx"]
+  },
+  {
+    name: "resizable",
+    type: "ui",
+    dependencies: ["corvu"],
+    files: ["ui/resizable.tsx"]
   },
   {
     name: "select",
@@ -249,6 +261,12 @@ const ui: Registry = [
     dependencies: ["@kobalte/core"],
     files: ["ui/toggle.tsx"]
   },
+  // {
+  //   name: "toggle-group",
+  //   type: "ui",
+  //   dependencies: ["@kobalte/core"],
+  //   files: ["ui/toggle-group.tsx"]
+  // },
   {
     name: "tooltip",
     type: "ui",
@@ -465,9 +483,19 @@ const examples: Registry = [
     files: ["example/progress-demo.tsx"]
   },
   {
+    name: "progress-circle-demo",
+    type: "example",
+    files: ["example/progress-circle-demo.tsx"]
+  },
+  {
     name: "radio-group-demo",
     type: "example",
     files: ["example/radio-group-demo.tsx"]
+  },
+  {
+    name: "resizable-demo",
+    type: "example",
+    files: ["example/resizable-demo.tsx"]
   },
   {
     name: "select-demo",
@@ -529,6 +557,11 @@ const examples: Registry = [
     type: "example",
     files: ["example/toggle-demo.tsx"]
   },
+  // {
+  //   name: "toggle-group-demo",
+  //   type: "example",
+  //   files: ["example/toggle-group-demo.tsx"]
+  // },
   {
     name: "tooltip-demo",
     type: "example",

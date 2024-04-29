@@ -96,9 +96,12 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      cmdk-solid:
+        specifier: ^1.0.1
+        version: 1.0.1(solid-js@1.8.16)
       corvu:
-        specifier: ^0.4.8
-        version: 0.4.8(solid-js@1.8.16)
+        specifier: ^0.5.0
+        version: 0.5.0(solid-js@1.8.16)
       embla-carousel-autoplay:
         specifier: ^8.0.0
         version: 8.0.0(embla-carousel@8.0.0)
@@ -1791,13 +1794,6 @@ packages:
       '@floating-ui/utils': 0.2.1
     dev: false
 
-  /@floating-ui/dom@1.6.1:
-    resolution: {integrity: sha512-iA8qE43/H5iGozC3W0YSnVSW42Vh522yyM1gj+BqRwVsTNOyr231PsXDaV04yT39PsO0QL2QpbI/M0ZaLUQgRQ==}
-    dependencies:
-      '@floating-ui/core': 1.6.0
-      '@floating-ui/utils': 0.2.1
-    dev: false
-
   /@floating-ui/dom@1.6.3:
     resolution: {integrity: sha512-RnDthu3mzPlQ31Ss/BTwQ1zjzIhr3lk1gZB1OC56h/1vEtaXkESrOqL5fQVMfXpwGtRwX+YsZBdyHtJMQnkArw==}
     dependencies:
@@ -1936,7 +1932,7 @@ packages:
     peerDependencies:
       solid-js: ^1.8.15
     dependencies:
-      '@floating-ui/dom': 1.6.1
+      '@floating-ui/dom': 1.6.3
       '@internationalized/date': 3.4.0
       '@internationalized/number': 3.2.1
       '@kobalte/utils': 0.9.0(solid-js@1.8.16)
@@ -2473,6 +2469,15 @@ packages:
     engines: {node: '>=18'}
     dev: false
 
+  /@solid-primitives/deep@0.2.8(solid-js@1.8.16):
+    resolution: {integrity: sha512-r+enqrL2oiDkJt7lYUYMVvKzcqVDAd4G/1OkLnXEibk5nIA635qNIuOxIAaCCP3GDAHKznaW3yc/vMG68lo8bQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/memo': 1.3.8(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
   /@solid-primitives/event-listener@2.3.0(solid-js@1.8.16):
     resolution: {integrity: sha512-0DS7DQZvCExWSpurVZC9/wjI8RmkhuOtWOy6Pp1Woq9ElMT9/bfjNpkwXsOwisLpcTqh9eUs17kp7jtpWcC20w==}
     peerDependencies:
@@ -2537,6 +2542,15 @@ packages:
       solid-js: ^1.6.12
     dependencies:
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.16)
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
+  /@solid-primitives/mutation-observer@1.1.17(solid-js@1.8.16):
+    resolution: {integrity: sha512-01skkiHtNWl2PQ0ugFzZHBMsHk870+bZSNK8Gvjcj3mZwBzAJPaUPzFswfM/V8Io1Cko86vfXl73vl9ddRYb5A==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
       solid-js: 1.8.16
     dev: false
@@ -2666,7 +2680,7 @@ packages:
   /@swc/helpers@0.5.1:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
-      tslib: 2.6.1
+      tslib: 2.6.2
     dev: false
 
   /@ts-morph/common@0.21.0:
@@ -3762,6 +3776,18 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /cmdk-solid@1.0.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-0BiQaIc4OUTssu5+q/7FwV+fN9EEWPt9Mc0LQYGSB6b+g26br8evCzgIEA0skjVmmlhSWdsEjFAo2/gbCGAc8Q==}
+    peerDependencies:
+      solid-js: ^1.8.0
+    dependencies:
+      '@kobalte/core': 0.12.6(solid-js@1.8.16)
+      '@kobalte/utils': 0.9.0(solid-js@1.8.16)
+      '@solid-primitives/deep': 0.2.8(solid-js@1.8.16)
+      '@solid-primitives/mutation-observer': 1.1.17(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
   /code-block-writer@12.0.0:
     resolution: {integrity: sha512-q4dMFMlXtKR3XNBHyMHt/3pwYNA69EDk00lloMOaaUMKPUXBw6lpXtbu3MMVG6/uOihGnRDOlkyqsONEUj60+w==}
     dev: false
@@ -3847,8 +3873,8 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: false
 
-  /corvu@0.4.8(solid-js@1.8.16):
-    resolution: {integrity: sha512-6oway9VuOiLUDYYo7jtd4OVdOxiIEhCd6HaswKQLX0q8+dc5Ul2tMhrVr8YRFbf0OE4TBiveJ+px+afSH30MJg==}
+  /corvu@0.5.0(solid-js@1.8.16):
+    resolution: {integrity: sha512-lgnXyDJZ0Ed/3nEulZlXp48DyO13Z9YwZA36JlCpPAFFR6WFoK6NufPaCQeKiz7yll8v14P5IIUFtp6ZeEOPJg==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:

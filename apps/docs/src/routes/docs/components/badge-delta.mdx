@@ -1,6 +1,9 @@
-<MDXHeader title="Badge" description="Displays a badge or a component that looks like a badge." />
+<MDXHeader
+  title="Badge Delta"
+  description="A Badge with trend indicator for five different statuses."
+/>
 
-<ComponentPreview name="badge-demo" />
+<ComponentPreview name="badge-delta-demo" />
 
 ## Installation
 
@@ -14,17 +17,19 @@
 <TabsContent value="cli">
 
 ```bash
-npx solidui-cli@latest add badge
+npx solidui-cli@latest add badge-delta
 ```
 
 </TabsContent>
 
 <TabsContent value="manual">
+<Steps>
 
 <Step>Copy and paste the following code into your project: </Step>
 
-<ComponentSource name="badge" />
+<ComponentSource name="badge-delta" />
 
+</Steps>
 </TabsContent>
 
 </Tabs>
@@ -32,9 +37,9 @@ npx solidui-cli@latest add badge
 ## Usage
 
 ```tsx
-import { Badge } from "~/components/ui/badge"
+import { BadgeDelta } from "~/components/ui/badge-delta"
 ```
 
 ```tsx
-<Badge variant="outline">Badge</Badge>
+<BadgeDelta deltaType="increase">+ 420.69%</BadgeDelta>
 ```

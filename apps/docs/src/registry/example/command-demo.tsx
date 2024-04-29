@@ -1,5 +1,3 @@
-import { type JSXElement } from "solid-js"
-
 import {
   IconCalendar,
   IconMail,
@@ -10,93 +8,54 @@ import {
 } from "~/components/icons"
 import {
   Command,
-  CommandHeading,
+  CommandEmpty,
+  CommandGroup,
   CommandInput,
   CommandItem,
-  CommandItemLabel,
-  CommandItemShortcut,
-  CommandList
+  CommandList,
+  CommandSeparator,
+  CommandShortcut
 } from "~/registry/ui/command"
 
-type ListOption = {
-  icon: JSXElement
-  label: string
-  value: string
-  shortcut?: JSXElement
-}
-
-type List = {
-  label: string
-  options: ListOption[]
-}
-
 export default function CommandDemo() {
-  const data: List[] = [
-    {
-      label: "Suggestions",
-      options: [
-        {
-          icon: <IconCalendar class="mr-2 size-4" />,
-          label: "Calendar",
-          value: "Calendar"
-        },
-        {
-          icon: <IconSmile class="mr-2 size-4" />,
-          label: "Search emoji",
-          value: "Search emoji"
-        },
-        {
-          icon: <IconRocket class="mr-2 size-4" />,
-          label: "Launch",
-          value: "Launch"
-        }
-      ]
-    },
-    {
-      label: "Settings",
-      options: [
-        {
-          icon: <IconUser class="mr-2 size-4" />,
-          label: "Profile",
-          value: "Profile",
-          shortcut: <CommandItemShortcut>⌘P</CommandItemShortcut>
-        },
-        {
-          icon: <IconMail class="mr-2 size-4" />,
-          label: "Mail",
-          value: "Mail",
-          shortcut: <CommandItemShortcut>⌘B</CommandItemShortcut>
-        },
-        {
-          icon: <IconSettings class="mr-2 size-4" />,
-          label: "Setting",
-          value: "Setting",
-          shortcut: <CommandItemShortcut>⌘S</CommandItemShortcut>
-        }
-      ]
-    }
-  ]
-
   return (
-    <Command<ListOption, List>
-      options={data}
-      optionValue="value"
-      optionTextValue="label"
-      optionLabel="label"
-      optionGroupChildren="options"
-      placeholder="Type a command or search..."
-      itemComponent={(props) => (
-        <CommandItem item={props.item}>
-          {props.item.rawValue.icon}
-          <CommandItemLabel>{props.item.rawValue.label}</CommandItemLabel>
-          {props.item.rawValue.shortcut}
-        </CommandItem>
-      )}
-      sectionComponent={(props) => <CommandHeading>{props.section.rawValue.label}</CommandHeading>}
-      class="rounded-lg border shadow-md"
-    >
-      <CommandInput />
-      <CommandList />
+    <Command class="rounded-lg border shadow-md">
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem>
+            <IconCalendar class="mr-2 size-4" />
+            <span>Calendar</span>
+          </CommandItem>
+          <CommandItem>
+            <IconSmile class="mr-2 size-4" />
+            <span>Search Emoji</span>
+          </CommandItem>
+          <CommandItem>
+            <IconRocket class="mr-2 size-4" />
+            <span>Launch</span>
+          </CommandItem>
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading="Settings">
+          <CommandItem>
+            <IconUser class="mr-2 size-4" />
+            <span>Profile</span>
+            <CommandShortcut>⌘P</CommandShortcut>
+          </CommandItem>
+          <CommandItem>
+            <IconMail class="mr-2 size-4" />
+            <span>Mail</span>
+            <CommandShortcut>⌘B</CommandShortcut>
+          </CommandItem>
+          <CommandItem>
+            <IconSettings class="mr-2 size-4" />
+            <span>Settings</span>
+            <CommandShortcut>⌘S</CommandShortcut>
+          </CommandItem>
+        </CommandGroup>
+      </CommandList>
     </Command>
   )
 }

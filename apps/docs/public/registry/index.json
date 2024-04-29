@@ -128,7 +128,8 @@
   {
     "name": "command",
     "dependencies": [
-      "@kobalte/core"
+      "@kobalte/core",
+      "cmdk-solid"
     ],
     "registryDependencies": [
       "dialog"

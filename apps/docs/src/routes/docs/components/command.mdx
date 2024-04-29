@@ -2,6 +2,10 @@
 
 <ComponentPreview name="command-demo" />
 
+## About
+
+The `<Command />` component uses the [`cmdk-solid`](https://cmdk-solid.vercel.app) component by [create-signal](https://github.com/create-signal/cmdk-solid).
+
 ## Installation
 
 <Tabs defaultValue="cli">
@@ -25,7 +29,7 @@ npx solidui-cli@latest add command
 <Step>Install the following dependencies: </Step>
 
 ```bash
-npm install @kobalte/core
+npm install @kobalte/core cmdk-solid
 ```
 
 <Step>Copy and paste the following code into your project: </Step>
@@ -42,28 +46,34 @@ npm install @kobalte/core
 ```tsx
 import {
   Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
   CommandInput,
   CommandItem,
-  CommandItemLabel,
-  CommandList
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
 } from "@/components/ui/command"
 ```
 
 ```tsx
-const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]
-```
-
-```tsx
-<Command
-  options={ALL_OPTIONS}
-  itemComponent={(props) => (
-    <CommandItem item={props.item}>
-      <CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
-    </CommandItem>
-  )}
->
-  <CommandInput />
-  <CommandList />
+<Command>
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+      <CommandItem>Calculator</CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>Profile</CommandItem>
+      <CommandItem>Billing</CommandItem>
+      <CommandItem>Settings</CommandItem>
+    </CommandGroup>
+  </CommandList>
 </Command>
 ```
 
@@ -86,25 +96,25 @@ export function CommandMenu() {
         setOpen((open) => !open)
       }
     }
-
+ 
     document.addEventListener("keydown", down)
-
+ 
     onCleanup(() => {
       document.removeEventListener("keydown", down)
     })
   })
 
   return (
-    <CommandDialog
-      options={ALL_OPTIONS}
-      itemComponent={(props) => (
-        <CommandItem item={props.item}>
-          <CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
-        </CommandItem>
-      )}
-    >
-      <CommandInput />
-      <CommandList />
+    <CommandDialog open={open()} onOpenChange={setOpen}>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem>Calendar</CommandItem>
+          <CommandItem>Search Emoji</CommandItem>
+          <CommandItem>Calculator</CommandItem>
+        </CommandGroup>
+      </CommandList>
     </CommandDialog>
   )
 }

@@ -1,8 +1,8 @@
 import { execSync } from "child_process"
 import { readFile } from "fs"
 
+import { detect } from "@antfu/ni"
 import { log, spinner } from "@clack/prompts"
-import { detect } from "detect-package-manager"
 import JSON5 from "json5"
 
 export function readJsonFile(
@@ -44,11 +44,14 @@ export function removeExtension(value: string) {
 }
 
 export async function installPackages(...packages: string[]) {
-  const packageManager = await detect()
+  const packageManager = await detect({ programmatic: true })
 
   switch (packageManager) {
-    case "yarn":
+    case "bun":
     case "pnpm":
+    case "pnpm@6":
+    case "yarn":
+    case "yarn@berry":
       runCommand(`${packageManager} add ${packages.join(" ")}`, "Installing dependencies")
       break
     default:

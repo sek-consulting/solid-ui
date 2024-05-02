@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.6.3
+
+### Patch Changes
+
+- [#85](https://github.com/sek-consulting/solid-ui/pull/85) [`6b36e0b`](https://github.com/sek-consulting/solid-ui/commit/6b36e0bd5b36d8e28ebe4ba55e143953009cfea2) Thanks [@wesleycoder](https://github.com/wesleycoder)! - Improve package manager detection using @antfu/ni
+
 ## 0.6.2
 
 ### Patch Changes

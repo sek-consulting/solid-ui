@@ -1,13 +1,22 @@
-import type { Component } from "solid-js"
+import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Tabs as TabsPrimitive } from "@kobalte/core"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import {
+  TabsContentProps,
+  TabsIndicatorProps,
+  TabsListProps,
+  Tabs as TabsPrimitive,
+  TabsTriggerProps
+} from "@kobalte/core/tabs"
 
 import { cn } from "~/lib/utils"
 
-const Tabs = TabsPrimitive.Root
+const Tabs = TabsPrimitive
 
-const TabsList: Component<TabsPrimitive.TabsListProps> = (props) => {
+type ListProps<T extends ValidComponent = "div"> = PolymorphicProps<T, TabsListProps>
+
+const TabsList: Component<ListProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <TabsPrimitive.List
@@ -20,7 +29,9 @@ const TabsList: Component<TabsPrimitive.TabsListProps> = (props) => {
   )
 }
 
-const TabsTrigger: Component<TabsPrimitive.TabsTriggerProps> = (props) => {
+type TriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<T, TabsTriggerProps>
+
+const TabsTrigger: Component<TriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <TabsPrimitive.Trigger
@@ -33,7 +44,9 @@ const TabsTrigger: Component<TabsPrimitive.TabsTriggerProps> = (props) => {
   )
 }
 
-const TabsContent: Component<TabsPrimitive.TabsContentProps> = (props) => {
+type ContentProps<T extends ValidComponent = "div"> = PolymorphicProps<T, TabsContentProps>
+
+const TabsContent: Component<ContentProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <TabsPrimitive.Content
@@ -46,7 +59,9 @@ const TabsContent: Component<TabsPrimitive.TabsContentProps> = (props) => {
   )
 }
 
-const TabsIndicator: Component<TabsPrimitive.TabsIndicatorProps> = (props) => {
+type IndicatorProps<T extends ValidComponent = "div"> = PolymorphicProps<T, TabsIndicatorProps>
+
+const TabsIndicator: Component<IndicatorProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <TabsPrimitive.Indicator

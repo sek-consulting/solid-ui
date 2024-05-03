@@ -1,19 +1,19 @@
 import type { Component } from "solid-js"
 import { Show, splitProps } from "solid-js"
 
-import { Switch as SwitchPrimitive } from "@kobalte/core"
+import { Switch as SwitchPrimitive, SwitchRootProps } from "@kobalte/core/switch"
 
 import { cn } from "~/lib/utils"
 
-interface SwitchProps extends SwitchPrimitive.SwitchRootProps {
+type RootProps = SwitchRootProps & {
   label?: string
   errorMessage?: string
 }
 
-const Switch: Component<SwitchProps> = (props) => {
+const Switch: Component<RootProps> = (props) => {
   const [, rest] = splitProps(props, ["label"])
   return (
-    <SwitchPrimitive.Root {...rest}>
+    <SwitchPrimitive {...rest}>
       <SwitchPrimitive.Input />
       <div class="items-top flex space-x-2">
         <SwitchPrimitive.Control class="peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent bg-input transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:bg-primary">
@@ -36,7 +36,7 @@ const Switch: Component<SwitchProps> = (props) => {
           </Show>
         </div>
       </div>
-    </SwitchPrimitive.Root>
+    </SwitchPrimitive>
   )
 }
 

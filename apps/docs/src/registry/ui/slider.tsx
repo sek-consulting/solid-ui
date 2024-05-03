@@ -1,22 +1,35 @@
-import type { Component } from "solid-js"
+import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Slider as SliderPrimitive } from "@kobalte/core"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import {
+  SliderFillProps,
+  SliderLabelProps,
+  Slider as SliderPrimitive,
+  SliderRootProps,
+  SliderThumbProps,
+  SliderTrackProps,
+  SliderValueLabelProps
+} from "@kobalte/core/slider"
 
 import { cn } from "~/lib/utils"
 import { Label } from "~/registry/ui/label"
 
-const Slider: Component<SliderPrimitive.SliderRootProps> = (props) => {
+type RootProps<T extends ValidComponent = "div"> = PolymorphicProps<T, SliderRootProps>
+
+const Slider: Component<RootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <SliderPrimitive.Root
+    <SliderPrimitive
       class={cn("relative flex w-full touch-none select-none flex-col items-center", props.class)}
       {...rest}
     />
   )
 }
 
-const SliderTrack: Component<SliderPrimitive.SliderTrackProps> = (props) => {
+type TrackProps<T extends ValidComponent = "div"> = PolymorphicProps<T, SliderTrackProps>
+
+const SliderTrack: Component<TrackProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <SliderPrimitive.Track
@@ -26,12 +39,16 @@ const SliderTrack: Component<SliderPrimitive.SliderTrackProps> = (props) => {
   )
 }
 
-const SliderFill: Component<SliderPrimitive.SliderFillProps> = (props) => {
+type FillProps<T extends ValidComponent = "div"> = PolymorphicProps<T, SliderFillProps>
+
+const SliderFill: Component<FillProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return <SliderPrimitive.Fill class={cn("absolute h-full bg-primary", props.class)} {...rest} />
 }
 
-const SliderThumb: Component<SliderPrimitive.SliderThumbProps> = (props) => {
+type ThumbProps<T extends ValidComponent = "span"> = PolymorphicProps<T, SliderThumbProps>
+
+const SliderThumb: Component<ThumbProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <SliderPrimitive.Thumb
@@ -46,11 +63,18 @@ const SliderThumb: Component<SliderPrimitive.SliderThumbProps> = (props) => {
   )
 }
 
-const SliderLabel: Component<SliderPrimitive.SliderLabelProps> = (props) => {
+type LabelProps<T extends ValidComponent = "label"> = PolymorphicProps<T, SliderLabelProps>
+
+const SliderLabel: Component<LabelProps> = (props) => {
   return <SliderPrimitive.Label as={Label} {...props} />
 }
 
-const SliderValueLabel: Component<SliderPrimitive.SliderValueLabelProps> = (props) => {
+type ValueLabelProps<T extends ValidComponent = "label"> = PolymorphicProps<
+  T,
+  SliderValueLabelProps
+>
+
+const SliderValueLabel: Component<ValueLabelProps> = (props) => {
   return <SliderPrimitive.ValueLabel as={Label} {...props} />
 }
 

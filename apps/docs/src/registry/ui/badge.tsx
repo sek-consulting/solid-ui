@@ -7,7 +7,7 @@ import { cva } from "class-variance-authority"
 import { cn } from "~/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  "inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
     variants: {
       variant: {
@@ -25,11 +25,24 @@ const badgeVariants = cva(
   }
 )
 
-export interface BadgeProps extends ComponentProps<"div">, VariantProps<typeof badgeVariants> {}
+type BadgeProps = ComponentProps<"div"> &
+  VariantProps<typeof badgeVariants> & {
+    round?: boolean
+  }
 
 const Badge: Component<BadgeProps> = (props) => {
-  const [, rest] = splitProps(props, ["variant", "class"])
-  return <div class={cn(badgeVariants({ variant: props.variant }), props.class)} {...rest} />
+  const [, rest] = splitProps(props, ["class", "variant", "round"])
+  return (
+    <div
+      class={cn(
+        badgeVariants({ variant: props.variant }),
+        props.round ? "rounded-full" : "rounded-md",
+        props.class
+      )}
+      {...rest}
+    />
+  )
 }
 
+export type { BadgeProps }
 export { Badge, badgeVariants }

@@ -12,7 +12,7 @@ const sizes: Record<Size, { radius: number; strokeWidth: number }> = {
   xl: { radius: 80, strokeWidth: 10 }
 }
 
-export interface ProgressCircleProps extends ComponentProps<"div"> {
+type ProgressCircleProps = ComponentProps<"div"> & {
   value?: number
   size?: Size
   radius?: number

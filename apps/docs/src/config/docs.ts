@@ -257,11 +257,11 @@ export const docsConfig: Config = {
           title: "Toggle",
           href: "/docs/components/toggle"
         },
-        // {
-        //   title: "Toggle Group",
-        //   href: "/docs/components/toggle-group",
-        //   status: "new"
-        // },
+        {
+          title: "Toggle Group",
+          href: "/docs/components/toggle-group",
+          status: "new"
+        },
         {
           title: "Tooltip",
           href: "/docs/components/tooltip"

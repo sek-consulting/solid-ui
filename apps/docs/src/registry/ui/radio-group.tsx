@@ -1,16 +1,26 @@
-import type { Component } from "solid-js"
+import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { RadioGroup as RadioGroupPrimitive } from "@kobalte/core"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import {
+  RadioGroupItemProps,
+  RadioGroupLabelProps,
+  RadioGroup as RadioGroupPrimitive,
+  RadioGroupRootProps
+} from "@kobalte/core/radio-group"
 
 import { cn } from "~/lib/utils"
 
-const RadioGroup: Component<RadioGroupPrimitive.RadioGroupRootProps> = (props) => {
+type RootProps<T extends ValidComponent = "div"> = PolymorphicProps<T, RadioGroupRootProps>
+
+const RadioGroup: Component<RootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
-  return <RadioGroupPrimitive.Root class={cn("grid gap-2", props.class)} {...rest} />
+  return <RadioGroupPrimitive class={cn("grid gap-2", props.class)} {...rest} />
 }
 
-const RadioGroupItem: Component<RadioGroupPrimitive.RadioGroupItemProps> = (props) => {
+type ItemProps<T extends ValidComponent = "div"> = PolymorphicProps<T, RadioGroupItemProps>
+
+const RadioGroupItem: Component<ItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <RadioGroupPrimitive.Item class={cn("flex items-center space-x-2", props.class)} {...rest}>
@@ -36,7 +46,9 @@ const RadioGroupItem: Component<RadioGroupPrimitive.RadioGroupItemProps> = (prop
   )
 }
 
-const RadioGroupItemLabel: Component<RadioGroupPrimitive.RadioGroupItemLabelProps> = (props) => {
+type ItemLabelProps<T extends ValidComponent = "label"> = PolymorphicProps<T, RadioGroupLabelProps>
+
+const RadioGroupItemLabel: Component<ItemLabelProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <RadioGroupPrimitive.ItemLabel

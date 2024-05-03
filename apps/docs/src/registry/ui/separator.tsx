@@ -12,7 +12,7 @@ const Separator: Component<SeparatorPrimitive.SeparatorRootProps> = (props) => {
       orientation={props.orientation ?? "horizontal"}
       class={cn(
         "shrink-0 bg-border",
-        props.orientation === "vertical" ? "h-full w-[1px]" : "h-[1px] w-full",
+        props.orientation === "vertical" ? "h-full w-px" : "h-px w-full",
         props.class
       )}
       {...rest}

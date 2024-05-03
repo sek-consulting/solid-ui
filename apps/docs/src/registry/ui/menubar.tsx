@@ -1,11 +1,26 @@
-import type { Component, ComponentProps } from "solid-js"
+import type { Component, ComponentProps, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Menubar as MenubarPrimitive } from "@kobalte/core"
+import {
+  MenubarCheckboxItemProps,
+  MenubarContentProps,
+  MenubarGroupLabelProps,
+  MenubarItemLabelProps,
+  MenubarItemProps,
+  MenubarMenuProps,
+  Menubar as MenubarPrimitive,
+  MenubarRadioItemProps,
+  MenubarRootProps,
+  MenubarSeparatorProps,
+  MenubarSubContentProps,
+  MenubarSubTriggerProps,
+  MenubarTriggerProps
+} from "@kobalte/core/menubar"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 
-const MenubarMenu: Component<MenubarPrimitive.MenubarMenuProps> = (props) => {
+const MenubarMenu: Component<MenubarMenuProps> = (props) => {
   return <MenubarPrimitive.Menu gutter={8} {...props} />
 }
 
@@ -17,10 +32,12 @@ const MenubarSub = MenubarPrimitive.Sub
 
 const MenubarRadioGroup = MenubarPrimitive.RadioGroup
 
-const Menubar: Component<MenubarPrimitive.MenubarRootProps> = (props) => {
+type RootProps<T extends ValidComponent = "div"> = PolymorphicProps<T, MenubarRootProps>
+
+const Menubar: Component<RootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <MenubarPrimitive.Root
+    <MenubarPrimitive
       class={cn(
         "flex h-10 items-center space-x-1 rounded-md border bg-background p-1",
         props.class
@@ -30,7 +47,9 @@ const Menubar: Component<MenubarPrimitive.MenubarRootProps> = (props) => {
   )
 }
 
-const MenubarTrigger: Component<MenubarPrimitive.MenubarTriggerProps> = (props) => {
+type TriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<T, MenubarTriggerProps>
+
+const MenubarTrigger: Component<TriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <MenubarPrimitive.Trigger
@@ -43,7 +62,9 @@ const MenubarTrigger: Component<MenubarPrimitive.MenubarTriggerProps> = (props) 
   )
 }
 
-const MenubarContent: Component<MenubarPrimitive.MenubarContentProps> = (props) => {
+type ContentProps<T extends ValidComponent = "div"> = PolymorphicProps<T, MenubarContentProps>
+
+const MenubarContent: Component<ContentProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <MenubarPrimitive.Portal>
@@ -58,9 +79,12 @@ const MenubarContent: Component<MenubarPrimitive.MenubarContentProps> = (props) 
   )
 }
 
-const MenubarSubTrigger: Component<
-  MenubarPrimitive.MenubarSubTriggerProps & { inset?: boolean }
-> = (props) => {
+type SubTriggerProps<T extends ValidComponent = "div"> = PolymorphicProps<
+  T,
+  MenubarSubTriggerProps
+> & { inset?: boolean }
+
+const MenubarSubTrigger: Component<SubTriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children", "inset"])
   return (
     <MenubarPrimitive.SubTrigger
@@ -88,7 +112,9 @@ const MenubarSubTrigger: Component<
   )
 }
 
-const MenubarSubContent: Component<MenubarPrimitive.MenubarSubContentProps> = (props) => {
+type SubContentProps<T extends ValidComponent = "div"> = PolymorphicProps<T, MenubarSubContentProps>
+
+const MenubarSubContent: Component<SubContentProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <MenubarPrimitive.SubContent
@@ -101,7 +127,11 @@ const MenubarSubContent: Component<MenubarPrimitive.MenubarSubContentProps> = (p
   )
 }
 
-const MenubarItem: Component<MenubarPrimitive.MenubarItemProps & { inset?: boolean }> = (props) => {
+type ItemProps<T extends ValidComponent = "div"> = PolymorphicProps<T, MenubarItemProps> & {
+  inset?: boolean
+}
+
+const MenubarItem: Component<ItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "inset"])
   return (
     <MenubarPrimitive.Item
@@ -115,7 +145,12 @@ const MenubarItem: Component<MenubarPrimitive.MenubarItemProps & { inset?: boole
   )
 }
 
-const MenubarCheckboxItem: Component<MenubarPrimitive.MenubarCheckboxItemProps> = (props) => {
+type CheckboxItemProps<T extends ValidComponent = "div"> = PolymorphicProps<
+  T,
+  MenubarCheckboxItemProps
+>
+
+const MenubarCheckboxItem: Component<CheckboxItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <MenubarPrimitive.CheckboxItem
@@ -146,7 +181,9 @@ const MenubarCheckboxItem: Component<MenubarPrimitive.MenubarCheckboxItemProps> 
   )
 }
 
-const MenubarRadioItem: Component<MenubarPrimitive.MenubarRadioItemProps> = (props) => {
+type RadioItemProps<T extends ValidComponent = "div"> = PolymorphicProps<T, MenubarRadioItemProps>
+
+const MenubarRadioItem: Component<RadioItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <MenubarPrimitive.RadioItem
@@ -177,9 +214,12 @@ const MenubarRadioItem: Component<MenubarPrimitive.MenubarRadioItemProps> = (pro
   )
 }
 
-const MenubarItemLabel: Component<MenubarPrimitive.MenubarItemLabelProps & { inset?: boolean }> = (
-  props
-) => {
+type ItemLabelProps<T extends ValidComponent = "div"> = PolymorphicProps<
+  T,
+  MenubarItemLabelProps
+> & { inset?: boolean }
+
+const MenubarItemLabel: Component<ItemLabelProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "inset"])
   return (
     <MenubarPrimitive.ItemLabel
@@ -189,9 +229,12 @@ const MenubarItemLabel: Component<MenubarPrimitive.MenubarItemLabelProps & { ins
   )
 }
 
-const MenubarGroupLabel: Component<
-  MenubarPrimitive.MenubarGroupLabelProps & { inset?: boolean }
-> = (props) => {
+type GroupLabelProps<T extends ValidComponent = "span"> = PolymorphicProps<
+  T,
+  MenubarGroupLabelProps
+> & { inset?: boolean }
+
+const MenubarGroupLabel: Component<GroupLabelProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "inset"])
   return (
     <MenubarPrimitive.GroupLabel
@@ -201,7 +244,9 @@ const MenubarGroupLabel: Component<
   )
 }
 
-const MenubarSeparator: Component<MenubarPrimitive.MenubarSeparatorProps> = (props) => {
+type SeparatorProps<T extends ValidComponent = "hr"> = PolymorphicProps<T, MenubarSeparatorProps>
+
+const MenubarSeparator: Component<SeparatorProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <MenubarPrimitive.Separator class={cn("-mx-1 my-1 h-px bg-muted", props.class)} {...rest} />

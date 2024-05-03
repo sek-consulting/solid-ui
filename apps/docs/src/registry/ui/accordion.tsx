@@ -1,18 +1,28 @@
-import type { Component } from "solid-js"
+import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Accordion as AccordionPrimitive } from "@kobalte/core"
+import {
+  AccordionContentProps,
+  AccordionItemProps,
+  Accordion as AccordionPrimitive,
+  AccordionTriggerProps
+} from "@kobalte/core/accordion"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 
-const Accordion = AccordionPrimitive.Root
+const Accordion = AccordionPrimitive
 
-const AccordionItem: Component<AccordionPrimitive.AccordionItemProps> = (props) => {
+type ItemProps<T extends ValidComponent = "div"> = PolymorphicProps<T, AccordionItemProps>
+
+const AccordionItem: Component<ItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return <AccordionPrimitive.Item class={cn("border-b", props.class)} {...rest} />
 }
 
-const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (props) => {
+type TriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<T, AccordionTriggerProps>
+
+const AccordionTrigger: Component<TriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <AccordionPrimitive.Header class="flex">
@@ -41,7 +51,9 @@ const AccordionTrigger: Component<AccordionPrimitive.AccordionTriggerProps> = (p
   )
 }
 
-const AccordionContent: Component<AccordionPrimitive.AccordionContentProps> = (props) => {
+type ContentProps<T extends ValidComponent = "div"> = PolymorphicProps<T, AccordionContentProps>
+
+const AccordionContent: Component<ContentProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <AccordionPrimitive.Content

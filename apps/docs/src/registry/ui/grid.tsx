@@ -6,7 +6,7 @@ import { cn } from "~/lib/utils"
 type Cols = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 type Span = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
 
-export interface GridProps extends ComponentProps<"div"> {
+type GridProps = ComponentProps<"div"> & {
   cols?: Cols
   colsSm?: Cols
   colsMd?: Cols
@@ -32,7 +32,7 @@ const Grid: Component<GridProps> = (rawProps) => {
   )
 }
 
-export interface ColProps extends ComponentProps<"div"> {
+type ColProps = ComponentProps<"div"> & {
   span?: Span
   spanSm?: Span
   spanMd?: Span

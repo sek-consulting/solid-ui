@@ -1,12 +1,23 @@
-import { splitProps, type Component } from "solid-js"
+import { splitProps, ValidComponent, type Component } from "solid-js"
 
-import { NumberField as NumberFieldPrimitive } from "@kobalte/core"
+import {
+  NumberFieldDecrementTriggerProps,
+  NumberFieldDescriptionProps,
+  NumberFieldErrorMessageProps,
+  NumberFieldIncrementTriggerProps,
+  NumberFieldInputProps,
+  NumberFieldLabelProps,
+  NumberField as NumberFieldPrimitive
+} from "@kobalte/core/number-field"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 
-const NumberField = NumberFieldPrimitive.Root
+const NumberField = NumberFieldPrimitive
 
-const NumberFieldLabel: Component<NumberFieldPrimitive.NumberFieldLabelProps> = (props) => {
+type LabelProps<T extends ValidComponent = "label"> = PolymorphicProps<T, NumberFieldLabelProps>
+
+const NumberFieldLabel: Component<LabelProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <NumberFieldPrimitive.Label
@@ -19,7 +30,9 @@ const NumberFieldLabel: Component<NumberFieldPrimitive.NumberFieldLabelProps> = 
   )
 }
 
-const NumberFieldInput: Component<NumberFieldPrimitive.NumberFieldInputProps> = (props) => {
+type InputProps<T extends ValidComponent = "input"> = PolymorphicProps<T, NumberFieldInputProps>
+
+const NumberFieldInput: Component<InputProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <NumberFieldPrimitive.Input
@@ -32,9 +45,12 @@ const NumberFieldInput: Component<NumberFieldPrimitive.NumberFieldInputProps> = 
   )
 }
 
-const NumberFieldIncrementTrigger: Component<
-  NumberFieldPrimitive.NumberFieldIncrementTriggerProps
-> = (props) => {
+type IncrementTriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<
+  T,
+  NumberFieldIncrementTriggerProps
+>
+
+const NumberFieldIncrementTrigger: Component<IncrementTriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <NumberFieldPrimitive.IncrementTrigger
@@ -62,9 +78,12 @@ const NumberFieldIncrementTrigger: Component<
   )
 }
 
-const NumberFieldDecrementTrigger: Component<
-  NumberFieldPrimitive.NumberFieldDecrementTriggerProps
-> = (props) => {
+type DecrementTriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<
+  T,
+  NumberFieldDecrementTriggerProps
+>
+
+const NumberFieldDecrementTrigger: Component<DecrementTriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <NumberFieldPrimitive.DecrementTrigger
@@ -92,9 +111,12 @@ const NumberFieldDecrementTrigger: Component<
   )
 }
 
-const NumberFieldDescription: Component<NumberFieldPrimitive.NumberFieldDescriptionProps> = (
-  props
-) => {
+type DescriptionProps<T extends ValidComponent = "div"> = PolymorphicProps<
+  T,
+  NumberFieldDescriptionProps
+>
+
+const NumberFieldDescription: Component<DescriptionProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <NumberFieldPrimitive.Description
@@ -104,9 +126,12 @@ const NumberFieldDescription: Component<NumberFieldPrimitive.NumberFieldDescript
   )
 }
 
-const NumberFieldErrorMessage: Component<NumberFieldPrimitive.NumberFieldErrorMessageProps> = (
-  props
-) => {
+type ErrorMessageProps<T extends ValidComponent = "div"> = PolymorphicProps<
+  T,
+  NumberFieldErrorMessageProps
+>
+
+const NumberFieldErrorMessage: Component<ErrorMessageProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <NumberFieldPrimitive.ErrorMessage

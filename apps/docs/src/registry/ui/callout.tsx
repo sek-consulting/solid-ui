@@ -20,7 +20,7 @@ const calloutVariants = cva("rounded-md border-l-4 p-2 pl-4", {
   }
 })
 
-export interface CalloutProps extends ComponentProps<"div">, VariantProps<typeof calloutVariants> {}
+type CalloutProps = ComponentProps<"div"> & VariantProps<typeof calloutVariants>
 
 const Callout: Component<CalloutProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])

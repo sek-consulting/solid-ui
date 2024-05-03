@@ -1,13 +1,25 @@
-import type { Component } from "solid-js"
+import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Combobox as ComboboxPrimitive } from "@kobalte/core"
+import {
+  ComboboxContentProps,
+  ComboboxControlProps,
+  ComboboxInputProps,
+  ComboboxItemIndicatorProps,
+  ComboboxItemProps,
+  Combobox as ComboboxPrimitive,
+  ComboboxSectionProps,
+  ComboboxTriggerProps
+} from "@kobalte/core/combobox"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 
-const Combobox = ComboboxPrimitive.Root
+const Combobox = ComboboxPrimitive
 
-const ComboboxItem: Component<ComboboxPrimitive.ComboboxItemProps> = (props) => {
+type ItemProps<T extends ValidComponent = "li"> = PolymorphicProps<T, ComboboxItemProps>
+
+const ComboboxItem: Component<ItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <ComboboxPrimitive.Item
@@ -22,7 +34,12 @@ const ComboboxItem: Component<ComboboxPrimitive.ComboboxItemProps> = (props) => 
 
 const ComboboxItemLabel = ComboboxPrimitive.ItemLabel
 
-const ComboboxItemIndicator: Component<ComboboxPrimitive.ComboboxItemIndicatorProps> = (props) => {
+type IndicatorProps<T extends ValidComponent = "div"> = PolymorphicProps<
+  T,
+  ComboboxItemIndicatorProps
+>
+
+const ComboboxItemIndicator: Component<IndicatorProps> = (props) => {
   const [, rest] = splitProps(props, ["children"])
   return (
     <ComboboxPrimitive.ItemIndicator {...rest}>
@@ -44,7 +61,9 @@ const ComboboxItemIndicator: Component<ComboboxPrimitive.ComboboxItemIndicatorPr
   )
 }
 
-const ComboboxSection: Component<ComboboxPrimitive.ComboboxSectionProps> = (props) => {
+type SectionProps<T extends ValidComponent = "li"> = PolymorphicProps<T, ComboboxSectionProps>
+
+const ComboboxSection: Component<SectionProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <ComboboxPrimitive.Section
@@ -57,8 +76,13 @@ const ComboboxSection: Component<ComboboxPrimitive.ComboboxSectionProps> = (prop
   )
 }
 
+type ControlProps<T, U extends ValidComponent = "div"> = PolymorphicProps<
+  U,
+  ComboboxControlProps<T>
+>
+
 // due to the generic typing this needs to be a function
-function ComboboxControl<T>(props: ComboboxPrimitive.ComboboxControlProps<T>) {
+function ComboboxControl<T>(props: ControlProps<T>) {
   const [, rest] = splitProps(props, ["class"])
   return (
     <ComboboxPrimitive.Control
@@ -68,7 +92,9 @@ function ComboboxControl<T>(props: ComboboxPrimitive.ComboboxControlProps<T>) {
   )
 }
 
-const ComboboxInput: Component<ComboboxPrimitive.ComboboxInputProps> = (props) => {
+type InputProps<T extends ValidComponent = "input"> = PolymorphicProps<T, ComboboxInputProps>
+
+const ComboboxInput: Component<InputProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <ComboboxPrimitive.Input
@@ -83,7 +109,9 @@ const ComboboxInput: Component<ComboboxPrimitive.ComboboxInputProps> = (props) =
 
 const ComboboxHiddenSelect = ComboboxPrimitive.HiddenSelect
 
-const ComboboxTrigger: Component<ComboboxPrimitive.ComboboxTriggerProps> = (props) => {
+type TriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<T, ComboboxTriggerProps>
+
+const ComboboxTrigger: Component<TriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <ComboboxPrimitive.Trigger class={cn("size-4 opacity-50", props.class)} {...rest}>
@@ -108,7 +136,9 @@ const ComboboxTrigger: Component<ComboboxPrimitive.ComboboxTriggerProps> = (prop
   )
 }
 
-const ComboboxContent: Component<ComboboxPrimitive.ComboboxContentProps> = (props) => {
+type ContentProps<T extends ValidComponent = "div"> = PolymorphicProps<T, ComboboxContentProps>
+
+const ComboboxContent: Component<ContentProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <ComboboxPrimitive.Portal>

@@ -1,5 +1,5 @@
 import type { Component, JSXElement } from "solid-js"
-import { splitProps } from "solid-js"
+import { createEffect, on, splitProps } from "solid-js"
 
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
@@ -116,11 +116,23 @@ export interface BadgeDeltaProps extends Omit<BadgeProps, "variant"> {
 
 const BadgeDelta: Component<BadgeDeltaProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children", "deltaType"])
-  const Icon = iconMap[props.deltaType]
-  const variant = variantMap[props.deltaType]
+
+  // eslint-disable-next-line solid/reactivity
+  let Icon = iconMap[props.deltaType]
+  createEffect(
+    on(
+      () => props.deltaType,
+      () => {
+        Icon = iconMap[props.deltaType]
+      }
+    )
+  )
 
   return (
-    <Badge class={cn(badgeDeltaVariants({ variant }), props.class)} {...rest}>
+    <Badge
+      class={cn(badgeDeltaVariants({ variant: variantMap[props.deltaType] }), props.class)}
+      {...rest}
+    >
       <span class="flex gap-1">
         <Icon class="size-4" />
         {props.children}

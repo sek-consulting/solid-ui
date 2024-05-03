@@ -1,7 +1,7 @@
 import type { ComponentProps, VoidComponent } from "solid-js"
 import { splitProps, type ParentComponent } from "solid-js"
 
-import type { Dialog as DialogPrimitive } from "@kobalte/core"
+import type { DialogRootProps } from "@kobalte/core/dialog"
 import {
   CommandEmptyProps,
   CommandGroupProps,
@@ -30,7 +30,7 @@ const Command: ParentComponent<CommandRootProps> = (props) => {
   )
 }
 
-type CommandDialogProps = DialogPrimitive.DialogRootProps
+type CommandDialogProps = DialogRootProps
 
 const CommandDialog: ParentComponent<CommandDialogProps> = (props) => {
   const [local, rest] = splitProps(props, ["children"])

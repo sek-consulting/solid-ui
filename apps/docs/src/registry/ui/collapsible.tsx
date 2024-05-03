@@ -1,6 +1,6 @@
-import { Collapsible as CollapsiblePrimitive } from "@kobalte/core"
+import { Collapsible as CollapsiblePrimitive } from "@kobalte/core/collapsible"
 
-const Collapsible = CollapsiblePrimitive.Root
+const Collapsible = CollapsiblePrimitive
 
 const CollapsibleTrigger = CollapsiblePrimitive.Trigger
 

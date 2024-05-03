@@ -1,15 +1,25 @@
-import type { Component } from "solid-js"
+import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Pagination as PaginationPrimitive } from "@kobalte/core"
+import {
+  PaginationEllipsisProps,
+  PaginationItemProps,
+  PaginationNextProps,
+  PaginationPreviousProps,
+  Pagination as PaginationPrimitive,
+  PaginationRootProps
+} from "@kobalte/core/pagination"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 import { buttonVariants } from "~/registry/ui/button"
 
-const Pagination: Component<PaginationPrimitive.PaginationRootProps> = (props) => {
+type RootProps<T extends ValidComponent = "nav"> = PolymorphicProps<T, PaginationRootProps>
+
+const Pagination: Component<RootProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
-    <PaginationPrimitive.Root
+    <PaginationPrimitive
       class={cn("[&>*]:flex [&>*]:flex-row [&>*]:items-center [&>*]:gap-1", props.class)}
       {...rest}
     />
@@ -18,7 +28,9 @@ const Pagination: Component<PaginationPrimitive.PaginationRootProps> = (props) =
 
 const PaginationItems = PaginationPrimitive.Items
 
-const PaginationItem: Component<PaginationPrimitive.PaginationItemProps> = (props) => {
+type ItemProps<T extends ValidComponent = "button"> = PolymorphicProps<T, PaginationItemProps>
+
+const PaginationItem: Component<ItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <PaginationPrimitive.Item
@@ -33,7 +45,10 @@ const PaginationItem: Component<PaginationPrimitive.PaginationItemProps> = (prop
   )
 }
 
-type EllipsisProps = Exclude<PaginationPrimitive.PaginationEllipsisProps, "children">
+type EllipsisProps<T extends ValidComponent = "div"> = Exclude<
+  PolymorphicProps<T, PaginationEllipsisProps>,
+  "children"
+>
 
 const PaginationEllipsis: Component<EllipsisProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
@@ -61,7 +76,10 @@ const PaginationEllipsis: Component<EllipsisProps> = (props) => {
   )
 }
 
-type PreviousProps = Exclude<PaginationPrimitive.PaginationPreviousProps, "children">
+type PreviousProps<T extends ValidComponent = "button"> = Exclude<
+  PolymorphicProps<T, PaginationPreviousProps>,
+  "children"
+>
 
 const PaginationPrevious: Component<PreviousProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
@@ -93,7 +111,10 @@ const PaginationPrevious: Component<PreviousProps> = (props) => {
   )
 }
 
-type NextProps = Exclude<PaginationPrimitive.PaginationNextProps, "children">
+type NextProps<T extends ValidComponent = "button"> = Exclude<
+  PolymorphicProps<T, PaginationNextProps>,
+  "children"
+>
 
 const PaginationNext: Component<NextProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])

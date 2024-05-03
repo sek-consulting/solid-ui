@@ -1,15 +1,23 @@
-import type { Component } from "solid-js"
+import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Select as SelectPrimitive } from "@kobalte/core"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import {
+  SelectContentProps,
+  SelectItemProps,
+  Select as SelectPrimitive,
+  SelectTriggerProps
+} from "@kobalte/core/select"
 
 import { cn } from "~/lib/utils"
 
-const Select = SelectPrimitive.Root
+const Select = SelectPrimitive
 
 const SelectValue = SelectPrimitive.Value
 
-const SelectTrigger: Component<SelectPrimitive.SelectTriggerProps> = (props) => {
+type TriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<T, SelectTriggerProps>
+
+const SelectTrigger: Component<TriggerProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <SelectPrimitive.Trigger
@@ -40,7 +48,9 @@ const SelectTrigger: Component<SelectPrimitive.SelectTriggerProps> = (props) => 
   )
 }
 
-const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => {
+type ContentProps<T extends ValidComponent = "div"> = PolymorphicProps<T, SelectContentProps>
+
+const SelectContent: Component<ContentProps> = (props) => {
   const [, rest] = splitProps(props, ["class"])
   return (
     <SelectPrimitive.Portal>
@@ -57,7 +67,9 @@ const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => 
   )
 }
 
-const SelectItem: Component<SelectPrimitive.SelectItemProps> = (props) => {
+type ItemProps<T extends ValidComponent = "li"> = PolymorphicProps<T, SelectItemProps>
+
+const SelectItem: Component<ItemProps> = (props) => {
   const [, rest] = splitProps(props, ["class", "children"])
   return (
     <SelectPrimitive.Item

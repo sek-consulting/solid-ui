@@ -2,7 +2,7 @@ import { mergeProps, Show, splitProps, type Component, type ComponentProps } fro
 
 import { cn } from "~/lib/utils"
 
-export interface DeltaBarProps extends ComponentProps<"div"> {
+type DeltaBarProps = ComponentProps<"div"> & {
   value: number
   isIncreasePositive?: boolean
 }
@@ -54,4 +54,5 @@ const DeltaBar: Component<DeltaBarProps> = (rawProps) => {
   )
 }
 
+export type { DeltaBarProps }
 export { DeltaBar }

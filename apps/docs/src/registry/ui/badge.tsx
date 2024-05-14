@@ -31,15 +31,15 @@ type BadgeProps = ComponentProps<"div"> &
   }
 
 const Badge: Component<BadgeProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "variant", "round"])
+  const [local, others] = splitProps(props, ["class", "variant", "round"])
   return (
     <div
       class={cn(
-        badgeVariants({ variant: props.variant }),
-        props.round ? "rounded-full" : "rounded-md",
-        props.class
+        badgeVariants({ variant: local.variant }),
+        local.round ? "rounded-full" : "rounded-md",
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }

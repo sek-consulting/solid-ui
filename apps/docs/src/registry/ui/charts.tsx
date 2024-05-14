@@ -36,7 +36,7 @@ import {
   Tooltip
 } from "chart.js"
 
-export interface TypedChartProps {
+type TypedChartProps = {
   data: ChartData
   options?: ChartOptions
   plugins?: ChartPlugin[]
@@ -45,11 +45,11 @@ export interface TypedChartProps {
   height?: number | undefined
 }
 
-export interface ChartProps extends TypedChartProps {
+type ChartProps = TypedChartProps & {
   type: ChartType
 }
 
-export interface ChartContext {
+type ChartContext = {
   chart: Chart
   tooltip: TooltipModel<keyof ChartTypeRegistry>
 }

@@ -14,39 +14,39 @@ const DeltaBar: Component<DeltaBarProps> = (rawProps) => {
     },
     rawProps
   )
-  const [, rest] = splitProps(props, ["value", "isIncreasePositive", "class"])
+  const [local, others] = splitProps(props, ["value", "isIncreasePositive", "class"])
 
   return (
     <div
-      class={cn("relative flex h-2 w-full items-center rounded-full bg-secondary", props.class)}
-      {...rest}
+      class={cn("relative flex h-2 w-full items-center rounded-full bg-secondary", local.class)}
+      {...others}
     >
       <div class="flex h-full w-1/2 justify-end">
-        <Show when={props.value < 0}>
+        <Show when={local.value < 0}>
           <div
             class={cn(
               "rounded-l-full",
-              (props.value > 0 && props.isIncreasePositive) ||
-                (props.value < 0 && !props.isIncreasePositive)
+              (local.value > 0 && local.isIncreasePositive) ||
+                (local.value < 0 && !local.isIncreasePositive)
                 ? "bg-success-foreground"
                 : "bg-error-foreground"
             )}
-            style={{ width: `${Math.abs(props.value)}%` }}
+            style={{ width: `${Math.abs(local.value)}%` }}
           />
         </Show>
       </div>
       <div class={cn("z-10 h-4 w-1 rounded-full bg-primary ring-2 ring-background")} />
       <div class="flex h-full w-1/2 justify-start">
-        <Show when={props.value > 0}>
+        <Show when={local.value > 0}>
           <div
             class={cn(
               "rounded-r-full",
-              (props.value > 0 && props.isIncreasePositive) ||
-                (props.value < 0 && !props.isIncreasePositive)
+              (local.value > 0 && local.isIncreasePositive) ||
+                (local.value < 0 && !local.isIncreasePositive)
                 ? "bg-success-foreground"
                 : "bg-error-foreground"
             )}
-            style={{ width: `${Math.abs(props.value)}%` }}
+            style={{ width: `${Math.abs(local.value)}%` }}
           />
         </Show>
       </div>

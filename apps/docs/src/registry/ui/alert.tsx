@@ -1,7 +1,7 @@
 import type { Component, ComponentProps, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Alert as AlertPrimitive, AlertRootProps } from "@kobalte/core/alert"
+import * as AlertPrimitive from "@kobalte/core/alert"
 import { PolymorphicProps } from "@kobalte/core/polymorphic"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
@@ -24,24 +24,27 @@ const alertVariants = cva(
   }
 )
 
-type AlertProps<T extends ValidComponent = "div"> = PolymorphicProps<T, AlertRootProps> &
-  VariantProps<typeof alertVariants>
+type AlertRootProps = AlertPrimitive.AlertRootProps &
+  VariantProps<typeof alertVariants> & { class?: string | undefined }
 
-const Alert: Component<AlertProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "variant"])
+const Alert = <T extends ValidComponent = "div">(props: PolymorphicProps<T, AlertRootProps>) => {
+  const [local, others] = splitProps(props as AlertRootProps, ["class", "variant"])
   return (
-    <AlertPrimitive class={cn(alertVariants({ variant: props.variant }), props.class)} {...rest} />
+    <AlertPrimitive.Root
+      class={cn(alertVariants({ variant: props.variant }), local.class)}
+      {...others}
+    />
   )
 }
 
 const AlertTitle: Component<ComponentProps<"h5">> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return <h5 class={cn("mb-1 font-medium leading-none tracking-tight", props.class)} {...rest} />
+  const [local, others] = splitProps(props, ["class"])
+  return <h5 class={cn("mb-1 font-medium leading-none tracking-tight", local.class)} {...others} />
 }
 
 const AlertDescription: Component<ComponentProps<"div">> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return <div class={cn("text-sm [&_p]:leading-relaxed", props.class)} {...rest} />
+  const [local, others] = splitProps(props, ["class"])
+  return <div class={cn("text-sm [&_p]:leading-relaxed", local.class)} {...others} />
 }
 
 export { Alert, AlertTitle, AlertDescription }

@@ -110,32 +110,32 @@ const variantMap: { [key in DeltaType]: DeltaVariant } = {
   decrease: "error"
 }
 
-export interface BadgeDeltaProps extends Omit<BadgeProps, "variant"> {
+type BadgeDeltaProps = Omit<BadgeProps, "variant"> & {
   deltaType: DeltaType
 }
 
 const BadgeDelta: Component<BadgeDeltaProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children", "deltaType"])
+  const [local, others] = splitProps(props, ["class", "children", "deltaType"])
 
   // eslint-disable-next-line solid/reactivity
-  let Icon = iconMap[props.deltaType]
+  let Icon = iconMap[local.deltaType]
   createEffect(
     on(
-      () => props.deltaType,
+      () => local.deltaType,
       () => {
-        Icon = iconMap[props.deltaType]
+        Icon = iconMap[local.deltaType]
       }
     )
   )
 
   return (
     <Badge
-      class={cn(badgeDeltaVariants({ variant: variantMap[props.deltaType] }), props.class)}
-      {...rest}
+      class={cn(badgeDeltaVariants({ variant: variantMap[local.deltaType] }), local.class)}
+      {...others}
     >
       <span class="flex gap-1">
         <Icon class="size-4" />
-        {props.children}
+        {local.children}
       </span>
     </Badge>
   )

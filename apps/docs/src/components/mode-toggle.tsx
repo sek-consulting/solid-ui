@@ -1,4 +1,4 @@
-import { As, useColorMode } from "@kobalte/core"
+import { useColorMode } from "@kobalte/core"
 
 import { IconLaptop, IconMoon, IconSun } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
@@ -14,12 +14,10 @@ export function ModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <As component={Button} variant="ghost" size="sm" class="w-9 px-0">
-          <IconSun class="size-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <IconMoon class="absolute size-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span class="sr-only">Toggle theme</span>
-        </As>
+      <DropdownMenuTrigger as={Button} variant="ghost" size="sm" class="w-9 px-0">
+        <IconSun class="size-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <IconMoon class="absolute size-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <span class="sr-only">Toggle theme</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem onSelect={() => setColorMode("light")}>

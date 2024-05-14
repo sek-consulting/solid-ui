@@ -1,23 +1,14 @@
-import type { Component, ComponentProps, ValidComponent } from "solid-js"
+import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import {
-  DialogContentProps,
-  DialogDescriptionProps,
-  DialogOverlayProps,
-  DialogPortalProps,
-  DialogTitleProps,
-  Dialog as SheetPrimitive
-} from "@kobalte/core/dialog"
+import * as SheetPrimitive from "@kobalte/core/dialog"
 import { PolymorphicProps } from "@kobalte/core/polymorphic"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "~/lib/utils"
 
-const Sheet = SheetPrimitive
-
+const Sheet = SheetPrimitive.Root
 const SheetTrigger = SheetPrimitive.Trigger
-
 const SheetClose = SheetPrimitive.CloseButton
 
 const portalVariants = cva("fixed inset-0 z-50 flex", {
@@ -32,28 +23,30 @@ const portalVariants = cva("fixed inset-0 z-50 flex", {
   defaultVariants: { position: "right" }
 })
 
-type PortalProps = DialogPortalProps & VariantProps<typeof portalVariants>
+type PortalProps = SheetPrimitive.DialogPortalProps & VariantProps<typeof portalVariants>
 
 const SheetPortal: Component<PortalProps> = (props) => {
-  const [, rest] = splitProps(props, ["position", "children"])
+  const [local, others] = splitProps(props, ["position", "children"])
   return (
-    <SheetPrimitive.Portal {...rest}>
-      <div class={portalVariants({ position: props.position })}>{props.children}</div>
+    <SheetPrimitive.Portal {...others}>
+      <div class={portalVariants({ position: local.position })}>{local.children}</div>
     </SheetPrimitive.Portal>
   )
 }
 
-type OverlayProps<T extends ValidComponent = "div"> = PolymorphicProps<T, DialogOverlayProps>
+type DialogOverlayProps = SheetPrimitive.DialogOverlayProps & { class?: string | undefined }
 
-const SheetOverlay: Component<OverlayProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const SheetOverlay = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, DialogOverlayProps>
+) => {
+  const [local, others] = splitProps(props as DialogOverlayProps, ["class"])
   return (
     <SheetPrimitive.Overlay
       class={cn(
         "fixed inset-0 z-50 bg-black/80 data-[expanded=]:animate-in data-[closed=]:animate-out data-[closed=]:fade-out-0 data-[expanded=]:fade-in-0",
-        props.class
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }
@@ -77,19 +70,21 @@ const sheetVariants = cva(
   }
 )
 
-type ContentProps<T extends ValidComponent = "div"> = PolymorphicProps<T, DialogContentProps> &
-  VariantProps<typeof sheetVariants>
+type DialogContentProps = SheetPrimitive.DialogContentProps &
+  VariantProps<typeof sheetVariants> & { class?: string | undefined; children?: JSX.Element }
 
-const SheetContent: Component<ContentProps> = (props) => {
-  const [, rest] = splitProps(props, ["position", "class", "children"])
+const SheetContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, DialogContentProps>
+) => {
+  const [local, others] = splitProps(props as DialogContentProps, ["position", "class", "children"])
   return (
-    <SheetPortal position={props.position}>
+    <SheetPortal position={local.position}>
       <SheetOverlay />
       <SheetPrimitive.Content
-        class={cn(sheetVariants({ position: props.position }), props.class)}
-        {...rest}
+        class={cn(sheetVariants({ position: local.position }), local.class)}
+        {...others}
       >
-        {props.children}
+        {local.children}
         <SheetPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -112,42 +107,46 @@ const SheetContent: Component<ContentProps> = (props) => {
 }
 
 const SheetHeader: Component<ComponentProps<"div">> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+  const [local, others] = splitProps(props, ["class"])
   return (
-    <div class={cn("flex flex-col space-y-2 text-center sm:text-left", props.class)} {...rest} />
+    <div class={cn("flex flex-col space-y-2 text-center sm:text-left", local.class)} {...others} />
   )
 }
 
 const SheetFooter: Component<ComponentProps<"div">> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+  const [local, others] = splitProps(props, ["class"])
   return (
     <div
-      class={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", props.class)}
-      {...rest}
+      class={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", local.class)}
+      {...others}
     />
   )
 }
 
-type TitleProps<T extends ValidComponent = "h2"> = PolymorphicProps<T, DialogTitleProps>
+type DialogTitleProps = SheetPrimitive.DialogTitleProps & { class?: string | undefined }
 
-const SheetTitle: Component<TitleProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const SheetTitle = <T extends ValidComponent = "h2">(
+  props: PolymorphicProps<T, DialogTitleProps>
+) => {
+  const [local, others] = splitProps(props as DialogTitleProps, ["class"])
   return (
     <SheetPrimitive.Title
-      class={cn("text-lg font-semibold text-foreground", props.class)}
-      {...rest}
+      class={cn("text-lg font-semibold text-foreground", local.class)}
+      {...others}
     />
   )
 }
 
-type DescriptionProps<T extends ValidComponent = "p"> = PolymorphicProps<T, DialogDescriptionProps>
+type DialogDescriptionProps = SheetPrimitive.DialogDescriptionProps & { class?: string | undefined }
 
-const SheetDescription: Component<DescriptionProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const SheetDescription = <T extends ValidComponent = "p">(
+  props: PolymorphicProps<T, DialogDescriptionProps>
+) => {
+  const [local, others] = splitProps(props as DialogDescriptionProps, ["class"])
   return (
     <SheetPrimitive.Description
-      class={cn("text-sm text-muted-foreground", props.class)}
-      {...rest}
+      class={cn("text-sm text-muted-foreground", local.class)}
+      {...others}
     />
   )
 }

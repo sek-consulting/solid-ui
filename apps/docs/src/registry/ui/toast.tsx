@@ -1,41 +1,13 @@
-import type { Component, JSX, ValidComponent } from "solid-js"
+import type { JSX, ValidComponent } from "solid-js"
 import { Match, splitProps, Switch } from "solid-js"
 import { Portal } from "solid-js/web"
 
 import { PolymorphicProps } from "@kobalte/core/polymorphic"
-import {
-  ToastCloseButtonProps,
-  ToastDescriptionProps,
-  toaster,
-  ToastListProps,
-  Toast as ToastPrimitive,
-  ToastPromiseState,
-  ToastRootProps,
-  ToastTitleProps
-} from "@kobalte/core/toast"
+import * as ToastPrimitive from "@kobalte/core/toast"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
 
 import { cn } from "~/lib/utils"
-
-type ListProps<T extends ValidComponent = "ol"> = PolymorphicProps<T, ToastListProps>
-
-const Toaster: Component<ListProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return (
-    <Portal>
-      <ToastPrimitive.Region>
-        <ToastPrimitive.List
-          class={cn(
-            "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse gap-2 p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]",
-            props.class
-          )}
-          {...rest}
-        />
-      </ToastPrimitive.Region>
-    </Portal>
-  )
-}
 
 const toastVariants = cva(
   "group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--kb-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--kb-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[opened]:animate-in data-[closed]:animate-out data-[swipe=end]:animate-out data-[closed]:fade-out-80 data-[closed]:slide-out-to-right-full data-[opened]:slide-in-from-top-full data-[opened]:sm:slide-in-from-bottom-full",
@@ -57,30 +29,51 @@ const toastVariants = cva(
 )
 type ToastVariant = NonNullable<VariantProps<typeof toastVariants>["variant"]>
 
-type ToastProps<T extends ValidComponent = "li"> = PolymorphicProps<T, ToastRootProps> &
-  VariantProps<typeof toastVariants>
+type ToastListProps = ToastPrimitive.ToastListProps & { class?: string | undefined }
 
-const Toast: Component<ToastProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "variant"])
+const Toaster = <T extends ValidComponent = "ol">(props: PolymorphicProps<T, ToastListProps>) => {
+  const [local, others] = splitProps(props as ToastListProps, ["class"])
   return (
-    <ToastPrimitive class={cn(toastVariants({ variant: props.variant }), props.class)} {...rest} />
+    <Portal>
+      <ToastPrimitive.Region>
+        <ToastPrimitive.List
+          class={cn(
+            "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse gap-2 p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]",
+            local.class
+          )}
+          {...others}
+        />
+      </ToastPrimitive.Region>
+    </Portal>
   )
 }
 
-type CloseButtonProps<T extends ValidComponent = "button"> = PolymorphicProps<
-  T,
-  ToastCloseButtonProps
->
+type ToastRootProps = ToastPrimitive.ToastRootProps &
+  VariantProps<typeof toastVariants> & { class?: string | undefined }
 
-const ToastClose: Component<CloseButtonProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const Toast = <T extends ValidComponent = "li">(props: PolymorphicProps<T, ToastRootProps>) => {
+  const [local, others] = splitProps(props as ToastRootProps, ["class", "variant"])
+  return (
+    <ToastPrimitive.Root
+      class={cn(toastVariants({ variant: local.variant }), local.class)}
+      {...others}
+    />
+  )
+}
+
+type ToastCloseButtonProps = ToastPrimitive.ToastCloseButtonProps & { class?: string | undefined }
+
+const ToastClose = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, ToastCloseButtonProps>
+) => {
+  const [local, others] = splitProps(props as ToastCloseButtonProps, ["class"])
   return (
     <ToastPrimitive.CloseButton
       class={cn(
         "absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-destructive-foreground group-[.error]:text-error-foreground group-[.success]:text-success-foreground group-[.warning]:text-warning-foreground",
-        props.class
+        local.class
       )}
-      {...rest}
+      {...others}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -99,18 +92,22 @@ const ToastClose: Component<CloseButtonProps> = (props) => {
   )
 }
 
-type TitleProps<T extends ValidComponent = "div"> = PolymorphicProps<T, ToastTitleProps>
+type ToastTitleProps = ToastPrimitive.ToastTitleProps & { class?: string | undefined }
 
-const ToastTitle: Component<TitleProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return <ToastPrimitive.Title class={cn("text-sm font-semibold", props.class)} {...rest} />
+const ToastTitle = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, ToastTitleProps>
+) => {
+  const [local, others] = splitProps(props as ToastTitleProps, ["class"])
+  return <ToastPrimitive.Title class={cn("text-sm font-semibold", local.class)} {...others} />
 }
 
-type DescriptionProps<T extends ValidComponent = "div"> = PolymorphicProps<T, ToastDescriptionProps>
+type ToastDescriptionProps = ToastPrimitive.ToastDescriptionProps & { class?: string | undefined }
 
-const ToastDescription: Component<DescriptionProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return <ToastPrimitive.Description class={cn("text-sm opacity-90", props.class)} {...rest} />
+const ToastDescription = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, ToastDescriptionProps>
+) => {
+  const [local, others] = splitProps(props as ToastDescriptionProps, ["class"])
+  return <ToastPrimitive.Description class={cn("text-sm opacity-90", local.class)} {...others} />
 }
 
 function showToast(props: {
@@ -119,7 +116,7 @@ function showToast(props: {
   variant?: ToastVariant
   duration?: number
 }) {
-  toaster.show((data) => (
+  ToastPrimitive.toaster.show((data) => (
     <Toast toastId={data.toastId} variant={props.variant} duration={props.duration}>
       <div class="grid gap-1">
         {props.title && <ToastTitle>{props.title}</ToastTitle>}
@@ -139,12 +136,12 @@ function showToastPromise<T, U>(
     duration?: number
   }
 ) {
-  const variant: { [key in ToastPromiseState]: ToastVariant } = {
+  const variant: { [key in ToastPrimitive.ToastPromiseState]: ToastVariant } = {
     pending: "default",
     fulfilled: "success",
     rejected: "error"
   }
-  return toaster.promise<T, U>(promise, (props) => (
+  return ToastPrimitive.toaster.promise<T, U>(promise, (props) => (
     <Toast toastId={props.toastId} variant={variant[props.state]} duration={options.duration}>
       <Switch>
         <Match when={props.state === "pending"}>{options.loading}</Match>

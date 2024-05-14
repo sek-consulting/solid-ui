@@ -22,18 +22,23 @@ const Flex: Component<FlexProps> = (rawProps) => {
     } satisfies FlexProps,
     rawProps
   )
-  const [, rest] = splitProps(props, ["flexDirection", "justifyContent", "alignItems", "class"])
+  const [local, others] = splitProps(props, [
+    "flexDirection",
+    "justifyContent",
+    "alignItems",
+    "class"
+  ])
 
   return (
     <div
       class={cn(
         "flex w-full",
-        flexDirectionClassNames[props.flexDirection],
-        justifyContentClassNames[props.justifyContent],
-        alignItemsClassNames[props.alignItems],
-        props.class
+        flexDirectionClassNames[local.flexDirection],
+        justifyContentClassNames[local.justifyContent],
+        alignItemsClassNames[local.alignItems],
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }

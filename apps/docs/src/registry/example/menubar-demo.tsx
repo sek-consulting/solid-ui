@@ -28,7 +28,7 @@ export default function MenubarDemo() {
           </MenubarItem>
           <MenubarItem disabled>New Incognito Window</MenubarItem>
           <MenubarSeparator />
-          <MenubarSub>
+          <MenubarSub overlap>
             <MenubarSubTrigger>Share</MenubarSubTrigger>
             <MenubarSubContent>
               <MenubarItem>Email link</MenubarItem>
@@ -52,7 +52,7 @@ export default function MenubarDemo() {
             Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
           </MenubarItem>
           <MenubarSeparator />
-          <MenubarSub>
+          <MenubarSub overlap>
             <MenubarSubTrigger>Find</MenubarSubTrigger>
             <MenubarSubContent>
               <MenubarItem>Search the web</MenubarItem>

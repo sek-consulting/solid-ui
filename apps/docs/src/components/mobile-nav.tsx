@@ -1,8 +1,6 @@
 import type { ComponentProps } from "solid-js"
 import { createSignal, For } from "solid-js"
 
-import { As } from "@kobalte/core"
-
 import { docsConfig } from "~/config/docs"
 import { IconLogo, IconSidebarOpen } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
@@ -13,15 +11,13 @@ export function MobileNav() {
 
   return (
     <Sheet open={open()} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <As
-          component={Button}
-          variant="ghost"
-          class="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-        >
-          <IconSidebarOpen class="size-6" />
-          <span class="sr-only">Toggle Menu</span>
-        </As>
+      <SheetTrigger
+        as={Button}
+        variant="ghost"
+        class="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+      >
+        <IconSidebarOpen class="size-6" />
+        <span class="sr-only">Toggle Menu</span>
       </SheetTrigger>
       <SheetContent position="left" class="pr-0">
         <MobileLink href="/" onOpenChange={setOpen} class="flex items-center">

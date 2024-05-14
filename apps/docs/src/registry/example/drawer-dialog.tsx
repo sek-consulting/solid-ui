@@ -1,8 +1,6 @@
 import type { ComponentProps } from "solid-js"
-import { createSignal } from "solid-js"
+import { createSignal, Show } from "solid-js"
 import { isServer } from "solid-js/web"
-
-import { As } from "@kobalte/core"
 
 import { cn } from "~/lib/utils"
 import { Button } from "~/registry/ui/button"
@@ -35,28 +33,7 @@ export default function DrawerDialogDemo() {
     isDesktop = window.innerWidth >= 768
   }
 
-  if (isDesktop) {
-    return (
-      <Dialog open={open()} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <As component={Button} variant="outline">
-            Edit Profile
-          </As>
-        </DialogTrigger>
-        <DialogContent class="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you're done.
-            </DialogDescription>
-          </DialogHeader>
-          <ProfileForm />
-        </DialogContent>
-      </Dialog>
-    )
-  }
-
-  return (
+  const MobileDialog = (
     <Drawer open={open()} onOpenChange={setOpen}>
       <DrawerTrigger as={Button} variant="outline">
         Edit Profile
@@ -76,6 +53,25 @@ export default function DrawerDialogDemo() {
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
+  )
+
+  return (
+    <Show when={isDesktop} fallback={MobileDialog}>
+      <Dialog open={open()} onOpenChange={setOpen}>
+        <DialogTrigger as={Button} variant="outline">
+          Edit Profile
+        </DialogTrigger>
+        <DialogContent class="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Edit profile</DialogTitle>
+            <DialogDescription>
+              Make changes to your profile here. Click save when you're done.
+            </DialogDescription>
+          </DialogHeader>
+          <ProfileForm />
+        </DialogContent>
+      </Dialog>
+    </Show>
   )
 }
 

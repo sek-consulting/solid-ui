@@ -1,5 +1,3 @@
-import { As } from "@kobalte/core"
-
 import { IconCalendar } from "~/components/icons"
 import { Avatar, AvatarFallback, AvatarImage } from "~/registry/ui/avatar"
 import { Button } from "~/registry/ui/button"
@@ -8,10 +6,8 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "~/registry/ui/hov
 export default function HoverCardDemo() {
   return (
     <HoverCard>
-      <HoverCardTrigger asChild>
-        <As component={Button} variant="link">
-          @solidjs
-        </As>
+      <HoverCardTrigger as={Button} variant="link">
+        @solidjs
       </HoverCardTrigger>
       <HoverCardContent class="w-80">
         <div class="flex justify-between space-x-4">

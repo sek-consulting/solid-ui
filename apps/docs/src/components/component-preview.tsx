@@ -11,16 +11,16 @@ interface ComponentPreviewProps extends ComponentProps<"div"> {
   align?: "center" | "start" | "end"
 }
 
-const ComponentPreview: Component<ComponentPreviewProps> = (props) => {
+const ComponentPreview: Component<ComponentPreviewProps> = (rawProps) => {
   const Preview = createMemo(() => {
-    const Component = Index[props.name]?.component
+    const Component = Index[rawProps.name]?.component
 
     if (!Component) {
       return (
         <p class="text-sm text-muted-foreground">
           Component{" "}
           <code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-            {props.name}
+            {rawProps.name}
           </code>{" "}
           not found in registry.
         </p>
@@ -30,7 +30,7 @@ const ComponentPreview: Component<ComponentPreviewProps> = (props) => {
     return <Component />
   })
 
-  props = mergeProps({ align: "center" } as const, props)
+  const props = mergeProps({ align: "center" } as const, rawProps)
   const [, rest] = splitProps(props, ["class", "align", "children", "name"])
 
   return (

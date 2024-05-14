@@ -63,7 +63,7 @@ export type TimelineItemProps = {
 }
 
 const TimelineItem: Component<TimelineItemProps> = (props) => {
-  const [, rest] = splitProps(props, [
+  const [local, others] = splitProps(props, [
     "class",
     "bullet",
     "description",
@@ -78,25 +78,25 @@ const TimelineItem: Component<TimelineItemProps> = (props) => {
     <li
       class={cn(
         "relative border-l pb-8 pl-8",
-        props.isLast && "border-l-transparent pb-0",
-        props.isActive && !props.isLast && "border-l-primary",
-        props.class
+        local.isLast && "border-l-transparent pb-0",
+        local.isActive && !local.isLast && "border-l-primary",
+        local.class
       )}
       style={{
-        "border-left-width": `${props.lineSize}px`
+        "border-left-width": `${local.lineSize}px`
       }}
-      {...rest}
+      {...others}
     >
       <TimelineItemBullet
-        lineSize={props.lineSize}
-        bulletSize={props.bulletSize}
-        isActive={props.isActiveBullet}
+        lineSize={local.lineSize}
+        bulletSize={local.bulletSize}
+        isActive={local.isActiveBullet}
       >
-        {props.bullet}
+        {local.bullet}
       </TimelineItemBullet>
-      <TimelineItemTitle>{props.title}</TimelineItemTitle>
-      <Show when={props.description}>
-        <TimelineItemDescription>{props.description}</TimelineItemDescription>
+      <TimelineItemTitle>{local.title}</TimelineItemTitle>
+      <Show when={local.description}>
+        <TimelineItemDescription>{local.description}</TimelineItemDescription>
       </Show>
     </li>
   )
@@ -134,10 +134,10 @@ const TimelineItemTitle: ParentComponent = (props) => {
 }
 
 const TimelineItemDescription: Component<ComponentProps<"p">> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children"])
+  const [local, others] = splitProps(props, ["class", "children"])
   return (
-    <p class={cn("text-sm text-muted-foreground", props.class)} {...rest}>
-      {props.children}
+    <p class={cn("text-sm text-muted-foreground", local.class)} {...others}>
+      {local.children}
     </p>
   )
 }

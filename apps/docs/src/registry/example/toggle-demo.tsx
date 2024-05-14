@@ -7,8 +7,8 @@ export default function ToggleDemo() {
   return (
     <Toggle>
       {(state) => (
-        <Show when={state.pressed()} fallback={<IconMoon />}>
-          <IconSun />
+        <Show when={state.pressed()} fallback={<IconMoon class="size-6" />}>
+          <IconSun class="size-6" />
         </Show>
       )}
     </Toggle>

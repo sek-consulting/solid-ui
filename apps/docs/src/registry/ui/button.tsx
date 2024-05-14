@@ -1,4 +1,4 @@
-import { splitProps, ValidComponent } from "solid-js"
+import { JSX, splitProps, ValidComponent } from "solid-js"
 
 import * as ButtonPrimitive from "@kobalte/core/button"
 import { PolymorphicProps } from "@kobalte/core/polymorphic"
@@ -34,7 +34,7 @@ const buttonVariants = cva(
 )
 
 type ButtonProps = ButtonPrimitive.ButtonRootProps &
-  VariantProps<typeof buttonVariants> & { class?: string | undefined }
+  VariantProps<typeof buttonVariants> & { class?: string | undefined; children?: JSX.Element }
 
 const Button = <T extends ValidComponent = "button">(props: PolymorphicProps<T, ButtonProps>) => {
   const [local, others] = splitProps(props as ButtonProps, ["variant", "size", "class"])

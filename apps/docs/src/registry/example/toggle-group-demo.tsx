@@ -1,17 +1,18 @@
-import { ToggleGroup } from "@kobalte/core/toggle-group"
+import { IconBold, IconItalic, IconUnderline } from "~/components/icons"
+import { ToggleGroup, ToggleGroupItem } from "~/registry/ui/toggle-group"
 
 export default function ToggleGroupDemo() {
   return (
-    <ToggleGroup class="toggle-group">
-      <ToggleGroup.Item class="toggle-group__item" value="bold" aria-label="Bold">
-        A
-      </ToggleGroup.Item>
-      <ToggleGroup.Item class="toggle-group__item" value="italic" aria-label="Italic">
-        I
-      </ToggleGroup.Item>
-      <ToggleGroup.Item class="toggle-group__item" value="underline" aria-label="Underline">
-        U
-      </ToggleGroup.Item>
+    <ToggleGroup>
+      <ToggleGroupItem value="bold" aria-label="Bold">
+        <IconBold class="size-6" />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="italic" aria-label="Italic">
+        <IconItalic class="size-6" />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="underline" aria-label="Underline">
+        <IconUnderline class="size-6" />
+      </ToggleGroupItem>
     </ToggleGroup>
   )
 }

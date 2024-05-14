@@ -220,6 +220,7 @@ const ui: Registry = [
     name: "slider",
     type: "ui",
     dependencies: ["@kobalte/core"],
+    registryDependencies: ["label"],
     files: ["ui/slider.tsx"]
   },
   {

@@ -268,7 +268,7 @@ export const Index: Record<string, any> = {
   "slider": {
     name: "slider",
     type: "ui",
-    registryDependencies: undefined,
+    registryDependencies: ["label"],
     component: lazy(() => import("~/registry/ui/slider")),
     files: ["registry/ui/slider.tsx"],
   },

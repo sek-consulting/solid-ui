@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "textarea.tsx",
-      "content": "import type { Component, ComponentProps } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nimport { cn } from \"~/lib/utils\"\n\nconst Textarea: Component<ComponentProps<\"textarea\">> = (props) => {\n  const [, rest] = splitProps(props, [\"class\"])\n  return (\n    <textarea\n      class={cn(\n        \"flex min-h-[80px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\",\n        props.class\n      )}\n      {...rest}\n    />\n  )\n}\n\nexport { Textarea }\n"
+      "content": "import type { Component, ComponentProps } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nimport { cn } from \"~/lib/utils\"\n\nconst Textarea: Component<ComponentProps<\"textarea\">> = (props) => {\n  const [local, others] = splitProps(props, [\"class\"])\n  return (\n    <textarea\n      class={cn(\n        \"flex min-h-[80px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\",\n        local.class\n      )}\n      {...others}\n    />\n  )\n}\n\nexport { Textarea }\n"
     }
   ],
   "type": "ui"

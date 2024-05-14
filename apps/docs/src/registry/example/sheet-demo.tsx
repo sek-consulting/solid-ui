@@ -1,7 +1,5 @@
 import { For } from "solid-js"
 
-import { As } from "@kobalte/core"
-
 import { Button } from "~/registry/ui/button"
 import { Input } from "~/registry/ui/input"
 import { Label } from "~/registry/ui/label"
@@ -23,10 +21,8 @@ export default function SheetDemo() {
       <For each={SHEET_POSITIONS}>
         {(position) => (
           <Sheet>
-            <SheetTrigger asChild>
-              <As component={Button} variant="outline">
-                {position}
-              </As>
+            <SheetTrigger as={Button} variant="outline">
+              {position}
             </SheetTrigger>
             <SheetContent position={position}>
               <SheetHeader>

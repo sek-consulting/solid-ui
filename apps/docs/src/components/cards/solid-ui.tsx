@@ -1,5 +1,3 @@
-import { As } from "@kobalte/core"
-
 import { IconBrandTypescript, IconChevronDown, IconPlus, IconStar } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/registry/ui/card"
@@ -33,12 +31,9 @@ export function SolidUI() {
           </Button>
           <Separator orientation="vertical" class="h-[20px]" />
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <As component={Button} variant={"secondary"} class="px-2 shadow-none">
-                <IconChevronDown class="size-4 text-secondary-foreground" />
-              </As>
+            <DropdownMenuTrigger as={Button<"button">} variant="secondary" class="px-2 shadow-none">
+              <IconChevronDown class="size-4 text-secondary-foreground" />
             </DropdownMenuTrigger>
-
             <DropdownMenuContent>
               <DropdownMenuGroup>
                 <DropdownMenuGroupLabel>Suggested Lists</DropdownMenuGroupLabel>

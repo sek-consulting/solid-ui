@@ -12,7 +12,7 @@
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
-    "@fontsource/geist-sans": "^5.0.3",
+    "@fontsource/inter": "^5.0.18",
     "@kobalte/core": "0.13.0",
     "@mdx-js/mdx": "^2.3.0",
     "@modular-forms/solid": "^0.20.0",

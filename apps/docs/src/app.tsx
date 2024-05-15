@@ -14,7 +14,10 @@ import { MDXComponents } from "~/components/mdx-components"
 import { MetaTags } from "~/components/meta-tags"
 import Navbar from "~/components/navbar"
 
-import "@fontsource/geist-sans"
+import "@fontsource/geist-sans/400.css"
+import "@fontsource/geist-sans/500.css"
+import "@fontsource/geist-sans/600.css"
+import "@fontsource/geist-sans/700.css"
 import "~/styles/app.css"
 
 function getServerCookies() {

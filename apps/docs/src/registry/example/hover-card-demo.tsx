@@ -6,7 +6,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "~/registry/ui/hov
 export default function HoverCardDemo() {
   return (
     <HoverCard>
-      <HoverCardTrigger as={Button} variant="link">
+      <HoverCardTrigger as={Button<"button">} variant="link">
         @solidjs
       </HoverCardTrigger>
       <HoverCardContent class="w-80">

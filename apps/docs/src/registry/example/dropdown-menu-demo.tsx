@@ -27,7 +27,7 @@ export default function DropdownMenuDemo() {
   return (
     <div class="flex-col">
       <DropdownMenu>
-        <DropdownMenuTrigger as={Button}>Git Settings</DropdownMenuTrigger>
+        <DropdownMenuTrigger as={Button<"button">}>Git Settings</DropdownMenuTrigger>
         <DropdownMenuContent class="w-48">
           <DropdownMenuItem>
             <span>Commit</span>

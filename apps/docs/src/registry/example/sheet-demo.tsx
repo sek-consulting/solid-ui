@@ -21,7 +21,7 @@ export default function SheetDemo() {
       <For each={SHEET_POSITIONS}>
         {(position) => (
           <Sheet>
-            <SheetTrigger as={Button} variant="outline">
+            <SheetTrigger as={Button<"button">} variant="outline">
               {position}
             </SheetTrigger>
             <SheetContent position={position}>

@@ -33,7 +33,7 @@ const CodeBlockWrapper: Component<CodeBlockProps> = (rawProps) => {
             isOpened() ? "inset-x-0 bottom-0 h-12" : "inset-0"
           )}
         >
-          <CollapsibleTrigger as={Button} variant="secondary" class="h-8 text-xs">
+          <CollapsibleTrigger as={Button<"button">} variant="secondary" class="h-8 text-xs">
             {isOpened() ? "Collapse" : props.expandButtonTitle}
           </CollapsibleTrigger>
         </div>

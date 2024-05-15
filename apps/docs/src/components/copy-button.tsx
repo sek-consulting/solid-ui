@@ -34,7 +34,7 @@ const CopyButton: Component<CopyButtonProps> = (props) => {
     <>
       <Tooltip placement="top">
         <TooltipTrigger
-          as={Toggle as Component<ToggleProps>}
+          as={Toggle<"button">}
           onChange={setCopied}
           pressed={isCopied()}
           disabled={isCopied()}

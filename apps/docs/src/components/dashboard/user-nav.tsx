@@ -14,7 +14,11 @@ import {
 export function UserNav() {
   return (
     <DropdownMenu placement="bottom-end">
-      <DropdownMenuTrigger as={Button} variant="ghost" class="relative size-8 rounded-full">
+      <DropdownMenuTrigger
+        as={Button<"button">}
+        variant="ghost"
+        class="relative size-8 rounded-full"
+      >
         <Avatar class="size-8">
           <AvatarImage src="https://github.com/sek-consulting.png" alt="@sek-consulting" />
           <AvatarFallback>EK</AvatarFallback>

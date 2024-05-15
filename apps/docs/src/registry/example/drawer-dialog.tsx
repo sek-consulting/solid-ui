@@ -35,7 +35,7 @@ export default function DrawerDialogDemo() {
 
   const MobileDialog = (
     <Drawer open={open()} onOpenChange={setOpen}>
-      <DrawerTrigger as={Button} variant="outline">
+      <DrawerTrigger as={Button<"button">} variant="outline">
         Edit Profile
       </DrawerTrigger>
       <DrawerContent>
@@ -47,7 +47,7 @@ export default function DrawerDialogDemo() {
         </DrawerHeader>
         <ProfileForm class="px-4" />
         <DrawerFooter class="pt-2">
-          <DrawerClose as={Button} variant="outline">
+          <DrawerClose as={Button<"button">} variant="outline">
             Cancel
           </DrawerClose>
         </DrawerFooter>

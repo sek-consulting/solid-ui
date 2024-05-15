@@ -46,7 +46,7 @@ export default function SearchBar() {
   return (
     <Dialog onOpenChange={setIsOpen} open={isOpen()}>
       <DialogTrigger
-        as={Button}
+        as={Button<"button">}
         id="search-trigger"
         variant="outline"
         class="relative w-full justify-between space-x-4 text-muted-foreground"

@@ -22,7 +22,7 @@ export default function DrawerDemo() {
 
   return (
     <Drawer>
-      <DrawerTrigger as={Button} variant="outline">
+      <DrawerTrigger as={Button<"button">} variant="outline">
         Open Drawer
       </DrawerTrigger>
       <DrawerContent>
@@ -61,7 +61,7 @@ export default function DrawerDemo() {
           </div>
           <DrawerFooter>
             <Button>Submit</Button>
-            <DrawerClose as={Button} variant="outline">
+            <DrawerClose as={Button<"button">} variant="outline">
               Cancel
             </DrawerClose>
           </DrawerFooter>

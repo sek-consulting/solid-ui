@@ -15,7 +15,7 @@ export function MDXHeader(props: HeaderProps) {
   return (
     <div class="space-y-2 pb-8">
       <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">{props.title}</h1>
-      <p class="text-lg text-muted-foreground">{props.description}</p>
+      <p class="text-balance text-lg text-muted-foreground">{props.description}</p>
       <Show when={props.docs}>
         {(docs) => (
           <a

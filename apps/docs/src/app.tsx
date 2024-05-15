@@ -14,7 +14,7 @@ import { MDXComponents } from "~/components/mdx-components"
 import { MetaTags } from "~/components/meta-tags"
 import Navbar from "~/components/navbar"
 
-import "@fontsource/inter/latin.css"
+import "@fontsource/geist-sans"
 import "~/styles/app.css"
 
 function getServerCookies() {

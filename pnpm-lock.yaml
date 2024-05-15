@@ -57,9 +57,9 @@ importers:
 
   apps/docs:
     dependencies:
-      '@fontsource/inter':
-        specifier: ^5.0.17
-        version: 5.0.17
+      '@fontsource/geist-sans':
+        specifier: ^5.0.3
+        version: 5.0.3
       '@kobalte/core':
         specifier: 0.13.0
         version: 0.13.0(solid-js@1.8.16)
@@ -1805,8 +1805,8 @@ packages:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
     dev: false
 
-  /@fontsource/inter@5.0.17:
-    resolution: {integrity: sha512-2meBGx1kt7u5LwzGc5Sz5rka6ZDrydg6nT3x6Wkt310vHXUchIywrO8pooWMzZdHYcyFY/cv4lEpJZgMD94bCg==}
+  /@fontsource/geist-sans@5.0.3:
+    resolution: {integrity: sha512-oGwoSIqNPMvjtCwj1lZaEr47MeiG27XPhypwkF643u1TQduvwbm3V3hYB01JekeaT34SAGP4I1h+WCdRpJkcwA==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:

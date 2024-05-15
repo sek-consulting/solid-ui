@@ -11,6 +11,15 @@ export default function Footer() {
             class="font-medium underline underline-offset-4"
           >
             shadcn
+          </a>{" "}
+          &{" "}
+          <a
+            href="https://www.tremor.so/"
+            target="_blank"
+            rel="norefferer"
+            class="font-medium underline underline-offset-4"
+          >
+            tremor
           </a>
           . Ported to Solid by{" "}
           <a

@@ -17,7 +17,7 @@ export default function Navbar() {
         <div class="mr-4 hidden md:flex">
           <a href="/" class="mr-6 flex items-center space-x-2">
             <IconLogo class="size-6" />
-            <span class="hidden font-bold sm:inline-block">solid-ui</span>
+            <span class="hidden font-bold sm:inline-block">SolidUI</span>
           </a>
           <nav class="flex items-center gap-4 text-sm lg:gap-6">
             <For each={docsConfig.mainNav}>

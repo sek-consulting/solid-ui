@@ -1,11 +1,13 @@
-import { Component, Show, splitProps } from "solid-js"
+import { Show, ValidComponent, splitProps } from "solid-js"
 
-import { HandleProps, Resizable as ResizablePrimitive, RootProps } from "corvu/resizable"
+import ResizablePrimitive, { DynamicProps, HandleElementProps, HandleProps, RootElementProps, RootProps } from '@corvu/resizable'
 
 import { cn } from "~/lib/utils"
 
-const Resizable: Component<RootProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+type ResizableProps = RootProps & { class?: string }
+
+const Resizable = <T extends ValidComponent = 'div'>(props: DynamicProps<T, ResizableProps, RootElementProps>) => {
+  const [, rest] = splitProps(props as ResizableProps, ["class"])
   return (
     <ResizablePrimitive
       class={cn("flex size-full data-[orientation=vertical]:flex-col", props.class)}
@@ -16,8 +18,10 @@ const Resizable: Component<RootProps> = (props) => {
 
 const ResizablePanel = ResizablePrimitive.Panel
 
-const ResizableHandle: Component<HandleProps & { withHandle?: boolean }> = (props) => {
-  const [, rest] = splitProps(props, ["class", "withHandle"])
+type ResizableHandleProps = HandleProps & { class?: string; withHandle?: boolean }
+
+const ResizableHandle = <T extends ValidComponent = 'div'>(props: DynamicProps<T, ResizableHandleProps, HandleElementProps>) => {
+  const [, rest] = splitProps(props as ResizableHandleProps, ["class", "withHandle"])
   return (
     <ResizablePrimitive.Handle
       class={cn(

@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "skeleton.tsx",
-      "content": "import type { Component } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nimport { Skeleton as SkeletonPrimitive } from \"@kobalte/core\"\n\nimport { cn } from \"~/lib/utils\"\n\nconst Skeleton: Component<SkeletonPrimitive.SkeletonProps> = (props) => {\n  const [, rest] = splitProps(props, [\"class\"])\n  return (\n    <SkeletonPrimitive.Root\n      class={cn(\"bg-primary/10 data-[animate='true']:animate-pulse \", props.class)}\n      {...rest}\n    />\n  )\n}\n\nexport { Skeleton }\n"
+      "content": "import type { ValidComponent } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nimport { PolymorphicProps } from \"@kobalte/core/polymorphic\"\nimport * as SkeletonPrimitive from \"@kobalte/core/skeleton\"\n\nimport { cn } from \"~/lib/utils\"\n\ntype SkeletonRootProps = SkeletonPrimitive.SkeletonRootProps & { class?: string | undefined }\n\nconst Skeleton = <T extends ValidComponent = \"div\">(\n  props: PolymorphicProps<T, SkeletonRootProps>\n) => {\n  const [local, others] = splitProps(props as SkeletonRootProps, [\"class\"])\n  return (\n    <SkeletonPrimitive.Root\n      class={cn(\"bg-primary/10 data-[animate='true']:animate-pulse \", local.class)}\n      {...others}\n    />\n  )\n}\n\nexport { Skeleton }\n"
     }
   ],
   "type": "ui"

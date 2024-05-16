@@ -6,7 +6,7 @@ import { cn } from "~/lib/utils"
 type Cols = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 type Span = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
 
-export interface GridProps extends ComponentProps<"div"> {
+type GridProps = ComponentProps<"div"> & {
   cols?: Cols
   colsSm?: Cols
   colsMd?: Cols
@@ -15,24 +15,24 @@ export interface GridProps extends ComponentProps<"div"> {
 
 const Grid: Component<GridProps> = (rawProps) => {
   const props = mergeProps({ cols: 1 } satisfies GridProps, rawProps)
-  const [, rest] = splitProps(props, ["cols", "colsSm", "colsMd", "colsLg", "class"])
+  const [local, others] = splitProps(props, ["cols", "colsSm", "colsMd", "colsLg", "class"])
 
   return (
     <div
       class={cn(
         "grid",
-        gridCols[props.cols],
-        props.colsSm && gridColsSm[props.colsSm],
-        props.colsMd && gridColsMd[props.colsMd],
-        props.colsLg && gridColsLg[props.colsLg],
-        props.class
+        gridCols[local.cols],
+        local.colsSm && gridColsSm[local.colsSm],
+        local.colsMd && gridColsMd[local.colsMd],
+        local.colsLg && gridColsLg[local.colsLg],
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }
 
-export interface ColProps extends ComponentProps<"div"> {
+type ColProps = ComponentProps<"div"> & {
   span?: Span
   spanSm?: Span
   spanMd?: Span
@@ -41,18 +41,18 @@ export interface ColProps extends ComponentProps<"div"> {
 
 const Col: Component<ColProps> = (rawProps) => {
   const props = mergeProps({ span: 1 as Span }, rawProps)
-  const [, rest] = splitProps(props, ["span", "spanSm", "spanMd", "spanLg", "class"])
+  const [local, others] = splitProps(props, ["span", "spanSm", "spanMd", "spanLg", "class"])
 
   return (
     <div
       class={cn(
-        colSpan[props.span],
-        props.spanSm && colSpanSm[props.spanSm],
-        props.spanMd && colSpanMd[props.spanMd],
-        props.spanLg && colSpanLg[props.spanLg],
-        props.class
+        colSpan[local.span],
+        local.spanSm && colSpanSm[local.spanSm],
+        local.spanMd && colSpanMd[local.spanMd],
+        local.spanLg && colSpanLg[local.spanLg],
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }

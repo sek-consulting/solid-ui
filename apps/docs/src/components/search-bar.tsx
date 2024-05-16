@@ -1,7 +1,6 @@
 import { createResource, createSignal, For, onMount, Show } from "solid-js"
 import { isServer } from "solid-js/web"
 
-import { As } from "@kobalte/core"
 import type { SearchRes } from "~/types/search"
 import ShoSho from "shosho"
 
@@ -46,26 +45,24 @@ export default function SearchBar() {
 
   return (
     <Dialog onOpenChange={setIsOpen} open={isOpen()}>
-      <DialogTrigger asChild>
-        <As
-          component={Button}
-          id="search-trigger"
-          variant="outline"
-          class="relative w-full justify-between space-x-4 text-muted-foreground"
-        >
-          <div class="flex items-center space-x-2">
-            <IconSearch />
-            <span>Search...</span>
-          </div>
+      <DialogTrigger
+        as={Button<"button">}
+        id="search-trigger"
+        variant="outline"
+        class="relative w-full justify-between space-x-4 text-muted-foreground"
+      >
+        <div class="flex items-center space-x-2">
+          <IconSearch />
+          <span>Search...</span>
+        </div>
 
-          <Badge variant="secondary" class="flex items-center ">
-            <IconCommand />
-            <span>K</span>
-          </Badge>
-        </As>
+        <Badge variant="secondary" class="flex items-center ">
+          <IconCommand />
+          <span>K</span>
+        </Badge>
       </DialogTrigger>
 
-      <DialogContent class="flex h-[80%] flex-col">
+      <DialogContent class="flex h-4/5 flex-col">
         <DialogHeader>
           <Input
             placeholder="Search docs..."

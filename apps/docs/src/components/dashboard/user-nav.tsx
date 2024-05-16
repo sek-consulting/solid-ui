@@ -1,5 +1,3 @@
-import { As } from "@kobalte/core"
-
 import { Avatar, AvatarFallback, AvatarImage } from "~/registry/ui/avatar"
 import { Button } from "~/registry/ui/button"
 import {
@@ -16,13 +14,15 @@ import {
 export function UserNav() {
   return (
     <DropdownMenu placement="bottom-end">
-      <DropdownMenuTrigger asChild>
-        <As component={Button} variant="ghost" class="relative size-8 rounded-full">
-          <Avatar class="size-8">
-            <AvatarImage src="https://github.com/sek-consulting.png" alt="@sek-consulting" />
-            <AvatarFallback>EK</AvatarFallback>
-          </Avatar>
-        </As>
+      <DropdownMenuTrigger
+        as={Button<"button">}
+        variant="ghost"
+        class="relative size-8 rounded-full"
+      >
+        <Avatar class="size-8">
+          <AvatarImage src="https://github.com/sek-consulting.png" alt="@sek-consulting" />
+          <AvatarFallback>EK</AvatarFallback>
+        </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent class="w-56">
         <DropdownMenuLabel class="font-normal">

@@ -80,6 +80,15 @@ export function IconBell(props: IconProps) {
   )
 }
 
+export function IconBold(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M7 5h6a3.5 3.5 0 0 1 0 7h-6z" />
+      <path d="M13 12h1a3.5 3.5 0 0 1 0 7h-7v-7" />
+    </Icon>
+  )
+}
+
 export function IconBrandApple(props: IconProps) {
   return (
     <Icon {...props}>
@@ -222,6 +231,16 @@ export function IconHash(props: IconProps) {
   )
 }
 
+export function IconItalic(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M11 5l6 0" />
+      <path d="M7 19l6 0" />
+      <path d="M14 5l-4 14" />
+    </Icon>
+  )
+}
+
 export function IconLaptop(props: IconProps) {
   return (
     <Icon {...props}>
@@ -351,6 +370,15 @@ export function IconTerminal(props: IconProps) {
     <Icon {...props}>
       <path d="M5 7l5 5l-5 5" />
       <path d="M12 19l7 0" />
+    </Icon>
+  )
+}
+
+export function IconUnderline(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M7 5v5a5 5 0 0 0 10 0v-5" />
+      <path d="M5 19h14" />
     </Icon>
   )
 }

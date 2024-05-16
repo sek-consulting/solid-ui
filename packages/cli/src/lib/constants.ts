@@ -1,10 +1,10 @@
 export const PROJECT_DEPS = [
+  "tailwindcss",
   "tailwindcss-animate",
+  "tailwind-merge",
   "class-variance-authority",
   "clsx",
-  "tailwind-merge",
-  "@kobalte/core",
-  "tailwindcss"
+  "@kobalte/core"
 ]
 
 export const registryUrl = "https://www.solid-ui.com/registry"

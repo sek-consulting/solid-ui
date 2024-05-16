@@ -268,7 +268,7 @@ export const Index: Record<string, any> = {
   "slider": {
     name: "slider",
     type: "ui",
-    registryDependencies: undefined,
+    registryDependencies: ["label"],
     component: lazy(() => import("~/registry/ui/slider")),
     files: ["registry/ui/slider.tsx"],
   },
@@ -320,6 +320,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/ui/toggle")),
     files: ["registry/ui/toggle.tsx"],
+  },
+  "toggle-group": {
+    name: "toggle-group",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/toggle-group")),
+    files: ["registry/ui/toggle-group.tsx"],
   },
   "tooltip": {
     name: "tooltip",
@@ -705,6 +712,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/toggle-demo")),
     files: ["registry/example/toggle-demo.tsx"],
+  },
+  "toggle-group-demo": {
+    name: "toggle-group-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/toggle-group-demo")),
+    files: ["registry/example/toggle-group-demo.tsx"],
   },
   "tooltip-demo": {
     name: "tooltip-demo",

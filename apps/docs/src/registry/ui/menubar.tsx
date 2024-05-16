@@ -1,77 +1,97 @@
-import type { Component, ComponentProps } from "solid-js"
+import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Menubar as MenubarPrimitive } from "@kobalte/core"
+import * as MenubarPrimitive from "@kobalte/core/menubar"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
+
+const MenubarGroup = MenubarPrimitive.Group
+const MenubarPortal = MenubarPrimitive.Portal
+const MenubarSub = MenubarPrimitive.Sub
+const MenubarRadioGroup = MenubarPrimitive.RadioGroup
+
+type MenubarRootProps = MenubarPrimitive.MenubarRootProps & { class?: string | undefined }
+
+const Menubar = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarRootProps>
+) => {
+  const [local, others] = splitProps(props as MenubarRootProps, ["class"])
+  return (
+    <MenubarPrimitive.Root
+      class={cn(
+        "flex h-10 items-center space-x-1 rounded-md border bg-background p-1",
+        local.class
+      )}
+      {...others}
+    />
+  )
+}
 
 const MenubarMenu: Component<MenubarPrimitive.MenubarMenuProps> = (props) => {
   return <MenubarPrimitive.Menu gutter={8} {...props} />
 }
 
-const MenubarGroup = MenubarPrimitive.Group
+type MenubarTriggerProps = MenubarPrimitive.MenubarTriggerProps & { class?: string | undefined }
 
-const MenubarPortal = MenubarPrimitive.Portal
-
-const MenubarSub = MenubarPrimitive.Sub
-
-const MenubarRadioGroup = MenubarPrimitive.RadioGroup
-
-const Menubar: Component<MenubarPrimitive.MenubarRootProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
-  return (
-    <MenubarPrimitive.Root
-      class={cn(
-        "flex h-10 items-center space-x-1 rounded-md border bg-background p-1",
-        props.class
-      )}
-      {...rest}
-    />
-  )
-}
-
-const MenubarTrigger: Component<MenubarPrimitive.MenubarTriggerProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const MenubarTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, MenubarTriggerProps>
+) => {
+  const [local, others] = splitProps(props as MenubarTriggerProps, ["class"])
   return (
     <MenubarPrimitive.Trigger
       class={cn(
         "flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
-        props.class
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }
 
-const MenubarContent: Component<MenubarPrimitive.MenubarContentProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+type MenubarContentProps = MenubarPrimitive.MenubarContentProps & { class?: string | undefined }
+
+const MenubarContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarContentProps>
+) => {
+  const [local, others] = splitProps(props as MenubarContentProps, ["class"])
   return (
     <MenubarPrimitive.Portal>
       <MenubarPrimitive.Content
         class={cn(
           "z-50 min-w-48 origin-[var(--kb-menu-content-transform-origin)] animate-content-hide overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[expanded]:animate-content-show",
-          props.class
+          local.class
         )}
-        {...rest}
+        {...others}
       />
     </MenubarPrimitive.Portal>
   )
 }
 
-const MenubarSubTrigger: Component<
-  MenubarPrimitive.MenubarSubTriggerProps & { inset?: boolean }
-> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children", "inset"])
+type MenubarSubTriggerProps = MenubarPrimitive.MenubarSubTriggerProps & {
+  class?: string | undefined
+  children?: JSX.Element
+  inset?: boolean
+}
+
+const MenubarSubTrigger = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarSubTriggerProps>
+) => {
+  const [local, others] = splitProps(props as MenubarSubTriggerProps, [
+    "class",
+    "children",
+    "inset"
+  ])
   return (
     <MenubarPrimitive.SubTrigger
       class={cn(
         "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
-        props.inset && "pl-8",
-        props.class
+        local.inset && "pl-8",
+        local.class
       )}
-      {...rest}
+      {...others}
     >
-      {props.children}
+      {local.children}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -88,42 +108,64 @@ const MenubarSubTrigger: Component<
   )
 }
 
-const MenubarSubContent: Component<MenubarPrimitive.MenubarSubContentProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+type MenubarSubContentProps = MenubarPrimitive.MenubarSubContentProps & {
+  class?: string | undefined
+}
+
+const MenubarSubContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarSubContentProps>
+) => {
+  const [local, others] = splitProps(props as MenubarSubContentProps, ["class"])
   return (
-    <MenubarPrimitive.SubContent
-      class={cn(
-        "z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
-        props.class
-      )}
-      {...rest}
-    />
+    <MenubarPrimitive.Portal>
+      <MenubarPrimitive.SubContent
+        class={cn(
+          "z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in",
+          local.class
+        )}
+        {...others}
+      />
+    </MenubarPrimitive.Portal>
   )
 }
 
-const MenubarItem: Component<MenubarPrimitive.MenubarItemProps & { inset?: boolean }> = (props) => {
-  const [, rest] = splitProps(props, ["class", "inset"])
+type MenubarItemProps = MenubarPrimitive.MenubarItemProps & {
+  class?: string | undefined
+  inset?: boolean
+}
+
+const MenubarItem = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarItemProps>
+) => {
+  const [local, others] = splitProps(props as MenubarItemProps, ["class", "inset"])
   return (
     <MenubarPrimitive.Item
       class={cn(
         "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        props.inset && "pl-8",
-        props.class
+        local.inset && "pl-8",
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }
 
-const MenubarCheckboxItem: Component<MenubarPrimitive.MenubarCheckboxItemProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children"])
+type MenubarCheckboxItemProps = MenubarPrimitive.MenubarCheckboxItemProps & {
+  class?: string | undefined
+  children?: JSX.Element
+}
+
+const MenubarCheckboxItem = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarCheckboxItemProps>
+) => {
+  const [local, others] = splitProps(props as MenubarCheckboxItemProps, ["class", "children"])
   return (
     <MenubarPrimitive.CheckboxItem
       class={cn(
         "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        props.class
+        local.class
       )}
-      {...rest}
+      {...others}
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <MenubarPrimitive.ItemIndicator>
@@ -141,20 +183,27 @@ const MenubarCheckboxItem: Component<MenubarPrimitive.MenubarCheckboxItemProps> 
           </svg>
         </MenubarPrimitive.ItemIndicator>
       </span>
-      {props.children}
+      {local.children}
     </MenubarPrimitive.CheckboxItem>
   )
 }
 
-const MenubarRadioItem: Component<MenubarPrimitive.MenubarRadioItemProps> = (props) => {
-  const [, rest] = splitProps(props, ["class", "children"])
+type MenubarRadioItemProps = MenubarPrimitive.MenubarRadioItemProps & {
+  class?: string | undefined
+  children?: JSX.Element
+}
+
+const MenubarRadioItem = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarRadioItemProps>
+) => {
+  const [local, others] = splitProps(props as MenubarRadioItemProps, ["class", "children"])
   return (
     <MenubarPrimitive.RadioItem
       class={cn(
         "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        props.class
+        local.class
       )}
-      {...rest}
+      {...others}
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <MenubarPrimitive.ItemIndicator>
@@ -172,48 +221,62 @@ const MenubarRadioItem: Component<MenubarPrimitive.MenubarRadioItemProps> = (pro
           </svg>
         </MenubarPrimitive.ItemIndicator>
       </span>
-      {props.children}
+      {local.children}
     </MenubarPrimitive.RadioItem>
   )
 }
 
-const MenubarItemLabel: Component<MenubarPrimitive.MenubarItemLabelProps & { inset?: boolean }> = (
-  props
+type MenubarItemLabelProps = MenubarPrimitive.MenubarItemLabelProps & {
+  class?: string | undefined
+  inset?: boolean
+}
+
+const MenubarItemLabel = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, MenubarItemLabelProps>
 ) => {
-  const [, rest] = splitProps(props, ["class", "inset"])
+  const [local, others] = splitProps(props as MenubarItemLabelProps, ["class", "inset"])
   return (
     <MenubarPrimitive.ItemLabel
-      class={cn("px-2 py-1.5 text-sm font-semibold", props.inset && "pl-8", props.class)}
-      {...rest}
+      class={cn("px-2 py-1.5 text-sm font-semibold", local.inset && "pl-8", local.class)}
+      {...others}
     />
   )
 }
 
-const MenubarGroupLabel: Component<
-  MenubarPrimitive.MenubarGroupLabelProps & { inset?: boolean }
-> = (props) => {
-  const [, rest] = splitProps(props, ["class", "inset"])
+type MenubarGroupLabelProps = MenubarPrimitive.MenubarGroupLabelProps & {
+  class?: string | undefined
+  inset?: boolean
+}
+
+const MenubarGroupLabel = <T extends ValidComponent = "span">(
+  props: PolymorphicProps<T, MenubarGroupLabelProps>
+) => {
+  const [local, others] = splitProps(props as MenubarGroupLabelProps, ["class", "inset"])
   return (
     <MenubarPrimitive.GroupLabel
-      class={cn("px-2 py-1.5 text-sm font-semibold", props.inset && "pl-8", props.class)}
-      {...rest}
+      class={cn("px-2 py-1.5 text-sm font-semibold", local.inset && "pl-8", local.class)}
+      {...others}
     />
   )
 }
 
-const MenubarSeparator: Component<MenubarPrimitive.MenubarSeparatorProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+type MenubarSeparatorProps = MenubarPrimitive.MenubarSeparatorProps & { class?: string | undefined }
+
+const MenubarSeparator = <T extends ValidComponent = "hr">(
+  props: PolymorphicProps<T, MenubarSeparatorProps>
+) => {
+  const [local, others] = splitProps(props as MenubarSeparatorProps, ["class"])
   return (
-    <MenubarPrimitive.Separator class={cn("-mx-1 my-1 h-px bg-muted", props.class)} {...rest} />
+    <MenubarPrimitive.Separator class={cn("-mx-1 my-1 h-px bg-muted", local.class)} {...others} />
   )
 }
 
 const MenubarShortcut: Component<ComponentProps<"span">> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+  const [local, others] = splitProps(props, ["class"])
   return (
     <span
-      class={cn("ml-auto text-xs tracking-widest text-muted-foreground", props.class)}
-      {...rest}
+      class={cn("ml-auto text-xs tracking-widest text-muted-foreground", local.class)}
+      {...others}
     />
   )
 }

@@ -1,4 +1,4 @@
-import { Collapsible as CollapsiblePrimitive } from "@kobalte/core"
+import * as CollapsiblePrimitive from "@kobalte/core/collapsible"
 
 const Collapsible = CollapsiblePrimitive.Root
 

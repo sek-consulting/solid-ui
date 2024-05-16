@@ -356,6 +356,9 @@
     "dependencies": [
       "@kobalte/core"
     ],
+    "registryDependencies": [
+      "label"
+    ],
     "files": [
       "ui/slider.tsx"
     ],
@@ -419,6 +422,16 @@
     ],
     "files": [
       "ui/toggle.tsx"
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "toggle-group",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/toggle-group.tsx"
     ],
     "type": "ui"
   },

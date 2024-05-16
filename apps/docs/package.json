@@ -12,8 +12,8 @@
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.17",
-    "@kobalte/core": "^0.12.6",
+    "@fontsource/inter": "^5.0.18",
+    "@kobalte/core": "0.13.0",
     "@mdx-js/mdx": "^2.3.0",
     "@modular-forms/solid": "^0.20.0",
     "@solid-primitives/keyboard": "^1.2.8",

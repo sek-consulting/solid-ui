@@ -12,7 +12,7 @@ const sizes: Record<Size, { radius: number; strokeWidth: number }> = {
   xl: { radius: 80, strokeWidth: 10 }
 }
 
-export interface ProgressCircleProps extends ComponentProps<"div"> {
+type ProgressCircleProps = ComponentProps<"div"> & {
   value?: number
   size?: Size
   radius?: number
@@ -22,7 +22,7 @@ export interface ProgressCircleProps extends ComponentProps<"div"> {
 
 const ProgressCircle: Component<ProgressCircleProps> = (rawProps) => {
   const props = mergeProps({ size: "md" as Size, showAnimation: true }, rawProps)
-  const [, rest] = splitProps(props, [
+  const [local, others] = splitProps(props, [
     "class",
     "children",
     "value",
@@ -32,16 +32,16 @@ const ProgressCircle: Component<ProgressCircleProps> = (rawProps) => {
     "showAnimation"
   ])
 
-  const value = () => getLimitedValue(props.value)
-  const radius = () => props.radius ?? sizes[props.size].radius
-  const strokeWidth = () => props.strokeWidth ?? sizes[props.size].strokeWidth
+  const value = () => getLimitedValue(local.value)
+  const radius = () => local.radius ?? sizes[local.size].radius
+  const strokeWidth = () => local.strokeWidth ?? sizes[local.size].strokeWidth
   const normalizedRadius = () => radius() - strokeWidth() / 2
   const circumference = () => normalizedRadius() * 2 * Math.PI
   const strokeDashoffset = () => (value() / 100) * circumference()
   const offset = () => circumference() - strokeDashoffset()
 
   return (
-    <div class={cn("flex flex-col items-center justify-center", props.class)} {...rest}>
+    <div class={cn("flex flex-col items-center justify-center", local.class)} {...others}>
       <svg
         width={radius() * 2}
         height={radius() * 2}
@@ -71,12 +71,12 @@ const ProgressCircle: Component<ProgressCircleProps> = (rawProps) => {
             stroke-linecap="round"
             class={cn(
               "stroke-primary transition-colors ease-linear",
-              props.showAnimation ? "transition-all duration-300 ease-in-out" : ""
+              local.showAnimation ? "transition-all duration-300 ease-in-out" : ""
             )}
           />
         ) : null}
       </svg>
-      <div class={cn("absolute flex")}>{props.children}</div>
+      <div class={cn("absolute flex")}>{local.children}</div>
     </div>
   )
 }

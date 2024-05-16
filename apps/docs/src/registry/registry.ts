@@ -220,6 +220,7 @@ const ui: Registry = [
     name: "slider",
     type: "ui",
     dependencies: ["@kobalte/core"],
+    registryDependencies: ["label"],
     files: ["ui/slider.tsx"]
   },
   {
@@ -261,12 +262,12 @@ const ui: Registry = [
     dependencies: ["@kobalte/core"],
     files: ["ui/toggle.tsx"]
   },
-  // {
-  //   name: "toggle-group",
-  //   type: "ui",
-  //   dependencies: ["@kobalte/core"],
-  //   files: ["ui/toggle-group.tsx"]
-  // },
+  {
+    name: "toggle-group",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/toggle-group.tsx"]
+  },
   {
     name: "tooltip",
     type: "ui",
@@ -557,11 +558,11 @@ const examples: Registry = [
     type: "example",
     files: ["example/toggle-demo.tsx"]
   },
-  // {
-  //   name: "toggle-group-demo",
-  //   type: "example",
-  //   files: ["example/toggle-group-demo.tsx"]
-  // },
+  {
+    name: "toggle-group-demo",
+    type: "example",
+    files: ["example/toggle-group-demo.tsx"]
+  },
   {
     name: "tooltip-demo",
     type: "example",

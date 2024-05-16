@@ -1,7 +1,5 @@
 import { createSignal, mergeProps, splitProps, type Component, type ComponentProps } from "solid-js"
 
-import { As } from "@kobalte/core"
-
 import { cn } from "~/lib/utils"
 import { Button } from "~/registry/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "~/registry/ui/collapsible"
@@ -35,10 +33,8 @@ const CodeBlockWrapper: Component<CodeBlockProps> = (rawProps) => {
             isOpened() ? "inset-x-0 bottom-0 h-12" : "inset-0"
           )}
         >
-          <CollapsibleTrigger asChild>
-            <As component={Button} variant="secondary" class="h-8 text-xs">
-              {isOpened() ? "Collapse" : props.expandButtonTitle}
-            </As>
+          <CollapsibleTrigger as={Button<"button">} variant="secondary" class="h-8 text-xs">
+            {isOpened() ? "Collapse" : props.expandButtonTitle}
           </CollapsibleTrigger>
         </div>
       </div>

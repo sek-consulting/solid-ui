@@ -1,8 +1,6 @@
 import type { Component } from "solid-js"
 import { createEffect, createSignal, on, Show, splitProps } from "solid-js"
 
-import { As } from "@kobalte/core"
-
 import { cn } from "~/lib/utils"
 import { IconCheck, IconCopy } from "~/components/icons"
 import type { ToggleProps } from "~/registry/ui/toggle"
@@ -35,22 +33,20 @@ const CopyButton: Component<CopyButtonProps> = (props) => {
   return (
     <>
       <Tooltip placement="top">
-        <TooltipTrigger asChild>
-          <As
-            component={Toggle}
-            onChange={setCopied}
-            pressed={isCopied()}
-            disabled={isCopied()}
-            class={cn(
-              "z-10 size-6 p-0 text-zinc-50 transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-              props.class
-            )}
-            {...rest}
-          >
-            <Show when={isCopied()} fallback={<IconCopy class="size-4" />}>
-              <IconCheck class="size-4" />
-            </Show>
-          </As>
+        <TooltipTrigger
+          as={Toggle<"button">}
+          onChange={setCopied}
+          pressed={isCopied()}
+          disabled={isCopied()}
+          class={cn(
+            "z-10 size-6 p-0 text-zinc-50 transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+            props.class
+          )}
+          {...rest}
+        >
+          <Show when={isCopied()} fallback={<IconCopy class="size-4" />}>
+            <IconCheck class="size-4" />
+          </Show>
         </TooltipTrigger>
         <TooltipContent>{isCopied() ? `Copied!` : `Copy to Clipboard`}</TooltipContent>
       </Tooltip>

@@ -1,46 +1,60 @@
-import type { Component } from "solid-js"
+import type { ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { Pagination as PaginationPrimitive } from "@kobalte/core"
+import * as PaginationPrimitive from "@kobalte/core/pagination"
+import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 import { buttonVariants } from "~/registry/ui/button"
 
-const Pagination: Component<PaginationPrimitive.PaginationRootProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const PaginationItems = PaginationPrimitive.Items
+
+type PaginationRootProps = PaginationPrimitive.PaginationRootProps & { class?: string | undefined }
+
+const Pagination = <T extends ValidComponent = "nav">(
+  props: PolymorphicProps<T, PaginationRootProps>
+) => {
+  const [local, others] = splitProps(props as PaginationRootProps, ["class"])
   return (
     <PaginationPrimitive.Root
-      class={cn("[&>*]:flex [&>*]:flex-row [&>*]:items-center [&>*]:gap-1", props.class)}
-      {...rest}
+      class={cn("[&>*]:flex [&>*]:flex-row [&>*]:items-center [&>*]:gap-1", local.class)}
+      {...others}
     />
   )
 }
 
-const PaginationItems = PaginationPrimitive.Items
+type PaginationItemProps = PaginationPrimitive.PaginationItemProps & { class?: string | undefined }
 
-const PaginationItem: Component<PaginationPrimitive.PaginationItemProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const PaginationItem = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, PaginationItemProps>
+) => {
+  const [local, others] = splitProps(props as PaginationItemProps, ["class"])
   return (
     <PaginationPrimitive.Item
       class={cn(
         buttonVariants({
           variant: "ghost"
         }),
-        "size-10 data-[current]:border"
+        "size-10 data-[current]:border",
+        local.class
       )}
-      {...rest}
+      {...others}
     />
   )
 }
 
-type EllipsisProps = Exclude<PaginationPrimitive.PaginationEllipsisProps, "children">
+type PaginationEllipsisProps = PaginationPrimitive.PaginationEllipsisProps & {
+  class?: string | undefined
+}
 
-const PaginationEllipsis: Component<EllipsisProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const PaginationEllipsis = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, PaginationEllipsisProps>
+) => {
+  const [local, others] = splitProps(props as PaginationEllipsisProps, ["class"])
   return (
     <PaginationPrimitive.Ellipsis
-      class={cn("flex size-10 items-center justify-center", props.class)}
-      {...rest}
+      class={cn("flex size-10 items-center justify-center", local.class)}
+      {...others}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +75,14 @@ const PaginationEllipsis: Component<EllipsisProps> = (props) => {
   )
 }
 
-type PreviousProps = Exclude<PaginationPrimitive.PaginationPreviousProps, "children">
+type PaginationPreviousProps = PaginationPrimitive.PaginationPreviousProps & {
+  class?: string | undefined
+}
 
-const PaginationPrevious: Component<PreviousProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const PaginationPrevious = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, PaginationPreviousProps>
+) => {
+  const [local, others] = splitProps(props as PaginationPreviousProps, ["class"])
   return (
     <PaginationPrimitive.Previous
       class={cn(
@@ -72,9 +90,9 @@ const PaginationPrevious: Component<PreviousProps> = (props) => {
           variant: "ghost"
         }),
         "gap-1 pl-2.5",
-        props.class
+        local.class
       )}
-      {...rest}
+      {...others}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -93,10 +111,14 @@ const PaginationPrevious: Component<PreviousProps> = (props) => {
   )
 }
 
-type NextProps = Exclude<PaginationPrimitive.PaginationNextProps, "children">
+type PaginationNextProps = PaginationPrimitive.PaginationNextProps & {
+  class?: string | undefined
+}
 
-const PaginationNext: Component<NextProps> = (props) => {
-  const [, rest] = splitProps(props, ["class"])
+const PaginationNext = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, PaginationNextProps>
+) => {
+  const [local, others] = splitProps(props as PaginationNextProps, ["class"])
   return (
     <PaginationPrimitive.Next
       class={cn(
@@ -104,9 +126,9 @@ const PaginationNext: Component<NextProps> = (props) => {
           variant: "ghost"
         }),
         "gap-1 pl-2.5",
-        props.class
+        local.class
       )}
-      {...rest}
+      {...others}
     >
       <span>Next</span>
       <svg

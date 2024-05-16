@@ -14,7 +14,7 @@ import { Label } from "~/registry/ui/label"
 export default function DialogDemo() {
   return (
     <Dialog>
-      <DialogTrigger as={Button}>Edit Profile</DialogTrigger>
+      <DialogTrigger as={Button<"button">}>Edit Profile</DialogTrigger>
       <DialogContent class="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>

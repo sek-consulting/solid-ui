@@ -110,7 +110,7 @@ const ui: Registry = [
   {
     name: "drawer",
     type: "ui",
-    dependencies: ["corvu"],
+    dependencies: ["@corvu/drawer"],
     files: ["ui/drawer.tsx"]
   },
   {
@@ -190,7 +190,7 @@ const ui: Registry = [
   {
     name: "resizable",
     type: "ui",
-    dependencies: ["corvu"],
+    dependencies: ["@corvu/resizable"],
     files: ["ui/resizable.tsx"]
   },
   {

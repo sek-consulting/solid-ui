@@ -1,5 +1,13 @@
 # @solid-ui/cli
 
+## 0.6.4
+
+### Patch Changes
+
+- [#93](https://github.com/sek-consulting/solid-ui/pull/93) [`18bc06b`](https://github.com/sek-consulting/solid-ui/commit/18bc06b290e7c5953cf3c05681312d39b3ef4ff7) Thanks [@GiyoMoon](https://github.com/GiyoMoon)! - Use new corvu type system and separate packages
+
+- [#87](https://github.com/sek-consulting/solid-ui/pull/87) [`d638f1b`](https://github.com/sek-consulting/solid-ui/commit/d638f1bcfccf47937299d35091db0e1c4a437e7b) Thanks [@sek-consulting](https://github.com/sek-consulting)! - update to kobalte 0.13 (no more asChild, seperate imports, ToggleGroup)
+
 ## 0.6.3
 
 ### Patch Changes

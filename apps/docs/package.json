@@ -12,8 +12,8 @@
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
-    "@corvu/drawer": "^0.1.0",
-    "@corvu/resizable": "^0.1.0",
+    "@corvu/drawer": "^0.2.0",
+    "@corvu/resizable": "^0.2.0",
     "@fontsource/inter": "^5.0.18",
     "@kobalte/core": "0.13.0",
     "@mdx-js/mdx": "^2.3.0",

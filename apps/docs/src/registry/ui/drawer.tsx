@@ -1,7 +1,7 @@
 import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import DrawerPrimitive, { ContentElementProps, ContentProps, DescriptionElementProps, DescriptionProps, DynamicProps, LabelElementProps, LabelProps, OverlayElementProps, OverlayProps } from "@corvu/drawer"
+import DrawerPrimitive, { ContentProps, DescriptionProps, DynamicProps, LabelProps, OverlayProps } from "@corvu/drawer"
 
 import { cn } from "~/lib/utils"
 
@@ -15,7 +15,7 @@ const DrawerClose = DrawerPrimitive.Close
 
 type DrawerOverlayProps = OverlayProps & { class?: string }
 
-const DrawerOverlay = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerOverlayProps, OverlayElementProps>) => {
+const DrawerOverlay = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerOverlayProps>) => {
   const [, rest] = splitProps(props as DrawerOverlayProps, ["class"])
   const drawerContext = DrawerPrimitive.useContext()
   return (
@@ -34,7 +34,7 @@ const DrawerOverlay = <T extends ValidComponent = 'div'>(props: DynamicProps<T, 
 
 type DrawerContentProps = ContentProps & { class?: string, children?: JSX.Element }
 
-const DrawerContent = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerContentProps, ContentElementProps>) => {
+const DrawerContent = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerContentProps>) => {
   const [, rest] = splitProps(props as DrawerContentProps, ["class", "children"])
   return (
     <DrawerPortal>
@@ -65,7 +65,7 @@ const DrawerFooter: Component<ComponentProps<"div">> = (props) => {
 
 type DrawerTitleProps = LabelProps & { class?: string }
 
-const DrawerTitle = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerTitleProps, LabelElementProps>) => {
+const DrawerTitle = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerTitleProps>) => {
   const [, rest] = splitProps(props as DrawerTitleProps, ["class"])
   return (
     <DrawerPrimitive.Label
@@ -77,7 +77,7 @@ const DrawerTitle = <T extends ValidComponent = 'div'>(props: DynamicProps<T, Dr
 
 type DrawerDescriptionProps = DescriptionProps & { class?: string }
 
-const DrawerDescription = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerDescriptionProps, DescriptionElementProps>) => {
+const DrawerDescription = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerDescriptionProps>) => {
   const [, rest] = splitProps(props as DrawerDescriptionProps, ["class"])
   return (
     <DrawerPrimitive.Description

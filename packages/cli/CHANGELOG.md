@@ -1,5 +1,11 @@
 # @solid-ui/cli
 
+## 0.6.5
+
+### Patch Changes
+
+- [#94](https://github.com/sek-consulting/solid-ui/pull/94) [`0ed72e2`](https://github.com/sek-consulting/solid-ui/commit/0ed72e2bea154f3faf7f82d63856dbffbdccdf9c) Thanks [@GiyoMoon](https://github.com/GiyoMoon)! - Update `@corvu/drawer` and `@corvu/resizable` to `0.2.0`
+
 ## 0.6.4
 
 ### Patch Changes

@@ -3,7 +3,7 @@ import { ToggleGroup, ToggleGroupItem } from "~/registry/ui/toggle-group"
 
 export default function ToggleGroupDemo() {
   return (
-    <ToggleGroup>
+    <ToggleGroup multiple>
       <ToggleGroupItem value="bold" aria-label="Bold">
         <IconBold class="size-6" />
       </ToggleGroupItem>

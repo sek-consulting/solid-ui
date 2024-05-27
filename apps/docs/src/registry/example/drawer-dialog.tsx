@@ -1,6 +1,5 @@
 import type { ComponentProps } from "solid-js"
-import { createSignal, Show } from "solid-js"
-import { isServer } from "solid-js/web"
+import { createSignal, onMount, Show } from "solid-js"
 
 import { cn } from "~/lib/utils"
 import { Button } from "~/registry/ui/button"
@@ -27,13 +26,13 @@ import { Label } from "~/registry/ui/label"
 
 export default function DrawerDialogDemo() {
   const [open, setOpen] = createSignal(false)
+  const [isDesktop, setIsDesktop] = createSignal(false)
 
-  let isDesktop = true
-  if (!isServer) {
-    isDesktop = window.innerWidth >= 768
-  }
+  onMount(() => {
+    setIsDesktop(window.innerWidth >= 768)
+  })
 
-  const MobileDialog = (
+  const MobileDialog = () => (
     <Drawer open={open()} onOpenChange={setOpen}>
       <DrawerTrigger as={Button<"button">} variant="outline">
         Edit Profile
@@ -56,7 +55,7 @@ export default function DrawerDialogDemo() {
   )
 
   return (
-    <Show when={isDesktop} fallback={MobileDialog}>
+    <Show when={isDesktop()} fallback={<MobileDialog />}>
       <Dialog open={open()} onOpenChange={setOpen}>
         <DialogTrigger as={Button} variant="outline">
           Edit Profile

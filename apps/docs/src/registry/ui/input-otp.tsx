@@ -4,9 +4,9 @@ import OtpField, { DynamicProps, RootProps } from "@corvu/otp-field"
 
 import { cn } from "~/lib/utils"
 
-export const REGEXP_ONLY_DIGITS = "^\\d+$"
-export const REGEXP_ONLY_CHARS = "^[a-zA-Z]+$"
-export const REGEXP_ONLY_DIGITS_AND_CHARS = "^[a-zA-Z0-9]+$"
+export const REGEXP_ONLY_DIGITS = "^\\d*$"
+export const REGEXP_ONLY_CHARS = "^[a-zA-Z]*$"
+export const REGEXP_ONLY_DIGITS_AND_CHARS = "^[a-zA-Z0-9]*$"
 
 const InputOTP = <T extends ValidComponent = "div">(
   props: DynamicProps<T, RootProps<T> & { class?: string | undefined }>
@@ -40,7 +40,8 @@ const InputOTPSlot: Component<ComponentProps<"div"> & { index: number }> = (prop
     <div
       class={cn(
         "relative flex size-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
-        showFakeCaret() && "z-10 ring-2 ring-ring ring-offset-background",
+        context.activeSlots().includes(props.index) &&
+          "z-10 ring-2 ring-ring ring-offset-background",
         local.class
       )}
       {...others}

@@ -139,8 +139,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Command",
-          href: "/docs/components/command",
-          status: "updated"
+          href: "/docs/components/command"
         },
         {
           title: "Context Menu",
@@ -171,6 +170,11 @@ export const docsConfig: Config = {
           href: "/docs/components/input"
         },
         {
+          title: "Input OTP",
+          href: "/docs/components/input-otp",
+          status: "new"
+        },
+        {
           title: "Label",
           href: "/docs/components/label"
         },
@@ -184,8 +188,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Pagination",
-          href: "/docs/components/pagination",
-          status: "updated"
+          href: "/docs/components/pagination"
         },
         {
           title: "Popover",
@@ -197,8 +200,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Progress Circle",
-          href: "/docs/components/progress-circle",
-          status: "new"
+          href: "/docs/components/progress-circle"
         },
         {
           title: "Radio Group",
@@ -206,8 +208,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Resizable",
-          href: "/docs/components/resizable",
-          status: "new"
+          href: "/docs/components/resizable"
         },
         {
           title: "Select",
@@ -259,8 +260,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Toggle Group",
-          href: "/docs/components/toggle-group",
-          status: "new"
+          href: "/docs/components/toggle-group"
         },
         {
           title: "Tooltip",

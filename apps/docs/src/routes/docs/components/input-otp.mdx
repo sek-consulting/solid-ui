@@ -1,0 +1,71 @@
+<MDXHeader
+  title="Input OTP"
+  description="Accessible one-time password component with copy paste functionality."
+  docs="https://corvu.dev/docs/primitives/otp-field/"
+/>
+
+<ComponentPreview name="input-otp-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx solidui-cli@latest add input-otp
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Install the following dependencies: </Step>
+
+```bash
+npm install @corvu/otp-field
+```
+
+<Step>Copy and paste the following code into your project: </Step>
+
+<ComponentSource name="input-otp" />
+
+</Steps>
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPHiddenInput,
+  InputOTPSeparator,
+  InputOTPSlot
+} from "~/components/ui/input-otp"
+```
+
+```tsx
+<InputOTP maxLength={6}>
+  <InputOTPHiddenInput />
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>
+```

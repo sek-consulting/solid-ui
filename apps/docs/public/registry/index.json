@@ -228,6 +228,13 @@
     "type": "ui"
   },
   {
+    "name": "input-otp",
+    "files": [
+      "ui/input-otp.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "label",
     "files": [
       "ui/label.tsx"

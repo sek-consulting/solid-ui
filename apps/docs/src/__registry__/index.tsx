@@ -174,6 +174,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/input")),
     files: ["registry/ui/input.tsx"],
   },
+  "input-otp": {
+    name: "input-otp",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/input-otp")),
+    files: ["registry/ui/input-otp.tsx"],
+  },
   "label": {
     name: "label",
     type: "ui",
@@ -565,6 +572,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/input-demo")),
     files: ["registry/example/input-demo.tsx"],
+  },
+  "input-otp-demo": {
+    name: "input-otp-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/input-otp-demo")),
+    files: ["registry/example/input-otp-demo.tsx"],
   },
   "menubar-demo": {
     name: "menubar-demo",

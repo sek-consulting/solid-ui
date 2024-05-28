@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@corvu/drawer": "^0.2.0",
+    "@corvu/otp-field": "^0.1.0",
     "@corvu/resizable": "^0.2.0",
     "@fontsource/inter": "^5.0.18",
     "@kobalte/core": "0.13.0",

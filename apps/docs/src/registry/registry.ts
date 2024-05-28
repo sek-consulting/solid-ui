@@ -141,6 +141,11 @@ const ui: Registry = [
     files: ["ui/input.tsx"]
   },
   {
+    name: "input-otp",
+    type: "ui",
+    files: ["ui/input-otp.tsx"]
+  },
+  {
     name: "label",
     type: "ui",
     files: ["ui/label.tsx"]
@@ -452,6 +457,11 @@ const examples: Registry = [
     name: "input-demo",
     type: "example",
     files: ["example/input-demo.tsx"]
+  },
+  {
+    name: "input-otp-demo",
+    type: "example",
+    files: ["example/input-otp-demo.tsx"]
   },
   {
     name: "menubar-demo",

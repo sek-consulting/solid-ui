@@ -170,11 +170,6 @@ export const docsConfig: Config = {
           href: "/docs/components/input"
         },
         {
-          title: "Input OTP",
-          href: "/docs/components/input-otp",
-          status: "new"
-        },
-        {
           title: "Label",
           href: "/docs/components/label"
         },
@@ -185,6 +180,11 @@ export const docsConfig: Config = {
         {
           title: "Number Field",
           href: "/docs/components/number-field"
+        },
+        {
+          title: "OTP Field",
+          href: "/docs/components/otp-field",
+          status: "new"
         },
         {
           title: "Pagination",

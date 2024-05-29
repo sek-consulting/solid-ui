@@ -141,11 +141,6 @@ const ui: Registry = [
     files: ["ui/input.tsx"]
   },
   {
-    name: "input-otp",
-    type: "ui",
-    files: ["ui/input-otp.tsx"]
-  },
-  {
     name: "label",
     type: "ui",
     files: ["ui/label.tsx"]
@@ -160,6 +155,11 @@ const ui: Registry = [
     type: "ui",
     dependencies: ["@kobalte/core"],
     files: ["ui/number-field.tsx"]
+  },
+  {
+    name: "otp-field",
+    type: "ui",
+    files: ["ui/otp-field.tsx"]
   },
   {
     name: "pagination",
@@ -459,11 +459,6 @@ const examples: Registry = [
     files: ["example/input-demo.tsx"]
   },
   {
-    name: "input-otp-demo",
-    type: "example",
-    files: ["example/input-otp-demo.tsx"]
-  },
-  {
     name: "menubar-demo",
     type: "example",
     files: ["example/menubar-demo.tsx"]
@@ -477,6 +472,11 @@ const examples: Registry = [
     name: "number-field-demo",
     type: "example",
     files: ["example/number-field-demo.tsx"]
+  },
+  {
+    name: "otp-field-demo",
+    type: "example",
+    files: ["example/otp-field-demo.tsx"]
   },
   {
     name: "pagination-demo",

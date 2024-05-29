@@ -8,7 +8,7 @@ export const REGEXP_ONLY_DIGITS = "^\\d*$"
 export const REGEXP_ONLY_CHARS = "^[a-zA-Z]*$"
 export const REGEXP_ONLY_DIGITS_AND_CHARS = "^[a-zA-Z0-9]*$"
 
-const InputOTP = <T extends ValidComponent = "div">(
+const OTPField = <T extends ValidComponent = "div">(
   props: DynamicProps<T, RootProps<T> & { class?: string | undefined }>
 ) => {
   const [local, others] = splitProps(props, ["class"])
@@ -23,14 +23,14 @@ const InputOTP = <T extends ValidComponent = "div">(
   )
 }
 
-const InputOTPHiddenInput = OtpField.Input
+const OTPFieldInput = OtpField.Input
 
-const InputOTPGroup: Component<ComponentProps<"div">> = (props) => {
+const OTPFieldGroup: Component<ComponentProps<"div">> = (props) => {
   const [local, others] = splitProps(props, ["class"])
   return <div class={cn("flex items-center", local.class)} {...others} />
 }
 
-const InputOTPSlot: Component<ComponentProps<"div"> & { index: number }> = (props) => {
+const OTPFieldSlot: Component<ComponentProps<"div"> & { index: number }> = (props) => {
   const [local, others] = splitProps(props, ["class", "index"])
   const context = OtpField.useContext()
   const char = () => context.value()[local.index]
@@ -56,7 +56,7 @@ const InputOTPSlot: Component<ComponentProps<"div"> & { index: number }> = (prop
   )
 }
 
-const InputOTPSeparator: Component<ComponentProps<"div">> = (props) => {
+const OTPFieldSeparator: Component<ComponentProps<"div">> = (props) => {
   return (
     <div {...props}>
       <svg
@@ -75,4 +75,4 @@ const InputOTPSeparator: Component<ComponentProps<"div">> = (props) => {
   )
 }
 
-export { InputOTP, InputOTPHiddenInput, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
+export { OTPField, OTPFieldInput, OTPFieldGroup, OTPFieldSlot, OTPFieldSeparator }

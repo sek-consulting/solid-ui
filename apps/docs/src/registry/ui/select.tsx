@@ -10,13 +10,13 @@ const Select = SelectPrimitive.Root
 const SelectValue = SelectPrimitive.Value
 const SelectHiddenSelect = SelectPrimitive.HiddenSelect
 
-type SelectTriggerProps = SelectPrimitive.SelectTriggerProps & {
+type SelectTriggerProps<T extends ValidComponent = "button"> = SelectPrimitive.SelectTriggerProps<T> & {
   class?: string | undefined
   children?: JSX.Element
 }
 
 const SelectTrigger = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, SelectTriggerProps>
+  props: PolymorphicProps<T, SelectTriggerProps<T>>
 ) => {
   const [local, others] = splitProps(props as SelectTriggerProps, ["class", "children"])
   return (
@@ -48,10 +48,10 @@ const SelectTrigger = <T extends ValidComponent = "button">(
   )
 }
 
-type SelectContentProps = SelectPrimitive.SelectContentProps & { class?: string | undefined }
+type SelectContentProps<T extends ValidComponent = "div"> = SelectPrimitive.SelectContentProps<T> & { class?: string | undefined }
 
 const SelectContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, SelectContentProps>
+  props: PolymorphicProps<T, SelectContentProps<T>>
 ) => {
   const [local, others] = splitProps(props as SelectContentProps, ["class"])
   return (
@@ -69,13 +69,13 @@ const SelectContent = <T extends ValidComponent = "div">(
   )
 }
 
-type SelectItemProps = SelectPrimitive.SelectItemProps & {
+type SelectItemProps<T extends ValidComponent = "li"> = SelectPrimitive.SelectItemProps<T> & {
   class?: string | undefined
   children?: JSX.Element
 }
 
 const SelectItem = <T extends ValidComponent = "li">(
-  props: PolymorphicProps<T, SelectItemProps>
+  props: PolymorphicProps<T, SelectItemProps<T>>
 ) => {
   const [local, others] = splitProps(props as SelectItemProps, ["class", "children"])
   return (

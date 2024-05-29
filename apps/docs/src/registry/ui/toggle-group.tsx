@@ -12,11 +12,11 @@ const ToggleGroupContext = createContext<VariantProps<typeof toggleVariants>>({
   variant: "default"
 })
 
-type ToggleGroupRootProps = ToggleGroupPrimitive.ToggleGroupRootProps &
+type ToggleGroupRootProps<T extends ValidComponent = "div"> = ToggleGroupPrimitive.ToggleGroupRootProps<T> &
   VariantProps<typeof toggleVariants> & { class?: string | undefined; children?: JSX.Element }
 
 const ToggleGroup = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, ToggleGroupRootProps>
+  props: PolymorphicProps<T, ToggleGroupRootProps<T>>
 ) => {
   const [local, others] = splitProps(props as ToggleGroupRootProps, [
     "class",
@@ -46,11 +46,11 @@ const ToggleGroup = <T extends ValidComponent = "div">(
   )
 }
 
-type ToggleGroupItemProps = ToggleGroupPrimitive.ToggleGroupItemProps &
+type ToggleGroupItemProps<T extends ValidComponent = "button"> = ToggleGroupPrimitive.ToggleGroupItemProps<T> &
   VariantProps<typeof toggleVariants> & { class?: string | undefined }
 
 const ToggleGroupItem = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, ToggleGroupItemProps>
+  props: PolymorphicProps<T, ToggleGroupItemProps<T>>
 ) => {
   const [local, others] = splitProps(props as ToggleGroupItemProps, ["class", "size", "variant"])
   const context = useContext(ToggleGroupContext)

@@ -11,10 +11,10 @@ const MenubarPortal = MenubarPrimitive.Portal
 const MenubarSub = MenubarPrimitive.Sub
 const MenubarRadioGroup = MenubarPrimitive.RadioGroup
 
-type MenubarRootProps = MenubarPrimitive.MenubarRootProps & { class?: string | undefined }
+type MenubarRootProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarRootProps<T> & { class?: string | undefined }
 
 const Menubar = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarRootProps>
+  props: PolymorphicProps<T, MenubarRootProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarRootProps, ["class"])
   return (
@@ -32,10 +32,10 @@ const MenubarMenu: Component<MenubarPrimitive.MenubarMenuProps> = (props) => {
   return <MenubarPrimitive.Menu gutter={8} {...props} />
 }
 
-type MenubarTriggerProps = MenubarPrimitive.MenubarTriggerProps & { class?: string | undefined }
+type MenubarTriggerProps<T extends ValidComponent = "button"> = MenubarPrimitive.MenubarTriggerProps<T> & { class?: string | undefined }
 
 const MenubarTrigger = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, MenubarTriggerProps>
+  props: PolymorphicProps<T, MenubarTriggerProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarTriggerProps, ["class"])
   return (
@@ -49,10 +49,10 @@ const MenubarTrigger = <T extends ValidComponent = "button">(
   )
 }
 
-type MenubarContentProps = MenubarPrimitive.MenubarContentProps & { class?: string | undefined }
+type MenubarContentProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarContentProps<T> & { class?: string | undefined }
 
 const MenubarContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarContentProps>
+  props: PolymorphicProps<T, MenubarContentProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarContentProps, ["class"])
   return (
@@ -68,14 +68,14 @@ const MenubarContent = <T extends ValidComponent = "div">(
   )
 }
 
-type MenubarSubTriggerProps = MenubarPrimitive.MenubarSubTriggerProps & {
+type MenubarSubTriggerProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarSubTriggerProps<T> & {
   class?: string | undefined
   children?: JSX.Element
   inset?: boolean
 }
 
 const MenubarSubTrigger = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarSubTriggerProps>
+  props: PolymorphicProps<T, MenubarSubTriggerProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarSubTriggerProps, [
     "class",
@@ -108,12 +108,12 @@ const MenubarSubTrigger = <T extends ValidComponent = "div">(
   )
 }
 
-type MenubarSubContentProps = MenubarPrimitive.MenubarSubContentProps & {
+type MenubarSubContentProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarSubContentProps<T> & {
   class?: string | undefined
 }
 
 const MenubarSubContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarSubContentProps>
+  props: PolymorphicProps<T, MenubarSubContentProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarSubContentProps, ["class"])
   return (
@@ -129,13 +129,13 @@ const MenubarSubContent = <T extends ValidComponent = "div">(
   )
 }
 
-type MenubarItemProps = MenubarPrimitive.MenubarItemProps & {
+type MenubarItemProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarItemProps<T> & {
   class?: string | undefined
   inset?: boolean
 }
 
 const MenubarItem = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarItemProps>
+  props: PolymorphicProps<T, MenubarItemProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarItemProps, ["class", "inset"])
   return (
@@ -150,13 +150,13 @@ const MenubarItem = <T extends ValidComponent = "div">(
   )
 }
 
-type MenubarCheckboxItemProps = MenubarPrimitive.MenubarCheckboxItemProps & {
+type MenubarCheckboxItemProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarCheckboxItemProps<T> & {
   class?: string | undefined
   children?: JSX.Element
 }
 
 const MenubarCheckboxItem = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarCheckboxItemProps>
+  props: PolymorphicProps<T, MenubarCheckboxItemProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarCheckboxItemProps, ["class", "children"])
   return (
@@ -188,13 +188,13 @@ const MenubarCheckboxItem = <T extends ValidComponent = "div">(
   )
 }
 
-type MenubarRadioItemProps = MenubarPrimitive.MenubarRadioItemProps & {
+type MenubarRadioItemProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarRadioItemProps<T> & {
   class?: string | undefined
   children?: JSX.Element
 }
 
 const MenubarRadioItem = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarRadioItemProps>
+  props: PolymorphicProps<T, MenubarRadioItemProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarRadioItemProps, ["class", "children"])
   return (
@@ -226,13 +226,13 @@ const MenubarRadioItem = <T extends ValidComponent = "div">(
   )
 }
 
-type MenubarItemLabelProps = MenubarPrimitive.MenubarItemLabelProps & {
+type MenubarItemLabelProps<T extends ValidComponent = "div"> = MenubarPrimitive.MenubarItemLabelProps<T> & {
   class?: string | undefined
   inset?: boolean
 }
 
 const MenubarItemLabel = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, MenubarItemLabelProps>
+  props: PolymorphicProps<T, MenubarItemLabelProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarItemLabelProps, ["class", "inset"])
   return (
@@ -243,13 +243,13 @@ const MenubarItemLabel = <T extends ValidComponent = "div">(
   )
 }
 
-type MenubarGroupLabelProps = MenubarPrimitive.MenubarGroupLabelProps & {
+type MenubarGroupLabelProps<T extends ValidComponent = "span"> = MenubarPrimitive.MenubarGroupLabelProps<T> & {
   class?: string | undefined
   inset?: boolean
 }
 
 const MenubarGroupLabel = <T extends ValidComponent = "span">(
-  props: PolymorphicProps<T, MenubarGroupLabelProps>
+  props: PolymorphicProps<T, MenubarGroupLabelProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarGroupLabelProps, ["class", "inset"])
   return (
@@ -260,10 +260,10 @@ const MenubarGroupLabel = <T extends ValidComponent = "span">(
   )
 }
 
-type MenubarSeparatorProps = MenubarPrimitive.MenubarSeparatorProps & { class?: string | undefined }
+type MenubarSeparatorProps<T extends ValidComponent = "hr"> = MenubarPrimitive.MenubarSeparatorProps<T> & { class?: string | undefined }
 
 const MenubarSeparator = <T extends ValidComponent = "hr">(
-  props: PolymorphicProps<T, MenubarSeparatorProps>
+  props: PolymorphicProps<T, MenubarSeparatorProps<T>>
 ) => {
   const [local, others] = splitProps(props as MenubarSeparatorProps, ["class"])
   return (

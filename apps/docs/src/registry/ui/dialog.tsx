@@ -20,10 +20,10 @@ const DialogPortal: Component<DialogPrimitive.DialogPortalProps> = (props) => {
   )
 }
 
-type DialogOverlayProps = DialogPrimitive.DialogOverlayProps & { class?: string | undefined }
+type DialogOverlayProps<T extends ValidComponent = "div"> = DialogPrimitive.DialogOverlayProps<T> & { class?: string | undefined }
 
 const DialogOverlay = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, DialogOverlayProps>
+  props: PolymorphicProps<T, DialogOverlayProps<T>>
 ) => {
   const [, rest] = splitProps(props as DialogOverlayProps, ["class"])
   return (
@@ -37,13 +37,13 @@ const DialogOverlay = <T extends ValidComponent = "div">(
   )
 }
 
-type DialogContentProps = DialogPrimitive.DialogContentProps & {
+type DialogContentProps<T extends ValidComponent = "div"> = DialogPrimitive.DialogContentProps<T> & {
   class?: string | undefined
   children?: JSX.Element
 }
 
 const DialogContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, DialogContentProps>
+  props: PolymorphicProps<T, DialogContentProps<T>>
 ) => {
   const [, rest] = splitProps(props as DialogContentProps, ["class", "children"])
   return (
@@ -95,10 +95,10 @@ const DialogFooter: Component<ComponentProps<"div">> = (props) => {
   )
 }
 
-type DialogTitleProps = DialogPrimitive.DialogTitleProps & { class?: string | undefined }
+type DialogTitleProps<T extends ValidComponent = "h2"> = DialogPrimitive.DialogTitleProps<T> & { class?: string | undefined }
 
 const DialogTitle = <T extends ValidComponent = "h2">(
-  props: PolymorphicProps<T, DialogTitleProps>
+  props: PolymorphicProps<T, DialogTitleProps<T>>
 ) => {
   const [, rest] = splitProps(props as DialogTitleProps, ["class"])
   return (
@@ -109,12 +109,12 @@ const DialogTitle = <T extends ValidComponent = "h2">(
   )
 }
 
-type DialogDescriptionProps = DialogPrimitive.DialogDescriptionProps & {
+type DialogDescriptionProps<T extends ValidComponent = "p"> = DialogPrimitive.DialogDescriptionProps<T> & {
   class?: string | undefined
 }
 
 const DialogDescription = <T extends ValidComponent = "p">(
-  props: PolymorphicProps<T, DialogDescriptionProps>
+  props: PolymorphicProps<T, DialogDescriptionProps<T>>
 ) => {
   const [, rest] = splitProps(props as DialogDescriptionProps, ["class"])
   return (

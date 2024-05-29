@@ -7,12 +7,12 @@ import { cn } from "~/lib/utils"
 
 const NumberField = NumberFieldPrimitive.Root
 
-type NumberFieldLabelProps = NumberFieldPrimitive.NumberFieldLabelProps & {
+type NumberFieldLabelProps<T extends ValidComponent = "label"> = NumberFieldPrimitive.NumberFieldLabelProps<T> & {
   class?: string | undefined
 }
 
 const NumberFieldLabel = <T extends ValidComponent = "label">(
-  props: PolymorphicProps<T, NumberFieldLabelProps>
+  props: PolymorphicProps<T, NumberFieldLabelProps<T>>
 ) => {
   const [local, others] = splitProps(props as NumberFieldLabelProps, ["class"])
   return (
@@ -26,12 +26,12 @@ const NumberFieldLabel = <T extends ValidComponent = "label">(
   )
 }
 
-type NumberFieldInputProps = NumberFieldPrimitive.NumberFieldInputProps & {
+type NumberFieldInputProps<T extends ValidComponent = "input"> = NumberFieldPrimitive.NumberFieldInputProps<T> & {
   class?: string | undefined
 }
 
 const NumberFieldInput = <T extends ValidComponent = "input">(
-  props: PolymorphicProps<T, NumberFieldInputProps>
+  props: PolymorphicProps<T, NumberFieldInputProps<T>>
 ) => {
   const [local, others] = splitProps(props as NumberFieldInputProps, ["class"])
   return (
@@ -45,13 +45,13 @@ const NumberFieldInput = <T extends ValidComponent = "input">(
   )
 }
 
-type NumberFieldIncrementTriggerProps = NumberFieldPrimitive.NumberFieldIncrementTriggerProps & {
+type NumberFieldIncrementTriggerProps<T extends ValidComponent = "button"> = NumberFieldPrimitive.NumberFieldIncrementTriggerProps<T> & {
   class?: string | undefined
   children?: JSX.Element
 }
 
 const NumberFieldIncrementTrigger = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, NumberFieldIncrementTriggerProps>
+  props: PolymorphicProps<T, NumberFieldIncrementTriggerProps<T>>
 ) => {
   const [local, others] = splitProps(props as NumberFieldIncrementTriggerProps, [
     "class",
@@ -83,13 +83,13 @@ const NumberFieldIncrementTrigger = <T extends ValidComponent = "button">(
   )
 }
 
-type NumberFieldDecrementTriggerProps = NumberFieldPrimitive.NumberFieldDecrementTriggerProps & {
+type NumberFieldDecrementTriggerProps<T extends ValidComponent = "button"> = NumberFieldPrimitive.NumberFieldDecrementTriggerProps<T> & {
   class?: string | undefined
   children?: JSX.Element
 }
 
 const NumberFieldDecrementTrigger = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, NumberFieldDecrementTriggerProps>
+  props: PolymorphicProps<T, NumberFieldDecrementTriggerProps<T>>
 ) => {
   const [local, others] = splitProps(props as NumberFieldDecrementTriggerProps, [
     "class",
@@ -121,12 +121,12 @@ const NumberFieldDecrementTrigger = <T extends ValidComponent = "button">(
   )
 }
 
-type NumberFieldDescriptionProps = NumberFieldPrimitive.NumberFieldDescriptionProps & {
+type NumberFieldDescriptionProps<T extends ValidComponent = "div"> = NumberFieldPrimitive.NumberFieldDescriptionProps<T> & {
   class?: string | undefined
 }
 
 const NumberFieldDescription = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, NumberFieldDescriptionProps>
+  props: PolymorphicProps<T, NumberFieldDescriptionProps<T>>
 ) => {
   const [local, others] = splitProps(props as NumberFieldDescriptionProps, ["class"])
   return (
@@ -137,12 +137,12 @@ const NumberFieldDescription = <T extends ValidComponent = "div">(
   )
 }
 
-type NumberFieldErrorMessageProps = NumberFieldPrimitive.NumberFieldErrorMessageProps & {
+type NumberFieldErrorMessageProps<T extends ValidComponent = "div"> = NumberFieldPrimitive.NumberFieldErrorMessageProps<T> & {
   class?: string | undefined
 }
 
 const NumberFieldErrorMessage = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, NumberFieldErrorMessageProps>
+  props: PolymorphicProps<T, NumberFieldErrorMessageProps<T>>
 ) => {
   const [local, others] = splitProps(props as NumberFieldErrorMessageProps, ["class"])
   return (

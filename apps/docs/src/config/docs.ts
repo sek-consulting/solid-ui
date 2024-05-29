@@ -166,10 +166,6 @@ export const docsConfig: Config = {
           href: "/docs/components/hover-card"
         },
         {
-          title: "Input",
-          href: "/docs/components/input"
-        },
-        {
           title: "Label",
           href: "/docs/components/label"
         },
@@ -243,8 +239,9 @@ export const docsConfig: Config = {
           href: "/docs/components/tabs"
         },
         {
-          title: "Textarea",
-          href: "/docs/components/textarea"
+          title: "Text Field",
+          href: "/docs/components/text-field",
+          status: "updated"
         },
         {
           title: "Timeline",

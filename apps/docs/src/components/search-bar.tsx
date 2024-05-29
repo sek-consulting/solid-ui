@@ -4,6 +4,7 @@ import { isServer } from "solid-js/web"
 import type { SearchRes } from "~/types/search"
 import ShoSho from "shosho"
 
+import { IconCommand, IconHash, IconSearch } from "~/components/icons"
 import { Badge } from "~/registry/ui/badge"
 import { Button } from "~/registry/ui/button"
 import {
@@ -14,9 +15,7 @@ import {
   DialogHeader,
   DialogTrigger
 } from "~/registry/ui/dialog"
-import { Input } from "~/registry/ui/input"
-
-import { IconCommand, IconHash, IconSearch } from "./icons"
+import { TextField, TextFieldInput } from "~/registry/ui/text-field"
 
 const shortcut = new ShoSho()
 
@@ -64,11 +63,13 @@ export default function SearchBar() {
 
       <DialogContent class="flex h-4/5 flex-col">
         <DialogHeader>
-          <Input
-            placeholder="Search docs..."
-            value={searchValue()}
-            onkeyup={(v) => setSearchValue(v.currentTarget.value)}
-          />
+          <TextField>
+            <TextFieldInput
+              placeholder="Search docs..."
+              value={searchValue()}
+              onkeyup={(v) => setSearchValue(v.currentTarget.value)}
+            />
+          </TextField>
         </DialogHeader>
 
         <DialogDescription class="overflow-scroll">

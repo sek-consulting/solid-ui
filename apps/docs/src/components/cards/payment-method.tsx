@@ -8,10 +8,10 @@ import {
   CardHeader,
   CardTitle
 } from "~/registry/ui/card"
-import { Input } from "~/registry/ui/input"
 import { Label } from "~/registry/ui/label"
 import { RadioGroup, RadioGroupItem } from "~/registry/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/registry/ui/select"
+import { TextField, TextFieldInput, TextFieldLabel } from "~/registry/ui/text-field"
 
 export function PaymentMethod() {
   return (
@@ -53,14 +53,14 @@ export function PaymentMethod() {
             </Label>
           </div>
         </RadioGroup>
-        <div class="grid gap-2">
-          <Label html-for="name">Name</Label>
-          <Input id="name" placeholder="First Last" />
-        </div>
-        <div class="grid gap-2">
-          <Label html-for="number">Card number</Label>
-          <Input id="number" placeholder="" />
-        </div>
+        <TextField class="grid gap-2">
+          <TextFieldLabel>Name</TextFieldLabel>
+          <TextFieldInput placeholder="First Last" type="text" />
+        </TextField>
+        <TextField class="grid gap-2">
+          <TextFieldLabel>Card number</TextFieldLabel>
+          <TextFieldInput placeholder="" type="text" />
+        </TextField>
         <div class="grid grid-cols-3 gap-4">
           <div class="grid gap-2">
             <Label html-for="month">Expires</Label>
@@ -106,10 +106,10 @@ export function PaymentMethod() {
               <SelectContent />
             </Select>
           </div>
-          <div class="grid gap-2">
-            <Label html-for="cvc">CVC</Label>
-            <Input id="cvc" placeholder="CVC" />
-          </div>
+          <TextField class="grid gap-2">
+            <TextFieldLabel>CVC</TextFieldLabel>
+            <TextFieldInput placeholder="CVC" type="text" />
+          </TextField>
         </div>
       </CardContent>
       <CardFooter>

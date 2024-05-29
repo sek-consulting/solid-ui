@@ -136,11 +136,6 @@ const ui: Registry = [
     files: ["ui/hover-card.tsx"]
   },
   {
-    name: "input",
-    type: "ui",
-    files: ["ui/input.tsx"]
-  },
-  {
     name: "label",
     type: "ui",
     files: ["ui/label.tsx"]
@@ -246,9 +241,9 @@ const ui: Registry = [
     files: ["ui/tabs.tsx"]
   },
   {
-    name: "textarea",
+    name: "text-field",
     type: "ui",
-    files: ["ui/textarea.tsx"]
+    files: ["ui/text-field.tsx"]
   },
   {
     name: "timeline",
@@ -454,11 +449,6 @@ const examples: Registry = [
     files: ["example/hover-card-demo.tsx"]
   },
   {
-    name: "input-demo",
-    type: "example",
-    files: ["example/input-demo.tsx"]
-  },
-  {
     name: "menubar-demo",
     type: "example",
     files: ["example/menubar-demo.tsx"]
@@ -549,9 +539,14 @@ const examples: Registry = [
     files: ["example/tabs-demo.tsx"]
   },
   {
-    name: "textarea-demo",
+    name: "text-field-demo",
     type: "example",
-    files: ["example/textarea-demo.tsx"]
+    files: ["example/text-field-demo.tsx"]
+  },
+  {
+    name: "text-field-textarea-demo",
+    type: "example",
+    files: ["example/text-field-textarea-demo.tsx"]
   },
   {
     name: "timeline-demo",

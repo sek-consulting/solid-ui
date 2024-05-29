@@ -167,13 +167,6 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/hover-card")),
     files: ["registry/ui/hover-card.tsx"],
   },
-  "input": {
-    name: "input",
-    type: "ui",
-    registryDependencies: undefined,
-    component: lazy(() => import("~/registry/ui/input")),
-    files: ["registry/ui/input.tsx"],
-  },
   "label": {
     name: "label",
     type: "ui",
@@ -300,12 +293,12 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/tabs")),
     files: ["registry/ui/tabs.tsx"],
   },
-  "textarea": {
-    name: "textarea",
+  "text-field": {
+    name: "text-field",
     type: "ui",
     registryDependencies: undefined,
-    component: lazy(() => import("~/registry/ui/textarea")),
-    files: ["registry/ui/textarea.tsx"],
+    component: lazy(() => import("~/registry/ui/text-field")),
+    files: ["registry/ui/text-field.tsx"],
   },
   "timeline": {
     name: "timeline",
@@ -566,13 +559,6 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/hover-card-demo")),
     files: ["registry/example/hover-card-demo.tsx"],
   },
-  "input-demo": {
-    name: "input-demo",
-    type: "example",
-    registryDependencies: undefined,
-    component: lazy(() => import("~/registry/example/input-demo")),
-    files: ["registry/example/input-demo.tsx"],
-  },
   "menubar-demo": {
     name: "menubar-demo",
     type: "example",
@@ -699,12 +685,19 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/tabs-demo")),
     files: ["registry/example/tabs-demo.tsx"],
   },
-  "textarea-demo": {
-    name: "textarea-demo",
+  "text-field-demo": {
+    name: "text-field-demo",
     type: "example",
     registryDependencies: undefined,
-    component: lazy(() => import("~/registry/example/textarea-demo")),
-    files: ["registry/example/textarea-demo.tsx"],
+    component: lazy(() => import("~/registry/example/text-field-demo")),
+    files: ["registry/example/text-field-demo.tsx"],
+  },
+  "text-field-textarea-demo": {
+    name: "text-field-textarea-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/text-field-textarea-demo")),
+    files: ["registry/example/text-field-textarea-demo.tsx"],
   },
   "timeline-demo": {
     name: "timeline-demo",

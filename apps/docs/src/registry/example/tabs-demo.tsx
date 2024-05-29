@@ -7,9 +7,8 @@ import {
   CardHeader,
   CardTitle
 } from "~/registry/ui/card"
-import { Input } from "~/registry/ui/input"
-import { Label } from "~/registry/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
+import { TextField, TextFieldInput, TextFieldLabel } from "~/registry/ui/text-field"
 
 export default function TabsDemo() {
   return (
@@ -27,14 +26,14 @@ export default function TabsDemo() {
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
-            <div class="space-y-1">
-              <Label for="name">Name</Label>
-              <Input id="name" value="Pedro Duarte" />
-            </div>
-            <div class="space-y-1">
-              <Label for="username">Username</Label>
-              <Input id="username" value="@peduarte" />
-            </div>
+            <TextField class="space-y-1">
+              <TextFieldLabel>Name</TextFieldLabel>
+              <TextFieldInput value="Pedro Duarte" type="text" />
+            </TextField>
+            <TextField class="space-y-1">
+              <TextFieldLabel>Username</TextFieldLabel>
+              <TextFieldInput value="@peduarte" type="text" />
+            </TextField>
           </CardContent>
           <CardFooter>
             <Button>Save changes</Button>
@@ -50,13 +49,13 @@ export default function TabsDemo() {
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
+            <TextField class="space-y-1">
+              <TextFieldLabel>Current password</TextFieldLabel>
+              <TextFieldInput type="password" />
+            </TextField>
             <div class="space-y-1">
-              <Label for="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div class="space-y-1">
-              <Label for="new">New password</Label>
-              <Input id="new" type="password" />
+              <TextFieldLabel>New password</TextFieldLabel>
+              <TextFieldInput type="password" />
             </div>
           </CardContent>
           <CardFooter>

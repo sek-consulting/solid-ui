@@ -221,13 +221,6 @@
     "type": "ui"
   },
   {
-    "name": "input",
-    "files": [
-      "ui/input.tsx"
-    ],
-    "type": "ui"
-  },
-  {
     "name": "label",
     "files": [
       "ui/label.tsx"
@@ -399,9 +392,9 @@
     "type": "ui"
   },
   {
-    "name": "textarea",
+    "name": "text-field",
     "files": [
-      "ui/textarea.tsx"
+      "ui/text-field.tsx"
     ],
     "type": "ui"
   },

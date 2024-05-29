@@ -61,8 +61,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(solid-js@1.8.16)
       '@corvu/otp-field':
-        specifier: ^0.1.0
-        version: 0.1.0(solid-js@1.8.16)
+        specifier: ^0.1.1
+        version: 0.1.1(solid-js@1.8.16)
       '@corvu/resizable':
         specifier: ^0.2.0
         version: 0.2.0(solid-js@1.8.16)
@@ -978,8 +978,8 @@ packages:
       solid-transition-size: 0.1.2(solid-js@1.8.16)
     dev: false
 
-  /@corvu/otp-field@0.1.0(solid-js@1.8.16):
-    resolution: {integrity: sha512-DAbf+Suxeh1wTlFk8E4ssKecGLlNekTOZmymtnC4ynOwNdaqinBA6exxISw/R92vhwBD2KxgltQvmOKPp3QFrA==}
+  /@corvu/otp-field@0.1.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-ffGaENNcEhDBZG27tPWGXix3M99Aw8KulNEbDwzsfnUaANoD2LSXtqIoL8qC6WKq3Ukv0JmirZcRnE3U5EejCg==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:

@@ -39,17 +39,21 @@ const OTPFieldSlot: Component<ComponentProps<"div"> & { index: number }> = (prop
   return (
     <div
       class={cn(
-        "relative flex size-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
-        context.activeSlots().includes(props.index) &&
-          "z-10 ring-2 ring-ring ring-offset-background",
+        "group relative flex size-10 items-center justify-center border-y border-r border-input text-sm first:rounded-l-md first:border-l last:rounded-r-md",
         local.class
       )}
       {...others}
     >
+      <div
+        class={cn(
+          "absolute inset-0 z-10 transition-all group-first:rounded-l-md group-last:rounded-r-md",
+          context.activeSlots().includes(local.index) && "ring-2 ring-ring ring-offset-background"
+        )}
+      />
       {char()}
       <Show when={showFakeCaret()}>
         <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div class="animate-caret-blink h-4 w-px bg-foreground duration-1000" />
+          <div class="h-4 w-px animate-caret-blink bg-foreground duration-1000" />
         </div>
       </Show>
     </div>

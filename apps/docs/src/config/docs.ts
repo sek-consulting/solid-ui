@@ -27,7 +27,7 @@ export const docsConfig: Config = {
     },
     {
       title: "Examples",
-      href: "/examples/dashboard"
+      href: "/examples/mail"
     },
     {
       title: "GitHub",

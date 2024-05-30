@@ -9,6 +9,11 @@ import { IconArrowRight } from "./icons"
 
 const examples = [
   {
+    name: "Mail",
+    href: "/examples/mail",
+    code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/components/mail"
+  },
+  {
     name: "Dashboard",
     href: "/examples/dashboard",
     code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/components/dashboard"
@@ -38,7 +43,7 @@ export function ExamplesNav(props: ComponentProps<"div">) {
               href={example.href}
               class={cn(
                 "flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
-                location.pathname?.startsWith(example.href)
+                location.pathname?.startsWith(example.href) || location.pathname === "/"
                   ? "bg-muted font-medium text-primary"
                   : "text-muted-foreground"
               )}

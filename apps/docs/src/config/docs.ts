@@ -106,6 +106,11 @@ export const docsConfig: Config = {
           href: "/docs/components/badge-delta"
         },
         {
+          title: "Breadcrumb",
+          href: "/docs/components/breadcrumb",
+          status: "new"
+        },
+        {
           title: "Button",
           href: "/docs/components/button"
         },

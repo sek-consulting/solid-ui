@@ -60,6 +60,16 @@
     "type": "ui"
   },
   {
+    "name": "breadcrumb",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/breadcrumb.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "button",
     "dependencies": [
       "@kobalte/core",

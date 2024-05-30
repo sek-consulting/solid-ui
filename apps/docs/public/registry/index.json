@@ -30,6 +30,13 @@
     "type": "ui"
   },
   {
+    "name": "aspect-ratio",
+    "files": [
+      "ui/aspect-ratio.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "avatar",
     "dependencies": [
       "@kobalte/core"

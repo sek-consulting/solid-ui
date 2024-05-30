@@ -94,6 +94,11 @@ export const docsConfig: Config = {
           href: "/docs/components/alert-dialog"
         },
         {
+          title: "Aspect Ratio",
+          href: "/docs/components/aspect-ratio",
+          status: "new"
+        },
+        {
           title: "Avatar",
           href: "/docs/components/avatar"
         },
@@ -246,7 +251,7 @@ export const docsConfig: Config = {
         {
           title: "Text Field",
           href: "/docs/components/text-field",
-          status: "updated"
+          status: "new"
         },
         {
           title: "Timeline",

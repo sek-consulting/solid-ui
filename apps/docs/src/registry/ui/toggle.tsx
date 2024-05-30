@@ -29,11 +29,12 @@ const toggleVariants = cva(
   }
 )
 
-type ToggleButtonRootProps = ToggleButtonPrimitive.ToggleButtonRootProps &
-  VariantProps<typeof toggleVariants> & { class?: string | undefined }
+type ToggleButtonRootProps<T extends ValidComponent = "button"> =
+  ToggleButtonPrimitive.ToggleButtonRootProps<T> &
+    VariantProps<typeof toggleVariants> & { class?: string | undefined }
 
 const Toggle = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, ToggleButtonRootProps>
+  props: PolymorphicProps<T, ToggleButtonRootProps<T>>
 ) => {
   const [local, others] = splitProps(props as ToggleButtonRootProps, ["class", "variant", "size"])
   return (

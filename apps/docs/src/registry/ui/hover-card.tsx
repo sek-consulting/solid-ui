@@ -12,12 +12,13 @@ const HoverCard: Component<HoverCardPrimitive.HoverCardRootProps> = (props) => {
   return <HoverCardPrimitive.Root gutter={4} {...props} />
 }
 
-type HoverCardContentProps = HoverCardPrimitive.HoverCardContentProps & {
-  class?: string | undefined
-}
+type HoverCardContentProps<T extends ValidComponent = "div"> =
+  HoverCardPrimitive.HoverCardContentProps<T> & {
+    class?: string | undefined
+  }
 
 const HoverCardContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, HoverCardContentProps>
+  props: PolymorphicProps<T, HoverCardContentProps<T>>
 ) => {
   const [local, others] = splitProps(props as HoverCardContentProps, ["class"])
   return (

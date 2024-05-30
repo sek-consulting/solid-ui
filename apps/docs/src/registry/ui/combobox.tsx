@@ -9,10 +9,12 @@ const Combobox = ComboboxPrimitive.Root
 const ComboboxItemLabel = ComboboxPrimitive.ItemLabel
 const ComboboxHiddenSelect = ComboboxPrimitive.HiddenSelect
 
-type ComboboxItemProps = ComboboxPrimitive.ComboboxItemProps & { class?: string | undefined }
+type ComboboxItemProps<T extends ValidComponent = "li"> = ComboboxPrimitive.ComboboxItemProps<T> & {
+  class?: string | undefined
+}
 
 const ComboboxItem = <T extends ValidComponent = "li">(
-  props: PolymorphicProps<T, ComboboxItemProps>
+  props: PolymorphicProps<T, ComboboxItemProps<T>>
 ) => {
   const [local, others] = splitProps(props as ComboboxItemProps, ["class"])
   return (
@@ -26,12 +28,13 @@ const ComboboxItem = <T extends ValidComponent = "li">(
   )
 }
 
-type ComboboxItemIndicatorProps = ComboboxPrimitive.ComboboxItemIndicatorProps & {
-  children?: JSX.Element
-}
+type ComboboxItemIndicatorProps<T extends ValidComponent = "div"> =
+  ComboboxPrimitive.ComboboxItemIndicatorProps<T> & {
+    children?: JSX.Element
+  }
 
 const ComboboxItemIndicator = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, ComboboxItemIndicatorProps>
+  props: PolymorphicProps<T, ComboboxItemIndicatorProps<T>>
 ) => {
   const [local, others] = splitProps(props as ComboboxItemIndicatorProps, ["children"])
   return (
@@ -54,10 +57,11 @@ const ComboboxItemIndicator = <T extends ValidComponent = "div">(
   )
 }
 
-type ComboboxSectionProps = ComboboxPrimitive.ComboboxSectionProps & { class?: string | undefined }
+type ComboboxSectionProps<T extends ValidComponent = "li"> =
+  ComboboxPrimitive.ComboboxSectionProps<T> & { class?: string | undefined }
 
 const ComboboxSection = <T extends ValidComponent = "li">(
-  props: PolymorphicProps<T, ComboboxSectionProps>
+  props: PolymorphicProps<T, ComboboxSectionProps<T>>
 ) => {
   const [local, others] = splitProps(props as ComboboxSectionProps, ["class"])
   return (
@@ -71,7 +75,10 @@ const ComboboxSection = <T extends ValidComponent = "li">(
   )
 }
 
-type ComboboxControlProps<U> = ComboboxPrimitive.ComboboxControlProps<U> & {
+type ComboboxControlProps<
+  U,
+  T extends ValidComponent = "div"
+> = ComboboxPrimitive.ComboboxControlProps<U, T> & {
   class?: string | undefined
 }
 
@@ -87,10 +94,11 @@ const ComboboxControl = <T, U extends ValidComponent = "div">(
   )
 }
 
-type ComboboxInputProps = ComboboxPrimitive.ComboboxInputProps & { class?: string | undefined }
+type ComboboxInputProps<T extends ValidComponent = "input"> =
+  ComboboxPrimitive.ComboboxInputProps<T> & { class?: string | undefined }
 
 const ComboboxInput = <T extends ValidComponent = "input">(
-  props: PolymorphicProps<T, ComboboxInputProps>
+  props: PolymorphicProps<T, ComboboxInputProps<T>>
 ) => {
   const [local, others] = splitProps(props as ComboboxInputProps, ["class"])
   return (
@@ -104,13 +112,14 @@ const ComboboxInput = <T extends ValidComponent = "input">(
   )
 }
 
-type ComboboxTriggerProps = ComboboxPrimitive.ComboboxTriggerProps & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type ComboboxTriggerProps<T extends ValidComponent = "button"> =
+  ComboboxPrimitive.ComboboxTriggerProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const ComboboxTrigger = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, ComboboxTriggerProps>
+  props: PolymorphicProps<T, ComboboxTriggerProps<T>>
 ) => {
   const [local, others] = splitProps(props as ComboboxTriggerProps, ["class", "children"])
   return (
@@ -136,10 +145,11 @@ const ComboboxTrigger = <T extends ValidComponent = "button">(
   )
 }
 
-type ComboboxContentProps = ComboboxPrimitive.ComboboxContentProps & { class?: string | undefined }
+type ComboboxContentProps<T extends ValidComponent = "div"> =
+  ComboboxPrimitive.ComboboxContentProps<T> & { class?: string | undefined }
 
 const ComboboxContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, ComboboxContentProps>
+  props: PolymorphicProps<T, ComboboxContentProps<T>>
 ) => {
   const [local, others] = splitProps(props as ComboboxContentProps, ["class"])
   return (

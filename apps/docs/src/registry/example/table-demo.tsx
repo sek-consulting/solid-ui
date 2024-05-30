@@ -1,4 +1,5 @@
-import { For } from "solid-js";
+import { For } from "solid-js"
+
 import {
   Table,
   TableBody,
@@ -67,14 +68,16 @@ export default function TableDemo() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <For each={invoices}>{(invoice) => (
-          <TableRow>
-            <TableCell class="font-medium">{invoice.invoice}</TableCell>
-            <TableCell>{invoice.paymentStatus}</TableCell>
-            <TableCell>{invoice.paymentMethod}</TableCell>
-            <TableCell class="text-right">{invoice.totalAmount}</TableCell>
-          </TableRow>
-        )}</For>
+        <For each={invoices}>
+          {(invoice) => (
+            <TableRow>
+              <TableCell class="font-medium">{invoice.invoice}</TableCell>
+              <TableCell>{invoice.paymentStatus}</TableCell>
+              <TableCell>{invoice.paymentMethod}</TableCell>
+              <TableCell class="text-right">{invoice.totalAmount}</TableCell>
+            </TableRow>
+          )}
+        </For>
       </TableBody>
     </Table>
   )

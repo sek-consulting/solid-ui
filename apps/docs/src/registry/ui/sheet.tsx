@@ -34,10 +34,12 @@ const SheetPortal: Component<PortalProps> = (props) => {
   )
 }
 
-type DialogOverlayProps = SheetPrimitive.DialogOverlayProps & { class?: string | undefined }
+type DialogOverlayProps<T extends ValidComponent = "div"> = SheetPrimitive.DialogOverlayProps<T> & {
+  class?: string | undefined
+}
 
 const SheetOverlay = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, DialogOverlayProps>
+  props: PolymorphicProps<T, DialogOverlayProps<T>>
 ) => {
   const [local, others] = splitProps(props as DialogOverlayProps, ["class"])
   return (
@@ -70,11 +72,11 @@ const sheetVariants = cva(
   }
 )
 
-type DialogContentProps = SheetPrimitive.DialogContentProps &
+type DialogContentProps<T extends ValidComponent = "div"> = SheetPrimitive.DialogContentProps<T> &
   VariantProps<typeof sheetVariants> & { class?: string | undefined; children?: JSX.Element }
 
 const SheetContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, DialogContentProps>
+  props: PolymorphicProps<T, DialogContentProps<T>>
 ) => {
   const [local, others] = splitProps(props as DialogContentProps, ["position", "class", "children"])
   return (
@@ -123,10 +125,12 @@ const SheetFooter: Component<ComponentProps<"div">> = (props) => {
   )
 }
 
-type DialogTitleProps = SheetPrimitive.DialogTitleProps & { class?: string | undefined }
+type DialogTitleProps<T extends ValidComponent = "h2"> = SheetPrimitive.DialogTitleProps<T> & {
+  class?: string | undefined
+}
 
 const SheetTitle = <T extends ValidComponent = "h2">(
-  props: PolymorphicProps<T, DialogTitleProps>
+  props: PolymorphicProps<T, DialogTitleProps<T>>
 ) => {
   const [local, others] = splitProps(props as DialogTitleProps, ["class"])
   return (
@@ -137,10 +141,11 @@ const SheetTitle = <T extends ValidComponent = "h2">(
   )
 }
 
-type DialogDescriptionProps = SheetPrimitive.DialogDescriptionProps & { class?: string | undefined }
+type DialogDescriptionProps<T extends ValidComponent = "p"> =
+  SheetPrimitive.DialogDescriptionProps<T> & { class?: string | undefined }
 
 const SheetDescription = <T extends ValidComponent = "p">(
-  props: PolymorphicProps<T, DialogDescriptionProps>
+  props: PolymorphicProps<T, DialogDescriptionProps<T>>
 ) => {
   const [local, others] = splitProps(props as DialogDescriptionProps, ["class"])
   return (

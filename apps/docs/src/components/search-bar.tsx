@@ -67,7 +67,7 @@ export default function SearchBar() {
             <TextFieldInput
               placeholder="Search docs..."
               value={searchValue()}
-              onkeyup={(v) => setSearchValue(v.currentTarget.value)}
+              onKeyUp={(v) => setSearchValue(v.currentTarget.value)}
             />
           </TextField>
         </DialogHeader>

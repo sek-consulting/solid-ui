@@ -16,7 +16,7 @@
     "@corvu/otp-field": "^0.1.1",
     "@corvu/resizable": "^0.2.0",
     "@fontsource/inter": "^5.0.18",
-    "@kobalte/core": "0.13.0",
+    "@kobalte/core": "0.13.2",
     "@mdx-js/mdx": "^2.3.0",
     "@modular-forms/solid": "^0.20.0",
     "@solid-primitives/keyboard": "^1.2.8",

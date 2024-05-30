@@ -5,10 +5,11 @@ import { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 
-type CheckboxRootProps = CheckboxPrimitive.CheckboxRootProps & { class?: string | undefined }
+type CheckboxRootProps<T extends ValidComponent = "div"> =
+  CheckboxPrimitive.CheckboxRootProps<T> & { class?: string | undefined }
 
 const Checkbox = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, CheckboxRootProps>
+  props: PolymorphicProps<T, CheckboxRootProps<T>>
 ) => {
   const [local, others] = splitProps(props as CheckboxRootProps, ["class"])
   return (

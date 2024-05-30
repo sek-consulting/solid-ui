@@ -6,22 +6,24 @@ import * as RadioGroupPrimitive from "@kobalte/core/radio-group"
 
 import { cn } from "~/lib/utils"
 
-type RadioGroupRootProps = RadioGroupPrimitive.RadioGroupRootProps & { class?: string | undefined }
+type RadioGroupRootProps<T extends ValidComponent = "div"> =
+  RadioGroupPrimitive.RadioGroupRootProps<T> & { class?: string | undefined }
 
 const RadioGroup = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, RadioGroupRootProps>
+  props: PolymorphicProps<T, RadioGroupRootProps<T>>
 ) => {
   const [local, others] = splitProps(props as RadioGroupRootProps, ["class"])
   return <RadioGroupPrimitive.Root class={cn("grid gap-2", local.class)} {...others} />
 }
 
-type RadioGroupItemProps = RadioGroupPrimitive.RadioGroupItemProps & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type RadioGroupItemProps<T extends ValidComponent = "div"> =
+  RadioGroupPrimitive.RadioGroupItemProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const RadioGroupItem = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, RadioGroupItemProps>
+  props: PolymorphicProps<T, RadioGroupItemProps<T>>
 ) => {
   const [local, others] = splitProps(props as RadioGroupItemProps, ["class", "children"])
   return (
@@ -48,12 +50,13 @@ const RadioGroupItem = <T extends ValidComponent = "div">(
   )
 }
 
-type RadioGroupLabelProps = RadioGroupPrimitive.RadioGroupLabelProps & {
-  class?: string | undefined
-}
+type RadioGroupLabelProps<T extends ValidComponent = "label"> =
+  RadioGroupPrimitive.RadioGroupLabelProps<T> & {
+    class?: string | undefined
+  }
 
 const RadioGroupItemLabel = <T extends ValidComponent = "label">(
-  props: PolymorphicProps<T, RadioGroupLabelProps>
+  props: PolymorphicProps<T, RadioGroupLabelProps<T>>
 ) => {
   const [local, others] = splitProps(props as RadioGroupLabelProps, ["class"])
   return (

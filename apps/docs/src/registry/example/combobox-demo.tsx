@@ -1,11 +1,11 @@
 import {
+  Combobox,
   ComboboxContent,
   ComboboxControl,
   ComboboxInput,
   ComboboxItem,
   ComboboxItemIndicator,
   ComboboxItemLabel,
-  Combobox,
   ComboboxSection,
   ComboboxTrigger
 } from "~/registry/ui/combobox"

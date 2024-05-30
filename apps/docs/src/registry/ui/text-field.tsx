@@ -53,13 +53,13 @@ const TextFieldInput = <T extends ValidComponent = "input">(
   )
 }
 
-type TextFieldTextArea<T extends ValidComponent = "textarea"> =
+type TextFieldTextAreaProps<T extends ValidComponent = "textarea"> =
   TextFieldPrimitive.TextFieldTextAreaProps<T> & { class?: string | undefined }
 
 const TextFieldTextArea = <T extends ValidComponent = "textarea">(
-  props: PolymorphicProps<T, TextFieldPrimitive.TextFieldTextAreaProps>
+  props: PolymorphicProps<T, TextFieldTextAreaProps<T>>
 ) => {
-  const [local, others] = splitProps(props as TextFieldTextArea, ["class"])
+  const [local, others] = splitProps(props as TextFieldTextAreaProps, ["class"])
   return (
     <TextFieldPrimitive.TextArea
       class={cn(
@@ -91,7 +91,7 @@ type TextFieldLabelProps<T extends ValidComponent = "label"> =
   TextFieldPrimitive.TextFieldLabelProps<T> & { class?: string | undefined }
 
 const TextFieldLabel = <T extends ValidComponent = "label">(
-  props: PolymorphicProps<T, TextFieldLabelProps>
+  props: PolymorphicProps<T, TextFieldLabelProps<T>>
 ) => {
   const [local, others] = splitProps(props as TextFieldLabelProps, ["class"])
   return <TextFieldPrimitive.Label class={cn(labelVariants(), local.class)} {...others} />
@@ -103,7 +103,7 @@ type TextFieldDescriptionProps<T extends ValidComponent = "div"> =
   }
 
 const TextFieldDescription = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, TextFieldDescriptionProps>
+  props: PolymorphicProps<T, TextFieldDescriptionProps<T>>
 ) => {
   const [local, others] = splitProps(props as TextFieldDescriptionProps, ["class"])
   return (
@@ -120,10 +120,15 @@ type TextFieldErrorMessageProps<T extends ValidComponent = "div"> =
   }
 
 const TextFieldErrorMessage = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, TextFieldErrorMessageProps>
+  props: PolymorphicProps<T, TextFieldErrorMessageProps<T>>
 ) => {
   const [local, others] = splitProps(props as TextFieldErrorMessageProps, ["class"])
-  return <TextFieldPrimitive.ErrorMessage class={cn(labelVariants(), local.class)} {...others} />
+  return (
+    <TextFieldPrimitive.ErrorMessage
+      class={cn(labelVariants({ variant: "error" }), local.class)}
+      {...others}
+    />
+  )
 }
 
 export {

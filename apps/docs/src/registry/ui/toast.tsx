@@ -71,7 +71,7 @@ type ToastCloseButtonProps<T extends ValidComponent = "button"> =
 const ToastClose = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, ToastCloseButtonProps>
 ) => {
-  const [local, others] = splitProps(props as ToastCloseButtonProps<T>, ["class"])
+  const [local, others] = splitProps(props as ToastCloseButtonProps, ["class"])
   return (
     <ToastPrimitive.CloseButton
       class={cn(

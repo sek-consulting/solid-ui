@@ -67,6 +67,13 @@
     "type": "ui"
   },
   {
+    "name": "bar-list",
+    "files": [
+      "ui/bar-list.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "breadcrumb",
     "dependencies": [
       "@kobalte/core"

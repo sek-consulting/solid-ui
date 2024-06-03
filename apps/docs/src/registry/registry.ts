@@ -43,6 +43,11 @@ const ui: Registry = [
     files: ["ui/badge.tsx"]
   },
   {
+    name: "bar-list",
+    type: "ui",
+    files: ["ui/bar-list.tsx"]
+  },
+  {
     name: "breadcrumb",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -334,6 +339,11 @@ const examples: Registry = [
     type: "example",
     registryDependencies: ["badge-delta"],
     files: ["example/badge-delta-demo.tsx"]
+  },
+  {
+    name: "bar-list-demo",
+    type: "example",
+    files: ["example/bar-list-demo.tsx"]
   },
   {
     name: "breadcrumb-demo",

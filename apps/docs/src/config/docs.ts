@@ -66,20 +66,33 @@ export const docsConfig: Config = {
       ]
     },
     {
-      title: "Layout",
+      title: "Visualizations",
       items: [
         {
-          title: "Flex",
-          href: "/docs/components/flex"
+          title: "Bar List",
+          href: "/docs/components/bar-list",
+          status: "new"
         },
         {
-          title: "Grid",
-          href: "/docs/components/grid"
+          title: "Charts",
+          href: "/docs/components/charts"
+        },
+        {
+          title: "Delta Bar",
+          href: "/docs/components/delta-bar"
+        },
+        {
+          title: "Progress",
+          href: "/docs/components/progress"
+        },
+        {
+          title: "Progress Circle",
+          href: "/docs/components/progress-circle"
         }
       ]
     },
     {
-      title: "Components",
+      title: "UI",
       items: [
         {
           title: "Accordion",
@@ -132,10 +145,6 @@ export const docsConfig: Config = {
           href: "/docs/components/carousel"
         },
         {
-          title: "Charts",
-          href: "/docs/components/charts"
-        },
-        {
           title: "Checkbox",
           href: "/docs/components/checkbox"
         },
@@ -154,10 +163,6 @@ export const docsConfig: Config = {
         {
           title: "Context Menu",
           href: "/docs/components/context-menu"
-        },
-        {
-          title: "Delta Bar",
-          href: "/docs/components/delta-bar"
         },
         {
           title: "Dialog",
@@ -199,14 +204,6 @@ export const docsConfig: Config = {
         {
           title: "Popover",
           href: "/docs/components/popover"
-        },
-        {
-          title: "Progress",
-          href: "/docs/components/progress"
-        },
-        {
-          title: "Progress Circle",
-          href: "/docs/components/progress-circle"
         },
         {
           title: "Radio Group",
@@ -272,6 +269,19 @@ export const docsConfig: Config = {
         {
           title: "Tooltip",
           href: "/docs/components/tooltip"
+        }
+      ]
+    },
+    {
+      title: "Layout",
+      items: [
+        {
+          title: "Flex",
+          href: "/docs/components/flex"
+        },
+        {
+          title: "Grid",
+          href: "/docs/components/grid"
         }
       ]
     }

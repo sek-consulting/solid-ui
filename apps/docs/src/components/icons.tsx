@@ -114,10 +114,33 @@ export function IconBrandGoogle(props: IconProps) {
   )
 }
 
+export function IconBrandInstagram(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+      <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+      <path d="M16.5 7.5l0 .01" />
+    </Icon>
+  )
+}
+
 export function IconBrandPaypal(props: IconProps) {
   return (
     <Icon {...props}>
       <path d="M10 13l2.5 0c2.5 0 5 -2.5 5 -5c0 -3 -1.9 -5 -5 -5h-5.5c-.5 0 -1 .5 -1 1l-2 14c0 .5 .5 1 1 1h2.8l1.2 -5c.1 -.6 .4 -1 1 -1zm7.5 -5.8c1.7 1 2.5 2.8 2.5 4.8c0 2.5 -2.5 4.5 -5 4.5h-2.6l-.6 3.6a1 1 0 0 1 -1 .8l-2.7 0a.5 .5 0 0 1 -.5 -.6l.2 -1.4" />
+    </Icon>
+  )
+}
+
+export function IconBrandReddit(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 8c2.648 0 5.028 .826 6.675 2.14a2.5 2.5 0 0 1 2.326 4.36c0 3.59 -4.03 6.5 -9 6.5c-4.875 0 -8.845 -2.8 -9 -6.294l-1 -.206a2.5 2.5 0 0 1 2.326 -4.36c1.646 -1.313 4.026 -2.14 6.674 -2.14z" />
+      <path d="M12 8l1 -5l6 1" />
+      <path d="M19 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      <circle cx="9" cy="13" r=".5" fill="currentColor" />
+      <circle cx="15" cy="13" r=".5" fill="currentColor" />
+      <path d="M10 17c.667 .333 1.333 .5 2 .5s1.333 -.167 2 -.5" />
     </Icon>
   )
 }
@@ -129,6 +152,24 @@ export function IconBrandTypescript(props: IconProps) {
       <path d="M9 12h4" />
       <path d="M11 12v6" />
       <path d="M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z" />
+    </Icon>
+  )
+}
+
+export function IconBrandX(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+      <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </Icon>
+  )
+}
+
+export function IconBrandYoutube(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+      <path d="M10 9l5 3l-5 3z" />
     </Icon>
   )
 }

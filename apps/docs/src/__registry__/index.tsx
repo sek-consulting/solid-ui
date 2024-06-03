@@ -55,6 +55,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/badge")),
     files: ["registry/ui/badge.tsx"],
   },
+  "bar-list": {
+    name: "bar-list",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/bar-list")),
+    files: ["registry/ui/bar-list.tsx"],
+  },
   "breadcrumb": {
     name: "breadcrumb",
     type: "ui",
@@ -404,6 +411,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["badge-delta"],
     component: lazy(() => import("~/registry/example/badge-delta-demo")),
     files: ["registry/example/badge-delta-demo.tsx"],
+  },
+  "bar-list-demo": {
+    name: "bar-list-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/bar-list-demo")),
+    files: ["registry/example/bar-list-demo.tsx"],
   },
   "breadcrumb-demo": {
     name: "breadcrumb-demo",

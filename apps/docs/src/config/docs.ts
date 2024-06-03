@@ -235,7 +235,8 @@ export const docsConfig: Config = {
         },
         {
           title: "Switch",
-          href: "/docs/components/switch"
+          href: "/docs/components/switch",
+          status: "updated"
         },
         {
           title: "Table",

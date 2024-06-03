@@ -30,6 +30,7 @@ export function AccountSwitcher(props: AccountSwitcherProps) {
           </div>
         </SelectItem>
       )}
+      class={cn("flex h-[56px] items-center justify-center px-2")}
     >
       <SelectTrigger
         class={cn(

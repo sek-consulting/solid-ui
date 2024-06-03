@@ -61,9 +61,7 @@ const BarList = <T,>(rawProps: BarListProps<T>) => {
             <div class="row flex w-full justify-between space-x-6">
               <div class="grow">
                 <div
-                  class={cn(
-                    "flex h-8 items-center rounded-md bg-primary/40 px-2 dark:bg-primary/60"
-                  )}
+                  class={cn("flex h-8 items-center rounded-md bg-secondary px-2")}
                   style={{
                     width: `${widths()[idx()]}%`
                   }}

@@ -202,6 +202,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/menubar")),
     files: ["registry/ui/menubar.tsx"],
   },
+  "navigation-menu": {
+    name: "navigation-menu",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/navigation-menu")),
+    files: ["registry/ui/navigation-menu.tsx"],
+  },
   "number-field": {
     name: "number-field",
     type: "ui",
@@ -614,6 +621,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/mode-toggle")),
     files: ["registry/example/mode-toggle.tsx"],
+  },
+  "navigation-menu-demo": {
+    name: "navigation-menu-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/navigation-menu-demo")),
+    files: ["registry/example/navigation-menu-demo.tsx"],
   },
   "number-field-demo": {
     name: "number-field-demo",

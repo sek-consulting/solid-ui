@@ -70,8 +70,8 @@ importers:
         specifier: ^5.0.18
         version: 5.0.18
       '@kobalte/core':
-        specifier: 0.13.2
-        version: 0.13.2(solid-js@1.8.16)
+        specifier: 0.13.3
+        version: 0.13.3(solid-js@1.8.16)
       '@mdx-js/mdx':
         specifier: ^2.3.0
         version: 2.3.0
@@ -2021,8 +2021,8 @@ packages:
       solid-prevent-scroll: 0.1.5(solid-js@1.8.16)
     dev: false
 
-  /@kobalte/core@0.13.2(solid-js@1.8.16):
-    resolution: {integrity: sha512-267BCL0zA+6fv7ysHsqUXHielS0BT0Y2trBAUmZ0W/xt/JMhR2nCngInSIAEXKV22TP3ZuClnsInldIcCsprOw==}
+  /@kobalte/core@0.13.3(solid-js@1.8.16):
+    resolution: {integrity: sha512-7ansvAwiIz2EYuifI8jmGj+ZNG/3R4hdkXZkCEFVKsQzq3vZpuSiAXgrdZeQOR4Zby7gxLOzpakjfv7D/3PPGw==}
     peerDependencies:
       solid-js: ^1.8.15
     dependencies:
@@ -2031,6 +2031,7 @@ packages:
       '@internationalized/number': 3.2.1
       '@kobalte/utils': 0.9.0(solid-js@1.8.16)
       solid-js: 1.8.16
+      solid-presence: 0.1.6(solid-js@1.8.16)
       solid-prevent-scroll: 0.1.7(solid-js@1.8.16)
     dev: false
 

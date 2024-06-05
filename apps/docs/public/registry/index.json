@@ -259,6 +259,16 @@
     "type": "ui"
   },
   {
+    "name": "navigation-menu",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/navigation-menu.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "number-field",
     "dependencies": [
       "@kobalte/core"

@@ -189,6 +189,11 @@ export const docsConfig: Config = {
           href: "/docs/components/menubar"
         },
         {
+          title: "Navigation Menu",
+          href: "/docs/components/navigation-menu",
+          status: "new"
+        },
+        {
           title: "Number Field",
           href: "/docs/components/number-field"
         },

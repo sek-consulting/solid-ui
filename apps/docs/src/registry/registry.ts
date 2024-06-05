@@ -162,6 +162,12 @@ const ui: Registry = [
     files: ["ui/menubar.tsx"]
   },
   {
+    name: "navigation-menu",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/navigation-menu.tsx"]
+  },
+  {
     name: "number-field",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -488,6 +494,11 @@ const examples: Registry = [
     name: "mode-toggle",
     type: "example",
     files: ["example/mode-toggle.tsx"]
+  },
+  {
+    name: "navigation-menu-demo",
+    type: "example",
+    files: ["example/navigation-menu-demo.tsx"]
   },
   {
     name: "number-field-demo",

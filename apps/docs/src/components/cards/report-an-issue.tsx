@@ -9,10 +9,9 @@ import {
   CardHeader,
   CardTitle
 } from "~/registry/ui/card"
-import { Input } from "~/registry/ui/input"
 import { Label } from "~/registry/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/registry/ui/select"
-import { Textarea } from "~/registry/ui/textarea"
+import { TextField, TextFieldInput, TextFieldTextArea } from "~/registry/ui/text-field"
 
 export function ReportAnIssue() {
   const [area, setArea] = createSignal()
@@ -65,14 +64,18 @@ export function ReportAnIssue() {
         </div>
         <div class="grid gap-2">
           <Label for="subject">Subject</Label>
-          <Input id="subject" placeholder="I need help with..." />
+          <TextField>
+            <TextFieldInput id="subject" placeholder="I need help with..." type="text" />
+          </TextField>
         </div>
         <div class="grid gap-2">
           <Label for="description">Description</Label>
-          <Textarea
-            id="description"
-            placeholder="Please include all information relevant to your issue."
-          />
+          <TextField>
+            <TextFieldTextArea
+              id="description"
+              placeholder="Please include all information relevant to your issue."
+            />
+          </TextField>
         </div>
       </CardContent>
       <CardFooter class="justify-between space-x-2">

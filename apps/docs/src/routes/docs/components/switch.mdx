@@ -44,9 +44,13 @@ npm install @kobalte/core
 ## Usage
 
 ```tsx
-import { Switch } from "~/components/ui/switch"
+import { Switch, SwitchControl, SwitchThumb } from "~/components/ui/switch"
 ```
 
 ```tsx
-<Switch label="Airplane mode" />
+<Switch>
+  <SwitchControl>
+    <SwitchThumb />
+  </SwitchControl>
+</Switch>
 ```

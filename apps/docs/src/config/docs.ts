@@ -27,7 +27,7 @@ export const docsConfig: Config = {
     },
     {
       title: "Examples",
-      href: "/examples/dashboard"
+      href: "/examples/mail"
     },
     {
       title: "GitHub",
@@ -66,20 +66,33 @@ export const docsConfig: Config = {
       ]
     },
     {
-      title: "Layout",
+      title: "Visualizations",
       items: [
         {
-          title: "Flex",
-          href: "/docs/components/flex"
+          title: "Bar List",
+          href: "/docs/components/bar-list",
+          status: "new"
         },
         {
-          title: "Grid",
-          href: "/docs/components/grid"
+          title: "Charts",
+          href: "/docs/components/charts"
+        },
+        {
+          title: "Delta Bar",
+          href: "/docs/components/delta-bar"
+        },
+        {
+          title: "Progress",
+          href: "/docs/components/progress"
+        },
+        {
+          title: "Progress Circle",
+          href: "/docs/components/progress-circle"
         }
       ]
     },
     {
-      title: "Components",
+      title: "UI",
       items: [
         {
           title: "Accordion",
@@ -94,6 +107,11 @@ export const docsConfig: Config = {
           href: "/docs/components/alert-dialog"
         },
         {
+          title: "Aspect Ratio",
+          href: "/docs/components/aspect-ratio",
+          status: "new"
+        },
+        {
           title: "Avatar",
           href: "/docs/components/avatar"
         },
@@ -104,6 +122,11 @@ export const docsConfig: Config = {
         {
           title: "Badge Delta",
           href: "/docs/components/badge-delta"
+        },
+        {
+          title: "Breadcrumb",
+          href: "/docs/components/breadcrumb",
+          status: "new"
         },
         {
           title: "Button",
@@ -122,10 +145,6 @@ export const docsConfig: Config = {
           href: "/docs/components/carousel"
         },
         {
-          title: "Charts",
-          href: "/docs/components/charts"
-        },
-        {
           title: "Checkbox",
           href: "/docs/components/checkbox"
         },
@@ -139,16 +158,11 @@ export const docsConfig: Config = {
         },
         {
           title: "Command",
-          href: "/docs/components/command",
-          status: "updated"
+          href: "/docs/components/command"
         },
         {
           title: "Context Menu",
           href: "/docs/components/context-menu"
-        },
-        {
-          title: "Delta Bar",
-          href: "/docs/components/delta-bar"
         },
         {
           title: "Dialog",
@@ -167,10 +181,6 @@ export const docsConfig: Config = {
           href: "/docs/components/hover-card"
         },
         {
-          title: "Input",
-          href: "/docs/components/input"
-        },
-        {
           title: "Label",
           href: "/docs/components/label"
         },
@@ -179,26 +189,26 @@ export const docsConfig: Config = {
           href: "/docs/components/menubar"
         },
         {
+          title: "Navigation Menu",
+          href: "/docs/components/navigation-menu",
+          status: "new"
+        },
+        {
           title: "Number Field",
           href: "/docs/components/number-field"
         },
         {
+          title: "OTP Field",
+          href: "/docs/components/otp-field",
+          status: "new"
+        },
+        {
           title: "Pagination",
-          href: "/docs/components/pagination",
-          status: "updated"
+          href: "/docs/components/pagination"
         },
         {
           title: "Popover",
           href: "/docs/components/popover"
-        },
-        {
-          title: "Progress",
-          href: "/docs/components/progress"
-        },
-        {
-          title: "Progress Circle",
-          href: "/docs/components/progress-circle",
-          status: "new"
         },
         {
           title: "Radio Group",
@@ -206,8 +216,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Resizable",
-          href: "/docs/components/resizable",
-          status: "new"
+          href: "/docs/components/resizable"
         },
         {
           title: "Select",
@@ -231,7 +240,8 @@ export const docsConfig: Config = {
         },
         {
           title: "Switch",
-          href: "/docs/components/switch"
+          href: "/docs/components/switch",
+          status: "updated"
         },
         {
           title: "Table",
@@ -242,8 +252,9 @@ export const docsConfig: Config = {
           href: "/docs/components/tabs"
         },
         {
-          title: "Textarea",
-          href: "/docs/components/textarea"
+          title: "Text Field",
+          href: "/docs/components/text-field",
+          status: "new"
         },
         {
           title: "Timeline",
@@ -259,12 +270,24 @@ export const docsConfig: Config = {
         },
         {
           title: "Toggle Group",
-          href: "/docs/components/toggle-group",
-          status: "new"
+          href: "/docs/components/toggle-group"
         },
         {
           title: "Tooltip",
           href: "/docs/components/tooltip"
+        }
+      ]
+    },
+    {
+      title: "Layout",
+      items: [
+        {
+          title: "Flex",
+          href: "/docs/components/flex"
+        },
+        {
+          title: "Grid",
+          href: "/docs/components/grid"
         }
       ]
     }

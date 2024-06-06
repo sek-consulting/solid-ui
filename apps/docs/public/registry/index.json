@@ -30,6 +30,13 @@
     "type": "ui"
   },
   {
+    "name": "aspect-ratio",
+    "files": [
+      "ui/aspect-ratio.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "avatar",
     "dependencies": [
       "@kobalte/core"
@@ -56,6 +63,23 @@
     "name": "badge",
     "files": [
       "ui/badge.tsx"
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "bar-list",
+    "files": [
+      "ui/bar-list.tsx"
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "breadcrumb",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/breadcrumb.tsx"
     ],
     "type": "ui"
   },
@@ -221,13 +245,6 @@
     "type": "ui"
   },
   {
-    "name": "input",
-    "files": [
-      "ui/input.tsx"
-    ],
-    "type": "ui"
-  },
-  {
     "name": "label",
     "files": [
       "ui/label.tsx"
@@ -242,12 +259,29 @@
     "type": "ui"
   },
   {
+    "name": "navigation-menu",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/navigation-menu.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "number-field",
     "dependencies": [
       "@kobalte/core"
     ],
     "files": [
       "ui/number-field.tsx"
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "otp-field",
+    "files": [
+      "ui/otp-field.tsx"
     ],
     "type": "ui"
   },
@@ -392,9 +426,9 @@
     "type": "ui"
   },
   {
-    "name": "textarea",
+    "name": "text-field",
     "files": [
-      "ui/textarea.tsx"
+      "ui/text-field.tsx"
     ],
     "type": "ui"
   },

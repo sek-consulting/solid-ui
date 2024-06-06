@@ -58,17 +58,20 @@ importers:
   apps/docs:
     dependencies:
       '@corvu/drawer':
-        specifier: ^0.2.0
-        version: 0.2.0(solid-js@1.8.16)
+        specifier: ^0.2.1
+        version: 0.2.1(solid-js@1.8.16)
+      '@corvu/otp-field':
+        specifier: ^0.1.1
+        version: 0.1.1(solid-js@1.8.16)
       '@corvu/resizable':
-        specifier: ^0.2.0
-        version: 0.2.0(solid-js@1.8.16)
+        specifier: ^0.2.1
+        version: 0.2.1(solid-js@1.8.16)
       '@fontsource/inter':
         specifier: ^5.0.18
         version: 5.0.18
       '@kobalte/core':
-        specifier: 0.13.2
-        version: 0.13.2(solid-js@1.8.16)
+        specifier: 0.13.3
+        version: 0.13.3(solid-js@1.8.16)
       '@mdx-js/mdx':
         specifier: ^2.3.0
         version: 2.3.0
@@ -81,6 +84,9 @@ importers:
       '@solid-primitives/refs':
         specifier: ^1.0.8
         version: 1.0.8(solid-js@1.8.16)
+      '@solid-primitives/storage':
+        specifier: ^3.5.0
+        version: 3.5.0(solid-js@1.8.16)
       '@solidjs/meta':
         specifier: ^0.29.3
         version: 0.29.3(solid-js@1.8.16)
@@ -94,8 +100,8 @@ importers:
         specifier: ^3.7.1
         version: 3.7.1(@mdx-js/mdx@2.3.0)
       chart.js:
-        specifier: ^4.4.2
-        version: 4.4.2
+        specifier: ^4.4.3
+        version: 4.4.3
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -956,31 +962,40 @@ packages:
     peerDependencies:
       solid-js: ^1.8
     dependencies:
-      '@corvu/utils': 0.3.0(solid-js@1.8.16)
+      '@corvu/utils': 0.3.1(solid-js@1.8.16)
       solid-focus-trap: 0.1.6(solid-js@1.8.16)
       solid-js: 1.8.16
       solid-presence: 0.1.6(solid-js@1.8.16)
       solid-prevent-scroll: 0.1.7(solid-js@1.8.16)
     dev: false
 
-  /@corvu/drawer@0.2.0(solid-js@1.8.16):
-    resolution: {integrity: sha512-71MmiCe3IwH7zLz2kC6XhD1POHtSIslba1LIy4dBV4owrim218SUTKPAc97vGumZYtLo8KLtq/qryLxhqQtApA==}
+  /@corvu/drawer@0.2.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-XXWrGyI1re3lzOT2m5DW+Yg9PIepcARyCzCNjt55PsdFbsIzLhPV0Z7bGZhuqOBtjcnmjUUbZ5kmRrvc5An18g==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:
       '@corvu/dialog': 0.2.0(solid-js@1.8.16)
-      '@corvu/utils': 0.3.0(solid-js@1.8.16)
+      '@corvu/utils': 0.3.1(solid-js@1.8.16)
       '@solid-primitives/memo': 1.3.8(solid-js@1.8.16)
       solid-js: 1.8.16
       solid-transition-size: 0.1.2(solid-js@1.8.16)
     dev: false
 
-  /@corvu/resizable@0.2.0(solid-js@1.8.16):
-    resolution: {integrity: sha512-IKMKsxfJOSR/tbHnS0bSauE5ZgTQC7e5X9Uqh/5kYKNrbTDuN3g+v+7vz2dJkITgUB6jb0s2fzCxKv0SYOxfHg==}
+  /@corvu/otp-field@0.1.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-ffGaENNcEhDBZG27tPWGXix3M99Aw8KulNEbDwzsfnUaANoD2LSXtqIoL8qC6WKq3Ukv0JmirZcRnE3U5EejCg==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:
-      '@corvu/utils': 0.3.0(solid-js@1.8.16)
+      '@corvu/utils': 0.3.1(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
+  /@corvu/resizable@0.2.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-hb23FWMvry/xzrt1ZPa8iYku3sIFDZj/eKwRAVCAJ9OqpFPg4KHmCwdLVtl/YCP3DF5qofiAAxK8zUqBMEewJw==}
+    peerDependencies:
+      solid-js: ^1.8
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.16)
       solid-js: 1.8.16
     dev: false
 
@@ -1001,8 +1016,8 @@ packages:
       solid-js: 1.8.16
     dev: false
 
-  /@corvu/utils@0.3.0(solid-js@1.8.16):
-    resolution: {integrity: sha512-dLKk/AGjhPmMI2zBvVe2cUZGrRm+FaLqDyp5ECwJO0eRggsIxkTIoTDH/aqkWV+31wtqh7QPjlC6xs9hnKwbbw==}
+  /@corvu/utils@0.3.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-M8ztDGmVuYsoF9+WHvhz+UtVtvqPeJa9KgwM3JETp770lMmpL8TG3ThAZIpHAl8OjUjDaLvMkd/f6FuyA/n50A==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:
@@ -2006,8 +2021,8 @@ packages:
       solid-prevent-scroll: 0.1.5(solid-js@1.8.16)
     dev: false
 
-  /@kobalte/core@0.13.2(solid-js@1.8.16):
-    resolution: {integrity: sha512-267BCL0zA+6fv7ysHsqUXHielS0BT0Y2trBAUmZ0W/xt/JMhR2nCngInSIAEXKV22TP3ZuClnsInldIcCsprOw==}
+  /@kobalte/core@0.13.3(solid-js@1.8.16):
+    resolution: {integrity: sha512-7ansvAwiIz2EYuifI8jmGj+ZNG/3R4hdkXZkCEFVKsQzq3vZpuSiAXgrdZeQOR4Zby7gxLOzpakjfv7D/3PPGw==}
     peerDependencies:
       solid-js: ^1.8.15
     dependencies:
@@ -2016,6 +2031,7 @@ packages:
       '@internationalized/number': 3.2.1
       '@kobalte/utils': 0.9.0(solid-js@1.8.16)
       solid-js: 1.8.16
+      solid-presence: 0.1.6(solid-js@1.8.16)
       solid-prevent-scroll: 0.1.7(solid-js@1.8.16)
     dev: false
 
@@ -2664,6 +2680,22 @@ packages:
     resolution: {integrity: sha512-ssQ+s/wrlFAEE4Zw8GV499yBfvWx7SMm+ZVc11wvao4T5xg9VfXCL9Oa+x4h+vPMvSV/Knv5LrsLiUa+wlJUXQ==}
     peerDependencies:
       solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
+  /@solid-primitives/storage@3.5.0(solid-js@1.8.16):
+    resolution: {integrity: sha512-AqU3vrXz8XlxOgJIiP+oQxE/vFchGf4Qe7E5Xfa02DJdF9rD8CtiTmVZDBU08ViS7g0Nwc4IpStHvVO0jBMalQ==}
+    peerDependencies:
+      '@tauri-apps/plugin-store': '*'
+      solid-js: ^1.6.12
+      solid-start: '*'
+    peerDependenciesMeta:
+      '@tauri-apps/plugin-store':
+        optional: true
+      solid-start:
+        optional: true
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
       solid-js: 1.8.16
@@ -3721,8 +3753,8 @@ packages:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: true
 
-  /chart.js@4.4.2:
-    resolution: {integrity: sha512-6GD7iKwFpP5kbSD4MeRRRlTnQvxfQREy36uEtm1hzHzcOqwWx0YEHuspuoNlslu+nciLIB7fjjsHkUv/FzFcOg==}
+  /chart.js@4.4.3:
+    resolution: {integrity: sha512-qK1gkGSRYcJzqrrzdR6a+I0vQ4/R+SoODXyAjscQ/4mzuNzySaMCd+hyVxitSY1+L2fjPD1Gbn+ibNqRmwQeLw==}
     engines: {pnpm: '>=8'}
     dependencies:
       '@kurkle/color': 0.3.2

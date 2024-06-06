@@ -27,6 +27,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/alert-dialog")),
     files: ["registry/ui/alert-dialog.tsx"],
   },
+  "aspect-ratio": {
+    name: "aspect-ratio",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/aspect-ratio")),
+    files: ["registry/ui/aspect-ratio.tsx"],
+  },
   "avatar": {
     name: "avatar",
     type: "ui",
@@ -47,6 +54,20 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/ui/badge")),
     files: ["registry/ui/badge.tsx"],
+  },
+  "bar-list": {
+    name: "bar-list",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/bar-list")),
+    files: ["registry/ui/bar-list.tsx"],
+  },
+  "breadcrumb": {
+    name: "breadcrumb",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/breadcrumb")),
+    files: ["registry/ui/breadcrumb.tsx"],
   },
   "button": {
     name: "button",
@@ -167,13 +188,6 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/hover-card")),
     files: ["registry/ui/hover-card.tsx"],
   },
-  "input": {
-    name: "input",
-    type: "ui",
-    registryDependencies: undefined,
-    component: lazy(() => import("~/registry/ui/input")),
-    files: ["registry/ui/input.tsx"],
-  },
   "label": {
     name: "label",
     type: "ui",
@@ -188,12 +202,26 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/menubar")),
     files: ["registry/ui/menubar.tsx"],
   },
+  "navigation-menu": {
+    name: "navigation-menu",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/navigation-menu")),
+    files: ["registry/ui/navigation-menu.tsx"],
+  },
   "number-field": {
     name: "number-field",
     type: "ui",
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/ui/number-field")),
     files: ["registry/ui/number-field.tsx"],
+  },
+  "otp-field": {
+    name: "otp-field",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/otp-field")),
+    files: ["registry/ui/otp-field.tsx"],
   },
   "pagination": {
     name: "pagination",
@@ -293,12 +321,12 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/tabs")),
     files: ["registry/ui/tabs.tsx"],
   },
-  "textarea": {
-    name: "textarea",
+  "text-field": {
+    name: "text-field",
     type: "ui",
     registryDependencies: undefined,
-    component: lazy(() => import("~/registry/ui/textarea")),
-    files: ["registry/ui/textarea.tsx"],
+    component: lazy(() => import("~/registry/ui/text-field")),
+    files: ["registry/ui/text-field.tsx"],
   },
   "timeline": {
     name: "timeline",
@@ -356,6 +384,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/alert-dialog-demo")),
     files: ["registry/example/alert-dialog-demo.tsx"],
   },
+  "aspect-ratio-demo": {
+    name: "aspect-ratio-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/aspect-ratio-demo")),
+    files: ["registry/example/aspect-ratio-demo.tsx"],
+  },
   "avatar-demo": {
     name: "avatar-demo",
     type: "example",
@@ -383,6 +418,20 @@ export const Index: Record<string, any> = {
     registryDependencies: ["badge-delta"],
     component: lazy(() => import("~/registry/example/badge-delta-demo")),
     files: ["registry/example/badge-delta-demo.tsx"],
+  },
+  "bar-list-demo": {
+    name: "bar-list-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/bar-list-demo")),
+    files: ["registry/example/bar-list-demo.tsx"],
+  },
+  "breadcrumb-demo": {
+    name: "breadcrumb-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/breadcrumb-demo")),
+    files: ["registry/example/breadcrumb-demo.tsx"],
   },
   "callout-demo": {
     name: "callout-demo",
@@ -559,13 +608,6 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/hover-card-demo")),
     files: ["registry/example/hover-card-demo.tsx"],
   },
-  "input-demo": {
-    name: "input-demo",
-    type: "example",
-    registryDependencies: undefined,
-    component: lazy(() => import("~/registry/example/input-demo")),
-    files: ["registry/example/input-demo.tsx"],
-  },
   "menubar-demo": {
     name: "menubar-demo",
     type: "example",
@@ -580,12 +622,26 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/mode-toggle")),
     files: ["registry/example/mode-toggle.tsx"],
   },
+  "navigation-menu-demo": {
+    name: "navigation-menu-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/navigation-menu-demo")),
+    files: ["registry/example/navigation-menu-demo.tsx"],
+  },
   "number-field-demo": {
     name: "number-field-demo",
     type: "example",
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/number-field-demo")),
     files: ["registry/example/number-field-demo.tsx"],
+  },
+  "otp-field-demo": {
+    name: "otp-field-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/otp-field-demo")),
+    files: ["registry/example/otp-field-demo.tsx"],
   },
   "pagination-demo": {
     name: "pagination-demo",
@@ -685,12 +741,19 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/example/tabs-demo")),
     files: ["registry/example/tabs-demo.tsx"],
   },
-  "textarea-demo": {
-    name: "textarea-demo",
+  "text-field-demo": {
+    name: "text-field-demo",
     type: "example",
     registryDependencies: undefined,
-    component: lazy(() => import("~/registry/example/textarea-demo")),
-    files: ["registry/example/textarea-demo.tsx"],
+    component: lazy(() => import("~/registry/example/text-field-demo")),
+    files: ["registry/example/text-field-demo.tsx"],
+  },
+  "text-field-textarea-demo": {
+    name: "text-field-textarea-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/text-field-textarea-demo")),
+    files: ["registry/example/text-field-textarea-demo.tsx"],
   },
   "timeline-demo": {
     name: "timeline-demo",

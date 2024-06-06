@@ -1,8 +1,6 @@
 import { For } from "solid-js"
 
 import { Button } from "~/registry/ui/button"
-import { Input } from "~/registry/ui/input"
-import { Label } from "~/registry/ui/label"
 import {
   Sheet,
   SheetContent,
@@ -12,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger
 } from "~/registry/ui/sheet"
+import { TextField, TextFieldInput, TextFieldLabel } from "~/registry/ui/text-field"
 
 const SHEET_POSITIONS = ["top", "right", "bottom", "left"] as const
 
@@ -32,18 +31,14 @@ export default function SheetDemo() {
                 </SheetDescription>
               </SheetHeader>
               <div class="grid gap-4 py-4">
-                <div class="grid grid-cols-4 items-center gap-4">
-                  <Label for="name" class="text-right">
-                    Name
-                  </Label>
-                  <Input id="name" value="Pedro Duarte" class="col-span-3" />
-                </div>
-                <div class="grid grid-cols-4 items-center gap-4">
-                  <Label for="username" class="text-right">
-                    Username
-                  </Label>
-                  <Input id="username" value="@peduarte" class="col-span-3" />
-                </div>
+                <TextField class="grid grid-cols-4 items-center gap-4">
+                  <TextFieldLabel class="text-right">Name</TextFieldLabel>
+                  <TextFieldInput value="Pedro Duarte" class="col-span-3" type="text" />
+                </TextField>
+                <TextField class="grid grid-cols-4 items-center gap-4">
+                  <TextFieldLabel class="text-right">Username</TextFieldLabel>
+                  <TextFieldInput value="@peduarte" class="col-span-3" type="text" />
+                </TextField>
               </div>
               <SheetFooter>
                 <Button type="submit">Save changes</Button>

@@ -7,9 +7,10 @@ import { cn } from "~/lib/utils"
 
 const Accordion = AccordionPrimitive.Root
 
-type AccordionItemProps<T extends ValidComponent = "div"> = AccordionPrimitive.AccordionItemProps<T> & {
-  class?: string | undefined
-}
+type AccordionItemProps<T extends ValidComponent = "div"> =
+  AccordionPrimitive.AccordionItemProps<T> & {
+    class?: string | undefined
+  }
 
 const AccordionItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, AccordionItemProps<T>>
@@ -18,10 +19,11 @@ const AccordionItem = <T extends ValidComponent = "div">(
   return <AccordionPrimitive.Item class={cn("border-b", local.class)} {...others} />
 }
 
-type AccordionTriggerProps<T extends ValidComponent = "button"> = AccordionPrimitive.AccordionTriggerProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type AccordionTriggerProps<T extends ValidComponent = "button"> =
+  AccordionPrimitive.AccordionTriggerProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const AccordionTrigger = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, AccordionTriggerProps<T>>
@@ -54,10 +56,11 @@ const AccordionTrigger = <T extends ValidComponent = "button">(
   )
 }
 
-type AccordionContentProps<T extends ValidComponent = "div"> = AccordionPrimitive.AccordionContentProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type AccordionContentProps<T extends ValidComponent = "div"> =
+  AccordionPrimitive.AccordionContentProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const AccordionContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, AccordionContentProps<T>>

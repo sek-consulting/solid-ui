@@ -1,3 +1,4 @@
+import { IconBrandGithub, IconBrandGoogle } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import {
   Card,
@@ -7,10 +8,7 @@ import {
   CardHeader,
   CardTitle
 } from "~/registry/ui/card"
-import { Input } from "~/registry/ui/input"
-import { Label } from "~/registry/ui/label"
-
-import { IconBrandGithub, IconBrandGoogle } from "../icons"
+import { TextField, TextFieldInput, TextFieldLabel } from "~/registry/ui/text-field"
 
 export function CreateAccount() {
   return (
@@ -39,14 +37,14 @@ export function CreateAccount() {
             <span class="bg-background px-2 text-muted-foreground">Or continue with</span>
           </div>
         </div>
-        <div class="grid gap-2">
-          <Label for="email">Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com" />
-        </div>
-        <div class="grid gap-2">
-          <Label for="password">Password</Label>
-          <Input id="password" type="password" />
-        </div>
+        <TextField class="grid gap-2">
+          <TextFieldLabel>Email</TextFieldLabel>
+          <TextFieldInput type="email" placeholder="m@example.com" />
+        </TextField>
+        <TextField class="grid gap-2">
+          <TextFieldLabel>Password</TextFieldLabel>
+          <TextFieldInput type="password" />
+        </TextField>
       </CardContent>
       <CardFooter>
         <Button class="w-full">Create account</Button>

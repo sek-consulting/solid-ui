@@ -16,9 +16,10 @@ const ContextMenu: Component<ContextMenuPrimitive.ContextMenuRootProps> = (props
   return <ContextMenuPrimitive.Root gutter={4} {...props} />
 }
 
-type ContextMenuContentProps<T extends ValidComponent = "div"> = ContextMenuPrimitive.ContextMenuContentProps<T> & {
-  class?: string | undefined
-}
+type ContextMenuContentProps<T extends ValidComponent = "div"> =
+  ContextMenuPrimitive.ContextMenuContentProps<T> & {
+    class?: string | undefined
+  }
 
 const ContextMenuContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ContextMenuContentProps<T>>
@@ -37,9 +38,10 @@ const ContextMenuContent = <T extends ValidComponent = "div">(
   )
 }
 
-type ContextMenuItemProps<T extends ValidComponent = "div"> = ContextMenuPrimitive.ContextMenuItemProps<T> & {
-  class?: string | undefined
-}
+type ContextMenuItemProps<T extends ValidComponent = "div"> =
+  ContextMenuPrimitive.ContextMenuItemProps<T> & {
+    class?: string | undefined
+  }
 
 const ContextMenuItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ContextMenuItemProps<T>>
@@ -61,9 +63,10 @@ const ContextMenuShortcut: Component<ComponentProps<"span">> = (props) => {
   return <span class={cn("ml-auto text-xs tracking-widest opacity-60", local.class)} {...others} />
 }
 
-type ContextMenuSeparatorProps<T extends ValidComponent = "hr"> = ContextMenuPrimitive.ContextMenuSeparatorProps<T> & {
-  class?: string | undefined
-}
+type ContextMenuSeparatorProps<T extends ValidComponent = "hr"> =
+  ContextMenuPrimitive.ContextMenuSeparatorProps<T> & {
+    class?: string | undefined
+  }
 
 const ContextMenuSeparator = <T extends ValidComponent = "hr">(
   props: PolymorphicProps<T, ContextMenuSeparatorProps<T>>
@@ -77,10 +80,11 @@ const ContextMenuSeparator = <T extends ValidComponent = "hr">(
   )
 }
 
-type ContextMenuSubTriggerProps<T extends ValidComponent = "div"> = ContextMenuPrimitive.ContextMenuSubTriggerProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type ContextMenuSubTriggerProps<T extends ValidComponent = "div"> =
+  ContextMenuPrimitive.ContextMenuSubTriggerProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const ContextMenuSubTrigger = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ContextMenuSubTriggerProps<T>>
@@ -111,9 +115,10 @@ const ContextMenuSubTrigger = <T extends ValidComponent = "div">(
   )
 }
 
-type ContextMenuSubContentProps<T extends ValidComponent = "div"> = ContextMenuPrimitive.ContextMenuSubContentProps<T> & {
-  class?: string | undefined
-}
+type ContextMenuSubContentProps<T extends ValidComponent = "div"> =
+  ContextMenuPrimitive.ContextMenuSubContentProps<T> & {
+    class?: string | undefined
+  }
 
 const ContextMenuSubContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ContextMenuSubContentProps<T>>
@@ -130,10 +135,11 @@ const ContextMenuSubContent = <T extends ValidComponent = "div">(
   )
 }
 
-type ContextMenuCheckboxItemProps<T extends ValidComponent = "div"> = ContextMenuPrimitive.ContextMenuCheckboxItemProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type ContextMenuCheckboxItemProps<T extends ValidComponent = "div"> =
+  ContextMenuPrimitive.ContextMenuCheckboxItemProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const ContextMenuCheckboxItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ContextMenuCheckboxItemProps<T>>
@@ -168,9 +174,10 @@ const ContextMenuCheckboxItem = <T extends ValidComponent = "div">(
   )
 }
 
-type ContextMenuGroupLabelProps<T extends ValidComponent = "span"> = ContextMenuPrimitive.ContextMenuGroupLabelProps<T> & {
-  class?: string | undefined
-}
+type ContextMenuGroupLabelProps<T extends ValidComponent = "span"> =
+  ContextMenuPrimitive.ContextMenuGroupLabelProps<T> & {
+    class?: string | undefined
+  }
 
 const ContextMenuGroupLabel = <T extends ValidComponent = "span">(
   props: PolymorphicProps<T, ContextMenuGroupLabelProps<T>>
@@ -184,10 +191,11 @@ const ContextMenuGroupLabel = <T extends ValidComponent = "span">(
   )
 }
 
-type ContextMenuRadioItemProps<T extends ValidComponent = "div"> = ContextMenuPrimitive.ContextMenuRadioItemProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type ContextMenuRadioItemProps<T extends ValidComponent = "div"> =
+  ContextMenuPrimitive.ContextMenuRadioItemProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const ContextMenuRadioItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ContextMenuRadioItemProps<T>>

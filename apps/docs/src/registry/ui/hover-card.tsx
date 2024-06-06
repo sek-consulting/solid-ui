@@ -12,9 +12,10 @@ const HoverCard: Component<HoverCardPrimitive.HoverCardRootProps> = (props) => {
   return <HoverCardPrimitive.Root gutter={4} {...props} />
 }
 
-type HoverCardContentProps<T extends ValidComponent = "div"> = HoverCardPrimitive.HoverCardContentProps<T> & {
-  class?: string | undefined
-}
+type HoverCardContentProps<T extends ValidComponent = "div"> =
+  HoverCardPrimitive.HoverCardContentProps<T> & {
+    class?: string | undefined
+  }
 
 const HoverCardContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, HoverCardContentProps<T>>

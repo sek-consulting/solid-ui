@@ -4,8 +4,7 @@ import { createForm } from "@modular-forms/solid"
 import { IconBrandGithub, IconLoader } from "~/components/icons"
 import { Button } from "~/registry/ui/button"
 import { Grid } from "~/registry/ui/grid"
-import { Input } from "~/registry/ui/input"
-import { Label } from "~/registry/ui/label"
+import { TextField, TextFieldInput, TextFieldLabel } from "~/registry/ui/text-field"
 
 import type { AuthForm } from "./validations/auth"
 
@@ -22,12 +21,10 @@ export function UserAuthForm() {
         <Grid class="gap-4">
           <Field name="email">
             {(_, props) => (
-              <Grid class="gap-1">
-                <Label class="sr-only" for="email">
-                  Email
-                </Label>
-                <Input {...props} type="email" placeholder="me@email.com" />
-              </Grid>
+              <TextField class="gap-1">
+                <TextFieldLabel class="sr-only">Email</TextFieldLabel>
+                <TextFieldInput {...props} type="email" placeholder="me@email.com" />
+              </TextField>
             )}
           </Field>
           <Button type="submit" disabled={authForm.submitting}>

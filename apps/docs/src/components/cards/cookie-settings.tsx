@@ -8,7 +8,7 @@ import {
   CardTitle
 } from "~/registry/ui/card"
 import { Label } from "~/registry/ui/label"
-import { Switch } from "~/registry/ui/switch"
+import { Switch, SwitchControl, SwitchThumb } from "~/registry/ui/switch"
 
 export function CookieSettings() {
   return (
@@ -25,7 +25,11 @@ export function CookieSettings() {
               These cookies are essential in order to use the website and use its features.
             </span>
           </Label>
-          <Switch id="necessary" defaultChecked />
+          <Switch id="necessary" defaultChecked>
+            <SwitchControl>
+              <SwitchThumb />
+            </SwitchControl>
+          </Switch>
         </div>
         <div class="flex items-center justify-between space-x-2">
           <Label for="functional" class="flex flex-col space-y-1">
@@ -34,7 +38,11 @@ export function CookieSettings() {
               These cookies allow the website to provide personalized functionality.
             </span>
           </Label>
-          <Switch id="functional" />
+          <Switch id="functional">
+            <SwitchControl>
+              <SwitchThumb />
+            </SwitchControl>
+          </Switch>
         </div>
         <div class="flex items-center justify-between space-x-2">
           <Label for="performance" class="flex flex-col space-y-1">
@@ -43,7 +51,11 @@ export function CookieSettings() {
               These cookies help to improve the performance of the website.
             </span>
           </Label>
-          <Switch id="performance" />
+          <Switch id="performance">
+            <SwitchControl>
+              <SwitchThumb />
+            </SwitchControl>
+          </Switch>
         </div>
       </CardContent>
       <CardFooter>

@@ -7,9 +7,13 @@ import * as SliderPrimitive from "@kobalte/core/slider"
 import { cn } from "~/lib/utils"
 import { Label } from "~/registry/ui/label"
 
-type SliderRootProps<T extends ValidComponent = "div"> = SliderPrimitive.SliderRootProps<T> & { class?: string | undefined }
+type SliderRootProps<T extends ValidComponent = "div"> = SliderPrimitive.SliderRootProps<T> & {
+  class?: string | undefined
+}
 
-const Slider = <T extends ValidComponent = "div">(props: PolymorphicProps<T, SliderRootProps<T>>) => {
+const Slider = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, SliderRootProps<T>>
+) => {
   const [local, others] = splitProps(props as SliderRootProps, ["class"])
   return (
     <SliderPrimitive.Root
@@ -19,7 +23,9 @@ const Slider = <T extends ValidComponent = "div">(props: PolymorphicProps<T, Sli
   )
 }
 
-type SliderTrackProps<T extends ValidComponent = "div"> = SliderPrimitive.SliderTrackProps<T> & { class?: string | undefined }
+type SliderTrackProps<T extends ValidComponent = "div"> = SliderPrimitive.SliderTrackProps<T> & {
+  class?: string | undefined
+}
 
 const SliderTrack = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, SliderTrackProps<T>>
@@ -33,7 +39,9 @@ const SliderTrack = <T extends ValidComponent = "div">(
   )
 }
 
-type SliderFillProps<T extends ValidComponent = "div"> = SliderPrimitive.SliderFillProps<T> & { class?: string | undefined }
+type SliderFillProps<T extends ValidComponent = "div"> = SliderPrimitive.SliderFillProps<T> & {
+  class?: string | undefined
+}
 
 const SliderFill = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, SliderFillProps<T>>

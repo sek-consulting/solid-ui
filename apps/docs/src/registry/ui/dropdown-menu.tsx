@@ -16,9 +16,10 @@ const DropdownMenu: Component<DropdownMenuPrimitive.DropdownMenuRootProps> = (pr
   return <DropdownMenuPrimitive.Root gutter={4} {...props} />
 }
 
-type DropdownMenuContentProps<T extends ValidComponent = "div"> = DropdownMenuPrimitive.DropdownMenuContentProps<T> & {
-  class?: string | undefined
-}
+type DropdownMenuContentProps<T extends ValidComponent = "div"> =
+  DropdownMenuPrimitive.DropdownMenuContentProps<T> & {
+    class?: string | undefined
+  }
 
 const DropdownMenuContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, DropdownMenuContentProps<T>>
@@ -37,9 +38,10 @@ const DropdownMenuContent = <T extends ValidComponent = "div">(
   )
 }
 
-type DropdownMenuItemProps<T extends ValidComponent = "div"> = DropdownMenuPrimitive.DropdownMenuItemProps<T> & {
-  class?: string | undefined
-}
+type DropdownMenuItemProps<T extends ValidComponent = "div"> =
+  DropdownMenuPrimitive.DropdownMenuItemProps<T> & {
+    class?: string | undefined
+  }
 
 const DropdownMenuItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, DropdownMenuItemProps<T>>
@@ -71,9 +73,10 @@ const DropdownMenuLabel: Component<ComponentProps<"div"> & { inset?: boolean }> 
   )
 }
 
-type DropdownMenuSeparatorProps<T extends ValidComponent = "hr"> = DropdownMenuPrimitive.DropdownMenuSeparatorProps<T> & {
-  class?: string | undefined
-}
+type DropdownMenuSeparatorProps<T extends ValidComponent = "hr"> =
+  DropdownMenuPrimitive.DropdownMenuSeparatorProps<T> & {
+    class?: string | undefined
+  }
 
 const DropdownMenuSeparator = <T extends ValidComponent = "hr">(
   props: PolymorphicProps<T, DropdownMenuSeparatorProps<T>>
@@ -87,10 +90,11 @@ const DropdownMenuSeparator = <T extends ValidComponent = "hr">(
   )
 }
 
-type DropdownMenuSubTriggerProps<T extends ValidComponent = "div"> = DropdownMenuPrimitive.DropdownMenuSubTriggerProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type DropdownMenuSubTriggerProps<T extends ValidComponent = "div"> =
+  DropdownMenuPrimitive.DropdownMenuSubTriggerProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, DropdownMenuSubTriggerProps<T>>
@@ -121,9 +125,10 @@ const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
   )
 }
 
-type DropdownMenuSubContentProps<T extends ValidComponent = "div"> = DropdownMenuPrimitive.DropdownMenuSubContentProps<T> & {
-  class?: string | undefined
-}
+type DropdownMenuSubContentProps<T extends ValidComponent = "div"> =
+  DropdownMenuPrimitive.DropdownMenuSubContentProps<T> & {
+    class?: string | undefined
+  }
 
 const DropdownMenuSubContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, DropdownMenuSubContentProps<T>>
@@ -140,10 +145,11 @@ const DropdownMenuSubContent = <T extends ValidComponent = "div">(
   )
 }
 
-type DropdownMenuCheckboxItemProps<T extends ValidComponent = "div"> = DropdownMenuPrimitive.DropdownMenuCheckboxItemProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type DropdownMenuCheckboxItemProps<T extends ValidComponent = "div"> =
+  DropdownMenuPrimitive.DropdownMenuCheckboxItemProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, DropdownMenuCheckboxItemProps<T>>
@@ -178,9 +184,10 @@ const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
   )
 }
 
-type DropdownMenuGroupLabelProps<T extends ValidComponent = "span"> = DropdownMenuPrimitive.DropdownMenuGroupLabelProps<T> & {
-  class?: string | undefined
-}
+type DropdownMenuGroupLabelProps<T extends ValidComponent = "span"> =
+  DropdownMenuPrimitive.DropdownMenuGroupLabelProps<T> & {
+    class?: string | undefined
+  }
 
 const DropdownMenuGroupLabel = <T extends ValidComponent = "span">(
   props: PolymorphicProps<T, DropdownMenuGroupLabelProps<T>>
@@ -194,10 +201,11 @@ const DropdownMenuGroupLabel = <T extends ValidComponent = "span">(
   )
 }
 
-type DropdownMenuRadioItemProps<T extends ValidComponent = "div"> = DropdownMenuPrimitive.DropdownMenuRadioItemProps<T> & {
-  class?: string | undefined
-  children?: JSX.Element
-}
+type DropdownMenuRadioItemProps<T extends ValidComponent = "div"> =
+  DropdownMenuPrimitive.DropdownMenuRadioItemProps<T> & {
+    class?: string | undefined
+    children?: JSX.Element
+  }
 
 const DropdownMenuRadioItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, DropdownMenuRadioItemProps<T>>

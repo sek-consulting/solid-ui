@@ -29,9 +29,13 @@ const toastVariants = cva(
 )
 type ToastVariant = NonNullable<VariantProps<typeof toastVariants>["variant"]>
 
-type ToastListProps<T extends ValidComponent = "ol"> = ToastPrimitive.ToastListProps<T> & { class?: string | undefined }
+type ToastListProps<T extends ValidComponent = "ol"> = ToastPrimitive.ToastListProps<T> & {
+  class?: string | undefined
+}
 
-const Toaster = <T extends ValidComponent = "ol">(props: PolymorphicProps<T, ToastListProps<T>>) => {
+const Toaster = <T extends ValidComponent = "ol">(
+  props: PolymorphicProps<T, ToastListProps<T>>
+) => {
   const [local, others] = splitProps(props as ToastListProps, ["class"])
   return (
     <Portal>
@@ -61,12 +65,13 @@ const Toast = <T extends ValidComponent = "li">(props: PolymorphicProps<T, Toast
   )
 }
 
-type ToastCloseButtonProps<T extends ValidComponent = "button"> = ToastPrimitive.ToastCloseButtonProps<T> & { class?: string | undefined }
+type ToastCloseButtonProps<T extends ValidComponent = "button"> =
+  ToastPrimitive.ToastCloseButtonProps<T> & { class?: string | undefined }
 
 const ToastClose = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, ToastCloseButtonProps>
+  props: PolymorphicProps<T, ToastCloseButtonProps<T>>
 ) => {
-  const [local, others] = splitProps(props as ToastCloseButtonProps<T>, ["class"])
+  const [local, others] = splitProps(props as ToastCloseButtonProps, ["class"])
   return (
     <ToastPrimitive.CloseButton
       class={cn(
@@ -92,7 +97,9 @@ const ToastClose = <T extends ValidComponent = "button">(
   )
 }
 
-type ToastTitleProps<T extends ValidComponent = "div"> = ToastPrimitive.ToastTitleProps<T> & { class?: string | undefined }
+type ToastTitleProps<T extends ValidComponent = "div"> = ToastPrimitive.ToastTitleProps<T> & {
+  class?: string | undefined
+}
 
 const ToastTitle = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ToastTitleProps<T>>
@@ -101,7 +108,8 @@ const ToastTitle = <T extends ValidComponent = "div">(
   return <ToastPrimitive.Title class={cn("text-sm font-semibold", local.class)} {...others} />
 }
 
-type ToastDescriptionProps<T extends ValidComponent = "div"> = ToastPrimitive.ToastDescriptionProps<T> & { class?: string | undefined }
+type ToastDescriptionProps<T extends ValidComponent = "div"> =
+  ToastPrimitive.ToastDescriptionProps<T> & { class?: string | undefined }
 
 const ToastDescription = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, ToastDescriptionProps<T>>

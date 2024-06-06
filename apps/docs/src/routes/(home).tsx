@@ -1,6 +1,6 @@
-import { Dashboard } from "~/components/dashboard"
 import { ExamplesNav } from "~/components/examples-nav"
 import { HeroSection } from "~/components/hero-section"
+import { Mail } from "~/components/mail"
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <section>
         <ExamplesNav />
         <div class="overflow-hidden rounded-[0.5rem] border bg-background shadow">
-          <Dashboard />
+          <Mail />
         </div>
       </section>
     </div>

@@ -89,13 +89,18 @@ export default {
         "content-hide": {
           from: { opacity: 1, transform: "scale(1)" },
           to: { opacity: 0, transform: "scale(0.96)" }
+        },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" }
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "content-show": "content-show 0.2s ease-out",
-        "content-hide": "content-hide 0.2s ease-out"
+        "content-hide": "content-hide 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite"
       }
     }
   },

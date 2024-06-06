@@ -34,7 +34,9 @@ const SheetPortal: Component<PortalProps> = (props) => {
   )
 }
 
-type DialogOverlayProps<T extends ValidComponent = "div"> = SheetPrimitive.DialogOverlayProps<T> & { class?: string | undefined }
+type DialogOverlayProps<T extends ValidComponent = "div"> = SheetPrimitive.DialogOverlayProps<T> & {
+  class?: string | undefined
+}
 
 const SheetOverlay = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, DialogOverlayProps<T>>
@@ -123,7 +125,9 @@ const SheetFooter: Component<ComponentProps<"div">> = (props) => {
   )
 }
 
-type DialogTitleProps<T extends ValidComponent = "h2"> = SheetPrimitive.DialogTitleProps<T> & { class?: string | undefined }
+type DialogTitleProps<T extends ValidComponent = "h2"> = SheetPrimitive.DialogTitleProps<T> & {
+  class?: string | undefined
+}
 
 const SheetTitle = <T extends ValidComponent = "h2">(
   props: PolymorphicProps<T, DialogTitleProps<T>>
@@ -137,7 +141,8 @@ const SheetTitle = <T extends ValidComponent = "h2">(
   )
 }
 
-type DialogDescriptionProps<T extends ValidComponent = "p"> = SheetPrimitive.DialogDescriptionProps<T> & { class?: string | undefined }
+type DialogDescriptionProps<T extends ValidComponent = "p"> =
+  SheetPrimitive.DialogDescriptionProps<T> & { class?: string | undefined }
 
 const SheetDescription = <T extends ValidComponent = "p">(
   props: PolymorphicProps<T, DialogDescriptionProps<T>>

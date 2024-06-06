@@ -61,6 +61,16 @@ export function IconAlertTriangle(props: IconProps) {
   )
 }
 
+export function IconArchive(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+      <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+      <path d="M10 12l4 0" />
+    </Icon>
+  )
+}
+
 export function IconArrowRight(props: IconProps) {
   return (
     <Icon {...props}>
@@ -114,10 +124,33 @@ export function IconBrandGoogle(props: IconProps) {
   )
 }
 
+export function IconBrandInstagram(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+      <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+      <path d="M16.5 7.5l0 .01" />
+    </Icon>
+  )
+}
+
 export function IconBrandPaypal(props: IconProps) {
   return (
     <Icon {...props}>
       <path d="M10 13l2.5 0c2.5 0 5 -2.5 5 -5c0 -3 -1.9 -5 -5 -5h-5.5c-.5 0 -1 .5 -1 1l-2 14c0 .5 .5 1 1 1h2.8l1.2 -5c.1 -.6 .4 -1 1 -1zm7.5 -5.8c1.7 1 2.5 2.8 2.5 4.8c0 2.5 -2.5 4.5 -5 4.5h-2.6l-.6 3.6a1 1 0 0 1 -1 .8l-2.7 0a.5 .5 0 0 1 -.5 -.6l.2 -1.4" />
+    </Icon>
+  )
+}
+
+export function IconBrandReddit(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 8c2.648 0 5.028 .826 6.675 2.14a2.5 2.5 0 0 1 2.326 4.36c0 3.59 -4.03 6.5 -9 6.5c-4.875 0 -8.845 -2.8 -9 -6.294l-1 -.206a2.5 2.5 0 0 1 2.326 -4.36c1.646 -1.313 4.026 -2.14 6.674 -2.14z" />
+      <path d="M12 8l1 -5l6 1" />
+      <path d="M19 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      <circle cx="9" cy="13" r=".5" fill="currentColor" />
+      <circle cx="15" cy="13" r=".5" fill="currentColor" />
+      <path d="M10 17c.667 .333 1.333 .5 2 .5s1.333 -.167 2 -.5" />
     </Icon>
   )
 }
@@ -129,6 +162,32 @@ export function IconBrandTypescript(props: IconProps) {
       <path d="M9 12h4" />
       <path d="M11 12v6" />
       <path d="M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z" />
+    </Icon>
+  )
+}
+
+export function IconBrandVercel(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3 19h18l-9 -15z" fill="currentColor" />
+    </Icon>
+  )
+}
+
+export function IconBrandX(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+      <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </Icon>
+  )
+}
+
+export function IconBrandYoutube(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+      <path d="M10 9l5 3l-5 3z" />
     </Icon>
   )
 }
@@ -162,6 +221,23 @@ export function IconChevronDown(props: IconProps) {
   )
 }
 
+export function IconClock(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+      <path d="M12 7v5l3 3" />
+    </Icon>
+  )
+}
+
+export function IconCloud(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M6.657 18c-2.572 0 -4.657 -2.007 -4.657 -4.483c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 1.927 -1.551 3.487 -3.465 3.487h-11.878" />
+    </Icon>
+  )
+}
+
 export function IconCommand(props: IconProps) {
   return (
     <Icon {...props}>
@@ -186,6 +262,26 @@ export function IconCreditCard(props: IconProps) {
       <path d="M3 10l18 0" />
       <path d="M7 15l.01 0" />
       <path d="M11 15l2 0" />
+    </Icon>
+  )
+}
+
+export function IconDots(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    </Icon>
+  )
+}
+
+export function IconDotsVertical(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
     </Icon>
   )
 }
@@ -220,6 +316,24 @@ export function IconEyeOff(props: IconProps) {
   )
 }
 
+export function IconFile(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+    </Icon>
+  )
+}
+
+export function IconForward(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <polyline points="15 17 20 12 15 7" />
+      <path d="M4 18v-2a4 4 0 0 1 4-4h12" />
+    </Icon>
+  )
+}
+
 export function IconHash(props: IconProps) {
   return (
     <Icon {...props}>
@@ -227,6 +341,15 @@ export function IconHash(props: IconProps) {
       <path d="M5 15l14 0" />
       <path d="M11 4l-4 16" />
       <path d="M17 4l-4 16" />
+    </Icon>
+  )
+}
+
+export function IconInbox(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+      <path d="M4 13h3l3 3h4l3 -3h3" />
     </Icon>
   )
 }
@@ -274,6 +397,15 @@ export function IconMail(props: IconProps) {
   )
 }
 
+export function IconMessages(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2z" />
+      <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
+    </Icon>
+  )
+}
+
 export function IconMinus(props: IconProps) {
   return (
     <Icon {...props}>
@@ -286,6 +418,25 @@ export function IconMoon(props: IconProps) {
   return (
     <Icon {...props}>
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </Icon>
+  )
+}
+
+export function IconReply(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <polyline points="9 17 4 12 9 7" />
+      <path d="M20 18v-2a4 4 0 0 0-4-4H4" />
+    </Icon>
+  )
+}
+
+export function IconReplyAll(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <polyline points="7 17 2 12 7 7" />
+      <polyline points="12 17 7 12 12 7" />
+      <path d="M22 18v-2a4 4 0 0 0-4-4H7" />
     </Icon>
   )
 }
@@ -318,11 +469,31 @@ export function IconSearch(props: IconProps) {
   )
 }
 
+export function IconSend(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M10 14l11 -11" />
+      <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
+    </Icon>
+  )
+}
+
 export function IconSettings(props: IconProps) {
   return (
     <Icon {...props}>
       <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
       <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+    </Icon>
+  )
+}
+
+export function IconShoppingCart(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+      <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+      <path d="M17 17h-11v-14h-2" />
+      <path d="M6 5l14 1l-1 7h-13" />
     </Icon>
   )
 }
@@ -374,11 +545,34 @@ export function IconTerminal(props: IconProps) {
   )
 }
 
+export function IconTrash(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 7l16 0" />
+      <path d="M10 11l0 6" />
+      <path d="M14 11l0 6" />
+      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+      <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+    </Icon>
+  )
+}
+
 export function IconUnderline(props: IconProps) {
   return (
     <Icon {...props}>
       <path d="M7 5v5a5 5 0 0 0 10 0v-5" />
       <path d="M5 19h14" />
+    </Icon>
+  )
+}
+
+export function IconUpdates(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+      <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+      <path d="M12 9l0 3" />
+      <path d="M12 15l.01 0" />
     </Icon>
   )
 }
@@ -392,6 +586,17 @@ export function IconUser(props: IconProps) {
   )
 }
 
+export function IconUsers(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+      <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+    </Icon>
+  )
+}
+
 export function IconX(props: IconProps) {
   return (
     <Icon {...props}>
@@ -400,200 +605,3 @@ export function IconX(props: IconProps) {
     </Icon>
   )
 }
-
-// const Icons = {
-//   arrowDown: (props: IconProps) => (
-//     <Icon {...props}>
-//       <line x1="12" x2="12" y1="5" y2="19" />
-//       <polyline points="19 12 12 19 5 12" />
-//     </Icon>
-//   ),
-//   arrowDownRight: (props: IconProps) => (
-//     <Icon {...props}>
-//       <line x1="7" x2="17" y1="7" y2="17" />
-//       <polyline points="17 7 17 17 7 17" />
-//     </Icon>
-//   ),
-//   arrowRight: (props: IconProps) => (
-//     <Icon {...props}>
-//       <line x1="5" x2="19" y1="12" y2="12" />
-//       <polyline points="12 5 19 12 12 19" />
-//     </Icon>
-//   ),
-//   arrowUp: (props: IconProps) => (
-//     <Icon {...props}>
-//       <line x1="12" x2="12" y1="19" y2="5" />
-//       <polyline points="5 12 12 5 19 12" />
-//     </Icon>
-//   ),
-//   arrowUpRight: (props: IconProps) => (
-//     <Icon {...props}>
-//       <line x1="7" x2="17" y1="17" y2="7" />
-//       <polyline points="7 7 17 7 17 17" />
-//     </Icon>
-//   ),
-//   bell: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-//       <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-//     </Icon>
-//   ),
-//   check: (props: IconProps) => (
-//     <Icon {...props}>
-//       <polyline points="20 6 9 17 4 12" />
-//     </Icon>
-//   ),
-//   chevronDown: (props: IconProps) => (
-//     <Icon {...props}>
-//       <polyline points="6 9 12 15 18 9" />
-//     </Icon>
-//   ),
-//   chevronLeft: (props: IconProps) => (
-//     <Icon {...props}>
-//       <polyline points="15 18 9 12 15 6" />
-//     </Icon>
-//   ),
-//   chevronRight: (props: IconProps) => (
-//     <Icon {...props}>
-//       <polyline points="9 18 15 12 9 6" />
-//     </Icon>
-//   ),
-//   chevronUp: (props: IconProps) => (
-//     <Icon {...props}>
-//       <polyline points="18 15 12 9 6 15" />
-//     </Icon>
-//   ),
-//   chevronsLeft: (props: IconProps) => (
-//     <Icon {...props}>
-//       <polyline points="11 17 6 12 11 7" />
-//       <polyline points="18 17 13 12 18 7" />
-//     </Icon>
-//   ),
-//   chevronsRight: (props: IconProps) => (
-//     <Icon {...props}>
-//       <polyline points="13 17 18 12 13 7" />
-//       <polyline points="6 17 11 12 6 7" />
-//     </Icon>
-//   ),
-//   chevronsUpDown: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="m7 15 5 5 5-5" />
-//       <path d="m7 9 5-5 5 5" />
-//     </Icon>
-//   ),
-//   circle: (props: IconProps) => (
-//     <Icon {...props}>
-//       <circle cx="12" cy="12" r="10" />
-//     </Icon>
-//   ),
-//   close: (props: IconProps) => (
-//     <Icon {...props}>
-//       <line x1="18" x2="6" y1="6" y2="18" />
-//       <line x1="6" x2="18" y1="6" y2="18" />
-//     </Icon>
-//   ),
-//   eyeOff: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
-//       <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
-//       <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
-//       <line x1="2" x2="22" y1="2" y2="22" />
-//     </Icon>
-//   ),
-//   gitHub: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-//       <path d="M9 18c-4.51 2-5-2-7-2" />
-//     </Icon>
-//   ),
-//   laptop: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
-//     </Icon>
-//   ),
-//   logo: (props: IconProps) => (
-//     <Icon viewBox="0 0 256 256" {...props}>
-//       <line
-//         x1="208"
-//         y1="128"
-//         x2="128"
-//         y2="208"
-//         fill="none"
-//         stroke="#4d83c4"
-//         stroke-linecap="round"
-//         stroke-linejoin="round"
-//         stroke-width="24"
-//       />
-//       <line
-//         x1="192"
-//         y1="40"
-//         x2="40"
-//         y2="192"
-//         fill="none"
-//         stroke="#93c4e9"
-//         stroke-linecap="round"
-//         stroke-linejoin="round"
-//         stroke-width="24"
-//       />
-//     </Icon>
-//   ),
-//   moon: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-//     </Icon>
-//   ),
-//   sidebarOpen: (props: IconProps) => (
-//     <Icon {...props}>
-//       <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-//       <path d="M9 3v18" />
-//       <path d="m14 9 3 3-3 3" />
-//     </Icon>
-//   ),
-//   slidersHorizontal: (props: IconProps) => (
-//     <Icon {...props}>
-//       <line x1="21" x2="14" y1="4" y2="4" />
-//       <line x1="10" x2="3" y1="4" y2="4" />
-//       <line x1="21" x2="12" y1="12" y2="12" />
-//       <line x1="8" x2="3" y1="12" y2="12" />
-//       <line x1="21" x2="16" y1="20" y2="20" />
-//       <line x1="12" x2="3" y1="20" y2="20" />
-//       <line x1="14" x2="14" y1="2" y2="6" />
-//       <line x1="8" x2="8" y1="10" y2="14" />
-//       <line x1="16" x2="16" y1="18" y2="22" />
-//     </Icon>
-//   ),
-//   sortDesc: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="m3 16 4 4 4-4" />
-//       <path d="M7 20V4" />
-//       <path d="M11 4h10" />
-//       <path d="M11 8h7" />
-//       <path d="M11 12h4" />
-//     </Icon>
-//   ),
-//   sortAsc: (props: IconProps) => (
-//     <Icon {...props}>
-//       <path d="m3 8 4-4 4 4" />
-//       <path d="M7 4v16" />
-//       <path d="M11 12h4" />
-//       <path d="M11 16h7" />
-//       <path d="M11 20h10" />
-//     </Icon>
-//   ),
-//   sun: (props: IconProps) => (
-//     <Icon {...props}>
-//       <circle cx="12" cy="12" r="4" />
-//       <path d="M12 2v2" />
-//       <path d="M12 20v2" />
-//       <path d="m4.93 4.93 1.41 1.41" />
-//       <path d="m17.66 17.66 1.41 1.41" />
-//       <path d="M2 12h2" />
-//       <path d="M20 12h2" />
-//       <path d="m6.34 17.66-1.41 1.41" />
-//       <path d="m19.07 4.93-1.41 1.41" />
-//     </Icon>
-//   )
-// }
-
-// export { Icons }
-// export type { IconType as Icon }

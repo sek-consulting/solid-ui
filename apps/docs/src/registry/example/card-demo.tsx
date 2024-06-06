@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle
 } from "~/registry/ui/card"
-import { Switch } from "~/registry/ui/switch"
+import { Switch, SwitchControl, SwitchThumb } from "~/registry/ui/switch"
 
 const notifications = [
   {
@@ -41,7 +41,11 @@ export default function CardDemo() {
             <p class="text-sm font-medium leading-none">Push Notifications</p>
             <p class="text-sm text-muted-foreground">Send notifications to device.</p>
           </div>
-          <Switch />
+          <Switch>
+            <SwitchControl>
+              <SwitchThumb />
+            </SwitchControl>
+          </Switch>
         </div>
         <div>
           <For each={notifications}>

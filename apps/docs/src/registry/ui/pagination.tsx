@@ -9,7 +9,8 @@ import { buttonVariants } from "~/registry/ui/button"
 
 const PaginationItems = PaginationPrimitive.Items
 
-type PaginationRootProps<T extends ValidComponent = "nav"> = PaginationPrimitive.PaginationRootProps<T> & { class?: string | undefined }
+type PaginationRootProps<T extends ValidComponent = "nav"> =
+  PaginationPrimitive.PaginationRootProps<T> & { class?: string | undefined }
 
 const Pagination = <T extends ValidComponent = "nav">(
   props: PolymorphicProps<T, PaginationRootProps<T>>
@@ -23,7 +24,8 @@ const Pagination = <T extends ValidComponent = "nav">(
   )
 }
 
-type PaginationItemProps<T extends ValidComponent = "button"> = PaginationPrimitive.PaginationItemProps<T> & { class?: string | undefined }
+type PaginationItemProps<T extends ValidComponent = "button"> =
+  PaginationPrimitive.PaginationItemProps<T> & { class?: string | undefined }
 
 const PaginationItem = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, PaginationItemProps<T>>
@@ -43,9 +45,10 @@ const PaginationItem = <T extends ValidComponent = "button">(
   )
 }
 
-type PaginationEllipsisProps<T extends ValidComponent = "div"> = PaginationPrimitive.PaginationEllipsisProps<T> & {
-  class?: string | undefined
-}
+type PaginationEllipsisProps<T extends ValidComponent = "div"> =
+  PaginationPrimitive.PaginationEllipsisProps<T> & {
+    class?: string | undefined
+  }
 
 const PaginationEllipsis = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, PaginationEllipsisProps<T>>
@@ -75,9 +78,10 @@ const PaginationEllipsis = <T extends ValidComponent = "div">(
   )
 }
 
-type PaginationPreviousProps<T extends ValidComponent = "button"> = PaginationPrimitive.PaginationPreviousProps<T> & {
-  class?: string | undefined
-}
+type PaginationPreviousProps<T extends ValidComponent = "button"> =
+  PaginationPrimitive.PaginationPreviousProps<T> & {
+    class?: string | undefined
+  }
 
 const PaginationPrevious = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, PaginationPreviousProps<T>>
@@ -111,9 +115,10 @@ const PaginationPrevious = <T extends ValidComponent = "button">(
   )
 }
 
-type PaginationNextProps<T extends ValidComponent = "button"> = PaginationPrimitive.PaginationNextProps<T> & {
-  class?: string | undefined
-}
+type PaginationNextProps<T extends ValidComponent = "button"> =
+  PaginationPrimitive.PaginationNextProps<T> & {
+    class?: string | undefined
+  }
 
 const PaginationNext = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, PaginationNextProps<T>>

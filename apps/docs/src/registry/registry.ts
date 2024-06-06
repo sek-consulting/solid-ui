@@ -20,6 +20,11 @@ const ui: Registry = [
     files: ["ui/alert-dialog.tsx"]
   },
   {
+    name: "aspect-ratio",
+    type: "ui",
+    files: ["ui/aspect-ratio.tsx"]
+  },
+  {
     name: "avatar",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -36,6 +41,17 @@ const ui: Registry = [
     name: "badge",
     type: "ui",
     files: ["ui/badge.tsx"]
+  },
+  {
+    name: "bar-list",
+    type: "ui",
+    files: ["ui/bar-list.tsx"]
+  },
+  {
+    name: "breadcrumb",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/breadcrumb.tsx"]
   },
   {
     name: "button",
@@ -136,11 +152,6 @@ const ui: Registry = [
     files: ["ui/hover-card.tsx"]
   },
   {
-    name: "input",
-    type: "ui",
-    files: ["ui/input.tsx"]
-  },
-  {
     name: "label",
     type: "ui",
     files: ["ui/label.tsx"]
@@ -151,10 +162,21 @@ const ui: Registry = [
     files: ["ui/menubar.tsx"]
   },
   {
+    name: "navigation-menu",
+    type: "ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/navigation-menu.tsx"]
+  },
+  {
     name: "number-field",
     type: "ui",
     dependencies: ["@kobalte/core"],
     files: ["ui/number-field.tsx"]
+  },
+  {
+    name: "otp-field",
+    type: "ui",
+    files: ["ui/otp-field.tsx"]
   },
   {
     name: "pagination",
@@ -241,9 +263,9 @@ const ui: Registry = [
     files: ["ui/tabs.tsx"]
   },
   {
-    name: "textarea",
+    name: "text-field",
     type: "ui",
-    files: ["ui/textarea.tsx"]
+    files: ["ui/text-field.tsx"]
   },
   {
     name: "timeline",
@@ -296,6 +318,11 @@ const examples: Registry = [
     files: ["example/alert-dialog-demo.tsx"]
   },
   {
+    name: "aspect-ratio-demo",
+    type: "example",
+    files: ["example/aspect-ratio-demo.tsx"]
+  },
+  {
     name: "avatar-demo",
     type: "example",
     registryDependencies: ["avatar"],
@@ -318,6 +345,16 @@ const examples: Registry = [
     type: "example",
     registryDependencies: ["badge-delta"],
     files: ["example/badge-delta-demo.tsx"]
+  },
+  {
+    name: "bar-list-demo",
+    type: "example",
+    files: ["example/bar-list-demo.tsx"]
+  },
+  {
+    name: "breadcrumb-demo",
+    type: "example",
+    files: ["example/breadcrumb-demo.tsx"]
   },
   {
     name: "callout-demo",
@@ -449,11 +486,6 @@ const examples: Registry = [
     files: ["example/hover-card-demo.tsx"]
   },
   {
-    name: "input-demo",
-    type: "example",
-    files: ["example/input-demo.tsx"]
-  },
-  {
     name: "menubar-demo",
     type: "example",
     files: ["example/menubar-demo.tsx"]
@@ -464,9 +496,19 @@ const examples: Registry = [
     files: ["example/mode-toggle.tsx"]
   },
   {
+    name: "navigation-menu-demo",
+    type: "example",
+    files: ["example/navigation-menu-demo.tsx"]
+  },
+  {
     name: "number-field-demo",
     type: "example",
     files: ["example/number-field-demo.tsx"]
+  },
+  {
+    name: "otp-field-demo",
+    type: "example",
+    files: ["example/otp-field-demo.tsx"]
   },
   {
     name: "pagination-demo",
@@ -539,9 +581,14 @@ const examples: Registry = [
     files: ["example/tabs-demo.tsx"]
   },
   {
-    name: "textarea-demo",
+    name: "text-field-demo",
     type: "example",
-    files: ["example/textarea-demo.tsx"]
+    files: ["example/text-field-demo.tsx"]
+  },
+  {
+    name: "text-field-textarea-demo",
+    type: "example",
+    files: ["example/text-field-textarea-demo.tsx"]
   },
   {
     name: "timeline-demo",

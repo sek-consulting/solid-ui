@@ -1,5 +1,11 @@
 # docs
 
+## 0.4.1
+
+### Patch Changes
+
+- [#96](https://github.com/sek-consulting/solid-ui/pull/96) [`d757250`](https://github.com/sek-consulting/solid-ui/commit/d757250c5d178531607e67b5e040f424876676d2) Thanks [@GiyoMoon](https://github.com/GiyoMoon)! - fix hydration issue in drawer-dialog example
+
 ## 0.4.0
 
 ### Minor Changes

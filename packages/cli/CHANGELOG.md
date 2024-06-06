@@ -1,5 +1,27 @@
 # @solid-ui/cli
 
+## 0.6.6
+
+### Patch Changes
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add navigation-menu
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add breadcrumb
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - fix: checkbox focus-visible error (#103)
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add aspect-ratio
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: switch from input & textarea to text-field
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add mail example
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add input-otp
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - update to @kobalte/core v0.13.2
+
+- [#98](https://github.com/sek-consulting/solid-ui/pull/98) [`9254f7f`](https://github.com/sek-consulting/solid-ui/commit/9254f7fa521dd0fb55d568910a4a811b3490dc50) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add bar-list
+
 ## 0.6.5
 
 ### Patch Changes

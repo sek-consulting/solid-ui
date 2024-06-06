@@ -38,12 +38,13 @@ export function ExamplesNav(props: ComponentProps<"div">) {
     <div class="relative">
       <div class={cn("mb-4 flex items-center", props.class)} {...rest}>
         <For each={examples}>
-          {(example) => (
+          {(example, idx) => (
             <a
               href={example.href}
               class={cn(
                 "flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
-                location.pathname?.startsWith(example.href) || location.pathname === "/"
+                location.pathname?.startsWith(example.href) ||
+                  (location.pathname === "/" && idx() === 0)
                   ? "bg-muted font-medium text-primary"
                   : "text-muted-foreground"
               )}

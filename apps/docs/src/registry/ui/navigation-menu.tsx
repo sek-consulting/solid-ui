@@ -43,7 +43,7 @@ const NavigationMenuTrigger = <T extends ValidComponent = "button">(
   return (
     <NavigationMenuPrimitive.Trigger
       class={cn(
-        "group/trigger inline-flex h-10 w-full items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[expanded]:bg-accent/50",
+        "group/trigger inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[expanded]:bg-accent/50",
         local.class
       )}
       {...others}
@@ -79,7 +79,7 @@ const NavigationMenuViewport = <T extends ValidComponent = "li">(
   return (
     <NavigationMenuPrimitive.Viewport
       class={cn(
-        "pointer-events-none z-50 flex h-[var(--kb-navigation-menu__viewport-height)] w-[var(--kb-navigation-menu__viewport-width)] origin-[var(--kb-menu-content-transform-origin)] items-center justify-center overflow-x-clip overflow-y-visible rounded-md border bg-popover shadow-lg transition-[width,height] duration-200 ease-in data-[expanded]:pointer-events-auto data-[orientation=vertical]:overflow-y-clip data-[orientation=vertical]:overflow-x-visible data-[expanded]:rounded-md data-[expanded]:opacity-100 data-[expanded]:ease-out",
+        "pointer-events-none z-[1000] flex h-[var(--kb-navigation-menu__viewport-height)] w-[var(--kb-navigation-menu__viewport-width)] origin-[var(--kb-menu-content-transform-origin)] items-center justify-center overflow-x-clip overflow-y-visible rounded-md border bg-popover opacity-0 shadow-lg transition-[width,height] duration-200 ease-in data-[expanded]:pointer-events-auto data-[orientation=vertical]:overflow-y-clip data-[orientation=vertical]:overflow-x-visible data-[expanded]:rounded-md data-[expanded]:opacity-100 data-[expanded]:ease-out",
         local.class
       )}
       {...others}
@@ -102,7 +102,18 @@ const NavigationMenuContent = <T extends ValidComponent = "ul">(
     <NavigationMenuPrimitive.Portal>
       <NavigationMenuPrimitive.Content
         class={cn(
-          "pointer-events-none w-full p-4 data-[expanded]:pointer-events-auto data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[orientation=horizontal]:data-[motion=from-end]:slide-in-from-right-[200px] data-[orientation=horizontal]:data-[motion=from-start]:slide-in-from-left-[200px] data-[orientation=horizontal]:data-[motion=to-end]:slide-out-to-right-[200px] data-[orientation=horizontal]:data-[motion=to-start]:slide-out-to-left-[200px] data-[orientation=vertical]:data-[motion=from-end]:slide-in-from-bottom-[200px] data-[orientation=vertical]:data-[motion=from-start]:slide-in-from-top-[200px] data-[orientation=vertical]:data-[motion=to-end]:slide-out-to-bottom-[200px] data-[orientation=vertical]:data-[motion=to-start]:slide-out-to-bottom-[200px]",
+          // base settings
+          "pointer-events-none absolute left-0 top-0 box-border p-4 data-[expanded]:pointer-events-auto",
+          // base animation settings
+          "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out",
+          // left to right
+          "data-[orientation=horizontal]:data-[motion=from-start]:slide-in-from-left-52 data-[orientation=horizontal]:data-[motion=to-end]:slide-out-to-right-52",
+          // right to left
+          "data-[orientation=horizontal]:data-[motion=from-end]:slide-in-from-right-52 data-[orientation=horizontal]:data-[motion=to-start]:slide-out-to-left-52",
+          // top to bottom
+          "data-[orientation=vertical]:data-[motion=from-start]:slide-in-from-top-52 data-[orientation=vertical]:data-[motion=to-end]:slide-out-to-bottom-52",
+          //bottom to top
+          "data-[orientation=vertical]:data-[motion=from-end]:slide-in-from-bottom-52 data-[orientation=vertical]:data-[motion=to-start]:slide-out-to-bottom-52",
           local.class
         )}
         {...others}

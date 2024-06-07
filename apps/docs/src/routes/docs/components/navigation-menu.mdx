@@ -44,9 +44,26 @@ npm install @kobalte/core
 ## Usage
 
 ```tsx
-
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIcon,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuTrigger
+} from "~/components/ui/navigation-menu"
 ```
 
 ```tsx
-
+<NavigationMenu>
+  <NavigationMenuItem>
+    <NavigationMenuTrigger>
+      Item one
+      <NavigationMenuIcon />
+    </NavigationMenuTrigger>
+    <NavigationMenuContent>
+      <NavigationMenuLink>Link</NavigationMenuLink>
+    </NavigationMenuContent>
+  </NavigationMenuItem>
+</NavigationMenu>
 ```

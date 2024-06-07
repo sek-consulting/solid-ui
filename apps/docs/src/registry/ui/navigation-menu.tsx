@@ -102,7 +102,7 @@ const NavigationMenuContent = <T extends ValidComponent = "ul">(
       <NavigationMenuPrimitive.Content
         class={cn(
           // base settings
-          "pointer-events-none absolute left-0 top-0 box-border p-4 data-[expanded]:pointer-events-auto",
+          "pointer-events-none absolute left-0 top-0 box-border p-4 focus:outline-none data-[expanded]:pointer-events-auto",
           // base animation settings
           "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out",
           // left to right

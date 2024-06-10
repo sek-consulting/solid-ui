@@ -13,7 +13,7 @@ const Command: Component<ParentProps<CommandPrimitive.CommandRootProps>> = (prop
   return (
     <CommandPrimitive.CommandRoot
       class={cn(
-        "flex size-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+        "flex size-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground blur-none",
         local.class
       )}
       {...others}

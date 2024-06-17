@@ -53,10 +53,10 @@ export default function TabsDemo() {
               <TextFieldLabel>Current password</TextFieldLabel>
               <TextFieldInput type="password" />
             </TextField>
-            <div class="space-y-1">
+            <TextField class="space-y-1">
               <TextFieldLabel>New password</TextFieldLabel>
               <TextFieldInput type="password" />
-            </div>
+            </TextField>
           </CardContent>
           <CardFooter>
             <Button>Save password</Button>

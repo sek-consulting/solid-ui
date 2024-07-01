@@ -1,26 +1,34 @@
 #! /usr/bin/env node
-
+import { add } from "~/commands/add"
+import init from "~/commands/init"
+import { getPackageInfo } from "~/utils/get-package-info"
 import { Command } from "commander"
 
-import { add } from "./commands/add"
-import init from "./commands/init"
+process.on("SIGINT", () => process.exit(0))
+process.on("SIGTERM", () => process.exit(0))
 
-const program = new Command()
+async function main() {
+  console.clear()
 
-program
-  .name("solidui-cli")
-  .description("A CLI used for the Solid-UI components library")
-  .version("0.1")
+  const packageInfo = getPackageInfo()
 
-program
-  .command("init")
-  .description("Initialize and install the necessary things to make use of Solid-UI")
-  .action(async () => await init())
+  const program = new Command()
+    .name("solidui-cli")
+    .description("Add SolidUI components to your project")
+    .version(packageInfo.version || "0.0.0", "-v, --version")
 
-program
-  .command("add")
-  .argument("[components...]", "Components to be added to your project")
-  .description("Add a component to your project")
-  .action(async (component: string[]) => await add(component))
+  program
+    .command("init")
+    .description("Initialize and install the necessary things to make use of SolidUI")
+    .action(async () => await init())
 
-program.parse()
+  program
+    .command("add")
+    .argument("[components...]", "Components to be added to your project")
+    .description("Add a component to your project")
+    .action(async (component: string[]) => await add(component))
+
+  program.parse()
+}
+
+main()

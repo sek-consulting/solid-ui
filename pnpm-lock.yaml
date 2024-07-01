@@ -64,8 +64,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(solid-js@1.8.16)
       '@corvu/resizable':
-        specifier: ^0.2.1
-        version: 0.2.1(solid-js@1.8.16)
+        specifier: ^0.2.2
+        version: 0.2.2(solid-js@1.8.16)
       '@fontsource/inter':
         specifier: ^5.0.18
         version: 5.0.18
@@ -990,8 +990,8 @@ packages:
       solid-js: 1.8.16
     dev: false
 
-  /@corvu/resizable@0.2.1(solid-js@1.8.16):
-    resolution: {integrity: sha512-hb23FWMvry/xzrt1ZPa8iYku3sIFDZj/eKwRAVCAJ9OqpFPg4KHmCwdLVtl/YCP3DF5qofiAAxK8zUqBMEewJw==}
+  /@corvu/resizable@0.2.2(solid-js@1.8.16):
+    resolution: {integrity: sha512-VQ8PRCGP48oVgkvCyfGMwtH5g9CBxhTIEoJ9aGw2yf2P1bpGuE8CH3i6guhWrxVnZl5Fv8F/CWHIznd6h9Nb9g==}
     peerDependencies:
       solid-js: ^1.8
     dependencies:

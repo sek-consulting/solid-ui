@@ -1,9 +1,8 @@
 #! /usr/bin/env node
+import { add } from "~/commands/add"
+import init from "~/commands/init"
+import { getPackageInfo } from "~/utils/get-package-info"
 import { Command } from "commander"
-
-import { add } from "./commands/add"
-import init from "./commands/init"
-import { getPackageInfo } from "./utils/get-package-info"
 
 process.on("SIGINT", () => process.exit(0))
 process.on("SIGTERM", () => process.exit(0))
@@ -20,7 +19,7 @@ async function main() {
 
   program
     .command("init")
-    .description("Initialize and install the necessary things to make use of Solid-UI")
+    .description("Initialize and install the necessary things to make use of SolidUI")
     .action(async () => await init())
 
   program

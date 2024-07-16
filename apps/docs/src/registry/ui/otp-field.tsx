@@ -8,10 +8,12 @@ export const REGEXP_ONLY_DIGITS = "^\\d*$"
 export const REGEXP_ONLY_CHARS = "^[a-zA-Z]*$"
 export const REGEXP_ONLY_DIGITS_AND_CHARS = "^[a-zA-Z0-9]*$"
 
+type OTPFieldProps<T extends ValidComponent = "div"> = RootProps<T> & { class?: string }
+
 const OTPField = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, RootProps<T> & { class?: string | undefined }>
+  props: DynamicProps<T, OTPFieldProps<T>>
 ) => {
-  const [local, others] = splitProps(props, ["class"])
+  const [local, others] = splitProps(props as OTPFieldProps, ["class"])
   return (
     <OtpField
       class={cn(

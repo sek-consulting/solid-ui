@@ -4,9 +4,9 @@ import ResizablePrimitive, { DynamicProps, HandleProps, RootProps } from "@corvu
 
 import { cn } from "~/lib/utils"
 
-type ResizableProps = RootProps & { class?: string }
+type ResizableProps<T extends ValidComponent = 'div'> = RootProps<T> & { class?: string }
 
-const Resizable = <T extends ValidComponent = "div">(props: DynamicProps<T, ResizableProps>) => {
+const Resizable = <T extends ValidComponent = "div">(props: DynamicProps<T, ResizableProps<T>>) => {
   const [, rest] = splitProps(props as ResizableProps, ["class"])
   return (
     <ResizablePrimitive
@@ -18,10 +18,10 @@ const Resizable = <T extends ValidComponent = "div">(props: DynamicProps<T, Resi
 
 const ResizablePanel = ResizablePrimitive.Panel
 
-type ResizableHandleProps = HandleProps & { class?: string; withHandle?: boolean }
+type ResizableHandleProps<T extends ValidComponent = 'button'> = HandleProps<T> & { class?: string; withHandle?: boolean }
 
-const ResizableHandle = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, ResizableHandleProps>
+const ResizableHandle = <T extends ValidComponent = "button">(
+  props: DynamicProps<T, ResizableHandleProps<T>>
 ) => {
   const [, rest] = splitProps(props as ResizableHandleProps, ["class", "withHandle"])
   return (

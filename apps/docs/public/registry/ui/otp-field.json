@@ -1,5 +1,8 @@
 {
   "name": "otp-field",
+  "dependencies": [
+    "@corvu/otp-field"
+  ],
   "files": [
     {
       "name": "otp-field.tsx",

@@ -56,7 +56,7 @@ const ui: Registry = [
   {
     name: "button",
     type: "ui",
-    dependencies: ["@kobalte/core", "class-variance-authority"],
+    dependencies: ["@kobalte/core"],
     files: ["ui/button.tsx"]
   },
   {
@@ -176,6 +176,7 @@ const ui: Registry = [
   {
     name: "otp-field",
     type: "ui",
+    dependencies: ["@corvu/otp-field"],
     files: ["ui/otp-field.tsx"]
   },
   {
@@ -236,6 +237,7 @@ const ui: Registry = [
   {
     name: "skeleton",
     type: "ui",
+    dependencies: ["@kobalte/core"],
     files: ["ui/skeleton.tsx"]
   },
   {
@@ -265,6 +267,7 @@ const ui: Registry = [
   {
     name: "text-field",
     type: "ui",
+    dependencies: ["@kobalte/core"],
     files: ["ui/text-field.tsx"]
   },
   {
@@ -302,19 +305,16 @@ const examples: Registry = [
   {
     name: "accordion-demo",
     type: "example",
-    registryDependencies: ["accordion"],
     files: ["example/accordion-demo.tsx"]
   },
   {
     name: "alert-demo",
     type: "example",
-    registryDependencies: ["alert"],
     files: ["example/alert-demo.tsx"]
   },
   {
     name: "alert-dialog-demo",
     type: "example",
-    registryDependencies: ["alert-dialog"],
     files: ["example/alert-dialog-demo.tsx"]
   },
   {
@@ -325,25 +325,21 @@ const examples: Registry = [
   {
     name: "avatar-demo",
     type: "example",
-    registryDependencies: ["avatar"],
     files: ["example/avatar-demo.tsx"]
   },
   {
     name: "button-demo",
     type: "example",
-    registryDependencies: ["button"],
     files: ["example/button-demo.tsx"]
   },
   {
     name: "badge-demo",
     type: "example",
-    registryDependencies: ["badge"],
     files: ["example/badge-demo.tsx"]
   },
   {
     name: "badge-delta-demo",
     type: "example",
-    registryDependencies: ["badge-delta"],
     files: ["example/badge-delta-demo.tsx"]
   },
   {
@@ -359,13 +355,11 @@ const examples: Registry = [
   {
     name: "callout-demo",
     type: "example",
-    registryDependencies: ["callout"],
     files: ["example/callout-demo.tsx"]
   },
   {
     name: "card-demo",
     type: "example",
-    registryDependencies: ["card"],
     files: ["example/card-demo.tsx"]
   },
   {
@@ -431,13 +425,11 @@ const examples: Registry = [
   {
     name: "command-demo",
     type: "example",
-    registryDependencies: ["dialog"],
     files: ["example/command-demo.tsx"]
   },
   {
     name: "command-dialog-demo",
     type: "example",
-    registryDependencies: ["dialog"],
     files: ["example/command-dialog-demo.tsx"]
   },
   {

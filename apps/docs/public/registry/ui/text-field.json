@@ -1,5 +1,8 @@
 {
   "name": "text-field",
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "text-field.tsx",

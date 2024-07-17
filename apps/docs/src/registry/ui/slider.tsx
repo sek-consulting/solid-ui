@@ -47,7 +47,12 @@ const SliderFill = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, SliderFillProps<T>>
 ) => {
   const [local, others] = splitProps(props as SliderFillProps, ["class"])
-  return <SliderPrimitive.Fill class={cn("absolute h-full bg-primary", local.class)} {...others} />
+  return (
+    <SliderPrimitive.Fill
+      class={cn("absolute h-full rounded-full bg-primary", local.class)}
+      {...others}
+    />
+  )
 }
 
 type SliderThumbProps<T extends ValidComponent = "span"> = SliderPrimitive.SliderThumbProps<T> & {

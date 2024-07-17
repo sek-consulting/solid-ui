@@ -1,5 +1,8 @@
 {
   "name": "skeleton",
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "skeleton.tsx",

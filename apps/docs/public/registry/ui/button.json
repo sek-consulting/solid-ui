@@ -1,8 +1,7 @@
 {
   "name": "button",
   "dependencies": [
-    "@kobalte/core",
-    "class-variance-authority"
+    "@kobalte/core"
   ],
   "files": [
     {

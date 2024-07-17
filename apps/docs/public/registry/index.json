@@ -86,8 +86,7 @@
   {
     "name": "button",
     "dependencies": [
-      "@kobalte/core",
-      "class-variance-authority"
+      "@kobalte/core"
     ],
     "files": [
       "ui/button.tsx"
@@ -280,6 +279,9 @@
   },
   {
     "name": "otp-field",
+    "dependencies": [
+      "@corvu/otp-field"
+    ],
     "files": [
       "ui/otp-field.tsx"
     ],
@@ -380,6 +382,9 @@
   },
   {
     "name": "skeleton",
+    "dependencies": [
+      "@kobalte/core"
+    ],
     "files": [
       "ui/skeleton.tsx"
     ],
@@ -427,6 +432,9 @@
   },
   {
     "name": "text-field",
+    "dependencies": [
+      "@kobalte/core"
+    ],
     "files": [
       "ui/text-field.tsx"
     ],

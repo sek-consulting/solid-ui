@@ -19,10 +19,10 @@ const DrawerPortal = DrawerPrimitive.Portal
 
 const DrawerClose = DrawerPrimitive.Close
 
-type DrawerOverlayProps = OverlayProps & { class?: string }
+type DrawerOverlayProps<T extends ValidComponent = 'div'> = OverlayProps<T> & { class?: string }
 
 const DrawerOverlay = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, DrawerOverlayProps>
+  props: DynamicProps<T, DrawerOverlayProps<T>>
 ) => {
   const [, rest] = splitProps(props as DrawerOverlayProps, ["class"])
   const drawerContext = DrawerPrimitive.useContext()
@@ -40,10 +40,10 @@ const DrawerOverlay = <T extends ValidComponent = "div">(
   )
 }
 
-type DrawerContentProps = ContentProps & { class?: string; children?: JSX.Element }
+type DrawerContentProps<T extends ValidComponent = 'div'> = ContentProps<T> & { class?: string; children?: JSX.Element }
 
 const DrawerContent = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, DrawerContentProps>
+  props: DynamicProps<T, DrawerContentProps<T>>
 ) => {
   const [, rest] = splitProps(props as DrawerContentProps, ["class", "children"])
   return (
@@ -73,10 +73,10 @@ const DrawerFooter: Component<ComponentProps<"div">> = (props) => {
   return <div class={cn("t-auto flex flex-col gap-2 p-4", props.class)} {...rest} />
 }
 
-type DrawerTitleProps = LabelProps & { class?: string }
+type DrawerTitleProps<T extends ValidComponent = 'div'> = LabelProps<T> & { class?: string }
 
 const DrawerTitle = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, DrawerTitleProps>
+  props: DynamicProps<T, DrawerTitleProps<T>>
 ) => {
   const [, rest] = splitProps(props as DrawerTitleProps, ["class"])
   return (
@@ -87,10 +87,10 @@ const DrawerTitle = <T extends ValidComponent = "div">(
   )
 }
 
-type DrawerDescriptionProps = DescriptionProps & { class?: string }
+type DrawerDescriptionProps<T extends ValidComponent = 'div'> = DescriptionProps<T> & { class?: string }
 
 const DrawerDescription = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, DrawerDescriptionProps>
+  props: DynamicProps<T, DrawerDescriptionProps<T>>
 ) => {
   const [, rest] = splitProps(props as DrawerDescriptionProps, ["class"])
   return (

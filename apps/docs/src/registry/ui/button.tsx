@@ -1,7 +1,8 @@
-import { JSX, splitProps, ValidComponent } from "solid-js"
+import type { JSX, ValidComponent } from "solid-js"
+import { splitProps } from "solid-js"
 
 import * as ButtonPrimitive from "@kobalte/core/button"
-import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import type { PolymorphicProps } from "@kobalte/core/polymorphic"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
 

@@ -1,13 +1,14 @@
 import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import DrawerPrimitive, {
+import type {
   ContentProps,
   DescriptionProps,
   DynamicProps,
   LabelProps,
   OverlayProps
 } from "@corvu/drawer"
+import DrawerPrimitive from "@corvu/drawer"
 
 import { cn } from "~/lib/utils"
 
@@ -19,7 +20,7 @@ const DrawerPortal = DrawerPrimitive.Portal
 
 const DrawerClose = DrawerPrimitive.Close
 
-type DrawerOverlayProps<T extends ValidComponent = 'div'> = OverlayProps<T> & { class?: string }
+type DrawerOverlayProps<T extends ValidComponent = "div"> = OverlayProps<T> & { class?: string }
 
 const DrawerOverlay = <T extends ValidComponent = "div">(
   props: DynamicProps<T, DrawerOverlayProps<T>>
@@ -40,7 +41,10 @@ const DrawerOverlay = <T extends ValidComponent = "div">(
   )
 }
 
-type DrawerContentProps<T extends ValidComponent = 'div'> = ContentProps<T> & { class?: string; children?: JSX.Element }
+type DrawerContentProps<T extends ValidComponent = "div"> = ContentProps<T> & {
+  class?: string
+  children?: JSX.Element
+}
 
 const DrawerContent = <T extends ValidComponent = "div">(
   props: DynamicProps<T, DrawerContentProps<T>>
@@ -73,7 +77,7 @@ const DrawerFooter: Component<ComponentProps<"div">> = (props) => {
   return <div class={cn("t-auto flex flex-col gap-2 p-4", props.class)} {...rest} />
 }
 
-type DrawerTitleProps<T extends ValidComponent = 'div'> = LabelProps<T> & { class?: string }
+type DrawerTitleProps<T extends ValidComponent = "div"> = LabelProps<T> & { class?: string }
 
 const DrawerTitle = <T extends ValidComponent = "div">(
   props: DynamicProps<T, DrawerTitleProps<T>>
@@ -87,7 +91,9 @@ const DrawerTitle = <T extends ValidComponent = "div">(
   )
 }
 
-type DrawerDescriptionProps<T extends ValidComponent = 'div'> = DescriptionProps<T> & { class?: string }
+type DrawerDescriptionProps<T extends ValidComponent = "div"> = DescriptionProps<T> & {
+  class?: string
+}
 
 const DrawerDescription = <T extends ValidComponent = "div">(
   props: DynamicProps<T, DrawerDescriptionProps<T>>

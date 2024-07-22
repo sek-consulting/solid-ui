@@ -1,4 +1,4 @@
-import { RouteProps } from "@solidjs/router"
+import type { RouteProps } from "@solidjs/router"
 import { MDXProvider } from "solid-mdx"
 
 import { MDXComponents } from "~/components/mdx-components"

@@ -1,6 +1,6 @@
 import { createSignal, For } from "solid-js"
 
-import { Orientation } from "@kobalte/core/navigation-menu"
+import type { Orientation } from "@kobalte/core/navigation-menu"
 
 import { IconLogo } from "~/components/icons"
 import {

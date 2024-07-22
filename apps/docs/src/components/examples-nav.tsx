@@ -1,11 +1,10 @@
 import type { ComponentProps } from "solid-js"
-import { For, splitProps } from "solid-js"
+import { For, Show, splitProps } from "solid-js"
 
 import { useLocation } from "@solidjs/router"
 
 import { cn } from "~/lib/utils"
-
-import { IconArrowRight } from "./icons"
+import { IconArrowRight } from "~/components/icons"
 
 const examples = [
   {
@@ -34,6 +33,9 @@ export function ExamplesNav(props: ComponentProps<"div">) {
   const [, rest] = splitProps(props, ["class"])
   const location = useLocation()
 
+  const pathname = () => (location.pathname === "/" ? "/examples/mail" : location.pathname)
+  const example = () => examples.find((example) => pathname().startsWith(example.href))
+
   return (
     <div class="relative">
       <div class={cn("mb-4 flex items-center", props.class)} {...rest}>
@@ -54,29 +56,19 @@ export function ExamplesNav(props: ComponentProps<"div">) {
           )}
         </For>
       </div>
-      <ExampleCodeLink
-        pathname={location.pathname === "/" ? "/examples/dashboard" : location.pathname}
-      />
+      <Show when={example()}>
+        {(example) => (
+          <a
+            href={example().code}
+            target="_blank"
+            rel="nofollow"
+            class="absolute right-0 top-0 hidden items-center rounded-[0.5rem] text-sm font-medium md:flex"
+          >
+            View code
+            <IconArrowRight class="ml-1 size-4" />
+          </a>
+        )}
+      </Show>
     </div>
-  )
-}
-
-export function ExampleCodeLink(props: { pathname: string | null }) {
-  const example = examples.find((example) => props.pathname?.startsWith(example.href))
-
-  if (!example?.code) {
-    return null
-  }
-
-  return (
-    <a
-      href={example?.code}
-      target="_blank"
-      rel="nofollow"
-      class="absolute right-0 top-0 hidden items-center rounded-[0.5rem] text-sm font-medium md:flex"
-    >
-      View code
-      <IconArrowRight class="ml-1 size-4" />
-    </a>
   )
 }

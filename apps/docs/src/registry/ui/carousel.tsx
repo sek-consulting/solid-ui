@@ -13,7 +13,8 @@ import type { CreateEmblaCarouselType } from "embla-carousel-solid"
 import createEmblaCarousel from "embla-carousel-solid"
 
 import { cn } from "~/lib/utils"
-import { Button, ButtonProps } from "~/registry/ui/button"
+import type { ButtonProps } from "~/registry/ui/button"
+import { Button } from "~/registry/ui/button"
 
 export type CarouselApi = CreateEmblaCarouselType[1]
 

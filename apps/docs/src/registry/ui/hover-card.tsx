@@ -2,7 +2,7 @@ import type { Component, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 import * as HoverCardPrimitive from "@kobalte/core/hover-card"
-import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import type { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 

@@ -9,6 +9,7 @@
   ],
   "plugins": ["solid", "tailwindcss"],
   "rules": {
+    "@typescript-eslint/consistent-type-imports": "error",
     "tailwindcss/no-custom-classname": "off",
     "tailwindcss/classnames-order": "error"
   },

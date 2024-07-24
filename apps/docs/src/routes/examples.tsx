@@ -1,4 +1,4 @@
-import { RouteProps } from "@solidjs/router"
+import type { RouteProps } from "@solidjs/router"
 
 import { ExamplesNav } from "~/components/examples-nav"
 import { HeroSection } from "~/components/hero-section"

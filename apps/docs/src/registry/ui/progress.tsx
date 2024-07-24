@@ -1,7 +1,7 @@
 import type { Component, JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import type { PolymorphicProps } from "@kobalte/core/polymorphic"
 import * as ProgressPrimitive from "@kobalte/core/progress"
 
 import { Label } from "~/registry/ui/label"

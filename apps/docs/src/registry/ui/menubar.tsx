@@ -2,7 +2,7 @@ import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 import * as MenubarPrimitive from "@kobalte/core/menubar"
-import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import type { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 

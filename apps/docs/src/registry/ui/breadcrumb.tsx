@@ -1,6 +1,7 @@
-import { Component, ComponentProps, JSX, Show, splitProps, ValidComponent } from "solid-js"
+import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
+import { Show, splitProps } from "solid-js"
 
-import { PolymorphicProps } from "@kobalte/core"
+import type { PolymorphicProps } from "@kobalte/core"
 import * as BreadcrumbPrimitive from "@kobalte/core/breadcrumbs"
 
 import { cn } from "~/lib/utils"

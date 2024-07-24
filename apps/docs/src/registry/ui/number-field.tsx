@@ -1,7 +1,8 @@
-import { JSX, splitProps, ValidComponent } from "solid-js"
+import type { JSX, ValidComponent } from "solid-js"
+import { splitProps } from "solid-js"
 
 import * as NumberFieldPrimitive from "@kobalte/core/number-field"
-import { PolymorphicProps } from "@kobalte/core/polymorphic"
+import type { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cn } from "~/lib/utils"
 

@@ -1,6 +1,8 @@
-import { Component, ComponentProps, Show, splitProps, ValidComponent } from "solid-js"
+import type { Component, ComponentProps, ValidComponent } from "solid-js"
+import { Show, splitProps } from "solid-js"
 
-import OtpField, { DynamicProps, RootProps } from "@corvu/otp-field"
+import type { DynamicProps, RootProps } from "@corvu/otp-field"
+import OtpField from "@corvu/otp-field"
 
 import { cn } from "~/lib/utils"
 
@@ -10,9 +12,7 @@ export const REGEXP_ONLY_DIGITS_AND_CHARS = "^[a-zA-Z0-9]*$"
 
 type OTPFieldProps<T extends ValidComponent = "div"> = RootProps<T> & { class?: string }
 
-const OTPField = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, OTPFieldProps<T>>
-) => {
+const OTPField = <T extends ValidComponent = "div">(props: DynamicProps<T, OTPFieldProps<T>>) => {
   const [local, others] = splitProps(props as OTPFieldProps, ["class"])
   return (
     <OtpField

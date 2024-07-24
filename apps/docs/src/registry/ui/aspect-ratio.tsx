@@ -1,4 +1,5 @@
-import { Component, ComponentProps, mergeProps, splitProps } from "solid-js"
+import type { Component, ComponentProps } from "solid-js"
+import { mergeProps, splitProps } from "solid-js"
 
 type AspectRatioProps = ComponentProps<"div"> & { ratio?: number }
 

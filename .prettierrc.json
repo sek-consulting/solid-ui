@@ -13,12 +13,7 @@
     "<THIRD_PARTY_MODULES>",
     "",
     "^types$",
-    "^~/config/(.*)$",
-    "^~/lib/(.*)$",
-    "^~/hooks/(.*)$",
-    "^~/components/ui/(.*)$",
-    "^~/components/(.*)$",
-    "^~/registry/(.*)$",
+    "^~/(.*)$",
     "",
     "^[./]"
   ],

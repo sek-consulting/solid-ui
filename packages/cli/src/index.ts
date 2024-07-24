@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 import { Command } from "commander"
 
+import { init } from "~/commands/init"
 import { getPackageInfo } from "~/utils/get-package-info"
 
 process.on("SIGINT", () => process.exit(0))
@@ -15,6 +16,7 @@ async function main() {
     .name("solidui-cli")
     .description("add SolidUI components to your project")
     .version(packageInfo.version || "0.0.0", "-v, --version", "display the version number")
+    .addCommand(init)
     .parse()
 }
 

@@ -1,5 +1,15 @@
 # @solid-ui/cli
 
+## 0.6.7
+
+### Patch Changes
+
+- [#113](https://github.com/sek-consulting/solid-ui/pull/113) [`d090b6c`](https://github.com/sek-consulting/solid-ui/commit/d090b6c614eddaf27a26e72b1d626e5b4ccff08e) Thanks [@GiyoMoon](https://github.com/GiyoMoon)! - Properly pass component generic to corvu types
+
+- [`23d8130`](https://github.com/sek-consulting/solid-ui/commit/23d813025fa3310ca56328254e86cdc9a27e2e7c) Thanks [@sek-consulting](https://github.com/sek-consulting)! - feat: add sonner component
+
+- [`02f6136`](https://github.com/sek-consulting/solid-ui/commit/02f6136ac4158345843bb7b588455480ecafb44b) Thanks [@sek-consulting](https://github.com/sek-consulting)! - update: switch progress style to be more in line with the rest
+
 ## 0.6.6
 
 ### Patch Changes

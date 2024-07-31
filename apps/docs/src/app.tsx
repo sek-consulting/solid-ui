@@ -13,6 +13,7 @@ import Footer from "~/components/footer"
 import { MDXComponents } from "~/components/mdx-components"
 import { MetaTags } from "~/components/meta-tags"
 import Navbar from "~/components/navbar"
+import { Toaster as SonnerToaster } from "~/registry/ui/sonner"
 
 import "@fontsource/inter/latin.css"
 import "~/styles/app.css"
@@ -38,6 +39,7 @@ export default function App() {
                 <Suspense>{props.children}</Suspense>
               </main>
               <Footer />
+              <SonnerToaster />
             </MDXProvider>
           </ColorModeProvider>
         </MetaProvider>

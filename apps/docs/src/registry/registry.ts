@@ -248,6 +248,12 @@ const ui: Registry = [
     files: ["ui/slider.tsx"]
   },
   {
+    name: "sonner",
+    type: "ui",
+    dependencies: ["solid-sonner"],
+    files: ["ui/sonner.tsx"]
+  },
+  {
     name: "switch",
     type: "ui",
     dependencies: ["@kobalte/core"],
@@ -556,6 +562,11 @@ const examples: Registry = [
     name: "slider-demo",
     type: "example",
     files: ["example/slider-demo.tsx"]
+  },
+  {
+    name: "sonner-demo",
+    type: "example",
+    files: ["example/sonner-demo.tsx"]
   },
   {
     name: "switch-demo",

@@ -126,6 +126,9 @@ importers:
       solid-mdx:
         specifier: ^0.0.7
         version: 0.0.7(solid-js@1.8.18)(vite@5.3.4)
+      solid-sonner:
+        specifier: ^0.2.8
+        version: 0.2.8(solid-js@1.8.18)
       tailwind-merge:
         specifier: ^2.4.0
         version: 2.4.0
@@ -8121,6 +8124,14 @@ packages:
       solid-js: 1.8.18
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /solid-sonner@0.2.8(solid-js@1.8.18):
+    resolution: {integrity: sha512-EQ2EIznvHHpAmkYh2CTu0AdCgmPJRJWLGFRWygE8j+vMEfvIV2wotHU5qgWzqzVTG1SODGsay2Lwq6ENWx/rPA==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      solid-js: 1.8.18
     dev: false
 
   /solid-transition-size@0.1.4(solid-js@1.8.18):

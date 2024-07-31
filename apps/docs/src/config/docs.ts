@@ -70,8 +70,7 @@ export const docsConfig: Config = {
       items: [
         {
           title: "Bar List",
-          href: "/docs/components/bar-list",
-          status: "new"
+          href: "/docs/components/bar-list"
         },
         {
           title: "Charts",
@@ -83,7 +82,8 @@ export const docsConfig: Config = {
         },
         {
           title: "Progress",
-          href: "/docs/components/progress"
+          href: "/docs/components/progress",
+          status: "updated"
         },
         {
           title: "Progress Circle",
@@ -108,8 +108,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Aspect Ratio",
-          href: "/docs/components/aspect-ratio",
-          status: "new"
+          href: "/docs/components/aspect-ratio"
         },
         {
           title: "Avatar",
@@ -125,8 +124,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Breadcrumb",
-          href: "/docs/components/breadcrumb",
-          status: "new"
+          href: "/docs/components/breadcrumb"
         },
         {
           title: "Button",
@@ -190,8 +188,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Navigation Menu",
-          href: "/docs/components/navigation-menu",
-          status: "new"
+          href: "/docs/components/navigation-menu"
         },
         {
           title: "Number Field",
@@ -199,8 +196,7 @@ export const docsConfig: Config = {
         },
         {
           title: "OTP Field",
-          href: "/docs/components/otp-field",
-          status: "new"
+          href: "/docs/components/otp-field"
         },
         {
           title: "Pagination",
@@ -239,9 +235,13 @@ export const docsConfig: Config = {
           href: "/docs/components/slider"
         },
         {
+          title: "Sonner",
+          href: "/docs/components/slider",
+          status: "new"
+        },
+        {
           title: "Switch",
-          href: "/docs/components/switch",
-          status: "updated"
+          href: "/docs/components/switch"
         },
         {
           title: "Table",
@@ -253,8 +253,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Text Field",
-          href: "/docs/components/text-field",
-          status: "new"
+          href: "/docs/components/text-field"
         },
         {
           title: "Timeline",

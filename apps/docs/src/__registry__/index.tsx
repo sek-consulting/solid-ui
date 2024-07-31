@@ -300,6 +300,13 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/ui/slider")),
     files: ["registry/ui/slider.tsx"],
   },
+  "sonner": {
+    name: "sonner",
+    type: "ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/sonner")),
+    files: ["registry/ui/sonner.tsx"],
+  },
   "switch": {
     name: "switch",
     type: "ui",
@@ -719,6 +726,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/example/slider-demo")),
     files: ["registry/example/slider-demo.tsx"],
+  },
+  "sonner-demo": {
+    name: "sonner-demo",
+    type: "example",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/example/sonner-demo")),
+    files: ["registry/example/sonner-demo.tsx"],
   },
   "switch-demo": {
     name: "switch-demo",

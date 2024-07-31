@@ -35,6 +35,7 @@
     "shosho": "^1.4.3",
     "solid-js": "1.8.18",
     "solid-mdx": "^0.0.7",
+    "solid-sonner": "^0.2.8",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "undici": "^5.28.4",

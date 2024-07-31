@@ -7,13 +7,13 @@ import chalk from "chalk"
 import { Command } from "commander"
 import * as v from "valibot"
 
-import type { RawConfig } from "~/utils/config"
+import type { Config } from "~/utils/config"
 import {
+  ConfigSchema,
   DEFAULT_COMPONENTS,
   DEFAULT_CSS_FILE,
   DEFAULT_TAILWIND_CONFIG,
-  DEFAULT_UTILS,
-  rawConfigSchema
+  DEFAULT_UTILS
 } from "~/utils/config"
 import { getPackageInfo } from "~/utils/get-package-info"
 import { handleError } from "~/utils/handle-error"
@@ -38,7 +38,7 @@ export const init = new Command()
       }
 
       const info = getPackageInfo()
-      p.intro(chalk.bgCyan.black.bold(` ${info.name} - ${info.version} `))
+      p.intro(chalk.bgCyan.bold.black(` ${info.name} - ${info.version} `))
 
       const config = await promptForConfig()
       await runInit(cwd, config)
@@ -49,7 +49,7 @@ export const init = new Command()
     }
   })
 
-async function promptForConfig(): Promise<RawConfig> {
+async function promptForConfig(): Promise<Config> {
   const options = await p.group(
     {
       typescript: () =>
@@ -86,7 +86,7 @@ async function promptForConfig(): Promise<RawConfig> {
     }
   )
 
-  const config = v.parse(rawConfigSchema, {
+  const config = v.parse(ConfigSchema, {
     $schema: "https://solid-ui.com/schema.json",
     tsx: options.typescript,
     tailwind: {
@@ -102,7 +102,7 @@ async function promptForConfig(): Promise<RawConfig> {
   return config
 }
 
-async function runInit(cwd: string, config: RawConfig) {
+async function runInit(cwd: string, config: Config) {
   const spinner = p.spinner()
 
   // write config to file

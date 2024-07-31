@@ -5,7 +5,7 @@ export const DEFAULT_UTILS = "~/lib/utils"
 export const DEFAULT_CSS_FILE = "src/app.css"
 export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs"
 
-export const rawConfigSchema = v.object({
+export const ConfigSchema = v.object({
   $schema: v.optional(v.string()),
   tsx: v.boolean(),
   tailwind: v.object({
@@ -18,4 +18,4 @@ export const rawConfigSchema = v.object({
   })
 })
 
-export type RawConfig = v.InferOutput<typeof rawConfigSchema>
+export type Config = v.InferOutput<typeof ConfigSchema>

@@ -236,7 +236,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Sonner",
-          href: "/docs/components/slider",
+          href: "/docs/components/sonner",
           status: "new"
         },
         {

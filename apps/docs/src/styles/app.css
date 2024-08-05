@@ -134,3 +134,7 @@
   background-clip: content-box;
   @apply bg-accent;
 }
+
+::-webkit-scrollbar-corner {
+  display: none;
+}

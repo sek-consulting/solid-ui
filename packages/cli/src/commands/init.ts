@@ -1,155 +1,113 @@
-import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
-import { cwd } from "process"
+import { existsSync } from "node:fs"
+import { writeFile } from "node:fs/promises"
+import path from "node:path"
 
-import { confirm, log, select, spinner, text } from "@clack/prompts"
-import { parse } from "valibot"
+import * as p from "@clack/prompts"
+import chalk from "chalk"
+import { Command } from "commander"
+import * as v from "valibot"
 
-import { PROJECT_DEPS, ROOT_CSS, TAILWIND_CONFIG, UTILS } from "~/lib/constants"
-import { configSchema, type Config } from "~/lib/types"
-import { readJsonFile, runCommand } from "~/lib/utils"
+import type { Config } from "~/utils/config"
+import {
+  ConfigSchema,
+  DEFAULT_COMPONENTS,
+  DEFAULT_CSS_FILE,
+  DEFAULT_TAILWIND_CONFIG,
+  DEFAULT_UTILS
+} from "~/utils/config"
+import { getPackageInfo } from "~/utils/get-package-info"
+import { handleError } from "~/utils/handle-error"
 
-export default async function init() {
-  const isTypescript = await confirm({
-    message: "Would you like to use TypeScript? (recommended)",
-    initialValue: true
-  })
-  const globalCssDir = await text({
-    message: "Where is your global CSS file?",
-    initialValue: "src/app.css"
-  })
-  const tailwindConfigDir = await text({
-    message: "Where is your tailwind.config.js located?",
-    initialValue: "tailwind.config.cjs"
-  })
-  const pathAlias = await text({
-    message: "Configure the import alias for the src directory:",
-    initialValue: "~/*"
-  })
+const highlight = (text: string) => chalk.bold.cyan(text)
 
-  const config = parse(configSchema, {
-    tsx: isTypescript,
-    componentDir: "./src/components/ui",
-    tailwind: {
-      config: tailwindConfigDir,
-      css: globalCssDir
-    },
-    aliases: {
-      path: pathAlias
+const initOptionsSchema = v.object({
+  cwd: v.string()
+})
+
+export const init = new Command()
+  .name("init")
+  .description("initialize your project and install dependencies")
+  .option("-c, --cwd <cwd>", "the working directory", process.cwd())
+  .action(async (opts) => {
+    try {
+      const options = v.parse(initOptionsSchema, opts)
+
+      const cwd = path.resolve(options.cwd)
+      if (!existsSync(cwd)) {
+        throw new Error(`The path ${cwd} does not exist. Please try again.`)
+      }
+
+      const info = getPackageInfo()
+      p.intro(chalk.bgCyan.bold.black(` ${info.name} - ${info.version} `))
+
+      const config = await promptForConfig()
+      await runInit(cwd, config)
+
+      p.outro(`${chalk.green("Success!")} Project initialization completed.`)
+    } catch (e) {
+      handleError(e)
     }
   })
 
-  saveConfig(config)
-  writeTsconfig(config.aliases.path)
-  writeUtils()
-  await writeTailwindConfig(config.tailwind.config)
-  await writeCSS(config.tailwind.css)
-
-  log.success("Project configuration completed.")
-
-  await installDeps()
-
-  log.success("Success! Try 'npx solidui-cli add button' to add a button component to your project")
-  process.exit(0)
-}
-
-function writeUtils() {
-  const doesLibPathExist = existsSync(cwd() + "/src/lib")
-
-  const indicator = spinner()
-  indicator.start("Creating utils.ts file...")
-
-  if (!doesLibPathExist) mkdirSync(cwd() + "/src/lib")
-
-  writeFileSync(cwd() + "/src/lib/utils.ts", UTILS)
-  indicator.stop("Done creating utils.ts file!")
-}
-
-async function writeCSS(cssPath: string) {
-  const indicator = spinner()
-
-  indicator.start("Writing CSS styles...")
-
-  writeFile(
-    cssPath,
-    ROOT_CSS,
-    (error) => error && log.error(error.message || "Something went wrong")
+async function promptForConfig(): Promise<Config> {
+  const options = await p.group(
+    {
+      typescript: () =>
+        p.confirm({
+          message: `Would you like to use ${highlight("Typescript")} (recommended)?`,
+          initialValue: true
+        }),
+      cssFile: () =>
+        p.text({
+          message: `Where is your ${highlight("global CSS")} file? ${chalk.gray("(this file will be overwritten)")}`,
+          initialValue: DEFAULT_CSS_FILE
+        }),
+      tailwindConfig: () =>
+        p.text({
+          message: `Where is your ${highlight("Tailwind config")} located? ${chalk.gray("(this file will be overwritten)")}`,
+          initialValue: DEFAULT_TAILWIND_CONFIG
+        }),
+      components: () =>
+        p.text({
+          message: `Configure the import alias for ${highlight("components")}:`,
+          initialValue: DEFAULT_COMPONENTS
+        }),
+      utils: () =>
+        p.text({
+          message: `Configure the import alias for ${highlight("utils")}:`,
+          initialValue: DEFAULT_UTILS
+        })
+    },
+    {
+      onCancel: () => {
+        p.cancel("Operation cancelled.")
+        process.exit(0)
+      }
+    }
   )
 
-  indicator.stop("Done Writing CSS styles!")
-}
-
-async function installDeps() {
-  const shouldInstallDeps = await confirm({
-    message: "Would you like to install the required dependencies? (recommended)",
-    initialValue: true
-  })
-
-  if (shouldInstallDeps) {
-    const packageManager = await select({
-      message: "Which package manager would you like to use?",
-      options: [
-        { label: "npm", value: "npm" },
-        { label: "yarn", value: "yarn" },
-        { label: "pnpm", value: "pnpm" },
-        { label: "bun", value: "bun" }
-      ],
-      initialValue: "npm"
-    })
-
-    runCommand(
-      `${packageManager as string} ${
-        packageManager === "yarn" ? "add" : "install"
-      } ${PROJECT_DEPS.join(" ")}`,
-      "Installing Solid UI Component dependencies",
-      "Dependencies installed"
-    )
-  }
-}
-
-function saveConfig(config: Config) {
-  const indicator = spinner()
-  indicator.start("Writing ui.config.json...")
-
-  writeFile("ui.config.json", JSON.stringify(config, null, 2), (error) => {
-    if (error) log.error("There was an error while saving your preferences")
-  })
-  indicator.stop("ui.config.json successfully created!")
-}
-
-async function writeTailwindConfig(tailwindConfigDir: string) {
-  const indicator = spinner()
-  indicator.start("Configuring tailwind.config.cjs to support Solid UI Components...")
-
-  writeFile(tailwindConfigDir, TAILWIND_CONFIG, (error) => {
-    if (error) log.error(`Something went wrong while writing your tailwind.config.cjs: ${error}`)
-  })
-
-  indicator.stop("Done done configuring your tailwind.config.cjs")
-}
-
-function writeTsconfig(alias: string) {
-  const indicator = spinner()
-  indicator.start("Configuring your tsconfig.json")
-
-  readJsonFile(process.cwd() + "/tsconfig.json", (error, data) => {
-    if (error) {
-      log.error(
-        "Something went wrong while configuring your tsconfig.json. Please make sure it is formatted correctly and doesn't contain any comments."
-      )
-      process.exit(1)
+  const config = v.parse(ConfigSchema, {
+    $schema: "https://solid-ui.com/schema.json",
+    tsx: options.typescript,
+    tailwind: {
+      css: options.cssFile,
+      config: options.tailwindConfig
+    },
+    aliases: {
+      components: options.components,
+      utils: options.utils
     }
-
-    const tsconfigData = data as Record<string, { paths: Record<string, unknown> }>
-
-    if (!tsconfigData.compilerOptions.paths) {
-      tsconfigData.compilerOptions.paths = {}
-    }
-    tsconfigData.compilerOptions.paths[alias] = ["./src/*"]
-
-    writeFile("tsconfig.json", JSON.stringify(tsconfigData, null, 2), (error) => {
-      if (error) log.error(`Something went wrong while configuring your tsconfig.json: ${error}`)
-    })
   })
 
-  indicator.stop("Done configuring your tsconfig.json")
+  return config
+}
+
+async function runInit(cwd: string, config: Config) {
+  const spinner = p.spinner()
+
+  // write config to file
+  spinner.start(`Creating config file...`)
+  const targetPath = path.resolve(cwd, "ui.config.json")
+  await writeFile(targetPath, JSON.stringify(config, null, 2), "utf-8")
+  spinner.stop(`Config file created.`)
 }

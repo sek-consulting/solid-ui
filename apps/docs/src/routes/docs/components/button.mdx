@@ -62,3 +62,18 @@ import { buttonVariants } from "~/components/ui/button"
 ```tsx
 <a class={buttonVariants({ variant: "outline" })}>Click here</a>
 ```
+
+Alternatively, you can set the `as` parameter with the component you want to use as your link.
+```tsx
+import { A } from "@solidjs/router";
+```
+
+```tsx
+<Button as={A} href="/login">Login</Button>
+```
+
+Or set it as `"a"`, in case you want to use the standard HTML anchor tag.
+
+```tsx
+<Button as="a" href="/login">Login</Button>
+```

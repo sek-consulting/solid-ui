@@ -1,5 +1,11 @@
 # docs
 
+## 0.4.2
+
+### Patch Changes
+
+- [#129](https://github.com/sek-consulting/solid-ui/pull/129) [`529ed65`](https://github.com/sek-consulting/solid-ui/commit/529ed6509886441b95f4dd00d267c0657f6311d5) Thanks [@daelmaak](https://github.com/daelmaak)! - It makes sheet content vertically scrollable should it overflow the vertical space given by the viewport.
+
 ## 0.4.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @solid-ui/cli
 
+## 0.6.8
+
+### Patch Changes
+
+- [#131](https://github.com/sek-consulting/solid-ui/pull/131) [`9dc00cd`](https://github.com/sek-consulting/solid-ui/commit/9dc00cd9599426b248721748d0bc40a3b0f895b0) Thanks [@thednp](https://github.com/thednp)! - Navigation Menu sub menus don't use the content-show and content-hide animations
+
+- [#109](https://github.com/sek-consulting/solid-ui/pull/109) [`946eed2`](https://github.com/sek-consulting/solid-ui/commit/946eed2b0df3137614b669356282bc81cd70431d) Thanks [@daelmaak](https://github.com/daelmaak)! - It makes dialog content vertically scrollable should it overflow the vertical space given by the viewport.
+
 ## 0.6.7
 
 ### Patch Changes

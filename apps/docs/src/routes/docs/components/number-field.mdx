@@ -47,6 +47,7 @@ npm install @kobalte/core
 import {
   NumberField,
   NumberFieldDecrementTrigger,
+  NumberFieldGroup,
   NumberFieldIncrementTrigger,
   NumberFieldInput
 } from "~/registry/ui/number-field"
@@ -54,11 +55,11 @@ import {
 export default function NumberFieldDemo() {
   return (
     <NumberField class="w-36" defaultValue={40}>
-      <div class="relative">
+      <NumberFieldGroup>
         <NumberFieldInput />
         <NumberFieldIncrementTrigger />
         <NumberFieldDecrementTrigger />
-      </div>
+      </NumberFieldGroup>
     </NumberField>
   )
 }

@@ -1,4 +1,4 @@
-import type { JSX, ValidComponent } from "solid-js"
+import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 import * as NumberFieldPrimitive from "@kobalte/core/number-field"
@@ -7,6 +7,19 @@ import type { PolymorphicProps } from "@kobalte/core/polymorphic"
 import { cn } from "~/lib/utils"
 
 const NumberField = NumberFieldPrimitive.Root
+
+const NumberFieldGroup: Component<ComponentProps<"div">> = (props) => {
+  const [local, others] = splitProps(props, ["class"])
+  return (
+    <div
+      class={cn(
+        "relative rounded-md focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2",
+        local.class
+      )}
+      {...others}
+    />
+  )
+}
 
 type NumberFieldLabelProps<T extends ValidComponent = "label"> =
   NumberFieldPrimitive.NumberFieldLabelProps<T> & {
@@ -40,7 +53,7 @@ const NumberFieldInput = <T extends ValidComponent = "input">(
   return (
     <NumberFieldPrimitive.Input
       class={cn(
-        "flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-error-foreground data-[invalid]:text-error-foreground",
+        "flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-error-foreground data-[invalid]:text-error-foreground",
         local.class
       )}
       {...others}
@@ -162,6 +175,7 @@ const NumberFieldErrorMessage = <T extends ValidComponent = "div">(
 
 export {
   NumberField,
+  NumberFieldGroup,
   NumberFieldLabel,
   NumberFieldInput,
   NumberFieldIncrementTrigger,

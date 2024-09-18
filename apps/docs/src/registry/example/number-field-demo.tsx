@@ -4,6 +4,7 @@ import {
   NumberField,
   NumberFieldDecrementTrigger,
   NumberFieldErrorMessage,
+  NumberFieldGroup,
   NumberFieldIncrementTrigger,
   NumberFieldInput
 } from "~/registry/ui/number-field"
@@ -17,11 +18,11 @@ export default function NumberFieldDemo() {
       onRawValueChange={setRawValue}
       validationState={rawValue() !== 40 ? "invalid" : "valid"}
     >
-      <div class="relative">
+      <NumberFieldGroup>
         <NumberFieldInput />
         <NumberFieldIncrementTrigger />
         <NumberFieldDecrementTrigger />
-      </div>
+      </NumberFieldGroup>
       <NumberFieldErrorMessage>Hmm, I prefer 40.</NumberFieldErrorMessage>
     </NumberField>
   )

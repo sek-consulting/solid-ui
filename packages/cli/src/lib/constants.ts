@@ -136,7 +136,7 @@ export const ROOT_CSS = `@tailwind base;
 
 export const TAILWIND_CONFIG = `/**@type {import("tailwindcss").Config} */
 module.exports = {
-  darkMode: ["class", '[data-kb-theme="dark"]'],
+  darkMode: ["variant", [".dark &", "[data-kb-theme=\"dark\"] &"]],
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {

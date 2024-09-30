@@ -186,7 +186,7 @@ Use a state and the `setApi` props to get an instance of the carousel API.
 import type { CarouselApi } from "~/components/ui/carousel"
 
 export function Example() {
-  const [api, setApi] = createSignal<CarouselApi>()
+  const [api, setApi] = createSignal<ReturnType<CarouselApi>>()
   const [current, setCurrent] = createSignal(0)
   const [count, setCount] = createSignal(0)
 

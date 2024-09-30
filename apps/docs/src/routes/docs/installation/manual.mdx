@@ -67,7 +67,7 @@ Here's what my `tailwind.config.js` file looks like:
 ```js
 /**@type {import("tailwindcss").Config} */
 module.exports = {
-  darkMode: ["class", '[data-kb-theme="dark"]'],
+  darkMode: ["variant", [".dark &", '[data-kb-theme="dark"] &']],
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {

@@ -13,6 +13,9 @@
         },
         "config": {
           "type": "string"
+        },
+        "prefix": {
+          "type": "string"
         }
       },
       "required": ["css", "config"]

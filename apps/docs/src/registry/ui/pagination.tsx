@@ -1,4 +1,4 @@
-import type { ValidComponent } from "solid-js"
+import type { JSX, ValidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 import * as PaginationPrimitive from "@kobalte/core/pagination"
@@ -81,12 +81,13 @@ const PaginationEllipsis = <T extends ValidComponent = "div">(
 type PaginationPreviousProps<T extends ValidComponent = "button"> =
   PaginationPrimitive.PaginationPreviousProps<T> & {
     class?: string | undefined
+    children?: JSX.Element
   }
 
 const PaginationPrevious = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, PaginationPreviousProps<T>>
 ) => {
-  const [local, others] = splitProps(props as PaginationPreviousProps, ["class"])
+  const [local, others] = splitProps(props as PaginationPreviousProps, ["class", "children"])
   return (
     <PaginationPrimitive.Previous
       class={cn(
@@ -98,19 +99,23 @@ const PaginationPrevious = <T extends ValidComponent = "button">(
       )}
       {...others}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="size-4"
-      >
-        <path d="M15 6l-6 6l6 6" />
-      </svg>
-      <span>Previous</span>
+      {local.children ?? (
+        <>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4"
+          >
+            <path d="M15 6l-6 6l6 6" />
+          </svg>
+          <span>Previous</span>
+        </>
+      )}
     </PaginationPrimitive.Previous>
   )
 }
@@ -118,12 +123,13 @@ const PaginationPrevious = <T extends ValidComponent = "button">(
 type PaginationNextProps<T extends ValidComponent = "button"> =
   PaginationPrimitive.PaginationNextProps<T> & {
     class?: string | undefined
+    children?: JSX.Element
   }
 
 const PaginationNext = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, PaginationNextProps<T>>
 ) => {
-  const [local, others] = splitProps(props as PaginationNextProps, ["class"])
+  const [local, others] = splitProps(props as PaginationNextProps, ["class", "children"])
   return (
     <PaginationPrimitive.Next
       class={cn(
@@ -135,19 +141,23 @@ const PaginationNext = <T extends ValidComponent = "button">(
       )}
       {...others}
     >
-      <span>Next</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="size-4"
-      >
-        <path d="M9 6l6 6l-6 6" />
-      </svg>
+      {local.children ?? (
+        <>
+          <span>Next</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4"
+          >
+            <path d="M9 6l6 6l-6 6" />
+          </svg>
+        </>
+      )}
     </PaginationPrimitive.Next>
   )
 }

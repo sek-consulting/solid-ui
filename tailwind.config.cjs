@@ -2,7 +2,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class", '[data-kb-theme="dark"]'],
+  darkMode: ["variant", [".dark &", '[data-kb-theme="dark"] &']],
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {
@@ -65,9 +65,9 @@ export default {
         }
       },
       borderRadius: {
-        xl: `calc(var(--radius) + 4px)`,
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
+        xl: "calc(var(--radius) + 4px)",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)"
       },
       fontFamily: {

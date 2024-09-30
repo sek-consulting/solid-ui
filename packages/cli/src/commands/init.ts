@@ -1,24 +1,37 @@
 import { existsSync } from "node:fs"
-import { writeFile } from "node:fs/promises"
+import { mkdir, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 import * as p from "@clack/prompts"
 import chalk from "chalk"
 import { Command } from "commander"
+import { execa } from "execa"
 import * as v from "valibot"
 
-import type { Config } from "~/utils/config"
+import type { RawConfig } from "~/utils/config"
 import {
-  ConfigSchema,
   DEFAULT_COMPONENTS,
   DEFAULT_CSS_FILE,
   DEFAULT_TAILWIND_CONFIG,
-  DEFAULT_UTILS
+  DEFAULT_TAILWIND_PREFIX,
+  DEFAULT_UTILS,
+  RawConfigSchema,
+  resolveConfigPaths
 } from "~/utils/config"
 import { getPackageInfo } from "~/utils/get-package-info"
+import { getPackageManager } from "~/utils/get-package-manager"
 import { handleError } from "~/utils/handle-error"
+import * as templates from "~/utils/templates"
 
-const highlight = (text: string) => chalk.bold.cyan(text)
+const PROJECT_DEPENDENCIES = [
+  "tailwindcss-animate",
+  "class-variance-authority",
+  "clsx",
+  "tailwind-merge"
+]
+
+const headline = (text: string) => chalk.bgGreen.bold.black(text)
+const highlight = (text: string) => chalk.bold.green(text)
 
 const initOptionsSchema = v.object({
   cwd: v.string()
@@ -38,18 +51,69 @@ export const init = new Command()
       }
 
       const info = getPackageInfo()
-      p.intro(chalk.bgCyan.bold.black(` ${info.name} - ${info.version} `))
+      p.intro(headline(` ${info.name} - ${info.version} `))
 
-      const config = await promptForConfig()
-      await runInit(cwd, config)
+      const rawConfig = await promptForConfig()
 
-      p.outro(`${chalk.green("Success!")} Project initialization completed.`)
+      const spinner = p.spinner()
+      spinner.start(`Creating ui.config.json...`)
+
+      const targetPath = path.resolve(cwd, "ui.config.json")
+      await writeFile(targetPath, JSON.stringify(rawConfig, null, 2), "utf-8")
+
+      spinner.stop(`ui.config.json created.`)
+
+      const config = await resolveConfigPaths(cwd, rawConfig)
+
+      spinner.start(`Initializing project...`)
+
+      // make sure all the directories exist
+      for (const [key, resolvedPath] of Object.entries(config.resolvedPaths)) {
+        let dirname = path.extname(resolvedPath) ? path.dirname(resolvedPath) : resolvedPath
+
+        if (key === "utils" && resolvedPath.endsWith("/utils")) {
+          dirname = dirname.replace(/\/utils$/, "") // remove /utils at the end
+        }
+
+        if (!existsSync(dirname)) {
+          await mkdir(dirname, { recursive: true })
+        }
+      }
+
+      const extension = config.tsx ? "ts" : "js"
+
+      await writeFile(
+        config.resolvedPaths.tailwindConfig,
+        templates.TAILWIND_CONFIG.replace("<%- prefix %>", config.tailwind.prefix),
+        "utf-8"
+      )
+
+      await writeFile(config.resolvedPaths.tailwindCss, templates.TAILWIND_CSS, "utf-8")
+
+      await writeFile(
+        `${config.resolvedPaths.utils}.${extension}`,
+        extension === "ts" ? templates.UTILS : templates.UTILS_JS,
+        "utf-8"
+      )
+
+      spinner.stop(`Project initialized.`)
+
+      spinner.start(`Installing dependencies...`)
+
+      const packageManager = await getPackageManager(cwd)
+      await execa(packageManager, ["add", ...PROJECT_DEPENDENCIES], { cwd })
+
+      spinner.stop(`Dependencies installed.`)
+
+      p.outro(
+        `${highlight("Success!")} Project initialization completed. You may now add components.`
+      )
     } catch (e) {
       handleError(e)
     }
   })
 
-async function promptForConfig(): Promise<Config> {
+async function promptForConfig(): Promise<RawConfig> {
   const options = await p.group(
     {
       typescript: () =>
@@ -66,6 +130,11 @@ async function promptForConfig(): Promise<Config> {
         p.text({
           message: `Where is your ${highlight("Tailwind config")} located? ${chalk.gray("(this file will be overwritten)")}`,
           initialValue: DEFAULT_TAILWIND_CONFIG
+        }),
+      tailwindPrefix: () =>
+        p.text({
+          message: `Are you using a custom ${highlight("tailwind prefix eg. tw-")}? (Leave blank if not)`,
+          initialValue: DEFAULT_TAILWIND_PREFIX
         }),
       components: () =>
         p.text({
@@ -86,12 +155,13 @@ async function promptForConfig(): Promise<Config> {
     }
   )
 
-  const config = v.parse(ConfigSchema, {
+  const config = v.parse(RawConfigSchema, {
     $schema: "https://solid-ui.com/schema.json",
     tsx: options.typescript,
     tailwind: {
       css: options.cssFile,
-      config: options.tailwindConfig
+      config: options.tailwindConfig,
+      prefix: options.tailwindPrefix
     },
     aliases: {
       components: options.components,
@@ -100,14 +170,4 @@ async function promptForConfig(): Promise<Config> {
   })
 
   return config
-}
-
-async function runInit(cwd: string, config: Config) {
-  const spinner = p.spinner()
-
-  // write config to file
-  spinner.start(`Creating config file...`)
-  const targetPath = path.resolve(cwd, "ui.config.json")
-  await writeFile(targetPath, JSON.stringify(config, null, 2), "utf-8")
-  spinner.stop(`Config file created.`)
 }

@@ -1,5 +1,19 @@
 # @solid-ui/cli
 
+## 0.7.0
+
+### Minor Changes
+
+- [#108](https://github.com/sek-consulting/solid-ui/pull/108) [`67e19e6`](https://github.com/sek-consulting/solid-ui/commit/67e19e63901c6ed86aae2bd683ecb4a120b46ae1) Thanks [@sek-consulting](https://github.com/sek-consulting)! - complete rework of the add command to be more inline with shadcn/ui & others
+
+- [#108](https://github.com/sek-consulting/solid-ui/pull/108) [`67e19e6`](https://github.com/sek-consulting/solid-ui/commit/67e19e63901c6ed86aae2bd683ecb4a120b46ae1) Thanks [@sek-consulting](https://github.com/sek-consulting)! - complete rework of the init command to be more inline with shadcn/ui & others
+
+### Patch Changes
+
+- [`9f688f6`](https://github.com/sek-consulting/solid-ui/commit/9f688f61c1193dfcd4648e2fe6e0f2866c4cc502) Thanks [@sek-consulting](https://github.com/sek-consulting)! - fix(number-field): fixed blinking focus ring problems (#126)
+
+- [`48b9b23`](https://github.com/sek-consulting/solid-ui/commit/48b9b238ad4f52f01bf7d17ffdbc115e03cfd66d) Thanks [@sek-consulting](https://github.com/sek-consulting)! - add option for custom prev/next children
+
 ## 0.6.8
 
 ### Patch Changes

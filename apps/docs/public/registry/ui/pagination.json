@@ -3,6 +3,9 @@
   "dependencies": [
     "@kobalte/core"
   ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "name": "pagination.tsx",

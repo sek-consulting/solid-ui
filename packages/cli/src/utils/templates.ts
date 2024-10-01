@@ -1,74 +1,24 @@
-<MDXHeader title="Manual Installation" description="Add dependencies to your project manually." />
+export const UTILS = `import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-<Steps>
-
-### Add Tailwind CSS
-
-Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
-
-[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
-
-### Add dependencies
-
-Add the following dependencies to your project:
-
-```bash
-npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
-```
-
-### Edit tsconfig.json file
-
-Add the following code to the `tsconfig.json` file to resolve paths:
-
-```ts {4-9}
-{
-  "compilerOptions": {
-    // ...
-    "baseUrl": ".",
-    "paths": {
-      "~/*": [
-        "./src/*"
-      ]
-    }
-    // ...
-  }
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
-```
+`
 
-### Update vite.config.ts
+export const UTILS_JS = `import { clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-Add the following code to the `vite.config.ts` so your app can resolve paths without error
+export function cn(...inputs) {
+  return twMerge(clsx(inputs))
+}
+`
 
-```bash
-# (so you can import "path" without error)
-npm i -D @types/node
-```
-
-```ts
-import path from "path"
-
-import solid from "@vitejs/plugin-solid"
-import { defineConfig } from "vite"
-
-export default defineConfig({
-  plugins: [solid()],
-  resolve: {
-    alias: {
-      "~": path.resolve(__dirname, "./src")
-    }
-  }
-})
-```
-
-### Configure tailwind.config.js
-
-Here's what my `tailwind.config.js` file looks like:
-
-```js
-/**@type {import("tailwindcss").Config} */
-module.exports = {
+export const TAILWIND_CONFIG = `/** @type {import('tailwindcss').Config} */
+export default {
   darkMode: ["variant", [".dark &", '[data-kb-theme="dark"] &']],
   content: ["./src/**/*.{ts,tsx}"],
+  prefix: "<%- prefix %>",
   theme: {
     container: {
       center: true,
@@ -151,26 +101,26 @@ module.exports = {
         "content-hide": {
           from: { opacity: 1, transform: "scale(1)" },
           to: { opacity: 0, transform: "scale(0.96)" }
+        },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" }
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "content-show": "content-show 0.2s ease-out",
-        "content-hide": "content-hide 0.2s ease-out"
+        "content-hide": "content-hide 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite"
       }
     }
   },
   plugins: [require("tailwindcss-animate")]
 }
-```
+`
 
-### Configure styles
-
-Add the following to your `app.css` file:
-
-```css
-@tailwind base;
+export const TAILWIND_CSS = `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -279,29 +229,36 @@ Add the following to your `app.css` file:
   }
 }
 
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+}
+
 @media (max-width: 640px) {
   .container {
     @apply px-4;
   }
 }
-```
 
-### Add a cn helper
-
-I use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `lib/utils.ts`:
-
-```ts
-import type { ClassValue } from "clsx"
-import { clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+::-webkit-scrollbar {
+  width: 16px;
 }
-```
 
-### That's it
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  @apply bg-accent;
+}
 
-You can now start adding components to your project.
-
-</Steps>
+::-webkit-scrollbar-corner {
+  display: none;
+}
+`

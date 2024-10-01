@@ -226,7 +226,7 @@ export const Index: Record<string, any> = {
   "pagination": {
     name: "pagination",
     type: "ui",
-    registryDependencies: undefined,
+    registryDependencies: ["button"],
     component: lazy(() => import("~/registry/ui/pagination")),
     files: ["registry/ui/pagination.tsx"],
   },

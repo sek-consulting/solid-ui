@@ -10,8 +10,16 @@
   "plugins": ["solid", "tailwindcss"],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "error",
-    "tailwindcss/no-custom-classname": "off",
-    "tailwindcss/classnames-order": "error"
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "tailwindcss/classnames-order": "error",
+    "tailwindcss/no-custom-classname": "off"
   },
   "settings": {
     "tailwindcss": {

@@ -1,8 +1,10 @@
 import { transformFromAstSync } from "@babel/core"
-import { type ParserOptions, parse } from "@babel/parser"
+import { parse, type ParserOptions } from "@babel/parser"
 // @ts-ignore
 import transformTypescript from "@babel/plugin-transform-typescript"
 import * as recast from "recast"
+
+import type { Transformer } from "~/utils/transformers"
 
 // TODO.
 // I'm using recast for the AST here.
@@ -60,8 +62,14 @@ const PARSE_OPTIONS: ParserOptions = {
   ]
 }
 
-export const transpileTS = (source: string) => {
-  const ast = recast.parse(source, {
+export const transformJsx: Transformer<string> = async ({ sourceFile, config }) => {
+  const output = sourceFile.getFullText()
+
+  if (config.tsx) {
+    return output
+  }
+
+  const ast = recast.parse(output, {
     parser: {
       parse: (code: string) => {
         return parse(code, PARSE_OPTIONS)
@@ -69,7 +77,7 @@ export const transpileTS = (source: string) => {
     }
   })
 
-  const result = transformFromAstSync(ast, source, {
+  const result = transformFromAstSync(ast, output, {
     cloneInputAst: false,
     code: false,
     ast: true,

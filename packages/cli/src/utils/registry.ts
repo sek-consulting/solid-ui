@@ -32,8 +32,6 @@ async function fetchRegistry(paths: string[]) {
   try {
     const results = await Promise.all(
       paths.map(async (path) => {
-        const url = `${BASE_URL}/registry/${path}`
-        console.log("fetch", url)
         const response = await fetch(`${BASE_URL}/registry/${path}`)
         return await response.json()
       })

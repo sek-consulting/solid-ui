@@ -3,7 +3,6 @@ import { mkdir, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 import * as p from "@clack/prompts"
-import chalk from "chalk"
 import { Command } from "commander"
 import { execa } from "execa"
 import * as v from "valibot"
@@ -20,7 +19,7 @@ import {
 } from "~/utils/config"
 import { getPackageInfo } from "~/utils/get-package-info"
 import { getPackageManager } from "~/utils/get-package-manager"
-import { handleError } from "~/utils/handle-error"
+import { handleError, headline, highlight, subtle } from "~/utils/logger"
 import * as templates from "~/utils/templates"
 
 const PROJECT_DEPENDENCIES = [
@@ -29,9 +28,6 @@ const PROJECT_DEPENDENCIES = [
   "clsx",
   "tailwind-merge"
 ]
-
-const headline = (text: string) => chalk.bgGreen.bold.black(text)
-const highlight = (text: string) => chalk.bold.green(text)
 
 const initOptionsSchema = v.object({
   cwd: v.string()
@@ -123,12 +119,12 @@ async function promptForConfig(): Promise<RawConfig> {
         }),
       cssFile: () =>
         p.text({
-          message: `Where is your ${highlight("global CSS")} file? ${chalk.gray("(this file will be overwritten)")}`,
+          message: `Where is your ${highlight("global CSS")} file? ${subtle("(this file will be overwritten)")}`,
           initialValue: DEFAULT_CSS_FILE
         }),
       tailwindConfig: () =>
         p.text({
-          message: `Where is your ${highlight("Tailwind config")} located? ${chalk.gray("(this file will be overwritten)")}`,
+          message: `Where is your ${highlight("Tailwind config")} located? ${subtle("(this file will be overwritten)")}`,
           initialValue: DEFAULT_TAILWIND_CONFIG
         }),
       tailwindPrefix: () =>
@@ -149,13 +145,13 @@ async function promptForConfig(): Promise<RawConfig> {
     },
     {
       onCancel: () => {
-        p.cancel("Operation cancelled.")
+        p.cancel("Cancelled.")
         process.exit(0)
       }
     }
   )
 
-  const config = v.parse(RawConfigSchema, {
+  return v.parse(RawConfigSchema, {
     $schema: "https://solid-ui.com/schema.json",
     tsx: options.typescript,
     tailwind: {
@@ -168,6 +164,4 @@ async function promptForConfig(): Promise<RawConfig> {
       utils: options.utils
     }
   })
-
-  return config
 }

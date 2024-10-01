@@ -1,3 +1,4 @@
+import { existsSync, readFileSync } from "node:fs"
 import path from "node:path"
 
 import { loadConfig } from "tsconfig-paths"
@@ -5,7 +6,7 @@ import * as v from "valibot"
 
 import { resolveImport } from "~/utils/resolve-import"
 
-export const DEFAULT_COMPONENTS = "~/components"
+export const DEFAULT_COMPONENTS = "~/components/ui"
 export const DEFAULT_UTILS = "~/lib/utils"
 export const DEFAULT_CSS_FILE = "src/app.css"
 export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs"
@@ -57,4 +58,28 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
       components: await resolveImport(config.aliases.components, tsConfig)
     }
   })
+}
+
+export function getRawConfig(cwd: string) {
+  try {
+    const configPath = path.resolve(cwd, "ui.config.json")
+
+    if (!existsSync(configPath)) {
+      return null
+    }
+
+    const config = JSON.parse(readFileSync(configPath).toString())
+
+    return v.parse(RawConfigSchema, config)
+  } catch (error) {
+    throw new Error(`Invalid configuration found in ${cwd}/ui.config.json.`)
+  }
+}
+
+export async function getConfig(cwd: string) {
+  const config = getRawConfig(cwd)
+  if (!config) {
+    return null
+  }
+  return await resolveConfigPaths(cwd, config)
 }

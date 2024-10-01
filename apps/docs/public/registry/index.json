@@ -292,6 +292,9 @@
     "dependencies": [
       "@kobalte/core"
     ],
+    "registryDependencies": [
+      "button"
+    ],
     "files": [
       "ui/pagination.tsx"
     ],

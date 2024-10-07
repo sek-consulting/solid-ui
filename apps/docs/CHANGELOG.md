@@ -1,5 +1,11 @@
 # docs
 
+## 0.4.3
+
+### Patch Changes
+
+- [#135](https://github.com/sek-consulting/solid-ui/pull/135) [`9cac3d4`](https://github.com/sek-consulting/solid-ui/commit/9cac3d472ba9ca39342bb8732e5e134b02a04b94) Thanks [@daelmaak](https://github.com/daelmaak)! - add: indeterminate state for checkbox
+
 ## 0.4.2
 
 ### Patch Changes

@@ -1,5 +1,4 @@
 import { For, Match, Switch } from "solid-js"
-
 import { useLocation } from "@solidjs/router"
 
 import { docsConfig } from "~/config/docs"
@@ -10,7 +9,7 @@ export default function Sidebar() {
   const location = useLocation()
 
   return (
-    <aside class="fixed top-16 z-30 hidden h-screen w-full shrink-0 md:sticky md:block">
+    <aside class="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-border/40 md:sticky md:block dark:border-border">
       <div class="relative h-full overflow-y-auto py-6 pr-6">
         <For each={docsConfig.sidebarNav}>
           {(category) => (
@@ -31,7 +30,9 @@ export default function Sidebar() {
                       <span>{link.title}</span>
                       <Switch>
                         <Match when={link.status === "new"}>
-                          <Badge class="ml-2">new</Badge>
+                          <Badge variant="success" class="ml-2">
+                            new
+                          </Badge>
                         </Match>
                         <Match when={link.status === "updated"}>
                           <Badge variant="secondary" class="ml-2">

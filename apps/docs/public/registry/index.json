@@ -183,6 +183,19 @@
     "type": "ui"
   },
   {
+    "name": "date-picker",
+    "dependencies": [
+      "@ark-ui/solid"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "files": [
+      "ui/date-picker.tsx"
+    ],
+    "type": "ui"
+  },
+  {
     "name": "delta-bar",
     "files": [
       "ui/delta-bar.tsx"
@@ -380,6 +393,25 @@
     ],
     "files": [
       "ui/sheet.tsx"
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "sidebar",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "registryDependencies": [
+      "button",
+      "seperator",
+      "sheet",
+      "skeleton",
+      "text-field",
+      "tooltip",
+      "use-mobile"
+    ],
+    "files": [
+      "ui/sidebar.tsx"
     ],
     "type": "ui"
   },

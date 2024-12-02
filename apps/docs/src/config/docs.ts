@@ -27,12 +27,11 @@ export const docsConfig: Config = {
     },
     {
       title: "Examples",
-      href: "/examples/mail"
+      href: "/examples/cards"
     },
     {
-      title: "GitHub",
-      href: "https://github.com/sek-consulting/solid-ui",
-      external: true
+      title: "Blocks",
+      href: "/blocks"
     }
   ],
   sidebarNav: [
@@ -66,6 +65,31 @@ export const docsConfig: Config = {
       ]
     },
     {
+      title: "Installation",
+      items: [
+        {
+          title: "SolidStart",
+          href: "/docs/installation/solid-start"
+        },
+        {
+          title: "Vite",
+          href: "/docs/installation/vite"
+        },
+        {
+          title: "Astro",
+          href: "/docs/installation/astro"
+        },
+        {
+          title: "Tauri",
+          href: "/docs/installation/tauri"
+        },
+        {
+          title: "Manual",
+          href: "/docs/installation/manual"
+        }
+      ]
+    },
+    {
       title: "Visualizations",
       items: [
         {
@@ -82,8 +106,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Progress",
-          href: "/docs/components/progress",
-          status: "updated"
+          href: "/docs/components/progress"
         },
         {
           title: "Progress Circle",
@@ -163,6 +186,16 @@ export const docsConfig: Config = {
           href: "/docs/components/context-menu"
         },
         {
+          title: "Data Table",
+          href: "/docs/components/data-table",
+          status: "new"
+        },
+        {
+          title: "Date Picker",
+          href: "/docs/components/date-picker",
+          status: "new"
+        },
+        {
           title: "Dialog",
           href: "/docs/components/dialog"
         },
@@ -227,6 +260,11 @@ export const docsConfig: Config = {
           href: "/docs/components/sheet"
         },
         {
+          title: "Sidebar",
+          href: "/docs/components/sidebar",
+          status: "new"
+        },
+        {
           title: "Skeleton",
           href: "/docs/components/skeleton"
         },
@@ -236,8 +274,7 @@ export const docsConfig: Config = {
         },
         {
           title: "Sonner",
-          href: "/docs/components/sonner",
-          status: "new"
+          href: "/docs/components/sonner"
         },
         {
           title: "Switch",

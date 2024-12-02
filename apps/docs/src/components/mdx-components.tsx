@@ -1,10 +1,10 @@
 import { type ComponentProps } from "solid-js"
 
-import { cn } from "~/lib/utils"
 import { ComponentPreview } from "~/components/component-preview"
 import { ComponentSource } from "~/components/component-source"
 import { CopyButton } from "~/components/copy-button"
 import { MDXHeader } from "~/components/mdx-header"
+import { cn } from "~/lib/utils"
 import { Alert, AlertDescription, AlertTitle } from "~/registry/ui/alert"
 import { Callout } from "~/registry/ui/callout"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/registry/ui/tabs"
@@ -100,7 +100,7 @@ export const MDXComponents = {
         <pre
           ref={preRef}
           class={cn(
-            "code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-[#2e3440ff] py-4"
+            "code group mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900"
           )}
         >
           {props.children}

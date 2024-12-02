@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sek-consulting/solid-ui.git",
+    "url": "https://github.com/stefan-karger/solid-ui.git",
     "directory": "packages/cli"
   },
   "bugs": {
-    "url": "https://github.com/sek-consulting/solid-ui/issues"
+    "url": "https://github.com/stefan-karger/solid-ui/issues"
   },
   "type": "module",
   "files": [

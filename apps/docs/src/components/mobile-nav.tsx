@@ -1,8 +1,8 @@
 import type { ComponentProps } from "solid-js"
 import { createSignal, For } from "solid-js"
 
-import { docsConfig } from "~/config/docs"
 import { IconLogo, IconSidebarOpen } from "~/components/icons"
+import { docsConfig } from "~/config/docs"
 import { Button } from "~/registry/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "~/registry/ui/sheet"
 
@@ -21,8 +21,8 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent position="left" class="pr-0">
         <MobileLink href="/" onOpenChange={setOpen} class="flex items-center">
-          <IconLogo class="mr-2 size-4" fill="currentColor" />
-          <span class="font-bold">solid/ui</span>
+          <IconLogo class="mr-2" />
+          <span class="font-bold">SolidUI</span>
         </MobileLink>
         <div class="my-4 h-[calc(100vh-8rem)] overflow-y-auto pb-10 pl-6">
           <div class="flex flex-col space-y-3">

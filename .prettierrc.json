@@ -9,10 +9,10 @@
     "<BUILTIN_MODULES>",
     "",
     "^(solid-js/(.*)$)|^(solid-js$)",
+    "^(@solidjs/(.*)$)",
     "",
     "<THIRD_PARTY_MODULES>",
     "",
-    "^types$",
     "^~/(.*)$",
     "",
     "^[./]"

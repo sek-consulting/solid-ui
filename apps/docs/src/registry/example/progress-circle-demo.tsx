@@ -40,7 +40,7 @@ export default function ProgressCircleDemo() {
         <div class="flex items-center justify-center space-x-5">
           <ProgressCircle value={75}>
             <Avatar class="size-12">
-              <AvatarImage src="https://github.com/sek-consulting.png" />
+              <AvatarImage src="https://github.com/stefan-karger.png" />
               <AvatarFallback>EK</AvatarFallback>
             </Avatar>
           </ProgressCircle>

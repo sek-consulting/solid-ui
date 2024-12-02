@@ -1,4 +1,5 @@
 import { defineConfig } from "@solidjs/start/config"
+
 /* @ts-ignore */
 import pkg from "@vinxi/plugin-mdx"
 import rehypePrettyCode from "rehype-pretty-code"
@@ -30,7 +31,9 @@ export default defineConfig({
             rehypePrettyCode,
             {
               getHighlighter: async () => {
-                return await getHighlighter({ theme: "nord" })
+                return await getHighlighter({
+                  theme: "github-dark"
+                })
               }
             }
           ]

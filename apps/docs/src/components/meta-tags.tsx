@@ -1,5 +1,4 @@
 import { mergeProps } from "solid-js"
-
 import { Link, Meta, Title } from "@solidjs/meta"
 
 const BASE_URL = "https://www.solid-ui.com"
@@ -50,9 +49,12 @@ export function MetaTags(rawProps: HeadProps) {
 
       <Link rel="canonical" href={BASE_URL} />
       <Link rel="manifest" href={`${BASE_URL}/site.webmanifest`} />
-      <Link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-      <Link rel="shortcut icon" href="/favicon-16x16.png" />
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+
       <Link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <meta name="apple-mobile-web-app-title" content={props.title} />
     </>
   )
 }

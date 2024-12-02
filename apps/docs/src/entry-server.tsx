@@ -12,8 +12,15 @@ export default createHandler(() => (
             src="https://analytics.eu.umami.is/script.js"
             data-website-id="ee09d538-8dab-4134-9dca-aad904b65af7"
           />
+          <link
+            rel="preload"
+            href="/fonts/Geist.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+          />
         </head>
-        <body>
+        <body class="min-h-screen bg-background font-sans antialiased">
           <div id="app">{children}</div>
           {scripts}
         </body>

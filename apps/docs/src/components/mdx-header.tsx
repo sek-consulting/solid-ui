@@ -1,4 +1,5 @@
 import { Show } from "solid-js"
+import { A } from "@solidjs/router"
 
 import { cn } from "~/lib/utils"
 import { badgeVariants } from "~/registry/ui/badge"
@@ -18,7 +19,7 @@ export function MDXHeader(props: HeaderProps) {
       <p class="text-balance text-lg text-muted-foreground">{props.description}</p>
       <Show when={props.docs}>
         {(docs) => (
-          <a
+          <A
             href={docs()}
             target="_blank"
             rel="noreferrer"
@@ -26,7 +27,7 @@ export function MDXHeader(props: HeaderProps) {
           >
             Docs
             <IconExternalLink class="size-3" />
-          </a>
+          </A>
         )}
       </Show>
     </div>

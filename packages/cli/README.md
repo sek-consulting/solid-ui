@@ -40,4 +40,4 @@ Visit https://solid-ui.com to view the documentation.
 
 ## License
 
-Licensed under the [MIT license](https://github.com/sek-consulting/solid-ui/blob/main/LICENSE).
+Licensed under the [MIT license](https://github.com/stefan-karger/solid-ui/blob/main/LICENSE).

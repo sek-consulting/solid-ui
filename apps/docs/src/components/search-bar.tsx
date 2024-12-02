@@ -1,5 +1,4 @@
 import { createEffect, createSignal, For, onCleanup } from "solid-js"
-
 import { useNavigate } from "@solidjs/router"
 
 import { docsConfig } from "~/config/docs"
@@ -13,22 +12,21 @@ import {
   CommandList
 } from "~/registry/ui/command"
 
-import { IconCommand, IconFile, IconSearch } from "./icons"
+import { IconCommand, IconFile } from "./icons"
 
 export default function SearchBar() {
   const [open, setOpen] = createSignal(false)
 
   createEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault()
         setOpen((open) => !open)
       }
     }
 
-    document.addEventListener("keydown", down)
-
-    onCleanup(() => document.removeEventListener("keydown", down))
+    document.addEventListener("keydown", handleKeyDown)
+    onCleanup(() => document.removeEventListener("keydown", handleKeyDown))
   })
 
   const navigate = useNavigate()
@@ -42,14 +40,11 @@ export default function SearchBar() {
       <Button
         id="search-trigger"
         variant="outline"
-        class="relative w-full justify-between space-x-4 text-muted-foreground"
+        class="relative flex h-8 w-full justify-between bg-muted/50 pr-1 text-muted-foreground md:w-44 lg:w-64"
         onClick={() => setOpen(true)}
       >
-        <div class="flex items-center space-x-2">
-          <IconSearch />
-          <span class="hidden lg:inline-flex">Search documentation...</span>
-          <span class="inline-flex lg:hidden">Search...</span>
-        </div>
+        <span class="hidden lg:inline-flex">Search documentation...</span>
+        <span class="inline-flex lg:hidden">Search...</span>
         <kbd class="pointer-events-none flex select-none items-center gap-1 rounded border bg-muted px-1.5 py-0.5 font-mono text-xs font-medium">
           <IconCommand stroke-width={1} />
           <span>K</span>

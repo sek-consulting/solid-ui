@@ -20,7 +20,7 @@ export function UserNav() {
         class="relative size-8 rounded-full"
       >
         <Avatar class="size-8">
-          <AvatarImage src="https://github.com/sek-consulting.png" alt="@sek-consulting" />
+          <AvatarImage src="https://github.com/stefan-karger.png" alt="@stefan-karger" />
           <AvatarFallback>EK</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>

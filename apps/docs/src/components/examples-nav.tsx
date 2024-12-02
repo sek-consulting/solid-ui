@@ -1,38 +1,42 @@
 import type { ComponentProps } from "solid-js"
 import { For, Show, splitProps } from "solid-js"
-
 import { useLocation } from "@solidjs/router"
 
 import { cn } from "~/lib/utils"
-import { IconArrowRight } from "~/components/icons"
+
+import { IconArrowRight } from "./icons"
 
 const examples = [
   {
     name: "Mail",
     href: "/examples/mail",
-    code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/components/mail"
+    code: "https://github.com/stefan-karger/solid-ui/tree/main/apps/docs/src/routes/examples/mail"
   },
   {
     name: "Dashboard",
     href: "/examples/dashboard",
-    code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/components/dashboard"
+    code: "https://github.com/stefan-karger/solid-ui/tree/main/apps/docs/src/routes/examples/dashboard"
   },
   {
     name: "Cards",
     href: "/examples/cards",
-    code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/components/cards"
+    code: "https://github.com/stefan-karger/solid-ui/tree/main/apps/docs/src/routes/examples/cards"
+  },
+  {
+    name: "Tasks",
+    href: "/examples/tasks",
+    code: "https://github.com/stefan-karger/solid-ui/tree/main/apps/docs/src/routes/examples/tasks"
   },
   {
     name: "Authentication",
     href: "/examples/authentication",
-    code: "https://github.com/sek-consulting/solid-ui/tree/main/apps/docs/src/components/authentication"
+    code: "https://github.com/stefan-karger/solid-ui/tree/main/apps/docs/src/routes/examples/authentication"
   }
 ]
 
 export function ExamplesNav(props: ComponentProps<"div">) {
   const [, rest] = splitProps(props, ["class"])
   const location = useLocation()
-
   const pathname = () => (location.pathname === "/" ? "/examples/mail" : location.pathname)
   const example = () => examples.find((example) => pathname().startsWith(example.href))
 
@@ -44,7 +48,7 @@ export function ExamplesNav(props: ComponentProps<"div">) {
             <a
               href={example.href}
               class={cn(
-                "flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
+                "flex h-7 items-center justify-center rounded-md px-4 text-center text-sm transition-colors hover:text-primary",
                 location.pathname?.startsWith(example.href) ||
                   (location.pathname === "/" && idx() === 0)
                   ? "bg-muted font-medium text-primary"

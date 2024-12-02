@@ -1,5 +1,15 @@
 # docs
 
+## 0.5.0
+
+### Minor Changes
+
+- [`c047e03`](https://github.com/stefan-karger/solid-ui/commit/c047e0330cb0887e11bcd8a80c568e3d2c1604d9) Thanks [@stefan-karger](https://github.com/stefan-karger)! - Huge Update: Blocks, Sidebar, DataTable, DatePicker !!!
+
+### Patch Changes
+
+- [#147](https://github.com/stefan-karger/solid-ui/pull/147) [`185cf99`](https://github.com/stefan-karger/solid-ui/commit/185cf99f108c831b81ee896858497c998b7d216a) Thanks [@daelmaak](https://github.com/daelmaak)! - prevent layout bugs due to checkbox's positioning
+
 ## 0.4.3
 
 ### Patch Changes

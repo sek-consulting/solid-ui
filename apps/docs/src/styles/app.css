@@ -142,3 +142,7 @@
 ::-webkit-scrollbar-corner {
   display: none;
 }
+
+[data-corvu-resizable-panel]:has(+ [data-corvu-resizable-handle][data-dragging]) iframe {
+  pointer-events: none;
+}

@@ -77,7 +77,7 @@ export function BlockDisplay(props: { name: string }) {
             >
               <iframe
                 src={`/blocks/${item().name}`}
-                class="relative z-20 hidden h-[800px] w-full bg-background md:block"
+                class="pointer-events-none relative z-20 hidden h-[800px] w-full bg-background md:block"
               />
             </ResizablePanel>
             <ResizableHandle class="relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-x-px after:-translate-y-1/2 after:rounded-full after:bg-border after:transition-all after:hover:h-10 md:block" />

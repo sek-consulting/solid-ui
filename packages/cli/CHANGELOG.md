@@ -1,5 +1,13 @@
 # @solid-ui/cli
 
+## 0.7.1
+
+### Patch Changes
+
+- [`c047e03`](https://github.com/stefan-karger/solid-ui/commit/c047e0330cb0887e11bcd8a80c568e3d2c1604d9) Thanks [@stefan-karger](https://github.com/stefan-karger)! - Huge Update: Blocks, Sidebar, DataTable, DatePicker !!!
+
+- [`c047e03`](https://github.com/stefan-karger/solid-ui/commit/c047e0330cb0887e11bcd8a80c568e3d2c1604d9) Thanks [@stefan-karger](https://github.com/stefan-karger)! - add: date picker using ark-ui
+
 ## 0.7.0
 
 ### Minor Changes

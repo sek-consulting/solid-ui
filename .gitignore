@@ -27,4 +27,8 @@ gitignore
 .DS_Store
 Thumbs.db
 
+
 app.config.timestamp*
+
+.vscode/settings.json
+

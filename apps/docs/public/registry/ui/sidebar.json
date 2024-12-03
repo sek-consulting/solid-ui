@@ -5,7 +5,7 @@
   ],
   "registryDependencies": [
     "button",
-    "seperator",
+    "separator",
     "sheet",
     "skeleton",
     "text-field",

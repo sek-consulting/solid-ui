@@ -504,7 +504,7 @@ export const Index: RegistryIndex = {
     name: "sidebar",
     description: "",
     type: "ui",
-    registryDependencies: ["button","seperator","sheet","skeleton","text-field","tooltip","use-mobile"],
+    registryDependencies: ["button","separator","sheet","skeleton","text-field","tooltip","use-mobile"],
     component: lazy(() => import("~/registry/ui/sidebar")),
     files: [{
       path: "registry/ui/sidebar.tsx",

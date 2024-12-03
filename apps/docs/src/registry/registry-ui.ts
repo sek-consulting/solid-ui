@@ -453,7 +453,7 @@ export const ui: Registry = [
     dependencies: ["@kobalte/core"],
     registryDependencies: [
       "button",
-      "seperator",
+      "separator",
       "sheet",
       "skeleton",
       "text-field",

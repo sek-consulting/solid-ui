@@ -89,7 +89,7 @@ const ComboboxControl = <T, U extends ValidComponent = "div">(
   const [local, others] = splitProps(props as ComboboxControlProps<T>, ["class"])
   return (
     <ComboboxPrimitive.Control
-      class={cn("flex items-center rounded-md border px-3", local.class)}
+      class={cn("flex h-10 items-center rounded-md border px-3", local.class)}
       {...others}
     />
   )
@@ -105,7 +105,7 @@ const ComboboxInput = <T extends ValidComponent = "input">(
   return (
     <ComboboxPrimitive.Input
       class={cn(
-        "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        "flex size-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
         local.class
       )}
       {...others}
